@@ -17,25 +17,62 @@ paginate = 10
 # Main menu
 
 [[menu.main]]
-    name = "Home"
-    url  = "/"
+    name = "News"
+    url  = "/news/"
     weight = 1
+[[menu.main]]
+    parent = "News"
+    name = "All News"
+    url  = "/news/"
+[[menu.main]]
+    parent = "News"
+    name = "Project News"
+    url  = "/project-news/"
+    parent = "News"
+    name = "Blog Posts"
+    url  = "/blogs/"
+
 
 [[menu.main]]
-    name = "Blog"
+    name = "Discover More!"
     url  = "/blog/"
     weight = 2
 
 [[menu.main]]
-    name = "FAQ"
+    name = "Jira"
     identifier = "faq"
-    url  = "/faq/"
+    url  = "//jira.reactos.org"
     weight = 3
 
 [[menu.main]]
-    name = "Contact"
-    url  = "/contact/"
+    name = "Gallery"
+    url  = "/gallery/"
     weight = 4
+
+[[menu.main]]
+    name = "IRC"
+    url  = "/irc/"
+    weight = 5
+
+[[menu.main]]
+    name = "Forum"
+    url  = "/forum/"
+    weight = 6
+
+[[menu.main]]
+    name = "Shop"
+    url  = "//reactos.spreadshirt.net/"
+    weight = 7
+
+[[menu.main]]
+    name = "Download"
+    url  = "/download/"
+    weight = 8
+
+[[menu.main]]
+    name = "Donate"
+    url  = "/donate/"
+    weight = 8
 
 # Top bar social links menu
 
