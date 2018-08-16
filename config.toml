@@ -189,10 +189,10 @@ paginate = 10
 [params.see_more]
     enable = true
     icon = "fa fa-file-code-o"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
+    title = "ReactOS is a Free Opensource operating system."
+    subtitle = "Imagine running your favorite Windows applications and drivers in an open-source environment you can trust. That's ReactOS. Not just an Open but also a Free operating system."
     link_url = "#"
-    link_text = "Check other homepages"
+    link_text = "Click here to learn more"
 
 [params.clients]
     enable = false
