@@ -28,6 +28,7 @@ paginate = 10
     parent = "News"
     name = "Project News"
     url  = "/project-news/"
+[[menu.main]]
     parent = "News"
     name = "Blog Posts"
     url  = "/blogs/"
