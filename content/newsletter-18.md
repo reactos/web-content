@@ -1,0 +1,56 @@
+---
+title:       "Newsletter 18"
+author:      "samwise52"
+type:        news
+date:        2007-02-28
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-18
+aliases:     [ node/159 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Opening Words</li>
+# <li>Project News </li>
+# <li>Events on SVN</li>
+# <li>BugZilla</li>
+# </ul>
+
+---
+<h2>Opening Words</h2>
+<p>Here is another informative newsletter for your enjoyment. You may have recently noticed last issue, that some of our developers were part of community conferences and events. It&rsquo;s all part of new PR efforts to get ReactOS out there, in front of serious developers and community leaders. To raise awareness of how much ReactOS has advanced and it&rsquo;s vast potential.</p>
+<p>I&rsquo;m kind of wary of this issue, I&rsquo;ve been talking about 0.3.1 since the very first newsletter I wrote.&nbsp;Sometimes people ask me, like if I were responsible for the release somehow, when will it be released. I&rsquo;ve been&nbsp;assured by our release engineer that there are only 2 blocking issues left and that it will be released soon. That said, a kind user compiled the 0.3.1 branch and provided the isos&nbsp;for public trials <a href="http://reactos.colinfinck.de/">here</a> .</p>
+<p>I also spoke with our project leader about future releases and he went on to say that future releases (0.3.2, 0.3.3, 0.3.x&hellip;) will be made every month or 2. Furthermore that at this moment in time ReactOS releases may in fact have LESS success in running Windows&reg; apps and drivers, but in the long run it will be far better and far more compatible with Windows&reg;. Current issues are just growing pains. Note, I&rsquo;m just paraphrasing and results may vary ;-) </p>
+<h2>Project News </h2>
+<div><font face="Verdana">- Aleksey Bragin gave a talk about ReactOS at the FOSDEM conference in Brussels, video is available <a href="http://ftp.belnet.be/mirror/FOSDEM/2007/FOSDEM2007-ReactOS.ogg">here</a>.</font></div>
+<div><font face="Verdana">- Alex Ionescu gave a talk about ReactOS to the students and professors at the University of Waterloo, Canada.</font></div>
+<div>- Alex Ionescu also managed to connect ReactOS to windbg(Windows Debugger), this work is currently in a branch. Windbg is widely used by many driver developers and Microsoft itself to test and well.. debug Windows&reg; and it's drivers. This is expected to accelerate development and bug fixing in the future.</div>
+<div><font face="Verdana">- Christel is still looking for more testers and invites everyone willing and able to drop by #reactos-testers channel on the freenode IRC network.</font></div>
+<div><font face="Verdana">- Some developers where&nbsp;talking&nbsp;on the ML about&nbsp;adding &ldquo;hinting&rdquo; to Marlett font, but concerns about it&rsquo;s implementation in freetype and possible patent issues came up.</font></div>
+<h2>Events on SVN</h2>
+<div>As some of you have noticed trunk is currently broken, it should boot on qemu, but this has also been troublesome. Head kernel developer Alex Ionescu explains that his recent HAL IRQ changes allow trunk only to boot in qemu, and after debugging this will be fixed soon.</div>
+<div>&nbsp;</div>
+<div><font face="Verdana">Dcote &ndash; has been working on FsRtl and CC parts of the kernel, implementing tests along the way.</font></div>
+<div><font face="Verdana">Dgorbachev &ndash; updated and fixed many translations.</font></div>
+<div><font face="Verdana">Ekohl &ndash; worked a lot on desk.cpl control panel applet much of the pages are nearly complete.</font></div>
+<div><font face="Verdana">Gedmurphy &ndash; implemented a character map application.</font></div>
+<div><font face="Verdana">Greatlrd &ndash; did important work on directx and gdi systems, as well as prepare for a richedit wine merge</font></div>
+<div><font face="Verdana">Hpoussin &ndash; fixed bugs in some network card inf files.</font></div>
+<div><font face="Verdana">Hyperion &ndash; worked on the PSEH library, added a debugging/trace mode and simplified some code.</font></div>
+<div><font face="Verdana">Ion &ndash; Implemented new Freeldr PE loading routines, worked on Windbg support and many other things.</font></div>
+<div><font face="Verdana">Mbosma &ndash; worked on his downloader application, fixing some leaks and adding more content.</font></div>
+<div><font face="Verdana">Tretiakov &ndash; committed work on many parts of win32k, especially keyboard layouts, configurations and notifications.</font></div>
+<div><font face="Verdana">Weiden &ndash; Helped fix up the new character map code. </font></div>
+<div>&nbsp;</div>
+<h2>BugZilla</h2>
+<p>Not that active, except by some massive italian&nbsp;translation spam. We encourage you to submit translation patches, but these can be packed together in diffs. Which can be more easily merged into the tree.</p>
+<div>62 bugs active, oldest bug active was 876</div>
+<div>26 new bugs</div>
+<div>32 bugs closed, 19 marked duplicate. </div>
+<div>21 bugs related to translations or strings</div>
+<div>Oldest bug fixed 1586- &quot;Notepad: page settings&quot;</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

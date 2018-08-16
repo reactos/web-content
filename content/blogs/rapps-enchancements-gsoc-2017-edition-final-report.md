@@ -1,0 +1,123 @@
+---
+title:       "RAPPS Enchancements: GSoC 2017 Edition Final Report"
+author:      "sanchaez"
+type:        blog
+date:        2017-08-28
+changed:     2017-09-03
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/rapps-enchancements-gsoc-2017-edition-final-report
+aliases:     [ node/49895 ]
+
+---
+
+<h2 id="introduction">Introduction</h2>
+<p>ReactOS App Manager (RAPPS) is an app used in ReactOS to download apps, tested by ReactOS team and community. It also manages apps that are installed - you can view apps that are present on your system and uninstall them. The goal of this project was to improve RAPPS and add some very useful features.<br>
+	Here is a video presenting it's features:</p>
+<p><iframe align="middle" allowfullscreen="" frameborder="0" height="450" scrolling="no" src="https://www.youtube.com/embed/ldSUUb8dqTc" width="800"></iframe></p>
+<p><!--break--></p>
+<h2 id="quicklinks">Quick Links</h2>
+<ul>
+	<li><a href="svn://svn.reactos.org/reactos/branches/GSoC_2017/rapps/reactos">SVN branch link</a></li>
+	<li><a href="https://gist.github.com/sanchaez/19b09d41389bee02d935754e73d3a66d">Unified diff as a Gist</a></li>
+	<li><a href="https://code.reactos.org/changelog/~br=GSoC_2017/reactos/branches/GSoC_2017/rapps?max=90">Commits Overview</a></li>
+</ul>
+<h2 id="tableofcontents">Table of contents</h2>
+<ul>
+	<li><a href="#introduction">Introduction</a></li>
+	<li><a href="#building">Building</a></li>
+	<li><a href="#testing">Testing</a></li>
+	<li><a href="#changes-made-during-development">Changes made during development</a>
+		<ul>
+			<li><a href="#application-list-improvements">Application List Improvements</a></li>
+			<li><a href="#bulk-installing">Bulk installing</a></li>
+			<li><a href="#script-installation">Script installation</a></li>
+			<li><a href="#other-improvements">Other improvements</a></li>
+		</ul>
+	</li>
+	<li><a href="#future-work">Future work</a></li>
+	<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+<hr>
+<h2 id="building">Building</h2>
+<p>Building RAPPS is no different as building parts of ReactOS. You can build it via <a href="https://www.reactos.org/wiki/Build_Environment">RosBE</a>:</p>
+<ol>
+	<li>Checkout the <code>reactos/branches/GSoC_2017/rapps/reactos</code> repo via your favourite svn client. Alternatively you can use ssvn from RosBE. Set the environment variable <code>ROS_BRANCH</code> to "GSOC_2017/rapps" and do <code>ssvn create</code></li>
+	<li>Make folder for output &amp; move there</li>
+	<li>Run configure script <code>&lt;source path&gt;/configure</code></li>
+	<li>run <code>ninja rapps</code></li>
+	<li>Go to the <code>&lt;output folder&gt;/base/applications/rapps</code> for the executable.</li>
+</ol>
+<p>For more details please check out the <a href="https://www.reactos.org/wiki/Building_ReactOS">official build instructions</a>.</p>
+<h2 id="testing">Testing</h2>
+<p>RAPPS is mostly straightforward to use. Just doubleclick the app you want to install or select multiple apps via checkboxes. You can also invoke a context menu on each entry for other commands.</p>
+<h2 id="changesmadeduringdevelopment">Changes made during development</h2>
+<p><img alt="RAPPS Overview: ReactOS" class="imgp_img" height="661" src="/sites/default/files/imagepicker/51653/VirtualBox_ros_29_08_2017_02_07_19.png" width="1282"></p>
+<p>Visually RAPPS remains mostly the same. It's base design isn't changed. However, I've added some enhancements for the UI. Some of them won't be listed here as they are not <strong>only</strong> visual.</p>
+<h3 id="applicationlistimprovements">Application List Improvements</h3>
+<p><img alt="New Application Info 2: ReactOS" class="imgp_img" height="155" src="/sites/default/files/imagepicker/51653/app_info_2.png" width="510"></p>
+<p>One of the goals on the first week was editing the info for available applications. I've added several new information types for this panel.</p>
+<p>The info panel displays status right after the name of the app. Statuses can be "Not installed", "Installed", "Update available". Installation check is done via checking the /Uninstall keys in the registry, and it's not very reliable - every app writes it's own string there. There already is a field which allows you to specify this string per app, but no apps database entries actually use that right now. While this string is a prefered method of doing such checks, I've decided to also do them with the existing plain names with or without version attached (this is a common thing), and that worked very well.</p>
+<p>Version number is also retrieved from the same registry key. When the app is installed, and the available version is higher, then RAPPS would show "Update available" status. If the check can't happen or installed version is greater it falls back to "Installed". Suffers from the very same problem as the above, because version check uses the same method.</p>
+<p><img alt="Image" class="imgp_img" height="150" src="/sites/default/files/imagepicker/51653/2017-07-20_19_57_50-ReactOS_Applications_Manager.png" width="470"></p>
+<p>Another added field is Languages field. This field can tell you if this app is translated to your language or English and how many more there is. This one requires adding additional <code>Languages</code> field to the DB entries where you add all the language codes app supports separated by <code>|</code>. Example: <code>Languages=0C09|0813|0422 \\English|Dutch|Ukrainian</code> Multiline parameters are also supported.</p>
+<p>And the last field is LicenseInfo. It's a field in the DB which, when present, changes the way License field in the info is shown. Value 1 stands for "Open Source", 2 - "Freeware" and 3 - "Demo/Trial". Introducing this would highlight the open source apps among the rest.</p>
+<p><img alt="New Icons Overview: ReactOS" class="imgp_img" height="350" src="/sites/default/files/imagepicker/51653/icons_overview.png" width="200"></p>
+<p><span style="font-size:10px;"><em>I've used Faenza as well as some random icons from the Internet.</em></span></p>
+<p>Old RAPPS used the same boring icon for every app in the list. I've added support for 'per app' icons, that can be loaded from <code>AppData/rapps/rapps/icons</code> folder (that's where the database entries are).</p>
+<p><span style="color: rgb(204, 204, 204); font-size: 1.8em; text-transform: uppercase;">Bulk installing</span></p>
+<p><img alt="New Download Dialog: ReactOS" class="imgp_img" height="410" src="/sites/default/files/imagepicker/51653/dldialog.png" width="336"></p>
+<p>Previously you could only download and install one app at time and you could not use RAPPS while doing it. This change introduces new download dialog that can download and install multiple apps sequentially and also it's now <strong>modeless</strong>. That means you can continue using RAPPS while it downloads something. Dialog also shows download progress status for each app.</p>
+<p><img alt="Image" class="imgp_img" height="402" src="/sites/default/files/imagepicker/51653/bulk_install_anim.gif" width="359"></p>
+<p>To issue this download you can check multiple checkboxes (use 'Select/Desellect All') and press 'Install' button. The download process begins immediately.</p>
+<p><img alt="Image" class="imgp_img" height="321" src="/sites/default/files/imagepicker/51653/checkbox_text_anim.gif" width="401"></p>
+<p><em><span style="font-size:10px;">This GIF is from earlier days of testing when RAPPS had 'Installed' disabled and there was a visual bug with decrementing. These are fixed now.</span></em></p>
+<p>In the statusbar at the bottom now appears application selection count. Note that checkbox selection drops every change of category. Checkboxes also hide when user switches to 'Installed' category.</p>
+<p><span style="color: rgb(204, 204, 204); font-size: 1.8em; text-transform: uppercase;">Scripted installation</span></p>
+<p><img alt="Command Line Install: ReactOS" class="imgp_img" height="584" src="/sites/default/files/imagepicker/51653/cmd_install_0.gif" width="805"></p>
+<p>Long requested feature - unattended installs! Well, not very correct, since it will still run those installers in foreground, but you can specify exactly what app you want without firing up GUI. There are two keys now:</p>
+<ul>
+	<li>
+		<p><code>/INSTALL</code> - accepts multiple apps as values and installs them if they are available.</p>
+		<p>Example: <code>rapps /INSTALL 7-Zip AkelPad</code></p>
+	</li>
+	<li>
+		<p><code>/SETUP</code> - accepts a <strong>full</strong> path to the .inf file, where in [RAPPS] block you can specify which apps to install using one <code>Install=</code> key per single app.</p>
+	</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language- ">[Version]
+Signature = $Windows NT$
+ClassGUID = {00000000-0000-0000-0000-000000000000}
+
+[RAPPS]
+Install=7-Zip
+Install=AkelPad 
+</code></pre>
+<p>These two use the name of the app, that's specified in the database. However, I would like to change that to the names of DB files, since they are much shorter and easier to write manually.</p>
+<h3 id="otherimprovements">Other improvements</h3>
+<p>And, of course, I've fixed some bugs and made other improvements to RAPPS:</p>
+<ul>
+	<li>Fixed applications list updating more than once because of the search bar timer</li>
+	<li>'Update database' menu entry now working</li>
+	<li>'Update every run' setting now working</li>
+	<li>Download folder now defaults to <code>&lt;user&gt;\My Documents\RAPPS Downloads</code> (since ReactOS doesn't have 'My Downloads') and some other.</li>
+</ul>
+<h2 id="futurework">Future work</h2>
+<p>While almost everything works, RAPPS still needs additional changes so it wasn't merged yet. But I expect it to be mergable pretty soon.</p>
+<p>There still are some things I want to improve or left incomplete. I've mentioned some them in the previous chapters, but to name a few:</p>
+<ul>
+	<li>Making app selection persistent across the app</li>
+	<li>Improving Installed category - left untouched by this project</li>
+	<li>Adding comfirmation dialog for the downloads</li>
+	<li>Adding parallel downloads</li>
+	<li>Making RAPPS maintainable</li>
+</ul>
+<p>Also, my proposal initially contained the 'Setup mode' function. ReactOS team decided to postpone that and focus on other features. Other thing that's left out is Screenshots view. That was also posponed since RAPPS has a very simple DB system. Maybe on the next GSoC... :)</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>ReactOS team is awesome! I really enjoyed working on the project and working with my mentors and devs. This project gave me valuable knowledge on what FOSS community is like. And also some experience on refactoring, debugging, and in general.&nbsp;</p>
+<p>I'll definetly stay with the project! Thanks Google for the GSoC that gave me an oportunity and incentive to work on something great.</p>
+<h3 id="ps">P.S</h3>
+<p>I'm sorry for not keeping you updated on the last month with blogs. But expect another post or two about this project and Hackfest! Also, I gave updates on the live stream from the Hackfest, so you should watch that as well! And, of course, see the video at the beginning. Good day and happy hacking!</p>
+

@@ -1,0 +1,28 @@
+---
+title:       "ReactOS 0.4.1 Released"
+author:      "Z98"
+type:        news
+date:        2016-05-17
+changed:     2016-07-26
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/reactos-041-released
+aliases:     [ node/9485 ]
+news:        [ "news" ]
+
+---
+
+<p>The ReactOS team is proud to announce the release of version 0.4.1 a mere three months after the release of 0.4.0. The team has long desired an increased release tempo and the hope is that this will be the first of many of faster iterations.</p>
+<p>Due to the brief period of time between the two releases, 0.4.1 is ultimately a refinement of what was in 0.4.0. That is not to say that there are no new features of course, and a few highlights of both categories are listed below.</p>
+<ul>
+	<li>Activation Context - A fix that came in just a tad too late for 0.4.0, this resolved a problem in the loader that prevented applications depending on various versions of the MSVCRT library from working properly.</li>
+	<li>BTRFS support - Initial read and write support introduced via importing of the WinBtrfs driver.</li>
+	<li>Shell - General usability improvements such as properly rendering icons and improved folder views.</li>
+	<li>USB - A variety of fixes that should make plugging in USB devices slightly less crashy.</li>
+	<li>Virtual machine shared folders - ReactOS now properly supports the shared folders of virtual machines like VirtualBox and VMware Player via network places.</li>
+	<li>Improved drive support - Better detection of disk drives and interfacing with AHCI controllers via updated UniATA.</li>
+</ul>
+<p>A word for the future, the list of visible improvements will likely remain short for future releases as well. This is actually a good thing, as it would mean that we are actually rolling out releases faster and that the state of code churn is not resulting in such long delays that the number of new features snowballs into an avalanche. There are however many more things in the works that will significantly improve ReactOS as a whole and we look forward to sharing them with you as soon as we can.</p>
+<p>More details of the release can be found <a href="https://reactos.org/wiki/0.4.1">here</a> and you can get the bootcd <a href="https://sourceforge.net/projects/reactos/files/ReactOS/0.4.1/ReactOS-0.4.1-REL-iso.zip/download">here</a>.</p>
+

@@ -1,0 +1,67 @@
+---
+title:       "February 2017 meeting minutes"
+author:      "EmuandCo"
+type:        article
+date:        2017-05-24
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/february-2017-meeting-minutes
+aliases:     [ node/42025 ]
+
+---
+
+<p>2017-02-23<br />
+	20:00 UTC<br />
+	#reactos-meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 20:25 by Aleksey Bragin</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: USB status</li>
+	<li>Point 3: Office status and NTLM</li>
+	<li>Point 4: Tree restructure</li>
+</ul>
+
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Aleksey Bragin:</b> His main achievement for this month was finally installing the ReactOS hardware infrastructure together with Colin and Christoph. They brought the mothership back online, configured networks even better, as now he has fully separated networks at his house. ReactOS private net and his private net. There is one server remaining to be configured and he has yet to buy batteries for UPS and then configure UPS for these. He will share some photos later of the hardware config. So these are his plans for coming month too.</p>
+
+<p><b>Amine Khaldi:</b> The usual tasks, in addition to working with the guys on 0.4.4 and maintaining the ongoing Wine Staging sync, which is ready as the staging folks released 2.2 days ago, and he caught up with that locally. He will allocate some time to commit that as we are already working on 0.4.5.</p>
+
+<p><b>Colin Finck:</b> Preparing for FOSDEM and representing ReactOS there with Hermes, monthly e.V. stuff, setting up our servers at Aleksey's site with Aleksey and Christoph, setting up a new server for JIRA/FishEye, and EnumPrintersW. We will finally have all buildslaves back in the course of next month and with more performance, more than twice the ISO storage and room for further additions. He plans to tackle JIRA/FishEye next week (probably on Tuesday - mail to ros-dev will follow). Let's hope all performance issues are gone afterwards. Regarding printing, he can also implement similar functions like EnumMonitorsW when EnumPrintersW is done.</p>
+
+<p><b>Daniel Reimer:</b> We are @CLT that year. Just needs to finish that poster generator. Four people, Colin, Giannis, Mr. Flash and him will take part. Colin Finck asked the participants to catch Daniel after the meeting and drop him screenshots for the poster.</p>
+
+<p><b>David Quintana:</b> He has been toying around with photoshop. https://dl.dropboxusercontent.com/u/743491/BlackShade.png Next step is to get that mockup into actual .png images he can use in a msstyles. He may or may not write a tool to help with that. He is strongly considering reducing the weekly hours he does at his full-time job. Which would give me a bit more breathing room in terms of brainpower.</p>
+
+<p><b>Giannis Adamopoulos:</b> All his work actually is in the work log. From top of his head he doesn't remember doing something more. All were related to making themes great again. Other than that he arrange joining you at CLT this year. Log can be found here : https://docs.google.com/spreadsheets/d/1CV5esQLHIiy3d6-18WboRzbEWgkhlcmcNZZwVU02i54/edit#gid=3</p>
+
+<p><b>Hermes Belusca Maito:</b> Last part of january and very beginning of february was dedicated to FOSDEM. Then he took some rest, tried to sync up Samuel's branch to something almost up-to-date to be able to compile it with latest fixes & get his ntlm implementation directly, and then restarted working on Office since 16/02/2017. Log can be found here: https://docs.google.com/spreadsheets/d/1tel2NMGfC7jAQJa__EWjZGuEvoA8LEzVUTvI7gNYGS8/edit#gid=1501144868 He's converting the tests from Samuel regarding ntlm (that are in client/server model) into something usable for apitests, and in the meantime, to have something working for office he decided to use the Wine ntlm layer (the difficult part was to find a windows build of samba afterwards, that could make office install be happy and office itself happy too). So that using Wine's ntlm, he can continue investigating office & sideeffects, Samuel can improve his ntlm. He is also starting to look at the look&feel of word & noticed some stuff, that will be mentioned in more detail in an upcoming blog report.</p>
+
+<p><b>Mark Jansen:</b> Not much to report, other than that the font patch is almost ready to go live one of these days and he should have more time in the upcoming months now that he finished moving. https://jira.reactos.org/browse/CORE-6621 Basically this aims to plug some holes in our current implementation (using freetype directly in our kernel) At this point, gdi32_winetest:font regresses a bit though so he's holding off until he knows it is not a problem.</p>
+
+<p><b>Pierre Schweitzer:</b> Worked a bit on FastFAT to make it faster.</p>
+
+<p><b>Thomas Faber:</b> He's just been doing small stuff such as Coverity fixes and committing patches (both from Jira and from his working copy). He thinks it'll stay this way for a while.</p>
+
+<p><b>Victor Martinez:</b> Not a lot to report, lately he has been dragged by his pet project and consuming his time. But he has an eye in both Social Media and Coverity. Since the scan is finished he will be reporting patches to Jira waiting for review. On the other hand out Twitter is boosting. We duplicated from 2000 to almost 4000 in 2 months. Wine has 700. So now ReactOS is an influencer. The latest screenshot showing ReactOS with new msstyles shocked the media. He is keeping the news of Office 2010 in the box to shock them again. Colin asked if we could stop linking any single video that somehow deals with ReactOS in our channel, because there were some lately that don't add any value to the channel or spread wrong information. Victor told that the only way is to fire the guy who does wrong videos from the YouTube Admin account, because videos are posted automatically. But if the same guy keeps sending bad videos he can just fire him from the team. He is the admim and we have 20 guys with access to send videos. Colin suggests not to fire someone, but decide on some basic rules they have to follow regarding videos. Victor plans to create an official Youtube ReactOS Team and he can create a guideline for them. He will create a request in the mailing list.</p>
+
+<h2>Point 2: USB status</h2>
+
+<p>Amine Khaldi started here with thanking Aleksey Bragin and Colin Finck that they managed to find a solution to pay him together. But that was a bit late w.r.t. his net situation, so he has few data => no commits pushed to github yet, and no reviews addressed. He is working locally on debugging HID and will update the online stuff after the 24th, because that's when he'll be able to use the funds. By HID drivers he means specifically hidusb + hidclass and mouhid. After that he asked for questions. The repo is publicly available and our russian community is actively testing it. If our guys manage to review his code, that code will end up in trunk. That's the only thing blocking its integration, because we can have it next to our existing stack. Mark_Jansen kindly reviewed, and so did Thomas_Faber. Mark Jansen suggested creating an issue in jira for review like the last time. That was already done by Victor Martinez according to Amine Khaldi. Ones once Vadim is back online he can react to them and Amine can separate more work into git branches for more reviews, until everything lands on trunk => wider testing audience. Which thanks to Vadim, always means more fixes. You give him logs, he fixes, as simple as that. David Quintana asks to keep what's effectively a fork of reactos, on github. Suppose in this fork, there's two branches: and master and staging. Suppose upstream is always in sync with SVN, and staging evolves in parallel: merging from master regularly, and merging from pull requests and so on. Giannis Adamopoulos explains that we would need to review what's merged back to staging carefully and we could lose the history in this way unless we agree that some modules will be developed only out of the main repo.</p>
+<p>The key point of the idea is that, in keeping two parallel repositories.</p>
+<p>1. We don't pollute SVN.</p>
+<p>2. We don't destroy history on the staging world.</p>
+<p>Rest of the discussion will be held after the meeting.</p>
+
+<h2>Point 2: Office status and NTLM</h2>
+
+<p>As sidenote Hermes explained the word selection Office 2010. When he says Office he mostly means Word (Community Edition app), but the installer is Office 2010 as set so that's why. Right now a workaround is used by installing a SAMBA Windows port to have NTLM which is mandatory for Office 2010 to install/run. Samuel Serapion already started a NTLM implementation a while ago and by using this workaround all other Office problems can be solved until he finished his work. Last time Hermes checked (end of january) there was still some problem as that when you used it for Office, the installation went further, but there were errors at the end. When he restarted working on word in feb he decided to try the wine "solution", but he'll also retest encoded's code (he sent him an updated version of it) Amine Khaldi asks to use jira tickets for stuff like that, just like the upcoming adventure into Word 2010, so that people like Giannis Adamopoulos and Jim Tabor can filter through. (shell stuff, win32ss stuff...etc). This was handled that way with Giannis and his themeing fixes, too and worked quite fine. In the end this was accepted as way to go.</p>
+
+<h2>Point 4: Tree restructure</h2>
+
+<p>A topic we had some times in the past already popped up again, the logical structure of our source code. Right now we have many components belonging together, but are completely spread all over the code. Like shell code for example. This has to be done carefully, too, unless we don't care about the history of the code we have in SVN. So a solid plan is the first thing we need. Last try was done by Hermes Belusca Maito a few years ago and it resulted in anger and drama. His intentions were correct, but some ppl felt left out of decision or had a bunch of patches in their repositories and are now seeing the merge problems. He just acted and did not ask around which caused the problems and thus the partial revert. This needs to change in the next try of course, like with an email giving a deadline to allow devs to prepare for the big step. Worst thing which could happen again is forcing a structure just for the sake of structure. Changes need a reasoning behind em. If this is combined with GIT move and submodules or no submodules was not decided yet.</p>
+
+<p>Meeting was closed at 21:24 by Colin Finck</p>
+<p>Meeting minutes prepared by Daniel Reimer</p>

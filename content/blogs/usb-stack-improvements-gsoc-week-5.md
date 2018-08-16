@@ -1,0 +1,48 @@
+---
+title:       "USB stack improvements GSoC - Week 5"
+author:      "VardanM"
+type:        blog
+date:        2016-06-27
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-stack-improvements-gsoc-week-5
+aliases:     [ node/12094 ]
+
+---
+
+<p>After long period of investigation and debugging, this week I have commited first patches for review. And they make difference under 2k3 :)</p>
+<p><span style="color: rgb(204, 204, 204); font-size: 1em; font-weight: 600; line-height: 18px; text-transform: uppercase;">About fixes I've done</span></p>
+<p>As continuation of usbhub's PnP handler debug and testing, this week I have commited patches with fixes. The most important ones are described below (same description is given in commit messages too).</p>
+<div>&nbsp;PDO: Changed handling of IRP_MN_REMOVE_DEVICE</div>
+<div style="margin-left: 40px;">On this IRP we should free recources and delete child's PDO ONLY if it isn't presented physically on the bus. If it is presented we're leaving as it was, thinking that device on top of it already frees otained from it resources. If child PDO is presented physically, then should be already marked as remove_pending when it will receive this IRP.</div>
+<div>&nbsp;</div>
+<div>
+	<div>&nbsp;FDO: Rework IRP_MN_QUERY_DEVICE_RELATIONS</div>
+	<div style="margin-left: 40px;">First of all we should keep in account that there might be device relations below and above this FDO, so we should save previous relations coming from top object and shuld pass this IRP down to stack after adding our relations. In case of success query devcie relations must be completed in the PDO.</div>
+	<div style="margin-left: 40px;">As MSDN requires, if the upper layer provided this IRP with initialized DeviceRelation, then we should replace that relation with another one which will contain our child PDOs too. And after replacement we should free the recources allocated for previous relation structure.</div>
+	<div>
+		<div>&nbsp;</div>
+		<div>PDO: Fix in IRP_MN_QUERY_DEVICE_RELATIONS (this one makes MS's usbssgp work on top of our ohci+hub stack in 2k3)</div>
+		<div style="margin-left: 40px;">Here we shouldn't modify information field of IRP, because for example in case of bus relations IRP must reach the stack's PDO collecting on its way all relations. This was the one of the causes of MS's usbccgp fail. usbccgp was not able to report to PnP manager about it's child devices.</div>
+		<div style="margin-left: 40px;">&nbsp;</div>
+		<img alt="Image" class="imgp_img" src="/sites/default/files/imagepicker/49145/Uaaantitled.png" style="float: left; width: 600px; height: 405px;">
+		<div>&nbsp;</div>
+	</div>
+	<div>&nbsp;</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Also I have done bounch of fixes related memory freeing and added some infrastucture to be able to track device's PnP state in the future commits. With help of this commits we have faced many errors in UHCI which already added to my TODO list.</p>
+<p><font color="#cccccc"><span style="font-weight: 600; line-height: 18px; text-transform: uppercase;">Git-svn digging</span></font></p>
+<p>After preparation of some commits via GIT (my favorite system) in my local machine, I "noticed" :) that our community prefers SVN, and all code review infrastructure and workflows are adopted to work with it. When I've started investigation of methods "how to work with SVN remote via local GIT" I saw that there is many things which was not expected by me. I have asked to community for help and voila !!! OUR COMMUNITY IS THE MOST FLEXIBLE AND KIND COMMUNITY IN THE WORLD !!! They kindly allowed me use GIT and github for reviews, which allowed me to commit my time for coding and debugging nor the GIT-SVN digging. But surely I don't want to be an white crow and on the first chance I'll try to start work with workflows accepted by our community.</p>
+<p><span style="color: rgb(204, 204, 204); font-weight: 600; line-height: 18px; text-transform: uppercase;">What I am planning to do</span></p>
+<p>For next week I am planning to continue the fixes in PnP routines. I am facing many issues, with fixing of which we'll be able to close new and new already reported issues. In parallel I am preparing long TODO list which probably can be done in longterm perspective.</p>
+

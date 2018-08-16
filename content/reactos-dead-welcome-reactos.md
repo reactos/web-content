@@ -1,0 +1,56 @@
+---
+title:       "ReactOS is dead, Welcome to ReactOS !"
+author:      "fireball"
+type:        news
+date:        2006-02-22
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-dead-welcome-reactos
+aliases:     [ node/257 ]
+news:        [ "news" ]
+
+---
+
+Hello,<br/>
+It is already a known fact that ReactOS project started<br/>
+working again and that SVN servers are running since<br/> some days again.<br/>
+<br/>
+But what has happened? We read so much in the news?<br/> What’s true?<br/>
+<br/>
+Let’s summarize:<br/>
+<br/>
+ReactOS project is Dead, welcome to ReactOS !<br/>
+<br/>
+Every Opensource project can be split into 3 main phases:<br/>
+-	Starting and developing fundamental things<br/>
+-	Fixing then bugs, doing the long road of mprovements <br/> and enhancements<br/>
+-	Finding something where it can be used<br/>
+<br/>
+ReactOS now came to the 0.3 release, which is indeed <br/> a major step, which means: it is running now. But<br/> is it stable?<br/>
+Now the long work of fixing, debugging and improving starts.<br/>
+<br/>
+This also changes the focus of the project from <br/> adding “functions” to make it “stable” and freeze on <br/> some  points – change to quality over number of features.<br/>
+<br/>
+For some bad reasons, which are understandable, also <br/> developers change. Real life issues, lack of motivation,<br/>
+since the project has less “challenges” - doing <br/> improvements, documenting and auditing are really a <br/>
+very very boring work sometimes.<br/>
+<br/>
+Also, there was some discussions about “copypasted MS <br/>
+kernel code” inside ReactOS.<br/>
+To say it in simple words: There is clearly NO code <br/> which is directly copypasted from MS kernel code: we <br/> see discussions and other legal actions of things <br/> between SCO and IBM because of Linux.<br/>
+The ReactOS project will not accept any copy of <br/> windows code inside its repository.<br/>
+All developers are told that they should go inside <br/> themselves and think about this issue and if <br/> somebody had access to windows sourcecode somehow <br/> and learned from this and used it, then they should <br/> mark the sections they think are dangerous, and <br/> these sections will be reworked by “clean” persons.<br/>
+<br/>
+The moment we are writing this message, the percentage <br/> is 15% “clean”.<br/>
+This does not mean that 85% of code are affected.<br/>
+ReactOS holds ~2 million lines of C code and 15% are <br/> fully audited and proven as a clean code.<br/>
+We are working on it, we are working on checking the <br/> code and finding suspicious code which might be <br/> derived from leaked code or reverse engineering. But <br/> this is lots of work and as we can not compare with <br/> Windows Source - the methods used for auditing are <br/> VERY complicated. So please, give us time.<br/>
+<br/>
+Also this “audit” has the advantage already from <br/> “stage2” of opensource project development, as <br/> many people are reading sections already written and <br/> this leads to bugfixes and improvements.<br/>
+<br/>
+From now, ReactOS is fully online again, and we hope, <br/> it will continue in the basis it was designed for. <br/>
+Having people and friends doing some things together for fun.<br/><br/>
+Thank you – ReactOS.
+

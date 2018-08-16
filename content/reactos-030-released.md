@@ -1,0 +1,23 @@
+---
+title:       "ReactOS 0.3.0 Released!"
+author:      "fireball"
+type:        news
+date:        2006-08-28
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-030-released
+aliases:     [ node/264 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS 0.3.0 Released!</h2>
+<p>This release holds a few records - it is the most long-awaited release of ReactOS, it is the release which was preceded by 3 Release Candidates instead of usual 2, and at last ReactOS release never had so much changes since the last one.</p>
+<p>This release's main feature is the networking ability - it's the first release where it is possible to download and install FireFox and browse the web, get mIRC (or some other irc client) and get to #reactos to chat a bit with developers. Or install command-line Samba-TNG client via the built-in package manager and use it to share files with Windows, Linux and MacOS X (all of them support SMB protocol)</p>
+<p>But there are a bunch of changes beneath the &quot;networking&quot; feature: The kernel, drivers, applications, control panel applets, Win32 subsystem, boot loader, etc, etc was changed, improved, bugfixed and hackremoved. For the detailed overview it's advised to read the <a href="http://www.reactos.org/wiki/index.php/ChangeLog-0.3.0">Changelog</a>.</p>
+<p>The compatibility with applications and drivers is also improved. In order to keep track of progress, the reactos.org website now features a ReactOS Compatibility Database. It allows to quickly look up the driver's version or some software which has been tested on various ReactOS releases and see how good it performs.</p>
+<p>Thanks a lot&nbsp;to our core developers who&nbsp;are doing&nbsp;a&nbsp;fantastic job and to those people who submit patches for various small and big things - it really helps a lot, even if it is a formatting change!</p>
+<p><em>Aleksey Bragin,<br/>
+ReactOS Project Coordinator</em></p>

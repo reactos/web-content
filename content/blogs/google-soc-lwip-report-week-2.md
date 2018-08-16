@@ -1,0 +1,19 @@
+---
+title:       "Google SoC lwIP Report Week 2"
+author:      "zhu48"
+type:        blog
+date:        2016-06-03
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-2
+aliases:     [ node/10643 ]
+
+---
+
+<p>In my second week of working on this project, I have made some progress in linking the Winsock listen() and connect() calls to their lwIP implementations. As with last week, Art Yerkes has been a great souce of information whenever I get stuck on anything.&nbsp;</p>
+<p>I spent the first part of the week figuring out how to extract the information I need from the IRP my driver receives in order to pass it along to lwIP. I also spent some time reading about NT kernel locks so I can safely alter reference objects in my code. I managed to make a successful link between listen() and lwIP's tcp_listen(), but both my server and client test programs stopped responding to the terminal Ctrl-C command. The server freezes when it makes the call to accept(), and the client freezes when it makes the call to connect(). I suspect I am using locks improperly, but I will need Art's help to figure out what is actually going on.&nbsp;</p>
+<p>I figured that making moderate progress in ironing out concurrency bugs would take a large amount of time and effort. Therefore, for the second half of the week, I decided to move onto linking the Winsock connect() call to its lwIP counterpart. Here, my first attempt to call the lwIP tcp_connect() function resulted in an OS crash. While I suspect this may have something to do with my test programs' freezing, I also found that the connect IRP my driver received contained the wrong IP address and port number. Tracing up from my driver, I found that the IP address Winsock sent to its Ancillary Function Driver was also wrong. My last task this week was figuring out how to add debug printouts to a DLL in order to debug Winsock.&nbsp;</p>
+<p>Next week, I will trace the IP address from my client test program down through Winsock to try to figure out where it gets lost or corrupted. I also plan on comparing my branch of ReactOS with trunk to see if they have the same problem. If that goes well, I will either move onto linking Winsock's accept() call with its lwIP counterpart or try to fix my test programs' freezing problem.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15480">Discussion</a></p>
+

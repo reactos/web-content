@@ -1,0 +1,40 @@
+---
+title:       "ReactOS 0.3.11 Released"
+author:      "Z98"
+type:        news
+date:        2009-12-16
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-0311-released
+aliases:     [ node/297 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS 0.3.11 Released</h2>
+<p>The ReactOS team is proud to announce the release of ReactOS 0.3.11. This release has been delayed by quite some time due to various blocker bugs which manifested each time we tried to release. A lot of time has gone into hunting down these bugs and various steps have been taken to try to ensure we don't hit this problem again. This isn't to say we don't have a lot of new and exciting features in this release. Two of which stand out are the huge changes to the Memory Manager and another leap forward for the sound stack</p>
+<p>It's difficult to sum up all of the changes which have taken place in the memory manager short of saying it's been almost a total rewrite. These changes have not only brought a much more stable and reliable component, but also now includes support for ARM processors. ARM memory management units (MMU&rsquo;s) are handled in an entirely different manner than that of x86 and x86-64 MMU&rsquo;s, however the ARM Mm component has been written alongside the x86 component with various areas sharing code when possible. Further to this, these changes bring much improved compatibility with WinDbg. WinDbg support is now at a level where the majority of everyday features are working and tasks which previously seemed so distant using WinDbg, such as stepping through the kernel, listing process threads or dynamically editing memory are now working. 
+
+We're now at a level where having PDB's (Microsoft's debugging symbols) would make debugging the reactos kernel a similar experience to debugging the Windows kernel, with the added advantage of source mode.
+<br>For the technically inquisitive, <a href="../wiki/index.php/ChangeLog-0.3.11#MM">here</a> are the Mm changes in this release</p>
+
+<p>The sound stack continues to see extensive work throughout all areas. This release brings with it support for wave recording and mixer support such as volume level adjustment and muting. Improved core component compatibility with WinXP means that more components now run within Windows and goes some way to showing the level of compatibility the sound stack is now achieving.</p>
+<p>Compatibility and stability changes have been continuing throughout the entire operating system with a great deal of fixes coming from the Wine test framework used to ensure application interface compatibility.</p>
+<p>As this is the 0.3.11 release, we felt a certain degree of nostalgia towards 'Windows 3.11 for workgroups' and added a fun easter egg in tribute. See if you can spot it, the older generation will surely have no problems</p>
+<p>Along with the rest of the 0.3 series, this release is still considered alpha quality software so it may not run all your apps or run on your hardware.</p>
+<h3>Changes summary</h3>
+<p>A detailed consolidation of all changes can be found in the <a href="../wiki/index.php/ChangeLog-0.3.11">changelog</a>. A sum up of some of the more important changes is as follows:</p>
+<ul>
+<li>A rewrite of the kdcom kernelmode library which is now much more compatible with the Microsoft version. This allows for improved built-in support for WinDbg</li>
+<li>Support for delay loaded dlls has been added in our build tools, providing delay loading functionality for our shipped libraries</li>
+<li>Support for Chinese and Korean fonts has now been added</li>
+<li>A new handler has been written for setting and getting system wide parameters (see SystemParametersInfo API), now making it much more complete and compatible with the Windows implementation</li>
+<li>A selection of application compatibility improvements can now been seen, including Opera, Open Office, Firefox 3.5, VLC1.1 and skype</li>
+<li>For fun, a new Spider Solitaire application has been added</li>
+<li>Synchronization of most of the Wine usermode DLLs and some Win32 subsystem code shared with Wine</li>
+</ul>
+
+<h5>VirtualBox install note</h5>
+A bug has surfaced meaning that installing ReactOS in VirtualBox will result in a hang when loading the USB driver, unless the VM has 256Mb RAM or more. To counteract this, either raise the RAM from the default 192Mb or disable the USB device. We have created a preloaded VirtualBox VM for download incorporating this workaround. Apologies for any inconvenience caused.

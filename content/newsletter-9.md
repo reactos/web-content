@@ -1,0 +1,265 @@
+---
+title:       "Newsletter 9"
+author:      "TwoTailedFox"
+type:        news
+date:        2005-12-20
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-9
+aliases:     [ node/149 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Issue 9 of the Newsletter has landed</li>
+# <li>What is the 'Software Life Cycle'?</li>
+# <li>How far is ReactOS from Version 1.0?</li>
+# <li>SVN: The Week that Was</li>
+# <li>Next Week?</li>
+# </ul>
+
+---
+<h2>Issue 9 of the Newsletter has landed</h2>
+
+<p>There are very few things that irritate me. Windows XP playing havock with my mouse cursor ranks among them. Thus, a reformat and reload ensues. And to top it all off, I have a PSU that's as dodgy as an SCO-Endorsed Lawsuit. For some strange reason, one of my Hard Drives will have its power drop out, which causes my drive to spin down, that acts like a domino toppling, and causes my system to hang. Very weird, and it's partly the reason I haven't been able to do a lot. Dignostics, losing your work every time it freezes isn't is very time consuming.</p>
+
+<p>So, what's going down this week? A little explanation of where ReactOS is on the "Software Life Cycle", with my usual wit, and tasteless humor thrown in for good measure.</p>
+
+<h2>What is the 'Software Life Cycle'?</h2>
+
+<p>Glad you asked. Each piece of Software that's made by a competent set of software engineers, follows a Life Cycle, that gives the End User a (very generic) idea of how mature and stable the software is.</p>
+
+<h3>Step 1: Pre-Alpha</h3>
+
+<p>Pre-Alpha is the collection of Ideas, the plannng of how to write the code, and in some cases, the writing of the Coding Framework, if what you are writing is complex. Now, while ReactOS, on our own front page, is listed as "Pre-Alpha", I'm going to have to disagree on that point.</p>
+
+<h3>Step 2: Alpha</h3>
+
+<p>This is how ReactOS should be described right now, in my humble opinon. Alpha is the writing of the Core Code, and where most of the releases will only be of interest to Software Engineers, Developers, and a handful of enthusiasts. In Alpha, much of the software is incomplete, and in most cases, has more holes than an OJ Simpson Alibi. As with all Alpha Software, ReactOS carries the maxim, "Use at your own risk". Alpha Software can be made into Periodic releases, i.e. Alpha 1, Alpha 2, etc, to indicate how far the Alpha Stage has progressed.</p>
+
+<h3>Stage 3: Beta</h3>
+
+<p>This is the stage of interest to most, and occurs when the Software has reached a modest level of Stabilty, and Functionality. In this Stage, Feedback is often sought from many public angles, especially with such complex software as an Operating System. Beta Software can also be made into Periodic releases, i.e. Beta 1, Beta 2, etc, to indicate how far the Beta Process has gone.</p>
+
+<h3>Stage 4: Release Candidate</h3>
+
+<p>While this is a stage in it's own right, it can also apply for Alpha and Beta Releases, too. In a Release Candidate, the  code undergoes what is called "Feature Freeze". That means any new code that deals with new features or functionlity that is submitted to Trunk, is not backported to the Version Branch.</p>
+
+<p>Further down the cycle of RC's (You can have quite a few, I seem to recall seeing one on Betanews that was RC16 at one point), the code in the Branch used to house the Release Candidate will undergo what is called "Code Freeze". This is a total stop to code backports, with the exception of bug fixes relating to "Blocker" Bugs. Blocker Bugs are Bugs that are deemed so critical, that a decision has been made to delay the release, until the bug is fixed to a satisfactory standard.</p>
+
+<h3>Step 5: Version 1.0</h3>
+
+<p>The much-coveted Version 1.0 release. Attained when it is decided that all the criteria set have been passed, and it is deemed Stable enough for a Public Release.</p>
+
+<h2>How far is ReactOS from Version 1.0?</h2>
+
+<p>This question is asked a lot. In fact, the only other projects where this question is asked a lot concern Microsoft, and Duke Nukem Forever.</p>
+
+<p>ReactOS is scheduled to go until 0.5.x, and if all criteria are met, hop straight to 1.0 However, if new projects are deemed fir to be included, 0.6.x might be on the cards. Or, it could be bumped to a later ReactOS release.</p>
+
+<p>Working Subsyatems could be a fixture for a 2.0.0 release, for example.</p>
+
+<h2>SVN: The Week that Was</h2>
+
+<p>Another Week. Another Was. This is the Week that Was.</p>
+
+<h3>Added to Build</h3>
+
+<ul>
+<li>oleacc</li>
+</ul>
+
+<h3>Changes to 0.2.9 Branch Only</h3>
+
+<ul>
+<li>Default Resolution now 800x600x8 (Not sure if reverted or not)</li>
+<li>Add static entries for PCnet and NE2000 network cards </li>(VMware/QEmu resp.) so networking is available on the LiveCD
+<li>Version Changed to RC2</li>
+</ul>
+
+<h3>Advapi32</h3>
+
+<ul>
+<li>Implemented QueryServiceConfigW</li>
+</ul>
+
+<h3>API Status List</h3>
+
+<ul>
+<li>Ole32 Removed</li>
+<li>OleAut32 Removed</li>
+<li>Shell32 Removed</li>
+<li>Winmm Removed</li>
+</ul>
+
+<h3>CMD</h3>
+
+<ul>
+<li>'type/p','dir/p','dir/s', and 'dir/p/s' commands now fixed with CTRL+C</li>
+</ul>
+
+<h3>CPL</h3>
+
+<ul>
+<li>Property sheet now fits in 640x480</li>
+</ul>
+
+<h3>CRT</h3>
+
+<ul>
+<li>C++ Exception Handling Fixed</li>
+</ul>
+
+<h3>Devmgr</h3>
+
+<ul>
+<li>Rename IsDeviceEnabled to IsDeviceStarted</li>
+</ul>
+
+<h3>Drivers</h3>
+
+<ul>
+<li>New Generic Floppy Disk Controller Driver</li>
+<li>Serial Port Driver now uses correct default baud rate</li>
+</ul>
+
+<h3>Explorer</h3>
+
+<ul>
+<li>Disable the Printer submenu folder in Start Menu "Settings"</li>
+</ul>
+
+<h3>Kernel32</h3>
+
+<ul>
+<li>GUI Process now detached from console</li>
+<li>Implemented GetVolumeNameForVolumeMountPointW</li>
+</ul>
+
+<h3>New</h3>
+
+<ul>
+<li>GetFirefox Utility (To replace iBrowser acquiring it)</li>
+</ul>
+
+<h3>Press/Media</h3>
+
+<ul>
+<li>Initial presentation for MIT 100 Laptop Added</li>
+</ul>
+
+<h3>RosCMS</h3>
+
+<h4>Content Edit Interface</h4>
+<ul>
+<li>Content type bug fixed</li>
+</ul>
+
+<h4>Login Function</h4>
+<ul>
+<li>Add a link to the "too many sessions" error message -> this link allow user to delete their old sessions (and reset their password)</li>
+</ul>
+
+<h4>Website Status Page</h4>
+<ul>
+<li>fix the language detection routine</li>
+<li>fixed translation date</li>
+<li>add day counter and "date colors"</li>
+</ul>
+
+<h4>User Accounts Admin Interface Page</h4>
+<ul>
+<li>improve the navigation</li>
+</ul>
+
+<h3>SetupAPI</h3>
+
+<ul>
+<li>Implemented DICS_FLAG_CONFIGSPECIFIC case in SetupDiOpenDevRegKey</li>
+<li>Implemented DICS_FLAG_CONFIGSPECIFIC and DIREG_DEV cases in SetupDiCreateDevRegKeyW</li>
+<li>Implemented SetupDiInstallClassExA</li>
+<li>Implemented SetupDiInstallClassExW (partially)</li>
+<li>Implemented SetupDiGetActualSectionToInstallExA/W</li>
+<li>Implemented SetupDiGetDeviceInfoListClass</li>
+<li>Implemented SetupDiChangeState</li>
+<li>Implemented SetupDiSetClassInstallParamsW</li>
+<li>Implemented internal function ResetDevice()</li>
+<li>Implemented CM_Disable_DevNode[_Ex]</li>
+<li>Implemented CM_Enable_DevNode[_Ex]</li>
+<li>Implemented CM_Reenumerate_DevNode[_Ex]</li>
+<li>Implemented CM_Run_Detection[_Ex]</li>
+<li>Implemented StringTableAddStringEx</li>
+<li>Implemented StringTableLookUpStringEx</li>
+<li>Install "ClassInstall32.Services" section in SetupDiInstallClassExW</li>
+<li>Parse 'Include' and 'Needs' directives in SetupInstallFromInfSectionW and when installing services</li>
+<li>Added stub for SetupDiChangeState</li>
+</ul>
+
+<h3>Shell32</h3>
+
+<ul>
+<li>Don't wait 10 seconds after starting an app via a .lnk shortcut file</li>
+</ul>
+
+<h3>SMSS</h3>
+
+<ul>
+<li>Implemented system handling of page file creation sizes, Later Reverted</li>
+</ul>
+
+<h3>Techbot (IRC)</h3>
+
+<ul>
+<li>Implemented "!bug <number>" command</li>
+</ul>
+
+<h3>Vendor Drops</h3>
+
+<ul>
+<li>WINE 0.9.3</li>
+<li>Dxdiagn from WINE</li>
+</ul>
+
+<h3>Vendor Imports</h3>
+
+<ul>
+<li>Imm32 from WINE</li>
+<li>Dxdiagn from WINE</li>
+</ul>
+
+<h3>WineCalc</h3>
+
+<ul>
+<li>Hex->Dec, Bin->Dec, and Oct->Dec conversions now work correctly</li>
+</ul>
+
+<h3>USB</h3>
+
+<ul>
+<li>Minimize differences between UHCI and OHCI</li>
+</ul>
+
+<h3>User32</h3>
+
+<ul>
+<li>Implemented LB_INSERTSTRING_UPPER</li>
+<li>Implemented LB_INSERTSTRING_LOWER</li>
+<li>Implemented LB_ADDSTRING_UPPER</li>
+<li>Implemented LB_ADDSTRING_LOWER</li>
+</ul>
+
+<h3>XML Files</h3>
+
+<ul>
+<li>AllowWarnings = True, so Explorer, iBrowser, and Telnet can be built with dbg=0</li>
+</ul>
+
+<h2>Next Week?</h2>
+
+<p>It's Christmas! I think a Boxing Day issue would suit better, and next week, I'll be explaining how even a Eye-Dee-Ten-Tee User can download, compile, and Install their very own copy of ReactOS, straight from the SVN Trunk.</p>
+
+<p>Until Next Week.. Happy Compiling!</p>
+<p>Stuart <a href="mailo:TwoTailedFox@Gmail.com">"TwoTailedFox"</a> Robbins</p>
+<p>ReactOS Weekly Newsletter Editor</p>

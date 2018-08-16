@@ -1,0 +1,27 @@
+---
+title:       "Newsletter 76"
+author:      "Z98"
+type:        news
+date:        2010-09-08
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-76
+aliases:     [ node/217 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Hunting Dangling Pointers</li>
+# <li>PCI and Company</li>
+# </ul>
+
+---
+<h2>Hunting Dangling Pointers<br /></h2>
+<p>There has always been a suspicion and concern amongst the ReactOS developers that there are points of sloppiness in ReactOS with respect to memory management.  These can be fairly innocuous when at the user mode level, but in kernel mode can lead to data corruption and other problems.  Cameron Gutman, Timo Kreuzer, and Michael Martin have just managed to find and fix what was perhaps the most serious of these suspected leaks.  Michael had encountered the issue when running ROS in his customized version of QEMU but could not find the exact line of the corruption.  Timo eventually found the line in question during his own investigations and Cameron helped verify the cause and test possible fixes.</p>
+<p>The problem relates to how memory for individual processes are managed.  In most modern operating systems, each process has what is known as a virtual address space.  These spaces fill the entire range of a platform's native size, so 32 bits effectively gives one 4GB of memory addresses.  There's considerably more to virtual memory management than that, but the simplified explanation will suffice.  These address spaces essentially allow a process to not have to worry about the memory usage of other processes, at least on a naive level.  That complexity is left to the operating system and the hardware running everything.  However, the OS does need to do some bookkeeping and maintains a doubly linked list of processes for this purpose.  Linked lists basically hold not only the data one wants them to but also a reference to the next item in the list.  Doubly linked lists hold a reference both to the next item and the preceding one.</p>
+<p>Because the list of processes is rather important to the OS, it was kept in non-paged pool, or kernel mode memory that is never paged out to disk and always in memory.  Since non-paged pool is a rather valuable and often very limited resource to the OS, it must be used carefully.  However, there was a bug in the code that did not remove entries from the list when processes were terminated.  This by itself would not have resulted in data corruptions, except the data in the lists were being freed.  Thus the area in memory being pointed to was no longer valid and could have been assigned to something else.  Even then the issue might have not affected the system activity, except that whenever a new process is created, a new entry must be added onto the list.  This required modification of the now invalid entry, as its next value must be set to the new entry.  However, if that area of memory was being used by something else, then its data would be modified and effectively corrupted.  Since non-paged pool is generally used for fairly critical pieces of data needed to keep everything running, any corruption to it becomes a very bad thing.  The fix for this is quite simply to remove the invalid entries, but the lack of the fix has been causing all sorts of headaches for developers and testers.</p>
+<h2>PCI and Company</h2>
+<p>An operating system is designed to provide users access to the functionality of the hardware it is running on.&nbsp; To do so, an OS needs the drivers to properly communicate with the hardware.&nbsp; Some components are so critical that without a driver for them, the computer is effectively unusable and the OS itself can do very little.&nbsp; ReactOS has always tried to maintain a basic level of functionality, which requires supporting at least the interconnects that tie together the bits and pieces of hardware that make up a computer.&nbsp; The Peripheral Component Interface is one of the primary interconnects, however support for this standard and others was so primative that few of the interconnects were being utilized at anywhere near their full potential.</p>
+<p>For the most part ReactOS was using legacy modes that existed primarily for backwards compatibility and its drivers were never really updated.&nbsp; They worked, albeit with major performance penalties relative to what the hardware was capable of.&nbsp; It would also be not at all surprising if some of the hardware compatibility issues people suffered were due to ReactOS not supporting the required functionality.&nbsp; Some of functionality is truly basic, such as native IDE for harddrives and the Accelerated Graphics Port for older graphics cards.&nbsp; Others are more laptop specific, such as PCI-to-PCI bridges used for docking stations, PCMCIA for various wireless network cards and readers, and power management for battery support.&nbsp; Still others are better categorized in the server and workstation category, such as hot pluggable PCI.&nbsp; The ARM team has been slowly working on the necessary drivers for the above mentioned and have started committing them into the repository.&nbsp; With this, compatibility on real hardware, not just virtual machines, should improve significantly, along with performance.&nbsp; With their help, another piece needed to having a functioning and usable operating system is falling into place.</p>

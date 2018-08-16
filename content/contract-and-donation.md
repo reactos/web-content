@@ -1,0 +1,25 @@
+---
+title:       "Contract and Donation"
+author:      "Z98"
+type:        news
+date:        2012-09-03
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /contract-and-donation
+aliases:     [ node/318 ]
+news:        [ "news" ]
+
+---
+
+<h2>Contract 1 Summary Report<br /></h2>
+<p>The contract issued to Edijs Kolesnikovics has now concluded and the following is a summary of the work completed.</p>
+<p>Installation tests were created for all applications part of the Golden Apps list. One additional test was also created for each to at least attempt to run the application after installation, with some exercising simple functionality. These tests were verified to work on Windows before integration into the ReactOS test suite.</p>
+<p>A variety of issues cropped up in sending specific commands to applications, including one variation of ALT+N not working due to their non-standard use of controls.</p>
+<p>Additional checking was added to the test framework instead of solely relying upon what AHK reported.</p>
+<p>As Edijs progressed with the contract, he gained additional experience in software development and slowly improved code organization and implementation methodology, streamlining the tests and framework where it was appropriate. Room for further improvement exists.</p>
+<p>The ReactOS Foundation is pleased with the outcome of this contract and consider the terms it was issued under complete. Amine Khaldi, the supervisor for this contract, has recommended that an extension be made to continue development of additional tests. This extension would seek to help automate some of the tests run to find regressions during the ramp up to new releases.</p>
+<p>Integration of tests is being handled by other developers, with ones already added to the test suite visible on summary pages like this <a href="http://reactos.org/testman/compare.php?ids=13377">one</a>. The tests at the bottom prefixed with zz are AHK application tests.</p>
+<h2>A Most Generous Donation</h2>
+<p>The ReactOS Foundation recently received a donation of 3000 Euros for its current campaign by one Kromdijk J H, intended to help the project fund paid development. The project would still like to offer our thanks for this donation. The target goal for the year is 30,000 Euros and this donation by itself represents 10% of that objective. As one can see from the above report, the Foundation is putting the money to good use.</p>

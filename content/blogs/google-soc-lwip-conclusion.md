@@ -1,0 +1,38 @@
+---
+title:       "Google SoC lwIP Conclusion"
+author:      "zhu48"
+type:        blog
+date:        2016-08-23
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-conclusion
+aliases:     [ node/17308 ]
+
+---
+
+<p>My Google Summer of Code project proposal stated that I would add TCP support to the network branch of ReactOS, which sought to integrate lwIP 1.4.1 as the protocol level network driver for the operating system, to ultimately be tested by replacing the network driver in an installation of Windows Server 2003 with my driver. The full proposal can be found <a href="https://storage.googleapis.com/summerofcode-prod.appspot.com/gsoc/core_project/doc/1458893019_Proposal.pdf?Expires=1472003860&amp;GoogleAccessId=summerofcode-prod%40appspot.gserviceaccount.com&amp;Signature=e%2BcWLYjJVsZMVKkoyQTUL5sGz0fom2%2Br9hkYAmXFxteS9tkLWmvKTmbcN%2BB24vKyoVm7KNHd880UBdH174gwJqO9h00X19%2B88kKYXRauo8WxO4RrCpK5yR9ceqmHRNZRg8W%2BV2Y2DBOx%2B03Bk2DRdVpzJL44SCaQ%2FTzoVfSmdWBno%2BN6CEm6QjshL%2Bh7zGV31vNgwQfskVnqVRTNduXps333okxnpoiyKyC3smEdz7WTACcAX12R9bU4%2F%2F2OiMsoJ9va5cdQ0s60t%2F%2Bf%2BGsLowYN7T2VFPicYuV1tgq9qPhOXYLKDwRLXAmSekQujvrPYemXwyvHwjh1VjpWE1%2BMvQ%3D%3D">here</a>. At the time of my proposal, I underestimated the amount of effort a fully working network driver would take. I spent a large chunk of time familiarizing myself with Windows' AFD/TDI driver framework as wll as lwIP before I could write maintainable, robust driver code. I documented my various struggles with AFD/TDI semantics and NT Interrupt Request Packets in the following blog posts.</p>
+<p><a href="https://www.reactos.org/ru/node/10198">Week 1</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-2">Week 2</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-3">Week 3</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-1-0">Week 4</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-5">Week 5</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-6">Week 6</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-7">Week 7</a></p>
+<p>After an initial attempt at supporting TCP, I spent most of the rest of the summer grappling with lwIP's inherent lack of thread-safety in a totally asynchronous NT kernel environment. Not only did I struggle with lwIP's threading problems, I had to do some code restructuring to make my own data structures thread safe. The following blog posts document my discovery and resolution of these problems.&nbsp;</p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-8">Wekk 8</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-9">Week 9</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-10">Week 10</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-11">Week 11</a></p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-12">Week 12</a></p>
+<p>Getting a good grasp of both the NT kernel driver framework and lwIP took up the first seven weeks. Resolving multi-threading issues took the next five weeks. With only a single week left before the end of Summer of Code, I could not possibly finish full browser support, let alone a fully featured and robust driver that could replace the Windows Server 2003 driver. In the last week, I did as much as I could to flesh out UDP (which I inadvertantly broke) and TCP to the point of usability.&nbsp;</p>
+<p><a href="https://reactos.org/blogs/google-soc-lwip-report-week-13">Week 13</a></p>
+<p>I definitely did not manage to finish my goals for this Summer of Code project that I laid out in the beginning. However, I did end up with a fairly robust TCP/IP driver capable of supporting C console applications that use TCP and UDP sockets. I managed to only extensively test it on loopback, but my tests proved that the TCP driver could handle an excessive number of short-lived user sockets on multiple threads without errors.&nbsp;</p>
+<p>The ReactOS project uses SVN for version control. As with other Summer of Code participants, ReactOS gave me my own working branch. I used two different branches, linked below.&nbsp;</p>
+<p><a href="https://svn.reactos.org/svn/reactos/branches/GSoC_2016/lwIP/">Initial branch, used until partway through the project</a></p>
+<p><a href="https://svn.reactos.org/svn/reactos/branches/GSoC_2016/lwIP-tcpip/">Final branch, used for the remainder of the project</a></p>
+<p>All changes made after each branch's creation represent my work. Instructions for building and running ReactOS are available on the <a href="https://reactos.org/wiki/Welcome_to_the_ReactOS_Development_Wiki">ReactOS wiki</a>. The final branch, linked above, is a functional fork of ReactOS trunk where I replaced the majority of the contents of the drivers/network/tcpip/ directory. Most of the code in that directory was written before I started my project, and most of my modifications reside in address.c and address.h. All changes in other files were made to support changes made in address.c and address.h.&nbsp;</p>
+<p>This branch also includes the C console applications - "server.exe" and "client.exe" - that I used to test TCP functionality. The source code for those programs reside in the base/applications/network/ directory, in tcpclient/ and tcpserver/. They can be run by opening up two command consoles in ReactOS and typing "server" in one and "client" in the other.&nbsp;</p>
+<p>This driver is still incomplete and not able to handle full fledged browsers, since some TDI messages remain unimplemented or partially implemented.&nbsp;</p>
+<p>I would like to thank Amine Khaldi, Art Yerkes, Ziliang Guo, and Thomas Faber from ReactOS for supporting my development effort.&nbsp;</p>
+

@@ -1,0 +1,21 @@
+---
+title:       "GSoC: USBxHCI driver development work status"
+author:      "ramateja.g"
+type:        blog
+date:        2017-07-13
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-usbxhci-driver-development-work-status
+aliases:     [ node/46975 ]
+
+---
+
+Welcome to my third blog post.  Sorry for the missed blog post from last week. I was stuck over an issue which kept me occupied. With the help of community I finally got over it. I had to calculate an address by adding a value taken from another register to the base address. This led to a typecast issue. Due to huge number of steps required to generate interrupt I didn't suspect the problem to be where it is initially. In this post I'll detail my steps on how I found out where the problem was.
+
+The code for generating interrupts was ready yet there were no results. While going through the documentation I saw that generating interrupt is not compulsory we can even make do by polling the controller in regular intervals. At that point the driver was loading and PollController function was regularly being executed. So I thought of keeping the interrupt issue aside and make do with polling. But first I wanted to check if the command ring and event ring were working properly. For that I decided on placing a no-op command on the command ring and check if it is being executed. This should lead to command completion event being placed on the event ring.
+
+I started writing a check controller function to do all these… When I placed a no-op command on the command ring and rang the doorbell there was no output. Then I printed the command ring control register which had the pointer to command ring to check if the value is being written correctly. It was being written correctly. But when I rang the doorbell, command ring running (one of the fields in command ring control register) was supposed to be set 1. But it didn’t change. Then I printed out the event ring related registers which were supposed to give out the address written to them but they were giving out 0. That was where I got stuck for some time. I realized that the common point in both the cases was the address calculation. So I sent the documentation related to address calculation and my code to other developers in irc channel. They pointed out the typecast mistake I’ve done. Once that was cleared up, there were a few minor issues.  After solving all those I finally got a command completion event placed on the event ring. For now the completion status code is not a success but the mechanism is working. 
+
+Once that got cleared up I changed the enable interrupt function. In windows 2003 server edition running on Vmware, when I connected a USB 3 Pen drive it generated an interrupt and called the interrupt service routine. From here on I’ll have to write the port status functions and start work on USB device initialization. 
+

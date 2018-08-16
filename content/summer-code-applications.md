@@ -1,0 +1,32 @@
+---
+title:       "Summer Of Code Applications"
+author:      "fireball"
+type:        news
+date:        2006-05-27
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /summer-code-applications
+aliases:     [ node/262 ]
+news:        [ "news" ]
+
+---
+
+<h2>Summer Of Code: Winning applications for ReactOS project</h2>
+<p>It's time to announce the results of the first phase of Google Summer Of Code project.<br/>
+Some statistics: ReactOS has&nbsp;got&nbsp;4 slots (our&nbsp;number desired projects was 12), and got around ~30 applications (plus 4 applications were classified as ineligible, and 2 more has been redirected to Google).</p>
+<p>Results:</p>
+<ul>
+    <li>ReactOS Print Spooler Service (spoolsv) by Peter Windridge, mentored by Alex Ionescu.</li>
+    <li>Remote Desktop Client application &amp; ActiveX control by Michele Cicciotti, mentored by Alex Ionescu</li>
+    <li>Login System by Justin Haygood, mentored by Thomas Weidenmueller</li>
+    <li>Clipboard Server API implementation by Pablo Borobia, mentored by Thomas Weidenmueller</li>
+</ul>
+<p>I congratulate the winning students, they did a great job at picking up complex, but interesting and needed topics, and providing applications, which showed they are capable of performing these tasks.<br/>
+However,&nbsp;students who were rejected shouldn't feel like loosers, their apps were&nbsp;great too (we could take 8 more apps), but this time we&nbsp;weren't given them&nbsp;since there are other orgs which need slots too. I would&nbsp;highly appreciate if some of the &quot;rejected&quot; students would consider implementing his stuff even without sponsorship (possibly aiming at SoC 2007).</p>
+<p>And, I want to thank Alex Ionescu for picking up the most of administrative work from me, participating in SoC administrators mailing list, and&nbsp;Thomas Weidenmueller, Filip Navara and Magnus Olsen for ranking applications and their will to be mentors.</p>
+<p>Certainly, the big thanks goes to Google for making it possible, and for accepting ReactOS in SoC!</p>
+<p>&nbsp;</p>
+<p>Aleksey Bragin,<br/>
+ReactOS Project Coordinator</p>

@@ -1,0 +1,92 @@
+---
+title:       "NTFS Write Support GSoC - Weeks 9, 10, 11"
+author:      "coderTrevor"
+type:        blog
+date:        2016-08-05
+changed:     2016-08-08
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/ntfs-write-support-gsoc-weeks-9-10-11
+aliases:     [ node/15703 ]
+
+---
+
+<p>Wow, these weeks keep blazing by! Apologies for the missed updates; I've been faced with a family emergency for the past couple of weeks. My girlfriend's dad was in the hospital for 13 days after having a heart attack, getting a triple-bypass, then suffering from Ogilvie syndrome after surgery. He got out Saturday and is recovering. It's been a very long, scary time for my girlfriend and her family and she needed my support full-time. I've been keeping my mentor, Pierre, and the GSoC admins Amine and Thomas updated on the situation, and everyone has been very understanding and supportive.</p>
+
+<p>I wasn't able to get to my week 9 update on-time, same with week 10, and I didn't get much work done during weeks 10 or 11, so I decided to just combine the updates.</p>
+
+<p>I spent most of week 9 wrapping up the remaining issues with file overwriting, especially migrating resident attributes to non-resident. I remember making some progress but as I said during my week 8 update, I was getting burnt-out and it was really dragging on. I'll make sure it's committed in a finalized state before the end of GSoC. It really isn't a hard problem at all, I just needed to work on something else for a little bit.</p>
+
+<h3>File Creation</h3>
+
+<p>Near the end of week 9 I shifted gears into file creation. I should have done this sooner! It was really invigorating to make some fresh progress. I'm not even sure exactly what it was about overwriting files that had me so burnt-out, but I really needed a change.</p>
+
+<p>I set out to identify which file creation scenario produces the least amount of changes to the disk. It stands to reason that the scenario with the least changes will be the easiest to implement, and that's where I wanted to start. Throughout this project, my methodology has been to identify and implement the simplest case first and then build on that once it's working. This has worked well for me so far.</p>
+
+<p>Overall, what I've found from working on this project is that for a proprietary file system with such a reputation for mystery, NTFS is better documented than I expected. However, that documentation is not always easy to absorb and in the case of write-support, is never authoritative, which is why I needed to do some research of my own. Documentation is great but supplementing it with experiments and hex dumps of a live filesystem is how I learn best.</p>
+
+<h3>The Research</h3>
+
+<p>My strategy for researching file creation was simple:</p>
+
+<p><ol>
+<li>Start with a small volume (20 megs)</li>
+<li>Create a binary image of the volume (with no compression or special formatting)</li>
+<li>Create a file on the volume</li>
+<li>Image the volume again</li>
+<li>Compare the images</li>
+</ol></p>
+
+<p>Sounds simple, right?</p>
+
+<h3>Is Anything Ever Simple?</h3>
+
+<p>... It actually was :)</p>
+
+<p>I started out with my go-to tool, WinDiff:</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/windiff.png" alt="Windiff before and after creating a file"  class="imgp_img" width="929" height="642" /></p>
+
+<p>Woah, I wasn't expecting that many chages! I guess Windiff isn't quite the right tool for this job. No matter, I quickly wrote a little app that identified every change by cluster. From there, it was just a tiny step to get every change by <em>file</em>. This is something that's really cool about NTFS: every used cluster on the volume is assigned to a file. You can't study NTFS without being presented with this fact, but this was the first time I ever had an occasion to appreciate it.</p>
+
+<p>Having this list of changes gave me a lot of insight into what's happening behind the scenes, and which changes are unimportant.</p>
+
+<p>For instance, I could see that 4096 of the clusters that have changed are assigned to $LogFile. Logging is a very cool feature that allows NTFS to roll back to a known-good state if a system fails in the middle of a write for some reason. However, it isn't essential to the basic operation of the filesystem, which means I can ignore all of those changes for now, so I had my tool filter out the actual changes to $LogFile. I also noticed a lot of the changes being made were just updating the sequence number of fix-up arrays, so I made the tool detect when this happens.</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/simple_output.png" alt="Image"  class="imgp_img" width="896" height="543" /></p>
+
+<p>Another great thing about this tool, and one of the reasons I invested a few days time in creating it, is I'll no longer have to use my old method of debugging when a write goes awry. This relied on finding and parsing structures "by-hand" using WinHex. It was a very tedious, time-consuming process and I'm looking forward to never doing it again! :P</p>
+
+<p>Most especially, I don't think debugging Microsoft's proprietary B*Tree implementation will be possible without such a tool, which I suppose was my primary motivation for making it. (I'll definitely talk more about these trees in the future). I plan to refine this tool into a kmtest module later to ensure the directory index is being updated properly.</p>
+
+<p>Most of the changes the tool found were tracked to $Mft. That's to be expected but it's a bit of a cop-out, since $Mft holds every file record. So at the beginning of week 10, I updated the program to tell me exactly which file records are being written to.</p>
+
+
+<p>This made some other unimportant changes stand out, and these have piqued my curiosity a bit. Some system files, such as $AttrDef and $Bitmap, are being updated despite their contents not changing. You can see this when a file has its fix-up sequence number updated but has no other changes.</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/Changed_Files.png" target="_blank"><img src="/sites/default/files/imagepicker/49142/Changed_Files.png" alt="Image"  class="imgp_img" width="944" height="595" /></a></p>
+
+<p>At first I thought rebooting between creating images was the cause, but after more testing, I can't determine when Windows Server 2003 feels like touching these system files, only that it does so with some surprising regularity (again, despite their contents not changing). [Very little changes on a <a href="https://s3.amazonaws.com/gsoc2016/File_Creation_Data/Difference+between+boots.html">reboot</a>.]</p>
+
+<h3>So What is Important?</h3>
+
+<p>Once I knew which changes could be ignored, I could get back to finding the simplest file-creation scenario. You might think that would be to start with a freshly formatted volume and write a single file in the root directory. As it turns out, this results in a lot of changes to the $Security file. It seems these changes can be avoided by having at least one file in the root already. That's where I'll start: creating the 2nd file in the root directory.</p>
+
+<p>If you're curious, here's the differences between a <a href="https://s3.amazonaws.com/gsoc2016/File_Creation_Data/Differences+between+fresh+format+and+one+file.html">freshly formatted drive</a> and a single file on the root.</p>
+
+<p>Here's the differences between <a href="https://s3.amazonaws.com/gsoc2016/File_Creation_Data/diff+after+creating+2nd+file+on+root+-+Original.html">one and two files on the root</a>.</p>
+
+<p>Here's the same differences, but I've <a href="https://s3.amazonaws.com/gsoc2016/File_Creation_Data/diff+after+creating+2nd+file+on+root+-+Simplified.html">edited all changes that can be ignored</a> for one reason or another; Updates to fix-up arrays, references to $LogFile and log file sequence numbers, and some slack space at the end of the file record have all been removed.</p>
+
+<h3>Regression Caused but Fixed</h3>
+
+<p>Even though I was busy for most of weeks 10 and 11, I did get as much work in as I could (which wasn't much). Near the end of week 10, I managed to fix a <a href="https://jira.reactos.org/browse/CORE-11707">regression</a> one of my earlier patches caused. I remember when I started on this project back around March, I promised myself "I'm not going to submit any bugs in my patches." That promise was broken pretty quick. Then I thought "I'm not going to commit code that breaks the build." I kept that up for a good while, until I forgot to recompile after copy/pasting a small bit of code one day. I think regressing the build was the last open-source faux-pas I had left to commit. I hope it is, anyway! :P</p>
+
+<p>I think fixing that regression was a good experience though, because it's the first time I've needed to get logs from someone else to find and fix a bug.</p>
+
+<h3>Nearing the End</h3>
+
+<p>Again, I'm sorry for the absence! I'm also keenly aware that GSoC is nearing it's end. :,( My immediate goal is to get ReactOS creating a file on an NTFS drive before that happens!</p>
+
+<p>I got back to work over the weekend, and I wrote some code that can create a file record in memory. I also took five minutes to write some code to print a hex dump of the file record, because I learned that having such a feature is invaluable when I was working on updating data runs. The next steps are to add attributes to the file record, write the record to the MFT, and update the index of the parent directory. I hope to get all of this done by next week!</p>

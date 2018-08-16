@@ -1,0 +1,22 @@
+---
+title:       "USB stack improvements GSoC - Week 10"
+author:      "VardanM"
+type:        blog
+date:        2016-08-02
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-stack-improvements-gsoc-week-10
+aliases:     [ node/15444 ]
+
+---
+
+<p>Since previous post I have done few tasks and learned a lot of things. Generally, I was reading and thinking about WDM’s PnP handling concepts. In general, I’ve improved my understanding of PnP and also learned about remove synchronization. Also I’ve investigated some corner cases and problems of WDM related remove synchronization topic. I think this learning is definitely a big investment into my future as NT driver developer.</p>
+<h4>Interesting thing with DV’s Enhanced I/O Verification</h4>
+<p>Here I have faced few issues which was not seen without Enhanced I/O Verification flag set. After fixing all of them I have found an interesting thing which I guess will be interesting for any driver developer who works under 2k3. The DV was reporting an issue in a place where from code perspective everything is ok. “WDM DRIVER ERROR: This IRP is about to run out of stack locations”. Let me describe the situation. I was using IoSkipCurrentIrpStackLocation() and passing IRP to lower stack, &nbsp;and the lower stack was passing IRP down using only IoSkipCurrentIrpStackLocation(). But as you can see DV is complaining on stack locations. After some investigation I have found that DV with enhanced I/O validation was replacing skip-stack-location with copy-to-next-stack-location.</p>
+<p>Why?</p>
+<p>As said one of developers of DV, “DV is overaggressive in this case”. It is trying to show that *if one of the drivers on this device stack will change its design in the future, and not Skip the stack location anymore*, then the IRP will run out of stack locations. And this behavior is excluded from DV in further versions.</p>
+<p>After finishing with Enhanced I/O Verification, I have added remove synchronization to our usbhub. This is very interesting topic to investigate and also to implement. I have read the ch-6 from Walter Oney’s “Programming the Microsoft&nbsp;Windows Driver Model” where very carefully described all aspects and corner cases.</p>
+<p>Sent final pull request for usbhub, so now I can go forward for further tasks. Hope after finishing of review of this big commit set we’ll see this commits in ROS’s trunk.</p>
+<p>&nbsp;</p>
+

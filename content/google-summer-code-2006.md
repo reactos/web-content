@@ -1,0 +1,30 @@
+---
+title:       "Google Summer Of Code 2006"
+author:      "frik85"
+type:        news
+date:        2006-04-19
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /google-summer-code-2006
+aliases:     [ node/259 ]
+news:        [ "news" ]
+
+---
+
+<h2>Google Summer Of Code 2006</h2>
+<p><b>Good news: Google SoC just granted ReactOS submission to <a href="http://code.google.com/soc/" target="_blank">SoC 2006</a> !</b></p>
+<blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+<p><font face="Courier New">Aleksey Bragin's (Project Coordinator&nbsp;of ReactOS) email to the mailing list:</font></p>
+<p><font face="Courier New">We are negotiating technical details now, and soon information will appear on the official SoC 2006 web-site.</font></p>
+<p><font face="Courier New">Meanwhile, we already should start compiling a list of project's suggestions for it. Everyone is welcome to provide suggested projects, however please have in mind that only 1 student can do one project (or separate part of the bigger project). The project should sound interesting to a student who takes it, it should be doable and should have exact tasks to do.</font></p>
+<p><b><a href="http://www.reactos.org/archives/public/ros-general/2006-April/002167.html">[more]</a></b></p>
+</blockquote>
+<p>For&nbsp;everyone&nbsp;who does not&nbsp;know what Google's SoC is check out the 'What is Summer of Code 2006' section in their <a href="http://code.google.com/soc/studentfaq.html#1"><strong>FAQ</strong></a>.</p>
+<ul>
+    <li><a href="http://code.google.com/soc/reactos/about.html"><strong>ReactOS SoC '06 official page on google.com</strong></a> </li>
+    <li><a href="http://www.reactos.org/wiki/index.php/Summer_of_Code_2006">ReactOS SoC '06 - <strong>Ideas Wiki page</strong></a> </li>
+    <li><a href="http://www.reactos.org/archives/public/ros-general/2006-April/002167.html">ReactOS SoC '06 - <strong>Mailing List Announcement</strong></a> </li>
+    <li><a href="http://code.google.com/soc/studentfaq.html">ReactOS SoC '06 - <strong>Student FAQ</strong></a> </li>
+</ul>

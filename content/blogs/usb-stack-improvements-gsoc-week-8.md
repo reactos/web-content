@@ -1,0 +1,26 @@
+---
+title:       "USB stack improvements GSoC - Week 8"
+author:      "VardanM"
+type:        blog
+date:        2016-07-18
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-stack-improvements-gsoc-week-8
+aliases:     [ node/14023 ]
+
+---
+
+<div>I have spent this week on improvements of realization and done stability fixes in usbhub PDO/FDO.</div>
+<div>&nbsp;</div>
+<div>I have prepared usbhub FDO's handling of removal and surprise-removal IRPs. We'll receive surprise-removal IRP on HUB unexpected removal, or on USB controller removal from PCI port. Here hub should "let know" all its children that their parent is removed and on next removal they also can be removed. For now this code path can't be tested because none of our host controllers can be removed now(they are failing query remove). But surely I must fill all cases to go forward and not get back to this later. Related to removal-IRP, now it is ready to work.</div>
+<div>&nbsp;</div>
+<h4>Is there anything more important than safety of our children?</h4>
+<div>I have added synchronization for FDO's child list access. As FDO's child list is getting changed not from PnP dispatcher but from DeviceStatusChangeThread(), we need to synchronize access for it. For this at first turn I have used spinlock, but then I have found that there is more preferable guarded mutex because in some code paths it requires be in PASSIVE_LEVEL which is impossible with spinlock held.&nbsp;&nbsp;So now our usbhub FDO's child list is safe place for its children ^_^ .</div>
+<div>&nbsp;</div>
+<div>Also I've added PnP state tracking for FDO/PDO sides. This is done to make our codes more understandible and also to increase safety of code. Implementation is done like in MS's sample bus drivers.</div>
+<div>&nbsp;</div>
+<h4>Let's make our code a learning place.</h4>
+<div>Some of described above is already pushed to my github, but also there is codes for which I haven't created commits yet. As you may see in my repo, all my commits are documented, and that’s requires some time to prepare well documented commits. As I mentioned before, for me well documentation of commits and commenting of code is the first priority in contribution to open source projects. Because this type of projects is also learning point for programmers of all ranks.</div>
+<div>&nbsp;</div>
+

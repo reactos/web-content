@@ -1,0 +1,27 @@
+---
+title:       "XHCI Ring Data Structures "
+author:      "ramateja.g"
+type:        blog
+date:        2017-07-18
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/xhci-ring-data-structures
+aliases:     [ node/47219 ]
+
+---
+
+xHC functioning mostly depends on different ring data structures. In this blog post I’m going to detail what a ring is in XHCI and various implementations by Linux and Haiku. 
+A ring is a circular queue of data structures. There are three kinds of rings in xHC. 
+1.	Command ring
+2.	Event Ring
+3.	Transfer Ring
+
+These rings are the basis of communication with the Controller. Command Ring is used to send commands to the controller. Event Ring is used to give detail of Interrupts by the Controller to Software. Transfer Rings are used to move data between system memory buffers and device endpoints. All the rings have one thing in common. They contain Transfer Request Block(TRB). There are Command TRBs for Command ring and similarly for others.  
+
+A Link TRB indicates the end of a ring by providing a pointer to the beginning of the ring. The Link TRB provides support for sizing and non-contiguous Transfer and Command Rings. Rings are an array of TRBs with the last TRB being a link TRB. Contiguous memory allotment is not possible all the time and also as the size increases it becomes exceedingly difficult. Hence to expand the ring it can be broken into segments. Each segment is an array where the link TRB points to the next segment. For the last segment the link TRB points to the head of the first segment thus making a ring.
+
+In Haiku it is implemented such that a ring struct contains pointer to a segment, enqueue and dequeue pointers.  A segment has a pointer to TRB and next segment. But it looks like the driver is still in development as the ring structure is simply implemented as an array for now. 
+In Linux it is well defined. Ring struct has Pointer to first segment, Pointer to last segment, Enqueue pointer, Dequeue pointer, Enqueue segment, Dequeue segment, Transfer descriptor list head etc.  For now I’ve implemented it like in Haiku so that I can check the working of the controller with relative ease. But the final goal is to implement like in Linux. 
+
+

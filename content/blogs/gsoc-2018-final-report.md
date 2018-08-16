@@ -1,0 +1,52 @@
+---
+title:       "GSoC 2018 - Final report"
+author:      "extravert34"
+type:        blog
+date:        2018-08-14
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-2018-final-report
+aliases:     [ node/69576 ]
+
+---
+
+<h2>Introduction</h2>
+<p><a href="https://github.com/maharmstone/btrfs">WinBtrfs</a> is a feature-complete IFSD (Installable File System Driver) for NT operating systems, written by Mark Harmstone. This driver is checked into the ReactOS source code for some time already. My main goal for this GSoC project was to implement all missing features (and fix bugs, of course) in ReactOS that prevents booting from BTRFS file system.</p>
+<h3>Links</h3>
+<p>All work is merged into <a href="https://github.com/Extravert-ir/reactos/tree/gsoc2018_all/">gsoc2018_all</a> branch in my ReactOS fork on GitHub. A pull-request can be found <a href="https://github.com/reactos/reactos/pull/743">here</a> and unified diff is <a href="https://patch-diff.githubusercontent.com/raw/reactos/reactos/pull/743.patch">here</a>.  You can check it out like an ordinary ReactOS repo and build it as. See official <a href="https://www.reactos.org/wiki/Building_ReactOS">Building Instructions</a> for full information.</p>
+<h2>What has been done</h2>
+<h3>FreeLoader BTRFS support</h3>
+<p>Basic read-only support has been implemented in the “FreeLoader” bootloader. The implementation is able to do path traversing, can handle hard and symbolic links and reads files splitted to several extents.
+<br>Only single-disk uncompressed setup is supported right now. Other WinBtrfs features can be added once ReactOS will support them.</p>
+<img src="/sites/default/files/gsoc2018_final1.png">
+<p>Code for a VBR (Volume Boot Record) has also been written from scratch in ASM to support early boot phase when CPU is in real mode. It loads main bootloader executable into memory - freeldr.sys</p>
+<h3>Installer</h3>
+<p>ReactOS first-stage installer (usetup.exe) is now able to format partitions to BTRFS file system, install proper VBR for it and of course copy all the needed ReactOS files into it :)</p>
+<img src="/sites/default/files/gsoc2018_final2.png">
+<p></p>
+<h3>Driver fixes</h3>
+<p>A couple of bugs were found in WinBtrfs driver during testing. One is related to NtQueryDirectoryFile kernel function, which returned wrong information under some circumstances.<br>
+Another one is about driver behaviour upon system shutdown. The driver tried to free its structures too early and that led to occasional BSODs.<br>
+Both fixes were sent upstream (<a href="https://github.com/maharmstone/btrfs/pull/102">PR#102</a> and <a href="https://github.com/maharmstone/btrfs/pull/103">PR#103</a>) and are waiting to be merged.</p>
+<h3>ReactOS fixes</h3>
+<p>Not only driver issues were found during testing of BTRFS boot. Another bug was found and fixed in <a href="https://www.microsoftpressstore.com/articles/article.aspx?p=2201309&seqNum=3">FastIO</a> code, which is not used within the FAT file system. This small fix made WinBtrfs work in a much more stable way, and other third-party drivers can benefit from it too.
+There is also a memory leak which I was not able to triage before the GSoC ending. This leak prevents ReactOS self-hosting on BTRFS filesystem (because checking out the source code and building binaries requires a lot of IO). I’m going to fix it after GSoC ending.</p>
+<img src="/sites/default/files/gsoc2018_final3.png">
+<p></p>
+<h3>Other tools</h3>
+<p>For faster development, I have made a python tool for traversing BTRFS structures on raw disk (or binary file, converted from VM image). It can be found at <a href="https://github.com/Extravert-ir/reactos/tree/gsoc2018_all/modules/rosapps/applications/devutils/btrfstools">modules/rosapps/applications/devutils/btrfstools</a></p>
+<img src="/sites/default/files/gsoc2018-4.png">
+<p></p>
+<h3>Conclusion</h3>
+<p>All this work lead to successfully booting ReactOS from BTRFS partition! Sounds too simple :)
+Thanks cernodile and Illen from the community, who made a video of the process:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8Ystmr5L9PU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<h2>What has not been done</h2>
+<p>Windows 2003 still has issues with booting from BTRFS using FreeLoader. This is the only goal which has not been reached during this GSoC. But this is not the end, I will fix it later, of course (see news from the upcoming Hackfest).</p>
+<p>There are still issues with BTRFS on ReactOS (see memory leak above), so it is not yet as stable as the FAT filesystem.</p>
+<h2>What's next</h2>
+<p>First of all, I thank GSoC that gave me an opportunity to work with such great team. I will definitely stay with ReactOS project and will continue kernel development here.</p>
+<p>During upcoming Hackfest, It is planned to merge all BTRFS work.
+I am also going to fix as much bugs as possible and will try to make ReactOS as stable with BTRFS as it is with FAT file system :)</p>
+

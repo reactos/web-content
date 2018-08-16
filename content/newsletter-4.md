@@ -1,0 +1,101 @@
+---
+title:       "Newsletter 4"
+author:      "TwoTailedFox"
+type:        news
+date:        2005-11-07
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-4
+aliases:     [ node/144 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>ReactOS and other Software</li>
+# <li>ReactOS as a Distribution?</li>
+# <li>How far will ReactOS go?</li>
+# <li>Eye on SVN</li>
+# <li>Next Week ...</li>
+# </ul>
+
+---
+<h2>ReactOS Weekly Newsletter Volume 1, Issue 4</h2>
+
+<p>Issue 4. A full month of Newsletters, and we're only just beginning.</p>
+
+
+<h2>ReactOS and other Software</h2>
+
+<p>I said I'd do this last week, and I'm not one to cut back on a promise.</p>
+
+<p>So, to clarify, ReactOS is an Operating System. What is an Operating System supposed to include? Well, there are several mentalities.</p>
+
+<ul>
+<li>The Linux Distro Approach. All the software you'd ever need on one DVD, and then some.</li>
+<li>The Minimalist Approach. Just a Kernel, GUI, and a handful of small applications.</li>
+<li>The Windows Approach. The Kernel, GUI, and a lot more apps, but not enough to be swamped by them.</li>
+</ul>
+
+<p>Now, I've seen many a person come up with the same idea: Why not do a ReactOS-programmed Media Player, or Internet Browser? Well, ReactOS is an open-source project. We have the inherent benefit of having the Community on our side. Thus, it makes little sense to Re-invent the Wheel.</p>
+
+<p>For a Media Player, we have two options. MPlayer, or VideoLAN. Each has its own advantages and disadvantages, but, feature-wise, VLC comes out on top. It's also licensed under the GPL and LGPL, thusly making it license-compatible with ReactOS.</p>
+
+<p>Mozilla Firefox, in many circles, is considered the best Open-Source Browser. Now, it can operate in one of two ways, with regards to licenses. It can either exclusively use the Mozilla Public License, or a Tri-License combinartion of the MPL, GPL, and LGPL. Can Mozilla Firefox be included with ReactOS? Well, seeing as Linux Distributions (that are also released under the GPL) like Ubuntu, include Mozilla Firefox, I see no hurdle to ReactOS including a copy later on down the line.</p>
+
+<h2>ReactOS as a Distribution?</h2>
+
+<p>ReactOS, when it has more fully matured, has the rather distinct possibility of being made into 'Distributions'. You could have someone putting together a ReactOS Server Distribution, or even a ReactOS KDE/GNOME Edition. Both KDE and GNOME are scheduled to have Windows versions by next year</p>
+
+<h2>How far will ReactOS go?</h2>
+
+<p>It's often been asked "Will ReactOS include DirectX, NTFS, .NET, etc?". DirectX functionality will hopefulyl be present, but NTFS is another matter... Under the terms of the Windows License, you can use a Windows XP NTFS.sys with ReactOS, as long as you own a Legal Copy of Windows XP. .NET functionality will hopefully be provided by Mono. .NET, contray to the fact that it's a Microsoft-developed Language, is an open standard. Mono is the open-source equivalent of the .NET Framework.</p>
+
+<p>ReactOS will provide the Core of the Operating System. What you add on, is up to you.</p>
+
+<h2>Eye on SVN</h2>
+
+<p>Now, speaking of Mozilla Firefox, IntEngAlphaBlend has now been implemented, which means that all the menu's and buttons now actually look right on Mozilla Firefox, when used on ReactOS.</p>
+
+<p>It's been a pretty slow week on ReactOS, I'm going to attribute that to Halloween, and Guy Fawkes Night.</p>
+
+<p>SVN has seen the usual flurry of bug and compile fixes, but I have seen a few gems this week. IntEngAlphaBlend was one, here are the others:</p>
+
+<ul>
+<li>Visual Studio files have been renamed, so they're easier to work with.</li>
+<li>The Dir Command now works like in MS CMD.</li>
+<li>i8042prt now only searches for a mouse and keyboard once.</li>
+<li>mouclass has now been rewritten, so it supports more than one working mouse simultaniously. Only one cursor supported, mind you.</li>
+<li>Driver Input Stack moved closer to Plug-and-Play Model.</li>
+<li>Further Wine 0.9 Syncs.</li>
+<li>gettype has been rewritten, now beginning to support Remote Computers.</li>
+<li>Mesa 6.4 Vendor Import - Being used for Software 3D Rendering in ReactOS.</li>
+<li>sc now partially implememted. Basic support for Starting, Stopping, Creation, and Deletion of Services.<li>
+<li>More than one USB Controller is now Supported - It was an Xbox hack, no longer needed.</li>
+<li>Primitive AlphaBlend test app added.</li>
+<li>Ctrl-key signals (i.e. Ctrl+C) are now properly sent to a child process correctly.</li>
+</ul>
+
+<h3>Implemented:</h3>
+
+<ul>
+<li>RtlSelfRelativeToAbsoluteSD2</li>
+<li>RtlCreateSystemVolumeInformationFolder - Still useless at this point.</li>
+<li>RtlInitializeUnicodePrefix</li>
+<li>RtlNextUnicodePrefix</li></ul>
+
+
+<p>ReactOS 0.2.8 has also now been "tagged" i.e. Archived in SVN. We also had a problem with NPFS, the Named Pipes File System, and a couple of Kernel32-related fixes. The fixes were correct, since our NPFS implementation is broken, but until more work is done on NPFS, those changes have been reverted.</p>
+
+<h2>Next Week ...</h2>
+
+<p>Next week, I'll be trying to cover where Security and ReactOS come together, after all, ReactOS is based along the lines of Windows NT, Security should be an issue that can be looked at.</p>
+
+<p>I'll also be covering the Unknown Soldier in ReactOS - FreeLoader. Without FreeLoader, ReactOS wouldn't even boot.</p>
+
+<p>Until next week, Happy Compiling!</p>
+
+
+<p>Stuart <a href="mailo:TwoTailedFox@Gmail.com">"TwoTailedFox"</a> Robbins</p>
+<p>ReactOS Weekly Newsletter Editor</p>

@@ -1,0 +1,56 @@
+---
+title:       "June 2018 meeting minutes"
+author:      "Harteex"
+type:        article
+date:        2018-07-22
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/june-2018-meeting-minutes
+aliases:     [ node/69569 ]
+
+---
+
+<p>2018-06-28<br />
+	19:00 UTC<br />
+	#meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:04 by Mark Jansen, as Colin Finck was running late.</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: ReactOS Hackfest on August 16-21</li>
+    <li>Point 3: 0.4.9 release on July 14</li>
+    <li>Point 4: Website developer/maintainer</li>
+</ul>
+
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Amine Khaldi</b> is doing the usual, Wine syncs and anything he can help with.</p>
+
+<p><b>Colin Finck</b> has been working on authentication modules for RosLogin and the final migration script. The migration is expected during a weekend in July, and should put an end to login problems and also solve the CAPTCHA problems.</p>
+<p>For more info on RosLogin and the progress, see the April and May meeting minutes.</p>
+
+<p><b>Hermès Bélusca-Maïto</b> is trying to fix some winstation things to get git bash (and mintty) working better. He's also finishing to remove some user profile hacks in services.exe.</p>
+
+<p><b>Pierre Schweitzer</b> had nothing development related to report, but mentioned he will present ReactOS at a conference next week.</p>
+
+<p><b>Stanislav Motylkov</b> continues to work on unresolved issues he has worked on before. He also wrote an <a href="https://habr.com/company/reactos/blog/414947/">article at Habrahabr (Russian IT site)</a> about fixing issues that prevented Git from running in ReactOS.</p>
+
+<p><b>Victor Perevertkin</b> is finishing work on the BTRFS bootsector code, which he thinks will be done this week.</p>
+
+<p>The other meeting participants (<b>Andreas Bjerkeholt</b>, <b>Daniel Reimer</b>, <b>Mark Jansen</b>, <b>Sylvain Petreolle</b>) had nothing to report or joined late.</p>
+
+<h2>Point 2: ReactOS Hackfest on August 16-21</h2>
+
+<p>Colin took over for agenda point 2, and wrote that not that many people had signed up yet for the Hackfest, which will take place from August 16 to 21. This one week of intensive work on ReactOS has been a great success in the past and the project really benefitted from it. A few expressed interest in participating during the meeting, and Colin will also ask other developers through private messages.</p>
+
+<h2>Point 3: 0.4.9 release on July 14</h2>
+
+<p>The above date was taken by Colin from an IRC message by Joachim, however neither he nor the typical changelog writers were present, so Colin wrote that he couldn't say how reasonable that date is.</p>
+
+<h2>Point 4: Website developer/maintainer</h2>
+
+<p>Timo mentioned someone emailing ros-dev regarding the website, and wondered if anyone talked to him. He asked if it was possible to hire for that position, to which Colin responded that it's generally possible, if a person is a student and ok with scholarship or can work as a freelancer. But at the moment it doesn't seem like anyone has time to be a mentor, to define and check goals.</p>
+
+<p>Meeting was closed at 19:39 by Colin Finck</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>

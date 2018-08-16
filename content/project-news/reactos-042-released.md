@@ -1,0 +1,18 @@
+---
+title:       "ReactOS 0.4.2 Released"
+author:      "Z98"
+type:        news
+date:        2016-08-16
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/reactos-042-released
+aliases:     [ node/16671 ]
+news:        [ "news" ]
+
+---
+
+<p>The ReactOS Project is pleased to announce the release of version 0.4.2, again within three months of the previous release. The team sincerely hopes that this new rapid release cycle will hold for future releases as well. If there is one word to describe progress on the project, it would be steady. The project is reaching a point where rapid releases are viable, where disruption from introduction of major components or restructuring has been greatly reduced from the tumultuous early years and even as recently as the late 0.3.x series. This being the case 0.4.2 presents a fairly incremental update from 0.4.1, primarily because no showstoppers appeared that required the team to wait literally years in order to spin it out. This, ultimately, is a good thing.</p>
+<p>Beyond the usual updates to external dependencies such as Wine and UniATA, much work has gone into refining the experience of using ReactOS, especially with respect to the graphical shell and the file explorer. Perhaps the most user visible change however is the ability now to mount and read from several Unix filesystems, namely ext family, ReiserFS, and UFS. Native built-in support for these filesystems should make for considerably easier interoperability than the current out-of-box experience provided by Windows, and there is more to come in the future.</p>
+<p>More information about the release can be found <a href="https://reactos.org/wiki/0.4.2">here</a> and the bootcd is located <a href="https://sourceforge.net/projects/reactos/files/ReactOS/0.4.2/ReactOS-0.4.2-iso.zip/download">here</a>.</p>
+

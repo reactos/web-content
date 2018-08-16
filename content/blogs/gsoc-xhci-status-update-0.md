@@ -1,0 +1,21 @@
+---
+title:       "GSoC xHCI status update"
+author:      "ramateja.g"
+type:        blog
+date:        2017-07-28
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-xhci-status-update-0
+aliases:     [ node/47922 ]
+
+---
+
+In this post I’m going to detail my work progress. In the past week I’ve decided to clean up the code. Some parts of the code was re-written as functions. After that I’ve started working on the USB port status function. When an interrupt is generated the code is getting stuck in a loop.  I’m trying to figure out what caused it.
+
+As we’ve discussed in the previous blog post. Ring data structure is expandable. But for now I’m allocating memory without expansion. In general the implementation is such that memory is allocated in the HC_RESOURCES data structure. When allocating memory for the ring structures the important thing to take care of is the alignment.
+
+Data structure alignment is the way data is arranged and accessed in computer memory. For example all the transfer ring segments should be 16 byte boundary aligned which means the data to be read should be at a memory address which is some multiple of 16. For standard data types compiler automatically aligns the data as per the requirement. Here the Ring structure is a user defined data structure so the compiler cannot automatically align. As we’ve seen before ring consists of TRBs which is made of 4 ULONGS. As ULONG is 8 bytes it is 8 byte aligned. But we need the transfer ring to be 16byte aligned. Also Command ring should be 64 byte aligned. There are multiple ways of forcing alignment. We can either use padding or compiler specific methods. If we are using GCC to compile then __attribute__ can handle the alignment. If we are using MSVC __declspec(align(#)) can be used. I’m using __declspec to properly align the data structures. 
+
+Presently I’m revisiting the Controller initialization part to ensure nothing is amiss. In the following weeks I hope to get the USB initialization done. 
+

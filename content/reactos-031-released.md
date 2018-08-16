@@ -1,0 +1,34 @@
+---
+title:       "ReactOS 0.3.1 Released"
+author:      "fireball"
+type:        news
+date:        2007-03-11
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-031-released
+aliases:     [ node/276 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS 0.3.1 Released!</h2>
+<p>It's been almost half a year since the last release (0.3.0). And all this time work was going on like crazy - sometimes up to 50 commits per day.<br/>
+Mainly, the work focused on rewriting certain parts of the ReactOS Core (kernel, HAL, bootloader, etc). It's very hard to sum up&nbsp;the huge <a href="http://www.reactos.org/wiki/index.php/ChangeLog-0.3.1"><font color="#800080">Changelog</font></a>&nbsp;in an outline, but briefly:</p>
+<ul>
+    <li>Freeldr was improved</li>
+    <li>HAL's key areas&nbsp;have been&nbsp;significantly improved (irql-related, bus support, kd-functions)</li>
+    <li>The Kernel experienced a massive rewrite of incompatible parts (and is still in the process of improvement)</li>
+    <li>Run-time library (Rtl)&nbsp;got a lot of improvements and bugfixes</li>
+    <li>Bugs were fixed in kernel-mode drivers&nbsp;and a better USB driver was added</li>
+    <li>Registry-support&nbsp;has been&nbsp;greatly improved thanks to addition of&nbsp;&quot;cmlib&quot;, a library shared by the boot loader and the kernel to handle&nbsp;binary registry hives; it even supports binary registry hives created by Windows</li>
+    <li>More fixes in the Win32 subsystem and user-mode DLLs</li>
+    <li>Boot video&nbsp;driver (and a splash screen) was added</li>
+</ul>
+<p>Read through the changelog, and you will see the amount of changes in this release!</p>
+<p>However, there are a few things worth mentioning. First of all, please don't forget this is an alpha-stage operating system, which means it is not suitable to replace your main OS (due to stability and compatibility concerns). And second, this release is aimed to be run mostly in virtualizers / emulators (like QEmu, VMWare, Parallels, etc):&nbsp;because of the big amount of changes, our development team was not able to test/fix all problems which arise when running ReactOS on real hardware.</p>
+<p>Also,&nbsp;we aim to continuosly&nbsp;reduce delays between releases, and&nbsp;keep to a regular&nbsp;release schedule in the future.</p>
+<p>Thanks for the&nbsp;good work - developers, testers and&nbsp;supporters!</p>
+<p><em>Aleksey Bragin,<br/>
+ReactOS Project Coordinator</em></p>

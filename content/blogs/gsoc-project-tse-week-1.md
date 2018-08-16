@@ -1,0 +1,51 @@
+---
+title:       "GSOC Project TSE Week 1"
+author:      "SR13"
+type:        blog
+date:        2017-06-15
+changed:     2017-06-22
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-project-tse-week-1
+aliases:     [ node/44701 ]
+
+---
+
+<p>Hi, its me Shriraj. :)</p>
+
+<p>This is my second blog on my GSoC project TSE(Taskbar Shell Extension).</p>
+
+<p>So, finally coding period began, and I was excited enough to pump out some code boiling within my mind! Sir Giannis (aka gadamopoulos) and Sir Sylvain (aka sdever) are my mentors in this project. In this first week, basically mentor Giannis showed me how to step into this huge codebase of reactos and helped me to get started by providing the canvas for my code. We reformatted and redesigned our plan of what we will be doing throughout GSoC and prepared a <a href="https://docs.google.com/document/d/1zLTNqZ5eV35JUxoWIfPOIdV-ECPDrlWB-xOZbc28mBE/edit?usp=sharing">layout of milestones</a> to be achieved. </p>
+
+<p>Basically this project is about to extend the existing shell of reactos to support quick launch toolbar and notification tray icons for quick usb options and battery status. To actually start coding, first one must know the philosophy of windows programming (which is an event driven programming model) and the supporting technologies used to implement the underlying constructs. This event driven paradigm is the logic behind windows manager. Though for shell extension, there is not much of this event driven programming, but having an understanding of it will help in becoming a better windows programmer in general. With respect to my project, most important of all the technologies was COM (Component Object Model) and ATL(Active Template Library), where the later simplifies most of the things to implement the former. Hopefully, I already had a bit of experience with windows programming and C++ was my ace. And Giannis did a fantastic job in explaining the technologies which I didn't had any experience before. </p>
+
+<p>Giannis also provided me some great references which helped me grasp the concepts used. MSDN is one of the most important guide for any windows programmer. ReactOS wiki is great enough for anyone interested to help developing reactos, with some interesting references to get started. Besides #reactos / #reactos-dev irc channels are the best and ultimate solutions to any of your queries related to reactos. Thanks to the team, they are more than just mentors and friends.  </p>
+
+<p>This time, I got the opportunity to attend the ReactOS official monthly meeting of developers. Being excited already, I logged in to meeting channel the moment I got  my credentials, only to see that I pinged 4 hrs before the scheduled time. (lol XP) Jokes apart, the meeting was pretty good. I was able to introduce myself along with all other gsoccers of reactos. It was a nice to learn the etiquette of such official reactos meetings, besides getting a chance to see how pro devs handles decisions is a great learning experience in itself. It was decided to conduct weekly official gsoc meetings for updates on our milestones. </p>
+
+<img src="/sites/default/files/imagepicker/51617/week1_1.jpg" alt="week1-coding"  class="imgp_img" width="1360" height="768" />
+
+
+<p>Coming to my project, the first task was to create a basic shell extension, an inproc COM server and dll (namely qcklnch). This shell extension now exposes a COM object namely CQuickLaunchBand (which should in-turn act as proxy for CISFBand later). Also I stubbed all the required interfaces. So besides the basics of ATL, I also learned about component categories registration, resources and their management.  After successfully creating the dll file and testing the registration mechanism, the final thing to do in this task was to make this shell extension display atleast a messagebox or two for testing purposes.</p>
+
+<img src="/sites/default/files/imagepicker/51617/week1.jpg" alt="Task 1.1"  class="imgp_img" width="801" height="599" />
+
+
+<p>So I tested it in reactOS livecd in virtual box (though there are alternatives too), was able to see a new entry "Quick Launch" in taskbar context menu. Although it wasn't a big task, it feels great to even see a tiny difference after augmenting a tiny part of this huge codebase. ;P And debugging is my favorite part. It was amazing to see which code and functions calls which other part of the code in realtime. :)   </p>
+
+<p>So these were the things among some basic tasks which I completed in this week. And thanks to my mentor Giannis, without his amazing teaching skills this wouldn't have been possible. ;)</p>
+
+<p>That's all for this week.</p>
+
+<p>See ya on my next blogpost.  ;P</p>
+
+#Some Important links: 
+<ol>
+<li><a href="https://docs.google.com/document/d/1zLTNqZ5eV35JUxoWIfPOIdV-ECPDrlWB-xOZbc28mBE/edit?usp=sharing">List of Milestones and plan</a></li>
+<li><a href="https://code.reactos.org/committer/reactos/ssawant">Present history of commits</a></li>
+<li><a href="https://code.reactos.org/browse/reactos/branches/GSoC_2017/shellext/reactos/dll/shellext/qcklnch">Code Repository</a></li>
+</ol>
+
+
+

@@ -1,0 +1,19 @@
+---
+title:       "Google SoC lwIP Report Week 12"
+author:      "zhu48"
+type:        blog
+date:        2016-08-15
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-12
+aliases:     [ node/16588 ]
+
+---
+
+<p>In week 10, I had completed a major rewrite of my driver. In week 11, I dove into the problem of lwIP not being thread-safe once again. While I was able to deal with most of the individual bugs that kept popping up, each one was taking me more time to solve due to the haphazard nature of my previous fixes. At the beginning of last week, it was quickly becoming more apparent that I would need to rework most of my code once again if I wanted to have any hope of circumventing the multithreeading issue once and for all. So once again, I went back to the drawing board, this time to redesign my use of mutexes.&nbsp;</p>
+<p>When I first started trying to solve this multithreading problem, the biggest issue I had to deal with was the fact that lwIP protocol control blocks did not keep reference counts. To avoid dead pointer references, I had to somehow make sure to always know when lwIP decided to deallocate a PCB. While lwIP provides a callback to inform upper level drivers of PCB deallocations, this callback, like the rest of lwIP, does nto take into account concurrent systems.</p>
+<p>The solution to this was conceptually simple, acquire an lwIP global thread lock whenever I need to make sure I do not reference dead pointers. In practice, however, this was more complicated. If I simply acquired the thread lock in all functions that require access to lwIP PCBs, I would destroy performance. If I only acquired the thread lock right before a null pointer check, I potentially run into a host of concurrency problems due to the fac taht I must acquire two locks to safely set my PCB pointer to NULL - the lwIP global thread lock, and the lock for the TCP_CONTEXT data structure which actually stores the PCB reference. In some functions, it is more performant to acquire the thread lock first. In other functions, it is more performant to acquire the TCP_CONTEXT lock first. As anybody who has dealt with concurrent code knows, not having a defined order to acquire locks in can lead to horrendous deadlocks.&nbsp;</p>
+<p>Having a pre-defined order for lock-acquisition is nice becasue it's clean, simple, and passive. In certain sorts of concurrent programs, it offers great performance because it doesn't use CPU resources to resolve deadlocks. However, it isn't the only way to eliminate deadlocks, and in many real concurrent programs such as mine, having a pre-ordained lock acquisition order can significantly degrade performance because too much code executes under an unnecessary lock. In my driver, the slightly more common case is acquiring the global thread lock before acquiring the TCP_CONTEXT lock. Thus, I decided to resolve deadlocks semi-actively by leaving threads that acquire the global lwIP thread lock first alone, but actively releasing and reacquiring locks after a certain timeout on threads that acquire the TCP_CONTEXT lock first. With a clean re-implementation of all code that must acquire both a TCP_CONTEXT lock and the lwIP global thread lock, I eliminated the majority of deadlocks and get rid of most of the code that acquired locks recursively. This coming week, the last week of GSoC, I suspect that all I will have time for will be to iron out the rest of the remaining bugs in this implemention.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15719">Discussion</a></p>
+

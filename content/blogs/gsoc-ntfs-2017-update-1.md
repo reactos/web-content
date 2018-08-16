@@ -1,0 +1,57 @@
+---
+title:       "GSoC NTFS  2017 Update 1"
+author:      "coderTrevor"
+type:        blog
+date:        2017-06-15
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-1
+aliases:     [ node/44638 ]
+
+---
+
+<p>Hello everyone! My name is Trevor Thompson. I'm a computer science major at Blue Ridge Community College living in Virginia. This is my second time participating in Google Summer of Code. I'm very happy to be working on ReactOS' NTFS driver again!</p>
+
+<h2>Recap</h2>
+
+<p>When I started last year, ReactOS could read files from an NTFS volume, but had no write support whatsoever. After GSoC last year, the driver in my branch could overwrite existing files. I also fixed a few bugs in the driver's ability to read files, which have already been merged into the trunk. I also fixed ReactOS' implementation of LargeMCB's, which our NTFS driver has come to rely on, and which a few other filesystem drivers rely on.</p>
+
+<p>My goals for this summer are simply file creation and deletion.</p>
+
+<h2>Getting started:</h2>
+
+<p>Since my school lets out early for the summer, and since I already had my work environment setup from last year, I was able to dive in and get coding shortly after the bonding period began. I started by addressing all of the lingering issues I had left-over from last year.</p>
+<p>
+<p>These include:</p>
+<ul>
+	<li>Migrating a resident file (~700 bytes or smaller) to a non-resident one if the filesize grew too large.</li>
+	<li>Support for programs that use SetEndOfFile().</li>
+	<li>Some bugs I fixed by restructuring some code.</li>
+	<li>Disabling write support by default, and enabling it via the registry.</li>
+</ul>
+
+<p>The first three have fixed all the issues I've found with overwriting a file. The last one, disabling write support, was suggested by Thomas and I was happy to implement it.</p>
+<p>NTFS write support in ReactOS is in a highly experimental state, and will be for the near future. I don't want anyone to misunderstand this and lose data they care about. Therefore, I've made the default behavior of the driver to be read-only. Write support can be enabled by adding a specific key to the registry. To make it easy, I added the following lines to boot\bootdata\hivesys.inf:</p>
+
+<p><code>; un-comment the line below to enable EXPERIMENTAL write-support on NTFS volumes:<br>
+;HKLM,"SYSTEM\CurrentControlSet\Services\Ntfs","MyDataDoesNotMatterSoEnableExperimentalWriteSupportForEveryNTFSVolume",0x00010001,0x00000001</code></p>
+
+<p>Hopefully this is clear enough that nobody will lose important data!</p>
+
+<h2>Recently</h2>
+
+<p>Very recently, I've added the ability to create files! It's very limited right now. You can only create a file in an empty directory. However, it's progress, to be sure!</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/FileCreation.png" alt="File Creation"  class="imgp_img" width="796" height="597" /></p>
+
+<p>Coding this part was pretty uneventful. As usual, I had it working in ReactOS a couple of days before I had it fully debugged and Windows recognized the change. That has been a common occurrence while working on this driver. The debugging was made very easy thanks to my NTFSBrowse program from last year, which I expanded to give me detailed information about directories. It's very easy to tell which fields are wrong (different from Windows) when the data is being represented visually.</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/NTFSBrowse.png" title="NTFSBrowse screenshot" target="_blank"><img src="/sites/default/files/imagepicker/49142/thumbs/NTFSBrowse.png" alt="NTFSBrowse screenshot"  class="imgp_img" width="100" height="67" /></a></p>
+
+<p>From here on, it's just a matter of expanding what I have to support directories that aren't empty.</p>
+
+<p>However, it's just a smidge harder than it sounds because NTFS uses B*Trees to arrange its indices of filenames when a directory becomes full enough. So I'll have to mimic Microsoft's proprietary implementation of B*Trees soon, but it's very doable.</p>
+
+<h2>Etc.</h2>
+<p>I've been applying what I learned last year. I've been trying to keep each commit as succinct as possible, and committing my changes as soon as I have a feature or section of code working. I've also been keeping each feature in its own copy of my branch, instead of having one local working copy with a huge mess of changes. This seems to be working well, and I've been spending less time cleaning up code to get ready for a commit (which is by far my least favorite part of the process).</p>

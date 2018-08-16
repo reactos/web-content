@@ -1,0 +1,50 @@
+---
+title:       "GSoC NTFS 2017 Update 9"
+author:      "coderTrevor"
+type:        blog
+date:        2017-08-12
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-9
+aliases:     [ node/48970 ]
+
+---
+
+<p>Last week went pretty well! :)</p>
+
+<p>In my last post, I talked about how I needed to refactor some code to fix a bug. I'm really happy with how this turned out.</p>
+
+<h2>Refactoring</h2>
+
+<p>As I mentioned before, the driver has a struct called an NTFS_ATTR_CONTEXT which keeps track of information related to attributes. The main purpose of the structure is to keep vital information about the attribute cached in memory, but it's also just a convenient way to pass information about attributes between functions and the driver relies on it quite extensively.
+</p>
+<p>Previously, whenever the driver prepared an attribute context, it would allocate just enough memory to hold the members of the context, including a copy of the attribute record (i.e., the attribute header for non-resident attributes or the entire attribute for resident attributes). The problem came when I needed to start changing the length of an attribute record to enable write-support. As I said before, I tried to work around the limitations of the existing code, which was a mistake.
+</p>
+<p>Last week I refactored NTFS_ATTR_CONTEXT so its "Record" member would be a pointer to an NTFS_ATTR_RECORD, not the record itself. This means I can allocate a larger chunk of memory for the record when I need to enlarge it, and the attribute context will stay up to date. When I made the change, I also renamed Record to pRecord. This should make it clear to anyone who's worked with the code before that this member has changed. It also forced me to look at each place the member was used and make sure it was being accessed correctly.</p>
+
+<p>Doing that was really great, because I found no less than THREE instances of the bug I was looking for! I fixed them all and my issues with the driver seeming flaky and unstable were fixed. Yay! :)</p>
+
+<h2>New Features</h2>
+
+<p>If you've been following this blog closely, you're probably anxious to know if I've supported splitting B-Tree nodes yet, the feature I've been struggling to implement for the past few weeks that will enable creating thousands of files in a directory. Not yet. I decided to take a bit of a break from this and work on something closely-related. I'll get back to working on splitting a node next week with a pair of fresh eyes.</p>
+
+<p>Way back in <a href="https://www.reactos.org/blogs/gsoc-ntfs-2017-update-6">update 6</a>, I talked about how the driver could create up to 39 files, provided the tester had already created the seventh file in Windows. Last week, I implemented packing up the contents of the index root into a sub-node when the root gets too full, and that means that ReactOS can now start with a completely empty directory and let the tester make up to 39 files. Check it out:</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/Creating_39_files.gif" alt="Creating 39 files on NTFS in ROS"  class="imgp_img" width="796" height="597" /></p>
+
+<p>It's not quite the thousands-of files demo that I've been yearning for, but it does strike an important TODO off my list, and a lot of the features that I fixed / finished to make this work are also needed for splitting a node. These include changing the length of an attribute that isn't the last attribute in the file record, and allocating an index record in the index allocation for a newly-created B-Tree node.</p>
+
+<h2>I <3 Automated Testing, Source Control</h2>
+
+<p>One of the best things to come from my work last year was an automated tester that tests the limits of each new feature I've added. The tester looks for bugs the code has had before, as well as testing that all the new features I've added work as expected.</p>
+
+<p>The latest iteration has been geared toward file-creation, but I still have all the old tests available to me, and I run them every so often to make sure nothing goes wrong, or to help me pinpoint a problem when something does go wrong.</p>
+
+<p>Some new code I wrote actually introduced a small regression, and I didn't notice it until I tried to make the tester create 39 files. The first 38 could be made without a hitch, and I knew that it takes 39 files for the tester to fill up an index record, but it was unable to make that last file.</p>
+
+<p>I fired up a full test and found that the "resident file" test was failing. From here, it was easy to isolate the issue. First, I built a tester that only ran the test that was failing. Then, I copied my changed files to a new working copy and used TortoiseSVN to selectively revert functions until I found which function I'd changed that was at fault. InternalSetResidentAttributeLength() was to blame. I repeated the process of selective reversion until I found the guilty line and fixed it. Easy! :)</p>
+
+<h2>Looking Forward</h2>
+
+<p>I'm very optimistic after the forward progress I made last week. On the other hand, I'm also very aware that GSoC doesn't have much time left. Yikes! Wish me luck, I will need it! :)</p>

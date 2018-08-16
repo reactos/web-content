@@ -1,0 +1,56 @@
+---
+title:       "November 2015 meeting minutes"
+author:      "EmuandCo"
+type:        news
+date:        2015-12-19
+changed:     2016-02-05
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/november-2015-meeting-minutes
+aliases:     [ node/3460 ]
+news:        [ "news" ]
+
+---
+
+<p>2015-11-26<br />
+	19:00 UTC<br />
+	dev.reactos.org, #meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:18 by Aleksey Bragin</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: 0.4.0 Release plans</li>
+</ul>
+
+<h2>Point 1: Status Reports</h2>
+
+<p><b>[TheFlash]:</b> He started working on the NTVDM Sound Blaster emulation, however he realized that he's completely unable to test anything sound-related on ReactOS. KVM doesn't support the only card we have (CMI8378) and the rest would require non-free drivers, the use of which he finds contradictory to his ideals. So, he'd need to finish the ReactOS sb16 driver first which would be useful, so it's something he could do. Another option is to forget NTVDM sound and focus on VESA/SVGA, but getting the sb16 driver to work would be way more useful. Thus this would be the order, first SB16, then VESA/SVGA</p>
+
+<p><b>Amine Khaldi:</b> He was busy with Wine syncing, maintaining the release branch, some partial syncing in the not fully synced code together with Thomas and Samuel... etc., usual JIRA maintenance tasks, assisting Victor on the website revamp (more about it in the release plans point), doing Coverity, Clang Analyzer, and Undefined Behavior Sanitizer runs on Wine 1.8 RC release(s), working with our guys and the Wine Staging guys on issues we find during the inspection of test runs after syncs, working with Tim and Jared and Victor on Indiegogo updates.</p>
+
+<p><b>Colin Finck:</b> He is primarily busy with moving to California right now, only other goal he can think about is merging the printing branch, but that won't happen before trunk is ready for after-0.4.0 commits. As Amine wants to merge from trunk progress is tracked at https://jira.reactos.org/browse/CORE-10489. Furthermore, due to the Wine components Colin removed at the beginning of his branch work, we're doing worse in some tests now. He doesn't think this is very relevant for real-world applications, but definitely won't attempt a merge into 0.4.0. When trunk is open for experimental changes again, he'll just merge back and continue printing work there.</p>
+
+<p><b>Robert Naumann:</b> He is currently working on the explorer property sheet. He got the bug fixed, with Mark's help and he committed some patches.</p>
+
+<p><b>Thomas Faber:</b> He's been working on different bugs. FastFat ones in particular. Still has the big FCB duplication one (CORE-10483) left before the release, and piled up a bunch of other stuff. He'll try to focus on release blockers, but our current list is not very useful, so we should fix that. He did some helping fixing Wine bugs and working with the Wine staging guys. His insight is usually what leads to bugs getting fixed.</p>
+
+<h2>Point 2: 0.4.0 Release plans</h2>
+
+<p>In light of the 0.4.0 release plan, here is a summary what is ahead of us and what we will do :</p>
+
+<p>We will be working on fixing the list of blockers in trunk, which got some trimming due to the fact that we have roughly one month to do release preparations. As a result, we need to be extra careful not to commit anything dangerous (in regressions terms) to trunk until we do the real 0.4.0 branching off of it. That will hopefully not be a problem as we will be heavily focusing on fixing blockers with the release in mind all the time, so we won't be committing unrelated work. For completion here's the list: https://jira.reactos.org/issues/?filter=12706</p>
+
+<p>The list of blockers is now fully claimed, meaning every single ticket is assigned to one of us. We have 9 blockers and one month...</p>
+
+<p>In addition to the blockers, we have a list of nice things to have for 0.4.0 so that when we tackle the blockers we can pick from this list to make the release rock even more. The complete list is https://jira.reactos.org/issues/?filter=13410</p>
+
+<p>We will do our best to handle the blockers before performing the real branching, which will happen December 10th at the latest. If we don't make it in time by then, we'll branch and cherry pick any further fixes from trunk.</p>
+
+<p>We will be using trunk for extensive testing as if it's a release candidate, in order to save some time and detect any issues before we go into the real branching.</p>
+
+<p>The website revamp happens in parallel with the release preparations, in order to have it live by the time we release.</p>
+
+<p>Meeting was closed at 22:08 by Aleksey Bragin</p>
+<p>Meeting minutes prepared by Daniel Reimer and Amine Khaldi</p>
+

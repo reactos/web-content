@@ -1,0 +1,42 @@
+---
+title:       "May 2015 meeting minutes"
+author:      "EmuandCo"
+type:        news
+date:        2015-09-17
+changed:     2016-02-05
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/may-2015-meeting-minutes
+aliases:     [ node/3456 ]
+news:        [ "news" ]
+
+---
+
+<p>2015-05-28<br />
+	19:00 UTC<br />
+	dev.reactos.org, #meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:17 by Aleksey Bragin</p>
+<ul>
+    <li>Point 1: Report on the BRICS Operating System project proposal</li>
+    <li>Point 2: Request to feature our official Dell laptop in a video</li> 
+    <li>Point 3: New Website</li>
+    <li>Point 4: Plans for 0.4.0</li>
+</ul>
+
+<h2>Point 1</h2>
+<p>Aleksey Bragin officially submitted two project proposals to the Russian IT ministry (which is in charge of the BRICS operating systems development). First project is a desktop operating system and the second project is called RosServer, a server operating system. Both projects base on the same ReactOS core technology. They are submitted by ReactOS Foundation, with Aleksey being these projects lead. Now, IT ministry emailed him that they want him to give a presentation about these projects 2nd of June @10 AM. Lots of important people will be present at that presentation. This will not be the only presentation, other candidates will give their speeches too, trying to attract partners like universities, companies, etc. A financial support for the project is possible, too. He gets support from Victor and Alexander, but most of this will boil down to him and he still needs some help for that. Still needed are some famous apps running and images of these running on ReactOS. They are interested in the work already done and thus images would be very important, like of Office 2007/2010 and SQL databases.</p>
+
+<h2>Point 2</h2>
+<p>Alexander Rechitskiy tries to make some PR on habrahabr.ru, a russian slashdot like site. These days ReactOS gets much traffic from there and in the TOP100 list of companies ReactOS reached rank 15. (This rating is based on PR and quality of text) Most people there are programmers and IT specialists and many of them like the ReactOS project, but some of them do not believe that ReactOS could perform well on real hardware. Recently he posted video about a Dell PC with ReactOS running and it has had more than 17 000 views in one day. He kindly asks you to shoot a sample video about booting ReactOS on that laptop. It could have a huge PR impact and will help ROS to climb on top of that web site.</p>
+
+<h2>Point 3</h2>
+<p>Victor Martinez began implementing several cross social features so that all the bug fixes, blog posts and important stuff automatically give a constant flow in social media like Facebook and Twitter. This is in place now and works quite nicely. A script in the background scans the website's RSS feed and Jira for news every 3 hours and automatically generates posts for it. Noticeable results already are many retweets and comments to Facebook posts + many new followers on both platforms. He is working on cross posting, so a post by ROS in Facebook is automatically sent to Twitter and vice versa. He created other new stuff, too, like saying Hi to any new follower or sending stats once at week. Regarding website, Victor had been learning about Drupal during these weeks to get the needed knowledge to work on the Drupal structure the website has.</p>
+
+<h2>Point 4</h2>
+<p>A colorful discussion started in that topic and many things were said to be needed for 0.4. Here some stuff which will come for sure:
+Aleksandar is going to start working on WOW16 support, meaning 16 bit applications will work on ReactOS the way they do on any 32 bit Windows. Thomas Faber asked the developers to get through the reports in JIRA from a posted filter (https://jira.reactos.org/issues/?filter=12706) and remove the Fix Version from things that are in their area and the developer doesn't think need to be fixed in 0.4. Aleksey Bragin's LDR fixes are available right now as a hackpatch which removes the problem. It fixes it by going back to Wine-style active context. The proper way would be to fix the current implementation, but it's beyond his scope at the moment. He plans to beautify the patch before committing it. Victor plans to have the new website done before 0.4.0 release. A discussion regarding a release date happened after that without any specific date, but a list of things left to do. These include the ones mentioned above and some more. After the reviewing of the themeing fixes in JIRA is finished and all are committed. Shell in general should be a in a good state and is part of it like many other parts, too (http://jira.reactos.org/browse/CORE-9712, control panel item sorting with dpa, etc). TBD is the addition of SSL (mbedTLS) to our trunk to have native https support in ReactOS. Regarding the networking branch of zefklop noone had an answer what's really left to do. Last contact to Jerome was on March 4th and at that time he said that it's basically working, but due to the limitations lwip has in scalability the state is not really any better than current trunk. Current state is on his GIThub (https://github.com/zefklop/reactos-playground/tree/tcpip_bringup/drivers/network/tcpip). Planning on what is left to do and who has to fix it is still TBD. Some people don't like the idea to force the developers into something they don't wanna do while others tend to say that this is needed in current state. This discussion was suspended to later for now.</p>
+
+<p>Meeting was closed at 21:09 by Aleksey Bragin</p>
+<p>Meeting minutes prepared by Daniel Reimer</p>

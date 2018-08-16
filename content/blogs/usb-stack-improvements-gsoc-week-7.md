@@ -1,0 +1,21 @@
+---
+title:       "USB stack improvements GSoC - Week 7"
+author:      "VardanM"
+type:        blog
+date:        2016-07-12
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-stack-improvements-gsoc-week-7
+aliases:     [ node/13469 ]
+
+---
+
+<p>I'll start this report from the good news. After starting GSoC's coding period, I was doing fixes and improvements of hub layer and was not repeating tests which was done by me in community bonding period (results provided in my first blog post). So by the end of this week I decided to test surprise-removal on VBox with 2k3 working with our USB stack. As result I saw that crashes on device removal (physical) are gone! Even more after connection again, the USB flash and also composite device were performing well.</p>
+<h4>PnP...</h4>
+<p>During this week I have continued fixes in our USB stack PnP handling. Mainly I was busy on interface passing routines, I have completely investigated all flow of device and hub interface passing. I have fixed number of bugs there and also added comments with complete description of tricky places, code commenting is the most important thing for me, especially in big open-source projects as ReactOS.</p>
+<p>Also I have done fixes in usbhub FDO's child device creation and start device routines. Besides of adding new codes, I have done refactoring of existing functions and also done fixes according review comments of my mentor.</p>
+<h4>"In theory, there is no difference between theory and practice. But in practice, there is."</h4>
+<p>I have spend some time on reading Walter Oney's "Programming the Microsoft Windows Driver Model" which is very useful for me. I can see practical examples and also improve my teorethical knoledge of WDM. I am planning to commmit for reading as much as I can :)</p>
+<p>&nbsp;</p>
+

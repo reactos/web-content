@@ -1,0 +1,19 @@
+---
+title:       "Google SoC lwIP Report Week 5"
+author:      "zhu48"
+type:        blog
+date:        2016-06-26
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-5
+aliases:     [ node/12028 ]
+
+---
+
+<p>Going into week 5, I started with a code-complete but very much incorrect implementation of the TDI_SEND and TDI_RECEIVE IRQ handlers. My TCP_CONTEXT data structure and the existing ADDRESS_FILE data structure both did not contain a way to keep track of pending IRQs, so I had no way of keeping track of outstanding pending IRQs and what connection contexts they were supposed to be associated with. Without a clear scheme for keeping track of the information, IRP pointers invariably got lost. As a result, when trying to handle requests resulting from valid Winsock API calls, my driver leaked memory and left hanging pending IRQs.&nbsp;</p>
+<p>To really address this issue, which resulted from my lack of familiarity with Windows driver programming and the TCP protocol in general, I had to come up with a scheme of how to keep track of all the IRQs my driver receives along with which lwIP protocol control block (PCB) they are associated with.&nbsp;</p>
+<p>My first attempt at solving the problem was creating another struct, the TCP_REQUEST, to link IRPs with their associated lwIP PCBs and general purpose address files. Each address file would contain a list of contexts as before, but each context would keep a list of requests it's pending on. As I tried to properly implement this scheme of keeping track of information, I ran into more and more problems with how to tell what state each address file and connection context was in. Every time I fixed one problem, another one seemed to pop up. If I wasn't freeing memory at an improper time, I was failing the correct pointers or overwriting pointers to outstanding requests. As the week dragged on and I continue to be stuck on the same problem of how to keep track of IRQs and their associated addresses, I finally decided to do two things. First, I would add state variables to the address files, the contexts, or both structs. Second, I would draw an actual state diagram before proceeding further.&nbsp;</p>
+<p>At the week's close, I am still in the process of drawing the state diagram. I hope this is the last large structural change I will need to make to my code to make it functionally correct, if still not feature-complete or entirely robust.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15574">Discussion</a></p>
+

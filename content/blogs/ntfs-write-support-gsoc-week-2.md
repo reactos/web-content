@@ -1,0 +1,20 @@
+---
+title:       "NTFS Write Support GSoC - Week 2"
+author:      "coderTrevor"
+type:        blog
+date:        2016-06-06
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/ntfs-write-support-gsoc-week-2
+aliases:     [ node/10924 ]
+
+---
+
+This week I spent a few days hammering out all the problems I was having with MSVC builds, understanding exactly what was causing them, and updating configure.cmd so nobody else would have them in the future. See my <a href="https://www.reactos.org/forum/viewtopic.php?f=2&t=15472#p121853">forum post</a> for the details.
+
+I've also been doing a lot of reading this week, both on the peculiarities of NTFS, and on Windows file system drivers. File System Forensic Analysis by Brain Carrier has been an incredible resource for the former, and Windows Nt File System Internals by Rajeev Nagar has been indispensable for the latter.
+
+It occurs to me that my last blog post left out some details of my methodology, and the progress I made before coding started. So to recap: as part of my application process, I updated the existing  driver with the ability to overwrite the contents of a file on NTFS. This only works in the most restricted, easy-to-implement case: when the file size doesn't change. I also wrote a small program which tests this functionality (you can't even test it with React's notepad, due to the way notepad writes to the file). I'm taking this super-restricted support and building on it.
+
+I was hoping to have changing file sizes implemented by now, but I'm not quite there yet. Once this is done, you'll be able to update the contents of any file on NTFS in ReactOS. My goal is to have this functionality implemented, tested and fully debugged by the midterm evaluation in a couple of weeks (ideally sooner). Then I can tackle the real meat of NTFS: creating, renaming and deleting files. This is considerably more difficult in NTFS than other file systems such as FAT, because NTFS stores references to its files in B-Trees, and updating them is a non-trivial process.

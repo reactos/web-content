@@ -1,0 +1,21 @@
+---
+title:       "Google SoC lwIP Report Week 13"
+author:      "zhu48"
+type:        blog
+date:        2016-08-22
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-13
+aliases:     [ node/17275 ]
+
+---
+
+<p>In this final week, I tried to do as much as possible to get my driver to some sort of usable state for simple network C programs.&nbsp;</p>
+<p>My first task this week was to fix a problem with port freeing. When a TCP connection dies, its lwIP PCB would sometimes remain, preventing new sockets from binding to the ports they are taking up. After a lot of tracing, I discovered that an lwIP internal semantic was at play. When lwIP informs me of a dying connection through a callback, it sometimes deallocates the PCB and sometimes keeps it around in a CLOSED_WAIT state. To ensure these PCBs are not kept around, I simply had to explicitly call tcp_abort() on the PCB.&nbsp;</p>
+<p>My second task this week was solving an issue where I could not kill a running TCP user program using console Ctrl-C. I had run into this before, and knew it to be related to IRP cancellation. After a great deal of tracing, I realized - to some chagrin - that I had neglected to assign a cancellation routine to any of the IRPs I marked as pending. This issue was quickly and easily fixed.&nbsp;</p>
+<p>With those two glaring bugs fixed, I made a quick adjustment to my TCP test programs so both server and client used multiple threads. When my driver passed this test, I installed FireFox to see how my driver would fair.&nbsp;</p>
+<p>FireFox quickly brought the entire system down through a combination of two issues. First, I had broken UDP with my two major rewrites of the driver. This, of course, prevented me from doing any sort of DNS lookup required by web browsers in generals. Second, the TDI_QUERY_INFORMATION type of interrupt requests were wildly lacking support.&nbsp;</p>
+<p>While I solved the first issue by quickly porting over the old UDP code from before I had worked on the driver, the TDI_QUERY_INFORMATION handler required more time than I had to implement. Thus, at the end of my GSoC project, I did get TCP mostly up and running but failed to be able to support a full web browser.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15740">Discussion</a></p>
+

@@ -1,0 +1,49 @@
+---
+title:       "GSoC NTFS 2017 Update 3"
+author:      "coderTrevor"
+type:        blog
+date:        2017-06-29
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-3
+aliases:     [ node/45877 ]
+
+---
+
+<p>All continues to go well :). Two weeks ago, I started writing code to parse B-Trees, which are representative of how NTFS organizes its directories on disk.</p><p>It works like this: First, the index of a directory is read and converted to a B-Tree in memory. Next, a key for the new file is inserted into the tree. Finally, the tree is converted back to an index root attribute which is written to disk. I favored this approach, as it's similar to what worked for me earlier: updating data runs by first converting them to an easy-to-update structure (a LargeMCB), updating that structure, and then converting back to the more complicated format.
+</p>
+<p>As always, I started with a minimal solution that I can expand. In this case, that meant only supporting trees without any depth to them. In other words, it's just an ordered list of filenames. From the user's perspective, this means that instead of only being able create a single file in an empty directory, you can now create a handful of them.</p>
+
+<img src="/sites/default/files/imagepicker/49142/MultipleFiles.png" alt="MultipleFiles"  class="imgp_img" width="800" height="569" />
+
+<p>You're still limited to only creating a few files, however. Soon, if all goes well, you'll be able to create all the files you'd ever need. :)</p>
+
+<p>Last week, I finished and cleaned up this code, debugged it, and committed it.</p>
+
+<p>As has often been the case, I had the new features working in ReactOS before I had them fully debugged and working in Windows. Windows is much more picky and expects everything to be perfect or it considers the file corrupt. It makes me wonder if ReactOS could have a future niche in data recovery. As before, I used the NTFSBrowse program I made last year to aid in debugging, as having a way to inspect the data visually was extremely helpful in identifying the problems.</p>
+
+
+<h2>Addressing FAQ's</h2>
+
+<p>There's a few questions people tend to have about this project, some of them come up often enough that I thought I'd go ahead and address them here:
+</p>
+<h3>Q: Will I be able to start installing ReactOS to my NTFS drive after GSoC?</h3>
+
+<p>To be sure, installing to and booting off NTFS is where this is all headed, but I think there's still too much work left for that to happen by the end of GSoC. I'm focused on creating and deleting files because I think that's what's realistic for a summer, given my abilities. However, you shouldn't be discouraged to hear that. I think not having write-support is probably the biggest hurdle to installing to and booting off NTFS, so having that working should build up some momentum toward fixing whatever issues remain.</p>
+
+<h3>Q: Are you aware of NTFS-3G? Why don't you "just" port that code? Aren't you reinventing the wheel?</h3>
+
+<p>This one comes up a lot. First of all, yes, I am aware of NTFS-3G! ;)</p>
+
+<p>There's several reasons I haven't tried to port its source, but they all pretty much boil down to the same thing: I'm of the opinion that it's much easier to build off ReactOS's current driver than try to port NTFS-3G or something similar. MUCH easier. Someone else may feel differently, but it's my personal preference to only learn the inner-workings of one driver and OS, not two sets of each.</p>
+
+<h3>Q: What about porting just part of the code? Like just the code dealing with B-Trees?</h3>
+
+<p>This scenario is a little more realistic but the answer above still applies. Such a port is certainly possible, but it's faster for me to write the code I need from scratch.</p>
+
+<h3>Q: But aren't you wasting all that existing work?</h3>
+
+<p>Not at all. In my mind, the most valuable thing to come out of the pioneering efforts of those who implemented NTFS on Linux was the <a href="https://flatcap.org/linux-ntfs/ntfs/files/index.html">documentation</a>, which is publicly available. I really don't need to dissect NTFS-3G's source (though I have looked at it), to be able to add write support to our driver, because this documentation tells me exactly what I need to know about NTFS!</p>
+
+<p>Had this existed 15 years ago, NTFS probably wouldn't enjoy the reputation of mystique and intimidation that it holds today.</p>

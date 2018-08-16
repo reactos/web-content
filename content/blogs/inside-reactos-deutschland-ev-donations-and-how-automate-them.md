@@ -1,0 +1,75 @@
+---
+title:       "Inside ReactOS Deutschland e.V.: Donations and how to automate them"
+author:      "Colin Finck"
+type:        blog
+date:        2016-08-25
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/inside-reactos-deutschland-ev-donations-and-how-automate-them
+aliases:     [ node/17461 ]
+
+---
+
+<p>Hi all! This is my first blog post designed to shed some light on the foundation behind ReactOS.</p>
+
+<p>Just like many other big Open-Source projects, ReactOS is backed by a foundation supporting the project financially and organizationally.
+I have been the treasurer of <a href="https://ev.reactos.org">ReactOS Deutschland e.V.</a> since its establishment in 2009 and as such, it has been my duty to do the tedious accounting of all donations. While most of that is happening in the background, you see the results from time to time when I update the public <a href="https://reactos.org/donors">Donors</a> page.</p>
+
+<p>For managing the foundation assets, we are using the Open-Source <a href="http://jverein.de">JVerein</a> package that builds upon the <a href="http://willuhn.de/products/jameica">Jameica</a> platform (also Open-Source).
+It does an excellent job at managing members, accounting and generating financial reports.
+Both applications are customized for the needs of German foundations (and German tax authorities of course ;)).
+Another plus is their easy hackability and great support.
+I can highly recommend them to any German foundation (<i>eingetragener Verein (e.V.)</i>) needing a decent management software.</p>
+
+<p>But as with every tool, also JVerein cannot fulfill all our tasks on its own.
+The best example is actually the public Donors page.
+This page is comprised of donation information from several sources, like our PayPal account, regular bank account, etc.
+JVerein cannot generate this very report, and even less it can output the custom HTML we need for our website.</p>
+
+<p>Therefore, I went ahead and wrote our very own plugin for the Jameica platform with the cryptic name <b>rosev_jameicaplugin</b> in 2011.
+For 5 years, its only feature was outputting the HTML for the Donors page based on the donations in the database.
+The actual bookkeeping still had to be done manually, and this became more and more work every year as ReactOS rose in popularity.<br><br></p>
+
+<h3>Let's automate that!</h3>
+<p>This month, I wanted to get the donor list back on track again.
+But manually entering hundreds of individual donations over 8 months was clearly the wrong thing to do.
+Time has finally come to automate this process a bit, and I have enhanced our rosev_jameicaplugin for that.
+Here comes the new Donation Importer:</p>
+
+<p><a href="/sites/default/files/imagepicker/1249/DonationImporter.png" title="Donation Importer" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/DonationImporter.png" alt="Donation Importer"  class="imgp_img" width="500" height="297" /></a></p>
+
+<p>I did my best to make it as appealing as possible.
+What it basically does is the following:
+
+<ul>
+	<li>Completed PayPal transactions in EUR and USD currencies between the given start and end date are downloaded and presented in individual tabs.</li>
+	<li>Each tab has two tables, one for actual donations and one for all other transactions. Only donations will later be imported into JVerein. Transactions can be freely moved between both tables.</li>
+	<li>If a transaction is downloaded, which has already been imported into JVerein previously, it is automatically inserted into the other table to not create any duplicates.</li>
+	<li>Donor names are normalized and transliterated if needed. We don't want individual names (like all capitalized ones) to stand out on our Donors list. Also we're required to maintain an accounting in latin encoding.</li>
+	<li>The net amount (after PayPal fees) is booked while the originally donated amount is preserved in another field. This way, we can later create a Donors list with the actual donated amounts.</li>
+	<li>For USD donations, we even need to perform a currency conversion according to the <a href="http://www.bundesfinanzministerium.de/Web/DE/Themen/Steuern/Steuerarten/Umsatzsteuer/Umsatzsteuer_Umrechnungskurse/umsatzsteuer_umrechnungskurse.html">monthly exchange rates given out by our ministry of finance</a>.</li>
+	<li>For whatever reason, there are some people out there, who like to donate just cents that are entirely sucked up by the PayPal fees. I'm reluctant to put such donations on our list and neither does my tool.</li>
+	<li>A simple heuristic tries to figure out whether the donor wants to be anonymously listed on the Donors page. Of course, this can also be corrected manually if the heuristic is wrong.</li>
+	<li>Finally, the total amount in the PayPal account as well as the current total amount in the JVerein accounting is shown. You can always see what the total in JVerein would be like after importing the downloaded donations.</li>
+</ul>
+
+<p>As PayPal is the most popular option to donate to ReactOS by a huge margin, my tool is limited to PayPal imports right now.
+For this, I'm using the <a href="https://developer.paypal.com/docs/classic/api/NVPAPIOverview/">PayPal NVP API</a>.
+Although it comes with an <a href="https://github.com/paypal/merchant-sdk-java">SDK</a>, this hardly makes things easier than just doing plain HTTP calls directly to the PayPal API Service.
+Therefore, I refrained from bloating up my tool with PayPal SDK dependencies and just do the API calls myself.</p>
+
+<p>Credits also go to the nice and simple <a href="https://github.com/gcardone/junidecode">Junidecode</a> library for transliteration.
+If your name is decoded wrongly, just blame them :-P</p>
+
+<p>While my tool and its workflow are highly specific to ReactOS Deutschland e.V. right now, I hope that it can be useful to other foundations as well.
+I wouldn't want anyone to go through such a task again.<br>
+You can find the source code at <a href="https://svn.reactos.org/project-tools/trunk/rosev_jameicaplugin/">Project-Tools SVN</a>.
+Contact me if you have any further questions.</p>
+
+<p>Finally, many thanks to all donors out there who made this even necessary!<br>
+Your contributions keep our infrastructure running and the project closer to reaching its goals.
+I'll do my best to keep the Donors list on track now.
+Should be easier now that it's a matter of minutes instead of days :)</p>
+
+<p>Discussion: <a href="https://reactos.org/forum/viewtopic.php?f=2&t=15745">https://reactos.org/forum/viewtopic.php?f=2&t=15745</a></p>

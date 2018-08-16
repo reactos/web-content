@@ -1,0 +1,16 @@
+---
+title:       "ISIMA Partnership"
+author:      "Z98"
+type:        news
+date:        2012-02-01
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /isima-partnership
+aliases:     [ node/307 ]
+news:        [ "news" ]
+
+---
+
+<p>ReactOS developer and IT administrator Pierre Schweitzer is currently a student at Institut Supérieur d&#39;Informatique, de Modélisation et de leurs Applications (ISIMA) and had worked over the last few months to establish a formal partnership between the ReactOS project and ISIMA. After a formal presentation to ISIMA&#39;s directors on January 11th, 2012, this partnership was approved. The ReactOS project will in the future be allowed to present projects that ISIMA students can complete as part of their coursework. In addition, the project will be able to request the use of ISIMA IT resources and facilities for activities. Pierre will also be holding a presentation on ReactOS on March 10th during ISIMA&#39;s visitation day.</p><p>The ReactOS Project would like to thank Pierre Schweitzer for all the work he put into presenting and promoting ReactOS to ISIMA, Jonathan Passerat-Palmbach, an ISIMA PhD student that supported Pierre&rsquo;s partnership initiative, ISIMA&rsquo;s communications advisor Aurélie Bavent for her enthusiastic support of the initiative, and ISIMA&rsquo;s director Philippe Mahey for approving the partnership. The Project looks forward to a healthy and productive relationship with ISIMA and we hope this partnership will serve as the foundation for many others in the future.</p>

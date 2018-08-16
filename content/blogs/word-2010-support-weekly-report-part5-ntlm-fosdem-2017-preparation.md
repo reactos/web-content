@@ -1,0 +1,67 @@
+---
+title:       "Word 2010 support Part 5: NTLM & FOSDEM 2017 preparation"
+author:      "hbelusca"
+type:        blog
+date:        2017-01-30
+changed:     2017-02-13
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/word-2010-support-weekly-report-part5-ntlm-fosdem-2017-preparation
+aliases:     [ node/31372 ]
+
+---
+
+<p>Hello everyone! As you've seen my activity in the blogs has been reduced quite a lot since beginning January,so here is a summary of what I did during the month of January.</p>
+
+<h2>First two weeks of January (until ~= 15)</h2>
+<p>
+In my <a href="https://reactos.org/blogs/word-2010-support-weekly-report-part4-update-authentication-failed">previous report</a> of last time, I explained that what blocked my progress on Word 2010 was the absence of NTLM authentication support for the installation to continue & finish. After playing locally with the in-progress implementation of NTLM by Samuel Serapión, that can be found in the <a href="https://svn.reactos.org/svn/reactos/branches/sspi-bringup/?view=log">"sspi-bringup" branch</a>, to see how the Word 2010 installation would behave, I found that this generated new errors reported by the RPC layer. Therefore further investigations are in order, and this would include a reviewing of Samuel's code as well as writing tests for the NTLM implementation to check whether it works properly, and potentially playing with RPC internals.
+</p>
+<p>
+To refresh my ideas before digging further into that problem, I tried an alternate approach by having a look at the PowerPoint Viewer 2010, theorizing that it was certainly based on the same general codebase as the other Office 2010 products, particularly in what concerns its GUI (and the possible graphics calls it could do), as well as the other Office (Word & Excel) viewers. By checking at the debug logs, I have found two recurring points that could be interesting to implement:
+</p>
+<ol type="1">
+<li><p>
+the NtUserExcludeUpdateRgn API (the win32k-kernel-mode side of the user32 <a href="https://msdn.microsoft.com/en-us/library/dd162703(v=vs.85).aspx">ExcludeUpdateRgn</a> API) being unimplemented (see JIRA report <a href="https://jira.reactos.org/browse/CORE-12649">CORE-12649</a>). As soon as I started working on it, ReactOS developer James Tabor mentioned to me he already had a patch for it, and so I let him work on this issue (and I'll come back to this issue after the FOSDEM), and
+</p></li>
+<li><p>
+implementing a missing functionality:
+</p>
+<pre>
+fixme:(dll/win32/shell32/CShellLink.cpp:1314) (0232FC98): WIN32_FIND_DATA is not yet filled.
+</pre>
+<p>
+that popped out each time one opened the "Open file..." or "Save as..." dialog (this fixme message also appeared with other applications). This corresponded to a (certainly somewhat minor) missing functionality in the code dealing with shell links (shortcuts).
+</p></li>
+</ol>
+<p>
+As I progressed in the implementation of the fixme, I saw that our shell links code missed much more functionality (the details of which has minor importance for my discussion here; please report to the JIRA report <a href="https://jira.reactos.org/browse/CORE-12682">CORE-12682</a> and the linked reports inside for more information) that I was interested in fixing, and therefore, I diverted myself to fixing shell links code during the past 2 weeks. This work resulted in two commits in revisions <a href="https://svn.reactos.org/svn/reactos?view=revision&revision=73573">73573</a> and <a href="https://svn.reactos.org/svn/reactos?view=revision&revision=73576">73576</a>. 
+</p>
+
+<h2>Last two weeks of January (until ~= 30)</h2>
+<p>
+I was then later reminded (in the public mailing lists) of the fact that the FOSDEM 2017 event, to which ReactOS will participate, was imminent. At that time, Colin Finck started to play with adding support for <a href="https://jira.reactos.org/browse/CORE-12648">"USB IsoHybrid" functionality (CORE-12648)</a> (that is, adding functionality in the ISO to be able to also dump it on an USB key, making the latter bootable on PCs (this also adds a pseudo-MBR on the first otherwise-zeroed-out sectors of the ISO); this differs from the usual method of preformatting the USB key, extracting the contents of the ISO in the USB key and installing a bootloader, which is the method done by tools like e.g. "Rufus"). As this touched parts of ReactOS that I'm really fond of (namely bootsectors and FreeLdr), I decided to help Colin with these matters, hoping also it could be nice to have this feature ready for the FOSDEM. </p><p>Colin basically imported the feature from the ISOBOOT bootsector from SysLinux into our bootsector, and imported the "isohybrid" tool that is used to patch the ISO. This was committed in revisions <a href="https://svn.reactos.org/svn/reactos?view=revision&revision=73555">73555</a> and <a href="https://svn.reactos.org/svn/reactos?view=revision&revision=73594">73594</a>. We stumbled into some bugs, one of which was a bug inside the ISOBOOT sector from SysLinux itself (see the last comments in <a href="https://jira.reactos.org/browse/CORE-12648">CORE-12648</a> for more details), and another one in the FreeLdr bootloader, which <a href="https://jira.reactos.org/browse/CORE-12692">thought the boot drive was always a HDD if its first sector happens to contain a MBR with the 0xAA55 signature (CORE-12692)</a> (which is actually wrong if the boot drive is a CD, but whose contents come from a USB IsoHybrid ISO whose 1st sector contains a dummy MBR). I was able to write a patch for it, committed in revision <a href="https://svn.reactos.org/svn/reactos?view=revision&revision=73621">73621</a>.
+</p>
+
+<h2>FOSDEM 2017 (Saturday 4th - Sunday 5th January)</h2>
+<p>
+As no one else was able to go to the FOSDEM (Brussels, ULB) with Colin, I proposed myself to accompany him there.
+We met together the evening before the FOSDEM began. 
+We shared our booth with the guys (Adrien Destugues, François Revol) from the <a href="https://www.haiku-os.org/">Haiku-OS</a> project (a free and open-source operating system compatible with the now discontinued BeOS).
+We were able to give the 200 ReactOS CDs Colin made before coming.
+</p>
+
+<b>Colin presenting ReactOS to the public:</b>
+<blockquote class="twitter-tweet" style="margin: 0 auto" data-lang="en"><p lang="en" dir="ltr">Now the <a href="https://twitter.com/hashtag/ReactOS?src=hash">#ReactOS</a> interview from <a href="https://twitter.com/hashtag/FOSDEM?src=hash">#FOSDEM</a> is finally available! Discover our objectives for 2017: <a href="https://t.co/fWsoQcUW5n">https://t.co/fWsoQcUW5n</a> By <a href="https://twitter.com/ken_fallon">@ken_fallon</a> <a href="https://t.co/8tjhQfizIn">pic.twitter.com/8tjhQfizIn</a></p>&mdash; ReactOS (@reactos) <a href="https://twitter.com/reactos/status/828912149602902016">February 7, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" style="margin: 0 auto" data-lang="en"><p lang="en" dir="ltr">And there we go! Some pics from the <a href="https://twitter.com/hashtag/ReactOS?src=hash">#ReactOS</a> <a href="https://twitter.com/hashtag/Fosdem?src=hash">#Fosdem</a> table! Colin showing real laptops running ReactOS <a href="https://t.co/n88alCZQvU">pic.twitter.com/n88alCZQvU</a></p>&mdash; ReactOS (@reactos) <a href="https://twitter.com/reactos/status/828296937166225410">February 5, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<b>Software running on ReactOS:</b>
+<blockquote class="twitter-tweet" style="margin: 0 auto" data-lang="en"><p lang="en" dir="ltr">Baaah! “Running Office?That&#39;s easy..What about <a href="https://twitter.com/hashtag/codeblocks?src=hash">#codeblocks</a> compiler?” Deal! In our <a href="https://twitter.com/hashtag/DELL?src=hash">#DELL</a> laptop at <a href="https://twitter.com/hashtag/FOSDEM?src=hash">#FOSDEM</a> <a href="https://t.co/faHfBqGcae">pic.twitter.com/faHfBqGcae</a></p>&mdash; ReactOS (@reactos) <a href="https://twitter.com/reactos/status/828303658215411712">February 5, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" style="margin: 0 auto" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/Fosdem?src=hash">#Fosdem</a> visitors were “shocked” when watching Office running natively in <a href="https://twitter.com/hashtag/ReactOS?src=hash">#ReactOS</a> in a laptop. <a href="https://t.co/zOqyFIIBoh">pic.twitter.com/zOqyFIIBoh</a></p>&mdash; ReactOS (@reactos) <a href="https://twitter.com/reactos/status/828298859432534017">February 5, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<b>Group photo and booths: Haiku on the left, ReactOS on the right:</b>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is the <a href="https://twitter.com/hashtag/alt_os?src=hash">#alt_os</a> booth at <a href="https://twitter.com/fosdem">@fosdem</a>, next to the main <a href="https://twitter.com/hashtag/infodesk?src=hash">#infodesk</a> ! CC <a href="https://twitter.com/haiku_os">@haiku_os</a> <a href="https://twitter.com/reactos">@reactos</a> <a href="https://t.co/Q5ZMjrgcHR">pic.twitter.com/Q5ZMjrgcHR</a></p>&mdash; Olivier Coursière (@OCO27) <a href="https://twitter.com/OCO27/status/828157341832986624">February 5, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The <a href="https://twitter.com/haikuOS">@haikuOS</a> and <a href="https://twitter.com/reactos">@reactos</a> booths at <a href="https://twitter.com/hashtag/FOSDEM2017?src=hash">#FOSDEM2017</a> with the full teams ;-) <a href="https://twitter.com/hashtag/FOSDEM?src=hash">#FOSDEM</a> <a href="https://t.co/875Jz6qTTT">pic.twitter.com/875Jz6qTTT</a></p>&mdash; François Revol (@mmu_man) <a href="https://twitter.com/mmu_man/status/828250992428847105">February 5, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+

@@ -1,0 +1,36 @@
+---
+title:       "NTFS Write Support GSoC - Week 5"
+author:      "coderTrevor"
+type:        blog
+date:        2016-06-28
+changed:     2016-07-06
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/ntfs-write-support-gsoc-week-5
+aliases:     [ node/12095 ]
+
+---
+
+<h3>Progress</h3>
+
+<p>At the beginning of the week I finished cleaning up and committing the code I wrote related to extending a file's size. This took me a little longer than I expected and in the future I'm going to commit more often so I don't have this problem.</p>
+
+<p>From there I added support for truncating files, with a couple of caveats. This is significant because it allows for opening a file in Notepad.exe, changing it, and saving it.</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/NotepadWorking.png" title="Notepad.exe saving files in ntfs" target="_blank"><img src="/sites/default/files/imagepicker/49142/NotepadWorking.png" alt="Notepad.exe saving files in ntfs"  class="imgp_img" width="1592" height="604" /></a></p>
+
+<h3>Caveats</h3>
+
+<p>The caveats I mentioned result from a couple of missing features.</p>
+
+<p>The first caveat is that the file must be non-resident, meaning it must be larger than about 700 bytes. Overwriting resident files has been a TODO since my first patch. It's not a difficult problem, but it does require some  refactoring of the existing code. Currently, WriteAttribute() has no way of knowing where a resident attribute's data is stored. I think the best solution is to have an attribute context store the MFT index of its file record. Pierre and I agree that this should be a straightforward change, so I hope to have this finished by the end of the week.</p>
+
+<p>The next issue is that the file's allocation size doesn't change. It's also pretty straightforward and is what I'm presently working on. NTFS tracks the allocations of its clusters for the entire volume in a system file called $BITMAP. This file stores one bit for each cluster of the volume; if the nth bit is set, the nth cluster is in use and if a bit's clear, the associated sector is free. Also, non-resident attributes keep track of which clusters they've been allocated in a series of data runs. A data run is a tightly-packed structure representing a contiguous range of clusters.</p>
+
+<h3>Looking Forward</h3>
+
+<p>So far this project has been mostly one of learning. Learning is great, especially for a student, but I'm starting to see a shift toward writing more driver code and producing more demonstrable progress, which is a trend that I hope continues!</p>
+
+<p><br><br><h3><a href="https://www.reactos.org/forum/viewtopic.php?f=2&t=15599">Discussion</a></h3></p>
+

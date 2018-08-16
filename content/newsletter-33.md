@@ -1,0 +1,32 @@
+---
+title:       "Newsletter 33"
+author:      "Z98"
+type:        news
+date:        2007-10-22
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-33
+aliases:     [ node/173 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Les Trophees du Libre</li>
+# <li>New People and Old</li>
+# </ul>
+
+---
+<h2>Les Trophees du Libre</h2>
+<p>
+Les Trophees du Libre is a contest for free software, divided into six categories.  ReactOS has entered the contest, in the science category.  At first glance that might seem odd, but LinuxBIOS is also in that category.  However, it's not LinuxBIOS we should be worried about.  The competition from the other projects is going to be rough.  We're facing mathematical libraries, pattern recognition, even bioinformatics.  Still, with a grand prize of 3000 euros, it's definitely worth a shot.  Wish us luck.  Finalists will be announced November 1st.  Pierre Schweitzer (HeisSpiter) was the one that introduced this project to us.
+</p>
+<h2>New People and Old</h2>
+<p>
+It's not often we get to write about newcomers to the project.  Even better, one of our old developers has also returned.  Mike Nordell(tamlin on IRC) originally joined the project in 2004.  He left during 2005 but is now back with us.  Mike is one of those developers that hops around working on whatever he feels like.  That ranges from trying to fix the vga driver to working on the memory manager.  As Mike himself said, "I dig where I stand, it's as simple as that."
+</p>
+<p>
+Besides Mike, we have two new developers joining us.  First is Gregor Brunmar(ALiENiD on IRC), who is currently working on svchost.  There are indications that he too will be a drifter, so we'll see what else he does as time goes on.  The other newcomer is Marc Piulachs.  Marc will be working on the long neglected rbuild system, which is what we use to configure the compilation of ReactOS.  Work on getting ReactOS to work on the PowerPC architecture has revealed some issues with rbuild and Marc had already proposed some changes on the mailing list.  Aleksey liked the ideas so we'll see if he can make rbuild more powerful and streamlined.
+</p>
+

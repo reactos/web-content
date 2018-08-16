@@ -1,0 +1,21 @@
+---
+title:       "USB stack improvements GSoC - Week 11"
+author:      "VardanM"
+type:        blog
+date:        2016-08-10
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-stack-improvements-gsoc-week-11
+aliases:     [ node/16236 ]
+
+---
+
+<p><span style="font-size: 18px;">I spent last week moving from 2k3 to ROS. After doing final validation of my usbhub changes on 2k3, me and my mentor decided to move to some real world issues. I have setup my development and testing environment work with ROS instead of 2k3.</span></p>
+<h4><span style="font-size:18px;">VS-2015 as IDE for ROS</span></h4>
+<p><span style="font-size: 18px;">First of all, I decided to use VS as IDE, to be able to use windbg as debugger. In that case I’ll have minimal changes on workflow I was using on 2k3 before. But I had issues there because of synching from git-mirror of ROS (it was not synched with svn-trunk). I was not able to compile it from Visual Studio. Then I have fixed all errors and successfully built ROS using VS2015 and svn trunk. After that I have got back to my another long term task, to move all commits from GIT branch to SVN.</span></p>
+<h4><span style="font-size: 18px;">What to use? "git-svn" or "git + svn approach" ?</span></h4>
+<p><span style="font-size:18px;">I was trying to use git-svn to work with our SVN branch using GIT. But it was very unstable and I was not able to pull from SVN. I was using msys2 environment on my win7 laptop. Then I decided to use GIT + SVN approach to avoid git-svn issues. But… As that approach requires more time to manage repository, after finalization of setup I decided to check git-svn on my Linux machine and it works!!! So now I have my own svn-mirror on my public GIT repo. And also in near future I’ll commit all my patches to my SVN branch too.</span></p>
+<p><span style="font-size:18px;">Beside of environmental changes have done testing of some Jira tickets. As my working branch was ready in the end of week, I haven’t done any update and also avoided to comment on tickets before having shareable source from where I have synched codes for testing.</span></p>
+<p>&nbsp;</p>
+

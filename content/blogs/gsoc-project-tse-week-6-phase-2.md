@@ -1,0 +1,34 @@
+---
+title:       "GSOC Project TSE Week 6 : Phase 2"
+author:      "SR13"
+type:        blog
+date:        2017-07-13
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-project-tse-week-6-phase-2
+aliases:     [ node/46962 ]
+
+---
+
+<p>Hey, guys!</p>
+
+<p>Six weeks have passed since I started my journey of coding with ReactOS. It was a wonderful time full of learning, coding, and fun. </p>
+
+<p>In terms of productivity, this week was not that great as compared to weeks before. But I can say it was an essential decision making and learning week. </p>
+
+<p>So I started this week, by resuming the task of patching up the remaining issues of <a href="https://code.reactos.org/cru/CR-122">CR-122</a>. And if you look at the review, I was almost able to finish these task as suggested. (Besides those who weren't able to review my code :P) This included the task of fixing some memory leak issues and tending to some UI bugs. If you look at my commit history, you will think that those were the only things I was able to do, but that was just the starters of this week. </p>
+
+<p>The important thing was to actually implement and test the IDropTarget interface and finish the optional task as mentioned in our plan. But we faced many setbacks while testing and thus a decision was made to discard the idea of implementing the drag-drop for now, and resume it if time permits in the later phase of the project. The thing is that the current quick launch code is more stable and debugged than it would be if we had implemented an unstable implementation of drag-drop. I also had added a feature which allowed to shuffle the buttons of the toolbar with a mouse click while holding shift. But as suggested by mentor Giannis, it would be best to continue the work of drag-drop together after a stable solution was found. </p>
+
+<p>So I had to move on to the "Phase 2" of the project, namely adding support for battery and USB options to the familiar notification tray. The first task was to get familiar with the so-called IOCTLs (which is an abbreviation for Input Output Controls) and tend to the battery part of this phase. So many new things were introduced to me and I was excited enough to dive into a deep learning... err... reading session. (yeah, that was an easter egg XD) Thanks to Giannis who provided me more than enough links to get started.</p>
+
+<p>That was more or less the things I did in this week. I know I can't say it was 'not too shabby' but I learned a lot from this week. I am hoping a great week ahead. So if you want to know more about this "Phase 2" then... Stay Tuned!! ;)</p>
+
+#Some Important links to fast track:
+<ol>
+<li><a href="https://docs.google.com/document/d/1zLTNqZ5eV35JUxoWIfPOIdV-ECPDrlWB-xOZbc28mBE/edit?usp=sharing">List of Milestones and plan</a></li>
+<li><a href="https://code.reactos.org/committer/reactos/ssawant">Present history of commits</a></li>
+<li><a href="https://code.reactos.org/browse/reactos/branches/GSoC_2017/shellext/reactos/dll/shellext/qcklnch">Code Repository</a></li>
+<li><a href="https://code.reactos.org/cru/CR-122">Code Reviews</a></li>
+</ol>

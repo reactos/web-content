@@ -1,0 +1,53 @@
+---
+title:       "Accepted Summer of Code Projects"
+author:      "Z98"
+type:        news
+date:        2011-04-26
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /accepted-summer-code-projects
+aliases:     [ node/304 ]
+news:        [ "news" ]
+
+---
+
+<p>The ReactOS project has accepted six entries from the submitted projects, covering a wide range of functionality. The completion of some would have immediate, user visible effects on ReactOS, while others are more long term.</p>
+<h3>TCP/IP Driver</h3>
+<p>Rewrite of the current TCP/IP stack using the lwIP library.</p>
+<ul>
+<li>Student: Claudiu Mihail</li>
+<li>Mentor: Art Yerkes</li>
+</ul>
+<h3>Completion of Explorer_New</h3>
+<p>Complete the implementation of a new explorer shell for ReactOS.</p>
+<ul>
+<li>Student: Andrew Green</li>
+<li>Mentor: Aleksey Bragin</li>
+</ul>
+<h3>Theme Support</h3>
+<p>Implement the theme service for the user interface.</p>
+<ul>
+<li>Student: Giannis Adamopoulos</li>
+<li>Mentor: Amine Khaldi</li>
+</ul>
+<h3>Audio Stream Mixing</h3>
+<p>Implement support for the mixing of audio streams for better sound controls.</p>
+<ul>
+<li>Student: Neeraj Yadav</li>
+<li>Mentor: Johannes Anderwald</li>
+</ul>
+<h3>Kernelmode Testsuite</h3>
+<p>Implement a testing system for the kernelmode ReactOS components to increase robustness and regression testing.</p>
+<ul>
+<li>Student: Thomas Faber</li>
+<li>Mentor: Pierre Schweitzer</li>
+</ul>
+<h3>GDI Font Driver</h3>
+<p>Implement a font driver to correctly render text through the Win32 subsystem.</p>
+<ul>
+<li>Student: Timo Kreuzer</li>
+<li>Mentor: Ged Murphy</li>
+</ul>
+<p>We wish all of the participants the best of luck with their projects as each success will help bring ReactOS that much closer to a stable version.</p>

@@ -1,0 +1,52 @@
+---
+title:       "SATA AHCI Driver GSoC - Week 2 Update"
+author:      "amaneureka"
+type:        blog
+date:        2016-06-07
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/sata-ahci-driver-gsoc-week-2-update
+aliases:     [ node/10950 ]
+
+---
+
+In the first week I gained enough knowledge to kick start the coding part. I started implementation with minimal featured design idea i.e. started implementation of non-optional routines first and in order they are being called by Storport/OS. Listed below
+<ul>
+	<li>
+		<strong>DriverEntry: </strong>
+		Registered the driver with very standard configurations (that I learned by WDK samples) and with <a href="https://msdn.microsoft.com/en-in/library/windows/hardware/ff557459(v=vs.85).aspx">non-optional (required entrypoint for Storport)</a> Hw Routines. Standard configuration includes
+			<em>NeedPhysicalAddresses (<strong>TRUE</strong>)</em><br>
+			<em>TaggedQueuing (<strong>TRUE</strong>)</em>
+			<em>MultipleRequestPerLu (<strong>TRUE</strong>)</em><br>
+			<em>AutoRequestSense (<strong>TRUE</strong>)</em><br>
+			<em>AdapterInterfaceType (<strong>PCIBus</strong>)</em><br>
+			<em>MapBuffers (<strong>STOR_MAP_NON_READ_WRITE_BUFFERS</strong>)</em>
+		Intialized the driver with <em>DeviceExtensionSize</em>.<br>
+		Structural Details:
+		<code>typedef struct _AHCI_ADAPTER_EXTENSION
+			{
+    			ULONG   SystemIoBusNumber;
+    			ULONG   SlotNumber;
+    			ULONG   AhciBaseAddress;
+    			PULONG  IS; // Interrupt Status, In case of MSIM == '1'
+    			ULONG   PortImplemented;// bit-mapping of ports which are implemented
+    			USHORT  VendorID;
+    			USHORT  DeviceID;
+    			USHORT  RevisionID;
+    			ULONG   Version;
+    			ULONG   CAP;
+    			ULONG   CAP2;
+    			PVOID NonCachedExtension;// holds virtual address to noncached buffer allocated for Port Extension
+    			BOOLEAN MessagePerPort;// Message Per port or shared port?
+    			PAHCI_MEMORY_REGISTERS ABAR_Address;
+    			AHCI_PORT_EXTENSION PortExtension[MAXIMUM_AHCI_PORT_COUNT];
+			} AHCI_ADAPTER_EXTENSION, *PAHCI_ADAPTER_EXTENSION;
+		</code>
+	</li>
+<li>
+	<strong>HwFindAdapter: </strong>
+	Reterived Adapter Specific informations like <em>VendorID, DeviceID, RevisionID, AhciBaseAddress, NumberOfPorts, Version, ABAR_Address</em> and Populated adapter extension with this information. Also, Intialized adapter by restarting it to a known state, Allocated Resources <em>(Port Extension)</em> for all the available ports. I faced problem in resource allocation part. Actually there are two type of memory allocation we need here, one is for HBA (Command Header List and Recieved FIS) but for that we can allocate memory through UncachedExtension, Other memory buffer we need for storing port extension details. Due to non-contigous (and limited memory of 30K) nature of UncachedExtension we can't allocate memory through it. And StorAllocatePool is not implemented in earlier (win2k3) versions. After some back and forth emails with my mentor, we settled on idea of allocating all memory in DevicExtension itself, and later if we find as such use of Storport Extended function we will implement StorAllocatePool (in ROS version of Storport) and update the driver. That update would be very easy, because It would require some little changes only. So no harm in having a temporary fix.
+</li>
+</ul>
+

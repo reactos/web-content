@@ -1,0 +1,31 @@
+---
+title:       "RAPPS Enchancements: GSoC 2017 Edition Volume 2"
+author:      "sanchaez"
+type:        blog
+date:        2017-06-29
+changed:     2017-07-21
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/rapps-enchancements-gsoc-2017-edition-volume-2-2
+aliases:     [ node/45886 ]
+
+---
+
+<p>Another week - another update! This time I worked on the license info, update checking and other improvements to my work. These changes bring up many under-the-hood changes.</p>
+<p>Dont worry, these changes may not look huge. I'm adding features and then worry about the visuals :)&nbsp; But first things first. Let's have a look.</p>
+<p><!--break--></p>
+<h4>Before</h4>
+<h2><img alt="Before: no License prefix and no Installed version info" class="imgp_img" src="/sites/default/files/imagepicker/51653/2017-06-23_13_26_05-ReactOS_Applications_Manager.png" style="color: rgb(119, 119, 119); font-size: 14px; width: 480px; height: 140px;"></h2>
+<h4>After</h4>
+<h2><img alt="After" class="imgp_img" src="/sites/default/files/imagepicker/51653/update.png" style="width: 480px; height: 140px;"></h2>
+<p>&nbsp;</p>
+<h2>Update check</h2>
+<p>RAPPS can now suggest and update if the version installed is less than in the database. To achieve this RAPPS gets a version from the system registry and compares it with the value in the RAPPS database. Both values are shown in the info.&nbsp;</p>
+<h2>License Info</h2>
+<p>One of the main ideas of this project it to highlight FOSS apps. This should boost open-source apps and help users that care only about freedom in their software. RAPPS database entries already have a License field and RAPPS showit right in the info. To strictly divide apps into categories I introduced a new <em>LicenseType</em> value. It is shown right before the License (see screenshot). This allows to have more clean code while not being much of a hassle to the future contributors. All existing entries will have to be updated and that can be easily done with some kind of script. &nbsp;</p>
+<h2>Other improvements</h2>
+<p>I reduced the check for installed apps to a minimum. RAPPS previously checked a DisplayName entries in the <i>Uninstall</i> key of the registry. Now this check is unnoticable! Also, all the changes made above available in English, Russian and Ukrainian.&nbsp;</p>
+<h2>Next step</h2>
+<p>I plan to add Languages section to the apps to the end of the week. Next week I plan to start working on a simple download manager where you can bulk download or install apps and do other small improvements on the way. Screenshots are postponed for now, although may be done if I surpass the schedule.&nbsp;</p>
+

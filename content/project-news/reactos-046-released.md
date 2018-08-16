@@ -1,0 +1,43 @@
+---
+title:       "ReactOS 0.4.6 released"
+author:      "vicmarcal"
+type:        article
+date:        2017-09-01
+changed:     2017-09-02
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/reactos-046-released
+aliases:     [ node/50313 ]
+
+---
+
+<p>The ReactOS Project is pleased to release version 0.4.6 as a continuation of its three month cadence. </p>
+<p>0.4.6 is a major step towards real hardware support. Several <b>dual boot</b> issues have been fixed and now <b>partitions</b> are managed in a safer way avoiding corruption of the partition list structures. ReactOS Loader can now load custom kernels and HALs.
+
+<p>Printing Subsystem is still greenish in 0.4.6, however Colin Finck has implemented a huge number of new APIs and fixed some of the bugs reported and detected by the ReactOS automated tests. </p>
+
+<p>Regarding drivers, Pierre Schweitzer has added an <b>NFS driver</b> and started implementing RDBSS and RXCE, needed to enable SMB support in the future, Sylvain Petreolle has imported a Digital TV tuning device driver and the UDFS driver has been re-enabled in 0.4.6 after fixing several deadlocks and issues which was making it previously unusable. Critical bugs and leakages in CDFS, SCSI and HDAUDBUS have been also fixed.</p>
+
+<p>From the Compatibility point of view, 0.4.6 introduces, thanks to Mark Jansen, a <b>shim engine as part of the new application compatibility framework</b>. This shim engine is disabled by default in 0.4.6 but can be enabled through the ReactOS registry. This release also includes a special NTDLL library that exports some of the NTDLL Vista+ functions needed by newer software pieces. </p>
+ 
+<p>0.4.5 introduced msstyle themes in ReactOS, allowing you to switch to something different, more modern or nostalgic if you don't like the Classical skin. In 0.4.6, and thanks again to your donations, Giannis has fixed lots of bugs in Shell32, Comctrl32 and Browseui, so now msstyle themes are fully working. <b>In 0.4.6 efforts were made to improve the user experience</b>. "Lock Taskbar", "Hide inactive icons", and "Group similar taskbar buttons" settings are properly remembered now each time you reboot ReactOS. Explorer’s taskbar is finally resizable. Tiled, centered and stretched wallpapers are correctly placed now. Explorer’s addressbar is much improved, and now works nicely with symlinks. The clipboard has gone through a massive fixup, making it more usable and reliable</p>
+
+<img src="/sites/default/files/imagepicker/14095/theming.jpg" alt="ReactOS can be themed using Msstyles"  class="imgp_img" width="724" height="282" /><div class="imgp_desc">ReactOS can be themed using Msstyles</div><br/>
+<p>0.4.6 is much more stable now as a result of several <b>memory manager, ntoskrnl and filesystem fixes</b>. To name a few, mapping a view of the physical memory sections works now, several MM and NTOS leakages were plumbed, and NTOS:IO critical bugs were fixed. Several buffer overflows and overruns, logic issues and dead code detected by Coverity and other tools have been fixed, leading to less corruptions and leaks.</p>
+
+<p>In order to track ReactOS compatibility with Windows behavior, <b>1,088,893</b> unit test cases have been added since 0.4.5. This new release has been tested through 14,238,159 unit test cases, failing just 18,419  (a 0,129% ratio failure).  Still, ReactOS is marked as Alpha for the moment. </p>
+
+<p>Eric Kohl has implemented NETAPI, the network transport and security library. Peter Hater has reworked WinSock2. Several bugs affecting rendering performance, NtGDI, brushes, and shape creation are now fixed thanks to James Tabor, Mark Jansen, and Thomas Faber. Amine Khaldi has synced Wine, and tons of other third party modules needed for 0.4.6. Font substitution and font breaking issues have been fixed by Katayama Hirofumi MZ and Giannis. ReactOS now supports the Esperanto language thanks to Mike Swanson and <b>lot of contributors have contributed with translations and patches.</b></p>
+
+<p><a href="https://reactos.org/wiki/0.4.6">General notes</a>, <a href="https://reactos.org/wiki/Tests_for_0.4.6">tests</a>, and <a href="https://reactos.org/wiki/ChangeLog-0.4.6">changelog</a> for the release can be found at their respective links. A less technical <a href="https://reactos.org/wiki/Community_Changelog-0.4.6">community changelog</a> for ReactOS 0.4.6 is also available.</p>
+
+<p>ISO images are ready at the ReactOS <a href="https://reactos.org/download">Download</a> page.</p>
+
+<h2>Some statistics</h2>
+<p>The <b>oldest bug</b> fixed was <a href="https://jira.reactos.org/browse/CORE-4107">CORE-4107 </a>. "Firefox 3.X/4.X don't register as default web browsers". Reported <b>8 years ago</b>.<br/>
+During these 3 months, <b>399 bugs have been resolved</b>: 300 marked as fixed, 37 as duplicates, 32 as won't fix, 16 as incomplete, 14 as can not reproduce.<br/>
+282 bugs fixed were directly related to the operating system, 12 from ReactOS online services, 8 from ReactOS test suite, 4 from ReactOS Building Environment and 1 from ReactOS RosApps.</p>
+
+<i>There is a Press-kit available in the Download page.</i>
+

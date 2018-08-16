@@ -1,0 +1,24 @@
+---
+title:       "Google SoC lwIP Report Week 7"
+author:      "zhu48"
+type:        blog
+date:        2016-07-11
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-7
+aliases:     [ node/13411 ]
+
+---
+
+<p>Last week ended with Art going through decompiled assembly to find a bug for me, because the stack trace in the kernel debugger was pointing me to the wrong line in the C source code. It turns out that the problem was a NULL pointer dereference in the RECEIVE callback. As always in programming, a lot of effort went into catching a small oversight.&nbsp;</p>
+<p>With that leftover bug from last week resolved, I moved on to my tasks for this week - more debugging, a code review done by Thomas Faber, and finally setting up WinDBG.&nbsp;</p>
+<p>After some general debugging, I quickly ran into memory access violations, page faults, and other mysterious issues that I suspect had to do with locking and linked lists in my code. As a result, the kind GSoC mentors decided to give me a code review focusing on LIST_ENTRY usage.&nbsp;</p>
+<p>Thomas, who performed the code review, pointed out a great deal of problems for me. The first, most glaring problem was my abuse of the global cancel spin lock (IoAcquireCancelSpinLock). This lock is used to globally serialize IRP cancellation state modifications, and, like all spin locks, should be held for the minimum amount of time necessary. Following the example set by existing code, I was acquiring this lock unnecessarily and holding it for too long. Further reading up on this lock (starting from an article given to me by Thomas) revealed that for correctness, I actually didn't have to acquire this lock in my code at all. For drivers that keep their own IRP queues, like my driver, use of this lock was deprecated. The only reason I had to explicitly acquire this lock was to catch very rare corner cases, which I am not exactly in a position to worry about yet.&nbsp;</p>
+<p>Thomas also had some other suggestions for me. He caught several pieces of my code that were infinite while loops, forced me to think more about the scope of my locks, and got me to clean up my coding style.&nbsp;</p>
+<p>When I was done fixing the problems Thomas caught, I did less than half a day of debugging before running into a memory access violation originating from inside lwIP. I had two choices about how to proceed - figure out how to pipe debug printouts from inside lwIP to the ReactOS debugging serial port, or actually hook up WinDBG so I can directly inspect memory. I chose to start setting up WinDBG, since doing that would probably speed up everything I do.&nbsp;</p>
+<p>Setting up WinDBG turned out to be a full-day task.&nbsp;</p>
+<p>To use WinDBG, I needed to use Microsoft's compiler to generate debug symbols. At first, the compiler refused to even find stdlib.h. It turned out, for some reason, my install of Visual Studio did not include the Windows 10.0 SDK, and my environment variables were set up in such a way that a mix of Windows 8.1 and Windows 10.0 SDKs were specified. A good chunk of the rest of the day was spent downloading and installing the SDK, after which WinDBG worked beautifully.&nbsp;</p>
+<p>When I first dove into the kernel with WinDBG hooked up, the old bug was gone and I ran into a different bug. I guess that's the first bug I'll be work on next week.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15611">Discussion</a></p>
+

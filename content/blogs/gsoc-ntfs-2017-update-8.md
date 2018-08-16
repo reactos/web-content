@@ -1,0 +1,42 @@
+---
+title:       "GSoC NTFS 2017 Update 8"
+author:      "coderTrevor"
+type:        blog
+date:        2017-08-03
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-8
+aliases:     [ node/48497 ]
+
+---
+
+<p>Hello World!</p>
+
+<p>I know it hasn't been very long since the last update. The last few updates were late, but I'm trying to get back into good habits like committing often and blogging on time. :)</p>
+
+<p>Last time, I talked about how ReactOS was corrupting my test volume by trying to create files I wasn't ready for it to create. I was indeed able to fix that by booting into Windows and creating the folder and files ReactOS kept trying to make. Now I can focus on the file-creation scenario I'm testing.
+</p>
+
+<p>I came across one more bug that was making things REALLY difficult for me. This one was corrupting memory, and making ReactOS unstable. The worst thing about a bug like this is it's difficult to find and more-or-less impossible to ignore. I'd be testing some code I just wrote and get a bugcheck. Was that because the code I just wrote isn't working, or is that memory corruption interfering? Usually, it was the latter.
+</p>
+
+<p>I found the cause of the corruption today (I'm 95% sure) and now I can move forward. I feel kind of stupid though, because the underlying cause is something I've encountered at least two other times while working on this project, and it's always been my biggest stumbling block.</p>
+
+<p>This time, the problem was related to the way NTFS_ATTR_CONTEXT is structured.  The driver relies on this structure extensively to track information associated with an attribute record. The struct has a member, Record, which is a copy of the attribute record itself. The problem lies in the fact that when an NTFS_ATTR_CONTEXT is created, its Record member is only large enough to store the attribute record. If I want to update the attribute on disk and make it larger, I can't reuse the existing context, because its Record member won't have enough memory to store the new attribute record (and of course, memory gets corrupted if you try). Last year, I was running into a very similar problem that was keeping me from migrating resident attributes to non-resident when the file size changed.</p>
+
+<p>On a more general level, I think I've been running into this problem (in one form or another), because I'm reluctant to really take ownership of the code and make "drastic" changes. What I mean, is that when I'm presented with a limitation in a data structure like this, instead of changing the structure, I tend to try to work around what's already there. I think my reluctance to make broad changes stems from a few things: 
+</p>
+<ul><li>Overestimating how difficult or time-consuming it will be to refactor existing code</li>
+
+<li>Underestimating how easy (or even possible) it will be to work around the current design</li>
+
+<li>Inexperience with developing software on a team and not wanting to "step on anyone's toes" by changing the existing code too much</li>
+
+<li>Most of my programming experience has been with closed-source API's or proprietary game engines like Unity, where changing data structures isn't an option, and working around a problem is the norm.</li></ul>
+
+<p>It reminds me of working on my car. Many times I'd be presented with a choice between removing a part that was in the way of what I was interested in, or leaving the part alone and working around it. All the times I've tried to leave everything alone I've regretted it. The times I removed a few extra bolts, and got crap out of my way, I was surprised at how little extra work it was, and how fast the remaining job went. Maybe you don't need to remove the alternator to remove the water pump, but if the alternator is in the way, it's better to invest a little extra time upfront and just move it instead of reaching around it awkwardly. Maybe I don't need to update data structures that don't suit my purposes; I can work around them awkwardly, but it's much better to just invest the extra time upfront in restructuring them to suit my purpose.</p>
+
+<p>In hindsight, it's totally obvious to me that the structures I'm working with should be updated and expanded. They were developed with reading files in mind; their creators hadn't intended for them to support what I'm trying to do with them.</p>
+
+<p>Sorry for the boring, all-text update. What do you say I show you some screenshots of new progress next week? I have a good feeling about it! :)</p>

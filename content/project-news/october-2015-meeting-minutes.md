@@ -1,0 +1,82 @@
+---
+title:       "October 2015 meeting minutes"
+author:      "EmuandCo"
+type:        news
+date:        2015-11-15
+changed:     2016-02-05
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/october-2015-meeting-minutes
+aliases:     [ node/3459 ]
+news:        [ "news" ]
+
+---
+
+<p>2015-10-29<br />
+	19:00 UTC<br />
+	dev.reactos.org, #meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:01 by Amine Khaldi</p>
+<ul>
+    <li>Point 1: Release plans</li>
+    <li>Point 2: Special Report: Shell</li>
+    <li>Point 3: Special Report: CE plans</li>
+    <li>Point 4: Developers reports</li>
+</ul>
+
+<h2>Point 1</h2>
+<p>Amine Khaldi built up on an email he sent to ros-priv about planning a 0.4.0 release now that things start to get in shape for it. He started the topic with asking for opinions and questions regarding what's still left to do. He mentioned a google document that Thomas Faber created (https://docs.google.com/document/d/1fHFXqMiUXEbM-Jh1AM0P9GXCCvSzYoEovXYYxamGUFA) with all what's left to do in his opinion and it's open for modification for developers ONLY. Colin Finck already added a section regarding comparison to older roadmaps (2007ish) and what's still missing in that perspective. SMB support is the only thing which is completely untouched yet. Later roadmaps skipped this point completely though. (https://reactos.org/wiki/0.4.0). According to this roadmap, the release is very close now and that was the point of the discussion. Amine asked if there are any objections against a release of ReactOS 0.4.0 ASAP. All developers were for a release, even without SMB, with some objections though:</p>
+<p>Website overhaul is needed for release. A new Wine sync before release would be a good idea, too. SMB will come later and until then MUP support, aka VBox/VMWare shared folders, is good enough to release 0.4.0. The rest and the nice-to-haves is for the 0.4.X releases coming afterwards.</p>
+<p>Current plan is to feature freeze and branch in about 1-2 months and then do a 1 month testing phase to fix all regressions, blockers and bugs left preventing the release. Next meeting will be used as a checkpoint and for last discussion before the release and afterwards the branch will be created.</p>
+<p>Sylvain Petreolle mentioned his problems accessing Internet on real hardware (ie: no TCP) which should be fixed. This is a known problem with our rtl8139 driver and should be retested with official ones first. Christoph von Wittich pointed to the flaky state sound has right now which needs some fixes, too. Johannes Anderwald is not available recently though, so sound is a problem. Hermes Belusca Maito mentioned the forums thread where somebody tested sound delays with rather terrible results. (Author sidenote: Johannes Anderwald already knows about this thread because I had a discussion regarding it with him recently. Nothing happened here so far though.)</p>
+<p>Time frames for release are not that famous in a project, but as a date to aim for christmas time, more precisely 12-24-15, was chosen.</p>
+<p>It was suggested to add a release builder and Amine Khaldi offered to make ReactOS compile in release mode with GCC in addition to MSVC, so we can save money and use a Unix-based builder instead of investing into a Windows one. This will help in regression testing and of course creating the final ISOs for release.</p>
+
+<h2>Point 2</h2>
+<p>Sometimes Giannis Adamopoulos remembers that what we implement now was implemented for Windows 95 and 98 by MS and this thought is depressing. So he would like to hear something more thorough, like what devs wish to implement from all the unimplemented stuff. A lot of things were fixed, a few bugs were introduced, some things were simplified and sped up, a lot of stuff is still unimplemented and generally there are mountains of work in this area. We still need a lot of improvements in the look and feel, too. This could improve the perception a lot, and give us some hope. What are the most annoying things, what features feel missing, what looks and feels great in it and what you think about it in the context of a 0.4 release. He'll try to take as much as possible from the replies in order to see what is realistic to do till 0.4.</p>
+<p>Colin Finck personally does like the consistent shell provided in Win98/Win2000 times and it got worse in some points since Vista so he wouldn't mind an implementation of features of that time. Although the main points, like a cascading start menu and an Explorer with customizable toolbars are already done in ReactOS Shell. Problem is the HTML interface introduced in XP and being used more and more these days.</p>
+<p>Giannis Adamopoulos mentions that we still lack a tree view or a quick launch toolbar. Additionally it would be very helpful if ReactOS would boot with MS' win32k again like it did in January last time. Since then it bugchecks in MM.</p>
+<p>Christoph von Wittich pointed to the <Empty> in the start menu which looks ugly and recent documents isn't working. Positioning of cpl applets is bad and right click on desktop -> properties looks ugly, too.</p>
+<p>[TheFlash] had his ups and downs with it... he basically stopped using it completely, and only opens the command prompt to do everything from there because of win32k crashes. But it starts to feel way better than before.</p>
+<p>Because most of the problems were not filed in JIRA at all until now, Amine Khaldi suggested to file reports about all the problems being found, and assign to Giannis Adamopoulos with the 0.4-NiceToHave label so that we have them documented and that he can filter them out then.</p>
+<p>Robert Naumann asked for toolbars support for quick launch etc. As a person who used the old shell for years, the new one feels like a 5 star hotel in his opinion.</p>
+<p>Hermes Belusca Maito mentioned a bug in the address bar. "C:\" works fine, but "C:" does nothing yet.</p>
+<p>Alexander Rechitskiy often stumbles over a bug when many (small) files are copied in shell. ReactOS crashes during copy of dos games files via explorer.</p>
+<p>Amine Khaldi likes the shell in its current state and what might still come. Bugs are addressed fast and the code quality is constantly improving and we even get external contributions once in a while.</p>
+<p>Giannis Adamopoulos started to realize that there are no low hanging fruits in the shell to fix, we just have to fix crashes and instability. Everything that looks off has to be reported anyways, because he has so many reports open regarding shell that he can't remember everything outside of JIRA, too.</p>
+
+<h2>Point 3</h2>
+<p>Amine Khaldi pointed out that ReactOS Community Editions is based on Core 0.4, so entering this era means we're progressing nicely towards CE. The 3 most voted apps (Chrome, Word 2010 and Java) are top priority of course. He'd like to conclude this point with saying that the team is working on CE every single day, by working on trunk, and once 0.4.0 is released we could have more focus on the CE specific needs (the 3 most voted apps mainly and their stability, the new setup...etc) and finally get it released.</p>
+
+<h2>Point4</h2>
+<p><b>[TheFlash]</b> Gregori Macario Harbs contributed some Sound Blaster emulation code for NTVDM, but it's in FreeBASIC and he is translating that to C so hopefully we'll have Sound Blaster support in NTVDM in time for 0.4.0. Other than that he's also planning on fixing NTVDM bugs, mainly VGA ones. Whenever something in the specification is unclear, he checks the Cirrus Logic specification so that our virtual card remains compatible with the CL-GD5434.</p>
+<p>Colin Finck had a NTVDM related question for the devs. He knows NTVDM from Windows as a transparent emulation layer for DOS that you basically never see and it just integrates perfectly well with Windows, uses Windows' filesystem, etc. But now he sees that devs are integrating features such as mounting virtual disk images, which does not really fit in that way and it apparently feels more like an emulator like e.g. DOSBox or QEMU that way. How far do the devs actually want to go with NTVDM? Will it stay a component perfectly integrated into ReactOS or will it evolve into a fully-featured emulator later?</p>
+<p>This was answered with the OS/2 MVDM in mind which supported such features. The image support is just an extra feature. The mounting VHDs feature is such that you can test real DOSes in NTVDM to be able to know whether some thing that didn't work previously, is due to emulation problem of hardware, or emulation problem of our DOS. Regarding the final status aimed at it was pointed out that the CPU library, fast486, should be able to work in any project, but NTVDM itself is just for ReactOS. Plans are made about adding extra ReactOS fields in some potential future .PIF file ReactOS implementation such that they could be used as small VM setting files.</p>
+
+<p><b>Aleksey Bragin</b> As one of his students is working on arwinss, he's helping him (hence the arwinss commits) He didn't forget about the loader part, but did not have time for that. His plans are to continue working on these two things. Also he is experimenting on ring3k some user mode NT Kernel working in Linux, as another student works on that too. Source code is in his repo on github, check it out if you're interested. (https://github.com/bragin/ring3k)</p>
+
+<p><b>Alexander Rechitskiy</b> He did a lot of testing and found for example that KDE is almost working in ReactOS. GOG Galaxy (team like DRM-less software) is close to working state too. He also filed reports about some bugs and regressions. He represented ReactOS on several startup and tech events, like Mashuk (in Stavropol region) and Day of Free Software in Ekatarinburg. ReactOS was received very warmly by audience. They are waiting for the next release as soon as possible (not many ppl know about nightly builds as it seems)</p>
+
+<p><b>Amine Khaldi</b> He worked on the usual: getting some of our JIRA patches reviewed/committed, looking over JIRA in general, working with fellow devs on ReactOS tasks that end up committed to trunk, did some syncs, worked on landing the new style build...etc</p>
+
+<p><b>Colin Finck</b> He submitted his thesis in the end of September and presented it on 7th October. It went very well, except for the fact that his brought parallel-port printer died right in front of the audience during the demonstration...  meaning this time ReactOS was performing well, the hardware was not :P After that, apart from some infrastructure work and preparations for the upcoming ReactOS Deutschland e.V. General Assembly, he's currently focusing on his departure to Sunnyvale CA in November for an internship that will go for 7 months. Regarding his printing work, he'll create a diff to trunk of his printing branch in the next few days, then try that out on the BuildBots to see if anything regresses or totally stops working, which is not unlikely due to the fact that he began by removing all Wine Printing APIs. In general, he looks forward to merge printing back to trunk before his departure, but can't promise anything right now</p>
+
+<p><b>Daniel Reimer</b> He has not much time these days. End of year is nearing which means he has more to do @ work because all the companies spend money to not pay taxes on it, but "keep" it. :P He tests some apps and writes a few reports recently. Here his newest one. https://jira.reactos.org/browse/CORE-10432 He found out that DirectX does work in GCC, but not at all in MSVC builds and still is investigating in it. Still Kyodai Mahjongg works super fine in GCC, but the activated sound still causes it to render a black windows with sound, without sound it works fine though. (https://jira.reactos.org/browse/CORE-8380).</p>
+
+<p><b>Giannis Adamopoulos</b> He tries to fix bugs here and there in the shell. He tries to commit as many patches as possible in order to not let down contributors.</p>
+
+<p><b>Hermes Belusca Maito</b> 99.999% of his time is eaten up by finishing his PhD (until end of January), so only during his free-time he commits stuff in ReactOS. He is finally integrating his msconfig work he did just before joining ReactOS team in 2011, part of it being in C++, hence the msconfig_new (and associated ATL) commits that you've seen.</p>
+
+<p><b>Herve Poussineau</b> He is still hoping to have a network bootable ReactOS... PXE boot is fine, but ReactOS is still missing a remote filesystem (SMB?), but nothing done last month for it.</p>
+
+<p><b>Robert Naumann</b> He also has not much time currently, but tries to take care of the patches from Jared and Henry. He also wanted to fix existing explorer property sheet and add more dialogs to it and implement reading and writing its settings to registry, but his current patch has some problems. This demotivated him a bit, but he will search for the reason of the problems.</p>
+
+<p><b>Sylvain Petreolle</b> He's currently doing a few hardware testing. He's having problems with booting (ReactOS cd needed to boot) and some networking tests.</p>
+
+<p><b>Thomas Faber</b> He is bugfixing as always. Pretty random things, whatever he feels like. Started trying to get some of the 0.4 blockers finished up, in particular working with Jim on CORE-9210.</p>
+
+<p><b>Timo Kreuzer</b> He fixed bug CORE-9435 and needs to get his build environment fixed. Other than that, he didn't do much, but will try to fix some stuff for the release. He'll focus on crashes and regressions in that case.</p>
+
+<p>Meeting was closed at 21:06 by Colin Finck</p>
+<p>Meeting minutes prepared by Daniel Reimer</p>

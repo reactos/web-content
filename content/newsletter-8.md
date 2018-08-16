@@ -1,0 +1,184 @@
+---
+title:       "Newsletter 8"
+author:      "TwoTailedFox"
+type:        news
+date:        2005-12-12
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-8
+aliases:     [ node/148 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Welcome To Reality</li>
+# <li>New Release: 0.2.9</li>
+# <li>New Networking Code?</li>
+# <li>Eye on SVN</li>
+# <li>20,000 Commits!</li>
+# <li>What's up for Next Week?</li>
+# </ul>
+
+---
+<h2>Welcome To Reality</h2>
+
+<p>Welcome to the ReactOS Weekly Newsletter, Issue 8, where there are three kinds of people, none of them particularly effective at writing a newsletter today.</p>
+
+<h2>The Delay: Excuses Inbound</h2>
+
+<p>Unfortunately, Issue 8 was delayed last week, because Mrs. Flu decided to bed me over, and screw me crosseyed, leaving me very ill, and making my body wish it had a built-in thermostat. Anyway, it's better to have a newsletter late, than not at all, so let's just jump straight to it.</p>
+
+<h2>New Release: 0.2.9</h2>
+
+<p>Yup, we have another release planned for you all. 0.2.9 is our lastest release thus far, to assist our preperations for 0.3.0, and to give you an insight into what's changed since 0.2.8.</p>
+
+<p>Release Candidate 1 is up on <a href="http://sourceforge.net/project/showfiles.php?group_id=6553">Sourceforge</a></p>
+
+<h2>New Networking Code?</h2>
+
+<p>Yes, and no. It's in a branch all its own, under the care of Alex Ionescu, submitted for archival purposes, and so he could claim the must-coveted 20000 Commit Number. Must of it doesn't link or compile properly, so hopefully it'll be worked on in time for 0.3.0.</p>
+
+<h2>Eye on SVN</h2>
+
+<p>Two weeks, and a bumper log to peruse over. As always, minor bugs are skipped, and from next week, I'll squeeze in app Translations under a new secions.</p>
+
+<h3>Changes This Week</h3>
+
+<h4>AdvAPI32</h4>
+<ul>
+<li>Implemented Stub for QueryServiceConfig2W</li>
+</ul>
+
+<h4>New Branches</h4>
+<ul>
+<li>0.2.9</li>
+<li>Latest User-Mode Kernel Networking Code</li>
+</ul>
+
+<h4>Crypt32</h4>
+<ul>
+<li>Implemented CertVerifyCertificateChainPolicy</li>
+</ul>
+
+<h4>CSRSS</h4>
+<ul>
+<li>Send proper messages/events to processes during logoff and kill them if they dont self-destruct (Incomplete)</li>
+</ul>
+
+<h4>DevMgr</h4>
+<ul>
+<li>Partially Implemented DeviceProblemWizardA/W</il>
+<li>Hide devices if necessary</li>
+<li>Display whether device is enabled or disabled</li>
+<li>If Device Status Query fails, display "Unknown" as status</li>
+<li>If Driver Installation fails, the "Reinstall" button is now displayed</li>
+<li>Devices can now be disabled and enabled</li>
+<li>If "Do not show this dialog anymore" is ticked, device will be disabled when proper disabling of devices is coded</li>
+</ul>
+
+<h4>DirectX Libraries</h4>
+<ul>
+<li>Implemented IDxDiagContainerImpl_GetNumberOfProps</li>
+<li>Implemented IDxDiagContainerImpl_EnumPropNames</li>
+<li>Implemented IDxDiagContainerImpl_GetProp</li>
+<li><i><b>I have been informed that these have been reverted, and imported from WINE</b></i></li>
+</ul>
+
+<h4>Drivers</h4>
+<ul>
+<li>Implemented PciIdeXSetBusData in PCIIDEX Miniport Driver</li>
+</ul>
+
+<h4>GDI32</h4>
+<ul>
+<li>Implemented NtGdiAbortPath</li>
+<li>Implemented NtGdiBeginPath</li>
+<li>Implemented NtGdiEndPath</li>
+<li>Implemented NtGdiFillPath</li>
+<li>Implemented AbortPath</li>
+<li>Implemented BeginPath</li>
+<li>Implemented EndPath</li>
+<li>Implemented FillPath</li>
+<li>Implemented FlattenPath</li>
+<li>Implemented GetPath</li>
+<li>Implemented PathToRegion</li>
+<li>Implemented SetMiterLimit</li>
+<li>Implemented StrokeAndFillPath</li>
+<li>Implemented StrokePath</li>
+<li>Implemented WidenPath</li>
+<li>Implemented GetMiterLimit</li>
+<li>Implemented SelectClipPath</li>
+</ul>
+
+<h4>Libxml2</h4>
+<ul>
+<li>Imported the whole damn 2.6.20 library</li>
+</ul>
+
+<h4>PowerPC ReactOS Port</h4>
+<ul>
+<li>Added PowerPC Boot Program</li>
+<li>PowerPC support in Freeloader</li>
+<li>PowerPC adaptations of i386 Headers</li>
+</ul>
+
+<h4>Regedit</h4>
+<ul>
+<li>Implemented Accelerator Keys</li>
+</ul>
+
+<h4>RosApps</h4>
+<ul>
+<li>Removed Obsolete Shutdown App</li>
+</ul>
+
+<h4>RosCMS</h4>
+<ul>
+<li>Translation Interface is now useable</li>
+<li>Implemented New Website Status Page</li>
+<li>User Account Interface pages have been fixed and improved</li>
+<li>RosCMS Colours starting to be moved to a seperate file</li>
+<li>Group Members Interface is Improved</li>
+<li>Get Password Function link now works</li>
+<li>RosCMS now properly builds all language pages for the Newsletters!</li>
+</ul>
+
+<h4>RTL</h4>
+<ul>
+<li>Implemented RtlPrefectMemoryNonTemporal</li>
+</ul>
+
+<h4>SetupAPI</h4>
+<ul>
+<li>Implemented Stub for SetupDiSetClassInstallParamsW</li>
+<li>Implemented SetupDiGetClassDevPropertySheetsA</li>
+<li>Implemented SetupDiGetClassDevPropertySheetsW</li>
+<li>Implemented SetupDiGetClassImageIndex</li>
+<li>Implemented SetupDiGetClassImageList</li>
+<li>Implemented SetupDiGetClassImageListExA/Wv</li>
+<li>Implemented SetupDiLoadClassIcon</li>
+</ul>
+
+<h4>Vendor Drops</h4>
+<ul>
+<li>MediaWiki 1.4.8</li>
+<li>MediaWiki 1.5.3</li>
+</ul>
+
+<h4>Win32k</h4>
+<ul>
+<li>Implemented NtGdiSelectClipPath</li>
+<li>Implemented PATH_FillPath</li>
+</ul>
+
+<h2>20,000 Commits!</h2>
+
+<p>Yes, The ReactOS Project has now reached 20,000 CVS/SVN commits, which, for a project this size, in a few years, really is quite incredible. You Developers feel up to breaking 100,000 Commits? ;)</p>
+
+<h2>What's up for Next Week?</h2>
+<p>Next week, I'll be seeing if I can come up with a better tagline for the newsletter. Oh, and I'll also be delving into the Wiki, and pulling up just how far along to ReactOS 1.0 we are. I was hoping to do it this week, but everyone has their own opinion on what goes in what version, and what version constitutes "Alpha" and "Beta" Status. I need clarification, folks.</p>
+<p>Until Next Week.. Happy Compiling!</p>
+<p>Stuart <a href="mailo:TwoTailedFox@Gmail.com">"TwoTailedFox"</a> Robbins</p>
+<p>ReactOS Weekly Newsletter Editor</p>

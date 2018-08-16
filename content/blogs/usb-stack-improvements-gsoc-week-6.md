@@ -1,0 +1,22 @@
+---
+title:       "USB stack improvements GSoC - Week 6"
+author:      "VardanM"
+type:        blog
+date:        2016-07-06
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-stack-improvements-gsoc-week-6
+aliases:     [ node/12963 ]
+
+---
+
+<p>This week I have continued fixes in PnP handling of our USB stack. I was focused on usbhub and done number of fixes there. Let me describe process from begining.</p>
+<h4>Issue on MS's hidusb removal.</h4>
+<p>As you may remember from previous post, now MS's usbccgp works under 2k3, sitting on the top of our ohci-hub pair. But that time I have also faced issue on it's removal. So to simplify debugging I have reproduced same issue with hidusb and saw the same behaviour under 2k3. I spent about 2 days debugging and reading forums, but was unsuccesful in resolving this issue. After discussion and investigation with my mentor we decided to move to resolving the issues reported by Driver Verifier, that may help to fix described issue too.</p>
+<h4>What I've seen using Driver Verifier?</h4>
+<p>Seems our usbhub was never validated with driver verifier. There was a number of issues in PnP handling not only in usbhub, but also in libusb. The verifier was complaining everywhere, on boot, on removal, on shutdown... After some time I have fixed all issues reported by DV and pushed commits for review (I'm still using github). So now with our usbhub+usbohci DV is not complaining, to be honest I should say that there is tests for OHCI wich I haven't done, so this quietness&nbsp;of DV is only for usbhub.</p>
+<h4>What's next?</h4>
+<p>Next week I'm planning to finish planned part of usbhub's PnP handling, i.e. finalize FDO part and refactor codes according review comments. Also I'll continue reading of Walter Oney's book to improve my theoretical&nbsp;and practical skills related WDM.</p>
+<p>&nbsp;</p>
+

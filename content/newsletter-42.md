@@ -1,0 +1,50 @@
+---
+title:       "Newsletter 42"
+author:      "Z98"
+type:        news
+date:        2008-06-28
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-42
+aliases:     [ node/182 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Various Matters</li>
+# <li>Release Plans</li>
+# <li>General Developments</li>
+# <li>New Members</li>
+# <li>Other Matters</li>
+# </ul>
+
+---
+<h2>Various Matters</h2>
+<p>
+The project's been dealing with some internal matters recently and this combined with my day job being at the same time the majority of developers are online means I wasn't fully up to date on development matters and was busy dealing with other matters.  Due to various issues and my lack of time recently, it's taken this long to get one out.  We did have a second person who volunteered to write something up and the basic information in this newsletter is from his draft.  I made my own edits and additions to GreyGhost's work, so thank him for getting me started.  Otherwise I might have not bothered until after the 0.3.5 release.
+</p>
+<h2>Release Plans</h2>
+<p>
+Yes, we're actually in release mode, I know, it's been over two months.  But that was never a solid deadline and if more work was needed, we didn't have any reservations about breaking it.  The 0.3.5 branch has been created and the intent is to release before the end of June.  If we somehow manage that, it'll be the fastest we've ever released after branching.  Right now, a few bugfixes are still pending, as well as some merging from trunk.  Beyond that, the changelog is basically done and everything is more or less on track.
+</p>
+<h2>General Developments</h2>
+<p>
+Trunk has seen some impressive fixes recently, with issues in the pushlock code being resolved by Aleksey Bragin and a new developer, Jeffrey Morlan, IRC nick Goplat.  The pushlock fix resolves issues with hangs in Firefox's and VMware's installers hanging, along with hangs when using Task Manager.  According to Aleksey, the fixes should also help with NoCc, but it's still some ways from being ready for release. 
+</p>
+<p>
+The C Runtime is also undergoing work.  Like many components, it was originally written in a manner that didn't have compatibility with MSVCRT in mind.  Syncing some parts of the CRT with Wine has partially resolved the issue, but it will need more work before we can claim it's production ready.
+</p>
+<p>
+Speaking of Wine, their recent code freeze actually benefited us greatly as it gave our developers an opportunity to update more components we borrowed from them.  Jim Tabor has been working on porting their Path code into ReactOS, which appears to fix some issues when installing.  We'll likely draw more heavily on Wine in the future.
+</p>
+<h2>New Members</h2>
+<p>
+I've already mentioned one newcomer, Jeffery Morlan, who has been providing many patches to the project.  Another person who recently was granted commit access is Matthias Kupfer, IRC nick Collibri.  Matthias has actually followed the project for quite some time so one could say it's the cultimation of all his time with us.  Matthias seems to be focusing on the Registry code and I look forward to the efforts of both.
+</p>
+<h2>Other Matters</h2>
+<p>
+Those people following the developer mailing list already know we recently had a major spat amongst some of the developers.  Considering development is still ongoing, people don't need to worry about this throwing everything off, so stop worrying about it.  The issue will be resolved but will obviously take time.  Until those matters are sorted out, I won't be making any further comments.
+</p>
+

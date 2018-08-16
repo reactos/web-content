@@ -1,0 +1,45 @@
+---
+title:       "GSOC Project TSE Week 2"
+author:      "SR13"
+type:        blog
+date:        2017-06-20
+changed:     2017-06-22
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-project-tse-week-2
+aliases:     [ node/45229 ]
+
+---
+
+<p>Hello friends, its Shriraj again. ;)</p>
+
+<p>Its already second week of the coding period, and I was enjoying my time as a beginner dev in reactos. Learning new things every now and then and just being on irc is a sheer fun. So as decided last time, we had an official gsoc meeting on #reactos-gsoc. I explained and summarized what I was able to do last week. Also planned what Ill be doing next. This are some of the compulsory things for gsoccer under reactos this time. It was also decided that we should write a weekly blog posts regarding our work. (And thats what I am currently doing ;P)</p>
+
+<p>The main task at hand this time was to add CISFBand object and forward its methods to the proxy CQuickLaunchBand. Before that, I did some tests on CQuickLaunchBand by implementing and displaying a button in the band. Giannis taught me about windows subclassing while I was at it, thus bringing that button to life. ;) Though the button was just a test, it helped me to learn a lot. </p>
+
+<p>Coming to CISFBand, the first thing was to use the system CISFBand which is already there in windows. Later I will have to implement my own CISFBand for this quick launch since reactOS doesn't have its own yet, besides it will even help quick launch code more or less to be independent in itself. The best strategy of reactos, which I really love is to test against windows first, then correct and improve reactos. Thus it helps to do two things in one go, i.e. even if you are coding a particular feature, it helps to debug the entire OS and not just that particular code. </p>
+
+<img src="/sites/default/files/imagepicker/51617/week2_1.jpg" alt="week2"  class="imgp_img" width="1360" height="739" />
+
+<p>One of the best sessions with my mentor was, when he showed the power of windows debugger in Visual Studio. It was ofcourse way impressive than gcc's gdb. Not only it had graphical features it was pretty easy and way more interactive than gdb. Adding breakpoints was just a click away, and plus it also showed the timings, cpu, and memory resources used and a whole lot of features. Best thing was, it helped me to cast away the good old fashion of debugging. (i.e by displaying a text message at certain points of code, which helps to infer where the failure has occurred) It also showed where exactly my puzzle of code fits in the big picture as I was able to see the function call stack, letting me know who calls whom and which part of os calls my part of code. Amazing indeed but that was just getting started.
+The best thing is the image shown below:</p>
+
+<img src="https://www.reactos.org/wiki/images/2/2f/Shellclasses_2.png" alt="The big picture of shell"  class="imgp_img" width="1303" height="1300" />
+
+<p>This image is the best big picture of shell you can ever get. My mentor Giannis himself is its designer. It explained every thing which you basically see on your screen of windows/reactos. The first time I saw that picture, nothing ringed in my mind. I was like am I this dumb, can't even make sense of such a beautiful logical structure. But after the magical touch of Giannis' teachings, this same picture transformed my very vision which I used to visualize the windows. I can definitely say, once you know the importance of this picture you will never forget it in your life. :)</p>
+
+<p>Another thing which I learnt about was the C constructor. Now you might ask, does C even has classes? (Forget constructors xP) But that was not the same constructor which any normal c/c++ programmer may know. The thing is COM technology is made such so that the binary code it produces is reusable. (Unlike c++, which is made so that its 'source' code is reusable.) Not only that, the COM binary produced by some language can be used by any other language. (which apparently supports it) Since the COM classes are similar to C++ classes, mostly C++ is used in making COM components. Here ATL helps a lot by providing lots of macros and other things thus saving both time and preventing redundant code. It also provides its own constructor called 'FinalConstruct' which I made use of to initialize and test system CISFBand. The other thing, C constructor is used when we don't expose the object via the object map provided by ATL. </p>
+
+<p>I learned many new things this week and I could say, it was one of the best weeks.</p>
+
+<p>Looking forward for similar or better experience next time, until then hoping to see you all in my next blogpost.</p>
+
+<p>Thank you once again. :)</p>
+
+#Some Important links: 
+<ol>
+<li><a href="https://docs.google.com/document/d/1zLTNqZ5eV35JUxoWIfPOIdV-ECPDrlWB-xOZbc28mBE/edit?usp=sharing">List of Milestones and plan</a></li>
+<li><a href="https://code.reactos.org/committer/reactos/ssawant">Present history of commits</a></li>
+<li><a href="https://code.reactos.org/browse/reactos/branches/GSoC_2017/shellext/reactos/dll/shellext/qcklnch">Code Repository</a></li>
+</ol>

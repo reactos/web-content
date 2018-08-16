@@ -1,0 +1,19 @@
+---
+title:       "Google SoC lwIP Report Week 8"
+author:      "zhu48"
+type:        blog
+date:        2016-07-18
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-8
+aliases:     [ node/14018 ]
+
+---
+
+<p>This past week started with me mindlessly chasing down memory bugs after having gotten WinDBG up and running. A particularly annoying bug involved an lwIP protocol control block being dereferenced by lwIP after it had been freed. I could not find a place in my drivere where I tried to use a dead PCB pointer, so I looked deeper. I did some stepping through of code, and read more of lwIP's source code. It turned out that lwIP had been trying to inform me that a PCB on the server side had been deallocated, but I just never got the message because I never registered a callback function for dying connections with lwIP. Doing so brought me back to a point where my driver worked perfectly with strictly serial client requests.&nbsp;</p>
+<p>With that out of the way, I started multi-threaded testing. I wrote a server that accepted client connections one at a time, echoed back the first message they sent, then shut down the connection. Then, I wrote a client that generated a number of threads, all of which tried to connect to the server, send a single message, and receive the echo back.&nbsp;</p>
+<p>With multi-threaded testing, I encountered more problems. Internally, lwIP was trying to dereference dead PCB pointers. After crawling through my driver to see where I could have called into lwIP with a dead PCB pointer, I became more and more convinced that it wasn't something I was doing wrong. After a bit of investigation, the answer became strikingly obvious: lwIP's core libraries are not thread-safe, and I was trying to run a multi-threaded test.&nbsp;</p>
+<p>At this point, I went into the lwIP core library to see which global variables are used where, in order to judge how hard it would be to add locks tio them. I also read the few resources available online about lwIP, and found out that there were higher level APIs provided by lwIP that were thread-safe. After consulting with my mentors about how to handle the situation, they recommended that I begin by using a lock to serialize all calls into the lwIP core. This was quick and simple to do, but it did not solve the problem. lwIP continued to dereference dead pointers internally. As the weekend approached, I turned to reading more about the netconn API and looking inside lwIP core to see how to add locks to it.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15620">Discussion</a></p>
+

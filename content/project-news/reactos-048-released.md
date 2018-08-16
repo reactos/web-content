@@ -1,0 +1,88 @@
+---
+title:       "ReactOS 0.4.8 released!!"
+author:      "vicmarcal"
+type:        article
+date:        2018-04-14
+changed:     2018-04-16
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/reactos-048-released
+aliases:     [ node/65764 ]
+tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "mm" ]
+
+---
+
+<p>The ReactOS Project is pleased to announce the release of version 0.4.8 as we continue to work on releasing every three months.</p>
+<p>As you may know, our previous 0.4.7 version was the first one developed in our <a href="http://www.github.com/reactos">Git/GitHub repository</a>. 0.4.8 is the nice sequel and a good way to measure the GitHub impact on the ReactOS project.  Since ReactOS reached GitHub, it has been forked <b>248</b> times. A nice amount understanding ReactOS is not a framework or a library, but a final product. These forks represent a nice amount of newcomers: translators, designers, coders and testers. Thanks to all of them, and the ReactOS regular devs, <b>209 new Pull Requests</b> and <b>1094 commits</b> have made it through to this 0.4.8 version.</p>
+
+<h2>User Experience</h2>
+<br/>
+<p>ReactOS keeps pushing to bring the best possible user experience. Therefore the ReactOS User Interface in 0.4.8 has received extra care.  </p>
+<p><b>Taskbar </b> settings and dialogs have been rewritten by Giannis so now the auto-hide, toggle lock and always on top options work. These settings were visible before but as you might have noticed they've never been working at all. Meanwhile, David fixed several bugs and glitches of the notification area. Thanks to him, Giannis and Hermès, now <b>balloon notifications</b> are properly supported, queued and shown while a range of tooltip problems have been solved. </p><p>Talking about the <b>notification tray</b>, due to Ged’s work, icons of killed and finished process are now automatically removed, even when apps crash. This is something that Windows doesn't even provide with Win10, and many Windows users may have noticed.</p>
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/balloon.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">At the bottom right you can see the Notifications working.</div><br/>
+
+<p>Selecting multiple desktop icons was impossible prior 0.4.8. Enjoy it now thanks to Giannis’ work. His amazing work doesn't stop there, bugs related to property dialogs have been squashed, like the one preventing drive and folders capacity from being shown. <b>Deletion and renaming</b> of folders and files should work reliably after Pierre fixed a major leak.</p>
+
+<p>Additional new features included in this release should also boost the user experience, such as the <b>shell autocompletion</b> brought to you by Mark, a nice bonus on top of the improved relative path handling done by Stanislav. Also, now <b>Network drives</b> can be dismounted directly from explorer due to Pierre’s work, and <b>Eject and Disconnect</b> menu items are now implemented thanks to Katayama.</p>
+
+<p>From the visual point of view, several glitches related to the redrawing of static text elements, scrollbars, button captions, fonts and text background colors were fixed in this version. As a bonus, now ReactOS also detects more themes and is much faster when rendering big amounts of text.</p>
+
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/autohide.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">The new settings and autohide working!</div><br/>
+
+<p>Regarding </b>internationalization</b>, now when changing the language in ReactOS, the font substitution settings are properly overwritten thanks to Katayama, and time is now correctly set due to Doug’s work.</p>
+<p>Combine all these features with the Kernel and Filesystem fixes that 0.4.8 is bringing and you'll understand why the ReactOS team is so excited regarding this new release.</p>
+
+<h2>NT6+ Software support and Games</h2>
+<br/>
+<p>With software specifically leaving NT5 behind, ReactOS is <b>expanding</b> its target to <b>support NT6+ (Vista, Windows 8, Windows 10) software</b>. Colin, Giannis and Mark are creating the needed logic in NTDLL and LDR for this purpose. Giannis has finished the side-by-side support and the implicit activation context, Colin has changed Kernel32 to accept software made for NT6+, and Mark keeps working on the shim compatibility layer. Although in a <b>really greenish and experimental state</b>, the new additions in 0.4.8 should start helping several software pieces created for Vista and upwards to start working in ReactOS.  Microsoft coined the term backwards compatibility, ReactOS the forward compatibility one. </p>
+
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/quicktime.gif" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">Quicktime for Vista and 7 working in ReactOS!</div><br/>
+
+<p>A new tool, a <b>DrWatson32 alike</b>, has been created by Mark and added to 0.4.8, so now any application crashing will create a log file on the desktop. This crash dump details the list of modules and threads loaded, stack traces, hexdumps, and register state. Therefore, this new tool should help us understand what went wrong when the software crashed. Adding these reports, plus the debug logs, will provide ReactOS developers a good amount of information to understand what went wrong and how to create the needed fixes.</p>
+
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/drwatson.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">DrWatson-alike in action!</div><br/>
+
+<p>In 0.4.7, several games were having trouble initializing properly when using <b>native graphics drivers</b>. Jérome has not just fixed this issue but also a palette regression in DirectX which was garbling colors when playing games.</p>
+
+
+<h2>Kernel Stability and new features</h2>
+<br/>
+<p>Kernel stability in this version comes from the Memory Manager, File system and Cache Manager fixes. The latest Coverity scan, which tracks old and detects new issues, shows a great evolution since 0.4.7.</p><p> Several bugs have been squashed in the ReactOS CC and Freeloader, allowing it to <b>boot in 96MB</b> hardware (smaller RAM need than our 0.4.7 release). Talking about hardware, Pierre has fixed several bugs when writing the bootloader to disk and Serge has updated ACPI with extended features, that should bring some extra compatibility. </p>
+
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/ram.jpg" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">ReactOS in 96MB.</div><br/>
+
+<p>In 0.4.7 the initial Cache Manager bugfixing was a great step forward in terms of stability. From 0.4.7 to 0.4.8, <b>Cache Manager</b> has gone under a massive review lead by Thomas and Pierre. This work revealed several bugs thanks to the tests specifically created to ensure this review doesn't introduce new regressions. Among others, a 17-year-old bug which was introducing corruption in the file system and which is now finally fixed.</p>
+
+
+<p>However, the Cache Manager work hasn't just been focused on bug-hunting, but also adding new and needed features. Now the ReactOS 0.4.8 Common Cache supports <b>Lazy Writing and Read Ahead</b>, which are major steps toward a performant operating system by reducing file access latencies. </p>
+
+<p>The other major component, the ReactOS <b>Memory Manager</b>, has also received many fixes thanks to Timo, some revealed by Coverity and others due his work on the x64 ReactOS port which enforces a pointer-size agnostic Memory Manager. </p>
+
+
+<h2>Hardware support, NTFS and other drivers</h2>
+<br/>
+<p>One of the main objectives of each new ReactOS version is to improve the compatibility with hardware. In case you find any issues running ReactOS in your real hardware, please don't hesitate to file a bug report at the <a href="https://jira.reactos.org">ReactOS bugtracker.</a> </p>
+
+<p>Thanks to these logs, we've discovered that old hardware and some virtual machines were <b>failing to boot when an empty floppy drive was detected</b>. This bug has now been fixed and these hardware rigs are now enjoying ReactOS. Also these logs helped to detect several issues in <b>PNP IRP handling</b> which has been fixed by Thomas for this new version. </p>
+
+<p>Aside from fixing bugs in drivers, ReactOS includes some new ones in this version, such as a virtual floppy driver and a <b>virtual CD-ROM driver</b>. Also the <b>CDFS driver</b> has been replaced with the MSPL’ed original one after a full review. This review, as a curiosity, has revealed at least one bug,  which has been sent upstream to <a href="https://github.com/Microsoft/Windows-driver-samples/commit/f73e552f14ef61756b5fd1ebf8b5e98d8c6ca33b">Microsoft GitHub</a> with its proper fix. </p>
+
+<p>The <b>NTFS driver</b> coded by Trevor, during GSOC 2016/2017, has been finally added. The NTFS driver has been an ongoing effort started by Hervé and Pierre, and which   needed 2 different Google Summer Of Code to reach its current state. Under the mentoring of Pierre, Trevor Thomson has been coding and documenting his titanic NTFS coding efforts. If you're interested in file systems or how NTFS works and the tools needed to understand its behavior, <a href="https://reactos.org/blogs/codertrevor">you shouldn't miss the blog posts of Trevor</a>. 
+Thanks to these efforts ReactOS is able to read NTFS partitions in a more robust way, covering NTFS specific cases, and since 0.4.8, ReactOS introduces initial NTFS writing support. The NTFS writing feature is disabled but can be enabled through registry to test its experimental support. </p>
+
+<h2>Third Parties</h2>
+<br/>
+<p>ReactOS, as part of the open source ecosystem, also uses bits of several projects. 0.4.8 has been synced with Wine 3.0, Freetype 2.9 and Ext2 0.69, among other projects.</p>
+<p><a href="https://reactos.org/wiki/0.4.8">General notes</a>,<a href="https://reactos.org/wiki/Tests_for_0.4.8"> tests</a>, and <a href="https://reactos.org/wiki/ChangeLog-0.4.8">changelog</a> for the release can be found at their respective links. A less technical <a href="https://reactos.org/wiki/Community_Changelog-0.4.8">community changelog</a> for ReactOS 0.4.8 is also available.</p>
+<p>ISO images are ready on the ReactOS <a href="https://reactos.org/download">Download</a> page.</p>
+
+<h2> Some statistics </h2>
+<br/>
+<p>The <b>oldest bug</b> reported in Jira and fixed was <a href="https://jira.reactos.org/browse/CORE-5127">CORE-5127</a> (advapi32: OpenTraceA (Sysinternals DiskMon2.01 dies with unhandled exception upon startup).</br>
+Since 0.4.7, <b>340 bugs have been resolved</b>: 211 marked as fixed, 37 as duplicates, 42 as won't fix, 21 as incomplete, 29 as cannot reproduce.</br>
+320 bugs fixed were directly related with the operating system, 10 from ReactOS online services, 5 from ReactOS test suite and 5 from ReactOS Build Environment.</br>
+Pull Requests committed: 209</br>
+Forks: 248</br>
+</p>
+

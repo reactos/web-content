@@ -1,0 +1,62 @@
+---
+title:       "Word 2010 support – Weekly report – Part 2: Installation (cont.)"
+author:      "hbelusca"
+type:        blog
+date:        2016-11-20
+changed:     2016-12-01
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/word-2010-support-weekly-report-part2-installation-cont
+aliases:     [ node/26044 ]
+
+---
+
+<p>
+In this second report I continue my investigations on the Word 2010 installation. Last time we saw that our services (and in particular the "Office Software Protection Platform" OSPPSVC service) were started without a complete environment block, and as a result some needed environment variables were missing, causing e.g. OSPPSVC to fail opening some of its files. We now analyse what happens after my local fix (NOTE: I have not committed the fix yet, as I validate it in my local installation first).
+</p>
+
+<h2>Retesting the installation (hacked way)</h2>
+
+<p>
+After having fixed the environment variables problem, I decided to retry the Word 2010 installation. Sadly it again failed at the same place (MSI action <code>"CAInitSPPTokenStore.x86"</code> failure with error 1603), so I decided to attempt to see what happened if I worked around the failure. I placed breakpoints in our MSI code where the installation error is caught, in order to overwrite the failure error code with a success code (<code>0: ERROR_SUCCESS</code>) to make the installation continue, and thanks to that I was able to finish the installation. This allowed me to confirm that only the MSI action <code>"CAInitSPPTokenStore.x86"</code> actually failed.
+</p>
+<!--break-->
+
+<div class="imgp_title">Breakpoint in MSI code</div><img src="/sites/default/files/imagepicker/23908/install_debug_1.png" alt="Breakpoint in MSI code"  class="imgp_img" width="1600" height="860" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Running the installation and stepping in the code</div><img src="/sites/default/files/imagepicker/23908/install_debug_2.png" alt="Running the installation and stepping in the code"  class="imgp_img" width="1600" height="858" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Hitting the error</div><img src="/sites/default/files/imagepicker/23908/install_debug_3.png" alt="Hitting the error"  class="imgp_img" width="1600" height="860" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Forcing the error to be 0 and continuing execution</div><img src="/sites/default/files/imagepicker/23908/install_debug_4.png" alt="Forcing the error to be 0 and continuing execution"  class="imgp_img" width="1600" height="860" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Installation finished after working around the errors</div><img src="/sites/default/files/imagepicker/23908/install_debug_5.png" alt="Installation finished after working around the errors"  class="imgp_img" width="1032" height="844" /><div class="imgp_desc"></div>
+
+<p>Here are some additional pictures of Word 2010 installed in ReactOS:</p>
+
+<div class="imgp_title">Word 2010 files</div><img src="/sites/default/files/imagepicker/23908/reactos_word2010_1.png" alt="Word 2010 files"  class="imgp_img" width="1024" height="768" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Word 2010 shortcuts</div><img src="/sites/default/files/imagepicker/23908/reactos_word2010_2.png" alt="Word 2010 shortcuts"  class="imgp_img" width="1024" height="768" /><div class="imgp_desc"></div>
+
+<p>
+However, trying to run Word in ReactOS triggers again the installer, which attempts to perform extra configuration steps. This does not happen on a successful installation in Win2k3. This is certainly due to the fact that the OSPPSVC was not able to initialize correctly itself and I was forced to manually skip its configuration step at installation time.
+</p>
+
+<div class="imgp_title">Configuration while starting Word 2010</div><img src="/sites/default/files/imagepicker/23908/reactos_word2010_3.png" alt="Configuration while starting Word 2010"  class="imgp_img" width="1024" height="768" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Word installation asks for a restart</div><img src="/sites/default/files/imagepicker/23908/reactos_word2010_4.png" alt="Word installation asks for a restart"  class="imgp_img" width="1024" height="768" /><div class="imgp_desc"></div>
+
+<div class="imgp_title">Word cannot verify its own license</div><img src="/sites/default/files/imagepicker/23908/reactos_word2010_5.png" alt="Word cannot verify its own license"  class="imgp_img" width="635" height="113" /><div class="imgp_desc">Translation: "Microsoft Office cannot verify the license for this product. You should repair the Office installation from within the Configuration Panel"</div>
+
+<p>So far, the installation succeeded just because I overwrote the error codes due to the MSI action <code>"CAInitSPPTokenStore.x86"</code> that was failing, with a success error code. While this procedure allows me to confirm that only this step in the installation process fails and everything else seems to work so far, the procedure does not shed light on why the MSI action fails in the first place.</p>
+
+
+<h2>OSPPSVC service investigation 2/2, and MSI installation (cont.)</h2>
+
+<p>
+With advice from Sylvain Petreolle, I searched through the temporary generated MSI files which one(s) referred to the <code>"CAInitSPPTokenStore"</code> action. (Note: during installation the MSI framework creates temporary PE files corresponding to the different MSI actions performed during the installation, that can be rolled back in case the user cancelled the installation, or an error occurred during the process. The MSI action itself shows as an exported function, that is subsequently called by the MSI framework.) I then analysed what was done inside this action, and noticed that it first just stopped the OSPPSVC service, with some code following a pattern similar to that described in the JIRA report <a href="https://jira.reactos.org/browse/CORE-12413">CORE-12413</a>, and then performed an external DLL API call, then restarts OSPPSVC. I therefore made a first hypothesis that something should went wrong when we try stopping / querying a service status. While this problem actually really happens when the service is started, then stopped manually, this generally does not appear to be the case during a clean Office installation because the service is initially stopped. So the problem should arise after. The observed problem looks similar as (but the causes certainly are different than) what is described at <a href="http://answers.microsoft.com/en-us/msoffice/forum/msoffice_install-mso_other/cainitspptokenstorex86-error-prevents-installation/4855971e-81e6-468e-b3ca-c05c09ebd15a">this link (MS Office forum)</a>.
+</p>
+<p>Performing a step-by-step debugging inside this MSI action let me allowed to find the second and crucial problem. After the OSPPSVC service is stopped the MSI action calls the <code>SLInitialize</code> function that is exported by a DLL named OSPPCEXT.DLL (a helper for the Office Software Protection service). This function, which sadly is partially crypted (and is decrypted at run-time: this is recognizable by the fact that its first bytes are constituted of valid code that ends with a call to a subfunction, and the following bytes are seemingless data; the subfunction performs some operations using the CPU instruction pointer, and returns as a regular function, to its caller). The <code>SLInitialize</code> function returns with an error code that makes the MSI action fail.</p>
+<p>Now my job for the next days will consist in understanding enough of <code>SLInitialize</code> and what it really does and why it fails. I then hope that I will then be able to fix what is wrong and have a working Word 2010 installation! But that's for next week! (8^D </p>
+

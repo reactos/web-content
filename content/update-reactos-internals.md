@@ -1,0 +1,31 @@
+---
+title:       "Update on ReactOS internals"
+author:      "fireball"
+type:        news
+date:        2007-06-07
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /update-reactos-internals
+aliases:     [ node/277 ]
+news:        [ "news" ]
+
+---
+
+<h2>Update on ReactOS internals</h2>
+<p><strong>0.3.2 Release</strong><br/>
+<br/>
+ReactOS 0.3.2 is officially going to be skipped (due to 4 blocker bugs), and ReactOS 0.3.3 will be the next in the cycle which, according to the 2 months release schedule,&nbsp;will be released in July. Trunk already has many improvements and bugfixes for 0.3.3, however we are still working on fixing those 4 major issues.<br/>
+<br/>
+<br/>
+<strong>Team</strong><br/>
+<br/>
+<a href="http://www.alex-ionescu.com/">Alex Ionescu</a> left the ReactOS team to follow an exciting career opportunity working with <a href="http://www.solsem.com/">David Solomon</a> as an official replacement to&nbsp;<a href="http://blogs.technet.com/markrussinovich/default.aspx">Mark Russinovich</a><br/>
+Our best wishes to him at his new position, and a big thanks for all the great work he has done for ReactOS. <br/>
+<br/>
+On a another note, Daniel Reimer and Colin Finck have been granted write-access to the <a href="http://svn.reactos.org/svn/reactos">SVN repository</a>. Daniel will be working on RosBE and Colin will be working on web related stuff assisting Klemens Friedl. Some of the changes can be seen already &ndash; the <a href="http://www.reactos.org/wiki">ReactOS Wiki</a> has been upgraded to the latest version, and a new release of RosBE is already scheduled.<br/>
+<em></em></p>
+<p><em></em></p>
+<p><em>Aleksey Bragin,<br/>
+ReactOS Project Coordinator</em></p>

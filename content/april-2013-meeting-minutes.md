@@ -1,0 +1,36 @@
+---
+title:       "April 2013 Meeting Minutes"
+author:      "Z98"
+type:        news
+date:        2013-04-30
+changed:     2013-05-02
+draft:       false
+promote:     true
+sticky:      false
+url:         /april-2013-meeting-minutes
+aliases:     [ node/621 ]
+news:        [ "news" ]
+
+---
+
+<p>2013-04-25<br />19:00 UTC<br />dev.reactos.org, #meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:20 by Aleksey Bragin.</p>
+<ul>
+<li>Point 1: Legal Whitepaper</li>
+<li>Point 2: 0.3.15</li>
+<li>Point 3: Contracts</li>
+<li>Point 4: 0.4</li>
+</ul>
+<h2>Point 1</h2>
+<p>Ziliang Guo reported that the intellectual property guidelines had been agreed upon with other developers and would be published the coming weekend.</p>
+
+<h2>Point 2</h2>
+<p>Ziliang stated that he wanted the release to be out the coming weekend regardless of whether the changelog was complete or not. No objections were made. Ziliang mentioned that he had originally wanted to include a theme this release, but due to stability issues and incomplete support in USER32 that idea was deferred for a future release. Timo raised a point where the changelogs could be switched to using resolved JIRA issues instead of attempting to document changes from SVN commits. Ziliang agreed it was a good idea and would look into it, but it would likely have to wait for the next release as JIRA only came into use late in the span of time between 0.3.14 and 0.3.15.</p>
+<h2>Point 3</h2>
+<p>There was considerable frustration with the delays caused by German regulations and Pierre Schweitzer pitched an idea to try to free up the money currently in the German foundation&#39;s possession by potentially transferring it to the Russian foundation, which did not suffer from the regulations that prevented sponsorship of paid development. Suggestions were made to see if it would be necessary to set up a foundation in another European country that did not suffer from such inflexibility, though Aleksey wanted the issue with the German foundation resolved with setting up another foundation a last resort. A US based foundation was ruled out due to potential entanglement with US IP law in a non-profit setting.</p>
+<h2>Point 4</h2>
+<p>Ziliang took the time to remind the development team of the personal reasons they had for making sure 0.4 was a solid release. In addition, he suggested the team put together an actual roadmap that detailed what things the team wanted working for 0.4. It was pointed out the roadmap on the wiki was completely inaccurate so a new one needed to be created. Steven Edwards suggested further discussions take place offline. Victor Martinez pushed hard for the release following 0.3.15 to be 0.4, but Ziliang resisted this without an actual roadmap stating what people wanted in 0.4. Depending on the amount of work needed, Ziliang wanted to push another release fairly quickly after 0.3.15, and did not want a premature 0.4 out. The general concensus was to create a roadmap and base what the next release would be on how much of the roadmap was fulfilled.</p><p>Meeting was closed at 21:08 by Aleksey Bragin.</p>
+<p>Minutes prepared by Ziliang Guo.</p>
+<p><b>Addendum</b></p>
+<p>For strategic reasons which will become apparent at release, a decision was made a few days after the meeting for 0.3.15 to be pushed back. Actual packaging continued and were completed to avoid causing delays when the time to release came.</p>

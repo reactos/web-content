@@ -1,0 +1,56 @@
+---
+title:       "April 2016 meeting minutes"
+author:      "EmuandCo"
+type:        article
+date:        2016-05-02
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/april-2016-meeting-minutes
+aliases:     [ node/8455 ]
+
+---
+
+<p>2016-04-28<br />
+	20:00 UTC<br />
+	irc.freenode.net, #reactos-meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 20:00 by Amine Khaldi</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+	<li>Point 2: 0.4.1 Release plans</li>
+    <li>Point 3: GSoC</li>
+</ul>
+
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Aleksey Bragin:</b> He did not have time to code, however he was putting some time into the infrastructure, which is working quite nice</p>
+
+<p><b>Amine Khaldi:</b> He's been trying to catch a breath and recharge a bit, but he still worked on his usual tasks (jira, patches, handling newcomers, and especially our GSoC students, some commits like the SDK structure, the libpng sync and so on. He also assisted Colin with the SubGit effort which will be complete soon hopefully, if Colin survives the Jira and Fisheye work.</p>
+
+<p><b>[TheFlash]:</b> Nothing has changed since last time, he will work on VESA NTVDM support when he finds the time. He has to write a paper for college and has a typical not that optimal deadline.</p>
+
+<p><b>Mark Jansen:</b> He has been getting used to the whole thing, handled some old patches, and is working on the apphelp integration (still a long way to go), and as usual, trolling around Jira, trying to help a bit.</p>
+
+<p><b>Thomas Faber:</b> His top priorities have been CORE-11123 and CORE-11124, which cause crashes on testbot; He considers them release blockers. Aside from that he's still working on getting patches in. Will probably focus his time on GSoC stuff in the near future so won't get much more done aside from those critical issues.</p>
+
+<p><b>Sylvain Petreolle:</b> He's working on the AHK testbot. He's almost finished, just need to commit a way to generate the bootcdregtest. He had issues to find the data, since they were partially hidden on the wiki. Thanks to Mark Jansen</p>
+
+<h2>Point 2: 0.4.1 Release plans</h2>
+
+<p>Amine Khaldi took the lead in this topic. He believes it's time to branch and issue an RC, then start doing some thorough testing while Sylvain Petreolle kindly prepares the awesome bot, because that would require some AHK related bug fixing and he doesn't want that to hold 0.4.1 back. He believes the state of trunk allows us to move things relatively quickly.</p>
+<p>Thomas Faber linked to a fitting Jira Filter regarding 0.4.1 show stoppers still to be fixed: https://jira.reactos.org/issues/?filter=13503</p>
+<p>These ones and anything showing up from the new testbot should be tackled for 0.4.1 as Amine enforced. Known issues like for 0.4.0 should be no solution. After that speak he asked if someone has any objections against a ASAP branch. Some of the show stoppers should be removed from the list, because these are no real flaw currently. (Like ReiserFS support) Due to the fact that all blocker fixed can be merged into the branch, no objections were given.</p>
+<p>Summary of this point by Amine: We branch ASAP and start sorting out the blockers to leave only what is truly a blocker, then we start testing the RC and file reports and address the most serious ones, then iterate until release.</p>
+
+<h2>Point 3: GSoC</h2>
+<p>Amine Khaldi welcomed Trevor Thompson and Vardan Mikayelyan in the meeting and between the developers of ReactOS and wished them good luck. He encouraged them to ask for help whenever they need it.</p>
+
+<p><b>Trevor Thompson:</b> He's a sophomore at Blue Ridge Community College, in tiny Staunton, Virginia, USA. He has a website which he doesn't maintain very well: http://www.magiccarpenters.com. He loves programming pretty much anything. He has a special passion for games, and anything super low-level (or not that super compared to what ReactOS has to offer here ^^). His GSoC project is adding write support to the NTFS driver. This project is near and dear to his heart, because his very first program he wrote that had a purpose was a Windows app that read and wrote to FATX. He's really looking forward to work with ReactOS! After Sylvain asked about booting from NTFS Trevor Thompson explained his main plan is write support, but booting and running from NTFS is included as optional goal, too. He was warmly welcomed at the dev team and the mic was passed to Vardan Mikayelyan.</p>
+
+<p><b>Vardan Mikayelyan:</b> He's a first course master student form Armenia. For ppl who don't know, it's somewhere between black and caspian seas. He already contributed and is contributing to the Linux USB stack. In this year he decided to try NT driver development, and GSoC gave good oppurtunity to work with ROS. His project is USB stack improvements. His mentor will be Thomas. He hope it will work after he finishes his project. After some questions regaring his main goals, Vardan Mikayelyan explained his main focus is USB 1.1 because without it working flawless no USB 2.0 is possible due to the fact that EHCI controllers use an USB 1.1 controller as a slave to handle 1.1 data. This sentence alone reserved him quite some respect from the developers. First of all he is going to do testing from USB perspective to understand what we have. His "love story with USB" started from course work and he hopes he can contribute a lot. He was welcomed the same open way like Trevor.</p>
+
+<p>In the end a small discussion regarding allowed sources for working on ReactOS was held. Main code in question by Trevor Thompson was MSDN links and documentation from there. NTFS might be patented in some ways and thats what made him a bit concerned here. Thomas explained that public documentation generally should be fine to use. NTFS-3G is such a public documentation and thats why public MSDN articles are fine too. If anyone ever has objections against some sources he stumbles upon he should ask the devs to sort things out.</p>
+
+<p>Meeting was closed at 22:58 by Amine Khaldi</p>
+<p>Meeting minutes prepared by Daniel Reimer</p>

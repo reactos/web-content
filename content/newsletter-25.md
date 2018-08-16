@@ -1,0 +1,47 @@
+---
+title:       "Newsletter 25"
+author:      "Z98"
+type:        news
+date:        2007-06-06
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-25
+aliases:     [ node/165 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Thank You Alex</li>
+# <li>Catching Up</li>
+# <li>Infrastructure Updates</li>
+# </ul>
+
+---
+In theory, I shouldn't be writing this edition.  In reality, I got tired of waiting for Samuel to get this out.<br/>
+<h2>Thank You Alex</h2>
+For those that don't know, Alex Ionescu, the kernel coordinator, has resigned.&nbsp; Alex first joined the project in 2004, around the 0.2.2 release.&nbsp; Since then, he's been at the center of quite a few squabbles about how to code the kernel.&nbsp; However, Alex has also been responsible for completely rewriting the kernel almost from the ground up.&nbsp; Today, about 60% of the kernel code is probably his.&nbsp; The reason for Alex's departure is because of his joining David Solomon's Expert Seminars as an instructor.&nbsp; Because this job would place him in close contact with many Microsoft programmers and also give him access to other Microsoft properties, continuing with the project would have resulted in possible conflicts of interest.&nbsp; Alex has also stated that he feels he's done everything he can for ReactOS, as the components that still need to be completed are those that he has little knowledge of.&nbsp; The ReactOS community thanks Alex for everything he has done and we wish him the best with his new career.<br/>
+<br/>
+More details can be found on Alex's blog: <a href="http://www.alex-ionescu.com/?p=42">http://www.alex-ionescu.com/?p=42</a><br/>
+<br/>
+<h2>Catching Up</h2>
+With the more or less completion of the kernel rewrite, the developers have decided to try and update the rest of the project accordingly.&nbsp; Alex's work greatly increased completeness and compatibility, but unfortunately many other components didn't keep pace and didn't take advantage of new features made available.&nbsp; As such, quite a good deal of user mode components have to be updated.&nbsp; These include shell32, kernel32, gdi32, and user32.&nbsp; Also, crss, the client server runtime system also needs work.&nbsp; Now that the kernel will hopefully stabilize or at least not face any major overhauls anytime soon, the developers can breathe easy and do some work that might be more visible to end users.&nbsp; An improved win32k subsystem would allow more applications to work, and not through hacks.<br/>
+<br/>
+<h2>Infrastructure Updates</h2>
+A few behind the scene changes have been taking place recently.&nbsp; The first is an update of MediaWiki, finally fixing displaying images.&nbsp; Also, RosCMS v3 has been undergoing more stress testing.&nbsp; I'm not going to offer any date on when it'll be released, but it's getting there.&nbsp; Ironing out the bugs on something so complicated takes time.&nbsp; But as we get closer, the flaws and bugs with the current CMS have grown ever more apparent and those of you who've spoken to me about them, rest assured that every one I remembered to talk to Klemens about has been addressed in the update.<br/>
+<br/>
+Preview versions of both the new ReactOS Build Environment and Test Environment have been floating around for a while now.&nbsp; The update to the BE had a few teething issues but now seems to be fully functional.&nbsp; A formal link to it will be put up later, as right now we're still experimenting with GCC 4.2.0.&nbsp; However, if you wish to build trunk yourself, it is advised you get the BEs in this thread:<br/>
+<br/>
+<a href="http://www.reactos.org/forum/viewtopic.php?t=3760&amp;postdays=0&amp;postorder=asc&amp;start=0"> http://www.reactos.org/forum/viewtopic.php?t=3760&amp;postdays=0&amp;postorder=asc&amp;start=0</a><br/>
+<br/>
+or for UNIX/Linux:<br/>
+<br/>
+<a href="http://www.reactos.org/forum/viewtopic.php?t=3922"> http://www.reactos.org/forum/viewtopic.php?t=3922</a><br/>
+<br/>
+The Test Environment is located here:<br/>
+<a href="http://www.reactos.org/forum/viewtopic.php?t=3886"><br/>
+http://www.reactos.org/forum/viewtopic.php?t=3886</a><br/>
+<br/>
+The TE is for Windows NT systems and includes a version of QEMU, KQEMU, a GUI for QEMU, and vdk, a virtual disk utility.&nbsp; The current GUI will be familiar to some people, as it's the one Magnus started but abandoned.&nbsp; As the GUI was written in C#, you'll need .NET to run it.&nbsp; However, Ged Murphy, the developer and maintainer of the TE, is rewriting the GUI for QEMU.&nbsp; His objective is to make it a rival to the VMware's interface and from what I've seen, he just might pull it off.&nbsp; The rewrite is still in progress so we're stuck with the older GUI.&nbsp; Ged says to give him a month, I say we don't hold him to it.&nbsp; The rewritten GUI will also require .NET.<br/>
+<br/>

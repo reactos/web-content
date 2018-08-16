@@ -1,0 +1,88 @@
+---
+title:       "Newsletter 17"
+author:      "samwise52"
+type:        news
+date:        2007-02-12
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-17
+aliases:     [ node/158 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Busy Times</li>
+# <li>Project News</font></li>
+# <li>Events on Trunk</font></li>
+# <li>Highlights of 0.3.1 Branch</font></li>
+# <li>About Bugs</font></li>
+# <li>Links</li>
+# </ul>
+
+---
+<font face="Verdana"></font>
+<h2>Busy Times</h2>
+<p><font face="Verdana">It's been a hectic 3 weeks, yes I am 1 week overdue. I've been real busy with school and personal stuff, but I haven't been the only one thats been busy. It seems in my absence that 0.3.1 is finally shaping up. In this issue I will expand on the developments that have occurred not only in the main development branch (trunk), but also in the &quot;stable&quot; release branch for 0.3.1. </font></p>
+<p><font face="Verdana">I will also like to remind everyone of several important issues, which will be discussed a bit deeper later on.&nbsp;Mainly the resurection of ros-bugs mailing list and the call for testers which will help us improve and expand the usability of React as a viable Operating System. Also that the fund raising campaign is over and it was a complete success. February 08, 2007 passed and we have even more money than we setout to make. Indeed everyone at the ReactOS foundation thanks all the donators. Even so if you still desire to donate do not fret, the money will be put to good use to help promote ReactOS, aquire testing hardware and other project related costs.</font></p>
+<h2><font face="Verdana">Project News</font></h2>
+<ul>
+    <li><font face="Verdana">ReactOS exposed at CUSEC last week by Alex Ionescu and&nbsp;as&nbsp;I type&nbsp;at SCALE, where ros devs Alex Ionescu and <font size="2">Art Yerkes</font> are talking about the amazing potential of ReactOS. </font></li>
+    <li><font face="Verdana">ReactOS now compiles with GCC 4.2, RosBE 0.3.5 now only includes gcc 4.1.2, although this BE is still beta. 0.3.1 even do it compiles with 4.1.2 has not been tested enough to ensure that compiler dependant bugs are not present so gcc 3.4.5 is still recommended for it. </font></li>
+    <li><font face="Verdana">Fund raising campaing is over and it is a complete success. </font></li>
+    <li><font face="Verdana">The ros-bugs mailing list is back. It was down for several months after one of those server moves/difficulties we had, but now is back up and serving&nbsp;everyone with the bleeding edge issues affecting ReactOS. Making for quicker responce time to regressions and common bugs.</font> </li>
+    <li>New IRC channel created #reactos-testers, specifically to discuss proper testing methodology and signup to be official tester. </li>
+    <li>Possible reorganization of tree in the works, if approved many usermode apps would get transfered to ros-apps tree, a now mostly unmaintained tree with many testing and development applications. When a release is made this apps would also be included. </li>
+</ul>
+<h2><font face="Verdana">Events on Trunk</font></h2>
+<p><font face="Verdana">The development branch shares a lot of issues with the 0.3.1 branch, but has&nbsp;severa0l important diferences. The Windows 2003 compatible thread scheduler is enabled, NT compatible LPC implentation is enabled, bootvid.dll (instead of bootvid.sys), and several other &quot;new&quot; features.</font></p>
+<ul>
+    <li><font face="Verdana">cwittich - worked on gcc 4.2 fixes, regression testing framework. </font></li>
+    <li><font face="Verdana">dcote - commited several tests for the fsrtl libs and worked on several cc and fs functions </font></li>
+    <li><font face="Verdana">fireball - fixed the build several times, and also fixed several boot time regressions. </font></li>
+    <li><font face="Verdana">gedmurphy - worked on marlett font and other enhancements. </font></li>
+    <li><font face="Verdana">greatlord - worked on cmd, rbuild, calc and other stuff all around the tree. </font></li>
+    <li><font face="Verdana">hpoussin - improved code correctness, eliminating a hack or 2, and eliminating compiler warnings. </font></li>
+    <li><font face="Verdana">hyperion - improved&nbsp;the msvc compiler intrinsics lib&nbsp;for gcc . </font></li>
+    <li><font face="Verdana">ion - worked on windows 2003 thread scheduler, native&nbsp;dbg api, bootvid, livecd, LPC, kernel32 and other. </font></li>
+    <li><font face="Verdana">janderwald - commited several translations from bugzilla, fixed compiler warnings, improved code correctness. </font></li>
+    <li><font face="Verdana">mbosma - updated the download! application. </font></li>
+    <li><font face="Verdana">spectrolle - fixed warnings, crashes and hard coded values, also commited some translations. </font></li>
+    <li><font face="Verdana">tkreuzer - fixed bug on user32, and comctl32, and desk.cpl. </font></li>
+    <li><font face="Verdana">tretriakov - Added support for multiple keyboard layouts. </font></li>
+    <li><font face="Verdana">weiden - Fixed compilation with&nbsp;GCC 4.2, -O3, and several warinings.&nbsp;also worked on shell32, ndis, sysdm.cpl, psdk and other. </font></li>
+</ul>
+<h2><font face="Verdana">Highlights of 0.3.1 Branch</font></h2>
+<p><font face="Verdana">This is just a highlight of stuff thats been commited/merged into 0.3.1, it doesn't substitute a changelog, and just peaks into the many many changes and bug fixes&nbsp;that have occoured since 0.3.0. Most, if not all, of these fixes are merged from trunk.</font></p>
+<ul>
+    <li><font face="Verdana">OpenGL(mesa32.dll) working again, but only with disabled sse and 3dnow extensions.</font> </li>
+    <li><font face="Verdana">Livecd works again.</font> </li>
+    <li><font face="Verdana">Set focus to defpushbutton or to first WC_EDIT child window if present, like it works on windows.</font> </li>
+    <li><font face="Verdana">Set screensaver timeout to 10 minutes, default value in WinXP.</font> </li>
+    <li><font face="Verdana">Support LR_DEFAULTSIZE|LR_SHARED as flags in CreateIconFromResourceEx(), LoadCursorIconImage()</font> </li>
+    <li><font face="Verdana">Fix a bug in NtSetTimer which was causing us to completely disregard the due time.</font> </li>
+    <li><font face="Verdana">implemented pushlocks to&nbsp;work on GCC 3.4.5 as well as 4.1.2+ (with no perf-hit on the latter).</font> </li>
+    <li><font face="Verdana">Fix handle close bug, any killed process leaked all its handles and they were never closed. </font></li>
+    <li><font face="Verdana">Fix locking bugs in guarded mutex implementation. In race conditions some operations were not re-attempted.</font> </li>
+    <li><font face="Verdana">Fixed VmWare detection.</font> </li>
+    <li><font face="Verdana">Merge new icon/cursor selection code, cursors and radio button drawing code.</font> </li>
+    <li><font face="Verdana">Fixed some warnings.</font> </li>
+    <li><font face="Verdana">merge trunk rev : 25663 and 25664 to 0.3.1 branch - update freetype.</font> </li>
+</ul>
+<h2><font face="Verdana">About Bugs</font></h2>
+<p><font face="Verdana">Summary of activity from January 21, 2007 to February 12, 2007. Active does not mean new, but that comments or patches where added, bug was assigned or some information changed. I would also like to point out that there are many known bugs among developers, but they don't have a bugzilla entry.</font></p>
+<ul>
+    <li>111 bugs were active.</li>
+    <li>Oldest bug closed was 1145 -&nbsp;&quot;Assertion 'Class-&gt;refs == 0' failed at ./subsys/win32k/ntuser/class.c line 69&quot;</li>
+    <li>39 bugs were closed. with 8 marked duplicate, 5 invalid, and 1 works for me.</li>
+</ul>
+<h2>Links</h2>
+<ul>
+    <li><a href="http://www.reactos.org/en/fundraising_campaign.html">Fundraising Campaign Information</a> </li>
+    <li><a href="http://www.reactos.org/mailman/listinfo/ros-bugs">Ros-bugs -- ReactOS Bugzilla list</a> </li>
+    <li><a href="http://www.reactos.org/mailman/listinfo/ros-dev">Ros-dev -- ReactOS Development List</a> </li>
+    <li><a href="http://www.reactos.org/en/about_roadmap.html">ReactOS Roadmap</a></li>
+    <li><font face="Verdana"><font color="#800080"><a href="http://cusec.net/">Canadian University Software Engineering Conference(CUSEC)</a></font></font> </li>
+    <li><a href="http://www.socallinuxexpo.org/scale5x/">Southern California Linux Expo(SCALE)</a> </li>
+</ul>

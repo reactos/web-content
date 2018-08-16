@@ -1,0 +1,25 @@
+---
+title:       "ReactOS participation in GSoC 2006 Mentor Summit"
+author:      "fireball"
+type:        news
+date:        2006-10-09
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-participation-gsoc-2006-mentor-summit
+aliases:     [ node/266 ]
+news:        [ "news" ]
+
+---
+
+<h2>Google conducts GSoC 2006 mentor summit next week</h2>
+<p>In the area of &quot;better collaboration between organizations&quot;, Alex Ionescu will present a short talk on ReactOS on the following topics:</p>
+<ul>
+    <li>Targetting, developping and testing Win32 versions of projects on ReactOS.</li>
+    <li>Solving OS-level and other platform-specific bugs.</li>
+    <li>Finding out and dealing with undocumented behaviour.</li>
+    <li>Testing Win32 ports without acquiring a Windows license and spending money on a test environment.</li>
+</ul>
+<p>The ReactOS Foundation is looking at creating an official long-term &quot;division&quot; responsible for communicating with developers and leaders from other projects. We would be providing help in running other FOSS software projects, implementing features and/or APIs which ReactOS is missing, having a special bugzilla section dedicated to each participating project, etc. We want to make sure we properly support any partner project, and, conversly, to make sur that they can support Win32 and have additionnal debugging capabilitiy.</p>
+<p>This presentation will focus on ReactOS in its current state, and how it can grow to become a useful testing/target platform for Win32 FOSS software.</p>

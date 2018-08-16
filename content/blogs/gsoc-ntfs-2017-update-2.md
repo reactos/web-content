@@ -1,0 +1,26 @@
+---
+title:       "GSoC NTFS 2017 Update 2"
+author:      "coderTrevor"
+type:        blog
+date:        2017-06-22
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-2
+aliases:     [ node/45371 ]
+
+---
+
+All is going well :). Since the last update, I've checked off a minor TODO related to file creation: increasing the size of the master file table, if needed.
+
+Every time the mft grows, it creates several empty file records at a time. In the past, I was using this to my advantage, and was only creating files in empty slots that already existed. Every time I got an error saying there wasn't enough space for a new file, I'd boot into Windows, create a file (which would increase the mft size), and get back to testing.
+
+It was appropriate to put off enlarging the mft at first, but such a limitation couldn't last forever. I picked last week to tackle it.
+
+Development of this feature was pretty uneventful. It took a little longer than I thought it would, but even so, I feel like I've improved a LOT since this time last year. I'd say I have a pretty good grasp of how our driver works now, and how NTFS works too. Even the nitty-gritty details (well, most of them anyway).
+
+Last year, I had to take on little pieces of the puzzle so I'd have some hope of understanding what I was working with. At this point, though, I can actually see the big picture. Or so it seems. :P
+
+Another thing that's improved a lot since last year is the NTFS driver itself. I know, I'm totally blowing my own horn here, but it's so cool! When I first started, I had to write a test program just to prove my changes were doing anything, because those changes were so small that any other method - like saving the file in notepad - would fail.
+
+In contrast, the other day I was using a plain old batch file running right off the drive to test file creation. The batch file that I made in Windows had a minor syntax error in ROS, so I opened it up, changed it, saved it and re-ran it. A few seconds after the test was running, I realized how awesome it was that I could do that operation and totally take for granted that it worked!

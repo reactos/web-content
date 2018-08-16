@@ -1,0 +1,49 @@
+---
+title:       "ReactOS Status Update"
+author:      "fireball"
+type:        news
+date:        2007-11-14
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-status-update
+aliases:     [ node/280 ]
+news:        [ "news" ]
+
+---
+
+<h2>Status Update</h2>
+<p>
+ReactOS had quite a few major improvements since the last 0.3.3 release, and I feel this needs to be given a special attention. 
+</p>
+<h4>Kernel</h4>
+<p>First of all, the kernel gets mostly bugfixes in all areas, especially which haven't been touched for a long time (Cache controller, for example), leading to great improvements in compatibility+stability. A number of issues with Win32 applications crashing went away. 
+</p>
+<h4>Drivers</h4>
+<p>Then, drivers. Input stack was rewritten to be plug'n'play compatible, USB is on its way to be PnPised, PCI bus driver bugfixed resulting in better hardware support. 
+</p>
+<h4>
+  Win32 subsystem</h4>
+<p>Its time has finally come. ReactOS developers have done a restructure, and heavy bugfixing. As a result, all so-called "regress" happened since 0.2.x release series are finally gone. As an example, a famous "AbiWord bug", which prevented at least all Rebar control-having applications to work, has been finally fixed. It was in the tree for more than a year! Or, a GDI batch commands support was implemented, which finally makes ReactOS a truly GUI OS. 
+</p>
+<h4>
+  Various DLLs</h4>
+<p>Shell32 has been synced with <a href="http://www.winehq.org">Wine</a>, and then forked, to implement features and behaviour ReactOS needs (Wine does not need those features, so the decision was to effectively fork it). NTDLL, one more stone-age bug was fixed in its PE loader (recursive DLL loading led to problems), as a result russian accounting software "1C" is able to start now. MSVCRT has been heavily restructured, source code got updated and improved, and a number of critical exception handling-related bugs were fixed there. 
+</p>
+<h4>Compatibility</h4>
+<p>Overall result is really impressive. From an OS which hardly even installs anything (which perfectly complies with its alpha status, which still is not going to be changed), we have an OS which is able to install and run OpenOffice 2.0 applications (<a href="[#link_screenshots]">screenshots</a>), remotely connect to a Windows host via a freshly developed MSTSC-alike application, chat in IRC using recent version of <a href="http://www.mirc.co.uk">mIRC</a> (your favorite IRC client may work too), run games using software OpenGL renderer, manage photos with Google Picasa, and the list goes on. There is even a bootloader implementation, which is able to natively boot a Windows installation.</p>
+<h4>Next Release </h4>
+<p>
+The 0.3.4 release is scheduled for December, 2007, there are about 10 blockers registered for it now, so there is some work to do. 
+</p>
+<h4>Events</h4>
+<p>One thing to note, <a href="http://www.fosdem.org">FOSDEM 2008</a> (a european based non-commercial event) are conducting a <a href="http://www.fosdem.org/2008/brainstorm">brainstorm</a>, to select speakers and subjects <strong>you</strong> want to hear. It barely takes a few minutes to get familiar with tracks and fill out very simple form (thankfully no registration is required), but it is going to make the great FOSDEM event an even better one!</p>
+<h4>Resources</h4>
+<ul>
+  <li><a href="[#link_screenshots]">ReactOS Screenshots</a></li>
+  <li><a href="http://www.fosdem.org/2008/brainstorm">FOSDEM 2008 - Brainstorm</a></li>
+</ul>
+<p>&nbsp;</p>
+<p><em>Aleksey Bragin</em></p>
+

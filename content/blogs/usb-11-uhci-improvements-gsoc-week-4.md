@@ -1,0 +1,22 @@
+---
+title:       "USB 1.1 UHCI improvements GSoC - Week 4"
+author:      "VardanM"
+type:        blog
+date:        2016-06-20
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-11-uhci-improvements-gsoc-week-4
+aliases:     [ node/11797 ]
+
+---
+
+<h4><span style="font-size: 1em; font-weight: 600; line-height: 18px; text-transform: uppercase;">TO LEARN HOW TO SWIM, YOU NEED TO GET INTO THE WATER.</span></h4>
+<p>At the start of the week I was debugging the system crash on ROS's usbhub unload in Win2k3. I spent a lot of time asking questions and discussing topics related to WDM with my mentor Thfabba. He kind of kickstarted me, giving small tasks and then analyzing with me the results. During that sessions I have gathered many new tips related debugging and also started feeling much more confidently working with WDM.</p>
+<h4><span style="font-size: 1em; font-weight: 600; line-height: 18px; text-transform: uppercase;">WHAT I HAVE SEEN WHILE DEBUGGING?</span></h4>
+<p>During debugging I have found the cause of the crash on usbhub unload and done preliminary fix. Then I was able to reload usbhub (but with memory leaks). Also at that time I was still having issue in case when I was trying to remove usbhub with usbccgp loaded on top of it. So I have gone forward and started debugging of that case, which shows that we have a bunch of issues in usbhub's unload flow. I have investigated documentation related PnP handling in WDM and reviewed our drivers from that perspective. Investigation shows that existing USB stack from top to down have a lot of bugs in PnP requests handling. I have reported all my observations to my mentor, and we have started analysis together.</p>
+<h4><span style="font-size: 1em; font-weight: 600; line-height: 18px; text-transform: uppercase;">WHAT we have decided to do?</span></h4>
+<p>After long discussions and analyzation of ours and other's sources, we have decided to improve our sources to be according MSDN programming guides for PnP handling. This will allow us to mark as fixed many reported bugs related crashes on unplugging, unloading/disabling issues and so on. As bugs are presented in all stack, we will start from usbhub’s PDO layer and will step-by-step move deeper into stack. There is lot of things to do, so I am considering this task as a great improvement in ROS's USB stack.</p>
+<h4><span style="font-size: 1em; font-weight: 600; line-height: 18px; text-transform: uppercase;">WHAT WE HAVE NOW?</span></h4>
+<p>During this week I have fixed two issues causing system crash, so now we are able to uninstall usbhub with usbccgp sitting on top of it. &nbsp;However, we still have many memory leaks and these are only fixes for particular issues in usbhub.</p>
+

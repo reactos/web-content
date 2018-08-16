@@ -1,0 +1,52 @@
+---
+title:       "GSoC NTFS 2017 Update 7"
+author:      "coderTrevor"
+type:        blog
+date:        2017-07-31
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-7
+aliases:     [ node/48366 ]
+
+---
+
+<p>Hi everyone! Last week I left off with an example of creating files, showing you how an index node fills up with file names. Once the node in a B-Tree gets too full, it needs to be split. I've been working on this for a while and I was expecting that I'd have an example of this working. I even delayed writing this post because I was so sure this feature was almost ready. Sadly, it looks like it will be a little longer still. :(</p>
+
+<p>I did make some progress I can show off though. I fixed a bug that was preventing creating a file via right-clicking in a folder. This is working now:</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/Creating_a_file_right_clicking.gif" alt="Right-click file-creation"  class="imgp_img" width="796" height="597" /></p>
+
+<h2>Bugs. Bugs everywhere.</h2>
+
+<p>I've been making slow progress lately because I keep running up against my own bugs. I attribute this mostly to two things: rushing, and not committing often enough.</p>
+
+<h3>Rushing</h3>
+
+<p>I've been rushing because I realized the proposal I submitted had me working on file deletion for several weeks by now, and I didn't like the idea of falling too far behind the schedule I set for myself. Also, just because it seems like I'm so close to being done with file creation, I got a little too excited and impatient. Impatience and coding don't really mix well.</p>
+
+<p>It's not just the driver that's been hurting from being rushed. I often talk about my reliance on my NTFSBrowse program for debugging. Even though this program has been very helpful, it's not my main focus, so it's always been a bit rushed and buggy; functioning just well-enough for my purposes. Its source is a nightmare, too. Unfortunately, that program itself had a bug that wasn't letting me view the full file records on my test VM. Most annoyingly, I couldn't reproduce the bug on my own machine, which made debugging tough.</p>
+
+<p>I reached a point where every time I created a file in ReactOS, Windows would report that the folder was corrupt and unreadable. This is nothing new. I usually have to do some extra debugging for Windows to get a feature fully-working, but when I tried to dump the directory's file record with NTFSBrowse, it would crash and cut the output short. It wasn't entirely NTFSBrowse's fault, it just wasn't good at handling the bugged-out indices I was feeding it. However, I had to fix NTFSBrowse before I could seriously move forward. </p>
+
+<p>The problem I was seeing with NTFSBrowse was that its HTML output was being cut short. It looked like NTFSBrowse was crashing before it could close the file, so data sitting in the file buffer wasn't getting flushed to disk.</p>
+
+<p>I "fixed" it by replacing a "\n" with a std::endl. I remembered hearing stories about a crazy CS professor that would take off points if you used std::endl to make a newline "because it flushes the buffers and is worse for performance." I guessed that would fix my problem and lucked out. Of course NTFSBrowse still has its bug, but this works around it well-enough. It is the fate of that program to remain held together with bodges and work just well-enough for the near future.</p>
+
+<p>Once I could see the data, I was able to fix the bug that was messing up indices, but it wasn't long before I ran into a different bug. This one results in Windows saying the whole volume is corrupt. That's when I realized it was time to accept that I'm not as almost-done-with-file-creation as I thought, and started this blog post.</p>
+
+<p>I'm pretty sure this newest bug is happening because ReactOS is excited to find a new filesystem it can use and keeps trying to create files on it, like a "RECYCLED" folder or a desktop.ini file. I'm presently trying to work on a small subset of file-creation which doesn't apply to these files. In the past, these attempts would fail outright for being unsupported, but the code paths I've recently enabled mean the files almost get created - but mess up the volume instead. When I finish this blog I'll make the files in Windows so ReactOS doesn't try to make them, then go from there. Of course when my work is done, ReactOS can just make such files without issue.</p>
+
+<h3>Not Committing Often Enough</h3>
+
+<p>Aside from - and perhaps related to - trying to rush through file creation, I have lately gotten in the <strong>very bad</strong> habit of not committing my changes. I actually let a few weeks go by without committing, just working on my code here, "in a cave." GSoC's second evaluation was last week. I didn't realize I had gone so long without committing until Pierre pointed out that he needed to see some of my latest work, or would have nothing to evaluate. Yikes! I gathered up what was working and committed that in a frenzy the night before evaluations were due.</p>
+
+<p>At the start of GSoC, I was really making an effort to commit as soon as I had any small part of a feature working. This meant I'd have to stop what I was doing often to clean up code - my least favorite thing to do - but it also meant each commit was small, neat, and manageable, and that most of the code I was working with was well-documented.</p>
+
+<p>I think some time near the beginning of this month I decided I might work faster if I only committed major features, saving the cleaning-up for the end. That was a big mistake, and I'm pretty sure it had the opposite effect which was to slow me down. Letting code be rough, ugly and poorly commented feels like it should let you work faster since you're saving all that time that would otherwise be spent cleaning and commenting code, but the fact is, all of that roughness and unreadability makes for code that's harder to interface with and allows more bugs to slip through. I'd like to think I've learned my lesson and will get back to committing more frequently in the future.</p>
+
+<h2>Looking forward</h2>
+
+<p>I shouldn't really be surprised that I'm having trouble making this B-Tree code come together. I always knew this would be the most difficult part of the project. I'm going to go back to my previous method of making many small, incremental steps toward the larger goal, and committing each one. In doing that, I should soon have updating an index working with B-Trees of arbitrary depth. I'm not sure how long this will take; it still feels like I'm very close!</p>
+
+<p>As far as maintaining my "schedule" is concerned, I'm not <em>too</em> worried about slipping up a little. I had originally allotted an equal amount of time for file deletion as I had for file creation, but it turns out that about two-thirds of the work is converting an index to a B-Tree, and converting a B-Tree to an index, and this code will be common to file deletion and file creation. Therefore, I expect file deletion will only take a fraction of the time I've spent on file creation. I hope so anyway. I don't think it matters much if my estimated schedule was a little off; as long as I accomplish my goals by the end of GSoC, I'll consider this project a major success. Hopefully, you will too! ;)</p>

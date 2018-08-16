@@ -1,0 +1,37 @@
+---
+title:       "GSoC 2018 - booting from BTRFS works!"
+author:      "extravert34"
+type:        blog
+date:        2018-07-29
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-2018-booting-btrfs-works
+aliases:     [ node/69571 ]
+
+---
+
+<img class="imgp_img" src="/sites/default/files/gsoc2018-7_0.png" alt="ReactOS booted from BTRFS partition">
+<p></p>
+<p>Hi, all!</p>
+<p>Here is what happened since last post:</p>
+<p>Freeloader is now able to read files and follow symlinks from btrfs partition. One major issue is left here - case sensitivity. BTRFS is case-sensitive file system, so paths like /ReactOS/System32, /reactos/system32, /ReactOS/system32 are different here. But in Windows world most software is written assuming that case does not matter during path lookup. This thing is solved in WinBtrfs driver, but for Freeloader it can be a bit tricky. Right now I’ve implemented a hack for this, we will handle this later.</p>
+<p>During Freeloader development, I’ve found a bug in VirtualBox BIOS implementation. At first, my boot sector didn’t work on VirtualBox and finding out what’s wrong there was annoying.
+The problem was in INT 13h AH=42h implementation: in VirtualBox it can’t read more than 8 sectors per call. Simple <a href="https://github.com/Extravert-ir/reactos/commit/8ae62c1bbcbd8eae15911a17193d64bca1cae950">fix</a>, but much time spent on debugging…</p>
+<p>After Freeloader was done and VirtualBox bug fixed, I was able to get to first error message from btrfs-booted ReactOS :)</p>
+<img class="imgp_img" src="/sites/default/files/gsoc2018-8_0.PNG" alt="First error message">
+<p>Now it’s time to fix errors in ReactOS itself, not in bootloader.</p>
+<p>This message was not obvious to fix. The exception, which caused this error (STATUS_ACCESS_VIOLATION), lead me to winsxs code, which is mostly imported from Wine. But finally, I’ve found the reason - it’s a bug in WinBtrfs driver. It works wrong when using NtQueryDirectoryFile with a file mask, which starts with the "*" symbol.<br>
+Our winsxs implementation heavily relies on this function and makes queries like "*_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.*.*_*_*.manifest" to find appropriate manifest when needed, so it failed quite early because of this bug. A pull-request to the upstream repository with a bugfix is <a href="https://github.com/maharmstone/btrfs/pull/102">here</a>.</p>
+<p>This was the only bug, which prevented booting to desktop:</p>
+<img class="imgp_img" src="/sites/default/files/gsoc2018-9_0.PNG" alt="Graphical glitches with first version of fix">
+<div class="imgp_desc">First version of the fix had issues - there are some graphical glitches in taskbar. Never know what troubles winsxs bugs can cause!</div>
+<p></p>
+<p>So, right now ReactOS is able to boot from BTRFS partition and it is in quite stable state. But there are a lot of problems left:</p>
+<ul>
+<li>Pagefile cannot be created on such partition. Our paging implementation is different from Windows one and requires extra functions in FS driver to be implemented.</li>
+<li>Errors during some write operations. For example, it is not able to install Git right now. Will need to investigate this.</li>
+<li>Occasional BSODs during shutdown. This problem is already tracked down, seems like nobody tried to use WinBtrfs as boot driver before :)<br>More PRs to upstream are expected next week.</li>
+</ul>
+<p>I want to say huge thanks to all mentors in IRC and especially Hermès Bélusca-Maïto who helped me a lot with tracking down all these issues :)</p>
+

@@ -1,0 +1,128 @@
+---
+title:       "NTFS Write Support GSoC - Week 4"
+author:      "coderTrevor"
+type:        blog
+date:        2016-06-21
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/ntfs-write-support-gsoc-week-4
+aliases:     [ node/11813 ]
+
+---
+
+<p>Mid-term evaluations opened up yesterday, and naturally I've been super-busy this week, making sure I've earned my keep! ;)</p>
+
+<h2>Getting the New Size Recognized in Windows</h2>
+
+<p>Recall that I ended last week being able to extend a file's size in ReactOS, but Windows wasn't showing the newly written data when opening the file in notepad.
+My mentor Pierre and forum member Pathoswithin both suggested, independently, that my problems with extending a file might be caused by only increasing the size of the $DATA attribute and not also modifying the appropriate $FILE_NAME attribute associated with the file.</p>
+
+<h3>NTFS Crash-Course Vol 2</h3>
+
+<p>Ntfs typically stores several of these $FILE_NAME attributes for each file a user creates. The file record itself contains these attributes, typically one for the file's name and another for the file's DOS name, plus one for each hard link. A file's parent directory will also have an index entry with a $FILE_NAME attribute for the file (and typically another for the 8.3 name).</p>
+
+<p>Here's where things can get a little confusing. In addition to describing a file's name, a $FILE_NAME attribute has fields for data size as well as allocated data size. If you're reading this attribute in a directory index, these values are meaningful. However, if you're reading a $FILE_NAME attribute contained in a file record (MFT entry), these sizes are meaningless and are typically set to 0. That's probably because each file of substance will have a $DATA attribute stored in its file record, and this attribute has it's own fields for size: data size, allocated size, and valid data length, and it would be redundant to write the same information to multiple places in a file record.</p>
+
+<h3>Still With Me?</h3>
+
+<p>So to reiterate: the $FILE_NAME attribute has meaningful file size information for a file when it's contained in a directory index entry, as you can see here (0x554 = 1,364):</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/Directory_index_attributes.png" title="Directory Index" target="_blank"><img src="/sites/default/files/imagepicker/49142/Directory_index_attributes.png" alt="Directory Index"  class="imgp_img" width="933" height="478" /></a></p>
+
+<p>However, when contained in a file record, it does not have this information. Instead we see the file's size conveyed in the $DATA attribute header below the $FILE_NAME attribute:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/MFT_Record.png" title="File Record (MFT Entry)"><img src="/sites/default/files/imagepicker/49142/MFT_Record.png" alt="File Record (MFT Entry)"  class="imgp_img" width="933" height="478" /></a>
+
+<p>Earlier, I was updating the sizes of a file's $DATA attribute, but I was leaving the associated index in the parent directory alone. Pierre and Pathoswithin were both in agreement: if Windows was to see the changes our driver was making, this index entry would probably have to be updated with the new size.</p>
+
+<h2>Week 4 Begins</h2>
+
+<p>At the beginning of the week, I didn't have the knowledge required to make this change. I had read the relevant information but without any application of this highly esoteric material, I never retained it or fully understood it. Actually, I still don't, but I'm a lot closer than I was. The same goes for our driver; I understood the parts I interacted with, but the bulk of it, and even the overall organization was still something of a mystery to me. I thought I could save really diving into the structure of directories until the second-half of the project, but this problem had me doing it at least a week earlier (which is probably a good thing).</p>
+
+<p>To fill the gap in my understanding, I spent the first half of the week adding on to my stand-alone NTFS browser app, with the goal of having it enumerate files in the root directory. The further I got with this, the more practical it became to copy-and-paste code from our driver into the app, and I noticed myself making more and more of an effort to adapt the browser app to the code I was pasting in, instead of having to keep updating the pasted code. This process was tedious as it resulted in days of not having any visible progress, but it was also extremely helpful in teaching me how and why our driver does some of the things it does.</p>
+
+<p>The browser app has been a success as a learning tool for me. Ironically, I still haven't gotten it to enemurate files though; obtaining enough knowledge to do so meant it was time to get back to the driver. At least it doesn't crash anymore. Here it is listing attributes in the root directory file record (using code copied from the driver):</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/browserPic.png" alt="Image of Standalone NTFS App"  class="imgp_img" width="678" height="344" /></p>
+
+<h3>Progress with the Driver</h3>
+
+<p>Updating the $FILE_NAME attribute took a little bit of debugging. For a little while, everytime I would run my tester it would somehow make it seem to our driver like I deleted every file on the drive. I guess such a problem was bound to happen eventually. I got to witness Windows' auto-healing in person, as I'd frequently boot it up and read the drive, which was enough to fix it for ReactOS.</p>
+
+<p>To debug this issue I again relied on my method of updating data structures in-place, writing back the same values, then comparing with the original data on-disk. The problem turned out to be in my function that was updating the fixup array right before the index was getting written back to disk. That function did some math that was expecting a file record would be passed to it, so I fixed it to work with index entries as well.</p>
+
+<h3>Not Progress with Windows</h3>
+
+<p>I added code to update the $FILE_NAME attribute of a file's index entry in its parent directory. However, Windows still wouldn't show me all the data I knew should be there! As it turns out, the directory index is not important for accessing an individual file, as far as I can tell. I think that information is there so you can quickly get the size of a directory.</p>
+
+<h2>Who Wants to Play Find the Mistake? :)</h2>
+
+<p>I've written this post in such a way that programmers without prior NTFS knowledge should be able to read up to this point and follow along to find my error, as a small puzzle. Please let me know in the <a href="https://www.reactos.org/forum/viewtopic.php?f=2&t=15535">forum discussion</a> if you enjoy this format or not. :)</p>
+
+<p>So what was the problem? To find out, I turned to some more traditional troubleshooting techniques, and cracked open Ye Olde Hexe Editor. First, I ran my tester in Windows, noted the allocated size and size of the test file, then searched the drive for every occurrence of those two numbers back-to-back (as they always appear in the relevant structures).</p>
+
+<h4>Before Running the Tester in ReactOS (after running it in Windows):</h4>
+
+<p>For the next two images, the file had a file size of 1,063 bytes and an allocation size of 1,536 bytes. In this screenshot, I've highlighted the allocated size and data size values in the $DATA attribute header of the file record:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/MFT_Entry_Before_ROS.png" title="File Record Before Running Tester in ReactOS" target="_blank"><img src="/sites/default/files/imagepicker/49142/MFT_Entry_Before_ROS.png" alt="File Record Before Running Tester in ReactOS"  class="imgp_img" width="653" height="211" /></a></p>
+
+<p>And here's the directory index entry:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/index_after_Windows_Before_ROS.png" title="Index Before Running Tester in Windows" target="_blank"><img src="/sites/default/files/imagepicker/49142/index_after_Windows_Before_ROS.png" alt="Index Before Running Tester in Windows"  class="imgp_img" width="739" height="454" /></a></p>
+
+<h4>After Running the Tester in ReactOS:</h4>
+
+<p>My tester would append one byte to the end of SmallFile.txt on every run, so after running it I performed the same search, only with the data size one byte higher.  After running the tester in ROS, here's the file record:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/MFT_Entry_after_ROS.png" title="File Record After Running Tester in ReactOS" target="_blank"><img src="/sites/default/files/imagepicker/49142/MFT_Entry_after_ROS.png" alt="File Record After Running Tester in ReactOS"  class="imgp_img" width="695" height="345" /></a></p>
+
+<p>and here's the relevant directory index:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/index_after_ros.png" title="Directory Index After Running Tester in ReactOS" target="_blank"><img src="/sites/default/files/imagepicker/49142/index_after_ros.png" alt="Directory Index After Running Tester in ReactOS"  class="imgp_img" width="737" height="448" /></a></p>
+
+<h3>Can you see the problem?</h3>
+
+<p>Whether or not you see it in the hex editor (and don't feel bad if you don't!) it needs to be fixed in code. Since you've stuck with me this long, might as well see some code! Be warned, however: this is not refined code! I'm making no attempts to clean it up, either. I'm just sharing exactly what I saw when I was debugging. :)</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/Buggy_Code.png" title="Buggy Code" target="_blank"><img src="/sites/default/files/imagepicker/49142/Buggy_Code.png" alt="Buggy Code"  class="imgp_img" width="1125" height="553" /></a></p>
+
+<p>So do you see the problem? Again, don't feel too bad if you don't and don't spend a lot of time on it :3</p>
+
+<p><br><br><br><br>&nbsp;</p>
+
+<h2>Spoiler Alert</h2>
+
+<p>Don't scroll any further unless you want details about the problem and how I solved it!</p>
+
+<p>Like I said, I tried to make this post into a small puzzle. It was a pretty easy bug for me to find, once I started looking, so I thought maybe this would be a fun way for you to follow along with my progress. Was I right? Was it too easy? Too hard? Just Boring? Did anyone care to try?</p>
+
+<p>I won't spend this much time on my post every week but I thought it might be nice to give some extra insight into my process for the midterm. Please let me know on the <a href="https://www.reactos.org/forum/viewtopic.php?f=2&t=15535">forum</a> if I was right :)</p>
+
+<h2>The Problem, Explained and Solved</h2>
+
+<p>For as much time as I spent on it, this was actually a really stupid bug, probably due to my writing code when I should have been sleeping. Take a look at this picture which explains it:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/damning_code_hexplained.png" title="Problematic Hex" target="_blank"><img src="/sites/default/files/imagepicker/49142/thumbs/damning_code_hexplained.png" alt="Problematic Hex"  class="imgp_img" width="100" height="67" /></a></p>
+
+<p>As you can see, the driver wasn't updating the value for valid data length!</p>
+
+<p>Well, that just leaves the bug in the code, because I actually was aware of this value and thought I was updating it. However, I was wrong:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/Code_Solution.png" title="Code Solution" target="_blank"><img src="/sites/default/files/imagepicker/49142/thumbs/Code_Solution.png" alt="Code Solution"  class="imgp_img" width="100" height="49" /></a></p>
+
+<p>That's all there was to it: I was writing the new value to memory, but not the memory that would get written to the disk.</p>
+
+<h3>The Fix</h3>
+<p>The fix is pretty obvious: delete the code highlighted in the middle and add another line near the top to actually set the AttrContext->Record.NonResident.InitializedSize.</p>
+
+<p>I ran my tester several times in succession in ReactOS to extend the test file, then opened it in notepad(left). Then I booted into Windows and opened the same test file in notepad(right):</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/Success.png" title="Success" target="_blank"><img src="/sites/default/files/imagepicker/49142/Success.png" alt="Success"  class="imgp_img" width="1626" height="679" /></a></p>
+
+<h4>Success! :)</h4>
+
+<p>&nbsp;<p>
+
+<h3><a href="https://www.reactos.org/forum/viewtopic.php?f=2&t=15535">Discussion</a></h3>

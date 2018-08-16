@@ -1,0 +1,37 @@
+---
+title:       "NTFS Write Support GSoC - Week 12"
+author:      "coderTrevor"
+type:        blog
+date:        2016-08-18
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/ntfs-write-support-gsoc-week-12
+aliases:     [ node/16856 ]
+
+---
+
+<p>I said in my last update that I was aware GSoC was coming to an end, but in truth I don't think I realized just how close the end was coming. I need to be completely finished in much less than a week from now!</p>
+
+<p>Near the middle of the week, I was mostly finished with the code to create a new file record in memory. This progressed quickly, thanks to the time I put into diagnostic output and researching the file records that Windows creates. Here's a screenshot I took in the middle of the process:</p>
+
+<p><a href="/sites/default/files/imagepicker/49142/dumpComparison.png" title="FileRecordCreation" target="_blank"><img src="/sites/default/files/imagepicker/49142/dumpComparison.png" alt="FileRecordCreation"  class="imgp_img" width="1098" height="632" /></a></p>
+
+<p>To the left, I have the file record I observed Windows create [rows of 0 are skipped] and to the right, I have the contents of a file record created by ReactOS. You can see that I just had to make sure most of the numbers match, and that the ones that don't match, shouldn't, such as the timestamps. If you're really observant, you can see that there were a few fields I still hadn't implemented at the time this screenshot was taken, such as the file reference to the parent directory or the MFT index.</p>
+<p>After having a new file record created in memory, the next step was to save it to master file table (and update the MFT's $Bitmap attribute to mark the new record as used). I did accomplish this, but it took longer than I expected.</p>
+<h3>Oh Right, School</h3>
+<p>Probably nobody remembers how in week 1, I mentioned that my school lets out earlier than most for the summer, and so I had a good amount of time to work on the project before the GSoC coding period officially began. The corollary to this is that my school doesn't waste any time getting back in session, and classes are beginning Monday morning, even before GSoC ends! Online classes already have some assigned homework.</p>
+<p>I spent most of Friday at my school's Welcome-Day, representing our STEM club and trying to recruit as many of the new students as possible. We did pretty well :). Then, I spent a lot of time over the weekend doing errands for school, like filling in financial aid paperwork, signing up for classes, buying books, and studying for a math placement test. Normally I get this stuff out of the way as soon as I can, but this particular summer I was preoccupied with GSoC, as you might expect. ;)</p>
+<h3>Looking Forward</h3>
+<p>I have at least five categories of lingering commits that I still need to make, after I clean up the corresponding code:
+<ul>
+<li>File-record creation code I've been working on recently</li>
+<li>Migrating resident attributes to non-resident</li>
+<li>IRP_MJ_SET_INFORMATION for changing file size</li>
+<li>Various fixes and improvements as found by Pierre or myself</li>
+<li>Documentation! I need to at least make sure the functions I've written each have a preceding comment conforming to the project's style guide.</li>
+</ul></p>
+<p>I really wanted to be able to create at least one file on NTFS before the end of GSoC, but I think that was too ambitious of a goal. My code to create a new file record is working (at least I think it's working) but adding the index for the file to the parent directory is still unfinished, and I have too much left to do to wrap up GSoC in time for the deadline to finish it by then. :(</p>
+<p>I don't think anybody "in the know" expected me to fix and implement everything necessary to deliver a finalized driver (at least I hope they didn't!). My mentor, Pierre, and many other developers have definitely made me feel like my efforts are appreciated, and I really hope the community as a whole shares that sentiment! :) I'm still a little bummed that I wasn't able to finish file creation in time for the GSoC deadline, but overall, I think ReactOS' NTFS driver improved a lot from my efforts, and I'm very happy for that! :)</p>
+<p>I'm very sure that <em>I</em> have improved. This has been an incredible opportunity, and I couldn't be happier to have been given it and lived through it! :D No offense to my college's computer-science professors, who are excellent, but I feel like the experience of coding full-time on a project as advanced as this one increased my programming ability more than school <em>ever</em> could!</p>
+

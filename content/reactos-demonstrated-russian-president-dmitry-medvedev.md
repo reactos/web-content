@@ -1,0 +1,36 @@
+---
+title:       "ReactOS Demonstrated to the Russian President Dmitry Medvedev"
+author:      "Z98"
+type:        news
+date:        2011-09-12
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-demonstrated-russian-president-dmitry-medvedev
+aliases:     [ node/305 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS Demonstrated to the Russian President Dmitry Medvedev</h2>
+<p>The ReactOS project participated in the Seliger 2011 Forum this summer. <a href="http://en.wikipedia.org/wiki/Seliger_(forum)">"Seliger"</a> is an annual youth educational forum held since 2005 at Lake Seliger in Russia, close to the city of Ostashkov in the Tver region (370km away from Moscow). The forum is funded by the Russian government with a budget of approximately 178 million rubles (approximately 5.9 million dollars or 4.3 million euros). ReactOS participated in the "Zvorykin project" section. The "Zvorykin project" is a multiyear program by the <a href="http://www.fadm.gov.ru/">Russian Federal Agency for Youth</a> aimed at stimulating innovative activities by younger members of society.</p>
+
+<p>Unfortunately, Aleksey Bragin was not able to visit the "Seliger" forum himself. However, Alexander Rechitskiy, a ReactOS community member that lives in Stavropol and who manages public relations and translations for Russian users was able and willing to make the trip. Victor Martinez, a Spanish member of the community also heavily involved in ReactOS PR efforts stepped up to help Alexander.  Over numerous Skype calls and Jabber and IRC conversations, Victor provided Alexander various tips on how to better present ReactOS. Accompanying Alexander Rechitskiy to Seliger was his friend, 17 year old high school student Marat Karatov. At the forum, ReactOS won "The Best Presentation" award and a grant of 100 000 rubles (approximately 3 300
+dollars or 2 400 euros), which is still being processed. In addition, around twenty large investors became interested in the project.</p>
+
+<p>However, the story does not end there. On the 1st of September, Russian President Dmitry Medvedev had scheduled a visit to Stavropol Kray and literally one day prior it became known the President intended to visit school N 19 in Verchnerusskoe village, located in the suburbs attached to Stavropol city, the exact school where Alexander's friend Marat Karatov is attending. The school's director knew about Marat's participation in a major software project and offered to support Marat's desire to present this project to the president. It is hard not to call this anything but divine providence. It was not known in advance whether the presentation was going to take place, but Alexander decided to prepare everything just in case and prepared Marat for the presentation. And everything worked out!</p>
+
+<p>During his visit to the school, President Medvedev spoke with the school's students, including Marat Karatov. Marat made a short
+presentation of the latest build of ReactOS, including system boot up and running a few Windows-compatible applications. During conversation with the president, Marat said that the OS was ready approximately for 80% of real world usage and that
+roughly one million euros would be needed to complete its development within a year.</p>
+
+<p>"This is an interesting project indeed" was President Medvedev's response.</p>
+
+<p>After that, he added that it was necessary to assess the real status of this innovative development before making a decision about
+investment.</p>
+
+<p>"I will see. We will think. Million or not, but we will think" President Medvedev said.</p>
+
+<p>Of course, none of this would have been possible without the dedication and hard work of Marat Karatov, Victor Martinez, and Alexander Rechitskiy.  The three deserve our heartfelt thanks for all the time and effort they have put in helping the project.</p>
+

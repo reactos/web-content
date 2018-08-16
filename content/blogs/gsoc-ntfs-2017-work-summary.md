@@ -1,0 +1,177 @@
+---
+title:       "GSoC NTFS 2017 - Work Summary"
+author:      "coderTrevor"
+type:        blog
+date:        2017-08-29
+changed:     2017-09-07
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-work-summary
+aliases:     [ node/50053 ]
+
+---
+
+<p>This is a detailed summary of the work I've performed over the course of Google Summer of Code 2017. This was a continuation of my GSoC project from last year.</p>
+
+<h3>Code Submitted</h3>
+
+<ul style="List-style-type: none;">
+<li style="Overflow-wrap: break-word;background-color: #D8FFD8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p>You can check out my branch with SVN at <a href="https://svn.reactos.org/reactos/branches/GSoC_2016/NTFS">https://svn.reactos.org/reactos/branches/GSoC_2016/NTFS</a></p>
+<p>You can find a list of commits made to my branch during GSoC 2017 at <a href="https://code.reactos.org/changelog/~br=GSoC_2016,startDate=2017-05-30,endDate=2017-08-29/reactos/branches/GSoC_2016/NTFS">this link</a>.</p>
+<p>I also worked on this project after GSoC last year and before the coding period officially began this year. You can find that list of commits <a href="https://code.reactos.org/changelog/~br=GSoC_2016,startDate=2016-08-24,endDate=2017-05-29/reactos/branches/GSoC_2016/NTFS">here</a>.</p>
+<p>For completeness-sake, <a href="https://code.reactos.org/changelog/~br=GSoC_2016/reactos/branches/GSoC_2016/NTFS">here's a link</a> to all the commits made to my branch ever.</p></li>
+
+<li style="Overflow-wrap: break-word;background-color: #D8FFD8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">I've also written several stand-alone programs to assist with my work. The source to them is <a href="https://s3.amazonaws.com/gsoc2017/NTFS_Bonus_2017_Update1.zip">available here</a>.</li>
+</ul>
+
+
+<h3>Highlights</h3>
+
+
+<ul style="List-style-type: none;">
+<li style="Overflow-wrap: break-word;background-color: #FFFFD8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<ul>
+<li>Continued <a href="https://www.reactos.org/blogs/ntfs-write-support-gsoc-work-summary-draft">last years' project</a> to implement write-support on NTFS volumes within ReactOS.</li>
+<li>Disabled write support by default to prevent data loss. Write-support can now be enabled via the registry.</li>
+<li><strong>Added support for file creation.</strong></li>
+<li><strong>Added support for folder creation.</strong></li>
+<li>Confirmed that Windows sees all files and folders created in ReactOS. Tested with up to 700 files (present limit of tester).</li>
+<li>Confirmed that all files created in ReactOS have proper contents when read in Windows.</li>
+<li>Confirmed that chkdsk won't report any problems after creating files and folders in ReactOS.</li>
+<li>Expanded stand-alone utilities to assist with this years' project.</li>
+<li>Identified and repaired numerous bugs.</li>
+</ul></li></ul>
+
+
+<h3>How to Observe Work Performed</h3>
+
+<p>In order to see the results of my labor, you must first build my branch with <a href="https://www.reactos.org/wiki/Building_ReactOS">the usual method</a> and setup a virtual machine with the output. You can use a bootcd or a livecd. If you have any trouble building ReactOS, you can ask for help on <a href="https://reactos.org/irc">IRC</a>.</p>
+
+<p>Before you build ReactOS, <strong>you must enable NTFS write-support if you want to test it</strong>. This is because <strong>write-support is still experimental; there's still a lot of things that could go wrong and using this driver could result in catostrophic data loss.</strong></p>
+
+<p>To enable write support, open the folder you checked out my branch to, and navigate to <strong>boot\bootdata\</strong> and open the <strong>hivesys.inf</strong> file. Find the section that starts with <code>&semi; NTFS filesystem driver</code></p>
+
+<p>Underneath that, find the line that says:</p>
+
+<p><code>&semi;HKLM,"SYSTEM\CurrentControlSet\Services\Ntfs","MyDataDoesNotMatterSoEnableExperimentalWriteSupportForEveryNTFSVolume",0x00010001,0x00000001</code></p>
+
+<p>Simply remove the semicolon at the start of that line and save the file and build ReactOS as usual. This will add the registry key needed to enable write support.</p>
+
+<p>Next, in a virtual machine (strongly recommended) boot into Windows and format a second virtual drive as an NTFS volume. Then, use the volume you formatted as a second hard drive in a virtual machine running ReactOS.</p>
+
+
+<h3>What's Working & What Can Be Used Now</h3>
+
+<p>Creating a file or folder and overwriting a file have been debugged pretty thoroughly in <a href="https://svn.reactos.org/reactos/branches/GSoC_2016/NTFS">my branch</a> and should work as you'd expect in all but the rarest of cases.</p>
+
+<ul style="List-style-type: none;">
+<li style="Overflow-wrap: break-word;background-color: #F8F8F8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p>You can create files from the command line, by redirecting standard outpout.</p>
+
+<p><img src="https://s3.amazonaws.com/gsoc2017/FileCreation.png" alt="Creating a single file"></p>
+
+<p><img src="https://s3.amazonaws.com/gsoc2017/Update3/MultipleFiles.png" alt="Creating multiple files"></p>
+</li>
+
+<li style="Overflow-wrap: break-word;background-color: #F8F8F8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p>Or, you can create a file by right-clicking. Renaming a file isn't supported yet, so if you create a file or folder via right-clicking, you'll have to accept the default name.</p>
+<p><img src="https://s3.amazonaws.com/gsoc2017/Creating_a_file_right_clicking.gif" alt="Creating multiple files"></p>
+</li>
+
+<li style="Overflow-wrap: break-word;background-color: #F8F8F8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p>Also, you can use my test program to create files.</p>
+
+<p><img src="https://s3.amazonaws.com/gsoc2017/Creating_700_files_2.gif" alt="Creating multiple files"></p>
+</li>
+
+<li style="Overflow-wrap: break-word;background-color: #F8F8F8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p>Creating a folder works as well. This was a feature I was able to implement at the last minute.</p>
+
+<p><img src="https://s3.amazonaws.com/gsoc2017/ItWasEasy.gif" alt="Folder creation"></p>
+</li></ul>
+
+<p>Reboot into the Windows vm and you should notice that all the files you created in ReactOS are available to you. If you run "chdsk x: /f" from a command line, where x is the letter of the ntfs drive you wrote files to, chkdsk should not report that it found any errors.</p>
+
+<p>There's also some features which I have implemented or fixed which are less-obvious to an end-user. These include:</p>
+
+<ul style="List-style-type: none;">
+<li style="Overflow-wrap: break-word;background-color: #F8F8F8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<ul><li>Support for enlarging the master file table when necessary.</li>
+<li>Support for updating the $MFTMirr file.</li>
+<li>Fixed support for POSIX vs Windows naming conventions. See <a href="https://jira.reactos.org/browse/CORE-13700">CORE-13700</a>.</li></ul>
+</li></ul>
+
+
+<h3><a href="https://s3.amazonaws.com/gsoc2017/NTFS_Bonus_2017_Update1.zip">Bonus Code</a></h3>
+
+<p>During the course of this activity, I also expanded the stand-alone programs and scripts I wrote last year. Only the minimal amount of time was spent writing these programs, so I wasn't distracted from writing driver code. As such, this bonus code has numerous errors: memory is often leaked; file handles are leaked; comments are missing, deceptive, or just plain wrong; things are done in an inconsistent manner; etc. For the most part, these programs can't be interacted with except at the level of their source code.</p>
+
+
+<ul style="List-style-type: none;">
+<li style="Overflow-wrap: break-word;background-color: #FFF4D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;"><b>
+Tester (AKA "Disk_Test_1")</b><p>This automated-tester was absolutely crucial to my progress. Not only did it consistently find errors that would have been impossible to reproduce otherwise, it was the only way I could test many of my incremental improvements to write support. This year I added tests specifically for creating a large number of files and verifying their creation.</p></li>
+
+
+<li style="Overflow-wrap: break-word;background-color: #FFF4D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;"><b>
+"NTFSbrowse"</b><p>I developed this program as a learning tool for myself, but it has become a powerful debugging tool as well as a learning aid. The program will give you a lot of information about a particular file record, identifying most of the individual fields in its HTML output. This year I added an interface and a detailed breakdown of the $INDEX_ROOT attribute, as well as dumping the $I30 index allocation to another file which is linked to, and a detailed breakdown of the index records within the index allocation.</p></li>
+
+
+<li style="Overflow-wrap: break-word;background-color: #FFF4D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;"><b>
+"DumpDrive"</b><p>This program is designed to create images of an NTFS partition, then compare these images. If it's able, the tool will keep track of every file that's changed, and display information related to the change. I gave it an interactive interface this summer and it was invaluable in helping me to track down some things that were causing chkdsk to complain.</p></li>
+
+
+<li style="Overflow-wrap: break-word;background-color: #FFF4D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;"><b>
+"BuildRosFast.ahk"</b><p>I wrote this AutoHotKey script last year and improved it a little this summer. I have it assigned it to a custom toolbar button in Visual Studio. When I click this button, it starts building a livecd of ReactOS, kills any sessions of WindBg, reboots a VM, Launches WindBg, Launches ReactOS with debugging enabled, and finally adds whatever breakpoints I'm interested in before clicking the two buttons prompted by a livecd before you enter the desktop. This script is pretty crude (it would be better if it paid attention to the build results) but at the same time, it's an <em>extremely</em> powerful time saver!</p></li>
+
+</ul>
+
+<h3>What's left to be done</h3>
+
+<ul style="List-style-type: none;">
+<li style="Overflow-wrap: break-word;background-color: #FFD8D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p><strong>There's still considerable work to be done before the driver is ready for the day-to-day use. Immediate goals include:</strong></p>
+<ul>
+	<li>Deleting files and directories</li>
+	<li>Renaming files and directories</li>
+	<li>Caching</li>
+	<li>Page-file support</li>
+	<li>Support for async IO</li>
+    <li>Support for memory mapped files</li>
+</ul></li>
+
+<li style="Overflow-wrap: break-word;background-color: #FFD8D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p><strong>Once these features are working (maybe sooner), I'd like to see ReactOS booting from NTFS! Wouldn't we all? That will require:</strong></p>
+	<ul>
+		<li>Adding support for formatting a volume</li>
+		<li>Updating setup to use NTFS</li>
+		<li>Creating a bootloader for NTFS and using / fixing freeldr's NTFS support</li>
+		<li>There might be something else I've forgotten / am not aware of</li>
+	</ul>
+</li>
+
+<li style="Overflow-wrap: break-word;background-color: #FFD8D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p><strong>Furthermore, there is some support for these NTFS-specific features, but they aren't fully working right now:</strong></p>
+	<ul><li>Sparse files</li>
+	<li>Alternate Data Streams (Named Streams)</li>
+	<li>File records that have or require an $ATTRIBUTE_LIST attribute</li></ul>
+</li>
+
+<li style="Overflow-wrap: break-word;background-color: #FFD8D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">
+<p><strong>There's other features of NTFS that are yet to be supported:</strong></p>
+	<ul>
+		<li>Support for drives and files with greater-than 2^32 clusters</li>
+		<li>Compressed files</li>
+		<li>Encrypted files</li>
+		<li>Logging</li>
+	</ul>
+</li>
+
+<li style="Overflow-wrap: break-word;background-color: #FFD8D8;border: 1px solid red;margin: 15px;padding: 10px 15px;border-radius: 25px;box-shadow: 2px 2px 5px #888888;">	
+<p><strong>It should also go without saying that there will be lots of bugs to fix along the way.</strong></p>
+</li>
+</ul>
+
+<h3>Looking Forward</h3>
+<p><strong>Thank you to my mentor Pierre, ReactOS, and Google for this wonderful opportunity!!</strong></p><p>I definitely plan to keep contributing to ReactOS! I will make one more blog post after this one to summarize my experience from a personal standpoint.</p>

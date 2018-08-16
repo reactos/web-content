@@ -1,0 +1,63 @@
+---
+title:       "Back from CLT 2010"
+author:      "EmuandCo"
+type:        news
+date:        2010-03-15
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /back-clt-2010
+aliases:     [ node/299 ]
+news:        [ "news" ]
+
+---
+
+<p>The Chemnitz Linux-Days 2010 are over and all ReactOS developers have safely made their way home again.<br>
+We would like to give a summary, and share our impressions with those who were unfortunately unable join us:</p>
+
+<p>Contrary to our expectations, the stall and the presentation were a wow. Especially for <a href="http://ev.reactos.org">ReactOS Deutschland e.V.</a>, the new German non-profit organization supporting the project, it was a promising start. A lot of interested guests visited our stall and wished us success for the future.</p>
+
+<p>Danny Götte, Daniel Reimer, Aleksey Bragin and Christoph von Wittich arrived on Friday afternoon. The latter two of them went to their hotel after Christoph gave Aleksey and his family a ride from Dresden, where their plane landed. The first two had some fun with some Döner Kebab next to the CLT building, waiting to be let in after their train arrived on the Chemnitz Süd train station. Matthias Kupfer was already there as he lives in Chemnitz. Being in the Coordinators Team of the CLT, he was very busy over the whole weekend. Once we were able to put all stuff inside, we went to the canteen very close to the CLT building and had some fun with beer and Pizza. At around 1:00 am most left, just Daniel and Danny stayed a while longer drinking some more beer.</p>
+
+<p>Our Saturday started quite early at 8:00 am. First some breakfast, then it began... On Saturday alone we had around 100 people at our stall and asking questions. Even more just read the information and witnessed ReactOS running on the 3 notebooks we brought with us. Popular questions included: Is it Linux? How far has the compatibility and hardware support progressed? Does it run this or that program?<br>
+Other projects, whose members expressed an interest and came to visit our stall included KDE, FreeBSD, NetBSD and OpenOffice.org. They were surprisingly open-minded for a Windows clone. Some of them offered direct support, we will certainly come back to that. Even the number of critical voices was very low this time.<br>
+Later that day Colin Finck arrived, too and immediately helped us out where he was able to. He arrived later because of some stress in school right now. Tests and a half year before the Finals... enough for a reason, I guess.</p>
+
+<p>The entertainment after the day at the stall was great, too. Saturday was Linux Night with a biiig Buffet and a Magican with his interesting rope and cards tricks. After that we went to the canteen again.</p>
+
+<p>Sunday was about the same way as Saturday. It started an hour later, with an equal amount of well-wishes and kind support for the future of the project. Matthias had a hard weekend, he tried to be as much as possible next to our stall, but he had to do much more work as member of the Coordination Team. He was really stressed and then a short while before the speech together with Aleksey would start, Aleksey was lost. Luckily he arrived in time.</p>
+
+<p>Matthias and Aleksey delivered an entertaining speech. The main points were history, architecture, reasons for usage of ReactOS and a look forward. During the speech, the system was built in the background and afterwards presented under VirtualBox. The room was almost full with probably around 80 listeners.<br>
+The presentation was recorded and you can find an audio stream in the Links section. It's mostly in German and a smattering of English here and there.</p>
+
+<p>All in all, the event was a great success and we are looking forward to the next one!<br><br></p>
+
+<h3>Links</h3>
+<p class="icon_p">
+  <a href="http://svn.reactos.org/svn/reactos/trunk/press-media/presentations/CLT-2010/?pathrev=46201">
+    <img alt="" src="http://reactos.org/media/pictures/2010/presentation.png"><br>
+    <strong>Slides of the presentation</strong>
+  </a>
+</p>
+
+<p class="icon_p">
+  <a href="http://chemnitzer.linux-tage.de/2010/vortraege/detail.html?idx=424">
+    <img alt="" src="http://reactos.org/media/pictures/2010/audio.png"><br>
+    <strong>Audio stream of the presentation</strong>
+  </a>
+</p>
+
+<p class="icon_p">
+  <a href="http://downloads.sourceforge.net/reactos/ReactOS-0.3.11-CLT2010.7z">
+    <img alt="" src="http://reactos.org/media/pictures/2007/livecd.png"><br>
+    <strong>ISO Image of the special ReactOS CD giveaway</strong>
+  </a>
+</p>
+
+<p class="icon_p">
+  <a href="http://flickr.com/photos/tags/clt2010">
+    <img alt="" src="http://reactos.org/media/pictures/2006/screenshot.png"><br>
+    <strong>CLT2010-tagged photos at Flickr</strong>
+  </a>
+</p>

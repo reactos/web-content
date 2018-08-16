@@ -1,0 +1,62 @@
+---
+title:       "GSoC NTFS 2017 Update 6"
+author:      "coderTrevor"
+type:        blog
+date:        2017-07-24
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-6
+aliases:     [ node/47478 ]
+
+---
+
+<p>Hello again! :)</p>
+
+<p>Last week, I finished the code that writes a B-Tree node to disk. Specifically, it lets me write the node to an index buffer within the index allocation of the parent directory. Don't worry if that doesn't make sense, I'll explain it more below.</p>
+
+<p>From a user's perspective, this means that the driver now has the ability to create dozens of files. My tester will create 39 files before filling the index node. The exact number of files a node can store is dependant on the length of the filename. Here's a short gif of me creating files with the tester in ReactOS, and comparing the results of the dir command before and after:</p>
+<p><img src="/sites/default/files/imagepicker/49142/Creating_29_files_in_ROS.gif" alt="Creating 29 files on NTFS in ROS"  class="imgp_img" width="796" height="597" /></p>
+
+<h2>Getting technical</h2>
+<p>It occurs to me that lately I may have been speaking in too many technical terms on this blog without giving enough background information, and it's been far too long since you've seen a good hex dump. ;) So I'll try to give a more thorough explanation of how creating a file in NTFS is implemented, and what I've been working on.</p>
+
+<p>As I've said before, every piece of data on an NTFS volume is assigned to a file, and that file will have a corresponding entry in the master file table. Not every file, in the NTFS sense of the word, is visible to the host operating system or user. Each file will consist of multiple attributes that describe the file and the data it contains. Directories are files too, as far as NTFS is concerned. Directories use a particular set of attributes to describe the files they store.</p>
+
+<p>A directory is essentially just an ordered list of files. The list is ordered by each file's name, and each entry in the list contains some basic information about the file, like its size and its entry number in the master file table. Actually, most of this data is just a copy of each file's filename attribute. The list of files is known as an index. For directories with only a few files, the index is stored in the directory's file record, in an attribute called $INDEX_ROOT. When there are many files, the list is implemented as a <a href="https://en.wikipedia.org/wiki/B-tree">B-Tree</a>, and $INDEX_ROOT is the root node of that tree. Each file that's in the list is called an index entry, or index node entry. In truth, directories are just the most common type of index NTFS uses, there are others as well. Every attribute associated with a directory index has the name $I30, which probably indicates that the attribute is for an index which has entries of attribute type 0x30, the $FILENAME_ATTRIBUTE.</p>
+
+<p>If you really want a good understanding, check out some reference material on the subjects of NTFS <a href="https://flatcap.org/linux-ntfs/ntfs/concepts/directory.html">directories</a> and <a href="https://flatcap.org/linux-ntfs/ntfs/concepts/tree/index.html">B*Trees</a>.</p>
+
+<p>Don't worry if this is hard to absorb. It took me quite a while to get it! I think now is a good time to actually see what I'm talking about, in hex. I've used my NTFSBrowse program to create dumps of a directory's file record. Click the images to see the full file records. First take a look at an empty directory:</p>
+
+<p><a href="https://s3.amazonaws.com/gsoc2017/Update6/0files/index.html"><img src="/sites/default/files/imagepicker/49142/0files.png" alt="0 files"  class="imgp_img" width="992" height="818" /></a></p>
+
+<p>The empty directory contains just one entry in the node, which is the dummy entry which indicates the end of the list. Here's what the directory looks like after my tester creates a single file called Project.of:</p>
+
+<p><a href="https://s3.amazonaws.com/gsoc2017/Update6/1file/index.html"><img src="/sites/default/files/imagepicker/49142/1file.png" alt="1 file"  class="imgp_img" width="1354" height="819" /></a></p>
+
+<p>Here's how it looks after creating another file called Gutenberg's.of:</p>
+
+<p><a href="https://s3.amazonaws.com/gsoc2017/Update6/2files/index.html"><img src="/sites/default/files/imagepicker/49142/2files.png" alt="2 files"  class="imgp_img" width="1356" height="847" /></a></p>
+
+<p>And that goes on for the next four files:<br>
+<a href="https://s3.amazonaws.com/gsoc2017/Update6/3files/index.html">Etext.of</a><br>
+<a href="https://s3.amazonaws.com/gsoc2017/Update6/4files/index.html">of.of</a><br>
+<a href="https://s3.amazonaws.com/gsoc2017/Update6/5files/index.html">Shakespeare's.of</a><br>
+<a href="https://s3.amazonaws.com/gsoc2017/Update6/6files/index.html">First.of</a><br>
+
+</p>
+
+<p>When the seventh file is added to the directory, the index becomes too large for the $INDEX_ROOT attribute to store everything in the file record. When this happens, the list of files in the index root (known collectively as an index node) gets packed up and moved to its own set of clusters on the hard drive. To describe the pieces of the index that are stored outside of the file record, two additional attributes are created, $INDEX_ALLOCATON and $BITMAP (I plan to implement this step in our driver really soon).</p>
+
+<p><a href="https://s3.amazonaws.com/gsoc2017/Update6/7files/index.html"><img src="/sites/default/files/imagepicker/49142/7files.png" alt="7 files"  class="imgp_img" width="1359" height="843" /></a></p>
+
+<p>This year, I updated NTFSBrowse to also dump the contents of the index allocation. This data will contain every node in the index except for the index root. Each node is packed into a data structure called an index buffer, which has a set size, usually 4096 bytes, and the index allocation will contain one or more index buffers. Here's what the <a href="https://s3.amazonaws.com/gsoc2017/Update6/7files/index.html">file record</a> and <a href="https://s3.amazonaws.com/gsoc2017/Update6/7files/%24I30.html">index buffer</a> look like with the seven files.</p>
+
+
+<p>At this point, the B-Tree for this index has two nodes, one of which being index root, and it looks something like this:</p>
+
+<p><img src="/sites/default/files/imagepicker/49142/7files_btree.png" alt="7 files in node"  class="imgp_img" width="772" height="255" /></p>
+
+<p>For the next 32 files that my tester creates, the child node will keep growing. When a node grows too large, it needs to be split. That isn't implemented yet, so this is a good place to end this post. :)</p>
+

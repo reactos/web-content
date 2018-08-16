@@ -1,0 +1,100 @@
+---
+title:       "ReactOS 0.4.7 released!"
+author:      "vicmarcal"
+type:        article
+date:        2017-12-06
+draft:       false
+promote:     true
+sticky:      false
+url:         /project-news/reactos-047-released
+aliases:     [ node/58047 ]
+tags:        [ "release", "0.4.7", "rapps", "filesystems", "usb" ]
+
+---
+
+<p>The ReactOS Project is pleased to announce the release of version 0.4.7 as we continue to work on releasing every three months.</p>
+<p>We’re especially pleased to present this release as the very first one that’s been developed in our new Git/GitHub repository. Moving from Subversion to <a href="https://github.com/reactos/reactos">GitHub</a> has proven to be an invaluable way to reach new testers, users and improve the overall awareness of the ReactOS project.</p>
+<p>To highlight the impact we’ve had since we moved to GitHub two months ago, ReactOS now leads the <a href="https://github.com/topics/win32api">Win32Api</a> and <a href="https://github.com/topics/osdev">OsDev</a> categories in Github, overtaking many amazing and well established projects.</p>
+
+
+<p><img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/githubcomp.png" alt="Image"  class="imgp_img" width="90%" height="696" /></p>
+ 
+<h2>User Experience</h2>
+
+<p>0.4.5 introduced visual styles support, 0.4.6 matured it, and now 0.4.7 has further improved support for styles created for Windows XP. If you haven’t already, just follow us on <a href="http://www.twitter.com/reactos">Twitter</a> so you can see first hand the many skins being applied in ReactOS. Giannis Adamopoulos solved many issues in which ReactOS was managing transparency and messaging. His work on msstyles support paid off, as it’s reduced visual glitches in many applications.</p>
+
+<p>Support for Shell extension for files has been included by Giannis in this new version, and several other shell extension improvements have been worked on by Eric Kohl. The quick launch shell extension, developed by Shriraj Sawant under Google Summer of Code 2017, can also be enabled manually within this release for an early peek into this feature.</p>
+
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/4_browsers_Themed_quicklaunch.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">At the bottom left you can see the new Quick Launch in action.</div><br/>
+
+<p>James Tabor has put in a great deal of effort into getting the <b>ReactOS painting process as close to Windows as possible</b>. Furthermore, Katayama Hirofumi MZ has fixed the anti-aliasing text when a button was grayed out (and which was impossible to read before this fix).</p>
+
+<p>Another major achievement brought to you by Giannis has been to solve the Clipboard and Recycle Bin bugs. Now, in 0.4.7, ReactOS won’t crash due an invalid/empty clipboard as it did previously, copy/pasting multiple files and pasting folders in the background should work well and now follows the Windows specs more closely.</p>
+
+<p>In 0.4.7, ReactOS now correctly manages file deletions when dragging them to the Recycle Bin thanks to a patch from Serge Gautherie. Add to that numerous fixes regarding Drag and Drop and the whole <b>user experience now feels much more polished</b> for end users. </p>
+
+<p>Thanks to Kamil, several glitches that have been evident in the free/available pie chart for file systems are now gone, and he has fixed several other user experience issues such as Notepad showing multiple instances of find/replace windows, or stopping Bitvise SSH Server Control Panel from crashing due to a bug in NtGdiGetPixel().</p>
+
+
+<h2>Hardware support</h2>
+
+<p>ReactOS 0.4.7 allows you to reliably install the ISO from any drive without needing a CD, as a result of the work Colin Finck has done on the CDFS/ISO-9660 filesystem driver. We’re very thankful to our community about this point in particular, as the actual development work above happened at the <b>ReactOS Hackfest</b>, which was only possible thanks to your ongoing support and donations!</p>
+
+<p>Thomas Faber has addressed an issue in the HDAUDBUS driver that prevented VMware from loading ReactOS when a HD sound card is present. He has also addressed an issue in mbedtls (the SSL support library that we use in ReactOS) that could affect old hardware that doesn't support SSE2 instructions. Previous crashes on older hardware are now much less likely when interacting with SSL connections.</p>
+
+<p>In addition to the above, ReactOS 0.4.7 is now properly checking the end-of-memory-map entries and aligning physical addresses thanks to some work done by Serge. That contributed further to <b>better hardware compatibility</b>.</p>
+
+<p>If you have encountered problems when trying to run previous version of ReactOS on your PC, please consider retrying with 0.4.7 and sending us bug reports so we can work on them. </p>
+
+<h2>New ReactOS Application Manager</h2>
+
+<p>As part of the Google Summer of Code program, the ReactOS Application Manager was improved in many areas by Alexander Shaposhnikov, including <b>many new features</b> and fixes. Now you can install multiples pieces of software from Rapps in bulk and downloads are now done in the background ensuring you can continue to use the app whilst installing. Install percentages are now shown, force update finally works, the Installed category is now back, and the details sections show enhanced information and various other fixes and features. </p>
+<iframe width="90%" height="360" src="https://www.youtube.com/embed/mlrNwnVDSUs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+<p>More info about this new version in <a href="https://reactos.org/blogs/sanchaez">Rapps blog posts.</a></p>
+
+<h2>Applications/Games Compatibility</h2>
+
+<p>For those who enjoy retro-gaming, Aleksandar Andrejević has fixed linear 4-bpp mode, meaning even more <a href="https://twitter.com/reactos/media"> old and addictive games </a> are now playable in ReactOS, and your productivity has another a good reason to fall…</p>
+
+<p>Mark Jansen has fixed a critical issue regarding services. ReactOS 0.4.7 now supports creating an interactive service under the LocalSystem account. Now, among other software, VMWare Horizon setup works in ReactOS. Mark is also working on Application Compatibility support (shims) which is still an ongoing project. </p>
+
+<p>Thanks to Eric, the User/group/share management modules (netapi.dll, netapi32.dll and samsrv) have been greatly developed in the 0.4.7 release, getting them even further in terms of compatibility. </p>
+
+<img style="margin:0 auto" src="/sites/default/files/imagepicker/14095/LibreOffice_on_047.png" alt="Image"  class="imgp_img" width="90%" height="864" /><div class="imgp_desc">LibreOffice 5 working in ReactOS 0.4.7 </div><br/>
+
+<h2>Kernel and Filesystems</h2>
+
+<p>ReactOS is now able to handle Ext2, Ext3, Ext4, BtrFS, ReiserFS, FFS and NFS partitions. We’re proud to say that <b>ReactOS natively supports more File Systems than all Windows versions combined!</b></p>
+
+<p>Continuing on filesystems, Pierre Schweitzer has implemented the fsutil tool, which arrived in Windows 2003, and is now available through ReactOS as open source. Furthermore, the ReactOS fsutil tool also supports FAT file systems whereas its Windows counterpart does not, so this is another instance of ReactOS improving something over what Microsoft originally offers.</p>
+<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/DKexm4OW0AAdBrF_0.jpg" alt="Image"  class="imgp_img" width="90%" height="600" /><br/>
+
+<p>Fsutil has been developed against Windows, and was used to test the information returned by our volumes, but also to test how the ReactOS storage stack works. This helped shed some light on how Windows manages dirty bits, opening of volumes and other internal filesystem actions, and has proven to be really useful to discover bugs in file systems and also in system libraries, which have been already fixed in 0.4.7.</p>
+
+<p>Pierre’s work on FastFat, fixing reference counting overflows and file attributes settings, correcting the opening counts, implementing statistics counting and squeezing bugs in the Common Cache, is all part of this <b>enhanced stability in 0.4.7</b>. It got also improved thanks to the upgrades of the various file systems drivers supported by ReactOS (Ext2 and BtrFS) and the fixes they required to avoid regressions.</p>
+
+<p>New apis have been implemented in Kernel32.dll, which has seen several rewrites in order to fix bugs detected by our test suite, but also to bring in support for Windows 2003 features such as reparse points and mount manager backed volumes.</p>
+
+<p>Timo Kreuzer has also <b>fixed some Memory Manager bugs</b> with the goal of more stability. If 0.4.6 surprised you with its stability thanks to the work being done in this area, then you will find 0.4.7 to be another step further in that regard. </p>
+
+<p>Eric Kohl has added initial STORPORT/STORAHCI implementations that can be enabled manually for now via registry as an alternative to the default UniATA driver, in an effort to get closer to native behavior and maximize compatibility.</p>
+
+<h2>Third Party Modules</h2>
+
+<p>ReactOS depends on 3rd party open source projects so in 0.4.7 we’ve updated them to their latest version. Libpng, mpg123, mbedtls, btrfs,along with the <b>many</b> modules that Wine shares with us, which are individually synched by Amine Khaldi, that ReactOS can use in the user mode. <b>We express our gratitude to every single open source project we use, and send regards to all teams behind them</b>. We also keep contributing back to them, in the spirit of open source, whenever we can. For instance, David contributed a 64bit related fix to the MKISOFS project, and several ReactOS developers contribute patches back to the Wine project and also Wine Staging, in addition to performing patch reviews in the appropriate mailing list. </p>
+
+<img src="/sites/default/files/imagepicker/14095/Building_ReactOS_in_ReactOS.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">ReactOS compiling itself! (Still more work to be done!) </div><br/>
+<h2>Quality Assurance</h2>
+
+<p>ReactOS believes heavily in QA so many new tests have been integrated and implemented covering critical areas as Memory Manager (IO MDL, MmBuildMdlForNonPagedPool, etc..) or Common Cache. The ReactOS testing infrastructure <b>now supports testing File System mini-filters</b> which is an important step forward to ensure future development in the upcoming filter manager. This new version of ReactOS has gone through several Coverity scans to detect and fix critical bugs detected. In addition to automated tests, ReactOS enjoyed impressive testing coverage thanks to the manual tests for the Release Candidates by Joachim Henze.</p>
+
+<p><a href="https://reactos.org/wiki/0.4.7">General notes</a>, <a href="https://reactos.org/wiki/Tests_for_0.4.7">tests</a>, and <a href="https://reactos.org/wiki/ChangeLog-0.4.7">changelog</a> for the release can be found at their respective links. A less technical <a href="https://reactos.org/wiki/Community_Changelog-0.4.7">community changelog</a> for ReactOS 0.4.7 is also available.</p>
+
+<p>ISO images are ready in the ReactOS <a href="https://reactos.org/download">Download</a> page.</p>
+
+<h2>Some statistics</h2>
+<p>The <b>oldest bug</b> fixed was <a href="http://jira.reactos.org/browse/CORE-2366">CORE-2366 </a>. "Rapps: modify link does not work". Reported <b>10 years ago</b>.<br/>
+During these 3 months, <b>453 bugs have been resolved</b>: 263 marked as fixed, 46 as duplicates, 56 as won't fix, 41 as incomplete, 47 as can not reproduce.<br/>
+246 bugs fixed were directly related with the operating system, 12 from ReactOS online services, 1 from ReactOS test suite, 3 from ReactOS Building Environment and 1 from ReactOS RosApps.</p>
+

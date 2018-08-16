@@ -1,0 +1,28 @@
+---
+title:       "ReactOS hires a new developer. Discover what's coming!"
+author:      "AmineKhaldi"
+type:        article
+date:        2016-11-08
+draft:       false
+promote:     false
+sticky:      false
+url:         /project-news/reactos-hires-new-developer-we-re-hiring
+aliases:     [ node/24366 ]
+
+---
+
+<p>Ever since the IGG campaign was over, working on the ReactOS Community Edition has been one of our main priorities. Today we make another promising step towards achieving that goal.</p>
+
+<p>Although the <a href="https://reactos.org/project-news/reactos-hires-new-developer-we-re-hiring">IGG campaign</a> was not a success, we were really proud of raising half of the needed funds. Nonetheless, and thanks to your valuable contributions, it was the <b>most successful</b> crowdfunding campaigns ReactOS has ever had.</p>
+
+<p>The IGG crowdfunding impact, your impact, on ReactOS is quite noticeable: A whole reworked shell thanks to hiring Giannis Adamopoulos then David Quintana (who among us misses the old shell!), significant stability and compatibility improvements thanks the work done by hiring Jérôme Gardou to get JAVA RE working properly, the 0.4 version, faster release cycle after years in the 0.3 era... and so on!</p>
+
+<p>Today we are happy to announce yet another step. <b>Hermès Bélusca-Maïto</b> is being hired to make another most voted application, in the IGG campaign, work properly in ReactOS: Word 2010. You decided. We're working on making it happen!</p>
+
+<p>Hermès will be digging through the <b>Word 2010</b> setup to understand why it doesn't work in ReactOS, which will hopefully open the door for other software setups to start working. He will also analyze the APIs that get called by Word 2010 itself, fixing the existing features and implementing the missing ones, in order to ensure a <b>high degree of usability</b>. We do expect that his Word 2010 work will have a significant impact on other office suites too.</p>
+
+<p>We know you are big fans of daily updates, so Hermès will be updating in real time what is he working on in the following <a href="https://docs.google.com/spreadsheets/d/1tel2NMGfC7jAQJa__EWjZGuEvoA8LEzVUTvI7gNYGS8/htmlview#gid=3">doc</a>. As you can see he has already started!</p>
+
+<p>He will also write <b>weekly reports</b> to share with you his findings (expect surprises!) and screenshots. Your feedback is always welcome, whether it is in the form of comments, new bug reports related to Word 2010 while he progresses, or anything you see fit ;)</p>
+
+<p>Last but not least, we like to remind our followers that <b>ReactOS is still HIRING</b>. So if you think you have what it takes, please consider sending high quality patches to our JIRA to demonstrate your skills, and then <b>apply</b> for either a scholarship (if you are a student) or a contract. Everyone else can still <b>repost</b>, <b>share</b>, <b>retweet</b>... this post so it gets to the people who can help ReactOS, once more (thanks!) to move faster towards <b>Beta</b>.</p>

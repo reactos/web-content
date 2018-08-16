@@ -1,0 +1,22 @@
+---
+title:       "GSoC xHCI: PCS and CCS"
+author:      "ramateja.g"
+type:        blog
+date:        2017-08-17
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-xhci-pcs-and-ccs
+aliases:     [ node/49203 ]
+
+---
+
+Finally the driver is generating multiple interrupt without any issues. Whenever a device is connected or disconnected an interrupt is being generated. In windows 2003 server edition, when a device is attached windows is recognizing that some unknown device is attached and also in the device manager we can see attached devices though they are not initiated.
+
+This is a crucial step, as now any USB device can be safely initiated. In the documentation initialization requires us to send Get-address and various other commands to the xHCI. Sending commands and properly receiving events is the next major step. I’ve decided to write functions to send a command and ring the doorbell and another function to handle event ring. Both command and event rings have something called Cycle bit in every TRB. It is the only way for software and hardware to communicate with each other regarding who owns the data. 
+
+Every TRB has a cycle bit. There are two key things, Producer cycle state (PCS) and Consumer cycle state (CCS).  For Command ring, Software is the producer and hardware is the Consumer. Opposite for event ring, Software is the consumer and hardware is the producer. Let’s consider the case of Command ring. When it is initialized all the TRBs in it will be set to 0. That implies all the cycle bits are 0. We take the PCS and CCS to be 1 initially. So when a new TRB is placed on the command ring by the software it will set the cycle state to 1. It will keep going forward by changing the cycle bit to 1. When it’s time for the hardware to process the TRBs it will keep going ahead till the cycle bit is 1. The moment it reads a TRB with cycle bit 0 it stops processing. Now this check is done by checking if the cycle bit is equal to CCS. When it is not equal, it will stop processing. 
+
+Consider the case where the ring loops around. If the hardware just goes around the ring then for all those TRBs cycle bit is still 1. Then it will process them again which is not what is intended. Therefore whenever the hardware or software reaches the end of the ring or where it needs to loop around both PCS and CCS are toggled. That is when the software is writing TRBs and when it encounters a link TRB which tells it to loop around it will toggle its PCS. Afterwards when the hardware comes along processing the TRBs and encounters a link TRB which tells it to loop around it will toggle its internal CCS. Therefore there won’t be any double processing of Commands.
+Same thing happens in event ring, but here we don’t have a link TRB. Therefore we need to check the number of segments there are and segment sizes. When we reach the last segment we need to toggle the CCS as the software is the consumer in Event ring, hardware does this internally. For now we are taking only rings with single segments therefore it is relatively easy. When we introduce dynamically growing Rings then each link TRB formation should be carefully monitored, regarding the toggle state bit. 
+

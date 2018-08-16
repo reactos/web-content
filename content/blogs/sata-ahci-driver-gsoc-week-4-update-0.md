@@ -1,0 +1,18 @@
+---
+title:       "SATA AHCI Driver GSoC - Week 4 Update"
+author:      "amaneureka"
+type:        blog
+date:        2016-06-21
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/sata-ahci-driver-gsoc-week-4-update-0
+aliases:     [ node/11817 ]
+
+---
+
+This week I worked on AHCI IO Request Processing and FIS programming part. I implemented IO Queue, Slot distribution mechanism for AHCI requests. Updated Github's PR for next round of code review.<br>Next I will be working on port programming i.e. telling the controller about the slots that I've allotted for IO request.<br>
+Very soon we will have a running AHCI device driver :D<br>
+I also added a notes.txt file which actually tracks my progress for every routine/support <a href="https://svn.reactos.org/svn/reactos/branches/GSoC_2016/AHCI/drivers/storage/storahci/Notes.txt?revision=71655&view=markup">link</a><br>
+I was completely new to NT driver development when I started this project. But now I learned a lot, All thanks to ReactOS developers community and my mentor (Alex), Every one wants to help you went you hit a problem. This is the best thing I have experienced.<br>
+

@@ -1,0 +1,52 @@
+---
+title:       "Newsletter 31"
+author:      "Z98"
+type:        news
+date:        2007-09-02
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-31
+aliases:     [ node/171 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Win32k Rewrite</li>
+# <li>0.3.3</li>
+# <li>Interesting Links</li>
+# </ul>
+
+---
+<p>
+This newsletter is late because I ran into a permissions conflict with RosCMS. Others who have also run into it, frik is fixing it tomorrow.
+</p>
+<h2>
+Win32k Rewrite
+</h2>
+<p>
+Samuel mentioned this last time and I spoke with the developers responsible to get more details. Jim Tabor, Timo Kreuzer, and Magnus Olsen have been working extensively to redo the win32k subsystem. The biggest thing is duplicating the behavior of Windows&#39; win32k. For example, Windows contains a series of user mode data structures, which are of course also accessible from kernel mode. This is useful for deferring switches into kernel mode, which are costly from a performance standpoint. Instead, user mode code can manipulate these data structures and it isn&#39;t until a draw function is called, which requires a switch to kernel mode, that the win32k data structures are updated based on the user mode data structure. The advantages of this are obvious. You defer a costly switch to kernel mode until you absolutely have to, increasing speed. Jim&#39;s been working on getting ReactOS to do this and he&#39;s making great progress.
+</p>
+<p>
+ReactOS has a file, ntgdibad.h, which contains a lot of function prototypes of win32k syscalls that are ROS specific. Ideally, this file shouldn&#39;t exist and Timo and Magnus have been working on reducing that list. They&#39;ve compiled a list of syscalls for Windows 2000 Service Pack 4, XP SP 2, and Server 2003 SP2. With the list complete, they&#39;ve begun work on implementation. So far, it&#39;s mostly been stubbing, but several functions have been renamed or had their parameters adjusted. These changes don&#39;t really enhance functionality but will make future development easier and better.
+</p>
+<p>
+It must be emphasized that these changes will not make it into 0.3.3. They are extremely disruptive and will likely break a few things before they fully stabilize. These are more long term changes, similar to Alex Ionescu&#39;s kernel rewrite.
+</p>
+<h2>
+0.3.3
+</h2>
+<p>
+Release Candidate 2 has been released, though we didn&#39;t bother making a formal announcement of it. The developers were originally planning on a rather nice surprise in the form of actual DirectX support, but this proved impractical because of win32k, another motivator for the rewrite. That&#39;s one reason it took so long getting the second RC out. There was also some debate as to how we release engineers would account for commits made after branching trunk. Some of the developers wanted us to individually merge and test every commit to make sure nothing broke, while Colin decided to just rebranch trunk. We&#39;re still waiting on testers to see if anything major broke, but at the moment it looks promising.
+</p>
+<p>
+That Firefox browsing bug apparently was not fixed, despite my constantly asking and receiving positive confirmation from several developers and testers. Apparently ALL of them misunderstood which network bug I was referring to. The browsing bug actually isn&#39;t Firefox&#39;s fault. Firefox just happened to expose some kind of race problem, which Art Yerkes is now investigating. I personally demanded this bug be fixed for 0.3.3, but we&#39;ll see whether disruptive changes will be necessary to fix the problem.
+</p>
+<h2>
+Interesting Links
+</h2>
+<p>
+It was recently brought to our attention that the Undocumented Windows 2000 Secrets has been released by its author as an online PDF. The link is http://www.rawol.com/?topic=41 so be sure to drop the guy a thank you. People who want to help develop ReactOS will find this book to be very useful. 
+</p>
+

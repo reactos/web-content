@@ -1,0 +1,49 @@
+---
+title:       "GSoC NTFS 2017 Update 4"
+author:      "coderTrevor"
+type:        blog
+date:        2017-07-06
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/gsoc-ntfs-2017-update-4
+aliases:     [ node/46544 ]
+
+---
+
+<p>I won't lie; it's been a slow week, feature-wise.</p>
+
+<p>I guess you could say that last week was all about finding and fixing bugs and errors with the driver. During the first half of the week, I upgraded my automated tester to test file creation, and I fixed a couple of bugs it turned up. I used the second half of the week for addressing issues raised by <a href="https://code.reactos.org/cru/CR-123">CR-123</a>.</p>
+
+<h2>Automated Test</h2>
+<p>I tried to go all out with the tester. It generates filenames based on words from Project Gutenberg's Etext of <a href="https://www.gutenberg.org/files/2239/2239.txt">The Comedie of Errors</a>. This was a good place to start, because it will generate names with lots of numbers and special characters I wouldn't have thought to use. The tester also adds a short extension to most files (but not all of them) and some filenames differ only in their extension. The tester writes the name of each file it creates to that file, which provides an easy way of verifying that the file being opened is the one intended.</p>
+
+<img src="/sites/default/files/imagepicker/49142/createdFiles.png" alt="Files created by latest tester"  class="imgp_img" width="803" height="601" />
+
+<p>In addition to the tester, I also wrote a verifier. Up to now, testing has worked by running the tester in Windows first, to create the files the tester needs, then re-running it in ReactOS. This time, it makes sense to work in reverse. You run the tester on ReactOS, which creates files, then you run the verifier in Windows, which is the real test. If Windows has no issue with the directory or the newly-created files (and if ChkDsk is cool with it), we know the driver created the files successfully!</p>
+
+<p>The ultimate goal of this tester is to verify the B-Tree code that I'm working on now. Like I've said before, Microsoft's implementation of B-Trees on NTFS is (to my knowledge) somewhat unique, and there's room for things to go wrong here. As I've also said (or meant to say) there's some <a href="https://flatcap.org/linux-ntfs/ntfs/concepts/tree/index.html">excellent documentation</a> that helps make sense of it. Anyway, the neat thing about these B-Trees is that they store the filenames sorted. If you walk through a directory listing on NTFS, the files will already be alphabetized. You can see this by running "dir /b" on the command line* (and you'll just have to trust me that dir isn't doing any sorting). As I mentioned before, Windows is fairly picky. If a file is inserted into the B-Tree in the wrong order, Windows won't read that file.</p>
+
+<p>I'm taking advantage of this self-ordering with my tester. It reads the directory listing of its output folder and writes an ordered list of the files to an output file. The verifier checks this file to make sure the ordering hasn't changed, and it checks that every file is present in the directory, and that the file contents and size are correct. In the future, I'll generate a database of these output files on Windows which should allow for testing and verifying from within ReactOS entirely.</p>
+
+<img src="/sites/default/files/imagepicker/49142/dirCommand.png" alt="Dir command"  class="imgp_img" width="797" height="598" />
+
+<p>I thought with the current, limited, level of file-creation I've implemented, the tester wouldn't turn up any errors yet; I was mostly making it so I'd have it for the next stage. As it turns out, it revealed two bugs almost immediately. They were fairly easy to fix since I could reproduce them perfectly; that's the power of an automated test! :D</p>
+
+<p>It will take me another week or two of development to catch up the driver with the tester, but when I do, I should be done with file creation. At least in theory.</p>
+
+<p>P.S. Sometimes B-Trees are written as B*Trees in the context of NTFS, which is maybe a little more accurate. I interchange the two terms because the difference is subtle and not worth making the distinction in casual discussion.</p>
+
+<p>*NTFS stores its filenames sorted in order, but Windows explorer will sort filenames using slightly different sorting rules. You have to use the dir command or the Windows API to see the order of the files as they're sorted on the disk.</p>
+ 
+<h2>Code-Review</h2>
+
+<p>Several days ago, Thomas created code-reviews for all of this year's GSoC projects. My project was assigned <a href="https://code.reactos.org/cru/CR-123">CR-123</a>. Within a few days, the mentors and other ReactOS developers had found many issues with my code. Some of these were issues with style or code formatting, some of them were bugs that slipped by. They did an excellent job of finding mistakes, and I was really impressed with the breadth of knowledge of the mentors and developers, many of whom reviewed all four projects.</p>
+
+<p>Since I was fixing bugs anyway, and since the reviewers were nice enough to leave me feedback, I felt it made sense to take a few days to fix the issues that were raised as soon as I could. I'm almost done with this task.</p>
+
+<p>My initial feelings toward seeing this code review were somewhat mixed. Don't get me wrong, I really appreciate all the wonderful feedback I got! I also love knowing that the driver is getting better and more stable! This blog is where I share my feelings, though, so I might as well say this: code reviews can be emotionally taxing. There, I said it. :P</p>
+
+<p>This is no fault of the reviewers, who were excellent at finding errors and totally nice and professional in reporting them. I think it's just human nature for a programmer to be a little bit protective of their code, and to feel a little bit hurt when someone finds fault with it. And if it's a bunch of programmers finding lots of faults all at once, it can honestly be a little disheartening. However, the errors were there, and having them pointed out is a very good thing. :)</p>
+
+<p>This was the second time my code has been reviewed for ReactOS, and the second time any of my code has been reviewed ever, outside of academia. I'm still developing the thick skin I'll need for professional programming, but I think I'm already getting used to it. I'm really grateful for this experience - the kind you can't get at school. Thanks to everyone who reviewd CR-123; especially to my mentor, Pierre, and also to Thomas and HBelusca for going over my code with a fine-tooth comb and adding lots of comments!</p>

@@ -1,0 +1,27 @@
+---
+title:       "Newsletter 84"
+author:      "Z98"
+type:        news
+date:        2011-05-15
+changed:     2013-02-20
+draft:       false
+promote:     true
+sticky:      false
+url:         /newsletter-84
+aliases:     [ node/225 ]
+news:        [ "newsletter" ]
+
+# Summary:
+# <ul>
+# <li>Loader Rewrite</li>
+# <li>Sound Mixer GSoC Clarification</li>
+# </ul>
+
+---
+<h2>Loader Rewrite</h2>
+<p>When an application has external dependencies that are in DLLs, a loader is responsible for loading and initializing them.  The implementation in ReactOS is very, very old and like many such instances of ancient code incorrect.  It worked after a fashion but took many shortcuts.  There are matters such as initialization of the Thread Local Storage, calling the DllMain of a specific DLL, and loading of DLLs in the correct order based on interdependencies or even circular dependencies.  The old code was not able to handle many of the above cases robustly, resulting in many bug reports that can be traced back to failures to library loading.  Aleksey Bragin decided to try and squash these issues finally and took the loader rewrite code that was sitting in a development branch and cleaned it up to work with the current ReactOS codebase.</p>
+<p>Rewriting the loader was not a minor undertaking as its components are spread across the memory manager, NTDLL, and kernel32.  Because both kernel mode and user mode components had mistakes in them, fixing only one would break the other.  Aleksey ran into this issue when he first tried his new user mode code in ReactOS, only to have the memory manager do the wrong thing.  Specifically, there is a previously undocumented flag for loading images called DONT_LOAD.  At first glance it would appear to be a way to tell the memory manager not to load a particular section of a binary image.  However, current documentation indicates that this flag is always ignored and the memory manager is supposed to load all sections.  The ReactOS memory manager actually tried to obey that flag, which resulted in mismatching sizes and checksums for the loaded image compared to what should be the sizes and checksums had the entire image been loaded.</p>
+<p>The loader functions in kernel32 are for the most part forwarders to the real functions in NTDLL.  However, many of the kernel32 functions were calling their NTDLL counterparts incorrectly, whether it be passing in the wrong parameters or omitting mandatory ones entirely.  The NTDLL functions are the last remaining piece of the puzzle but Aleksey is still working on debugging them.  Once they are fixed, ReactOS will have a nice new loader that will hopefully kill the majority of those old bugs that fail due to library loading issues.</p>
+<h2>Sound Mixer GSoC Clarification</h2>
+<p>Johannes Anderwald, the mentor for the sound mixer project, sent me a clarification on the sound mixer project but there was a mix up and it did not reach me before the previous newsletter was published.  The need for the software mixer comes into play when the sound hardware itself only has one physical line for playing and recording audio.  Higher end sound hardware often have multiple physical lines that allows the sound stack to simply use them to play multiple streams at the same time.  The mixing of the streams is then the responsibility of the sound hardware.  When the hardware is based off of something like the Intel AC97 specification, which generally only have a single hardware line, it becomes the responsibility of the operating system to mix the audio streams in such a way as to output all of the sound in a coherent manner.  Even for sound cards with multiple hardware lines, it is possible for the user to play more streams than there are physical lines for.  Again the software mixer is used to deal with this overflow.  This software mixer is the goal of the Summer of Code project.</p>
+<p>&nbsp;</p>

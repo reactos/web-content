@@ -1,0 +1,20 @@
+---
+title:       "Google SoC lwIP Report Week 6"
+author:      "zhu48"
+type:        blog
+date:        2016-07-03
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/google-soc-lwip-report-week-6
+aliases:     [ node/12752 ]
+
+---
+
+<p>I closed out last week by drawing a flow chart in preparation for restructuring my code for some new state variables. For most of this week, I was figuring out details about, and implementing, this chart.&nbsp;</p>
+<p>One of new state variable I added in is one variable in the CONNECTION_CONTEXT struct, specifying what that particular connection is doing. This way, my driver can easily identify a socket as bound or not, whether it is currently connected, and what operations it is trying to perform. Instead of checking for null lwIP protocol control block pointers and some other variables whenever I access a connection context, I can just check that state variable. THis makes my code cleaner, and therefore easier to write correctly and diagnose problems.&nbsp;</p>
+<p>Another state variable I added was a request type in the TCP_REQUEST struct. I needed this variable to deal with, potentially, multiple outstanding send/receive requests. When servicing a send IRP, I issue a tcp_write() to lwIP, passing along the data buffer pointer. When the send is complete, I get a callback so I know when to call IoCompleteRequest() on the IRP. If there are multiple outgoing sends, I need to queue them up. Each send request is passed to lwIP in order, and the next send request is not passed on until the previous one has been completed. A similar thing has to happen for receive requests. During normal operations, I should expect send/receive requests to arrive intermixed. Therefore, in a send or receive callback, I cannot know if the very next IRP in the queue is a send or a receive without inspecting the minor function control code. It is much cleaner for me to use my own request type variable to keep track of the request type.&nbsp;</p>
+<p>Implementing this scheme, getting feedback from Art about how I'm doing my implementation, going and repeatedly going back to fix mistakes took up the majority of the week. It was not until the end of the week that I got to test out the entire state machine. As soon as I fixed the most glaring bugs, I ran into an old one - a page fault on a receive request callback when closing the client. This was the bug that drove me to implement state varables in the first place, so I can more easily keep trak of socket state and avoid accidentally leaving a hanging outstanding request when I close sockets.&nbsp;</p>
+<p>Upon further investigation, I determined that the callback was not from the client side socket, but rather the server side. Imagine my confusion when I started printing out values, and found the page fault to originate from a reference to a completely valid, and still pending IRP attached to a still-open listening connection context on the server socket. At this point, Art asked me to dump the assembly from my driver so he could inspect it for me. The result of that particular investigation will have to wait until next week's update.&nbsp;</p>
+<p><a href="https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=15593">Discussion</a></p>
+

@@ -1,0 +1,19 @@
+---
+title:       "RAPPS Enchancements: GSoC 2017 Edition Volume 2.1"
+author:      "sanchaez"
+type:        blog
+date:        2017-07-06
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/rapps-enchancements-gsoc-2017-edition-volume-21
+aliases:     [ node/46547 ]
+
+---
+
+<p>You may wonder why this post is not labeled "Volume 3". Well, thanks to the training week of the military dept. of our university this week wasn't very productive in terms of features. Nevertheless, this short post is here to keep you updated.</p>
+<p>This week I was working on refactoring the code and improving code. This will help me progress faster and addd new feature more easily. It is not the only reason: RAPPS was initially written in C and had been converted to C++. A large part of code is still C. For the sake of consistency and maintainability it is better to refactor it using a C++ classes to improve it further. Improvement is my key task here.</p>
+<p>Last weekend our mentors issued a code review on our GSoC prjects. Mine is <a href="http://code.reactos.org/cru/CR-120">CR-120</a>. This is my very first code review and the devs were very responsive. Many comments were written to point out various issues in the code. I was surprised by the number of various things to improve. This led me to postponement of the feature implementations as well as a need for some code simplification.<br>
+	<br>
+	So far I've almost done with the improvements this week. Nex week I plan to do stuff I planned last week: download management and Language entry. Stay tuned for my and other GSoCers updates!</p>
+

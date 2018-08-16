@@ -1,0 +1,14 @@
+---
+title:       "USB 1.1 UHCI improvements GSoC - Week 3"
+author:      "VardanM"
+type:        blog
+date:        2016-06-13
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/usb-11-uhci-improvements-gsoc-week-3
+aliases:     [ node/11446 ]
+
+---
+
+<p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span id="docs-internal-guid-2f272cb5-4ab2-318f-d12d-14a072f583b2"><span style="font-size: 14.6667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">This week I haven&rsquo;t spent much time on project, I was passing yearly final exams in my university. By the end of the week I have passed all my exams with excellence (which means that I&rsquo;ll keep my scholarship) and with peace of mind started working on my GSoC project.</span><br class="kix-line-break" /><br class="kix-line-break" /><span style="font-size: 14.6667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">As I mentioned in previous post I have found some Issues in ROS USB stack driver&rsquo;s uninstall/unload flows, and started debugging. This time I decided to spend some time to understand deeper ROS&rsquo;s USB stack (from code perspective) before any try of debugging, because I&rsquo;ll spend much more trying to understand things on the fly.</span><br class="kix-line-break" /><br class="kix-line-break" /><span style="font-size: 14.6667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">So the biggest part of time I&rsquo;ve spent on reading. I am reading Walter Oney&rsquo;s &ldquo;Programming the Microsoft Windows Driver Model&rdquo; and in parallel trying to use ROS&rsquo;s sources as example for the book. I can recommend this practice for all newbies in windows driver development. This workflow helping me to better understand both, the book and ROS&rsquo;s sources.</span></span></p><p><br /><span id="docs-internal-guid-2f272cb5-4ab2-318f-d12d-14a072f583b2"><span style="font-size: 14.6667px; font-family: Arial; color: rgb(0, 0, 0); vertical-align: baseline; white-space: pre-wrap; background-color: transparent;">I can mark that for me (who&rsquo;s all previous experience is related with Linux) many things in windows driver model are pretty unusual and it requires extra efforts to investigate. Especially USB related flows which requires understanding of many layers of drivers with their interactions before starting to do anything.</span></span></p>

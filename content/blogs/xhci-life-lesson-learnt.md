@@ -1,0 +1,24 @@
+---
+title:       "xHCI : A life lesson learnt"
+author:      "ramateja.g"
+type:        blog
+date:        2017-08-07
+draft:       false
+promote:     false
+sticky:      false
+url:         /blogs/xhci-life-lesson-learnt
+aliases:     [ node/48754 ]
+
+---
+
+Recently I’ve worked on Scratchpad allocation. Scratchpad buffers are PAGESIZE blocks of system memory which the xHCI uses to store its internal state. xHCI can request 0 to 1024 buffers. Number of buffers required is given in the HCSPARAMS1 register. Each buffer is a PAGESIZE block aligned to PAGESIZE boundary.
+
+Scratchpad buffer array is an array which contains addresses of the scratchpad buffers. Its size is equal to the number of maximum scratchpad buffers required by the hardware. Pointer to the base of this array is placed at the start of Device Context Base address array. Hardware uses this pointer to access the array from which it accesses the buffers. Once allocated, system software should not interfere with Scratchpad buffers. 
+
+Scratchpad buffers should be allocated before placing the controller in run state. Initially I haven’t allocated them. Later while working on generating interrupts it slipped my mind. So when I got stuck at GetPortStatus function being called in a loop which I mentioned in the previous post. My mentor suggested to implement them, as they might be the problem.
+
+Scratchpad memory allocation requires use of Memory management functions which I’m not familiar with. After multiple revisions and help of my mentor I completed the allocation. One take away from that experience is never use MmGetPhysicalAddress routine to get the Physical Address for use with DMA operations. This is mentioned in the windows driver documentation. That functions is rather tempting as it simplifies getting the physical address. Preferably use MmGetMdlPfnArray function to get the address. 
+
+Now getting back to our main issue, when I executed the code I found that xHCI implementation in VMWare requires 0 scratchpad buffers. As I’ve said above it can request 0-1024 buffers. So this is one thing done but not of much help with the problem I’m facing. So we started cross checking the code with Haiko implementation, to see if all the steps are being followed correctly. Everything seems to be in order. At that point nothing made sense… Everything seemed to be right but it wasn’t working. In GetPortStatus all the port status registers were returning 0. That was odd as when the interrupt got generated I found out that it was triggered by port 5(info from event TRB). But in GetPortStatus function 5th port status register was returning 0. We rechecked the offset values used to obtain Port status register many times. One final moment ThFabba realized what went wrong. The offset was 400h/4 = 0x100 or 256. I’ve written 100.  That silly mistake which we actually checked many times yet did not catch was the cause after all.  Sometimes it doesn’t matter how many times we recheck things. Fresh set of eyes and some luck is needed to find such mistakes.  
+
+

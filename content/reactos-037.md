@@ -1,0 +1,34 @@
+---
+title:       "ReactOS 0.3.7"
+author:      "fireball"
+type:        news
+date:        2008-11-05
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-037
+aliases:     [ node/288 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS 0.3.7 Released</h2>
+<p>
+Version 0.3.7 got delayed due to a couple of blocker bugs, however they are fixed now and we are ready to release.
+</p>
+<p>
+This release along with the rest of the 0.3.x series is still considered alpha quality software.
+</p>
+<p>
+ReactOS 0.3.7 continues further work on the main three principles of current ReactOS development: bugfixes, compatibility and stability.
+</p>
+<h3>Changes summary</h3>A consolidation of all changes in great details can be found in the <a href="../wiki/index.php/ChangeLog-0.3.7">changelog</a>. Summing up the most important changes: 
+<ul>
+	<li>Improved x64 architecture support</li>
+	<li>The start of a real MSVC compiler support project</li>
+	<li>Kernel improvements and bugfixes in quite a few parts: Configuration Manager, IO Manager, KE, Memory Manager, Object Manager, Process Manager</li>
+	<li>Network stack improvements: leakage fixes, increased functionality</li>
+	<li>Filesystem driver fixes, making them more compatible with the Microsoft NT cache manager</li>
+	<li>Win32 subsystem improvements and synching of most of the Wine usermode DLLs</li>
+</ul>

@@ -1,0 +1,61 @@
+---
+title:       "ReactOS 0.3.4 Released"
+author:      "fireball"
+type:        news
+date:        2008-01-22
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-034-released
+aliases:     [ node/282 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS 0.3.4 Released</h2>
+<p>
+We are pleased to announce the release of the next version of ReactOS in the 0.3 series. This is a culmination of the last 3 months of development, and some significant progress has been made in various areas. 
+</p>
+<h3>Release cycle</h3>
+<p>
+Starting from version 0.3.3 we have aimed to move our release cycle to a 2 month period. There are various reasons for this, but the two which are key to this decision is a desire to keep the main development tree in a stable condition, and an effort to keep up the interests of the people who follow the project, by providing regular release builds to play with. 
+</p>
+<p>
+To explain the first one in a little more detail; one of the problems we were experiencing as a project was huge system regressions at release time. Our release cycle used to be around the 6 month mark and we were finding that after 6 months of heavy development, we would branch and start to test only to find regressions had appeared all over the operating system. A list of blockers was then generated and this could take a huge amount of time to clear, at which point developers were concentrating on trying to fix regressions and development came to a halt. 
+</p>
+<p>
+We stumbled across <a href="http://lkml.org/lkml/2007/4/26/312">this</a> post from Linus Torvalds which showed the linux kernel was experiencing the same problems we were having, and discusses the changes which worked for Linux. 
+</p>
+<p>
+We opted for a similar approach of shortening the release cycle, which is keeping our main trunk much more stable and means we can virtually release trunk ‘as is’ without the need for lengthy branch periods. It also means more releases from the project, which is hoped will raise awareness and interest in ReactOS. 
+</p>
+<p>
+We did slightly overshoot the 2 month release period, but this is to be expected whilst we bring the new model into play. We expect to meet our targets with greater ease as the model becomes more established. 
+</p>
+<h3>Milestones</h3>There have been a lot of changes over the past few months. A consolidation of these can be found in the <a href="../wiki/index.php/ChangeLog-0.3.4">changelog</a>. Some of the highlights are: 
+<ul>
+	<li>A complete rewrite of the Cm (Config Manager) in ntoskrnl - aka registry support. This makes it much more compatible with NT5.2 (win2k3).</li>
+	<li>SSE / SSE2 support.</li>
+	<li>New Plug and Play keyboard and mouse driver.</li>
+	<li>Full syncing of all usermode dlls from the most recent Wine release.</li>
+	<li>Support for RPC and IDL (which was quite outdated and buggy) was finally brought up to date, providing a solution for the plug-n-play manager problems, ReactOS Services and promising future support for complex apps such as Microsoft Office.</li>
+	<li>Huge improvements to user32 which now uses the desktop heap, greatly speeding up the UI.</li>
+	<li>Large compatibility fixes to gdi32, meaning our dll can now be loaded and used directly in Windows.</li>
+	<li>Continuation of the rewrite of Win32k incorporating rewrites of a core functionality to bring it in line with win2k3.</li>
+	<li>Improvements of many core user mode components, a much more functional shell32, improved control panel applets and the addition of a remote desktop client.</li>
+	<li>A great deal of work on translations, language and regional settings.</li>
+</ul>
+<p>
+The ReactOS website content has been updated to reflect most recent development movements. 
+</p>
+<p>
+The "Information/About" pages have been rewritten to highlight some basic facts about ReactOS, and additionally more in-depth information about the benefits of the ReactOS operating system. 
+</p>
+<p>
+For the eye candy guys, we have also updated the <a href="[#link_screenshots]">screenshot gallery</a> and the <a href="[#link_about_press_articles]">press pages</a> (press information and articles coverage). 
+</p>
+<p>
+Thank you to the testing team for their extensive testing and bug reporting, the followers of the project for their continued support, and of course the ReactOS Development Team, who have made this release possible. 
+</p>
+

@@ -1,0 +1,44 @@
+---
+title:       "ReactOS 0.3.8, FOSDEM 2009"
+author:      "fireball"
+type:        news
+date:        2009-02-04
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-038-fosdem-2009
+aliases:     [ node/291 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS 0.3.8 Released</h2>
+<p>
+Our development team is proud to present a new version of ReactOS, a Windows®-compatible operating system. It has been three months since the 0.3.7 release date. Much of the work has been done and only some minor changes remain in order to make the release cycle faster and less time consuming for developers and release engineers.
+</p>
+<p>
+Besides development of the operating system, a number of organizational and administrative changes were done to make the development process easier and more enjoyable. For example, after many years of inactivity a Doxygen index of the source code has been updated on our website. The popular (mainly amongst Linux users and developers) distributed version control system GIT is also now present as a mirror for the source code for the convenience of those who prefer GIT over SVN and is located at <a href="http://git.reactos.org">GIT mirror</a>.
+</p>
+<p>
+In addition, we would like to invite you to visit our booth at the <a href="http://www.fosdem.org">FOSDEM</a> event in Brussels, Belgium this coming weekend! Several members of ReactOS Development Team along with the Project Coordinator will be attending. You can have a chance to test the live system, speak with developers, and get a closer look at our project.
+</p>
+<p>
+Please do not forget that this release along with the rest of the 0.3.x series is still considered alpha quality software, so it may not run all your apps or run at all on your hardware.
+</p>
+<h3>Change summary</h3>A list of changes in greater detail can be found in the <a href="../wiki/index.php/ChangeLog-0.3.8">changelog</a>. Summing up the most important changes:
+<ul>
+       <li>Various bugfixes and enhancements to Kernel core services (e.g. registry, system information routines, sync primitives like guarded mutex, IO support and other)</li>
+       <li>An initiative has been started to fix the remaining unstable parts of the kernel: Memory Manager, caching code and filesystems driver APIs and other dependencies of Mm</li>
+       <li>Introduction of a new Portable Structured Exception Handling mechanism (PSEH 2.0), which is much closer to the native compiler SEH syntax</li>
+       <li>A few longstanding bugs are fixed (such as multipartition HDD support by LiveCD, Task Manager CPU graph) </li>
+       <li>Various GDI drawing problems were fixed</li>
+       <li>A minimal open source version of the KernelDebugger protocol has been implemented, allowing basic MS WinDbg functionality</li>
+       <li>CRT and RTL library improvements</li>
+       <li>A number of problems were fixed in base system drivers: NPFS, CDFS, FASTFAT, FS_REC, SCSIPORT</li>
+       <li>Video driver improvements for better real hardware support</li>
+       <li>Ongoing Win32-subsystem work</li>
+       <li>Continued work on supporting MSVC</li>
+       <li>Build tool chain fixes and improvements (also as part of the MSVC support work) </li>
+       <li>Core tools and components shared with Wine were updated to the latest version</li>
+</ul>

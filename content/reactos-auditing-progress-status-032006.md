@@ -1,0 +1,63 @@
+---
+title:       "ReactOS Auditing Progress - Status 03/2006"
+author:      "frik85"
+type:        news
+date:        2006-03-10
+changed:     2013-02-23
+draft:       false
+promote:     true
+sticky:      false
+url:         /reactos-auditing-progress-status-032006
+aliases:     [ node/258 ]
+news:        [ "news" ]
+
+---
+
+<h2>ReactOS Auditing Progress - Status 03/2006</h2>
+<p>A lot of things happened in january and february 2006. This news issue's goal is to sum up what has been happening in the past few weeks. If you want to stay tuned, visit the <a href="http://blogs.reactos.org">ReactOS Blogs</a> from time to time. And do not forget to add the ReactOS News Feed to your <a href="http://en.wikipedia.org/wiki/RSS_%28file_format%29">feed reader or aggregator</a>.<br /><i>A lot of information of this news issue came from <a href="http://www.reactos.org/serendipity/index.php?/archives/26-ReactOS-audit-status.html">Ged Murphy's blog entry</a>, thank you for clearing up of some questions.</i></p>
+
+<h3>ReactOS Auditing Frequently Asked Questions</h3>
+<p>If you have still questions after you read this FAQ then please <a href="http://www.reactos.org/forum/">visit the ReactOS Forum</a>.</p>
+
+<h4><i>What is ReactOS? Is ReactOS based on Microsoft® Windows®? And so on ...</i></h4>
+<p>Please visit the <a href="[#link_about_userfaq]">ReactOS FAQ page</a> for further information about ReactOS.</p>
+
+<h4><i>Why does the ReactOS developers audit their source code? Almost all other well known operating systems aren't (fully) audited either and are still in use.</i></h4>
+<p>In order for the project to stand the alpha-phase time, it must be 100% legal. Maybe some areas of the audit are a bit of an over reaction (<a href="http://www.reactos.org/xhtml/en/news_page_14.html">more information</a>), but they have <a href="http://www.reactos.org/xhtml/en/news_page_15.html">to be addressed</a>. Hiding or even ignoring things does not make them go away. The next time someone questions the legality of our code, we can "throw" the <a href="http://www.reactos.org/wiki/index.php/Audit">audit (documents)</a> back at them.</p>
+
+<h4><i>Why has the audit progress bar been stuck on 15% for the past few weeks?</i></h4>
+<p>When the ReactOS developer team originally discovered that the ReactOS code base may contain code which had been reversed outside of US policy, we choose to carry out an audit by locking the current repository and opening a new one in which all audited code would be placed. The script which displays the audit status on the website was written based upon some methods in this repository and was set to update daily.<br />
+This repository is now dead (<a href="http://www.reactos.org/forum/viewtopic.php?t=1675">see voting</a>), but the audit script is still running on that directory, hence, it’s been stuck at 15%. The old script will get replaced this weekend (see FAQ entry below). </p>
+
+<h4><i>Why is the outdated auditing progress bar still on the website frontpage? And what is the current auditing process.</i></h4>
+<p>The auditing process has changed a bit because it was realised by many of the devs that the original reaction had been a slight over-reaction. The only people raising questions about the methods of our reversing, came from the ReactOS developers (not from outside). 
+Two votings later, the old repository is reopened for anonymous download with some new restrictions on the development side.
+The area which does effect is the development side. Changes cannot be made to files which are locked. In order to remove the lock, the code must pass an audit. The hope is that the audit will be carried out quicker via this method.</p>
+
+<h4><i>So where are we at now? - the current auditing status</i></h4>
+<p>The original repository is now back online and pretty much all the code is currently locked. The slow process of auditing and unlocking has now officially begun, however a big chunk of our code can bypass the audit.</p>
+
+<h4><i>When will be the next ReactOS release? </i></h4>
+<p>The ReactOS Development Team expect ReactOS 0.3 to be released soon. 
+The new method we have taken will allow development to continue alongside the audit. Each consecutive release will have more audited code than the previous until we reach a certain release, where all code passed the audit.</p>
+
+<h4><i>What about the progress bar?</i></h4>
+<p>Ged Murphy wrote a new audit script for the new/old repository which is much more accurate than the previous one. This will be put into place this weekend.</p>
+
+<h3>Votings</h3>
+<p>We had two votings, in the last two months:</p>
+<ul><li><b><a href="http://www.reactos.org/forum/viewtopic.php?t=1675">ReactOS Reactivation Plan (2006-02-09 to 2006-02-16)</a></b><br />
+<br />
+Plan A - "current", 22% [4] <br />
+Plan B - "proposed", 77% [14] <br />
+Total Votes: 18<br />
+<br>
+<br />
+
+</li>
+<li><b><a href="http://www.reactos.org/forum/viewtopic.php?t=1729">Code audit method (2006-02-24 to 2006-03-03)</a></b><br />
+<br />
+"Devs must take it upon themselves to audit the code", 46% [6] <br />
+"Code is SVN-locked until it has been audited", 53% [7] <br />
+Total Votes: 13</li></ul>
+
