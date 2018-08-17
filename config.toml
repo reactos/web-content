@@ -45,72 +45,78 @@ paginate = 10
     [[menu.main]]
         parent = "discover"
         name = "Following!"
+        url = "/joining/"
         weight = 201
         pre = "<span style='font-weight: bold;'>"
         post = "</span>"
     [[menu.main]]
         parent = "discover"
         name = "Live Activity"
-        url  = "#"
+        url  = "https://jira.reactos.org/secure/Dashboard.jspa#Activity-Stream/10001"
         weight = 202
     [[menu.main]]
         parent = "discover"
         name = "Helping us"
-        url  = "#"
+        url  = "/participation/"
         weight = 203
     [[menu.main]]
         parent = "discover"
+        identifier = "follow_faq"
         name = "FAQs"
-        url  = "#"
+        url  = "/joining/faqs"
         weight = 204
 
     [[menu.main]]
         parent = "discover"
         name = "Testing!"
+        url = "/testing/"
         weight = 205
         pre = "<span style='font-weight: bold;'>"
         post = "</span>"
     [[menu.main]]
         parent = "discover"
         name = "Installing ReactOS"
-        url  = "#"
+        url  = "installing-reactos"
         weight = 206
     [[menu.main]]
         parent = "discover"
         name = "Filling a Bug"
-        url  = "#"
+        url  = "https://reactos.org/wiki/File_Bugs"
         weight = 207
     [[menu.main]]
         parent = "discover"
+        identifier = "testing_faq"
         name = "FAQs"
-        url  = "#"
+        url  = "/testing/faqs/"
         weight = 208
 
     [[menu.main]]
         parent = "discover"
         name = "Developing!"
+        url = "/developing/"
         weight = 209
         pre = "<span style='font-weight: bold;'>"
         post = "</span>"
     [[menu.main]]
         parent = "discover"
         name = "Building ReactOS"
-        url  = "#"
+        url  = "/building-reactos/"
         weight = 210
     [[menu.main]]
         parent = "discover"
         name = "Sending Patches"
-        url  = "#"
+        url  = "https://reactos.org/wiki/Submitting_Patches"
         weight = 211
     [[menu.main]]
         parent = "discover"
         name = "Testman: Your Tool"
-        url  = "#"
+        url  = "https://reactos.org/testman"
         weight = 212
     [[menu.main]]
         parent = "discover"
+        identifier = "developing_faq"
         name = "FAQs"
-        url  = "#"
+        url  = "/developing/faqs/"
         weight = 213
 
 
