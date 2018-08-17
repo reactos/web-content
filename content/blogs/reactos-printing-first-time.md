@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS printing for the first time!"
 author:      "Colin Finck"
-type:        blog
 date:        2015-07-25
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/reactos-printing-first-time
 aliases:     [ node/3446 ]
 
 ---

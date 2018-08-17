@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS 0.4.2 Released"
 author:      "Z98"
-type:        news
 date:        2016-08-16
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-042-released
 aliases:     [ node/16671 ]
 news:        [ "news" ]
 

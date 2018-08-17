@@ -1,13 +1,7 @@
 ---
 title:       "My first ever GSOC!!"
 author:      "SR13"
-type:        blog
 date:        2017-06-13
-changed:     2017-06-15
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/my-first-ever-gsoc
 aliases:     [ node/44434 ]
 
 ---

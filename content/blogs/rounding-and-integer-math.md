@@ -1,13 +1,7 @@
 ---
 title:       "Rounding and integer math"
 author:      "ThePhysicist"
-type:        blog
 date:        2015-05-16
-changed:     2015-11-23
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/rounding-and-integer-math
 aliases:     [ node/941 ]
 
 ---

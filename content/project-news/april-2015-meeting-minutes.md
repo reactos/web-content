@@ -1,15 +1,8 @@
 ---
 title:       "April 2015 Meeting Minutes"
 author:      "EmuandCo"
-type:        news
 date:        2015-05-03
-changed:     2015-11-24
-draft:       false
-promote:     true
-sticky:      false
-url:         /project-news/april-2015-meeting-minutes
 aliases:     [ node/936 ]
-news:        [ "news" ]
 
 ---
 

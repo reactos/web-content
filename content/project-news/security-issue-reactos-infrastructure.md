@@ -1,13 +1,7 @@
 ---
 title:       "Security issue on the ReactOS infrastructure"
 author:      "Heis Spiter"
-type:        news
 date:        2015-01-21
-changed:     2015-11-24
-draft:       false
-promote:     true
-sticky:      false
-url:         /project-news/security-issue-reactos-infrastructure
 aliases:     [ node/928 ]
 news:        [ "news" ]
 

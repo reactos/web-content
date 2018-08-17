@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS has been accepted for GSOC'17"
 author:      "vicmarcal"
-type:        news
 date:        2017-02-27
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-has-been-accepted-gsoc17
 aliases:     [ node/33477 ]
 tags:        [ "gsoc", "students", "call", "announce" ]
 

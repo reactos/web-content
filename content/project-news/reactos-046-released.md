@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS 0.4.6 released"
 author:      "vicmarcal"
-type:        news
 date:        2017-09-01
-changed:     2017-09-02
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-046-released
 aliases:     [ node/50313 ]
 
 ---

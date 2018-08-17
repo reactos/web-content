@@ -1,12 +1,7 @@
 ---
 title:       "GSoC 2018 - booting from BTRFS works!"
 author:      "extravert34"
-type:        blog
 date:        2018-07-29
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-2018-booting-btrfs-works
 aliases:     [ node/69571 ]
 
 ---

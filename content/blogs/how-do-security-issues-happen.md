@@ -1,13 +1,7 @@
 ---
 title:       "How do security issues happen?"
 author:      "ThFabba"
-type:        blog
 date:        2015-02-11
-changed:     2015-11-24
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/how-do-security-issues-happen
 aliases:     [ node/932 ]
 
 ---

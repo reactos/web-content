@@ -1,13 +1,7 @@
 ---
 title:       "RAPPS Enchancements: GSoC 2017 Edition Final Report"
 author:      "sanchaez"
-type:        blog
 date:        2017-08-28
-changed:     2017-09-03
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/rapps-enchancements-gsoc-2017-edition-final-report
 aliases:     [ node/49895 ]
 
 ---

@@ -1,13 +1,7 @@
 ---
 title:       "Introduction to NDIS Driver Development"
 author:      "Z98"
-type:        blog
 date:        2015-12-17
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/introduction-ndis-driver-development
 aliases:     [ node/3447 ]
 
 ---

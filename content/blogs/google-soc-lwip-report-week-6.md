@@ -1,12 +1,7 @@
 ---
 title:       "Google SoC lwIP Report Week 6"
 author:      "zhu48"
-type:        blog
 date:        2016-07-03
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/google-soc-lwip-report-week-6
 aliases:     [ node/12752 ]
 
 ---

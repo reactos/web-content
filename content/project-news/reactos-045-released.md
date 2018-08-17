@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS 0.4.5 Released"
 author:      "Colin Finck"
-type:        news
 date:        2017-05-18
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-045-released
 aliases:     [ node/41300 ]
 
 ---

@@ -1,12 +1,7 @@
 ---
 title:       "GSOC Project TSE Week 5"
 author:      "SR13"
-type:        blog
 date:        2017-07-06
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-project-tse-week-5
 aliases:     [ node/46545 ]
 
 ---

@@ -1,12 +1,7 @@
 ---
 title:       "USB 1.1 UHCI improvements GSoC - Week 4"
 author:      "VardanM"
-type:        blog
 date:        2016-06-20
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/usb-11-uhci-improvements-gsoc-week-4
 aliases:     [ node/11797 ]
 
 ---

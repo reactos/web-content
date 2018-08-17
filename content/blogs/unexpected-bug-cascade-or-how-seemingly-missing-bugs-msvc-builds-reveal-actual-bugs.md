@@ -1,13 +1,7 @@
 ---
 title:       "Unexpected bug cascade - or how seemingly missing bugs in MSVC builds reveal actual bugs"
 author:      "ThePhysicist"
-type:        blog
 date:        2015-12-27
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/unexpected-bug-cascade-or-how-seemingly-missing-bugs-msvc-builds-reveal-actual-bugs
 aliases:     [ node/3449 ]
 
 ---

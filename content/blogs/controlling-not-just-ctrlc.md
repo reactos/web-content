@@ -1,12 +1,7 @@
 ---
 title:       "Controlling (not just) Ctrl+C"
 author:      "vicmarcal"
-type:        blog
 date:        2016-08-13
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/controlling-not-just-ctrlc
 aliases:     [ node/14387 ]
 
 ---

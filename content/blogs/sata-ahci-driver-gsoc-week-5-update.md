@@ -1,12 +1,7 @@
 ---
 title:       "SATA AHCI Driver GSoC - Week 5 Update"
 author:      "amaneureka"
-type:        blog
 date:        2016-06-29
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/sata-ahci-driver-gsoc-week-5-update
 aliases:     [ node/12335 ]
 
 ---

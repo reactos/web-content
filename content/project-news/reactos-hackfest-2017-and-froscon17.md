@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS Hackfest 2017 and FrOSCon17!"
 author:      "vicmarcal"
-type:        news
 date:        2017-07-07
-changed:     2017-07-09
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-hackfest-2017-and-froscon17
 aliases:     [ node/46635 ]
 
 ---

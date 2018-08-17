@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS Repository migrated to GitHub"
 author:      "Colin Finck"
-type:        news
 date:        2017-10-03
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-repository-migrated-github
 aliases:     [ node/53513 ]
 
 ---

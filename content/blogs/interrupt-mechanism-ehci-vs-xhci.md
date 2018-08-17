@@ -1,13 +1,7 @@
 ---
 title:       "Interrupt mechanism: eHCI vs xHCI"
 author:      "ramateja.g"
-type:        blog
 date:        2017-06-22
-changed:     2017-06-23
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/interrupt-mechanism-ehci-vs-xhci
 aliases:     [ node/45380 ]
 
 # Summary:

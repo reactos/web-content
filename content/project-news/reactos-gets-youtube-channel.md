@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS gets a Youtube Channel"
 author:      "AmineKhaldi"
-type:        news
 date:        2015-06-18
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-gets-youtube-channel
 aliases:     [ node/3453 ]
 news:        [ "news" ]
 

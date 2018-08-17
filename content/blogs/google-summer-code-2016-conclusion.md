@@ -1,12 +1,7 @@
 ---
 title:       "Google Summer of Code 2016 Conclusion"
 author:      "Z98"
-type:        blog
 date:        2016-09-07
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/google-summer-code-2016-conclusion
 aliases:     [ node/18389 ]
 
 ---

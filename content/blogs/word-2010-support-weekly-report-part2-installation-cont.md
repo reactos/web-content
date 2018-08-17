@@ -1,13 +1,7 @@
 ---
 title:       "Word 2010 support – Weekly report – Part 2: Installation (cont.)"
 author:      "hbelusca"
-type:        blog
 date:        2016-11-20
-changed:     2016-12-01
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/word-2010-support-weekly-report-part2-installation-cont
 aliases:     [ node/26044 ]
 
 ---

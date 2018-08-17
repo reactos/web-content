@@ -1,12 +1,7 @@
 ---
 title:       "GSoC final report for USB project."
 author:      "VardanM"
-type:        blog
 date:        2016-08-22
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-final-report-usb-project-0
 aliases:     [ node/17243 ]
 
 ---

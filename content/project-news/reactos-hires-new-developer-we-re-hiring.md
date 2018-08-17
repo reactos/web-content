@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS hires a new developer. Discover what's coming!"
 author:      "AmineKhaldi"
-type:        news
 date:        2016-11-08
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-hires-new-developer-we-re-hiring
 aliases:     [ node/24366 ]
 
 ---

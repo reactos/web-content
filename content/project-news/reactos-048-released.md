@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS 0.4.8 released!!"
 author:      "vicmarcal"
-type:        news
 date:        2018-04-14
-changed:     2018-04-16
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-048-released
 aliases:     [ node/65764 ]
 tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "mm" ]
 

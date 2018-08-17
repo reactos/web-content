@@ -1,13 +1,7 @@
 ---
 title:       "Word 2010 support Part 6: New progress"
 author:      "hbelusca"
-type:        blog
 date:        2017-02-27
-changed:     2017-03-01
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/word-2010-support-part-6-new-progress
 aliases:     [ node/33475 ]
 
 ---

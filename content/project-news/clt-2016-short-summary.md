@@ -1,12 +1,7 @@
 ---
 title:       "CLT 2016 - A short summary"
 author:      "EmuandCo"
-type:        news
 date:        2016-03-27
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/clt-2016-short-summary
 aliases:     [ node/6532 ]
 
 ---

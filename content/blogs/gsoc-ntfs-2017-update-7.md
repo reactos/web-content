@@ -1,12 +1,7 @@
 ---
 title:       "GSoC NTFS 2017 Update 7"
 author:      "coderTrevor"
-type:        blog
 date:        2017-07-31
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-ntfs-2017-update-7
 aliases:     [ node/48366 ]
 
 ---

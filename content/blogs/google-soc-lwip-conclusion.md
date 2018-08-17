@@ -1,12 +1,7 @@
 ---
 title:       "Google SoC lwIP Conclusion"
 author:      "zhu48"
-type:        blog
 date:        2016-08-23
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/google-soc-lwip-conclusion
 aliases:     [ node/17308 ]
 
 ---

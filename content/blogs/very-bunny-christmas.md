@@ -1,13 +1,7 @@
 ---
 title:       "A Very Bunny Christmas"
 author:      "Z98"
-type:        blog
 date:        2015-12-21
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/very-bunny-christmas
 aliases:     [ node/3448 ]
 
 ---

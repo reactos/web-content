@@ -1,12 +1,7 @@
 ---
 title:       "GSOC Project TSE Week 8 : Phase 3"
 author:      "SR13"
-type:        blog
 date:        2017-07-31
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-project-tse-week-8-phase-3
 aliases:     [ node/48355 ]
 
 ---

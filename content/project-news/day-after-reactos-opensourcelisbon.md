@@ -1,12 +1,7 @@
 ---
 title:       "The day after: ReactOS in the OpenSourceLisbon..."
 author:      "vicmarcal"
-type:        news
 date:        2017-10-16
-draft:       false
-promote:     true
-sticky:      false
-url:         /project-news/day-after-reactos-opensourcelisbon
 aliases:     [ node/54621 ]
 
 ---

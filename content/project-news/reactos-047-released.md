@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS 0.4.7 released!"
 author:      "vicmarcal"
-type:        news
 date:        2017-12-06
-draft:       false
-promote:     true
-sticky:      false
-url:         /project-news/reactos-047-released
 aliases:     [ node/58047 ]
 tags:        [ "release", "0.4.7", "rapps", "filesystems", "usb" ]
 

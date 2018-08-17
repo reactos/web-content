@@ -1,12 +1,7 @@
 ---
 title:       "June 2018 meeting minutes"
 author:      "Harteex"
-type:        news
 date:        2018-07-22
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/june-2018-meeting-minutes
 aliases:     [ node/69569 ]
 
 ---

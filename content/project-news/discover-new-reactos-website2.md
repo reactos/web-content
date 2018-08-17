@@ -1,12 +1,7 @@
 ---
 title:       "Discover the new ReactOS website"
 author:      "vicmarcal"
-type:        news
 date:        2016-02-08
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/discover-new-reactos-website2
 aliases:     [ node/3539 ]
 tags:        [ "website", "revamp" ]
 

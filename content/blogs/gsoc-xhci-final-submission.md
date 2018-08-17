@@ -1,13 +1,7 @@
 ---
 title:       "GSoC xHCI: Final Submission"
 author:      "ramateja.g"
-type:        blog
 date:        2017-08-25
-changed:     2017-08-29
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-xhci-final-submission
 aliases:     [ node/49730 ]
 
 ---

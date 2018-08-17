@@ -1,13 +1,7 @@
 ---
 title:       "GSoC NTFS 2017 - Work Summary"
 author:      "coderTrevor"
-type:        blog
 date:        2017-08-29
-changed:     2017-09-07
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-ntfs-2017-work-summary
 aliases:     [ node/50053 ]
 
 ---

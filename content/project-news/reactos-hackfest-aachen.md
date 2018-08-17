@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS Hackfest in Aachen"
 author:      "fireball"
-type:        news
 date:        2015-09-01
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-hackfest-aachen
 aliases:     [ node/3455 ]
 news:        [ "news" ]
 

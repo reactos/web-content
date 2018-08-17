@@ -1,12 +1,7 @@
 ---
 title:       "Developer Contract"
 author:      "Z98"
-type:        news
 date:        2017-01-09
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/developer-contract
 aliases:     [ node/29789 ]
 news:        [ "news" ]
 

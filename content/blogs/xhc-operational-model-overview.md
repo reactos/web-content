@@ -1,12 +1,7 @@
 ---
 title:       "xHC Operational Model Overview"
 author:      "ramateja.g"
-type:        blog
 date:        2017-06-29
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/xhc-operational-model-overview
 aliases:     [ node/45878 ]
 
 ---

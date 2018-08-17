@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS Participation in Google Summer of Code 2016"
 author:      "vicmarcal"
-type:        news
 date:        2016-02-29
-changed:     2016-03-22
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-participation-google-summer-code-2016
 aliases:     [ node/4739 ]
 
 ---

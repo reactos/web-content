@@ -1,12 +1,7 @@
 ---
 title:       "GSoC xHCI: PCS and CCS"
 author:      "ramateja.g"
-type:        blog
 date:        2017-08-17
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-xhci-pcs-and-ccs
 aliases:     [ node/49203 ]
 
 ---

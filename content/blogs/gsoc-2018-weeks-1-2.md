@@ -1,12 +1,7 @@
 ---
 title:       "GSoC 2018 - Project BTRFS Boot"
 author:      "extravert34"
-type:        blog
 date:        2018-05-29
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-2018-weeks-1-2
 aliases:     [ node/68045 ]
 
 ---

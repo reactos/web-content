@@ -1,12 +1,7 @@
 ---
 title:       "Join ReactOS in Open Source Lisbon 2017"
 author:      "vicmarcal"
-type:        news
 date:        2017-09-23
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/join-reactos-open-source-lisbon-2017
 aliases:     [ node/52033 ]
 
 ---

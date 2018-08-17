@@ -1,13 +1,7 @@
 ---
 title:       "GSOC Project TSE Week 11 : Last but not the least..."
 author:      "SR13"
-type:        blog
 date:        2017-08-20
-changed:     2017-08-21
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-project-tse-week-11-last-not-least
 aliases:     [ node/49398 ]
 
 ---

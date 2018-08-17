@@ -1,12 +1,7 @@
 ---
 title:       "RAPPS Enchancements: GSoC 2017 Edition Volume 3 and 4"
 author:      "sanchaez"
-type:        blog
 date:        2017-07-21
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/rapps-enchancements-gsoc-2017-edition-volume-3-and-4
 aliases:     [ node/47384 ]
 
 ---

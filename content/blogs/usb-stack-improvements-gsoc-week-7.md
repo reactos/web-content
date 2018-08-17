@@ -1,12 +1,7 @@
 ---
 title:       "USB stack improvements GSoC - Week 7"
 author:      "VardanM"
-type:        blog
 date:        2016-07-12
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/usb-stack-improvements-gsoc-week-7
 aliases:     [ node/13469 ]
 
 ---

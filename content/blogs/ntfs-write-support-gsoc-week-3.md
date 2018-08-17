@@ -1,12 +1,7 @@
 ---
 title:       "NTFS Write Support GSoC - Week 3"
 author:      "coderTrevor"
-type:        blog
 date:        2016-06-13
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/ntfs-write-support-gsoc-week-3
 aliases:     [ node/11421 ]
 
 ---

@@ -1,13 +1,7 @@
 ---
 title:       "Word 2010 support – Weekly report - Part 4: Update + Authentication failed!"
 author:      "hbelusca"
-type:        blog
 date:        2017-01-04
-changed:     2017-01-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/word-2010-support-weekly-report-part4-update-authentication-failed
 aliases:     [ node/29411 ]
 
 ---

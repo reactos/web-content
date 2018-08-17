@@ -1,13 +1,7 @@
 ---
 title:       "June 2015 meeting minutes"
 author:      "EmuandCo"
-type:        news
 date:        2015-09-17
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/june-2015-meeting-minutes
 aliases:     [ node/3457 ]
 news:        [ "news" ]
 

@@ -1,12 +1,7 @@
 ---
 title:       "XHCI Ring Data Structures "
 author:      "ramateja.g"
-type:        blog
 date:        2017-07-18
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/xhci-ring-data-structures
 aliases:     [ node/47219 ]
 
 ---

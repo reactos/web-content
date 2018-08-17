@@ -1,12 +1,7 @@
 ---
 title:       "xHCI : A life lesson learnt"
 author:      "ramateja.g"
-type:        blog
 date:        2017-08-07
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/xhci-life-lesson-learnt
 aliases:     [ node/48754 ]
 
 ---

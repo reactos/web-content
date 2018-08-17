@@ -1,15 +1,9 @@
 ---
 title:       "ReactOS 0.4.9 released"
 author:      "Colin Finck"
-type:        news
 date:        2018-07-23
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-049-released
 aliases:     [ node/69568 ]
 tags:        [ "release", "0.4.9", "self-hosting", "zipfldr", "shell", "cc", "mm" ]
-
 ---
 
 <p>The ReactOS Project is pleased to announce the release of version 0.4.9, the latest in our accelerated cadence targeting a release every three months.</p>

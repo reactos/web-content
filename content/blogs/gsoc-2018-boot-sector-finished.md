@@ -1,12 +1,7 @@
 ---
 title:       "GSoC 2018 - boot sector finished"
 author:      "extravert34"
-type:        blog
 date:        2018-07-10
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-2018-boot-sector-finished
 aliases:     [ node/69565 ]
 
 ---

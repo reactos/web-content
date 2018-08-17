@@ -1,12 +1,7 @@
 ---
 title:       "GSoC xHCI status update"
 author:      "ramateja.g"
-type:        blog
 date:        2017-07-28
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-xhci-status-update-0
 aliases:     [ node/47922 ]
 
 ---

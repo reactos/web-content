@@ -1,13 +1,7 @@
 ---
 title:       "NTFS Write Support GSoC - Work Summary"
 author:      "coderTrevor"
-type:        blog
 date:        2016-08-23
-changed:     2016-08-29
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/ntfs-write-support-gsoc-work-summary-draft
 aliases:     [ node/17329 ]
 
 ---

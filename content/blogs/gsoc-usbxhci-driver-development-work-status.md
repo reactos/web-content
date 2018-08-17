@@ -1,12 +1,7 @@
 ---
 title:       "GSoC: USBxHCI driver development work status"
 author:      "ramateja.g"
-type:        blog
 date:        2017-07-13
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-usbxhci-driver-development-work-status
 aliases:     [ node/46975 ]
 
 ---

@@ -1,12 +1,7 @@
 ---
 title:       "Google SoC lwIP Report Week 1"
 author:      "Z98"
-type:        blog
 date:        2016-05-27
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/google-soc-lwip-report-week-1
 aliases:     [ node/10198 ]
 
 ---

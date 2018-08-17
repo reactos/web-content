@@ -1,13 +1,7 @@
 ---
 title:       "Word 2010 support Part 5: NTLM & FOSDEM 2017 preparation"
 author:      "hbelusca"
-type:        blog
 date:        2017-01-30
-changed:     2017-02-13
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/word-2010-support-weekly-report-part5-ntlm-fosdem-2017-preparation
 aliases:     [ node/31372 ]
 
 ---

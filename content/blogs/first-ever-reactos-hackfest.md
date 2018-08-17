@@ -1,13 +1,7 @@
 ---
 title:       "The First Ever ReactOS Hackfest!"
 author:      "vicmarcal"
-type:        blog
 date:        2015-06-20
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/first-ever-reactos-hackfest
 aliases:     [ node/3445 ]
 
 ---

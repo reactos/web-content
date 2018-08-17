@@ -1,13 +1,7 @@
 ---
 title:       "GSoC’17 : Project Taskbar Shell Extensions for ReactOS | Final Report"
 author:      "SR13"
-type:        blog
 date:        2017-08-27
-changed:     2017-08-28
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc’17-project-taskbar-shell-extensions-reactos-final-report
 aliases:     [ node/49860 ]
 
 ---

@@ -1,12 +1,7 @@
 ---
 title:       "ReactOS at FOSDEM 2017"
 author:      "Z98"
-type:        news
 date:        2017-01-30
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-fosdem-2017
 aliases:     [ node/31424 ]
 news:        [ "news" ]
 

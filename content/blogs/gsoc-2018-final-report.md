@@ -1,12 +1,7 @@
 ---
 title:       "GSoC 2018 - Final report"
 author:      "extravert34"
-type:        blog
 date:        2018-08-14
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-2018-final-report
 aliases:     [ node/69576 ]
 
 ---

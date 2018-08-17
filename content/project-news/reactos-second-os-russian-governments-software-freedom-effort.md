@@ -1,13 +1,7 @@
 ---
 title:       "ReactOS as a second OS in Russian government's software freedom effort"
 author:      "fireball"
-type:        news
 date:        2015-06-19
-changed:     2016-02-05
-draft:       false
-promote:     false
-sticky:      false
-url:         /project-news/reactos-second-os-russian-governments-software-freedom-effort
 aliases:     [ node/3454 ]
 news:        [ "news" ]
 

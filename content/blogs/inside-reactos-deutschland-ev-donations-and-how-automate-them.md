@@ -1,12 +1,7 @@
 ---
 title:       "Inside ReactOS Deutschland e.V.: Donations and how to automate them"
 author:      "Colin Finck"
-type:        blog
 date:        2016-08-25
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/inside-reactos-deutschland-ev-donations-and-how-automate-them
 aliases:     [ node/17461 ]
 
 ---

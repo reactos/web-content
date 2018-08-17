@@ -1,13 +1,7 @@
 ---
 title:       "GSoC 2018 weeks 3-4 - understanding BTRFS internals"
 author:      "extravert34"
-type:        blog
 date:        2018-06-14
-changed:     2018-06-15
-draft:       false
-promote:     false
-sticky:      false
-url:         /blogs/gsoc-2018-weeks-3-4-understanding-btrfs-internals
 aliases:     [ node/68777 ]
 
 ---
