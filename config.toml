@@ -41,8 +41,7 @@ paginate = 10
 
 [[menu.main]]
     name = "Jira"
-    identifier = "faq"
-    url  = "//jira.reactos.org"
+    url  = "https://jira.reactos.org"
     weight = 3
 
 [[menu.main]]
@@ -62,7 +61,7 @@ paginate = 10
 
 [[menu.main]]
     name = "Shop"
-    url  = "//reactos.spreadshirt.net/"
+    url  = "https://reactos.spreadshirt.net/"
     weight = 7
 
 [[menu.main]]
