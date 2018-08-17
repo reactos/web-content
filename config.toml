@@ -20,24 +20,101 @@ paginate = 10
     name = "News"
     url  = "/news/"
     weight = 1
-[[menu.main]]
-    parent = "News"
-    name = "All News"
-    url  = "/news/"
-[[menu.main]]
-    parent = "News"
-    name = "Project News"
-    url  = "/project-news/"
-[[menu.main]]
-    parent = "News"
-    name = "Blog Posts"
-    url  = "/blogs/"
+    [[menu.main]]
+        parent = "News"
+        name = "All News"
+        url  = "/news/"
+        weight = 101
+    [[menu.main]]
+        parent = "News"
+        name = "Project News"
+        url  = "/project-news/"
+        weight = 102
+    [[menu.main]]
+        parent = "News"
+        name = "Blog Posts"
+        url  = "/blogs/"
+        weight = 103
 
 
 [[menu.main]]
+    identifier = "discover"
     name = "Discover More!"
     url  = "/blog/"
     weight = 2
+    [[menu.main]]
+        parent = "discover"
+        name = "Following!"
+        weight = 201
+        pre = "<span style='font-weight: bold;'>"
+        post = "</span>"
+    [[menu.main]]
+        parent = "discover"
+        name = "Live Activity"
+        url  = "#"
+        weight = 202
+    [[menu.main]]
+        parent = "discover"
+        name = "Helping us"
+        url  = "#"
+        weight = 203
+    [[menu.main]]
+        parent = "discover"
+        name = "FAQs"
+        url  = "#"
+        weight = 204
+
+    [[menu.main]]
+        parent = "discover"
+        name = "Testing!"
+        weight = 205
+        pre = "<span style='font-weight: bold;'>"
+        post = "</span>"
+    [[menu.main]]
+        parent = "discover"
+        name = "Installing ReactOS"
+        url  = "#"
+        weight = 206
+    [[menu.main]]
+        parent = "discover"
+        name = "Filling a Bug"
+        url  = "#"
+        weight = 207
+    [[menu.main]]
+        parent = "discover"
+        name = "FAQs"
+        url  = "#"
+        weight = 208
+
+    [[menu.main]]
+        parent = "discover"
+        name = "Developing!"
+        weight = 209
+        pre = "<span style='font-weight: bold;'>"
+        post = "</span>"
+    [[menu.main]]
+        parent = "discover"
+        name = "Building ReactOS"
+        url  = "#"
+        weight = 210
+    [[menu.main]]
+        parent = "discover"
+        name = "Sending Patches"
+        url  = "#"
+        weight = 211
+    [[menu.main]]
+        parent = "discover"
+        name = "Testman: Your Tool"
+        url  = "#"
+        weight = 212
+    [[menu.main]]
+        parent = "discover"
+        name = "FAQs"
+        url  = "#"
+        weight = 213
+
+
+
 
 [[menu.main]]
     name = "Jira"
@@ -85,13 +162,13 @@ paginate = 10
 [[menu.topbar]]
     weight = 2
     name = "Facebook"
-    url = "http://facebook.com"
+    url = "https://www.facebook.com/ReactOS-19143619259/"
     pre = "<i class='fa fa-2x fa-facebook'></i>"
 
 [[menu.topbar]]
     weight = 3
     name = "Twitter"
-    url = "http://twitter.com"
+    url = "https://twitter.com/reactos"
     pre = "<i class='fa fa-2x fa-twitter'></i>"
 
 [[menu.topbar]]
@@ -101,7 +178,7 @@ paginate = 10
     pre = "<i class='fa fa-2x fa-envelope'></i>"
 
 [params]
-    viewMorePostLink = "/blog/"
+    viewMorePostLink = "/news/"
     author = "DevCows"
     defaultKeywords = ["devows", "hugo", "go"]
     defaultDescription = "Site template made by devcows using hugo"
@@ -127,8 +204,8 @@ paginate = 10
     # Enable the contact form by entering your Formspree.io email
     email = "your@email.com"
 
-    about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
-    copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
+    about_us = "ReactOS is a registered trademark of ReactOS Foundation in the USA and other countries. "
+    copyright = "ReactOS Project"
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
