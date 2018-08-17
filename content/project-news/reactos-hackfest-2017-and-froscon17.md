@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS Hackfest 2017 and FrOSCon17!"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2017-07-07
 changed:     2017-07-09
 draft:       false

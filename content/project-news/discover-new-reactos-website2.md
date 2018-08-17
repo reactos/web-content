@@ -1,7 +1,7 @@
 ---
 title:       "Discover the new ReactOS website"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2016-02-08
 draft:       false
 promote:     false

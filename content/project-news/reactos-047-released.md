@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS 0.4.7 released!"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2017-12-06
 draft:       false
 promote:     true

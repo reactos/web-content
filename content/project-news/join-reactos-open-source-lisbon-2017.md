@@ -1,7 +1,7 @@
 ---
 title:       "Join ReactOS in Open Source Lisbon 2017"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2017-09-23
 draft:       false
 promote:     false

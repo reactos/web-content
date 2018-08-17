@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS hires a new developer. Discover what's coming!"
 author:      "AmineKhaldi"
-type:        article
+type:        news
 date:        2016-11-08
 draft:       false
 promote:     false

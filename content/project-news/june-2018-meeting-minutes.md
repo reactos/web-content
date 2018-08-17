@@ -1,7 +1,7 @@
 ---
 title:       "June 2018 meeting minutes"
 author:      "Harteex"
-type:        article
+type:        news
 date:        2018-07-22
 draft:       false
 promote:     false

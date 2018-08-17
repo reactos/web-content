@@ -1,7 +1,7 @@
 ---
 title:       "Hello Telegram. A new #ReactOS channel"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2016-06-17
 changed:     2016-08-05
 draft:       false

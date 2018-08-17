@@ -1,7 +1,7 @@
 ---
 title:       "CLT 2016 - A short summary"
 author:      "EmuandCo"
-type:        article
+type:        news
 date:        2016-03-27
 draft:       false
 promote:     false

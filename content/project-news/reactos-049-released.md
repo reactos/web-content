@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS 0.4.9 released"
 author:      "Colin Finck"
-type:        article
+type:        news
 date:        2018-07-23
 draft:       false
 promote:     false

@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS Participation in Google Summer of Code 2016"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2016-02-29
 changed:     2016-03-22
 draft:       false

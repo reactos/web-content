@@ -1,7 +1,7 @@
 ---
 title:       "March 2016 meeting minutes"
 author:      "EmuandCo"
-type:        article
+type:        news
 date:        2016-05-02
 draft:       false
 promote:     false

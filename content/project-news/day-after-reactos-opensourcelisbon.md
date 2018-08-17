@@ -1,7 +1,7 @@
 ---
 title:       "The day after: ReactOS in the OpenSourceLisbon..."
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2017-10-16
 draft:       false
 promote:     true

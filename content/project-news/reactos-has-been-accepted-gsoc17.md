@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS has been accepted for GSOC'17"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2017-02-27
 draft:       false
 promote:     false

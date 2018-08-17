@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS 0.4.8 released!!"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2018-04-14
 changed:     2018-04-16
 draft:       false

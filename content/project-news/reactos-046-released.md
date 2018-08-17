@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS 0.4.6 released"
 author:      "vicmarcal"
-type:        article
+type:        news
 date:        2017-09-01
 changed:     2017-09-02
 draft:       false

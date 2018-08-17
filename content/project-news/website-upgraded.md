@@ -1,7 +1,7 @@
 ---
 title:       "Website upgraded"
 author:      "Colin Finck"
-type:        article
+type:        news
 date:        2018-07-04
 draft:       false
 promote:     false

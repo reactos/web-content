@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS 0.4.5 Released"
 author:      "Colin Finck"
-type:        article
+type:        news
 date:        2017-05-18
 draft:       false
 promote:     false
