@@ -1,3 +1,4 @@
+{{ with .context }}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
@@ -22,8 +23,7 @@
 
                     <div class="col-md-9" id="blog-listing-medium">
 
-                        {{ $paginator := .Paginate (where .Site.Pages "Type" "news") }}
-                        {{ range $paginator.Pages }}
+                        {{ range $.paginator.Pages }}
                         <section class="post">
                             <div class="row">
                                 <div class="col-md-4">
@@ -113,3 +113,4 @@
 
   </body>
 </html>
+{{ end }}
