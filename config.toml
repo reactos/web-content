@@ -215,7 +215,6 @@ paginate = 10
 
     logo = "sites/default/files/ReactOS_0.png"
     logo_small = "sites/default/files/ReactOS_0.png"
-    address = ""
 
 [Permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
