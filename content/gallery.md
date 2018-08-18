@@ -2,6 +2,8 @@
 title: Gallery
 ---
 
+{{< load-photoswipe >}}
+
 {{< gallery >}}
 {{< figure link="/sites/default/files/xnview.png" caption="XnView" >}}
 {{< figure link="/sites/default/files/librewriter.png" caption="LibreOffice Writer" >}}
