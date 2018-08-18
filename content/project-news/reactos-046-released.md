@@ -2,8 +2,7 @@
 title:       "ReactOS 0.4.6 released"
 author:      "vicmarcal"
 date:        2017-09-01
-aliases:     [ node/50313 ]
-
+aliases:     [ "node/50313" ]
 ---
 
 <p>The ReactOS Project is pleased to release version 0.4.6 as a continuation of its three month cadence. </p>

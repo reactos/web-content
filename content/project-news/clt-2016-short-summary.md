@@ -2,8 +2,7 @@
 title:       "CLT 2016 - A short summary"
 author:      "EmuandCo"
 date:        2016-03-27
-aliases:     [ node/6532 ]
-
+aliases:     [ "node/6532" ]
 ---
 
 <p>Hello guys,</p>

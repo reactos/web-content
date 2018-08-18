@@ -2,9 +2,7 @@
 title:       "Security issue on the ReactOS infrastructure"
 author:      "Heis Spiter"
 date:        2015-01-21
-aliases:     [ node/928 ]
-news:        [ "news" ]
-
+aliases:     [ "node/928" ]
 ---
 
 Dear all,

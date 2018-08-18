@@ -2,9 +2,7 @@
 title:       "ReactOS as a second OS in Russian government's software freedom effort"
 author:      "fireball"
 date:        2015-06-19
-aliases:     [ node/3454 ]
-news:        [ "news" ]
-
+aliases:     [ "node/3454" ]
 ---
 
 The Russian Federation along with the BRICS nations are pursuing measures to rid vendor lock-in of strategically important software (http://minsvyaz.ru/en/events/33237/) and substitute such software with free/open software (http://minsvyaz.ru/en/events/32967/).

@@ -2,8 +2,7 @@
 title:       "Website upgraded"
 author:      "Colin Finck"
 date:        2018-07-04
-aliases:     [ node/69563 ]
-
+aliases:     [ "node/69563" ]
 ---
 
 <p>Today, the ReactOS Website has been migrated to a <a href="https://github.com/reactos/web/tree/master/www/www.reactos.org/roslogin">new Login system</a> and all components have been upgraded to their latest versions.<br>

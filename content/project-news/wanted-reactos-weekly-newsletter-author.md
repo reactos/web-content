@@ -1,0 +1,46 @@
+---
+title:       "Wanted: ReactOS Weekly Newsletter Author"
+author:      "frik85"
+date:        2006-11-15
+aliases:     [ "wanted-reactos-weekly-newsletter-author", "node/268" ]
+---
+
+<h2>Wanted: ReactOS Weekly Newsletter Author </h2>
+<p>We search an author for our &quot;ReactOS Weekly Newsletter&quot;.</p>
+<h3>History</h3>
+<p>Jason Filby had established the ReactOS Weekly Newsletter (called &quot;ReactOS Weekly&quot;) in 1999 as a useful weekly news summary located on <a onclick="return top.js.OpenExtLink(window,event,this)" href="http://www.reactos.com" target="_blank">www.reactos.com</a>. In 2000 the newsletter had been discontinued. In late 2004 to early 2005, Zach Tong wrote 5 Issues of the &quot;SPLASH - The official ReactOS Newsletter&quot;. With the website redesign in summer 2005, the newsletter came back with Stuart &quot;TwoTailedFox&quot; Robbins as author.</p>
+<h3>Requirements</h3>
+<p>Here are requirements for an author:</p>
+<ol>
+    <li>Have enough time once a week to write the newsletter text (e.g. every sunday) </li>
+    <li>Be good in english language </li>
+    <li>Understand our technlogy (svn, reactos, windows nt, win32, kernel, drivers, apps, etc.) </li>
+    <li>Be in frequent contact with the ReactOS developer, and come in our IRC channels too (because mailing list traffic may be sometimes slow) </li>
+    <li>HTML knowledge is not required but an advantage </li>
+</ol>
+<h3>Goal</h3>
+<ul>
+    <li>The &quot;ReactOS Weekly Newsletter&quot; should be weekly (as the name implies) and sum up the ongoing mailing list discussions as well as irc conversations. </li>
+    <li>Additionally it should contain ReactOS news, like new releases. From time to time interviews, reviews (of apps compatibility and reactos functions and releases) and maybe audio-podcasts, etc. would be great too. </li>
+    <li>The layout of the newsletter issue page can be the same as the latest one (e.g. <a onclick="return top.js.OpenExtLink(window,event,this)" href="http://www.reactos.org/en/newsletter_11.html" target="_blank">http://www.reactos.org/en/newsletter_11.html</a>), similar as WineHQ's one, or different. </li>
+    <li>A ReactOS newsletter author should be good at writing technical articles. Wine Weekly Newsletter is popular source for news, we need something similar too. </li>
+</ul>
+<h3>Topics</h3>
+<p>SVN, Mailing List and IRC activity are the main topics of the newsletter. Interviews, reviews of new features/versions, blog (text/audio/video), etc. are optional things.</p>
+<h3>Previous newsletters and links </h3>
+<p>10/2005 - 02/2005:<br/>
+<a onclick="return top.js.OpenExtLink(window,event,this)" href="http://www.reactos.org/?page=newsletters" target="_blank">http://www.reactos.org/?page=newsletters</a></p>
+<p>11/2004 - 01/2005:<br/>
+<a href="http://www.tong-web.com/splash/" target="_blank">http://www.tong-web.com/splash/</a></p>
+<p>1999 - 2000:<br/>
+<a onclick="return top.js.OpenExtLink(window,event,this)" href="http://web.archive.org/web/20000522174140/reactos.com/public/weekly.html" target="_blank">http://web.archive.org/web/20000522174140/reactos.com/public/weekly.html</a></p>
+<p>WineHQ's technical newsletters:<br/>
+<a onclick="return top.js.OpenExtLink(window,event,this)" href="http://www.winehq.com/?issue=back" target="_blank">http://www.winehq.com/?issue=back</a></p>
+<p>Mailing List Information:<br/>
+<a onclick="return top.js.OpenExtLink(window,event,this)" href="http://www.reactos.org/?page=community_mailinglists" target="_blank">http://www.reactos.org/?page=community_mailinglists</a></p>
+<p>IRC Channel Information:<br/>
+<a onclick="return top.js.OpenExtLink(window,event,this)" href="http://www.reactos.org/?page=community_irc" target="_blank">http://www.reactos.org/?page=community_irc</a></p>
+<p>&nbsp; </p>
+<p>So... if this sounds like something you would like to do, please<strong> send an email</strong> to <a href="http://www.reactos.org/mailman/listinfo/ros-dev" target="_blank">&quot;ros-dev&quot; developer mailing list</a> (don't forget to subscribe), explaining why you think you would be a good newsletter author.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

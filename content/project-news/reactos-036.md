@@ -1,0 +1,28 @@
+---
+title:       "ReactOS 0.3.6"
+author:      "fireball"
+date:        2008-08-06
+aliases:     [ "reactos-036", "node/287" ]
+---
+
+<h2>ReactOS 0.3.6 Released</h2>
+<p>
+In a little over a month since version 0.3.5, we are announcing the release ReactOS 0.3.6.
+</p>
+<p>
+This release along with the rest of the 0.3.x series is still considered alpha quality software, so do not set your expectations too high.
+</p>
+<p>
+ReactOS 0.3.6 is the product of the current development focus: bugfixes, compatibility, and stability. There were more than a thousand commits to the ReactOS Subversion repository this month.
+</p>
+<h3>Changes summary</h3>A consolidation of all changes in great details can be found in the <a href="../wiki/index.php/ChangeLog-0.3.6">changelog</a>. Summing up the most important changes: 
+<ul>
+	<li>More architectures support: ARM version improvements, beginnings of x64 architecture support</li>
+	<li>FreeLdr's memory requirements for ReactOS bootup were reduced</li>
+	<li>Driver unloading now possible</li>
+	<li>Numerous kernel fixes and improvements (APC delivery issues, timer issues, lots of work on architecture-independent parts of the memory manager)</li>
+	<li>More Win32 applications are supported now thanks to the fix in the RTL heap implementation (e.g. InnoSetup-based installers, Delphi applications, etc)</li>
+	<li>Network stack bugfixes and memory leaks elimination</li>
+	<li>Win32 subsystem improvements, most of usermode DLLs synced with Wine</li>
+</ul>
+

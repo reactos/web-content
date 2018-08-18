@@ -1,0 +1,17 @@
+---
+title:       "New project of ReactOS Foundation"
+author:      "fireball"
+date:        2008-04-04
+aliases:     [ "new-project-reactos-foundation", "node/285" ]
+---
+
+<h2>New project of ReactOS Foundation</h2>
+<p>
+Our russian department launched a new service for opensource projects hosting: <a href="http://fireforge.net">FireForge.net</a>. This site provides file releases, SVN/CVS, web, ftp hosting, bug/feature trackers, mailing lists and everything else needed for building a successive opensource community. A difference from similar known sites like <a href="http://sourceforge.net">sf.net</a> or <a href="http://code.google.com">code.google.com</a> is that <a href="http://fireforge.net">FireForge.net</a> provides hosting services for projects interested for russian audience, and it&#39;s not just about providing services, but it&#39;s about providing a way for new projects to become known quicker, attract interested users and developers.
+</p>
+<p>
+The website is also available in english and some other languages.
+</p>
+<br />
+<em>Aleksey Bragin</em>
+

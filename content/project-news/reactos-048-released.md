@@ -2,9 +2,8 @@
 title:       "ReactOS 0.4.8 released!!"
 author:      "vicmarcal"
 date:        2018-04-14
-aliases:     [ node/65764 ]
+aliases:     [ "node/65764" ]
 tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "mm" ]
-
 ---
 
 <p>The ReactOS Project is pleased to announce the release of version 0.4.8 as we continue to work on releasing every three months.</p>

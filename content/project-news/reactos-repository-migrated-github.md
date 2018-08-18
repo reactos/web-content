@@ -2,8 +2,7 @@
 title:       "ReactOS Repository migrated to GitHub"
 author:      "Colin Finck"
 date:        2017-10-03
-aliases:     [ node/53513 ]
-
+aliases:     [ "node/53513" ]
 ---
 
 <img src="/sites/default/files/imagepicker/1249/thumbs/GitHub-Logo.png" alt="GitHub Logo" style="float: right; margin: 20px" class="imgp_img" width="400" height="105" />

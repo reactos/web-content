@@ -1,0 +1,12 @@
+---
+title:       "ReactOS at FOSDEM event"
+author:      "fireball"
+date:        2007-02-20
+aliases:     [ "reactos-fosdem-event", "node/273" ]
+---
+
+<h2>ReactOS talk at the coming FOSDEM event in Brussels</h2>
+<p><a href="http://www.fosdem.org">FOSDEM</a> (Free and Open source Software Developers' European Meeting) will take place the 24th and 25th of February 2007&nbsp;in Brussels, Belgium.</p>
+<p>ReactOS is going to be represented by me, who is going to give a <a href="http://www.fosdem.org/2007/schedule/events/reactos">talk&nbsp;this saturday</a>&nbsp;about ReactOS internals, and do some live demonstrations of what ReactOS achieved so far.</p>
+<p>See you there,<br/>
+Aleksey Bragin.</p>

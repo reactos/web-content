@@ -1,15 +1,8 @@
 ---
 title:       "Newsletter Status"
 author:      "TwoTailedFox"
-type:        news
 date:        2006-01-06
-changed:     2013-02-23
-draft:       false
-promote:     true
-sticky:      false
-url:         /newsletter-status
 aliases:     [ node/253 ]
-news:        [ "news" ]
 
 ---
 

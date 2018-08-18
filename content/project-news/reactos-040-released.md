@@ -2,9 +2,7 @@
 title:       "ReactOS 0.4.0 Released"
 author:      "Z98"
 date:        2016-02-16
-aliases:     [ node/3945 ]
-news:        [ "news" ]
-
+aliases:     [ "node/3945" ]
 ---
 
 <p>Nearly ten years ago the ReactOS Project released version 0.3.0. Today we are proud to announce the formal release of version 0.4.0. A great deal of work has gone into making this release happen and as we look back it is remarkable to consider how far the project has come since that release a decade ago. This release is both a celebration of and a testament to everything that the ReactOS team and community has achieved together. Thank you to all of you for having stood by the project for this long and we hope rewarding journey. For those of you chomping at the bit to check out the release, go to the <a href="https://www.reactos.org/download">download</a> page to get it now.</p>

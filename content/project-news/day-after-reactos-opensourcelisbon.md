@@ -2,8 +2,7 @@
 title:       "The day after: ReactOS in the OpenSourceLisbon..."
 author:      "vicmarcal"
 date:        2017-10-16
-aliases:     [ node/54621 ]
-
+aliases:     [ "node/54621" ]
 ---
 
 <p>28th September was a sunny and amazing day for us, the open source lovers. During the whole day, the Universidade Nova de Lisboa held the #OpenSourceLx event. The biggest and free open source event in Portugal.</p>

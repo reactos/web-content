@@ -2,9 +2,7 @@
 title:       "ReactOS Hackfest in Aachen"
 author:      "fireball"
 date:        2015-09-01
-aliases:     [ node/3455 ]
-news:        [ "news" ]
-
+aliases:     [ "node/3455" ]
 ---
 
 <h3>Day -1 (5th of August)</h3>

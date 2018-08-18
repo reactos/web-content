@@ -1,0 +1,13 @@
+---
+title:       "USB Help From Haiku"
+author:      "Z98"
+date:        2012-02-21
+aliases:     [ "usb-help-haiku", "node/309" ]
+---
+
+<p>The ReactOS and <a href="http://haiku-os.org/">Haiku</a> projects have had a friendly working relationship for several years now, with each group helping the other whenever possible. These range from helping each other with conference attendance at <a href="http://www.socallinuxexpo.org/">SCALE</a> and <a href="http://fosdem.org/">FOSDEM</a> to development related matters. Haiku was especially helpful during ReactOS' successful application to Google Summer of Code 2011, providing advice and feedback on ReactOS' application efforts, and the ReactOS project remains grateful for the assistance.</p>
+<p>The current ReactOS USB stack was started by Michael Martin, with Johannes Anderwald quickly joining in the development effort. Recently Johannes made significant <a href="../en/newsletter_90.html#sec1">progress</a> in completing its USB stack, thanks to the reference Haiku's USB stack provided.</p>
+<p>Many of the definitions and data structures that represent USB protocols were borrowed directly from Haiku, though the differing operating system design necessitated a great deal of glue to be written to make use of the code. Johannes also referenced Haiku's USB stack to better understand the behavior of USB devices and subtleties that might not be entirely clear in the USB specifications, and also provided feedback to Haiku as he worked through the code.</p>
+<p><img src="http://img580.imageshack.us/img580/6420/rosusb.png" alt="ReactOS installed on USB" width="1150" height="866" /><br />ReactOS installed into an USB stick</p>
+<p>Due to the similar goals and constraints both projects have worked under for much of our histories, we have a fair understanding of the difficulties the other faces. Both the ReactOS and Haiku projects hope that this is merely another chapter in a long line of collaborations yet to come.</p>
+<p>&nbsp;</p>

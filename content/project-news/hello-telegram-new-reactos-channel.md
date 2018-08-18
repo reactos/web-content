@@ -2,9 +2,8 @@
 title:       "Hello Telegram. A new #ReactOS channel"
 author:      "vicmarcal"
 date:        2016-06-17
-aliases:     [ node/11661 ]
+aliases:     [ "node/11661" ]
 tags:        [ "hello", "telegram", "social", "network" ]
-
 ---
 
 <p> Hello Telegram! </p>

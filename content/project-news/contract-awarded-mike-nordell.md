@@ -1,0 +1,11 @@
+---
+title:       "Contract Awarded to Mike Nordell"
+author:      "Z98"
+date:        2012-09-12
+aliases:     [ "contract-awarded-mike-nordell", "node/322" ]
+
+---
+
+<p>The ReactOS Project is delighted to announce another development contract funded by community donations. Mike Nordell was a previous ReactOS developer that went on sabbatical but continued to drop in to check on the project from time to time. As such, he has considerable experience developing ReactOS and extensive knowledge about the Windows NT architecture. As many people are aware of, ReactOS has a large test suite that checks to see whether specific functionality is working or not. Many of these tests crash or are on a blacklist due to them being known to fail. Mike's contract involves him investigating and trying to fix these crashing or canceled tests so that they at least run to completion, even if they fail. Once this is done, he intends to try to fix more of ReactOS so that more tests are actually passed as well.</p>
+<p>Time: 80 hours<br />Wage: 640&euro;<br />Objective: Attempts will be made to fix all Crash/Canceled tests in: gdiplus:font, gdiplus:graphics, kernel32:path, kmtest:RtlException, mshtml:htmldoc, mshtml:htmllocation, ntdll:exception, qmgr:job, qmgr:qmgr and wininet:http. Once the above tests are dealt with, efforts will shift to fixing of failed tests.</p>
+<p>&nbsp;</p>

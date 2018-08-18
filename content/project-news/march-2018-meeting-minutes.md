@@ -2,8 +2,7 @@
 title:       "March 2018 meeting minutes"
 author:      "Harteex"
 date:        2018-04-03
-aliases:     [ node/65622 ]
-
+aliases:     [ "node/65622" ]
 ---
 
 <p>2018-03-29<br />

@@ -1,0 +1,9 @@
+---
+title:       "ReactOS 0.2.7 Released!"
+author:      "frik85"
+date:        2005-08-23
+aliases:     [ "reactos-027-released", "node/244" ]
+---
+
+<h2>ReactOS 0.2.7 Released!</h2>
+<p>This release brings as always more compatibility and stability. At the time also heavy work on a new webpage is done. It will be up in a few weeks. </p>

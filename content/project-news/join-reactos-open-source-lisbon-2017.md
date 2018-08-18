@@ -2,8 +2,7 @@
 title:       "Join ReactOS in Open Source Lisbon 2017"
 author:      "vicmarcal"
 date:        2017-09-23
-aliases:     [ node/52033 ]
-
+aliases:     [ "node/52033" ]
 ---
 
 <p>As you may know ReactOS, during this year, has been already shown in Belgium, Germany and Spain in several open source events. We're always looking forward to be part of new events and reach new countries.</p>

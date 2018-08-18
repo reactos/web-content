@@ -1,0 +1,11 @@
+---
+title:       "ReactOS 0.2.6 Final released!"
+author:      "frik85"
+date:        2005-04-10
+aliases:     [ "reactos-026-final-released", "node/243" ]
+---
+
+<h2>ReactOS 0.2.6 Released!</h2>
+<p>As always a new release brings increases in speed, stability and compatibility.</p>
+
+<p>The next release, 0.3, will feature many improvements - but most notably somewhat usable networking. </p>

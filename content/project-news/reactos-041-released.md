@@ -2,9 +2,7 @@
 title:       "ReactOS 0.4.1 Released"
 author:      "Z98"
 date:        2016-05-17
-aliases:     [ node/9485 ]
-news:        [ "news" ]
-
+aliases:     [ "node/9485" ]
 ---
 
 <p>The ReactOS team is proud to announce the release of version 0.4.1 a mere three months after the release of 0.4.0. The team has long desired an increased release tempo and the hope is that this will be the first of many of faster iterations.</p>

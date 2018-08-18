@@ -2,9 +2,7 @@
 title:       "September 2015 meeting minutes"
 author:      "EmuandCo"
 date:        2015-10-18
-aliases:     [ node/3458 ]
-news:        [ "news" ]
-
+aliases:     [ "node/3458" ]
 ---
 
 <p>2015-09-24<br />

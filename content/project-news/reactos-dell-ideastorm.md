@@ -1,0 +1,11 @@
+---
+title:       "ReactOS at DELL IdeaStorm"
+author:      "fireball"
+date:        2007-03-07
+aliases:     [ "reactos-dell-ideastorm", "node/275" ]
+---
+
+<h2>DELL IdeaStorm project</h2>
+<p>After some requests from people&nbsp;at our forum, we decided to add an <a href="http://www.dellideastorm.com/article/show/64682/">idea</a>&nbsp;about ReactOS&nbsp;to the <a href="http://www.dellideastorm.com">DELL IdeaStorm</a> project.</p>
+<p>If you like this <a href="http://www.dellideastorm.com/article/show/64682/">idea</a>, &quot;Promote&quot; it, and it'll get higher on the list of popular ideas.</p>
+<p>Thanks!</p>

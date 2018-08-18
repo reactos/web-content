@@ -2,7 +2,7 @@
 title:       "ReactOS 0.4.9 released"
 author:      "Colin Finck"
 date:        2018-07-23
-aliases:     [ node/69568 ]
+aliases:     [ "node/69568" ]
 tags:        [ "release", "0.4.9", "self-hosting", "zipfldr", "shell", "cc", "mm" ]
 ---
 

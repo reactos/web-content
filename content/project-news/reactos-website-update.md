@@ -1,0 +1,12 @@
+---
+title:       "ReactOS Website Update"
+author:      "frik85"
+date:        2005-11-30
+aliases:     [ "reactos-website-update", "node/250" ]
+---
+
+<h2>ReactOS Website Update</h2>
+<p>The ability to browse through the newsletters and news entries wasn't so easy. I got response from several visitors. In conclusion, they prefer a WineHQ newsletter style layout.</p>
+<p>I rewrote the newsletter and news interface and add a ReactOS News Feed (RSS 2.0 and Atom 1.0).</p>
+<p>Everything is available <a href="[#link_index]">on the website frontpage</a>!</p>
+<p>If you have ideas or suggestion about the website please use the <a href="http://www.reactos.org/forum/">ReactOS Forums</a> and/or the <a href="http://www.reactos.org/wiki/">ReactOS Wiki</a>.</p>

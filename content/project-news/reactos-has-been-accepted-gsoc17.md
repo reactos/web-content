@@ -2,9 +2,8 @@
 title:       "ReactOS has been accepted for GSOC'17"
 author:      "vicmarcal"
 date:        2017-02-27
-aliases:     [ node/33477 ]
+aliases:     [ "node/33477" ]
 tags:        [ "gsoc", "students", "call", "announce" ]
-
 ---
 
 <p>The ReactOS Team is proud to announce that Google has once again selected the ReactOS project to be part in the upcoming 2017 Google Summer of Code.</p>
