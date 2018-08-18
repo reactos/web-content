@@ -187,9 +187,6 @@ paginate = 10
     defaultKeywords = ["devows", "hugo", "go"]
     defaultDescription = "Site template made by devcows using hugo"
 
-    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
-    style = "blue"
-
     about_us = "ReactOS is a registered trademark of ReactOS Foundation in the USA and other countries. "
     copyright = "ReactOS Project"
 

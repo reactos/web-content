@@ -1432,6 +1432,7 @@ fieldset[disabled] .btn-template-primary.active {
 .box-simple {
   text-align: center;
   margin-bottom: 40px;
+  min-height: 230px;
 }
 .box-simple .icon {
   color: #467fbf;
@@ -1658,6 +1659,10 @@ fieldset[disabled] .btn-template-primary.active {
   -ms-transform: translate(0, 100%);
   -o-transform: translate(0, 100%);
   transform: translate(0, 100%);
+}
+.box-image-text .image {
+  min-height: 200px;
+  max-height: 200px;
 }
 /* universal box */
 .box {
