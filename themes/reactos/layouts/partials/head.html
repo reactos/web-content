@@ -23,22 +23,13 @@
   <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
 
   <!-- Bootstrap and Font Awesome css -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | relURL}}">
+  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL}}">
 
   <!-- Css animations  -->
   <link href="{{ "css/animate.css" | relURL}}" rel="stylesheet">
 
-
   <link href="{{ "css/style.blue.css" | relURL}}" rel="stylesheet" id="theme-stylesheet">
-
-  <!-- Responsivity for older IE -->
-  {{ `
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  ` | safeHTML }}
 
   <!-- Favicon and apple touch icons-->
   <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon" />
