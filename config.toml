@@ -1,4 +1,4 @@
-baseurl = "https://colinfinck.github.io/web-content/"
+baseurl = "https://colinfinck.github.io/"
 title = "ReactOS Website"
 theme = "reactos"
 languageCode = "en-us"
