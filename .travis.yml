@@ -8,6 +8,7 @@ script:
 deploy:
   provider: pages
   repo: ColinFinck/ColinFinck.github.io
+  target-branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: public
