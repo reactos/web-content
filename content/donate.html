@@ -23,19 +23,25 @@ scripts:
 		<h2>PayPal</h2>
 		<p> PayPal is one of the most popular ways to donate some bucks to ReactOS. Please help us to hire new devs and enhance our servers just by dropping a couple of coffees each month.</p>
 
-		<div class="input-group-btn" data-toggle="buttons" style="display: inline">
-			<label class="btn btn-default">
-				<input type="radio" name="options" id="option1" autocomplete="off"> 5 €
-			</label>
-			<label class="btn btn-default active">
-				<input type="radio" name="options" id="option2" autocomplete="off" checked> 10 €
-			</label>
-			<label class="btn btn-default">
-				<input type="radio" name="options" id="option3" autocomplete="off"> 15 €
-			</label>
-		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="input-group-btn" id="amount_buttons" data-toggle="buttons" style="display: inline">
+					<label class="btn btn-default">
+						<input type="radio" name="amount_options" value="5" autocomplete="off"> 5 €
+					</label>
+					<label class="btn btn-default active">
+						<input type="radio" name="amount_options" value="10" autocomplete="off" checked> 10 €
+					</label>
+					<label class="btn btn-default">
+						<input type="radio" name="amount_options" value="15" autocomplete="off"> 15 €
+					</label>
+				</div>
+			</div>
 
-		<input type="text" name="amount" class="form-control" style="display: inline; height: 32px; width: 5em; margin-left: 1em;"> €<br><br>
+			<div class="col-sm-6">
+				<input type="text" id="other_amount" class="form-control" style="display: inline-block; width: 5em; height: 32px;"> €
+			</div>
+		</div><br>
 
 		<div style="text-align-last: justify">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: inline;">
@@ -44,6 +50,7 @@ scripts:
 				<input name="currency_code" value="EUR" type="hidden">
 				<input name="business" value="deutschland@reactos.org" type="hidden">
 				<input name="lc" value="US" type="hidden">
+				<input name="amount" class="hidden_amounts" value="10" type="hidden">
 				<input name="return" value="https://reactos.org/thank-you" type="hidden">
 				<button class="btn btn-default">Donate once</button>
 			</form>
@@ -56,7 +63,7 @@ scripts:
 				<input name="lc" value="US" type="hidden">
 				<input name="src" value="1" type="hidden">
 				<input name="srt" value="52" type="hidden">
-				<input name="a3" value="10" type="hidden">
+				<input name="a3" class="hidden_amounts" value="10" type="hidden">
 				<input name="p3" value="1" type="hidden">
 				<input name="t3" value="M" type="hidden">
 				<input name="no_note" value="1" type="hidden">
