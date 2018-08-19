@@ -1,0 +1,13 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Files with these extensions should have native line endings of the OS.
+*.md text
+*.svg text
+
+# Files with these extensions are accepted binary files.
+# Git must not tamper with them at all!
+*.gif binary
+*.ico binary
+*.jpg binary
+*.png binary
