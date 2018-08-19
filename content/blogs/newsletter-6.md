@@ -1,0 +1,58 @@
+---
+title:       "Newsletter 6"
+author:      "TwoTailedFox"
+date:        2005-11-20
+aliases:     [ "newsletter-6", "node/146" ]
+---
+
+<p>Welcome to Issue 6, the Issue that confirms we've beaten Splash. And to celebrate, this is going to be a Big issue. First off, We'll be taking a look at where ReactOS is headed, other than for x86, covering the Xbox, Xen, and PowerPC ports.</p>
+
+<p>And we've also got out first vic.. I mean volunteer for our very first Interview.
+.. Now there's no excuse for the rest of the Developers to not volunteer!</p>
+
+<p>But first, let's take a look on what's been going on behind the scenes.</p>
+
+<h2>Why Port ReactOS?</h2>
+
+<p>This is a question with many answers, but for most, the answer is a simple one: To expand the potential for the Operating System later on. The popularity of Linux stems from its ability to be a very flexible Operating System. Look at any major Linux Distribution, like Fedora Core, and Debian. They offer a multitude of options, including:</p>
+
+<ul>
+<li>PowerPC</li>
+<li>x86 (aka IA-32)</li>
+<li>x86-64 (aka AMD64/EM64T)</li>
+<li>SPARC</li>
+<li>IA-64</li>
+<li>NEC Alpha</li>
+<li>Xen</li>
+</ul>
+
+<p>ReactOS has the following Ports in progress:</p>
+
+<ul>
+<li>PowerPC</li>
+<li>x86</li>
+<li>Xbox</li>
+<li>Xen</li>
+</ul>
+
+<h2>PowerPC? Why are we targeting the Macintosh platform?</h2>
+
+<p>PowerPC isn't just used by Macs, although it has to be said, they've been one of it's most loyal customers, until they chose to switch to the Intel x86 Platform, for Power Consumption reasons on the iBook series of Notebooks.<p>
+
+<p>The PowerPC Platform will give us a great deal of flexibility, by allowing us to appeal directly to Enthusiasts. Not many are aware of this fact, but all 3 of the Next Generation Console Systems (Which would be the Microsoft Xbox 360, Sony Playstation 3, and Nintendo Revolution) are built on the PowerPC Architecture. Even the Cell Processor, the much acclaimed CPU System for the Playstation 3, is PowerPC-Based. The Xbox 360 has some real potential, to become the test bed for an SMP PowerPC build of ReactOS.</p>
+
+<p>How far has the PowerPC port of ReactOS come? Well, the short answer is to look <a href="http://www.reactos.org/wiki/index.php/PowerPC">here</a>. Only, that page doesn't look comprehensible to anyone but arty (who is working on the PowerPC port, in addition to his main work, implementing Networking in ReactOS)... Long and short of it is, Freeldr starts booting, but crashes immediately, because the support for direct disk access isn't there yet.</p>
+
+<h2>What is 'Xen'? I've never heard of it.</h2>
+
+<p>Unless you're an involved Linux user, you probably won't. Xen is an Open-Source attempt to make a Virtualization System, that is capable of running more than one copy of the Operating System simultaniously. The Major difference between this, and a system like QEMU, or VMWare, is that Xen isn't attempting to emulate the hardware that the Operating System is to run on, instead using the Installed Hardware to do so.</p>
+
+<p>As you've probably made out, it's quite a complicated port, made doubly difficult from the Limitation that it needs to be compiled on Linux to be built correctly. So far, the only Linux Distribution I know of (And people will correct me on this, just watch), that has dedicated support for Xen, is Fedora Core 4. And I've just been informed that SuSE 10 also has offical support for Xen, as well as support in the following Linux/*nix Variants:</p>
+
+<ul>
+<li>Debian (Doesn't meet Quality requirements)</li>
+<li>Solaris (Still working with older Xen versions</li>
+<li>NetBSD</li>
+</ul>
+
+<p>Our Xen port starts booting, but crashes as soon as the Kernel starts loading. G

@@ -1,0 +1,41 @@
+---
+title:       "Newsletter 51"
+author:      "Z98"
+date:        2009-01-12
+aliases:     [ "newsletter-51", "node/191" ]
+---
+
+<h2>Drawing Bugs</h2>
+<p>
+Two issues were recently fixed that caused some problems in Firefox 2.  The first was the page loaded would wash out after about 60 seconds of inactivity.  The problem was in NtGdiGetDIBitsInternal, where the function was using the device context's palette instead of the bitmap's.  The second problem involves the logos and images on Firefox's Google homepage being blacked out or completely missing entirely.  This problem is slightly more complex as it involved the three types of "bitmaps" that Windows supports.
+</p>
+<p>
+The first type are Device Dependent Bitmaps, which you create using the CreateBitmap function.  All drawing to these bitmaps are done through BitBlt and other GDI functions.  The second type are Device Independent Bitmaps, in which you get a pointer to the bits and have to do all drawing yourself without any help from GDI.  The final type are Device Independent Bitmap Sections, which are a mixture of the two previous types.  With DIBS, you have both a handle to the bitmap so you can use GDI functions, but you also have a pointer to the bits so you can manually manipulate them if need be.
+</p>
+<p>
+GDI handles the colors for DDBs and DIBs and DIBSs differently, a difference that our code did not account for.  DDBs rely on the color you set in the target device context you are drawing to, whereas DIBs and DIBSs have their own color tables that get processed to determine how the image should look.  In drawing the image, GDI was using the device context's colors regardless of whether the bitmap was a DDB or a DIB.  Since with a DIB its colors aren't in the device context, what we got was the default white/black.
+</p>
+<p>
+Both problems have been fixed by Timo Kreuzer and Firefox 2 is back to looking like how it should be.
+</p>
+<h2>Filesystem Work</h2>
+<p>
+Pierre Schweitzer has been quite busy working on the filesystem branch, implementing functionality in the FsRtl and services in other components that FsRtl relies on.  One such item is notifications for changes to volume states or creation of new files.  The kernel actually uses two data structure internally for such notifications and Pierre only has information on one of them, so he is still doing more research.
+</p>
+<p>
+Besides notifications, Pierre has been working on filter contexts.  There are two types, PerStream and FileObject.  PerStream are now implemented but the FileObject ones are much more complex as they require some additional functionality to be implemented in the I/O Manager.  Those that have been following the project for a while may recall the issues our Named Pipe Filter Drivers gave us a while back.  Perhaps with more filter contexts being completed we can put those problems behind us finally.
+</p>
+<p>
+Another item Pierre has been working on is code dealing with strings.  The problem here was that the ASCII functions are also supposed to support DBCS characters, which use two bytes per character.  As such, he could not simply convert the ASCII strings to unicode and pass them to the appropriate unicode function to handle.
+</p>
+<p>
+One thing that FsRtl completely lacks are the locks it is supposed to provide.  Any that are currently needed are hacked in and implementing them now will be a very tricky matter.
+</p>
+<p>
+While FsRtl is in a very incomplete state, there are parts that have been implemented.  One such is FastIO, which allows drivers to bypass the I/O manager and directly communicate with the Common Cache.  If you went through the I/O Manager you would need to use IRPs, which need to be allocated, sent, completed, and freed, adding overhead to your requests.
+</p>
+<h2>Doxygen</h2>
+<p>
+After many months where we tried to keep people away from our Doxygen files because they were so outdated, Ged has rerun it on our current trunk and it appears whatever bug that was causing an infinite loop before is now gone.  As such, the links on the site have been restored.  The pages were never actually taken down as a search on Google for a specific internal function tended to lead to them, which was unfortunate considering how old they were.  Hopefully now people looking for information on functions and data structures will find something more useful than a stub or incorrect implementation.  Doxygen also has a few other features such as tagging todos, bugs, and the like that will provide a more detailed view into ReactOS development for those interested.
+</p>
+

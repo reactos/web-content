@@ -1,0 +1,37 @@
+---
+title:       "Newsletter 40"
+author:      "Z98"
+date:        2008-05-05
+aliases:     [ "newsletter-40", "node/180" ]
+---
+
+<h2>Microsoft DirectX Runtime</h2>
+<p>
+First, let me state that legally, according to the whole  Windows Genuine Advantage and EULA, you&#39;re not supposed to install the MS DirectX runtime on nongenuine Windows systems.  On the other hand, the runtimes that come with various games as a prerequisite to playing the game aren&#39;t technically bound by the WGA.  That aside, the MS DirectX runtime now loads on ReactOS.  To get DX on, you need to manually copy the following files: dxg.sys, dxgthk.sys, dxapi.sys, ddraw.dll, and dciman32.dll.  The installer itself still doesn&#39;t work and neither does 3D.  However, simple 2D now works, with hardware acceleration.  This is on VMWare Workstation where DirectX hardware acceleration is supported.
+</p>
+<p>
+In order to get the runtime to work, a lot of effort has gone into fixing and implementing things in gdi32.dll and win32k.sys. Work on this actually started in 2004, so it&#39;s taken a while to reach this point. Thanks goes out to Magnus Olsen, Timo Kreuzer, Jim Tabor, Maarten Bosma, and Alex Ionescu for getting those components into shape and Kamil Hornicek for his help in testing the DirectX and ReactX components.
+</p>
+<p>
+Keep in mind that this is Microsoft&#39;s DirectX we&#39;re talking about, not Wine&#39;s or ReactX.  We can achieve 3D through using some of Wine&#39;s DX dlls.  However, by running MS&#39; runtime, we can test the implementation of functions in gdi32.dll and win32k.sys.  All DX functions resolve down there anyways.
+</p>
+<h2>Major Bug Fixes</h2>
+<p>
+Not too long ago, Alex Ionescu tracked down a series of timing and locking bugs in ReactOS.  These ranged from completely broken algorithms to just changing the type of lock used in certain situations, eliminating race issues, deadlocks, and other nastiness. The performance boost in certain situations were just obscene, with a boost of 150% during installation according to Alex&#39;s tests. Other major fixes were applied to the memory manager, replacing hacked code and various optimizations.  Needless to say, we&#39;re all greatful for the help.
+</p>
+<p>
+To those of you wondering why Alex is still developing for ReactOS, here&#39;s the explanation.  First, the bugs in the locking code were actually fixed by Aleksey Bragin.  Alex simply supplied the information and pointed out the problem spots.  The code he did contribute was in fixing memory management problems. However, the memory management component of ReactOS is the biggest hold over from before the massive kernel rewrite to make the system behave more like NT.  As such, even though our memory manager provides the same functionality, it is nothing like the NT memory manager.  In fact, if you read the Windows Internals book and tried to work on the ReactOS memory manager, you&#39;d have a rough time of it, something I can personally atest to.  Fixing bugs in existing code is certainly permissible, as it&#39;s not that hard to spot bad code just by reading through it.
+</p>
+<h2>New Calculator</h2>
+<p>
+A while back, a programmer named Carlo Bramini began putting together a calculator program using the Windows API.  He didn&#39;t like the Wine calculator we were using and decided give more funcationality to his.  Well, congratulations Carlo, cause it&#39;s now part of the included apps in ReactOS.  We thank you for all your work in programming it and hope to see future contributions from you. Carlo&#39;s calculator is included as a base application, while the Wine Calc has been moved to RosApps.
+</p>
+<h2>Keyboard Switching</h2>
+<p>
+Dmitry Chapyshev added a way to do keyboard switching, a request many people have made.  This is still a temporary measure, as the proper implementation will need to wait until we have a proper Explorer shell, as it&#39;s supposed to be a toolbar of some sort. Still, this is greatly appreciated by people who don&#39;t use the US keyboard layout.
+</p>
+<h2>0.3.5</h2>
+<p>
+Keeping in mind that we said the earliest a release of 0.3.5 would come out is April 2008, those of you curious as to what the hold up is, we currently have about three to six blockers that need to be resolved.&nbsp; I say three to six because Aleksey may decide to demote some of them or they might have been fixed already with the memory management patches from Alex.&nbsp; More testing is needed.&nbsp; Also, I&#39;m currently in exam mode so the time I can commit to wrapping up changelogs is limited.&nbsp; Hopefully, by the end of next week, everything will be taken care of. 
+</p>
+

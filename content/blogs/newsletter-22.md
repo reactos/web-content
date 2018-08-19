@@ -1,0 +1,31 @@
+---
+title:       "Newsletter 22"
+author:      "Z98"
+date:        2007-04-15
+aliases:     [ "newsletter-22", "node/163" ]
+---
+
+<h2>A New Volume</h2>
+When Samuel took over the newsletter, there was no guideline as to what constituted a Volume.&nbsp; After talking to him, we decided to mark Volumes by year.&nbsp; This means that Volume 1 had nine issues from 2005, Volume 2 had five issues from 2006, and Volume 3 has eight issues and counting in 2007.&nbsp; And now we continue the biweekly rotation of who writes the meat of the article.&nbsp; Samuel will continue to provide the statistics from SVN and bugzilla though.<br/>
+<h2>Minor and Major Developments<br/>
+</h2>
+<p>Not much has actually happened within the last two weeks.&nbsp; Aleksey Bragin is on vacation and the plan is to branch 0.3.2 after his return.&nbsp; Magnus Olsen has been cleaning up DX headers and updating them as he finds them on his harddrive.&nbsp; He had suffered a crash and is trying to avoid losing any of the actual data.&nbsp; The only news item of major longterm significance would be the new documentation system being set up by Timo Kreuzer.&nbsp; Known as Physicus on IRC and ThePhysicist on the forums, he has been working on the code for it for quite some time.&nbsp; A simple preview and test was available on his website, but they were only of two minor pieces of code and formatting issues existed.&nbsp; The importance of this system cannot be overestimated.&nbsp; ReactOS' weakest point is still the state of its documentation.&nbsp; While one could look at the code, trying to figure out the relationships between various files, data structures, and functions can get very difficult.&nbsp; Kreuzer's system would help alleviate much of this issue and make it easier for newcomers to understand what the code is doing.&nbsp; Kreuzer recently ran a test of the system on the entire tree.&nbsp; After some more tweaking and formatting corrections, it will be usable by the general public.&nbsp; I personally have been asking for such a system for a long time, but the limited development resources worked against its creation.&nbsp; This tool is another important addition to ReactOS' infrastructure so be sure to congratulate him once it goes live.</p>
+<h2>SVN Summary</h2>
+<ul>
+    <li>dgorbachev - Reorganized language/resource files, commited several translations and fixed several bugs.</li>
+    <li>ekohl - a lot of work on control panel applets and related functionality.</li>
+    <li>fireball - improved code correctness, fixed kernel bugs and removed compiler warnings.</li>
+    <li>gedmurphy - rewrote tracert, worked on charmap and&nbsp;Html Help(hh.exe).</li>
+    <li>greatlrd - worked on GDI callbacks for DirectX,&nbsp;updated ReactOS DX SDK headers, updated freetype and dejavu.</li>
+    <li>ion - refactored and cleanup&nbsp;some kernel IO&nbsp;and PNP routines, refactored&nbsp;null and fs_rec drivers, fixed several kernel bugs.</li>
+    <li>janderwald - started work on ODBC control panel app.</li>
+    <li>spectrolle - fixed minor UI and language issues, updated translations.</li>
+    <li>tkreuzer - worked on win32k, improved code and behavior to match that of windows.</li>
+</ul>
+<h2>BugZilla Activity</h2>
+<p>48 bugs were active, in the period from 2007-04-02 to 2007-04-15. Recent bugzilla spam(the nasty virus infected kind)&nbsp;was deleted, even in the history, and will not reflect anywhere.</p>
+<ul>
+    <li>24 new bugs, 2 already marked fixed.</li>
+    <li>A total of 12 bugs were fixed, 1 marked duplicate.</li>
+    <li>Oldest bug fixed was 1737 &quot;update file&quot; (refering to&nbsp;winmine).</li>
+</ul>

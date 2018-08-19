@@ -1,0 +1,875 @@
+---
+title:       "Newsletter 10"
+author:      "TwoTailedFox"
+date:        2006-01-09
+aliases:     [ "newsletter-10", "node/150" ]
+---
+
+<h2>Time to get this Newsletter Back on Track</h2>
+
+<p>A new year, a new start, I always say. Unfortunately, I was a little bit busier over the holiday period than I had anticipated, but now that I'm back doing early shifts, instead of the late ones I was being handed, I will have enough time set aside to continue.</p>
+
+<p>So, I'll start as I mean to go on... by Compiling! Yep, ReactOS' Source Code may be all-singing, all-dancing, bu without it being compiled, all it does it look like a pretty collection of ASCII Codes. So, without further ado, here is a tutorial for 'newbies'.</p>
+
+<h2>Compiling on Windows</h2>
+
+<h3>What do I need first?</h3>
+
+<p>You first need a working copy of the ReactOS SVN source code. Now, the ReactOS Wiki lists a command-line tool for SVN, but I prefer <a href="http://tortoisesvn.sourceforge.net">TortoiseSVN</a>. Very user friendly, and capable of complicated things, like making patches, and making diffs. Mind you, this is for Windows, I'm not really experienced enough to detail compilation on Linux, BSD, or Mac OS. However, such information is present on the ReactOS Wiki for <a href="http://www.reactos.org/wiki/index.php/HOWTO/setup_a_build_environment_for_Linux/Ubuntu_v5.x">Linux</a> and <a href="http://www.reactos.org/wiki/index.php/HOWTO/setup_a_build_environment_for_FreeBSD">FreeBSD</a>. But, it should be noted, that this is designed foe Amateurs. If you're experienced enough to know how to run a copy of Linux or BSD, it's generally granted you should know how to set up a build environment. ;)</p>
+
+<p>When Checking Out the code, the only directories you'll be really interested in reside in /trunk. The first thing you'll want to do is choose a nice, vacant space on a drive with preferably a large amount of free space. Create a Folder called 'ReactOS', and then make a subfolder called 'Trunk'. At this point, TortoiseSVN should be installed.</p>
+
+<p>Right click on 'Trunk', and select 'Checkout', from the SVN Submenu. Input svn://svn.reactos.org/trunk as the desired location. Note that it is now .org, not .com, since the DNS Entry for reactos.com has now been removed. Now, it will begin collecting all the source code in the Trunk.</p>
+
+<p>Now, you'll need a way to continually get updates as changes are uploaded to SVN. This comes in the form of SVN update. Again, right-click on "Trunk", and select SVN Update directly from the menu. It will then scan for changes made since the revision you have, and download them.</p>
+
+<h3>Fine, I have the code, now can I compile it?</h3>
+
+<p>Whoa, slow down, first you'll need a compiler. While there are many out there, the one most commonly used is the GNU C Compiler, abreviated GCC. GCC on Windows is contained in what is called the Minimalist GNU for Windows, abbreviated MinGW. You will need the following files:</p>
+
+<ul>
+<li><a href="http://prdownloads.sf.net/mingw/MinGW-3.1.0-1.exe?download">MinGW 3.1.0-1</a></li>
+<li><a href="http://prdownloads.sf.net/mingw/gcc-core-3.3.3-20040217-1.tar.gz?download">GCC Core 3.3.3</a></li>
+<li><a href="http://prdownloads.sf.net/mingw/gcc-g++-3.3.3-20040217-1.tar.gz?download">GCC G++ 3.3.3</a></li>
+<li><a href="http://prdownloads.sf.net/mingw/gcc-objc-3.3.3-20040217-1.tar.gz?download">GCC-Objc 3.3.3</a></li>
+<li><a href="http://prdownloads.sf.net/mingw/w32api-2.5.tar.gz?download">Win32API 2.5</a></li>
+<li><a href="http://prdownloads.sourceforge.net/mingw/binutils-2.15.94-20050118-1.tar.gz?download">binutils 2.15.94</a></li>
+<li><a href="http://www.kernel.org/pub/software/devel/nasm/binaries/win32/nasm-0.98.39-win32.zip">NASM 0.98</a></li>
+<li><a href="http://prdownloads.sf.net/mingw/mingw32-make-3.80.0-3.exe?download">GNU Make 3.80.0-3.exe</a></li>
+<li><a href="http://prdownloads.sf.net/mingw/mingw-runtime-3.8.tar.gz?download">MinGW Runtime 3.8</a></li>
+</ul>
+
+<p>MinGW should be installed to a directory that is easily remembered, like C:gcc. All the Gzipped Tarballs should be extracted to the gcc directory, overwriting any files. The new GNU Make EXE should go in gccbin, as should the contents of the NASM Zip.</p>
+
+<p>While you can use these versions, I've found that Win32API 3.3, Binutils 2.16.91, and GCC Core 3.4.4, GCC G++ 3.4.4, and GCC-Objc 3.4.4 can also be used. I've also included the MinGW Runtime, since unzipping that fixed a few things on my end.</p>
+
+<p>After that, we need to do a little bit of settings editing. On Whatever Windows version you have, you need to edit the Environment Variables. These are a list of locations that Windows looks when you run a command from the command-line. (Or in Start-> Run). Under NT, 2000, XO and 2003, it can be found under System -> Advanced. Under 'Paths', add 'C:gcc;C;gccbin;' to the beginning, ignoring the apostrophies. Swap 'C' for the drive you install it on.</p>
+
+<p>Once that's done, open up CMD, or the Command Interpreter. At the command line, switch to the directory you have the source code stored on. So, for me, it would be:</p>
+
+<ul>
+<li>S:</li>
+<li>cd SVN</li>
+<li>cd Reactos</li>
+<li>cd Reactos</li>
+</ul>
+
+
+<ul>
+<li>mingw32-make bootcd</li>
+<li>or</li>
+<li>mingw32-make livecd</li>
+</ul>
+
+<p>You can delete the old make.exe file, and rename mingw32-make.exe to make.exe to simplify the command, but it's optional if you wish to keep the old make file, for whatever twisted reason. After the compilation process, it will create an ISO Image, ready to burn. The bootcd instructs it to create a Bootable Install CD, the livecd instructs it to create a Bootable Live CD.</p>
+
+<h2>Eye on SVN</h2>
+
+<p>Whew. Thank God for Copy and Paste. Typing this out has made me consume around 30,000 keyboard clicks, according to my WhatPulse ticker. This is what happens when you let SVN commits pile up on you!</p>
+
+<p>So, read, enjoy, and be amazed at what ReactOS has done in the festive period!</p>
+
+<h3>CIS</h3>
+
+<ul>
+<li>Handle access denied scenario</li>
+</ul>
+
+<h3>IRC</h3>
+
+<h4>Techbot</h4>
+
+<ul>
+<li>Changed "Reactos.com" to "Reactos.org"</li>
+<li>Implemented "!bug <number>" command.</li>
+<li>Identify TechBot to allow private messages</li>
+</ul>
+
+<h3>CMD</h3>
+
+<ul>
+<li>Return error codes correctly</li>
+</ul>
+
+<h3>CPL</h3>
+
+<ul>
+<li>Make property sheet fit in 640x480</li>
+<li>Only allow bmp's since it is the only format supported by reactos.</li>
+<li>Put skeleton in place for 'internet time' tab in the 'date and time' control panel applet</li>
+</ul>
+
+<h3>Devmgr</h3>
+
+<ul>
+<li>Rename IsDeviceEnabled to IsDeviceStarted</li>
+<li>Add the driver page if necessary</li>
+<li>Fixed remote device property pages</li>
+<li>Display the driver provider, date and version</li>
+</ul>
+
+<h3>Drivers</h3>
+
+<h4>Bus</h4>
+
+<ul>
+<li>Now Reports current bus number during IRP_MN_QUERY_RESOURCES</li>
+<li>Child bus number is in u.type1.SecondaryBus field, not u.type1.SubordinateBus</li>
+</ul>
+
+<h4>Input</h4>
+
+<ul>
+<li>Fixed serial mouse type detection</li>
+<li>Replace STATUS_UNSUCCESSFUL by STATUS_TOO_MANY_NAMES</li>
+</ul>
+
+<h4>Net</h4>
+
+<ul>
+<li>Don't keep overwriting the first address entry, give the others a chance too.</li>
+<li>Fixes IP address display in ipconfig.</li>
+</ul>
+
+<h4>Video</h4>
+
+<ul>
+<li>Add check for VbeModeInfo->PhysBasePtr != 0.</li>
+<li>Implement VideoPortGetAssociatedDeviceExtension and VideoPortCheckForDeviceExistence</li>
+</ul>
+
+<h3>DHCP</h3>
+
+<ul>
+<li>Obtain DHCP info from DHCP client service</li>
+</ul>
+
+<h3>Explorer</h3>
+
+<ul>
+<li>Disable printer submenu folder in "settings" start menu</li>
+<li>Add allowwarnings ="true"  so explore can be build with dgb=0</li>
+<li>Refactor icon cache</li>
+<li>Display icon overlays in Explorer tree view</li>
+<li>Simplify SCAN flags</li>
+<li>Extend shell browser to use WINFS</li>
+<li>Resolve a few FIXMEs</li>
+<li>Simplified ShellBrowser initialization</li>
+<li>Now Handles /root command line option</li>
+<li>Correct folder display when using the "/e" command line option</li>
+<li>Handle owner draw menu messages in folder pane</li>
+<li>Disable WINFS in favor to code size using only shell namespace</li>
+<li>Removed WINFS</li>
+<li>Removed unused attributes</li>
+<li>correctly handle path of command line argument in explore mode</li>
+<li>Split logoff and shutdown resources</li>
+<li>Add icons for each</li>
+</ul>
+
+<h3>Freeldr</h3>
+
+<ul>
+<li>Added support for NTLDR style freeloader GUI. To enable, edit freeldr.ini and add:
+  <ul>
+    <li>ShowTime=No</li>
+    <li>MinimalUI=Yes</li>
+    <li>MenuBox=No</li>
+    <li>CenterMenu=No</li>
+    <li>TimeText=Seconds until highlighted choice will be started automatically:</li>
+    <li>Also make sure the following are set:</li>
+    <li>MenuTextColor=Gray</li>
+    <li>MenuColor=Black</li>
+    <li>TextColor=Gray</li>
+    <li>SelectedTextColor=Black</li>
+    <li>SelectedColor=Gray.</li>
+  </ul>
+</li>
+<li>Also made the boot-up screen black, not blue, since that's the actual color it's been after NT4. If booting without NOGUIBOOT, this results in a much nicer transition to the boot screen (especially if using the NTLDR theme)</li>
+<li>Some other minor changes done to simplify transitions while booting.</li>
+</ul>
+
+<h3>iBrowser</h3>
+
+<ul>
+<li>Aadd allowwarnings ="true"  so ibrowser can be build with dgb=0</li>
+</ul>
+
+<h3>GDI32</h3>
+
+<ul>
+<li>Implement CreateHatchBrush, CreatePatternBrush</li>
+</ul>
+
+
+<h3>INF</h3>
+
+<ul>
+<li>msmouse.inf: Change some section names to be able to install the vmware mouse driver (still not working)</li>
+<li>usbport.inf: Add identifier for Intel 82371SB PIIX3 USB controller</li>
+<li>hivesft.inf: Use Bitstream Vera Sans when asked for Tahoma.</li>
+</ul>
+
+<h3>Kernel32</h3>
+
+<ul>
+<li>Fixed bunch of bugs in GetVolumeNameForVolumeMountPointW</li>
+<li>Implement GetVolumeNameForVolumeMountPointW</li>
+<li>Fixed the definition of RtlDosPathNameToNtPathName_U</li>
+<li>Fix kernel-mode executive atom implementation (mostly add SEH and tidy up the code). Then fix kernel32 implementation which was sending incorrect sizes, and also re-factored the entire code, since most functions were quatriplicated. now there are 3 main functions instead of 12. Also fixed a bug in RtlCreateAtomTable.</li>
+<li>Correctly open the registry when using MOVEFILE_DELAY_UNTIL_REBOOT
+</ul>
+
+<h3>Keyboard</h3>
+
+<ul>
+<li>First attempt at a Hebrew keyboard</li>
+</ul>
+
+<h3>HAL</h3>
+
+<ul>
+<li>Separate UP and MP spinlock functions.</li>
+<li>Optimize UP spinlock functions so they don't call ntoskrnl anymore and only raise/lower irql.</li>
+<li>Implemented Queued Spinlocks and In-Stack Queued Spinlocks for UP machines.</li>
+<li>Implemented KeAcquireInStackQueuedSpinLock, KeReleaseInStackQueuedSpinLock, KeAcquireQueuedSpinLock, KeReleaseQueuedSpinLock,KeTryToAcquireQueuedSpinLock, KeTryToAcquireQueuedSpinLockRaiseToSynch, KeAcquireQueuedSpinLockRaisetoSynch.</li>
+</ul>
+
+<h3>Now able to Compile/Link with MSVC/DDK</h3>
+
+<h4>Drivers</h4>
+
+<ul>
+<li>AFD</li>
+<li>Atapi</li>
+<li>Beep</li>
+<li>Blue</li>
+<li>Bootvid</li>
+<li>Bus</li>
+<li>Buslogic</li>
+<li>Cdrom</li>
+<li>Chew</li>
+<li>Class2</li>
+<li>Csq</li>
+<li>Disk</li>
+<li>Diskdump</li>
+<li>Green</li>
+<li>IP</li>
+<li>Kdbclass</li>
+<li>Mouclass</li>
+<li>Mpu401</li>
+<li>NDIS</li>
+<li>Ne2000</li>
+<li>Oskittcp</li>
+<li>Parallel</li>
+<li>Pciidex</li>
+<li>PCnet</li>
+<li>Portcls</li>
+<li>Ramdrv</li>
+<li>Scsiport</li>
+<li>Sndblast</li>
+<li>Sound</li>
+<li>TCP/IP</li>
+<li>VBE</li>
+<li>VGA</li>
+<li>Wshtcpip</li>
+<li>Xboxvmp</li>
+</ul>
+
+<h4>Filesystems</h4>
+
+<ul>
+<li>CDFS</li>
+<li>NTFS</li>
+</ul>
+
+<h4>Components</h4>
+
+<ul>
+<li>Autochk</li>
+<li>Calc</li>
+<li>CMD</li>
+<li>Csrss</li>
+<li>Devmgr</li>
+<li>Expand</li>
+<li>Format</li>
+<li>Gettype</li>
+<li>HAL</li>
+<li>HalxBox</li>
+<li>Hostname</li>
+<li>Lsass</li>
+<li>MPHAL</li>
+<li>Msconfig</li>
+<li>Msiexec</li>
+<li>Notepad</li>
+<li>Ntdvm</li>
+<li>Reactos</li>
+<li>Regedit</li>
+<li>RegSvr32</li>
+<li>ReportError</li>
+<li>Rundll32</li>
+<li>Sc</li>
+<li>Services</li>
+<li>Servman</li>
+<li>Setup</li>
+<li>Sm</li>
+<li>Smss</li>
+<li>Sndvol32</li>
+<li>Userinit</li>
+<li>Usetup</li>
+<li>Vmwinst</li>
+<li>Welcome</li>
+<li>Winefile</li>
+<li>Winlogon</li>
+<li>Winver</li>
+<li>Win32k</li>
+</ul>
+
+<h4>Services</h4>
+
+<ul>
+<li>DHCP</li>
+<li>Event Log</li>
+<li>Tcvpsvcs</li>
+<li>Rpcss</li>
+<li>Unpnpmgr</li>
+</ul>
+
+<h3>Newdev</h3>
+
+<ul>
+<li>Set DI_FLAGSEX_ALLOWEXCLUDEDDRVS flag when searching a driver for a PnP device</li>
+</ul>
+
+<h3>NDK</h3>
+
+<ul>
+<li>Add missing RtlMakeSelfRelatedSd prototype.</li>
+<li>Add prototypes for Nt/ZwReplyWaitReceivePortEx, Nt/ZwImpersonateAnonymousToken</li>
+<li>Make more compatible with MS IFS</li>
+<li>Fix EX_WORK_QUEUE definition.</li>
+<li>Fix ETHREAD offsets.</li>
+<li>Fix RtlIsNameLegalDOS8Dot3 definition.</li>
+<li>Move splay tree defines to IFS.</li>
+</ul>
+
+<h3>Networking</h3>
+
+<ul>
+<li>Remember the last allocated port and try to allocate the next one on the following call</li>
+</ul>
+
+<h3>Ntoskrnl</h3>
+
+<ul>
+<li>Set DNF_ASSIGNING_RESOURCES, DNF_RESOURCE_ASSIGNED, DNF_RESOURCE_REPORTED and DNF_NO_RESOURCE_REQUIRED flags</li>
+<li>Set the ConfigFlags value in registry if not present</li>
+<li>Allow DIF_PROPERTYCHANGE as valid install code in SetupDiSetClassInstallParamsW</li>
+<li>Better stub for SetupDiChangeState</li>
+<li>change service pack from 6 to 4</li>
+<li>Implemented InterlockedBitTestAndReset, InterlockedBitTestAndSet, InterlockedExchangeAddSizeT.</li>
+<li>Added inlined functions for internal system use for quickest path.</li>
+<li>Correctly named all functions Exf instead of Ex.</li>
+<li>Removed PAGED_CODE(); macro where it shouldn't be used.</li>
+<li>Added multiple ASSERTS for sanity checks.</li>
+<li>Used macros for win64/32 portability.</li>
+<li>Invert CONFIG_SMP defines</li>
+<li>Remove KiBlockThread and replace by more elegant KiSwapThread which will also make moving to the new scheduler easier.</li>
+<li>Handle special case where we have kernel apcs pending and your previous irql was below apc_level during the wait code.</li>
+<li>Remove hack to manually unwait a thread during a status of kernel apc</li>
+<li>Fix Status/WaitStatus/Thread->WaitStatus confusion/mess and reduce to a signle variable.</li>
+<li>Fixed the register saving in ExfInterlockedCompareExchange64.</li>
+<li>Set the right Thread->WaitTime dring waits</li>
+<li>Initialize WaitBlock->Thread during thread creation.</li>
+<li>Make APCs queuable for the thread after it's created</li>
+<li>Enable Timer Block optimization since it works now. This allows us not to always set-up for each wait, since most of its fields can remain static.</li>
+<li>Properly link wait block together with the waitlist of the timer.</li>
+<li>Remove some public APIs from internal headers.</li>
+<li>Remove some internal APIs/types from public headers.</li>
+<li>Make PSECTION_OBJECT a PVOID unless really needed (which should only be inside mm)</li>
+</ul>
+
+<h4>Fixed the following bugs/features:</h4>
+
+<ul>
+<li>ExfAcquireRundownProtection: Added specific code instead of calling the generic function. Rundown locks are performance critical and a dedicated path is prefered.</li>
+<li>ExfAcquireRundownProtectionEx: Added a quick immediate check to see if the rundown is active.</li>
+<li>ExfReleaseRundownProtection: Added specific code instead of calling the generic function. Rundown locks are performance critical and a dedicated path is prefered.</li>
+<li>ExfReleaseRundownProtectionEx: Simplified the loop code, Fixed a bug in signaling of the event during waitblock count removal</li>
+<li>ExfWaitForRundownProtectionRelease: Add quick case when we don't actually need a full wait, and Simplified loop code.</li>
+<li>Added stubs for cache-aware implementation.</li>
+<li>Documented the functions.</li>
+<li>Fix InterlockedBitTestAndReset and InterlockedBitTestAndSet</li>
+<li>Implement YieldProcessor</li>
+<li>Fix formatting in spinlock.c</li>
+<li>KiAcquireSpinlock and KiReleaseSpinLock should be no-op functions on uniprocessor machines.</li>
+<li>KiReleaseSpinLock does not need interlocked access to release the lock.</li>
+<li>Use portable code for KiAcquireSpinLock. Also use interlocked bit operations since they are faster.</li>
+</ul>
+
+<h4>Rewrite Executive Interlocked Functions to actually work as supposed and also immensly increase their speed, most notably on non-SMP machines</h4>
+
+<ul>
+<li>The functions now disable interrupts as they should. This is a core functionality of the ExInterlocked functions which we did not do.</li>
+<li>The functions now preserve EFLAGS as they should. This is another core functionality and point of ExInterlocked functions, which we did not do.</li>
+<li>Use KiAcquire/ReleaseSpinlock equivalents instead of going through HAL. Also make them macros which can be later used in other assembly files.</li>
+<li>Write optimized versions for non-SMP machines. Namely, the spinlock macros are coded to be no-ops on UP machines, since they are not needed.</li>
+<li>Write all functions in assembly, so we can cleanly optimize them and properly restore/save EFLAGS and use CLI.</li>
+<li>Use the right interlocked macro in guarded mutex implementation.</li>
+<li>Fix export of Exi386InterlockedExchangeUlong</li>
+<li>Use documented EFLAGS definition instead of hard-coded value in some interlocked functions.</li>
+<li>Cleanup assembly files and create a header for the macros added and new ones that will be added later for syscall.S & friends.</li>
+<li>Implemented the 'red zone check' for the non paged pool.</li>
+<li>Implement Pushlocks. Only Waking, and Exclusive Acquire/Release + Waits have been tested. The shared paths and block/unblock are still untested and may probably contain bugs. Pushlocks are not yet used in the kernel and they won't be until all paths are tested and validated.</li>
+<li>Public DDIs Implemented: ExfAcquirePushLockExclusive, ExfAcquirePushLockShared, ExfTryToWakePushLock, ExfReleasePushLock, ExfReleasePushLockExclusive, ExfReleasePushLockShared, ExfUnblockPushLock.</li>
+<li>Implemented Queued and In-Stack Queued Spinlocks</li>
+</ul>
+
+<h4>Fix shamefully dangerously broken Work Thread/Queue/Item implementation</h4>
+
+</ul>
+<li>Do not pollute the kernel with 10 real-time threads and 5 high-priority threads in order to manage work items. Work threads are very-low priority (< 7) and should never pre-empt userthreads like they do now. 1 priority 7, 5 priority 5 and 3 priority 4 threads are now properly created.</li>
+<li>Implement a worker thread balance set manager. On SMP systems, it is able to determine when a new thread should be allocate to execute on a free CPU. On both UP and MP, it is also able to detect if a work queue has deadlocked, and will allocate new dynamic threads to unfreeze the queue.</li>
+<li>Add check for threads returning with APC disabled, and re-enable APCs if this happend. This hack is used in NT for broken drivers.</li>
+</ul>
+
+<h4>Lots of code changes to support dynamic threads, which</h4>
+
+<ul>
+<li>Can terminate.</li>
+<li>Use a 10 minute timeout on the kernel queue.</li>
+
+<li>Add skeleton code for swapping worker thread stacks as well as worker thread shutdown (not yet implemented).</li>
+<li>Add WORKER_INVALID bugcheck definition.</li>
+<li>These changes seem to make ROS a lot more responsive.</li>
+<li>New ERESOURCE implementation: fixes the return value of some functions (VOID vs NTSTATUS, USHORT vs ULONG), as well as optimized the code loops and general structure of the code. Additionnaly, functions do not simply call other functions with similar names; the exact implementation of each function has now been properly separated (see the DDK for more information on this) to have the most optimized scenarios.</li>
+<li>Also, the spinlock is not actually acquired on non-SMP builds; instead, interrupts are blocked and unblocked for acquire/release, this optimizes locking.</li>
+<li>Added many asserts and bugcheck scenarios.</li>
+<li>Added thread priority boosting.</li>
+<li>Added some debugging helpers and deadlock detection.</li>
+<li>Added RESOURCE_NOT_OWNED bugcehck message.</li>
+</ul>
+
+<h4>Fix some bugs in Kernel Queue implementation</h4>
+
+<ul>
+<li>KeRemoveQueue did not set Thread->WaitNext = FALSE if it was called with WaitNext = TRUE.</li>
+<li>KeRemoveQueue did not handle the case where a kernel-mode APC is pending and the previous IRQL was below APC_LEVEL.</li>
+<li>KeRemoveQueue did not set the thread's wait status to 0.</li>
+<li>KiInsertQueue did not set the Thread's wait status to the entry being inserted.</li>
+<li>KiInsertQueue did not remove the thread from its wait list.</li>
+<li>KeRemoveQueue did not properly link the wait blocks.</li>
+</ul>
+
+
+</ul>
+
+<h3>Rbuild</h3>
+
+<ul>
+<li>Modified rbuild to generate a map file of the boot loader</li>
+</ul>
+
+<h4>Rbuild MSVC Backend changes</h4>
+
+<ul>
+<li>Don't do runtime checks for drivers</li>
+<li>Don't do buffer checks for drivers</li>
+<li>Use W0 for speed build, not for the release build.</li>
+<li>Disable Wp64 only for the speed build, not for the release build</li>
+<li>Use /STDCALL default calling convention for native modules because the DDK requires it</li>
+<li>Remove some duplicated options that were passed on the command line</li>
+<li>Replace some options that were passed on the commandline with their appropriate XML keywords.</li>
+</ul>
+
+
+<h3>RosCMS</h3>
+
+<h4>Website Status Page</h4>
+
+<ul>
+<li>Fixed translation date</li>
+<li>Add day counter and "date colors"</li>
+</ul>
+
+
+<h4>User Accounts Admin Interface Page</h4>
+
+<ul>
+<li>Improved the navigation</li>
+<li>Outsourced the color settings</li>
+</ul>
+
+
+<h4>Membership pPage</h4>
+
+<ul>
+<li>Improved the interface and sql queries, outsourced the color settings</li>
+</ul>
+
+<h4>Static Page Generator</h4>
+
+<ul>
+<li>It's now possible to generate only the changed pages</li>
+</ul>
+
+<h4>General</h4>
+
+<ul>
+<li>New updated sql file (with sample content entries)</li>
+<li>Fixed the "preview" bug</li>
+<li>Simplified the translator interface</li>
+<li>Improved the interface user interface</li>
+<li>Improve edit/save contents</li>
+<li>Fixed "Warning: Headers already sent" bug when logging into "myReactOS" in russian locale.</li>
+<li>Add a link to the new faq entry in the "You are already logged in" error message.</li>
+<li>Improved the Page Generator Overview page</li>
+<li>Simplified the menu bar</li>
+<li>Added support for Swedish and Italian Languages</li>
+</ul>
+
+<h3>Services</h3>
+
+<ul>
+<li>Implement QueryServiceConfigW</li>
+<li>Add QueryServiceConfig2A stub.</li>
+<li>Implement QueryServiceObjectSecurity and SetServiceObjectSecurity</li>
+<li>Implement EnumServicesStatusW.</li>
+<li>Add server stubs for ChangeServiceConfigA, GetServiceDisplayNameA, GetServiceKeyNameA and QueryServiceStatusEx.</li>
+<li>Implement QueryServiceStatusEx.</li>
+<li>Implement EnumServicesStatusExW.</li>
+<li>Add missing [unique] Attributes to svcctrl.idl.</li>
+<li>Forward StartServiceA/W to services.exe</li>
+<li>Forward ChangeServiceConfig2A, QueryServiceConfig2A/W and EnumServicesStatusExA to services.exe</li>
+<li>Forward EnumDependentServicesA/W to services.exe.</li>
+<li>Forward QueryServiceLockStatusA/W to services.exe.</li>
+</ul>
+
+<h3>Servman</h3>
+
+<p>A Start to put together a services.msc equivalent.</p>
+
+<ul>
+<li>Added the properties dialog</li>
+<li>Add an about dialog</li>
+<li>Split up the query code to make it more usable</li>
+<li>Call description from the registry</li>
+<li>Many other code mods</li>
+<li>Pull service info out of the registry to populate the list view</li>
+<li>List items alphabetically</li>
+<li>Double click opens properties dialog</li>
+<li>A very rough implementation of the control buttons.</li>
+<li>implement list refreshing and program exit</li>
+</ul>
+
+<h3>SetupAPI</h3>
+
+<ul>
+<li>Implement SetupDiSetClassInstallParamsW</li>
+<li>Handle DIF_PROPERTYCHANGE in SetupDiCallClassInstaller</li>
+<li>Add stub for SetupDiChangeState</li>
+<li>Rename a label (nextfile -> nextservice)</li>
+<li>Remove a useless test in DelayedMove</li>
+<li>Implement DICS_FLAG_CONFIGSPECIFIC and DIREG_DEV cases in SetupDiCreateDevRegKeyW</li>
+<li>Implement SetupDiChangeState</li>
+<li>Implement DICS_FLAG_CONFIGSPECIFIC case in SetupDiOpenDevRegKey, by factorizing some code from SetupDiCreateDevRegKeyW to OpenHardwareProfileKey</li>
+<li>Don't ask for KEY_ENUMERATE_SUB_KEYS access right when not needed</li>
+<li>Implemenent internal function ResetDevice()</li>
+<li>Implement StringTableAddStringEx and StringTableLookUpStringEx</li>
+<li>Implement CM_Disable_DevNode[_Ex], CM_Enable_DevNode[_Ex], CM_Reenumerate_DevNode[_Ex] and CM_Run_Detection[_Ex]</li>
+<li>Implement CMP_Init_Detection, CMP_Report_LogOn, CM_Setup_DevNode[_Ex] and CM_Uninstall_DevNode[_Ex].</li>
+<li>Implement SetupDiInstallClassExA</li>
+<li>Implement parts of SetupDiInstallClassExW</li>
+<li>Install "ClassInstall32.Services" section in SetupDiInstallClassExW</li>
+<li>Implement SetupDiGetActualSectionToInstallExA/W</li>
+<li>Implement SetupDiGetDeviceInfoListClass</li>
+<li>Parse 'Include' and 'Needs' directives in SetupInstallFromInfSectionW and when installing services</li>
+<li>Honor DI_ENUMSINGLEINF flag in SetupDiBuildDriverInfoList</li>
+<li>Implement SetupDiGetSelectedDevice/SetupDiSetSelectedDevice</li>
+<li>Fix horribly broken implementation of SetupInstallServicesFromInfSectionExW, which should install a whole Services section and not a particular service.</li>
+<li>Simplified handling of Include and Needs directives</li>
+<li>Partly implement SetupDiInstallDeviceInterfaces</li>
+<li>Exports CMP_InitDetection, CMP_Report_LogOn, CM_Move_DevNode[_Ex], CM_Setup_DevNode[_Ex] and CM_Uninstall_DevNode[_Ex]</li>
+<li>Copy driver files only once</li>
+<li>Set SPINT_DEFAULT, SPINT_REMOVED and SPINT_ACTIVE in interface flags when needed</li>
+<li>Precise some SP_DEVINSTALL_PARAMS, by replacing them by SP_DEVINSTALL_PARAMS_W</li>
+<li>Handle DIF_ADDPROPERTYPAGE_ADVANCED in SetupDiCallClassInstaller</li>
+<li>Handle more DIF codes in SetupDiCallClassInstaller. The list should now be complete</li>
+<li>Add a minimal implementation of SetupScanFileQueueW</li>
+<li>In SetupDiBuildDriverInfoList, add found drivers in the right driver list</li>
+<li>In SetupDiEnumDriverInfoW, enumerate the right driver list if DeviceInfoData is not NULL</li>
+<li>Validate parameters in SetupDiSetDeviceInstallParamsW</li>
+<li>Be ready to honor DI_FLAGSEX_ALLOWEXCLUDEDDRVS flag</li>
+<li>Fix an infinite loop in SetupDiSetSelectedDriverW</li>
+<li>Add missing processor architecture cases</li>
+</ul>
+
+<h3>Shell32</h3>
+
+<ul>
+<li>Don't wait 10 seconds after starting an app via a .lnk file</li>
+</ul>
+
+<h3>SMSS</h3>
+
+<ul>
+<li>Implement system handling of page file creation sizes (Later Reverted)</li>
+</ul>
+
+<p>On FAT16 partitions smaller than 128MB, the cluster size is 2048, which is
+smaller than PAGE_SIZE. This caused creation of the paging file on such a
+partition to fail, which in turn made SMSS fail, blocking the boot process.
+Creation of paging file fixed, and failure to create it is no longer a blocker
+for the boot process (just try to run without paging file).</p>
+
+
+<h3>Start Menu</h3>
+
+<ul>
+<li>Fixed positioning of graphic in start menu</li>
+</ul>
+
+<h3>Telnet</h3>
+
+<ul>
+<li>Add allowwarnings ="true"  so telnet can be build with dgb=0</li>
+</ul>
+
+<h3>USB</h3>
+
+<ul>
+<li>Allow more than one USB controller</li>
+<li>Upgrade from 2.5.0 to 2.6.14.3</li>
+<li>Start DeviceUSBFDOx names at index 0.</li>
+<li>Use the same index to create the symbolic link ??HCDx</li>
+</ul>
+
+<h3>Userenv</h3>
+
+<ul>
+<li>Implemented ExpandEnvironmentStringsForUserA/W</li>
+</ul>
+
+<h3>User32</h3>
+
+<ul>
+<li>Implemented GetKeyboardLayoutNameW</li>
+<li>CreateFile() fails with INVALID_HANDLE_VALUE, not NULL - this fixes GetLastError() to more accurately point to the problem when diagnosing problems.</li>
+<li>When message is not unicode then SendMessageA should be used. Fixes combobox in "Run..." dialog</li>
+</ul>
+
+<h3>Userinit</h3>
+
+<ul>
+<li>Report a logged-on user to the PnP-Manage</li>
+</ul>
+
+<h3>Usetup</h3>
+
+<ul>
+<li>Allow to choose between 800x600x16 and 640x480x8 as default resolution in first stage installer.</li>
+</ul>
+
+<h3>Win32k</h3>
+
+<ul>
+<li>Fixed declaration of NtUserGetKeyboardLayoutName</li>
+<li>Update NtUserGetMouseMovePointsEx prototype to msdn</li>
+<li>Addding new streach code for dib8, left to add it is dib1, dib4, dib24, dib32</li>
+<li>Implement NtUserGetMenuBarInfo</li>
+<li>Removed NtGdiDeleteDC</li>
+<li>Removed NtGdiCheckColorsInGamut</li>
+<li>Replaced NtGdiCreatePatternBrush and NtGdiCreateHatchBrush with NtGdiCreatePatternBrushInteral and NtGdiCreateHatchBrushInteral</li>
+</ul>
+
+
+<h2>Updated Translations</h2>
+
+<h3>German</h3>
+
+<ul>
+<li>Msconfig</li>
+<li>Servman</li>
+</ul>
+
+<h3>Hungarian</h3>
+
+<ul>
+<li>GetFirefox</li>
+<li>SysSetup</li>
+<li>Time/Date CPL</li>
+</ul>
+
+<h3>Polish</h3>
+
+<ul>
+<li>Devmgr</li>
+</ul>
+
+<h3>Spanish</h3>
+
+<ul>
+<li>SetupAPI</li>
+<li>Taskmgr</li>
+<li>Vmwinst</li>
+<li>Winefile</li>
+</ul>
+
+<h3>Ukranian</h3>
+
+<ul>
+<li>Aclui</li>
+<li>Devmgr</li>
+<li>Mpr</li>
+<li>Oleaut32</li>
+<li>Userenv</li>
+<li>Wininet</li>
+<li>Winmm</li>
+<li>Explorer</li>
+<li>Reactos</li>
+</ul>
+
+
+<h2>New Translations</h2>
+
+<h3>French</h3>
+
+<ul>
+<li>Access CPL</li>
+<li>Appwiz CPL</li>
+<li>Calc</li>
+<li>Desk CPL</li>
+<li>Expand</li>
+<li>Format</li>
+<li>GetFirefoxInternational CPL</li>
+<li>RegSvr32</li>
+<li>System</li>
+<li>Userenv.dll</li>
+<li>Winlogon</li>
+</ul>
+
+<h3>German</h3>
+
+<ul>
+<li>Servman</li>
+</ul>
+
+<h3>Italian</h3>
+
+<ul>
+<li>RosCMS</li>
+</ul>
+
+<h3>Slovak</h3>
+
+<ul>
+<li>Keyboard Layout</li>
+</ul>
+
+<h3>Spanish</h3>
+
+<ul>
+<li>iBrowser</li>
+<li>Userinit</li>
+</ul>
+
+<h3>Swedish</h3>
+
+<ul>
+<li>RosCMS</li>
+</ul>
+
+<h2>Files added to BootCD</h2>
+
+<ul>
+<li>kbdur.dll (Ukrainian keyboard layout)</li>
+</ul>
+
+
+<h2>Bugs Fixed</h2>
+
+<ul>
+<li>#187</li>
+<li>#1073</li>
+<li>#1099</li>
+<li>#1107</li>
+<li>#1109</li>
+<li>#1116</li>
+<li>#1124</li>
+<li>#1126</li>
+<li>#1130</li>
+<li>#1131</li>
+<li>#1139</li>
+<li>#1149 (partially)</li>
+<li>#1155</li>
+<li>#1157</li>
+<li>#1158</li>
+<li>#1162</li>
+<li>#1163</li>
+<li>#1166</li>
+<li>#1169</li>
+<li>#1188</li>
+<li>#1195</li>
+<li>#1213</li>
+<li>#1217</li>
+<li>#1223</li>
+<li>#1238</li>
+<li>#1252</li>
+</ul>
+
+<h2>New uploads to Press-Media:</h2>
+
+<ul>
+<li>Add initial presentation for MIT 100 Laptop.</li>
+</ul>
+
+<h2>Vendor Drops</h2>
+
+<ul>
+<li>Dxdiagn</li>
+<li>Wine 0.9.4 & 0.9.5</li>
+<li>Libjpeg 6b</li>
+</ul>
+
+<h2>WINE 0.9.3 and 0.9.4.. and 0.9.5!!</h2>
+
+
+<h3>Wine 0.9.3</h3>
+
+<ul>
+<li>Many marshalling fixes in rpcrt4.</li>
+<li>Various OLE improvements and fixes.</li>
+<li>Better audio driver management in winecfg.</li>
+<li>Many wininet fixes.</li>
+<li>Several Web browser improvements.</li>
+<li>More dbghelp APIs implemented.</li>
+<li>Directory objects in wineserver.</li>
+<li>Lots of bug fixes.</li>
+</ul>
+
+<h3>Wine 0.9.4</h3>
+
+<ul>
+<li>Improvements to the IDL compiler.</li>
+<li>Some infrastructure work for loadable driver support.</li>
+<li>The usual assortment of Direct3D improvements.</li>
+<li>IME support in the edit control.</li>
+<li>Better support for AVI animations.</li>
+<li>Debugging support improvements.</li>
+<li>Relay traces now work on NX platforms.</li>
+</ul>
+
+<h3>Wine 0.9.5</h3>
+
+<ul>
+<li>A number of MSI fixes.</li>
+<li>More improvements to the IDL compiler.</li>
+<li>Lots of bug fixes.</li>
+</ul>
+
+<h2>Next Week</h2>
+
+<p>The worst time to think ahead to next week is 2am on a Monday Morning. That said, I'll come up with something, else I can rely on someone to hand me a bright spark until then!</p>
+
+<p>Until Next Week... Happy Compiling!</p>
+<p>Stuart <a href="mailo:TwoTailedFox@Gmail.com">"TwoTailedFox"</a> Robbins</p>
+<p>ReactOS Weekly Newsletter Editor</p>

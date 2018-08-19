@@ -1,0 +1,28 @@
+---
+title:       "Newsletter 19"
+author:      "samwise52"
+date:        2007-03-12
+aliases:     [ "newsletter-19", "node/160" ]
+---
+
+<h2>0.3.1 Released!</h2>
+<p><font face="Verdana">After months of discussions, testing and of course mountains of code, it&rsquo;s finally <a href="http://www.reactos.org/en/download.html">here</a>! The official <a href="http://www.reactos.org/en/news_page_34.html">release announcement</a> was made by our project coordinator. </font><font face="Verdana">This release has many deep down changes that may not be comprehensible to most users, but most users will in fact notice improved stability and speed. The <a href="http://www.reactos.org/wiki/index.php/ChangeLog-0.3.1">changelog</a> will tell you about these changes in technical terms, but the best testimony would be your own tests. Even so, these deep kernel changes are not even close to finished and ReactOS is still in alpha state. For those of you who haven&rsquo;t been paying attention, that means it is not feature complete and is <b style="mso-bidi-font-weight: normal">not</b> recommended <b style="mso-bidi-font-weight: normal">for everyday</b> <b style="mso-bidi-font-weight: normal">use. </b>
+<p>This article will focus on 0.3.1 and will try to point you to every piece of possibly useful information about it. It won&rsquo;t be filled with the usual assortment of &ldquo;current events&rdquo; (mainly because release is THE current event). This doesn&rsquo;t mean that trunk has fallen quiet. Trunk has several important features that will certainly make 0.3.2 worthwhile.</p>
+<h2>Learn More</h2>
+<p>If this is the first time you hear about ReactOS, you should read the About and FAQ pages. Our wiki also contains much of the information new comers are looking for. If you still have questions or just want to talk to ReactOS people, click on the <a href="http://www.reactos.org/en/community.html">community</a> link. </p>
+<p>For more information about future release plans refer to our <a href="http://www.reactos.org/en/about_roadmap.html">Roadmap</a>. For even more detailed information on left to do try the <a href="http://www.reactos.org/wiki/index.php/Tasklist">TaskList</a>, it contains a (slightly outdated and not totally complete) list of large tasks that need to be done for ReactOS in general. </p>
+<h2>Brief Review</h2>
+<p>I can proudly say I tested 0.3.1 extensively most of the time in qemu. Even though backgrounds have been supported for a while, the first thing you&rsquo;ll notice is the new default background. It wasn&rsquo;t that amazing in the little qemu window, but it was a rather welcomed change from the plain bland bluish color the desktop usually has. Another thing you might notice is the screen saver, it&rsquo;s been in trunk for a while, but it&rsquo;s the first time a release has a screen saver and a shockingly good matrix code screensaver at that. The fonts look nicer plus they redraw quicker, the icons look cleaner, in general it just looks better.</p>
+<p>I did manage to use Firefox 1.5, mIRC, uTorrent, 7zip, cpuz, and several other apps. No apps that are really to die for, I just installed them, did a few basic operations and moved onto the next. It wasn&rsquo;t that easy, sometimes it required several restarts, some installers refused to work, though the apps themselves worked fine, some installers worked flawlessly, while the actual apps failed miserably. But all in all I say it was a rather acceptable experience.</p>
+<p>There are some mayor drawbacks, the ability to use SCSI disks has regressed (tested in VMware). There are reports it doesn&rsquo;t work in VPC 2007(did 0.3.0?) and in AMD XP or 64 CPUs. The reason (I&rsquo;m told) for the latter hardware problems is unfinished code in the kernel involving interrupt handlers/traps. The first problem is due to continued work on the storage stack.</p>
+<h2>Help Out</h2>
+<p>It&rsquo;s easy to help we are specially in need of people with <b style="mso-bidi-font-weight: normal">coding</b> knowledge to at least test and try to identify the source of bugs and problems. At best we need windows API and driver developers that are willing to invest some time in ReactOS and help improve and complete it. </p>
+<p>You are not a windows developer? We need your help anyway! We need <b style="mso-bidi-font-weight: normal">testers</b>, just plain regular people that try to use ReactOS and tell developers what they should improve, the difficulties they have, etc&hellip; </p>
+<p>We need <b style="mso-bidi-font-weight: normal">translators</b>, as development continues translations can get outdated and we need to keep them updated. Non-English users have the same right to use ReactOS and reactos.org as you.</p>
+<p>Even though we had a fund raiser recently, it doesn&rsquo;t mean you can&rsquo;t donate some money to the ReactOS foundation.</p>
+</font></p>
+<p>&nbsp;</p>
+<h2>Conclusion</h2>
+<font face="Verdana">
+<p>ReactOS is in a crucial stage right now. In this stage, large portions of the OS will change seemingly overnight as they are rewritten and improved to be more compatible, faster and more powerful than ever. It is poised to become really stable and reach beta stage by version 0.5. According to our developers releases will occur roughly every 2 months, truly an exciting time for everyone that wants a viable windows alternative. </p>
+</font>

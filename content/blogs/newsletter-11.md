@@ -1,0 +1,177 @@
+---
+title:       "Newsletter 11"
+author:      "TwoTailedFox"
+date:        2006-02-10
+aliases:     [ "newsletter-11", "node/151" ]
+---
+
+ReactOS Weekly Newsletter Issue 11, "Not dead just yet"
+
+
+<h2>Not dead just yet!</h2>
+
+<p>Whew. Now that Real Life has for now finished kicking me in the gonads for the time being, it's time to let you guys, the End Users, know what's actually happening in the ReactOS Project. Issue II I could have sworn went up, but either it got deleted, or I missed a button.</p>
+
+<p>Now, first things, first. At the top of <a href="http://www.reactos.org">Reactos.org</a> you will see a Progress Bar. This represents how much of the Trunk has been audited as to be verified to not contain copyrighted code. Click <a href="http://www.reactos.org/wiki/index.php/Audit">here</a> to see a blow-by-blow account of what still needs to be Audited. The ReactOS SVN Repository has now changed location. Set your SVN Clients to svn://svn.reactos.org/audited/trunk and away you go.</p>
+
+<p>Now, you'd think this would have completely halted any development. Not so. With the opportunity to re-make the ReactOS Source Code Folder layout, there have been a few changes.</p>
+
+<p>First off, the directory structure has changed. The new details can be found on the <a href="http://www.reactos.org/wiki/index.php/New_Tree_Structure">ReactOS Wiki</A>. Also, the *.xml files used by Rbuild have now been renamed to *.rbuild. They've also undergone a bit of internal tweaking to make them *true* XML files.</p>
+
+<p>Where does the Audio leave 0.3.0? Well, a few months away at least. When the audit process has been completed, work can then begin on making 0.3.0 a reality. I don't have a timeline on it, but stay tuned for it.</p>
+
+
+<p>So, what has actually been processed as OK, and now resides in Trunk?</p>
+
+
+<h2>SVN: Mover's 'n' Shakers</h2>
+
+<h3>New Branches:</h3>
+
+<ul>
+<li>"Lean" Explorer Branch</li>
+</ul>
+
+
+<h3>Audited:</h3>
+
+<ul>
+<li>Freeldr</li>
+<li>Fonts</li>
+<li>RosCMS</li>
+<li>ReactOS Press Kit</li>
+<li>RBuild and BootCD target</li>
+<li>CRT</li>
+<li>NDK</li>
+<li>DDK</li>
+<li>Arp</li>
+<li>Ipconfig</li>
+<li>Netstat</li>
+<li>Tracert</li>
+<li>Tcpsvcs</li>
+<li>Sc</li>
+<li>Servman</li>
+<li>Msconfig</li>
+<li>Win32API</li>
+<li>Oskittcp</li>
+<li>Explorer</li>
+<li>Ibrowser</li>
+<li>Winefile</li>
+<li>Packmgr</li>
+<li>Buildno</li>
+<li>Solitare</li>
+<li>Winemine</li>
+<li>Finger</li>
+<li>Ftp</li>
+<li>Ping</li>
+<li>Route</li>
+<li>Telnet</li>
+<li>Whois</li>
+<li>Getfirefox</li>
+<li>Shutdown</li>
+<li>CMD</li>
+<li>Hostname</li>
+<li>Devmgr</li>
+<li>Portcls</li>
+<li>RosApps: Noteveil</li>
+<li>RosApps: Packmgr</li>
+<li>RosApps: Zoomin</li>
+</ul>
+
+<h3>Changes:</h3>
+
+<ul>
+<li>Change *.xml files to *.rbuild</li>
+<li>bootdata -> boot</li>
+</ul>
+
+<h3>Freeloader</h3>
+
+<ul>
+<li>Added isoboot Code</li>
+</ul>
+
+<h3>Drivers</h3>
+
+<ul>
+<li>Added null driver</li>
+</ul>
+
+<h3>Rbuild</h3>
+
+<ul>
+<li>Rename MSVC Workspace files to "..._auto.dsw/sln"</li>
+</ul>
+
+<h3>Explorer</h3>
+
+<ul>
+<li>Add Icon Cache Mapped by Shell Paths (PIDLs) to Fix GDI Handle Leaks</li>
+<li>fix Rebar resizing</li>
+</ul>
+
+<h3>Servman</h3>
+
+<ul>
+<li>write services to file</li>
+<li>added a roadmap for fun</li>
+</ul>
+
+<h3>SC</h3>
+
+<ul>
+<li>Add basic support for creating services</li>
+<li>Start to put in functionality for exporting all services to a file<li>
+<li>Don't open the progress dialog if the action fails</li>
+</ul>
+
+
+<h3>Vendor Imports</h3>
+
+<ul>
+<li>ADNS 1.0-Win32-05</li>
+<li>ReactOS Website Contents</li>
+</ul>
+
+
+
+<h2>The Future of ReactOS</h2>
+
+<p>I've seen many emails on the Developer's List asking where ReactOS goes from here. Certainly, this is the toughest time the project has faced in its history, but I'm confident that there will be a lot of good to come out of this.
+</p>
+
+<p>There is a rather interesting Vote currently taking place on the ReactOS Forums. Obviously, while the vote is public, only Developers can actually take part. But I thought the proposed vote would provoke a lot of thought:</p>
+
+<h3>Plan A proposal (In Summary)</h3>
+
+<ul>
+<li>Full suspending development in the old SVN repository, making it readonly to devs (and most probably physical deleting when auditing is done)<./li>
+<li>Creating audited repository, and moving/auditing/rewriting stuff from old repository. Starting from the biggest possible clean revision of the module (e.g. for kernel it would be ntoskrnl rev. around 9000)./li>
+<li>Removing all previous reactos releases, source code for release from any downloads servers forever, as if they didn't exist.</li>
+<li>Estimated time before new release - months-years.</li>
+<li>Legality / court-proof: perfect.</li>
+</ul>
+
+<h3>Plan B proposal (In Summary)</h3>
+
+<ul>
+<li>Resuming access to old repository, including readonly anonymous access and developers commit access.</li>
+<li>Continue development in old repository: all new commits must not be derivative of copyright work (I'm repeating here, but that's important) - thus no dirty reverse engineering.</li>
+<li>Parallel auditing of trunk, rewriting tainted,suspicious parts of it.</li>
+<li>Perform releases (0.3, 0.3.x, 0.4), while getting every release cleaner and cleaner (announcing some release, e.g. 0.4 as being fully clean).</li>
+<li>Possibly encourage creating a branch for developers who wants to perform full audit of the kernel starting from earlier, not-tainted revisions.</li>
+</ul>
+
+
+<p>Now, to me, Option 2 looks like a No-Brainer, and indeed, the current Vote is 7-2 in favour of Plan B. But, that should hopefully give you a good idea of how The Powers That Be intend to proceed</p>
+
+
+<h2>Next Week</h2>
+
+<p>With Development in SVN going to a crawl, I will be looking at highlighting the auditing process as it goes, as well as tracking new developments to the existing code.</p>
+
+<p>And also, many thanks to those of you that emailed me. In the shadows I've been in recently, it's nice when people remind me I'm still somehow worth something.</p>
+
+<p>Until Next Week... I would say "Happy Compiling!", but the current SVN won't compile much!</p>
+<p>Stuart <a href="mailo:TwoTailedFox@Gmail.com">"TwoTailedFox"</a> Robbins</p>
+<p>ReactOS Weekly Newsletter Editor</p>

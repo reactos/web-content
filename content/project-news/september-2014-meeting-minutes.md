@@ -1,0 +1,28 @@
+---
+title:       "September 2014 Meeting Minutes"
+author:      "Z98"
+date:        2014-09-30
+aliases:     [ "node/885" ]
+---
+
+<p>2014-09-25<br />
+	19:00 UTC<br />
+	dev.reactos.org, #meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:00 by Ziliang Guo.</p>
+<ul>
+	<li>Point 1: Developer Briefings</li>
+	<li>Point 2: Jira</li>
+	<li>Point 3: Website</li>
+</ul>
+<h2>Point 1</h2>
+<p>Aleksey Bragin had been ill for a bit, which was also why the previous meeting was canceled. Alexander Rechitskiy has been working to promote ReactOS to various organizations. Daniel Reimer has been testing a variety of games and multimedia applications, trying to restore sound that was broken due to a Wine sync of DSound not playing nicely with ReactOS' sound stack. He also got VirtualBox's WineD3D into ReactOS and noted it performed significantly better. Several developers suggested investigating to see if that implementation could be more widely used. David Quintana has been working on interprocess communication for browseui and ran into issues that he attributes to either the Wine code that implements the shell shared memory API or how the ReactOS kernel manages section handles. Once that issue is dealt with he intends to implement the shell Dynamic Data Exchange, implement support for GUID/CLSID paths, and a round of cleanup and polish before merging into trunk. Hermes Belusca Maito has continued helping with NTVDM and also been investigating the issue that themes have with unicode APIs. He is fairly certain something in win32k is not handling unicode properly and he also has some doubts about the comctl32 library imported from Wine. Herve Poussineau has been working on PXE booting ReactOS. He has a hacked implementation that allows PXE booting the liveCD but until a proper ramdisk driver is completed he is blocked from doing a proper implementation. Herve has also been doing some research on the mup driver, which is used to distinguish which remote server to contact if multiple network shares are present. He also made some fixes to the mountmgr driver when it deals with newly mounted devices.</p>
+<p>Jerome Gardou has been working on debugging the Java runtime installer. It no longer crashes in the registry but still fails to properly install. This is complicated by the fact that Java has its own exception handling that its overriding attempts to use a debugger on it. Others suggested looking at the JDK source code might help. Matthias Kupfer has been working on administrative matters related to the German foundation. Pierre Schweitzer has been working on server infrastructure improvements and also been trying to finalize support for file renaming in ReactOS. Unfortunately progress on that has been halted due to potentially pervasive issues that he has been unable to nail down. Pierre is also doing some work on trying to add NTFS support. It was pointed out quite strongly that NTFS-3G was not a useful source of reusable code due to major differences between a kernel IFS driver versus a user space driver. Timo Kreuzer has been cleaning out some old patches, which has seen a slew of fixes to win32k. He intends to work on memory commit limits to keep ReactOS from erroring out on overcommitted memory, implement PCI enumeration in the HAL, fix clipping in GDI, review coordinate translation code, and merge back in some of the code in the DIB branch. Victor Martinez has continued working through the physical perks from the crowdfunding campaign including the USBs and had the SBC candidate forward to Thomas for evaluation and testing. He also continued debugging the various applications voted upon by the community, focusing heavily on Java and setting up a test environment to run Java's unit tests on ReactOS. Ziliang Guo had the hackbunny order finalized and paid for with the bunnies in the mail to him for distribution to the backers. Beyond curating the recent blog drafts he also poked at the ARM build, mostly in the form of passing Timo error messages from the build.</p>
+<h2>Point 2</h2>
+<p>Ziliang reported that most of the problems developers have been seeing with Jira was due to a rollback after a failed upgrade attempt. As neither he nor Pierre were aware of additional extensions having been installed alongside Jira, they did not restore those extensions during the rollback. If people could remember what modules were added and could send a list to him, Ziliang would try to add them back. Any new attempt to upgrade Jira would have to wait until the two could find time to debug why authentication began systematically failing after the upgrade.</p>
+<h2>Point 3</h2>
+<p>Ziliang asked for permission to remove the newsletters view on the front page as they had been effectively discontinued. No objections were made beyond a request that a link be put to the archive.</p>
+<p>Addendum: It was quickly determined after the meeting that VirtualBox's WineD3D implementation is actually a passthrough hack and therefore cannot be used outside of VBox.</p>
+<p>Meeting was closed at 20:54 by Aleksey Bragin</p>
+<p>Meeting minutes prepared by Ziliang Guo</p>
+
