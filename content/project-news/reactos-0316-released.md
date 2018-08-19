@@ -1,0 +1,8 @@
+---
+title:       "ReactOS 0.3.16 Released"
+author:      "Z98"
+date:        2014-02-06
+aliases:     [ "node/772" ]
+---
+
+<p>The ReactOS Project is pleased to announce the release of version 0.3.16. A little under a year has passed since the previous release and a significant amount of progress has been made. Some of the most significant include completion of the CSRSS rewrite and the first stages of a shell32 rewrite. 0.3.16 is in many ways a prelude to several new features that will provide a noticeable enhancement to user visible functionality. A preview can be seen in the form of theme support, which while disabled by default can be turned on to demonstrate the Lautus theme developed by community member Maciej Janiszewki. Another user visible change is a new network card driver for the RTL8139, allowing ReactOS to support newer versions of QEMU out of the box. Release images can be found in the usual spot <a href="https://reactos.org/download">here</a>.</p><p>And for those of you that have not heard of it yet, the project is running a Kickstarter campaign in the form of the <a href="https://www.kickstarter.com/projects/thorium/thorium-core-cloud-desktop">Thorium Cloud Desktop</a>. If you want to help the project raise the funds to hire multiple full time developers and bring ReactOS to a state where it can be used for day to day activities, then please spread the word and put up a few bucks to back us.</p>

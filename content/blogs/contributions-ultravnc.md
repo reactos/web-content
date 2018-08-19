@@ -1,0 +1,18 @@
+---
+title:       "Contributions: UltraVNC 1.0.5"
+author:      "vicmarcal"
+date:        2014-08-04
+aliases:     [ "node/866" ]
+---
+
+<p>Thanks to <strong>Oldman</strong>, we're proud to announce that UltraVNC 1.0.5 is now running in ReactOS.</p>
+<p><span style="font-size: 10pt;"><span class="black">UltraVNC </span>is a powerful, easy to use and free remote pc access software that can display the screen of another computer (via internet or network) on your own screen. The program allows you to use your mouse and keyboard to control the other PC remotely. It means that you can work on a remote computer, as if you were sitting in front of it, right from your current location. </span></p>
+<p style="text-align: center;"><img alt="Imagen" class="imgp_img" src="/sites/default/files/imagepicker/14095/XPvncROS-R63796.png" height="768" width="1024"></p>
+<p>In this case, as you can see, his current location was Windows XP running TightVNC 2.7, while he was controlling ReactOS (revision 63796) which was running UltraVNC 1.0.5. TightVNC and UltraVNC were "teaming" together which is an awesome news.</p>
+<p>But, there is much more, look at the following image closely. Is that NetBeans 8.0 running in ReactOS? *cough* More about this soon...</p>
+<p style="text-align: center;"><img alt="Imagen" class="imgp_img" src="/sites/default/files/imagepicker/14095/XPvncROS4-R63796.png" height="768" width="1024"></p>
+<p>&nbsp;</p>
+<p>Keep the contributions coming! ReactOS is reaching a new level of compatibility!No doubts!</p>
+
+<p>Comments opened in: https://reactos.org/node/856 </p>
+

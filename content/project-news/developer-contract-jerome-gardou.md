@@ -1,0 +1,8 @@
+---
+title:       "Developer Contract for Jerome Gardou"
+author:      "Z98"
+date:        2014-10-20
+aliases:     [ "node/898" ]
+---
+
+<p>This is somewhat belated, but for the past month <span class="il">Jérôme </span>Gardou has been working under a development grant issued by ReactOS Deutschland e.V. <span class="il">Jerome</span> has been active working on the memory manager and his fixes were instrumental to getting a modern Java runtime to work. Other efforts with the Common Cache will help pave the way for adding support for more advanced and modern filesystems to ReactOS. <span class="il">Jerome</span>'s <span class="il">contract</span> saw him pay special attention to the three applications, Chrome, Java, and Microsoft Office, voted on for support in the Community Edition, and several fixes were made to the network stack as he sought to stabilize Chrome. The contract will be concluding at the end of this month.</p>

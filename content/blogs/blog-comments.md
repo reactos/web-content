@@ -1,0 +1,8 @@
+---
+title:       "Blog comments"
+author:      "Z98"
+date:        2014-03-20
+aliases:     [ "node/797" ]
+---
+
+<p>Due to the proliferating of spamming in the blog comments, we're going to disable it outright. For the future we'll link to a dedicated forum/thread for commenting on blog posts.</p>

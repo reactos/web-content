@@ -1,0 +1,8 @@
+---
+title:       "Funded Development Issue Resolved"
+author:      "Z98"
+date:        2013-05-14
+aliases:     [ "node/639" ]
+---
+
+<p>After a considerable amount of effort, the issue with funding development using donations collected by ReactOS Deutschland e.V. has been worked around. As a result of this, the Project is working to arrange additional funded development to ensure that the money donated to the project is put to the use it was intended. We hope to pay special attention to the shell, themes, and USB to improve the overall user experience. The project would like to thank everyone for their patience on this matter.</p>

@@ -1,0 +1,18 @@
+---
+title:       "Lines of commands"
+author:      "gigaherz"
+date:        2014-09-12
+aliases:     [ "node/881" ]
+---
+
+<p>Hello again!</p>
+<p>When I said last week’s report would be short, I was still planning to write a few lines about what I had been doing on the spare time from the university project, but by the time the weekend came I was way too mentally exhausted to actually do it. Then I started refreshing my mind with what I was in the middle of doing, and by Sunday night I had the explorer command line parser working more or less as intended (it still has a few places where it doesn’t behave exactly like Windows’ parser, but it’s close enough for what we need).</p>
+<p>It’s not like I coded all of that over the weekend though, I merely got back on track, finishing what I had been working over the past two weeks. Thanks to Giannis’ extensive list of lines to test for, I managed to build a considerably comprehensive test suite, which I was able to use to figure out the workings of the SHExplorerParseCmdLine function. Using those results, I learned the meaning of the most important flags, and a few fields that were not yet described in the tests’ structure.</p>
+<p>I had also been working on a skeleton for the parser, which I filled up with the new knowledge. A few pieces were more complicated than others, but overall it wasn’t actually as complex as I once expected it to be. What this means, is that now you can run things like "explorer /e,/select,boot.ini,C:\", and explorer-new will properly interpret what you want it to do, even if it doesn't yet know how to handle the /e (show folders sidebar), or the /select (start with an item selected in the view). The work of making use of the command line flags will come later, since it requires features not yet implemented.</p>
+<p>After implementing the parser, I went on to learn how the Windows Explorer program uses that function, and I learned that immediately after the results are obtained, it relays the structure as-is, to SHCreateFromDesktop. I learned from this function that the browseui component has two different behaviours depending on if the /SEPARATE flag was specified in the commandline.</p>
+<p>If it was, it creates a special window it calls “Desktop Proxy”, by using the CProxyDesktop, and this hidden window it used in place of the actual desktop as a “host” for the folder windows.</p>
+<p>If the flag was not specified, it looks for an existing desktop, and then it sends a few special messages, using shared memory to pass on some data. What is the data? Well that’s where the complicated part comes: I don’t know. I could see a few values in the content similar to values from the input structure, so I guess at least part of it come from there, but as for the rest, I have no idea. But I’m working on that.</p>
+<p>Next on the list is finishing those investigations, writing the parser for the Shell DDE feature, and Giannis reminded me that even though I implemented the command line, the start menu settings items such as control panel, still don’t work, so I will have to look into the reason.</p>
+<p>Until next week!</p>
+<p>Discussion: https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=13630</p>
+

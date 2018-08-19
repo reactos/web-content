@@ -1,0 +1,8 @@
+---
+title:       "Sourceforge Project of the Month"
+author:      "Z98"
+date:        2013-06-01
+aliases:     [ "node/669" ]
+---
+
+<p>The ReactOS project has won Sourceforge Project of the Month for June. Thanks to all of our fans who voted for us, netting us the plurality of votes. You can visit Sourceforge to read the <a href="https://sourceforge.net/blog/potm-201306/">interview</a> they conducted with Aleksey Bragin, the project coordinator. Be sure not to miss the little tidbit at the end where Aleksey hints about the future of ReactOS and funded development.</p>

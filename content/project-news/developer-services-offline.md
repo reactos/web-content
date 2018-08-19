@@ -1,0 +1,30 @@
+---
+title:       "Developer services offline"
+author:      "Heis Spiter"
+date:        2013-11-25
+aliases:     [ "node/729" ]
+---
+
+<p><b>Updated at 13h21 CET:</b> We are trying to restore all the services at the moment, on a new server. Everything should be working again. Let's hope it will be a stable server this time...
+Except issues with mail server and delays with mails for the moment.</p>
+<br />
+<p>Dear all,</p>
+<p>On Saturday, we attempted an upgrade of one of our old hypervisor. If the upgrade went fine, it appears that the new server provided by our hoster is totally unstable. It can barely reach a day of uptime and crashes a lot. This obviously has consequences on the the integrity of the VMs running on it. To prevent any further dommages, we took the decision to keep all the VMs down till our hoster can provide a satisfying solution to our hardware problems.</p>
+<p>It means that the following services are affected and totally offline:<ul>
+<li>mails</li>
+<li>mailing lists (including archives)</li>
+<li>SVN</li>
+<li>git</li>
+<li>buildbot</li>
+<li>testman</li>
+<li>Jira</li>
+<li>Old reactos.org</li>
+<li>Secondary DNS</li>
+</ul></p>
+
+<p>So far we do not have any ETA regarding recovery of the services.
+We do not thank you Hetzner!
+We will keep you informed as much as possible. We are sorry for the caused inconveniences.</p>
+
+<p>With our best regards,</p>
+<p>The sysadmin team</p>

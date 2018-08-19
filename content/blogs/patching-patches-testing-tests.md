@@ -1,0 +1,17 @@
+---
+title:       "Patching Patches and Testing Tests"
+author:      "gigaherz"
+date:        2014-11-24
+aliases:     [ "node/919" ]
+---
+
+<p>Hello and sorry for the delay.</p>
+<p>This past week has been rather strange. My goal was to add some quick tests to ensure that my implementation was matching Windows’ behaviour, and then send the changes to WINE. But as I was adding more details to test, I was finding more mismatches between Windows and ReactOS (well, WINE code). Annoyingly, most of the mismatches are in the code not related to my changes, and on top of that, a few of the returned values had unexpected content.</p>
+<p>Some of the folder IDs that Windows rejects, do return a value (and a bogus one, on top of that) in ReactOS. Others works in Windows, but they fail for us. Others fail in both, but the returned code is different (E_FAIL vs E_INVALIDARG). Finally, others work as expected, but return a path in a different user account folder. It is these last ones that baffled me the most, because the API description claims that setting the hToken to NULL would affect the current user, so it stands to reason that setting the hToken to a token of the current user, should return the SAME content, right? Well, for some reason that’s not always the case. And it gets better.</p>
+<p>I kept improving the tests, adding more test cases, and more parameter combinations. Most notably, I added a toggle that would test the same folders, but disable path verification. To my surprise, disabling this verification removed this strange behaviour I just described, where the wrong user path was returned! I also added tests for the default value instead of the current value, which is obtained from the registry, and assigned to the user environment variables at logon (these variables are not used by the API though, and are only provided for batch scripts and other console applications.</p>
+<p>I said that this week was strange, because to my surprise and annoyance, it was already late in the week by then, which means I spent almost a whole week without really advancing anything. At this point, Amine suggested I stop trying to improve the tests, and make them work in WINE, marking all the tests that fail as todo_wine. This way the WINE maintainers can review the patch and either fix things on their side, or help us improving the tests.</p>
+<p>And yet the weekend is over and between patches that won’t apply, build errors due to compiler paranoia, and the realization that WINE uses NT6-style paths even when setting the OS compatibility setting to XP, I still don’t have a working WINE patch to send. (&gt;_&lt;)</p>
+<p>So I’ll keep trying, I’ll beat my patch into submission, and I’ll get it to behave the way I want it to, so I can get over it and work on something useful.</p>
+<p>One way or another.</p>
+<p>Until next weekend.</p>
+<p>Discussion: https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=13809</p>

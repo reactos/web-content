@@ -1,0 +1,41 @@
+---
+title:       "ReactOS Shop Grows!!"
+author:      "vicmarcal"
+date:        2015-04-23
+aliases:     [ "node/933" ]
+---
+
+<p>One of the most important ways to maintain our ReactOS development is through Donations, another way is through helping us reach out to new and cool developers by sharing these news!
+</p>
+<p>We're proud to share that our Shop is not just including the USB stick, but also.. 6 new and crazy pieces!
+</p>
+
+<p>A must have: An awesome <strong>ReactOS mug </strong>for your breakfast or evening coffee which can't look better. Do you see how that black background makes ReactOS orb shine?
+</p>
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/reactos-mug-original-logo-A102047572"> <img src="http://community.reactos.org/images/shop/mug.png" alt="" class="margin-left:auto; margin-right:auto;" title=""> </a> 
+<figcaption style="font-size: 1.2em;font-weight: bold;">Hot coffee inside! </figcaption> </figure>
+<hr id="system-readmore" />
+<p>The <strong>Tom's Jacket</strong>, which is a Classic hooded jacket for men, 80% cotton and 19% polyester and 1% ReactOS Orb in the back. Feeling cool instead feeling cold ;)
+</p>
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/tom-s-jacket-A102047541"><img src="http://community.reactos.org/images/shop/tomjacket.png" alt="" class="rt-center rokbox-thumb" title=""> </a><figcaption style="font-size: 1.2em;font-weight: bold;">Tom's Jacket. Poor Tom! </figcaption> </figure>
+
+<p>You shouldn't go to a trip without the <strong>ReactOS Retro Bag</strong>. They say ReactOS looks "old" so our logo fits awesomely in this Retro-candy bag!
+</p>
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/reactos-retro-bag-A17534313"><img src="http://community.reactos.org/images/shop/retrobag.png" alt="" class="rt-center rokbox-thumb" title=""></a><figcaption style="font-size: 1.2em;font-weight: bold;">Tom would never forget it!</figcaption></figure>
+<p>But ReactOS craziness can be shared with your dog too. How? The <strong>ReactOS Bandana Dog</strong> spring-summer fashion style! Your dog deserves one ;) (If you have a big cat or a puma, you can consider getting one too)
+</p>
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/reactos-dog-bandana-A17534310"><img src="http://community.reactos.org/images/shop/dogbandana.png" alt="" class="rt-center rokbox-thumb" title=""></a> <figcaption style="font-size: 1.2em;font-weight: bold;">Tom's dog looking gorgeous!</figcaption> </figure>
+<p>SpongeBob bib is getting pretty old now and also not nerdy at all. If you want your have fun with a geeky baby around, give him/her a Terry Pratchet's book or even better: An organic <strong>ReactOS bib</strong>. ORGANIC! :)
+</p>
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/reactos-baby-organic-bib-A17534303"><img src="http://community.reactos.org/images/shop/baby.png" alt="" class="rt-center rokbox-thumb" title=""> </a><figcaption style="font-size: 1.2em;font-weight: bold;">Nope. Tom doesn't have childs yet. </figcaption> </figure>
+<p>Of course, If you think these are too crazy for you, we have the typical goods & merchandise:
+A <strong>T-shirt</strong> for Women and one for Men. You can choose among several colors and logo positions.
+So decide: Do you want to carry us in your back or in your heart?
+</p>
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/back-logo-A102047514"><img src="http://community.reactos.org/images/shop/menshirt.png" alt="" class="rt-center rokbox-thumb" title=""></a><figcaption style="font-size: 1.2em;font-weight: bold;">Men in Different colors! </figcaption> </figure>
+
+<figure style="text-align:center;"> <a href="http://reactos.spreadshirt.de/front-reactos-logo-A102047599"> <img src="http://community.reactos.org/images/shop/women.png" alt="" class="rt-center rokbox-thumb" title=""></a> <figcaption style="font-size: 1.2em;font-weight: bold;">Women: Rock and RO(ll)S! </figcaption> </figure>
+<p>And while you share this News and help us pay our server bills...etc, we'll be here, keeping at it, coding as mad!
+</p>
+<p>
+As always!</p>

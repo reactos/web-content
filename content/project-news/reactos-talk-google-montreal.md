@@ -1,0 +1,10 @@
+---
+title:       "ReactOS Talk at Google Montreal"
+author:      "Z98"
+date:        2013-11-14
+aliases:     [ "node/718" ]
+---
+
+<p>Alex Ionescu was recently at Google Montreal providing training in Windows internals. He was invited to do one of their monthly tech talks and did an introduction to ReactOS and discussed the project's current status. It's an excellent view for anyone who wants to get an overview from a developer's perspective.</p>
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/pVXt_dELZNo?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>

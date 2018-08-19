@@ -1,0 +1,36 @@
+---
+title:       "October 2014 Meeting Minutes"
+author:      "Z98"
+date:        2014-11-04
+aliases:     [ "node/909" ]
+---
+
+<div>
+	<div>
+		<div>
+			<div>
+				<div>
+					<p>2014-10-30<br>
+						19:00 UTC<br>
+						dev.reactos.org, #meeting</p>
+					<h2>Proceedings</h2>
+					<p>Meeting started at 19:05 by Aleksey Bragin.</p>
+					<ul>
+						<li>Point 1: Developer Briefings</li>
+						<li>Point 2: 0.3.17</li>
+						<li>Point 3: 0.4.0 and Future Releases</li>
+					</ul>
+					<h2>Point 1</h2>
+					Amine Khaldi has been working on wine syncs and shell bringup testing. Christoph von Wittich has been making minor fixes as he finds time. David Quintana has been resolving the last of the serious memory leaks and considers the branch close to ready for merging back into trunk. Giannis Adamopoulos has been working on fixing the notification area for the shell, one of the last major pieces of functionality needed before a merge. Hermes Belusca Maito, Aleksander and V. have been working on NTVDM and speeding it up so that more games are playable. They also added to its CPU core a prefetcher. Herve Poussineau has been helping with the NTFS development. James Tabor has been dealing with JIRA issues and also trying to fix a problem with mouse activity. Kamil Hornicek has been going through the Coverity reports and working on minor bugs that impact usability. Matthias Kupfer continues trying to deal with bureaucratic red tape. Pierre Schweitzer has also been working on NTFS and him and Herve have made significant progress in reading support.&nbsp; Sylvain Petreolle has been working on UNIATA merges. Thomas Faber has been working on eliminating memory leaks and enabled the special pool used for tracking kernel memory usage and corruption. Timo Kreuzer is working on something that he dangled in front of the team without revealing its exact purpose. Ziliang Guo has been prepping the 0.3.17 release.</div>
+				<h2>Point 2</h2>
+			</div>
+			<p>Ziliang expects to release very soon as all fixes that he expects to be completed are in. The last few matters are mostly administrative such as changelogs, building images, and working to ensure a decent user experience as well as documenting known major issues.</p>
+			<h2>Point 3</h2>
+			<p>Ziliang shared with the rest of the team his desired timetable for 0.4.0 along with the expected headliner features. He also stated that if certain features cannot be completed or fixed in time, they would not be blockers to the release schedule.</p>
+		</div>
+	</div>
+	For releases post-0.4.0 Ziliang stated that he wanted a more clockwork release cycle, where releases effectively happen automatically after a set period of time if there are no major regressions. To this end Ziliang stated that he wanted a proper application regression testing system set up using the AHK work already done. His belief was that as the project is moving past the phase where there is a ready supply of headliner-worthy features emphasis should be placed on the continued improvement of the overall system. Point releases should thus be a more routine thing instead of a major production.</div>
+<p>To make this happen however requires an automated application testing system as a release cycle as rapid as what Ziliang wants would put undue strain on community testers. To emphasize his position, Ziliang also let it be known that he would consider the lack of such a system as a hard blocker for any release post-0.4.0. The majority of the developers present agreed in principle that such a system was highly desirable, though there were some differing opinions on how to achieve it.</p>
+<p>Meeting was closed at 20:00 by Ziliang Guo</p>
+<p>Meeting minutes prepared by Ziliang Guo</p>
+

@@ -1,0 +1,25 @@
+---
+title:       "Security issue on the ReactOS infrastructure"
+author:      "Heis Spiter"
+date:        2014-04-09
+aliases:     [ "node/812" ]
+---
+
+Dear all,
+
+In case you don't use SSL/TLS on our infrastructure (web sites - drupal, jira, fisheye), skip reading (and reconsider your choices about such non-usage).
+
+As you may (should?) have heard recently, OpenSSL has suffered a critical security vulnerability (CVE-2014-0160), known as Heartbleed Bug (http://heartbleed.com/). Most of our services were using an affected release of OpenSSL, with heartbeat feature activated. Be it, mails services, web services (Drupal, Jira).
+
+We reacted quickly passed the public announcement, and the availability of the fix to apply it on our infrastructure to limit the risks. Anyway, this might have been enough (actually, the issue has been here for two years!) to allow potentials attackers to, for instance, steal our SSL private keys. So, we took the decision to renew all our certificates and private keys to guarantee safe infrastructure usage.
+Due to the nature of the security issue, we don't know what may have been compromised in the infrastructure and in the user database. Hence our drastic measures.
+
+What does it mean for you? It means that your account information (username + password) might have been compromised, and your account itself could have been compromised (cookie stealth with the attack).
+We highly recommend you to change your passwords and check that everything is fine on your account. I shall remind you that password change can take up to 6h to propagate to Fisheye & Jira.
+
+As a side note, we enabled a while ago Perfect Forward Secrecy on our infrastructure that should ensure that even if our private keys leaked, your past communications (so, login on the infrastructure, for instance) can't be deciphered. Unless your session ticket leaked as well...
+
+We are really sorry for the caused inconvenience. I'm available by email or on IRC to answer your questions and clear your doubts.
+
+With my best regards,
+Pierre Schweitzer

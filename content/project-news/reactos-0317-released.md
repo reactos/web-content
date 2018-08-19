@@ -1,0 +1,9 @@
+---
+title:       "ReactOS 0.3.17 Released"
+author:      "Z98"
+date:        2014-11-05
+aliases:     [ "node/911" ]
+---
+
+<p>The ReactOS Project is pleased to release version 0.3.17. A major new feature for this release is the inclusion of NTVDM, which provides support for a wide range of 16bit applications, a long requested feature by the community. NTVDM is still undergoing work but we felt that it was ready enough to provide a sneak peak to the wider community. In addition, the leadup to the 0.3.17 release saw a very impressive round of testing by the community. Several regressions and bugs discovered in the release candidates were promptly fixed and incorporated into the final release. ReactOS is quickly approaching a stage where what the releases will offer is polish compared to previous releases. That will be an important milestone, as it is then that we can begin recommending to people that they try using ReactOS for day-to-day computing. We hope you look forward to it as much as we do.</p>
+<p>Users can select from a variety of images to test <a href="https://www.reactos.org/download">here</a>.</p>

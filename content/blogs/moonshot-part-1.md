@@ -1,0 +1,92 @@
+---
+title:       "Moonshot Part 1"
+author:      "Z98"
+date:        2014-08-22
+aliases:     [ "node/871" ]
+---
+
+<p>These days when asked what a moonshot was, most people would respond with blank looks and then ask if it had something to do with the moon.&nbsp; A few more knowledgeable persons might respond that it referred to the Apollo program.&nbsp; Still others would say it referred to any project whose chances of success were low or might take a very long time to show demonstrable success.&nbsp; The Reactive Operator System fell squarely in that third category and it was with some irony that with every success it achieved its future goals became ever loftier.&nbsp; Perhaps even more ironic, the first moonshot the project was aiming for was achieved without anyone realizing until well after the fact.</p>
+<hr>
+<p>The first time anyone noticed anything out of the ordinary about the bunnies was a simple observation about one of their avatars.&nbsp; That particular observation had not been anything profound and was more a passing remark than anything else.&nbsp; In hindsight, pursuing the seeming anomaly would have likely revealed to the various members of the project the truth that much sooner.</p>
+<p>The man settled down into his chair and put on the headset.&nbsp; Leaning back, he tapped the switch on the side and a singular beep signaled its activation.&nbsp; A few moments later the HUD appeared, prompting for his credentials.&nbsp; Logging in took another few seconds before finally the man began his dive.&nbsp; His immediate surroundings faded away, the carpeted floor and mismatched furniture being replaced by a mostly vacant office room.&nbsp; Rising from the chair, the man tested his avatar to make sure the neural signals were being properly intercepted and translated.&nbsp; Satisfied that the VR system was working, he made his exit into the larger workspace.&nbsp; Everything he saw was a virtual simulation of course, but human habits die hard and with ‘space’ so cheap computationally speaking, there was little reason not to make the workspace as comfortable as possible.</p>
+<p>Others were already present, though the only other human about was another man hunched over a console in the center of the room.&nbsp; Utility programs flittered about their automated tasks, scanning logs, monitoring processes, and generally staying out of the way of the two humans logged in.&nbsp; One however approached the newcomer, pulling out the slate tucked under its stubby arms and presenting it.&nbsp; Looking down, Z smiled wirily at the rabbit avatar used by the utility program.&nbsp; In point of fact despite their appearances, when standing upright each of these Hackbunnies were the height of a small child even before taking their ears into account.&nbsp; Their creator, the ever colorful and colorfully nicknamed KJK::Hyperion had an interesting sense of humor, albeit one that Z found himself mostly in agreement with.&nbsp; Z accepted the slate with a nod before perusing the collated reports.&nbsp; Its task complete, the rabbit turned about and hopped away on all fours onto its next task, the glowing blue sphere and orbiting rings of the project logo hovering serenely on its back with nary a bounce.</p>
+<p>“Morning Colin.”</p>
+<p>The man seated at the console looked up, giving the newcomer a somewhat exasperated look.&nbsp; “You’re late, Z.”</p>
+<p>“Nonsense, we work flexi-hour here,” Z retorted.&nbsp; “So long as I get my job done, no one cares what my hours are.”</p>
+<p>Colin frowned but did not dispute the point.&nbsp; It was true the project did not maintain formal hours, but due to the timezone differences between the various team members courtesy obliged them to maintain certain overlapping shifts to ensure people had the chance to talk to each other. &nbsp;Z tended to stretch what might be considered courteous hours due to his inability to get up in the morning, but at least he did show up if explicitly requested to do so.</p>
+<p>“Aleksey asked us to get a briefing put together by 1700 UTC today.&nbsp; You did see that email right?”</p>
+<p>Z nodded.&nbsp; “I also have no idea why he thought he’d have a chance to look at the report today.”</p>
+<p>“Oh?&nbsp; Why do you say that?”</p>
+<p>“He has an investor presentation at 4 about cryptographic securities.&nbsp; There’s a couple of commodity exchanges that want to see if they can use homomorphic encryption to limit market abuses.”</p>
+<p>Colin blinked.&nbsp; “And why do you know Aleksey’s schedule?”</p>
+<p>“I helped do a grammar check on the design document,” Z replied.&nbsp; “And I’ve found that knowing my boss’ schedule means I can schedule my own work in the least stressful manner possible.”</p>
+<p>Colin shook his head.&nbsp; “Trying to game the system again?”</p>
+<p>“Trying to make sure I have a life outside of work.&nbsp; Anyway, we have more time than you think to get the report done, so relax.”</p>
+<p>“Alright, fine.&nbsp; But if we do have time, then we need to deal with this other issue.”</p>
+<p>Z’s eyes narrowed.&nbsp; “What other issue?”</p>
+<p>Colin slid one of the slates on his desk over to Z.&nbsp; The other man caught the tablet and glanced over it quickly.&nbsp; Then he started from the top again, reading more carefully and thoroughly.</p>
+<p>“Huh,” was his immediate reaction after finishing.</p>
+<p>“That’s all you have to say?”</p>
+<p>Z shrugged.&nbsp; “The German government is being anal retentive again.&nbsp; What else is new?”</p>
+<p>“Look, they may be anal retentive, but they’re also helping pay for all this.&nbsp; If they get nervous, they might decide to pull funding or at least reduce it.&nbsp; Or, even worse, try to impose more restrictions on our work.”</p>
+<p>The ROS project was officially a public-private venture with most of the big ticket items funded by grants from various governments.&nbsp; Day to day expenses were for the most part covered by the ROS Foundation itself from revenue derived from performing various consulting services so while the lights might not go out immediately if the government agencies pulled their support, it would make it considerably more difficult to make the kind of investment needed to advance the project.</p>
+<p>Tossing aside the slate, Z grunted.&nbsp; “You know, it always amazes me that a country that is a major industrial power has a political leadership that is so technologically illiterate.&nbsp; I sometimes think your politicians would rather bury their heads in the sand and pretend things like computers and neural interfaces don’t exist rather than face up to reality and deal with the world as it is.”</p>
+<p>“And the US is any better?”</p>
+<p>“In the legislature?&nbsp; No.&nbsp; But our executive isn’t staffed by the legislature so we at least aren’t guaranteed to have the same batch of drooling idiots in both branches of government.”</p>
+<p>Colin considered whether it was worth trying to retort and decided to just leave it.&nbsp; Needling Z was tricky as the man had a fairly quick mind, an interesting memory that could cling onto lots of tiny details, as well as a remarkably strong grasp of history.&nbsp; Combined, he all too often could counter argue, convincingly, any point anyone tried to use against him and his sense of arrogance, a self-admitted flaw, would be highly unwilling to let the other party have the last word and could drag debates on for hours until the other side stormed off in a fit or Z got bored with what he felt was a lack of any new ideas coming from the other side.</p>
+<p>“We still have to do something about this,” Colin finally settled on.</p>
+<p>“Well I assume you already have an idea,” Z said, plopping down in another chair.&nbsp; “Unless I’ve severely overestimated your work ethic.”</p>
+<p>“Ha, ha.&nbsp; And as a matter of fact, I do have an idea.&nbsp; Or rather, Victor came up with it, and I just need buy-in from you before I try to convince Amine.”</p>
+<p>The aforementioned were the public relations and project resource coordinators respectively, so it was hardly surprising Victor had come up with a way of dealing with the nervousness of the German government.&nbsp; Amine on the other hand literally had the final say on a lot of matters simply because he was in charge of a lot of the day to day administrative work and damn good at it too.</p>
+<p>“Alright, this should be good.”</p>
+<p>“The problem is simple,” Colin said.&nbsp; “Members of the German cabinet are worried that the AI we’re working on could go renegade and cause massive disruption to the net.&nbsp; Some of them are arguing that it would be better that this capability is never developed in the first place rather than trying to deal with the consequences of setting it loose.”</p>
+<p>The capability in question was the end goal of the ROS Project, the creation of a self-aware AI.&nbsp; The consequences such a system would have would be profound, to say the least, and the potential economic benefits that might be reaped was a major driving point for the project’s backers.&nbsp; The social and political implications, not to mention potential security consequences, was something that caused significant unease for those same backers.</p>
+<p>“Is this where I start pointing out all the various levels of idiocy that view espouses?”</p>
+<p>And a strong argument Z could have made, considering the ROS Foundation was technically already playing catch up to a few other private corporations and at least one nation state.</p>
+<p>“Let me finish,” Colin said, “and I already know what the stupid points are.&nbsp; Basically we need to demonstrate to them the value that an AI’s problem solving capabilities represent.&nbsp; Remember the wargame we did a couple months back, where we tested the AI’s security penetration suite?”</p>
+<p>Z nodded, refraining from any further snark for the time being.</p>
+<p>“Well as you’ve probably guessed, the after action report for that is one reason the suits are so nervous.&nbsp; Victor’s proposal is that we repeat the wargames but reverse roles.&nbsp; Have the AI toolset on the defensive and use a cyberwarfare suite to attack it.”</p>
+<p>“And you propose we get such a suite from where exactly?”</p>
+<p>“Already asked Alex,” Colin answered.&nbsp; “He said his company has a large sample set that we could draw from, so long as we credit them and share the after action report.”</p>
+<p>A former lead developer of the project that still stayed in touch, Alex had gone on to form his own IT security consultancy.&nbsp; In the process, his company had discovered and even developed internally a frighteningly large collection of exploits.</p>
+<p>“Alright, that sounds reasonable,” said Z, “assuming Alex has anything that could actually hit the AI.”</p>
+<p>Colin grimaced.&nbsp; “Actually, that’s what I wanted to consult with you about.&nbsp; You’ve been working a lot on the hardware-software interface so you know better than most just how close to the metal we are.&nbsp; What are our possible vectors of attack?”</p>
+<p>“Depends,” Z said.&nbsp; “Some of the AI’s algorithms run on standard platforms.&nbsp; Others run right on the metal and have their own resource management, but even those tend to work through the platform’s firmware.&nbsp; We only have one set of algorithms that do everything from CPU startup to memory initialization directly, and then only for a very, very specific set of customized hardware.”</p>
+<p>Colin could not help but grimace at that last bit.&nbsp; The customized hardware Z referenced had been very, very expensive due to his insistence that they incorporate a high end FPGA.&nbsp; In fact it had bumped up the cost of each server five-fold and there had been some very loud yelling at the meeting to get the design approved.&nbsp; Z had won the day though and his insistence had already paid off, but getting the approval was not a memory Colin relished recalling.</p>
+<p>“So besides that one, we could use exploits that hit underlying OSes and firmware,” Colin said.</p>
+<p>Z nodded.&nbsp; “I’d recommend doing OS level exploits to keep things simple.”</p>
+<p>“Wouldn’t defeating firmware level exploits be more impressive?”</p>
+<p>Z snorted.&nbsp; “The firmware is already a revolving door thanks to that remote management crap.&nbsp; There’s a reason Pierre insists we keep it turned off even though it increases his workload.”</p>
+<p>For a systems administrator that was saying quite a bit as anything that reduced their workload tended to get adopted with indecent haste.&nbsp; Pierre was no exception in that regard, which said much about his lack of confidence in those tools.</p>
+<p>“All the more so.”</p>
+<p>“I suppose we can try it, but I’m not sure the AI could stop such an attack.&nbsp; About the only thing it could do is detect it and maybe protect its own processes, but if someone does manage a firmware exploit they’ll already be in privileged mode and can do anything they want.”</p>
+<p>“But the AI is also in privileged mode,” Colin persisted, “so the exploit should be unable to hide.”</p>
+<p>“Not unless it manages to rewrite the firmware on the fly,” Z pointed out.</p>
+<p>Colin grimaced.&nbsp; “Possible, but we can still try.”</p>
+<p>“We can always try,” Z said.&nbsp; “I suppose you want me to review Alex’s little collection of horrors?”</p>
+<p>A nod.&nbsp; “He’s already sent us a list, though you’ll need to access it from a secured server.”</p>
+<p>“Alright, I’ll drop down there after this.&nbsp; In the meantime, what’s the progress on the cluster install?”</p>
+<p>“All the new nodes are physically installed and wired up,” Colin said.&nbsp; “Olaf and Jan say they’ll have them imaged by tomorrow.&nbsp; Pierre’s still a bit twitchy about the network hardening though, something about our gateways not playing nicely with the new VPNs.”</p>
+<p>“When have they ever,” Z muttered.&nbsp; “I’m kind of surprised we haven’t just built our own.”</p>
+<p>“I’m tempted,” Colin said, “I really am.&nbsp; In fact I’m trying to work out a way to budget for that next year, but I’m still working out the right phrasing to justify it.”</p>
+<p>“Whatever the hell gets us what we need.&nbsp; Is that it?”</p>
+<p>Colin nodded.&nbsp; “Once you’re done reviewing Alex’s list I want you back here to help with the report.”</p>
+<p>Z chuckled.&nbsp; “Aye aye.”</p>
+<p>Before he could get up however another rabbit approached him, this one with a sleek black coat.&nbsp; It presented him with another slate.</p>
+<p>Colin raised an eyebrow.&nbsp; “Something else?”</p>
+<p>“Let’s see,” Z said as he accepted the slate.&nbsp; “Ah, no, this is just the daily financial report.&nbsp; Our short and long term investments seem to be doing nicely.”</p>
+<p>“For now,” Colin muttered.</p>
+<p>“Considering how little we started with, I’d say we’ve done remarkably well,” Z pointed out.&nbsp; “We’ve already cashed out enough to more than recover our initial capital, everything else is pure profit.”</p>
+<p>“I suppose,” said Colin.&nbsp; “I just don’t feel entirely safe with using the markets like that for generating capital.”</p>
+<p>“Better than going to some bank or investment fund and letting them acquire a controlling interest,” said Z.&nbsp; “Anyway, within another year or so we’ll have the funds to formally launch the company and then we can stop relying on government grants to pay our bills.”</p>
+<p>“But until then we’ll continue needing those grants,” Colin said pointedly.</p>
+<p>Z smiled slightly.&nbsp; “Alright, I get the hint, I’ll be back with that report.”</p>
+<p>As he stood, Z looked over at the black rabbit now ambling away.</p>
+<p>“Since when did we have a bunny with pure black fur?”</p>
+<p>“Hmm?” Colin said, looking up and following Z’s gaze.&nbsp; “Don’t know, I never looked at the avatar generator KJK wrote for them.&nbsp; I thought it was all random.”</p>
+<p>“It is,” Z said.&nbsp; “It’s supposed to generate textures based off of common fur patterns for rabbits, but I don’t think it’s ever created one that was a single color.”</p>
+<p>“Well, it has now,” Colin said.</p>
+<p>With a shrug, Z dropped the point and headed towards the secure interface chamber.&nbsp; There was plenty of work to do besides speculate about the avatars of some random helper utility after all.</p>
+<p>End Part 1</p>
+<p>Discussion: https://www.reactos.org/forum/viewtopic.php?f=2&amp;t=13567</p>
+
