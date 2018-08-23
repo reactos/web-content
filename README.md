@@ -22,10 +22,10 @@ Website Subsystems written in PHP (such as GetBuilds, RosLogin, Testman, etc.) a
 
 For having the best website, the contributors should follow some simple rules.
 
-* Do NOT create a single CSS or Javascript file per page unless you have good reasons for doing that. For example, download page could have a special modal. This seems a good reason to include a good javascript file called download-page-modal.js . 
+* Do NOT create a single CSS or Javascript file per page unless you have good reasons for doing that. For example, download page could have a special modal. This seems a good reason to include a good javascript file called `download-page-modal.js` . 
 Another example. Donation page could have a special style for the navbar. But wait! The navbar is included always! Considering having one CSS for the entire website!
 
-* [Follow HTML5 Standars](https://html.spec.whatwg.org/)! Use <div>, <section> . Do NOT use the old and buggy table-fixed tags.
+* [Follow HTML5 Standars](https://html.spec.whatwg.org/)! Use `<div>`, `<section>` . Do NOT use the old and buggy table-fixed tags.
    
 ## Helpful and useful HEX code for the website
 
