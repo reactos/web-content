@@ -17,3 +17,17 @@ Website Subsystems written in PHP (such as GetBuilds, RosLogin, Testman, etc.) a
    The page is now served at http://localhost:1313 and automatically rebuilt and refreshed in the browser on local changes.
 
    *NOTE* - When working on the style it might be needed to use `hugo server --disableFastRender` instead. 
+
+## Developing CSS, including JS
+
+For having the best website, the contributors should follow some simple rules.
+
+* Do NOT create a single CSS or Javascript file per page unless you have good reasons for doing that. For example, download page could have a special modal. This seems a good reason to include a good javascript file called download-page-modal.js . 
+Another example. Donation page could have a special style for the navbar. But wait! The navbar is included always! Considering having one CSS for the entire website!
+
+* [Follow HTML5 Standars](https://html.spec.whatwg.org/)! Use <div>, <section> . Do NOT use the old and buggy table-fixed tags.
+   
+## Helpful and useful HEX code for the website
+
+Main color for website could be #XXXXX
+
