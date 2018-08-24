@@ -1,56 +1,50 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-  {{ partial "head.html" . }}
+	{{ partial "head.html" . }}
 
-  <body>
+	<body>
+  
     {{ partial "banner.html" . }}
 
-    <div id="all">
+    <header>
 
-        <header>
+        {{ partial "nav.html" . }}
 
-          {{ partial "nav.html" . }}
-
-        </header>
+    </header>
+		
+	<div id="container-fluid">
 
         {{ partial "breadcrumbs.html" . }}
+			 
+		<div class="row">
+			
+			<div class="col-md-12">
 
-        <div id="content">
-            {{ if isset .Params "id" }}
+			{{ if isset .Params "id" }}
 
-              {{ partial .Params.id . }}
+				{{ partial .Params.id . }}
 
-            {{ else }}
+			{{ else }}
 
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12">
-
-                        <div>
-                          {{ .Content }}
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container -->
-
-            {{ end }}
-        </div>
-        <!-- /#content -->
-
-        {{ partial "footer.html" . }}
+				{{ .Content }}
+				
+			{{ end }}
+                        
+			</div>
+			<!-- /.col-md-12 -->
+				
+		</div>
+        <!-- /.row -->
+			
+		{{ partial "footer.html" . }}
 
     </div>
-    <!-- /#all -->
+	<!-- /#container-fluid -->
+		
 
-    {{ partial "scripts.html" . }}
+		
+	{{ partial "scripts.html" . }}
 
-  </body>
+ </body>
 </html>
