@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-  <body>
+<body>
+    
     {{ partial "banner.html" . }}
 
-    <div id="all">
+    <header>
 
-        <header>
+        {{ partial "top.html" . }}
 
-          {{ partial "top.html" . }}
+        {{ partial "nav.html" . }}
 
-          {{ partial "nav.html" . }}
+    </header>
 
-        </header>
+    <div class="container-fluid">
 
         {{ partial "carousel.html" . }}
 
@@ -31,9 +32,9 @@
         {{ partial "footer.html" . }}
 
     </div>
-    <!-- /#all -->
+    <!-- /.container-fluid -->
 
     {{ partial "scripts.html" . }}
 
-  </body>
+</body>
 </html>
