@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-	{{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-	<body>
-  
+<body>
+
     {{ partial "banner.html" . }}
 
     <header>
@@ -12,39 +12,37 @@
         {{ partial "nav.html" . }}
 
     </header>
-		
-	<div id="container-fluid">
+
+    <div id="container-fluid">
 
         {{ partial "breadcrumbs.html" . }}
-			 
-		<div class="row">
-			
-			<div class="col-md-12">
 
-			{{ if isset .Params "id" }}
+        <div class="row">
+            
+            <div class="col-md-12">
 
-				{{ partial .Params.id . }}
+            {{ if isset .Params "id" }}
 
-			{{ else }}
+                {{ partial .Params.id . }}
 
-				{{ .Content }}
-				
-			{{ end }}
-                        
-			</div>
-			<!-- /.col-md-12 -->
-				
-		</div>
+            {{ else }}
+
+                {{ .Content }}
+
+            {{ end }}
+
+            </div>
+            <!-- /.col-md-12 -->
+
+        </div>
         <!-- /.row -->
-			
-		{{ partial "footer.html" . }}
+
+        {{ partial "footer.html" . }}
 
     </div>
-	<!-- /#container-fluid -->
-		
+    <!-- /#container-fluid -->
 
-		
-	{{ partial "scripts.html" . }}
+    {{ partial "scripts.html" . }}
 
- </body>
+</body>
 </html>
