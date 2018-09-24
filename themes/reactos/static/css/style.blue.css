@@ -2945,7 +2945,8 @@ fieldset[disabled] .btn-template-primary.active {
   border-radius: 0;
 }
 .navbar-toggle:focus {
-  outline: 0;
+    border: 1px solid red;
+    outline: 0;
 }
 .navbar-nav {
   margin: 10.5px -15px;
