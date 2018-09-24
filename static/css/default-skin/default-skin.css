@@ -37,7 +37,7 @@
           box-shadow: none; }
   .pswp__button:focus, .pswp__button:hover {
     opacity: 1; }
-  .pswp__button:active {
+  .pswp__button:focus {
     outline: none;
     opacity: 0.9; }
   .pswp__button::-moz-focus-inner {
