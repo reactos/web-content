@@ -3,7 +3,7 @@
 	Styles for basic PhotoSwipe functionality (sliding area, open/close transitions)
 */
 /* pswp = photoswipe */
-.pswp {
+.pswp:focus {
   display: none;
   position: absolute;
   width: 100%;
