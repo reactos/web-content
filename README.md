@@ -17,3 +17,10 @@ Website Subsystems written in PHP (such as GetBuilds, RosLogin, Testman, etc.) a
    The page is now served at http://localhost:1313 and automatically rebuilt and refreshed in the browser on local changes.
 
    *NOTE* - When working on the style it might be needed to use `hugo server --disableFastRender` instead. 
+
+## Contributing
+1. Choose one of the tasks from: [METABUG - New ReactOS Website Tasks before it can go live](https://jira.reactos.org/browse/ONLINE-815)
+2. Comment on Jira that you want to work on this feature (to prevent duplication of work).
+3. Create a pull request here.
+
+
