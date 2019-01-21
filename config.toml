@@ -156,35 +156,41 @@ paginate = 10
     weight = 8
 
 # Top bar social links menu
-
 [[menu.topbar]]
     weight = 1
     name = "GitHub"
-    url = "https://github.com/reactos/reactos"
+    url = "https://github.com/reactos"
     pre = "<i class='fa fa-2x fa-github'></i>"
 
 [[menu.topbar]]
     weight = 2
-    name = "Facebook"
-    url = "https://www.facebook.com/ReactOS-19143619259/"
-    pre = "<i class='fa fa-2x fa-facebook'></i>"
-
-[[menu.topbar]]
-    weight = 3
     name = "Twitter"
     url = "https://twitter.com/reactos"
     pre = "<i class='fa fa-2x fa-twitter'></i>"
 
 [[menu.topbar]]
+    weight = 3
+    name = "Youtube"
+    url = "https://www.youtube.com/channel/UCMo8NP-2oP35rauon-Duc9Q"
+    pre = "<i class='fa fa-2x fa-youtube'></i>"
+
+[[menu.topbar]]
     weight = 4
-    name = "Email"
-    url = "mailto:your@email.com"
-    pre = "<i class='fa fa-2x fa-envelope'></i>"
+    name = "Facebook"
+    url = "https://www.facebook.com/ReactOS-19143619259/"
+    pre = "<i class='fa fa-2x fa-facebook'></i>"
+
+[[menu.topbar]]
+    weight = 5
+    name = "VK"
+    url = "https://vk.com/reactos_ru"
+    pre = "<i class='fa fa-2x fa-vk'></i>"
+
 
 [params]
     viewMorePostLink = "/news/"
-    author = "DevCows"
-    defaultKeywords = ["devows", "hugo", "go"]
+    author = "ReactOS Team & Contributors"
+    defaultKeywords = ["ReactOS", "Open Source", "Free"]
     defaultDescription = "Site template made by devcows using hugo"
 
     about_us = "ReactOS is a registered trademark of ReactOS Foundation in the USA and other countries. "
@@ -201,12 +207,8 @@ paginate = 10
 
 # Enable or disable top bar with social icons
 [params.topbar]
-    enable = false
-    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
-      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
-      <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-      </p>
-      """
+    enable = true
+    text = """<p class="hidden-sm hidden-xs"></p>"""
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
