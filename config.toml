@@ -33,7 +33,11 @@ paginate = 10
         name = "Blog Posts"
         url  = "/blogs/"
         weight = 103
-
+    [[menu.main]]
+        parent = "News"
+        name = "Gallery"
+        url  = "/gallery/"
+        weight = 104
 
 [[menu.main]]
     identifier = "discover"
@@ -117,28 +121,52 @@ paginate = 10
         url  = "/developing/faqs/"
         weight = 213
 
-
-
-
 [[menu.main]]
-    name = "Jira"
-    url  = "https://jira.reactos.org"
+    name = "Social"
+    identifier = "social"
     weight = 3
+    [[menu.main]]
+        parent = "social"
+        name = "Chat"
+        url  = "https://chat.reactos.org"
+        weight = 300
+    [[menu.main]]
+        parent = "social"
+        name = "Forum"
+        url  = "/forum/"
+        weight = 301
+    [[menu.main]]
+        parent = "social"
+        name = "IRC"
+        url  = "/irc/"
+        weight = 302
+
 
 [[menu.main]]
-    name = "Gallery"
-    url  = "/gallery/"
+    name = "Development"
+    identifier = "dev"
     weight = 4
+    [[menu.main]]
+        parent = "dev"
+        name = "Jira"
+        url  = "https://jira.reactos.org"
+        weight = 400
+    [[menu.main]]
+        parent = "dev"
+        name = "Wiki"
+        url  = "/wiki/"
+        weight = 401
+    [[menu.main]]
+        parent = "dev"
+        name = "Main repository"
+        url  = "https://github.com/reactos/reactos"
+        weight = 402
+    [[menu.main]]
+        parent = "dev"
+        name = "All repositories"
+        url  = "https://github.com/reactos/"
+        weight = 403
 
-[[menu.main]]
-    name = "IRC"
-    url  = "/irc/"
-    weight = 5
-
-[[menu.main]]
-    name = "Forum"
-    url  = "/forum/"
-    weight = 6
 
 [[menu.main]]
     name = "Shop"
