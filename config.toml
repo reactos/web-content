@@ -102,7 +102,7 @@ paginate = 10
     [[menu.main]]
         parent = "discover"
         name = "Building ReactOS"
-        url  = "/building-reactos/"
+        url  = "https://reactos.org/wiki/Building_ReactOS"
         weight = 210
     [[menu.main]]
         parent = "discover"
