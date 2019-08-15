@@ -2,19 +2,18 @@
 {{ if .Site.Params.recent_posts.enable }}
 <section class="row bar background-white no-mb">
 
-    <div class="col-md-8 col-md-offset-2">
-    
+    <div class="col-md-10 col-md-offset-1">
         <div class="row">
             <div class="heading text-center">
                 <h2>{{ .Site.Params.recent_posts.title }}</h2>
             </div>
-    
+
             <p class="lead">
             {{ .Site.Params.recent_posts.subtitle | markdownify }}
             </p>
         </div>
         <!-- /.row -->
-        
+
         <!-- *** BLOG HOMEPAGE *** -->
 
         <div class="row">

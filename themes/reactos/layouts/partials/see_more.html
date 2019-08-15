@@ -1,8 +1,6 @@
-{{ if isset .Site.Params "see_more" }}
-{{ if .Site.Params.see_more.enable }}
 <section class="row bar background-image-fixed-2 no-mb color-white text-center">
         <div class="dark-mask"></div>
-        <div class="col-md-offset-2 col-md-8">
+        <div class="col-md-offset-1 col-md-10">
             <div class="icon icon-lg"><i class="{{ .Site.Params.see_more.icon }}"></i>
             </div>
             <h3 class="text-uppercase">{{ .Site.Params.see_more.title }}</h3>
@@ -12,5 +10,3 @@
             </p>
         </div>
 </section>
-{{ end }}
-{{ end }}
