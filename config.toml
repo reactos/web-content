@@ -226,14 +226,6 @@ paginate = 10
     # at 'exampleSite/data/features'.
     # For more informtion take a look at the README.
 
-[params.testimonials]
-    enable = false
-    # All testimonials are defined in their own files. You can find example items
-    # at 'exampleSite/data/testimonials'.
-    # For more informtion take a look at the README.
-    title = "Testimonials"
-    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
-
 [params.see_more]
     enable = true
     icon = "fa fa-file-code-o"
@@ -241,14 +233,6 @@ paginate = 10
     subtitle = "Imagine running your favorite Windows applications and drivers in an open-source environment you can trust. That's ReactOS. Not just an Open but also a Free operating system."
     link_url = "#"
     link_text = "Click here to learn more"
-
-[params.clients]
-    enable = false
-    # All clients are defined in their own files. You can find example items
-    # at 'exampleSite/data/clients'.
-    # For more informtion take a look at the README.
-    title = "Our Clients"
-    subtitle = ""
 
 [params.recent_posts]
     enable = true
