@@ -1,2 +1,2 @@
-{{ $paginator := .Paginate (where .Site.Pages "Type" "in" (slice "blogs" "project-news")) }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "blogs" "project-news")) }}
 {{ partial "shared-list.html" (dict "context" . "paginator" $paginator) }}
