@@ -242,37 +242,28 @@ ul.list-style-none {
   margin: 0;
   font-size: 12px;
 }
-#top .social {
-  float: right;
-  text-align: right;
+#copyright .social i {
+  font-size: 28px;
 }
-#top .social a {
+#copyright .social a {
   color: #999999;
   display: inline-block;
-  width: 24px;
-  height: 24px;
   border-radius: 12px;
   line-height: 20px;
   font-size: 12px;
   text-align: center;
   vertical-align: bottom;
 }
-#top .social a:hover {
+#copyright .social a:hover {
   color: #fff;
 }
-#top .social a:hover.facebook {
+#copyright .social a:hover.facebook {
   background-color: #4460ae;
 }
-#top .social a:hover.gplus {
-  background-color: #c21f25;
-}
-#top .social a:hover.twitter {
+#copyright .social a:hover.twitter {
   background-color: #3cf;
 }
-#top .social a:hover.instagram {
-  background-color: #cd4378;
-}
-#top .social a:hover.email {
+#copyright .social a:hover.email {
   background-color: #4a7f45;
 }
 #top .login {
