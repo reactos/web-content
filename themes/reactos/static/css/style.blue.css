@@ -55,8 +55,7 @@ button {
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-a i.fa,
-button i.fa {
+a i.fa, button i.fa {
   margin: 0 5px;
 }
 .clickable {
@@ -512,17 +511,7 @@ body.boxed .navbar-affixed-top.affix {
   margin-bottom: 20px;
   font-size: 13px;
 }
-/* buttons  */
-.btn {
-  font-weight: 700;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  border-radius: 0;
-}
+
 .input-group .btn {
   font-size: 14px;
 }
@@ -731,63 +720,6 @@ fieldset[disabled] .btn-template-primary.active {
 .btn-template-primary .badge {
   color: #467fbf;
   background-color: #ffffff;
-}
-#intro {
-  background: url('../img/home.jpg') no-repeat center top;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-#intro .item {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  height: 100%;
-}
-#intro .item h1 {
-  text-transform: uppercase;
-  font-size: 50px;
-  color: #fff;
-  margin-bottom: 40px;
-  letter-spacing: 0.08em;
-}
-@media (max-width: 991px) {
-  #intro .item h1 {
-    font-size: 40px;
-  }
-}
-@media (max-width: 767px) {
-  #intro .item h1 {
-    font-size: 25px;
-  }
-}
-#intro .item h3 {
-  color: #fff;
-  margin-bottom: 40px;
-}
-@media (max-width: 767px) {
-  #intro .item h3 {
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-}
-#intro .item .btn {
-  text-transform: none;
-}
-@media (max-width: 991px) {
-  #intro .item .btn {
-    font-size: 14px;
-  }
-}
-@media (max-width: 991px) {
-  #intro .item .carousel-caption {
-    left: 10%;
-    right: 10%;
-  }
-}
-#intro .container,
-#intro .row {
-  height: 100%;
-  position: relative;
 }
 .jumbotron {
   padding: 30px;
@@ -1682,13 +1614,7 @@ fieldset[disabled] .btn-template-primary.active {
   background-attachment: fixed;
   background-size: cover;
 }
-.bar.color-white h1,
-.bar.color-white h2,
-.bar.color-white h3,
-.bar.color-white h4,
-.bar.color-white h5,
-.bar.color-white h6,
-.bar.color-white p {
+.bar.color-white {
   color: #fff;
 }
 .bar.padding-big {
@@ -1954,7 +1880,6 @@ fieldset[disabled] .btn-template-primary.active {
   margin-bottom: 60px;
 }
 #blog-listing-medium .post h2 {
-  text-transform: uppercase;
   margin: 0 0 10px;
   font-size: 24px;
   letter-spacing: 0.08em;
@@ -1968,7 +1893,6 @@ fieldset[disabled] .btn-template-primary.active {
 #blog-listing-medium .post .author-category {
   float: left;
   color: #999999;
-  text-transform: uppercase;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -2507,8 +2431,7 @@ fieldset[disabled] .btn-template-primary.active {
 #copyright {
   background: #333;
   color: #ccc;
-  padding: 50px 0;
-  font-size: 12px;
+  padding: 20px 0;
   line-height: 28px;
 }
 #copyright p {
@@ -3056,7 +2979,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 /* scaffolding */
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857143;
   color: #555555;
 }
@@ -3461,6 +3384,59 @@ a.list-group-item.active > .badge,
 }
 
 /* ReactOS */
-#navbar > div {
- padding: 0;
+#intro {
+  font-size: 16px;
+}
+#intro, #intro h1, #intro h4 {
+  color: #eeeeee;
+}
+#intro h1 {
+  margin-top: 0;
+}
+#intro h4 {
+  text-transform: uppercase;
+}
+#intro ul {
+  padding: 0;
+  margin: 0 0 0 15px;
+}
+#intro a {
+  color: #cccccc;
+}
+#intro a.screenshot img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 10px;
+  height: 263px;
+  width: 350px;
+}
+#intro a.download {
+  color: white;
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+#jirafeed {
+	list-style: none;
+	padding: 0;
+}
+#jirafeed .time {
+	color: #999999;
+	font-size: 16px;
+	margin-right: 20px;
+}
+#jirafeed li {
+	margin-bottom: 1em;
+}
+#jirafeed i.fa {
+	margin-right: 5px;
+}
+
+#copyright ul.links {
+	list-style: none;
+	margin: 0;
+}
+#copyright ul.links a {
+	color: #eeeeee;
+	font-weight: bold;
+	text-transform: uppercase;
 }

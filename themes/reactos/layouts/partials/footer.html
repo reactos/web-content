@@ -1,47 +1,17 @@
-<footer class="row" id="footer">
+<footer class="row" id="copyright">
 	<div class="col-md-offset-1 col-md-10">
-		<div class="col-md-4 col-sm-6">
-			<h4>{{ i18n "aboutUs" }}</h4>
+		<div class="col-md-4">&copy; 1996-{{ now.Year }} ReactOS Team &amp; Contributors</div>
 
-			{{ .Site.Params.about_us | markdownify }}
-
-			<hr class="hidden-md hidden-lg hidden-sm">
+		<div class="col-md-4">
+			<ul class="links">
+				<li><a href="/impressum">Impressum</a></li>
+			</ul>
 		</div>
-	
-		<div class="col-md-4 col-sm-6">
-			<h4>{{ i18n "recentPosts" }}</h4>
 
-			<div class="blog-entries">
-				{{ range first 3 (where .Site.RegularPages "Type" "in" (slice "project-news" "blogs")) }}
-					<div class="item same-height-row clearfix">
-						<div class="image same-height-always">
-							<a href="{{ .Permalink }}">
-								{{ if isset .Params "banner" }}
-									<img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="{{ .Title }}">
-								{{ else }}
-									<img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="{{ .Title }}">
-								{{ end }}
-							</a>
-						</div>
-						<div class="name same-height-always">
-							<h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-						</div>
-					</div>
-				{{ end }}
-			</div>
-			<hr class="hidden-md hidden-lg">
-		</div>
-	</div>
-</footer>
-
-<div class="row" id="copyright">
-	<div class="col-md-offset-1 col-md-10">
-		<p class="pull-left">{{ .Site.Params.copyright | safeHTML }}</p>
-
-		<p class="pull-right">
+		<div class="col-md-4">
 			{{ i18n "templateBy" }} <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
 			<!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
 			{{ i18n "portedBy" }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
-		</p>
+		</div>
 	</div>
-</div>
+</footer>

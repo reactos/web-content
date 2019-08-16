@@ -4,7 +4,8 @@
 {{ partial "head.html" . }}
 
 <body>
-    
+    <a class="github-fork-ribbon" href="https://github.com/reactos/reactos" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+
     {{ partial "banner.html" . }}
 
     <header>
@@ -16,12 +17,7 @@
     </header>
 
     <div class="container-fluid">
-
-        {{ partial "carousel.html" . }}
-
-        {{ partial "features.html" . }}
-
-        {{ partial "see_more.html" . }}
+        {{ .Content }}
 
         {{ partial "recent_posts.html" . }}
 
