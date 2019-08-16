@@ -118,7 +118,7 @@ div.section {
   vertical-align: middle;
   text-align: center;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 30px;
   border-radius: 15px;
 }
@@ -1894,7 +1894,7 @@ fieldset[disabled] .btn-template-primary.active {
   float: left;
   color: #999999;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.08em;
 }
 #blog-listing-medium .post .author-category a {
@@ -1902,7 +1902,7 @@ fieldset[disabled] .btn-template-primary.active {
 }
 #blog-listing-medium .post .date-comments {
   float: right;
-  font-size: 12px;
+  font-size: 14px;
 }
 #blog-listing-medium .post .date-comments a {
   color: #999999;
@@ -3421,7 +3421,7 @@ a.list-group-item.active > .badge,
 }
 #jirafeed .time {
 	color: #999999;
-	font-size: 16px;
+	font-size: 14px;
 	margin-right: 20px;
 }
 #jirafeed li {
