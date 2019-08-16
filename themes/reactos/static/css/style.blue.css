@@ -2780,6 +2780,9 @@ fieldset[disabled] .btn-template-primary.active {
   .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
   }
+  .github-fork-ribbon {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
   .navbar-nav {
