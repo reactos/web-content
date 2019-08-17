@@ -1,18 +1,17 @@
 <div class="row" id="heading-breadcrumbs">
-    <div class="col-md-offset-1 col-md-10">
-            {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-            {{ $.Scratch.Add "path" .Site.BaseURL }}
-            <div class="breadcrumbs">
-              <a href="{{ .Site.BaseURL }}">home</a>
-              {{ range $index, $element := split $url "/" }}
-                {{ $.Scratch.Add "path" $element }}
-                  {{ if ne $element "" }}
-                  / <a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
-                  {{ $.Scratch.Add "path" "/" }}
-                  {{ end }}
-              {{ end }}
-            </div>
-        <h1>{{ .Title }}</h1>
-    </div>
+	<div class="col-md-offset-1 col-md-10">
+		{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+		{{ $.Scratch.Add "path" .Site.BaseURL }}
+		<div class="breadcrumbs">
+			<a href="{{ .Site.BaseURL }}">home</a>
+			{{ range $index, $element := split $url "/" }}
+			{{ $.Scratch.Add "path" $element }}
+			{{ if ne $element "" }}
+			/ <a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a>
+			{{ $.Scratch.Add "path" "/" }}
+			{{ end }}
+			{{ end }}
+		</div>
+		<h1>{{ .Title }}</h1>
+	</div>
 </div>
-

@@ -1,51 +1,52 @@
 <section class="row bar background-white no-mb">
-    <div class="col-md-10 col-md-offset-1">
-        <div id="blog-listing-medium" class="col-md-9">
-            <div class="heading">
-                <h3>Recent News</h3>
-            </div>
+	<div class="col-md-10 col-md-offset-1">
+		<div id="blog-listing-medium" class="col-md-9">
+			<div class="heading">
+				<h3>Recent News</h3>
+			</div>
 
-            {{ $posts := .Paginate (where .Site.RegularPages "Type" "in" (slice "project-news" "blogs")) }}
-            {{ range first 4 $posts.Pages }}
-            <section class="post">
-                <div class="row">
-                    <div class="col-md-3">
-                      <div class="image">
-                          <a href="{{ .Permalink }}">
-                              {{ if .Params.banner }}
-                                  <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
-                              {{ else }}
-                                  <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
-                              {{ end }}
-                          </a>
-                      </div>
-                    </div>
-                    <div class="col-md-9">
-                        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                        <div class="clearfix">
-                            <p class="author-category">
-                              {{ if isset .Params "author" }}
-                                  {{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
-                              {{ end }}
-                            </p>
-                            <p class="date-comments">
-                                <a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.date_format }}</a>
-                            </p>
-                        </div>
-                        <p class="intro">{{ .Summary }}</p>
-                    </div>
-                </div>
-            </section>
-            {{ end }}
-        </div>
+			{{ $posts := .Paginate (where .Site.RegularPages "Type" "in" (slice "project-news" "blogs")) }}
+			{{ range first 4 $posts.Pages }}
+			<section class="post">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="image">
+							<a href="{{ .Permalink }}">
+								{{ if .Params.banner }}
+								<img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
+								{{ else }}
+								<img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+								{{ end }}
+							</a>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+						<div class="clearfix">
+							<p class="author-category">
+								{{ if isset .Params "author" }}
+									{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a>
+								{{ end }}
+							</p>
+							<p class="date-comments">
+								<a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i>
+									{{ .Date.Format .Site.Params.date_format }}</a>
+							</p>
+						</div>
+						<p class="intro">{{ .Summary }}</p>
+					</div>
+				</div>
+			</section>
 
-        <div class="col-md-3">
-            <div class="heading">
-                <h3>Live Activity</h3>
-            </div>
+			{{ end }}
+		</div>
 
-            <ul id="jirafeed">
-            </ul>
-        </div>
-    </div>
+		<div class="col-md-3">
+			<div class="heading">
+				<h3>Live Activity</h3>
+			</div>
+
+			<ul id="jirafeed"></ul>
+		</div>
+	</div>
 </section>

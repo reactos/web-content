@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-  <body>
-    {{ partial "banner.html" . }}
+<body>
+	{{ partial "banner.html" . }}
 
-    <div id="all">
+	<div id="all">
 
-        <header>
+		<header>
 
-          {{ partial "nav.html" . }}
+			{{ partial "nav.html" . }}
 
-        </header>
+		</header>
 
-        {{ partial "breadcrumbs.html" . }}
+		{{ partial "breadcrumbs.html" . }}
 
-        <div id="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9">
-                        <ul>
-                            {{ range .Paginator.Pages }}
-                            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-                            {{ end }}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<div id="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<ul>
+							{{ range .Paginator.Pages }}
+							<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+							{{ end }}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        {{ partial "footer.html" . }}
+		{{ partial "footer.html" . }}
 
-    </div>
+	</div>
 
-    {{ partial "scripts.html" . }}
+	{{ partial "scripts.html" . }}
 
-  </body>
+</body>
+
 </html>

@@ -5,44 +5,29 @@
 
 <body>
 
-    {{ partial "banner.html" . }}
+	{{ partial "banner.html" . }}
 
-    <header>
+	<header>
+		{{ partial "nav.html" . }}
+	</header>
 
-        {{ partial "nav.html" . }}
+	<div id="container-fluid">
+		{{ partial "breadcrumbs.html" . }}
 
-    </header>
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10">
+				{{ if isset .Params "id" }}
+					{{ partial .Params.id . }}
+				{{ else }}
+					{{ .Content }}
+				{{ end }}
+			</div>
+		</div>
 
-    <div id="container-fluid">
+		{{ partial "footer.html" . }}
+	</div>
 
-        {{ partial "breadcrumbs.html" . }}
-
-        <div class="row">
-            
-            <div class="col-md-offset-1 col-md-10">
-
-            {{ if isset .Params "id" }}
-
-                {{ partial .Params.id . }}
-
-            {{ else }}
-
-                {{ .Content }}
-
-            {{ end }}
-
-            </div>
-            <!-- /.col-md-12 -->
-
-        </div>
-        <!-- /.row -->
-
-        {{ partial "footer.html" . }}
-
-    </div>
-    <!-- /#container-fluid -->
-
-    {{ partial "scripts.html" . }}
-
+	{{ partial "scripts.html" . }}
 </body>
+
 </html>
