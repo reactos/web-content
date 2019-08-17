@@ -134,31 +134,6 @@ paginate = 10
 	tags = true
 	search = true
 
-[params.carousel]
-	enable = true
-	# All carousel items are defined in their own files. You can find example items
-	# at 'exampleSite/data/carousel'.
-	# For more informtion take a look at the README.
-
-[params.features]
-	enable = false
-	# All features are defined in their own files. You can find example items
-	# at 'exampleSite/data/features'.
-	# For more informtion take a look at the README.
-
-[params.see_more]
-	enable = true
-	icon = "fa fa-file-code-o"
-	title = "ReactOS is a Free Opensource operating system."
-	subtitle = "Imagine running your favorite Windows applications and drivers in an open-source environment you can trust. That's ReactOS. Not just an Open but also a Free operating system."
-	link_url = "#"
-	link_text = "Click here to learn more"
-
-[params.recent_posts]
-	enable = true
-	title = "Recent news"
-	subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
-
 [taxonomies]
 	author = "author"
 	tag = "tags"
