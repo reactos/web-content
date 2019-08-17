@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-	  {{ partial "head.html" . }}
+	{{ partial "head.html" . }}
 
-	  <body>
-			{{ partial "banner.html" . }}
+	<body>
+		{{ partial "banner.html" . }}
 
-			<div id="all">
-				<header>
-				  {{ partial "nav.html" . }}
-				</header>
+		<header>
+			{{ partial "nav.html" . }}
+		</header>
 
-				<div id="content">
-					<div class="container">
-						<div class="col-sm-6 col-sm-offset-3" id="error-page">
-							<div class="box">
-								<p class="text-center">
-									<a href="{{ .Site.BaseURL }}">
-										<img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo">
-									</a>
-								</p>
+		<div class="container-fluid">	
+			<section id="content" class="row">
+				<div class="col-sm-6 col-sm-offset-3" id="error-page">
+					<div class="box">
+						<p class="text-center">
+							<a href="{{ .Site.BaseURL }}">
+								<img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo">
+							</a>
+						</p>
 
-								<h3>We are sorry - this page is not here anymore</h3>
-								<h4 class="text-muted">Error 404 - Page not found</h4>
+						<h3>We are sorry - this page is not here anymore</h3>
+						<h4 class="text-muted">Error 404 - Page not found</h4>
 
-								<p class="buttons"><a href="{{ .Site.BaseURL }}" class="btn btn-template-main"><i class="fa fa-home"></i> Go to Homepage</a></p>
-							</div>
-						</div>
+						<p class="buttons"><a href="{{ .Site.BaseURL }}" class="btn btn-template-main"><i class="fa fa-home"></i> Go to Homepage</a></p>
 					</div>
 				</div>
+			</section>
 
-				{{ partial "footer.html" . }}
-			</div>
-			{{ partial "scripts.html" . }}
-	  </body>
+			{{ partial "footer.html" . }}
+		</div>
+
+		{{ partial "scripts.html" . }}
+	</body>
 </html>

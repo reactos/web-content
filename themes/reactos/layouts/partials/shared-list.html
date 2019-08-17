@@ -1,43 +1,36 @@
 {{ with .context }}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+	{{ partial "head.html" . }}
 
-{{ partial "head.html" . }}
-
-<body>
-	{{ partial "banner.html" . }}
-
-	<div id="all">
+	<body>
+		{{ partial "banner.html" . }}
 
 		<header>
-
 			{{ partial "nav.html" . }}
-
 		</header>
 
-		{{ partial "breadcrumbs.html" . }}
+		<div class="container-fluid">
+			{{ partial "breadcrumbs.html" . }}
 
-		<div id="content">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-9" id="blog-listing-medium">
-
+			<section id="content" class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div id="blog-listing-medium" class="col-md-9 row">
 						{{ range $.paginator.Pages }}
 						<section class="post">
 							<div class="row">
-								<div class="col-md-4">
+								<div class="col-md-3">
 									<div class="image">
 										<a href="{{ .Permalink }}">
 											{{ if .Params.banner }}
-											<img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
+												<img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
 											{{ else }}
-											<img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+												<img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
 											{{ end }}
 										</a>
 									</div>
 								</div>
-								<div class="col-md-8">
+								<div class="col-md-9">
 									<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 									<div class="clearfix">
 										<p class="author-category">
@@ -46,8 +39,7 @@
 											{{ end }}
 										</p>
 										<p class="date-comments">
-											<a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i>
-												{{ .Date.Format .Site.Params.date_format }}</a>
+											<a href="{{ .Permalink }}"><i class="fa fa-calendar-o"></i> {{ .Date.Format .Site.Params.date_format }}</a>
 										</p>
 									</div>
 									<p class="intro">{{ .Summary }}</p>
@@ -58,35 +50,30 @@
 
 						<ul class="pager">
 							{{ if .Paginator.HasPrev }}
-							<li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr;
-									{{ i18n "newer" }}</a></li>
+								<li class="previous"><a href="{{ .Site.BaseURL }}{{ .Paginator.Prev.URL }}">&larr; {{ i18n "newer" }}</a></li>
 							{{ else }}
-							<li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
+								<li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
 							{{ end }}
 
 							{{ if .Paginator.HasNext }}
-							<li class="next"><a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}">{{ i18n "older" }}
-									&rarr;</a></li>
+								<li class="next"><a href="{{ .Site.BaseURL }}{{ .Paginator.Next.URL }}">{{ i18n "older" }} &rarr;</a></li>
 							{{ else }}
-							<li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
+								<li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
 							{{ end }}
 						</ul>
 					</div>
+
 					<div class="col-md-3">
-
 						{{ partial "sidebar.html" . }}
-
 					</div>
 				</div>
-			</div>
+			</section>
 		</div>
 
 		{{ partial "footer.html" . }}
-
 	</div>
 
 	{{ partial "scripts.html" . }}
-
 </body>
 
 </html>

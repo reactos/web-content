@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+	{{ partial "head.html" . }}
 
-{{ partial "head.html" . }}
-
-<body>
-	{{ partial "banner.html" . }}
-
-	<div id="all">
+	<body>
+		{{ partial "banner.html" . }}
 
 		<header>
-
 			{{ partial "nav.html" . }}
-
 		</header>
 
-		{{ partial "breadcrumbs.html" . }}
+		<div class="container-fluid">
+			{{ partial "breadcrumbs.html" . }}
 
-		<div id="content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9" id="blog-post">
-						<div id="post-content">
-							{{ .Content }}
+			<section id="content" class="row">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						<div class="col-md-9" id="blog-post">
+							<div id="post-content">
+								{{ .Content }}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+
+			{{ partial "footer.html" . }}
 		</div>
 
-		{{ partial "footer.html" . }}
-	</div>
-
-	{{ partial "scripts.html" . }}
-
-</body>
-
+		{{ partial "scripts.html" . }}
+	</body>
 </html>
