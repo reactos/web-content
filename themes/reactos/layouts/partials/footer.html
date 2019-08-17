@@ -4,7 +4,9 @@
 
 		<div class="col-md-4">
 			<ul class="links">
-				<li><a href="https://github.com/colinfinck/web-content/tree/master/content/{{ .File.Path }}">Improve this page</a></li>
+				{{ if .File }}
+					<li><a href="https://github.com/colinfinck/web-content/tree/master/content/{{ .File.Path }}">Improve this page</a></li>
+				{{ end }}
 			</ul>
 		</div>
 
