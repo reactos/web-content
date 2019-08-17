@@ -4,27 +4,20 @@
 {{ partial "head.html" . }}
 
 <body>
-    <a class="github-fork-ribbon" href="https://github.com/reactos/reactos" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+	<a class="github-fork-ribbon" href="https://github.com/reactos/reactos" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
-    {{ partial "banner.html" . }}
+	{{ partial "banner.html" . }}
 
-    <header>
+	<header>
+		{{ partial "nav.html" . }}
+	</header>
 
-        {{ partial "nav.html" . }}
+	<div class="container-fluid">
+		{{ .Content }}
+		{{ partial "recent_posts.html" . }}
+		{{ partial "footer.html" . }}
+	</div>
 
-    </header>
-
-    <div class="container-fluid">
-        {{ .Content }}
-
-        {{ partial "recent_posts.html" . }}
-
-        {{ partial "footer.html" . }}
-
-    </div>
-    <!-- /.container-fluid -->
-
-    {{ partial "scripts.html" . }}
-
+	{{ partial "scripts.html" . }}
 </body>
 </html>
