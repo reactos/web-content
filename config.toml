@@ -15,6 +15,25 @@ paginate = 10
 # Main menu
 
 [[menu.main]]
+    name = "About"
+    weight = 1
+    [[menu.main]]
+        parent = "About"
+        name = "What is ReactOS?"
+        url  = "/what-is-reactos"
+        weight = 101
+    [[menu.main]]
+        parent = "About"
+        name = "Is ReactOS legal?"
+        url  = "/legal"
+        weight = 102
+    [[menu.main]]
+        parent = "About"
+        name = "FAQ"
+        url  = "/faq"
+        weight = 103
+
+[[menu.main]]
     name = "News"
     weight = 1
     [[menu.main]]

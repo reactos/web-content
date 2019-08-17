@@ -3382,7 +3382,11 @@ a.list-group-item.active > .badge,
 	margin-right: 5px;
 }
 
+#copyright .social {
+	float: left;
+}
 #copyright ul.links {
+	float: left;
 	list-style: none;
 	margin: 0;
 }
