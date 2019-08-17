@@ -74,34 +74,49 @@ paginate = 10
 	weight = 3
 	[[menu.main]]
 		parent = "Development"
-		name = "Jira"
-		url  = "https://jira.reactos.org"
+		name = "Building ReactOS"
+		url  = "https://reactos.org/wiki/Building_ReactOS"
 		weight = 301
 	[[menu.main]]
 		parent = "Development"
-		name = "ReactOS Builds"
-		url = "/getbuilds"
+		name = "Jira"
+		url  = "https://jira.reactos.org"
 		weight = 302
+	[[menu.main]]
+		parent = "Development"
+		name = "Download ReactOS Builds"
+		url = "/getbuilds"
+		weight = 303
 	[[menu.main]]
 		parent = "Development"
 		name = "ReactOS on GitHub"
 		url = "https://github.com/reactos"
-		weight = 303
+		weight = 304
 	[[menu.main]]
 		parent = "Development"
 		name = "Report a Bug"
 		url  = "https://reactos.org/wiki/File_Bugs"
-		weight = 304
+		weight = 305
 	[[menu.main]]
 		parent = "Development"
 		name = "Testman"
 		url  = "/testman"
-		weight = 305
+		weight = 306
 	[[menu.main]]
 		parent = "Development"
 		name = "Wiki"
 		url  = "/wiki"
-		weight = 306
+		weight = 307
+	[[menu.main]]
+		parent = "Development"
+		name = "Contribute"
+		url  = "/jobs"
+		weight = 308
+	[[menu.main]]
+		parent = "Development"
+		name = "Work for ReactOS"
+		url  = "/jobs#paid-jobs"
+		weight = 309
 
 [[menu.main]]
 	name = "Donate"
@@ -116,8 +131,8 @@ paginate = 10
 [params]
 	viewMorePostLink = "/news/"
 	author = "DevCows"
-	defaultKeywords = ["devows", "hugo", "go"]
-	defaultDescription = "Site template made by devcows using hugo"
+	defaultKeywords = ["ReactOS", "react", "os", "open source", "free", "win32", "winapi"]
+	defaultDescription = "ReactOS is a free, opensource reimplementation of windows"
 
 	# Format dates with Go's time formatting
 	date_format = "January 2, 2006"

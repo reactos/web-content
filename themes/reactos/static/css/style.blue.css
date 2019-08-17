@@ -3349,10 +3349,16 @@ a.list-group-item.active > .badge,
 }
 #intro ul {
 	padding: 0;
-	margin: 0 0 0 15px;
+	margin: 0 0 0 5px;
+}
+#intro ul li {
+    list-style: none;
 }
 #intro a {
 	color: #cccccc;
+}
+#intro a:hover {
+    color: #fff;
 }
 #intro .screenshot img {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
