@@ -69,7 +69,6 @@ a i.fa, button i.fa {
 }
 .text-uppercase {
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 @media (max-width: 991px) {
   .text-center-sm {
@@ -104,7 +103,6 @@ div.section {
   padding-bottom: 10px;
   vertical-align: middle;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 .heading h1 i.fa,
 .heading h2 i.fa,
@@ -180,7 +178,6 @@ ul.list-style-none {
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 20px;
-  letter-spacing: 0.08em;
 }
 .pages-listing .item h3 a {
   color: #555555;
@@ -276,7 +273,6 @@ ul.list-style-none {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.10em;
 }
 @media (max-width: 767px) {
   #top .login {
@@ -298,7 +294,6 @@ ul.list-style-none {
   text-transform: uppercase;
   text-decoration: underline;
   font-weight: bold;
-  letter-spacing: 0.08em;
   border-top: solid 5px transparent;
 }
 .navbar ul.nav > li > a:hover {
@@ -341,8 +336,6 @@ ul.list-style-none {
 .navbar ul.dropdown-menu li {
   list-style-type: none;
   border-bottom: solid 1px #eeeeee;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
   padding: 4px 0;
 }
 .navbar ul.dropdown-menu li a {
@@ -375,7 +368,6 @@ ul.list-style-none {
   padding-bottom: 10px;
   margin-top: 5px;
   border-bottom: dotted 1px #555555;
-  letter-spacing: 0.08em;
 }
 @media (max-width: 767px) {
   .navbar .yamm-content h3 {
@@ -386,7 +378,6 @@ ul.list-style-none {
   text-transform: uppercase;
   padding-bottom: 10px;
   border-bottom: dotted 1px #555555;
-  letter-spacing: 0.08em;
 }
 .navbar .yamm-content ul {
   margin: 0;
@@ -744,7 +735,6 @@ fieldset[disabled] .btn-template-primary.active {
 .jumbotron h3 {
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 .jumbotron p {
   margin-bottom: 20px;
@@ -784,7 +774,6 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 0;
   border-bottom: solid 1px #eeeeee;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 .panel.sidebar-menu h3 {
   padding: 5px 0;
@@ -802,7 +791,6 @@ fieldset[disabled] .btn-template-primary.active {
   margin-bottom: 10px;
   background: none;
   padding: 0;
-  letter-spacing: 0.08em;
   border-bottom: none;
 }
 .panel.sidebar-menu .panel-heading h1,
@@ -858,7 +846,6 @@ fieldset[disabled] .btn-template-primary.active {
   margin-bottom: 20px;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 0.08em;
 }
 .panel.sidebar-menu ul.nav.category-menu li a {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -901,7 +888,6 @@ fieldset[disabled] .btn-template-primary.active {
   color: #467fbf;
   margin: 5px 5px 5px 0;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   font-weight: 700;
   font-size: 12px;
 }
@@ -983,7 +969,6 @@ fieldset[disabled] .btn-template-primary.active {
   top: 50px;
   padding-left: 51px;
   font-weight: 700;
-  letter-spacing: 0.08em;
 }
 .ribbon .ribbon-background {
   position: absolute;
@@ -1116,7 +1101,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 46px;
-  letter-spacing: 0.08em;
 }
 @media (max-width: 991px) {
   .home-carousel h1 {
@@ -1127,7 +1111,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 40px;
-  letter-spacing: 0.08em;
 }
 .home-carousel ul,
 .home-carousel p {
@@ -1135,7 +1118,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-weight: 700;
   padding: 0;
   text-transform: uppercase;
-  letter-spacing: 0.10em;
 }
 @media (max-width: 991px) {
   .home-carousel ul,
@@ -1154,7 +1136,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 5px;
-  letter-spacing: 0.08em;
 }
 .team-member h3 a {
   color: #555555;
@@ -1163,7 +1144,6 @@ fieldset[disabled] .btn-template-primary.active {
   color: #999999;
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 .team-member .social {
   margin-bottom: 20px;
@@ -1270,7 +1250,6 @@ fieldset[disabled] .btn-template-primary.active {
   line-height: 1.5;
   color: #555555;
   font-weight: 800;
-  letter-spacing: 0.08em;
 }
 .box-simple h3 a {
   color: #555555;
@@ -1354,7 +1333,6 @@ fieldset[disabled] .btn-template-primary.active {
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
-  letter-spacing: 0.08em;
 }
 .box-image .name h3 a {
   color: #fff;
@@ -1432,7 +1410,6 @@ fieldset[disabled] .btn-template-primary.active {
   color: #fff;
   text-transform: uppercase;
   font-size: 18px;
-  letter-spacing: 0.08em;
 }
 .box-image-text .top .name h3 a {
   color: #fff;
@@ -1459,7 +1436,6 @@ fieldset[disabled] .btn-template-primary.active {
   line-height: 1.5;
   color: #555555;
   font-weight: 800;
-  letter-spacing: 0.08em;
 }
 .box-image-text .content p {
   color: #999999;
@@ -1504,7 +1480,6 @@ fieldset[disabled] .btn-template-primary.active {
   padding: 20px;
   border-bottom: solid 1px #eeeeee;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 .box .box-header:before,
 .box .box-header:after {
@@ -1565,7 +1540,6 @@ fieldset[disabled] .btn-template-primary.active {
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
-  letter-spacing: 0.08em;
 }
 @media (max-width: 991px) {
   #heading-breadcrumbs h1 {
@@ -1641,7 +1615,6 @@ fieldset[disabled] .btn-template-primary.active {
   margin-bottom: 0;
   text-align: left;
   font-size: 14px;
-  letter-spacing: 0.08em;
 }
 .portfolio-project .project-more p {
   color: #999999;
@@ -1655,7 +1628,6 @@ fieldset[disabled] .btn-template-primary.active {
 .portfolio-showcase h3 a {
   text-transform: uppercase;
   line-height: 1.5;
-  letter-spacing: 0.08em;
 }
 .portfolio-showcase p.lead {
   color: #555555;
@@ -1692,7 +1664,6 @@ fieldset[disabled] .btn-template-primary.active {
 .showcase .item h4 {
   color: #555555;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   line-height: 1.5;
   font-size: 16px;
 }
@@ -1721,7 +1692,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-weight: bold;
   line-height: 57px;
   margin: 0;
-  letter-spacing: 0.08em;
 }
 .packages .package .package-header.light-gray {
   background: #eeeeee;
@@ -1776,7 +1746,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-weight: bold;
   line-height: 29px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 .packages .best-value .package .package-header .meta-text {
   font-size: 13px;
@@ -1798,7 +1767,6 @@ fieldset[disabled] .btn-template-primary.active {
 #blog-listing-big .post h4,
 #blog-homepage .post h4 {
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 #blog-listing-big .post h2 a,
 #blog-homepage .post h2 a,
@@ -1817,7 +1785,6 @@ fieldset[disabled] .btn-template-primary.active {
   color: #999999;
   text-transform: uppercase;
   font-weight: 300;
-  letter-spacing: 0.08em;
 }
 #blog-listing-big .post .author-category a,
 #blog-homepage .post .author-category a {
@@ -1873,7 +1840,6 @@ fieldset[disabled] .btn-template-primary.active {
 #blog-listing-medium .post h2 {
   margin: 0 0 10px;
   font-size: 24px;
-  letter-spacing: 0.08em;
 }
 #blog-listing-medium .post h2 a {
   color: #555555;
@@ -1886,7 +1852,6 @@ fieldset[disabled] .btn-template-primary.active {
   color: #999999;
   font-weight: 300;
   font-size: 14px;
-  letter-spacing: 0.08em;
 }
 #blog-listing-medium .post .author-category a {
   font-weight: 500;
@@ -1961,7 +1926,6 @@ fieldset[disabled] .btn-template-primary.active {
 .box-image-text.blog .author-category {
   color: #999999;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   font-weight: 300;
   font-size: 12px;
 }
@@ -2082,7 +2046,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-weight: 700;
   height: 39.6px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 .product .text h3 a {
   color: #555555;
@@ -2149,7 +2112,6 @@ fieldset[disabled] .btn-template-primary.active {
 }
 #productMain .sizes h3 {
   font-weight: 700;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 40px;
 }
@@ -2282,7 +2244,6 @@ fieldset[disabled] .btn-template-primary.active {
 .shipping-method h4,
 .payment-method h4 {
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 #customer-orders table tr th,
 #customer-orders table tr td {
@@ -2317,7 +2278,6 @@ fieldset[disabled] .btn-template-primary.active {
 #get-it h6 {
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   margin: 0 0 20px;
 }
 #get-it p {
@@ -2340,7 +2300,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-size: 14px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 #footer ul {
   padding-left: 0;
@@ -2397,7 +2356,6 @@ fieldset[disabled] .btn-template-primary.active {
 #footer .blog-entries .item .name h5 {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   font-size: 12px;
 }
 #footer .blog-entries .item .name h5 a {
@@ -2471,7 +2429,6 @@ fieldset[disabled] .btn-template-primary.active {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   background-color: none;
-  letter-spacing: 0.08em;
 }
 /* nav */
 .nav > li > a {
@@ -3053,7 +3010,6 @@ hr {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 /* forms.less */
 label {
@@ -3079,7 +3035,6 @@ label {
   border-top: solid 1px #eeeeee;
   padding-top: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 .pager li {
@@ -3274,7 +3229,6 @@ address {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   padding: 15px 15px;
 }
 .progress {
@@ -3397,16 +3351,19 @@ a.list-group-item.active > .badge,
 #intro a {
   color: #cccccc;
 }
-#intro a.screenshot img {
+#intro .screenshot img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 10px;
   height: 263px;
   width: 350px;
 }
-#intro a.download {
+#intro .buttons {
+	margin-top: 15px;
+}
+#intro .buttons a {
   color: white;
   font-size: 24px;
-  margin-top: 15px;
+  margin: 5px;
 }
 
 #jirafeed {

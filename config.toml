@@ -46,6 +46,11 @@ paginate = 10
         name = "Forum"
         url  = "/forum"
         weight = 202
+    [[menu.main]]
+        parent = "Community"
+        name = "Shop"
+        url  = "https://reactos.spreadshirt.net"
+        weight = 203
 
 [[menu.main]]
     name = "Development"
@@ -80,11 +85,6 @@ paginate = 10
         name = "Wiki"
         url  = "/wiki"
         weight = 306
-
-[[menu.main]]
-    name = "Shop"
-    url  = "https://reactos.spreadshirt.net"
-    weight = 4
 
 [[menu.main]]
     name = "Donate"
