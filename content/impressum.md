@@ -12,7 +12,9 @@ aliases:     [ node/3481 ]
 
 ---
 
-<h2>Legal Disclosure</h2>
+
+Legal Disclosure
+---
 
 Legally responsible for this website:<br><br>
 

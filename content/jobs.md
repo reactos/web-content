@@ -16,16 +16,28 @@ Developer
 ---
 Some text about developer qualifications
 
+
+
 Tester
 ---
 Something that explains what is wanted from testers
+
+
 
 Jira maintainer
 ---
 some more explanation here
 
+
+Content editor / creator
+---
+Maintain pages like this one
+
+
 Community manager
 ---
+Keep people involved, keep discussions going, moderate..
+
 
 Paid jobs<a id="paid-jobs"></a>
 ---

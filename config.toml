@@ -110,7 +110,7 @@ paginate = 10
 	[[menu.main]]
 		parent = "Development"
 		name = "Contribute"
-		url  = "/jobs"
+		url  = "/developing"
 		weight = 308
 	[[menu.main]]
 		parent = "Development"
