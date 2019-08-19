@@ -1,17 +1,9 @@
----
-title:       "Developing!"
-author:      "vicmarcal"
-type:        page
-date:        2015-11-21
-changed:     2016-02-11
-draft:       false
-promote:     false
-sticky:      false
-url:         /developing
-aliases:     [ node/957 ]
-menu:        [ "main-menu" ]
++++
+title = "Developing!"
+aliases = [ "node/957" ]
++++
 
----
+{{% unfinished-page "This needs to be combined with participation?" %}}
 
 Interested in ReactOS development?
 ---

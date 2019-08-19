@@ -1,17 +1,7 @@
----
-title:       "Joining"
-author:      "vicmarcal"
-type:        page
-date:        2015-11-21
-changed:     2016-02-06
-draft:       false
-promote:     false
-sticky:      false
-url:         /joining
-aliases:     [ node/955 ]
-menu:        [ "main-menu", "main-menu" ]
-
----
++++
+title = "Joining"
+aliases = [ "node/955" ]
++++
 
 Joining & Following ReactOS Progress!
 ---
@@ -26,7 +16,7 @@ Tracking the progress and development of an Operating System is an exciting and 
 
 ## Daily updates through facebook and twitter... {#updates}
 
-# <span style="color:red;">Facebook / twitter here? see https://www.reactos.org/node/955#socialanchor</span>
+{{% unfinished-page "Facebook / twitter here? see https://www.reactos.org/node/955#socialanchor" %}}
 
 ## Be Part of the ReactOS Community ! {#communicating}
 

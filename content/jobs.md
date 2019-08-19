@@ -1,10 +1,7 @@
----
-title: "Jobs"
-date: 2019-08-17T20:32:54+02:00
-aliases:     [ "node/785" ]
-draft: false
----
-
++++
+title = "Jobs"
+aliases = [ "node/785" ]
++++
 
 The ReactOS Project is seeking qualified individuals to fill multiple positions. Contracted **full time, part time, and scholarship (internship)** level positions are all available.
 
