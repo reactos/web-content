@@ -1,16 +1,11 @@
----
-title:       "Installing ReactOS"
-author:      "Z98"
-type:        page
-date:        2016-01-31
-draft:       false
-promote:     false
-sticky:      false
-url:         /installing-reactos
-aliases:     [ node/3306 ]
-menu:        [ "main-menu" ]
++++
+title = "Installing ReactOS"
+aliases = [ "node/3306" ]
++++
 
----
+
+{{% unfinished-page "This needs to be included or linked somewhere" %}}
+
 
 <p>As ReactOS is still in alpha stage development, we encourage would-be testers to first try it out on a virtual machine before taking the plunge with real hardware. Of course regardless of whether you do a physical or virtual install there are some basic requirements to keep in mind.</p>
 <ul>

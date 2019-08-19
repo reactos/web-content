@@ -1,17 +1,10 @@
----
-title:       "Testing!"
-author:      "vicmarcal"
-type:        page
-date:        2015-11-21
-changed:     2016-03-25
-draft:       false
-promote:     false
-sticky:      false
-url:         /testing
-aliases:     [ node/956 ]
-menu:        [ "main-menu" ]
++++
+title = "Testing!"
+aliases = [ "node/956" ]
++++
 
----
+{{% unfinished-page "Needs to be included somewhere or deleted" %}}
+
 
 <div class="container-fluid">
     <div class="row">

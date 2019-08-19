@@ -1,15 +1,9 @@
----
-title:       "So...Can I install ReactOS and run any software compatible with Windows on it?"
-author:      "vicmarcal"
-type:        faqs_joining
-date:        2015-11-25
-draft:       false
-promote:     true
-sticky:      false
-url:         /socan-i-install-reactos-and-run-any-software-compatible-windows-it
-aliases:     [ node/975 ]
++++
+title = "So...Can I install ReactOS and run any software compatible with Windows on it?"
+aliases = [ "node/975" ]
++++
 
----
+{{% unfinished-page "Needs to be included in a faq" %}}
 
 Probably yes. However we highly recommend to check first if your favourite app runs in ReactOS. 
 ReactOS is still an on-going project and not all the apps and drivers runs perfect on it. 

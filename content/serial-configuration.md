@@ -1,16 +1,9 @@
----
-title:       "Serial Configuration"
-author:      "Z98"
-type:        book
-date:        2013-02-09
-changed:     2013-02-10
-draft:       false
-promote:     false
-sticky:      false
-url:         /serial-configuration
-aliases:     [ node/123 ]
++++
+title = "Serial Configuration"
+aliases = [ "node/123" ]
++++
 
----
+{{% unfinished-page "This might be obsolete, since this info should be in the wiki" %}}
 
 Debugging ReactOS over serial tends to be the most reliable methodology as it minimizes the risk of losing debug output when ReactOS crashes compared to directing output to a file or application in ReactOS. It however takes a bit more setup on the receiving side and some extra hardware if attempting to debug a physical machine. The following provides basic instructions for setting up serial on both the sending and receiving side. For more detailed instructions on configuring serial output for virtual machines, please refer to the virtual machine section of this guide.
 

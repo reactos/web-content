@@ -1,15 +1,10 @@
----
-title:       "Installation"
-author:      "Z98"
-type:        book
-date:        2013-02-10
-draft:       false
-promote:     false
-sticky:      false
-url:         /installation
-aliases:     [ node/129 ]
++++
+title = "Installation"
+aliases = [ "node/129" ]
++++
 
----
+{{% unfinished-page "This needs to be included or linked somewhere" %}}
+
 
 Installing ReactOS is very much like installing Windows XP. However, due to it still undergoing heavy development, a few pointers are helpful when first getting started.
 

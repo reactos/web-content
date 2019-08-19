@@ -1,15 +1,10 @@
----
-title:       "Virtual Machines"
-author:      "Z98"
-type:        book
-date:        2013-02-10
-draft:       false
-promote:     false
-sticky:      false
-url:         /virtual-machines
-aliases:     [ node/128 ]
++++
+title = "Virtual Machines"
+aliases = [ "node/128" ]
++++
 
----
+{{% unfinished-page "Should be included in the wiki" %}}
+
 
 Virtual machines provide a stable and known configuration for ReactOS to run on, reducing the chances that misbehaving hardware could destabilize the operating system. They are especially helpful when developing and testing higher level components of ReactOS. Several virtual machine platforms are supported and a basic guide to getting ReactOS running on them and configuring for debug support. Suggested resource allocation for all of the following virtual machine platforms is a minimum of 128MB of RAM and 2GB of storage space. As ReactOS currently does not support utilizing multiple processors, it is best to assign only a single processor to the virtual machine.
 

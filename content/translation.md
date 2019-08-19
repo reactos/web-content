@@ -1,16 +1,10 @@
----
-title:       "Translation"
-author:      "Z98"
-type:        book
-date:        2013-02-10
-changed:     2013-03-28
-draft:       false
-promote:     false
-sticky:      false
-url:         /translation
-aliases:     [ node/130 ]
++++
+title = "Translation"
+aliases = [ "node/130" ]
++++
 
----
+{{% unfinished-page "Needs to be included in a faq" %}}
+
 
 ReactOS uses resource files to hold translations. These must be encoded using UTF-8 so take care the text editor used on these files does not accidentally change the encoding. Each language's resource file must be included in the rsrc.rc or application.rc file of the respective component being translated. Please keep in mind that some components are imported from WINE and as such translations of those components should be sent upstream instead.
 <h2>Instructions</h2>

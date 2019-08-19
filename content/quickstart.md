@@ -1,16 +1,10 @@
----
-title:       "Quickstart"
-author:      "Z98"
-type:        page
-date:        2013-02-16
-changed:     2017-04-15
-draft:       false
-promote:     false
-sticky:      false
-url:         /quickstart
-aliases:     [ node/131 ]
++++
+title = "Quickstart"
+aliases = [ "node/131" ]
++++
 
----
+
+{{% unfinished-page "This needs to be included, linked or deleted" %}}
 
 The following is a quickstart guide to help newcomers with getting a ReactOS development environment set up. As contributors become more comfortable, each is likely to find his or her own preferred workflow and tool set, but this guide will at least provide a gentle introduction to retrieving, building, and running ReactOS code. This guide assumes a sufficiently modern computer able to compile ReactOS and then run it inside a virtual machine. As this guide is in essence a very parred down version of the full development guide, it only covers the very basics of working with ReactOS and even then only with specific software. For more detailed explanations and alternative instructions, please refer to the <a href="https://www.reactos.org/wiki/Development_Introduction">full development guide</a>.
 
