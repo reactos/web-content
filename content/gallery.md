@@ -23,7 +23,6 @@ scripts:
 {{< figure link="/sites/default/files/linter.png" caption="DBMS Linter Bastion" >}}
 {{< figure link="/sites/default/files/firefox.png" caption="Mozilla Firefox" >}}
 {{< figure link="/sites/default/files/thunderbird.png" caption="Mozilla Thunderbird" >}}
-{{< figure link="/sites/default/files/majesty.png" caption="Majesty" >}}
 {{< figure link="/sites/default/files/simcity3000.png" caption="SimCity 3000" >}}
 {{< figure link="/sites/default/files/excelvw.png" caption="Excel Viewer" >}}
 {{< figure link="/sites/default/files/wordvw.png" caption="Word Viewer" >}}
@@ -32,8 +31,6 @@ scripts:
 {{< figure link="/sites/default/files/winzip.png" caption="WinZIP" >}}
 {{< figure link="/sites/default/files/hexedit.png" caption="HexEdit" >}}
 {{< figure link="/sites/default/files/hxd.png" caption="HxD" >}}
-{{< figure link="/sites/default/files/opera.jpg" caption="Opera" >}}
-{{< figure link="/sites/default/files/photoshopcs2_0.jpg" caption="Adobe Photoshop CS2" >}}
 {{< figure link="/sites/default/files/ext2man.png" caption="Ext2 Volume Manager" >}}
 {{< figure link="/sites/default/files/explorer++.png" caption="Explorer++" >}}
 {{< figure link="/sites/default/files/7zip.png" caption="7-Zip" >}}
