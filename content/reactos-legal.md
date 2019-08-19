@@ -4,7 +4,7 @@ aliases = [ "node/976" ]
 +++
 
 
-{{% unfinished-page "This needs to be combined with intellectual-property-guideline" %}}
+{{% unfinished-page "This needs to be combined with [Intellectual Property Guideline](/intellectual-property-guideline)" %}}
 
 Yes, we are. We are not using any Microsoft Windows source code. All our code has been created from scratch. That's the reason, btw, why we still have bugs...otherwise we'd be perfect...or as perfect as Windows is.
 This is one of the most asked questions, and it's funny...because we're daily using tons of different brands of cars, while the first inventor was Mercedes, and noone asks if using a Ford car is "illegal". In the same way, there are tons of different software office suites and noone asks if using "Open Office" is illegal. We're not. We're just alternatives. If an user buys a piece of software, he shouldn't be forced to run it just in Microsoft Windows. The user should be free to run in the environment he prefers most. 

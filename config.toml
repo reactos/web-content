@@ -23,7 +23,7 @@ paginate = 10
 	[[menu.main]]
 		parent = "About"
 		name = "Is ReactOS legal?"
-		url  = "/legal"
+		url  = "/reactos-legal"
 		weight = 102
 	[[menu.main]]
 		parent = "About"
