@@ -493,9 +493,6 @@ fieldset[disabled] .btn-template-main.active {
 	background: #fff;
 }
 
-#blog-listing-medium .post {
-	margin-bottom: 60px;
-}
 #blog-listing-medium .post h2 {
 	margin: 0 0 10px;
 	font-size: 24px;
@@ -1270,3 +1267,9 @@ dl.dl-inline {
   padding: 0;
   margin: 0
 }
+
+/* Alternate rows for blog / news posts */
+#blog-listing-medium section.post:nth-child(odd) {
+	background-color: #F3F3F3;
+}
+
