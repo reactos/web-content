@@ -1,6 +1,9 @@
 +++
 title = "Developing!"
 aliases = [ "node/957" ]
+css = [
+    "/css/blue-pyramid.css",
+]
 +++
 
 {{% unfinished-page "This needs to be combined with participation?" %}}
@@ -23,12 +26,14 @@ So if you’re a budding Windows developer looking to learn as much as possible 
 
 ----
 
-1. [ReactOS Applications](#applications)
-* [System Processes](#system)
-* [Shell and Explorer](#shell)
-* [Win32 API](#subsystems)
-* [Drivers](#drivers)
-* [Nt Kernel](#executive)
+<div class="pyramid">
+    <a href="#applications"><div class="dtapps">ReactOS Applications</div></a>
+    <a href="#system"><div class="dtsys">System Processes</div></a>
+    <a href="#shell"><div class="dtshell">Shell and Explorer</div></a>
+    <a href="#subsystems"><div class="dtsubs">Win32 API</div></a>
+    <a href="#drivers"><div class="dtdriv">Drivers</div></a>
+    <a href="#executive"><div class="dtexec">Nt Kernel</div> </a>
+</div>
 
 ---
 
