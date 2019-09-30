@@ -1,0 +1,42 @@
+
+.pyramid {
+	box-sizing: border-box;
+	text-align: Center;
+}
+
+.pyramid a div {
+	line-height: 2.5em;
+	font-size: 1.5em;
+	color: white;
+	margin: 0 auto;
+}
+
+.dtapps {
+	background-color: rgb(0,25,37);
+	max-width: 250px;
+}
+
+.dtsys {
+	background-color: #0C2338;
+	max-width: 325px;
+}
+
+.dtshell {
+	background-color: rgb(2,56,91);
+	max-width: 400px;
+}
+
+.dtsubs {
+	background-color: rgb(23,84,123);
+	max-width: 475px;
+}
+
+.dtdriv {
+	background-color: rgb(17,122,165);
+	max-width: 550px;
+}
+
+.dtexec {
+	background-color: rgb(4,157,193);
+	max-width: 625px;
+}
