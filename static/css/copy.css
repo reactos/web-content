@@ -1,0 +1,33 @@
+.copy {
+	display: inline-block;
+	width: max-content;
+	max-width: 100%;
+	margin-bottom: 1px;
+}
+
+.copy-box {
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.copy-data {
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border: 1px #ccc solid;
+	padding-left: 6px;
+	padding-right: 4px;
+}
+
+.copy-btn {
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 0;
+	padding-bottom: 0;
+	width: 48px;
+	min-width: 48px;
+	border-top-left-radius: unset;
+	border-bottom-left-radius: unset;
+}
