@@ -5,7 +5,7 @@ aliases = [ "node/785" ]
 
 The ReactOS Project is seeking qualified individuals to fill multiple positions. Contracted **full time, part time, and scholarship (internship)** level positions are all available.
 
-If you do qualify for a position, you'll be joining the very small and exclusive ranks of people who know how to do NT systems development. And believe us, those ranks are very, very small. And yes, you will be gaining an immense amount of knowledge working with such people. 
+If you qualify for a position, you'll be joining the very small and exclusive ranks of people who know how to do NT systems development. And believe us, those ranks are very, very small so you will be gaining an immense amount of knowledge working with such people. It's a great way for beginners to interact with people who have been working in this field for over the years.
 
 Available Positions
 ===
@@ -13,6 +13,12 @@ Available Positions
 Developer
 ---
 We are looking for people proficient in C and its a big plus if you are proficient in C++ too.C++ proficiency does not equate C proficiency so do not assume you have the latter if you have the former. Also keep in mind, again, that these are the minimum requirements. On top of these you need to be a good problem solver, belief in the mission of ReactOS, and most importantly, be able to demonstrate that you can work with the ReactOS codebase via a few patches.
+
+In ReactOS, we need all kinds of people, those who are ready to port drivers and mainly work in the kernel region and those of you who would like to work in user-mode.For all the work related to kernel and drivers, you need to be proficient in C and don't need C++ for most of it. But when it comes to user-mode, you do need to have knowledge of C++. As an example, most of the applications are written in C++ not in C.Whereas when we have a look at the drivers we notice that they are written in C.
+
+For more information on the C++ part, you can have a look at [Win32 development using C++](https://docs.microsoft.com/en-us/windows/win32/LearnWin32/learn-to-program-for-windows).
+
+For those of you interested can have a look at our wiki page which pretty much covers all of the details on getting started with development for ReactOS.
 
 [Development Introduction](https://reactos.org/wiki/Development_Introduction)
 
@@ -25,9 +31,11 @@ Tester
 ---
 No operating system is usable if it is found to be unstable and prone to crashes. As ReactOS development work involves studying the behavior of an operating system that is not completely documented, testing should be of even greater importance in order to fulfill the objective of binary compatibility with Windows.
 
-You can assist the ReactOS development effort by installing regular trunk builds available here and providing feedback on issues/problems you encountered during and after installing the OS via our bug tracker . More information with regard to debugging is available here and is recommended reading for those who wish to submit a report to our task tracker.For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
+You can assist the ReactOS development effort by installing regular trunk(master) builds available here and providing feedback on issues/problems you encountered during and after installing the OS via our bug tracker . More information with regard to debugging is available here and is recommended reading for those who wish to submit a report to our task tracker.For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
 
 We have wiki pages for setting up a debugging environment and building using different compilers too.
+
+[Setting up a Debugging environment](https://reactos.org/wiki/Debugging)
 
 [Getting Started](https://reactos.org/wiki/Welcome_to_the_ReactOS_Development_Wiki)
 
@@ -49,11 +57,6 @@ We are a small team of individuals working, so we need some creative people to l
 Community manager
 ---
 We have a [mattermost instance](chat.reactos.org), [a forum](reactos.org/forum) and an IRC channel (#reactos on freenode). The role is to keep people involved, keep discussions going and moderate.
-
-[Mattermost](chat.reactos.org)
-
-**IRC** - #reactos
-
 
 Paid jobs<a id="paid-jobs"></a>
 ---
