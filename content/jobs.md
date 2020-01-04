@@ -5,35 +5,54 @@ aliases = [ "node/785" ]
 
 The ReactOS Project is seeking qualified individuals to fill multiple positions. Contracted **full time, part time, and scholarship (internship)** level positions are all available.
 
+If you do qualify for a position, you'll be joining the very small and exclusive ranks of people who know how to do NT systems development. And believe us, those ranks are very, very small. And yes, you will be gaining an immense amount of knowledge working with such people. 
 
 Available Positions
 ===
 
 Developer
 ---
-Some text about developer qualifications
+We are looking for people proficient in C and its a big plus if you are proficient in C++ too.C++ proficiency does not equate C proficiency so do not assume you have the latter if you have the former. Also keep in mind, again, that these are the minimum requirements. On top of these you need to be a good problem solver, belief in the mission of ReactOS, and most importantly, be able to demonstrate that you can work with the ReactOS codebase via a few patches.
 
+[Development Introduction](https://reactos.org/wiki/Development_Introduction)
+
+Every year we participate in [Google Summer of code](https://summerofcode.withgoogle.com/) which is a program by Google which lets you work with us during the summer for fixing one of the major bugs. You get paid a certain amount of money for the work. 
+
+We even conduct hackfests every year where our team comes together and sit together to fix issues.
 
 
 Tester
 ---
-Something that explains what is wanted from testers
+No operating system is usable if it is found to be unstable and prone to crashes. As ReactOS development work involves studying the behavior of an operating system that is not completely documented, testing should be of even greater importance in order to fulfill the objective of binary compatibility with Windows.
 
+You can assist the ReactOS development effort by installing regular trunk builds available here and providing feedback on issues/problems you encountered during and after installing the OS via our bug tracker . More information with regard to debugging is available here and is recommended reading for those who wish to submit a report to our task tracker.For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
 
+We have wiki pages for setting up a debugging environment and building using different compilers too.
+
+[Getting Started](https://reactos.org/wiki/Welcome_to_the_ReactOS_Development_Wiki)
+
+[How to create a JIRA Issue](https://reactos.org/wiki/User:Oldman/A_layman%27s_guide/How_to_create_a_JIRA_Issue)
 
 Jira maintainer
 ---
-some more explanation here
+We use JIRA for keeping track of issues. This position is for people interested in maintaining the JIRA. You will have to look after the development/work progress in the issues and mark them resolved. Currently, we have a system that links each of the PR from GitHub to the related issue in JIRA.In this role, you will mainly be working to make sure everything in JIRA works as expected.
+
+[JIRA](https://jira.reactos.org/)
 
 
 Content editor / creator
 ---
-Maintain pages like this one
+We are a small team of individuals working, so we need some creative people to look after the posts(content to be posted in our blog) and our site. In this role, you will need to write articles, make changes or update the wiki pages. This could be adding new information or images. You will mainly be working on this site and the wiki pages. Our current site is generated using [Hugo](https://gohugo.io/). New design ideas are welcome too.
 
+[Wikipage](https://reactos.org/wiki/Welcome_to_the_ReactOS_Development_Wiki)
 
 Community manager
 ---
-Keep people involved, keep discussions going, moderate..
+We have an IRC channel,a forum and a mattermost channel. The role is to keep people involved, keep discussions going and moderate.
+
+[Mattermost](chat.reactos.org)
+
+**IRC** - #reactos
 
 
 Paid jobs<a id="paid-jobs"></a>
