@@ -48,7 +48,7 @@ We are a small team of individuals working, so we need some creative people to l
 
 Community manager
 ---
-We have an IRC channel,a forum and a mattermost channel. The role is to keep people involved, keep discussions going and moderate.
+We have a [mattermost instance](chat.reactos.org), [a forum](reactos.org/forum) and an IRC channel (#reactos on freenode). The role is to keep people involved, keep discussions going and moderate.
 
 [Mattermost](chat.reactos.org)
 
@@ -59,4 +59,3 @@ Paid jobs<a id="paid-jobs"></a>
 ---
 
 Interested developers and students should see our qualification section, and once fulfilled (especially the high quality patches part) submit a CV and academic transcript as applicable to <mailto:jobs@reactos.org> along with a cover letter indicating which position is being applied for and why you feel you are suited for the position.
-
