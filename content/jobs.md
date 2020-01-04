@@ -35,7 +35,7 @@ We have wiki pages for setting up a debugging environment and building using dif
 
 Jira maintainer
 ---
-We use JIRA for keeping track of issues. This position is for people interested in maintaining the JIRA. You will have to look after the development/work progress in the issues and mark them resolved. Currently, we have a system that links each of the PR from GitHub to the related issue in JIRA.In this role, you will mainly be working to make sure everything in JIRA works as expected.
+We use JIRA to keep track of issues. This position is for people interested in maintaining JIRA. You will have to look after the development/work progress in the bugtracker and assist in triaging the issues. This includes but is not limited to: Asking for the exact version that was tested, disseminating logs (or asking further steps to provide those), labeling issues. Currently, we have a system that links each of the PR from GitHub to the related issue in JIRA. In this role, you will mainly be working to make sure everything in JIRA works as expected.
 
 [JIRA](https://jira.reactos.org/)
 
@@ -59,5 +59,4 @@ Paid jobs<a id="paid-jobs"></a>
 ---
 
 Interested developers and students should see our qualification section, and once fulfilled (especially the high quality patches part) submit a CV and academic transcript as applicable to <mailto:jobs@reactos.org> along with a cover letter indicating which position is being applied for and why you feel you are suited for the position.
-
 
