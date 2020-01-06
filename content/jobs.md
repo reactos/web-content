@@ -18,7 +18,7 @@ In ReactOS, we need all kinds of people like, those who are ready to port driver
 
 For more information on the C++ part, you can have a look at [Win32 development using C++](https://docs.microsoft.com/en-us/windows/win32/LearnWin32/learn-to-program-for-windows).
 
-For those of you interested can have a look at our wiki page which pretty much covers all of the details on getting started with development for ReactOS.
+For those of you interested, you can have a look at our wiki page which pretty much covers all of the details on getting started with development for ReactOS.
 
 [Development Introduction](https://reactos.org/wiki/Development_Introduction)
 
