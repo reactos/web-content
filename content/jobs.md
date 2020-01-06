@@ -22,7 +22,7 @@ For those of you interested can have a look at our wiki page which pretty much c
 
 [Development Introduction](https://reactos.org/wiki/Development_Introduction)
 
-Every year we participate in [Google Summer of code](https://summerofcode.withgoogle.com/) which is a program by Google which lets you work with us during the summer for fixing one of the major bugs. You get paid a certain amount of money for the work. 
+Every year we participate in [Google Summer of code](https://summerofcode.withgoogle.com/) which is a program by Google which lets you work with us during the summer to work on a major project. Google pays the student, and ReactOS provides guidance / assistance in the form of a mentor. 
 
 We even conduct hackfests every year where our team comes together and sit together to fix issues.
 
