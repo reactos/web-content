@@ -29,7 +29,7 @@ We even conduct hackfests every year where our team comes together and sit toget
 
 Tester
 ---
-No operating system is usable if it is found to be unstable and prone to crashes. As ReactOS development work involves studying the behavior of an operating system that is not completely documented, testing should be of even greater importance in order to fulfill the objective of binary compatibility with Windows.
+No operating system is usable if it is found to be unstable and prone to crashes. As ReactOS development work involves studying the behavior of an operating system that is not completely documented, testing is of even greater importance in order to fulfill the objective of binary compatibility with Windows.
 
 You can assist the ReactOS development effort by installing regular nightly (master) builds available [here](https://reactos.org/getbuilds/) and providing feedback on issues/problems you encountered during and after installing the OS via our [bug tracker](https://jira.reactos.org/). More information with regard to debugging is available [here](https://reactos.org/wiki/Debugging) and is recommended reading for those who wish to submit a report to our bug tracker. For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
 
