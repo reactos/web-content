@@ -31,7 +31,7 @@ Tester
 ---
 No operating system is usable if it is found to be unstable and prone to crashes. As ReactOS development work involves studying the behavior of an operating system that is not completely documented, testing should be of even greater importance in order to fulfill the objective of binary compatibility with Windows.
 
-You can assist the ReactOS development effort by installing regular trunk(master) builds available here and providing feedback on issues/problems you encountered during and after installing the OS via our bug tracker . More information with regard to debugging is available here and is recommended reading for those who wish to submit a report to our task tracker.For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
+You can assist the ReactOS development effort by installing regular nightly (master) builds available [here](https://reactos.org/getbuilds/) and providing feedback on issues/problems you encountered during and after installing the OS via our [bug tracker](https://jira.reactos.org/). More information with regard to debugging is available [here](https://reactos.org/wiki/Debugging) and is recommended reading for those who wish to submit a report to our bug tracker. For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
 
 We have wiki pages for setting up a debugging environment and building using different compilers too.
 
