@@ -6,8 +6,6 @@ css = [
 ]
 +++
 
-{{% unfinished-page "This needs to be combined with participation?" %}}
-
 Interested in ReactOS development?
 ---
 Becoming a ReactOS developer is both simple and rewarding. The codebase allows developers of all different backgrounds and skillsets to find something that interests them, and allows them to get going quickly using our excellent build environment. 
@@ -32,7 +30,7 @@ So if you’re a budding Windows developer looking to learn as much as possible 
     <a href="#shell"><div class="dtshell">Shell and Explorer</div></a>
     <a href="#subsystems"><div class="dtsubs">Win32 API</div></a>
     <a href="#drivers"><div class="dtdriv">Drivers</div></a>
-    <a href="#executive"><div class="dtexec">Nt Kernel</div> </a>
+    <a href="#executive"><div class="dtexec">NT Kernel</div> </a>
 </div>
 
 ---
@@ -78,7 +76,7 @@ The modules and frameworks that you normally rely upon to create your drivers, m
 
 We’re looking for both seasoned driver developers and talented C developers who want to get started in NT driver development. If you fall into these categories, or anywhere in-between, then you’d be a great fit in our kernel development team.
 
-## Nt Kernel {#executive}
+## NT Kernel {#executive}
 
 The ReactOS kernel is the only complete implementation of an NT kernel outside of the Microsoft campus, and unless you work on the Windows kernel team, it’s the only way to get involved with the development of an NT kernel and further your knowledge on this remarkable piece of engineering.
 
