@@ -8,26 +8,20 @@
 .copy-box {
 	display: flex;
 	width: 100%;
-	overflow: hidden;
 	white-space: nowrap;
+	position: relative;
 }
 
 .copy-data {
 	display: inline-block;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	border: 1px #ccc solid;
-	padding-left: 6px;
-	padding-right: 4px;
 }
 
 .copy-btn {
-	padding-left: 2px;
-	padding-right: 2px;
-	padding-top: 0;
-	padding-bottom: 0;
+	padding: 0 2px;
+	line-height: inherit;
 	width: 48px;
-	min-width: 48px;
 	border-top-left-radius: unset;
 	border-bottom-left-radius: unset;
+	position: absolute;
+	right: -50px;
 }

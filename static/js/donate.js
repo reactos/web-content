@@ -23,15 +23,24 @@ $(function() {
 	$("#other_amount").keyup(function() {
 		$(this).val($(this).val().replace(/[^0-9]/g, ""));
 		if ($(this).val() != "") {
-			$("INPUT[name='amount_options']").filter(":checked").removeAttr("checked");
-			$("#amount_buttons > .active").removeClass("active");
+			$("#amount_buttons button.active").removeClass("active");
 			$(".hidden_amounts").val($(this).val());
 		}
 	});
 
-	$("INPUT[name='amount_options']").change(function() {
+	$("#amount_buttons button").click(function() {
+		$("#amount_buttons button.active").removeClass("active");
+		$(this).addClass("active");
+		$(".hidden_amounts").val($(this).data("amount"));
 		$("#other_amount").val("");
-		$(".hidden_amounts").val($(this).val());
+	});
+
+	$("#donate_monthly_btn").click(function() {
+		$("#donate_monthly").submit();
+	});
+
+	$("#donate_once_btn").click(function() {
+		$("#donate_once").submit();
 	});
 
 	var el = $("span.copy");
