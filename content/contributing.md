@@ -1,21 +1,24 @@
 +++
-title = "Jobs"
-aliases = [ "node/785" ]
+title = "Contribute to ReactOS"
+aliases = [ "jobs", "node/785" ]
 +++
 
-The ReactOS Project always seeks for new qualified contributors on all levels. No matter if you are a developer, tester, editor or designer, your help is highly appreciated.
-Please see below for all available positions.
+The ReactOS Project always seeks new qualified contributors from all skill levels.
+No matter if you are a developer, tester, editor or designer, your contribution is highly appreciated.
+Please see below for all available positions and contact us via [Mattermost](https://chat.reactos.org) or the [mailing lists](/mailing-lists).
 
 Every year we participate in [Google Summer of Code](https://summerofcode.withgoogle.com/) which is a program by Google that lets you work with us during the summer to work on a major project.
 Google pays the student, and ReactOS provides guidance and assistance in the form of a mentor.
 Check our [Wiki page](https://reactos.org/wiki/Google_Summer_of_Code) for more information.
 
-We also conduct [Hackfests](https://reactos.org/wiki/Hackfest) every year where our team comes together to socialize and fix issues.
+We also conduct [Hackfests](https://reactos.org/wiki/Hackfest) every year where our team comes together to socialize and work on issues together.
 
 ## Kernel Developer
 For the ReactOS Kernel and drivers, we are looking for people proficient in C, and it is a big plus if you are proficient in C++ too. C++ proficiency does not equate C proficiency, so do not assume you have the latter if you have the former. Also keep in mind, again, that these are the minimum requirements. On top of these you need to be a good problem solver, believe in the mission of ReactOS, and most importantly, be able to demonstrate that you can work with the ReactOS codebase via a few [pull requests](https://github.com/reactos/reactos/pulls).
 
-If you qualify for this position, you'll be joining the very small and exclusive ranks of people who know how to do NT systems development. And believe us, those ranks are very, very small so you will be gaining an immense amount of knowledge working with such people. It's a great way for beginners to interact with people who have been working in this field for over the years.
+If you qualify for this position, you'll be joining the very small and exclusive ranks of people who know how to do NT systems development.
+And believe us, those ranks are very, very small so you will be gaining an immense amount of knowledge working with such people.
+It's a great experience to interact with people who have been working in this field for over the years.
 
 ## Application Developer
 ReactOS User-Mode applications are written in C or C++.
@@ -63,7 +66,7 @@ While ReactOS is an open-source project mostly driven by volunteers, we know tha
 
 * **Scholarships**<br>
   Interested students with a proven track record of working on ReactOS can be granted a monthly scholarship (which is tax-free in many countries).
-  This just requires enrollment at a university and hardly any paperwork.
+  This requires enrollment at a university but hardly any paperwork.
 
 * **Contracted work**<br>
   Freelancers able to invoice ReactOS Deutschland e.V. can be contracted for individual work that benefits the project.
