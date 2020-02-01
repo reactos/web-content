@@ -22,11 +22,6 @@ paginate = 10
 		weight = 101
 	[[menu.main]]
 		parent = "About"
-		name = "Is ReactOS legal?"
-		url  = "/reactos-legal"
-		weight = 102
-	[[menu.main]]
-		parent = "About"
 		name = "FAQ"
 		url  = "/faq"
 		weight = 103
@@ -115,7 +110,7 @@ paginate = 10
 	[[menu.main]]
 		parent = "Development"
 		name = "Work for ReactOS"
-		url  = "/jobs#paid-jobs"
+		url  = "/contributing#paid-jobs"
 		weight = 309
 
 [[menu.main]]
