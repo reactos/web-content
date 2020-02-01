@@ -140,6 +140,8 @@ paginate = 10
 	logo = "/sites/default/files/ReactOS_0.png"
 	logo_small = "/sites/default/files/ReactOS_0.png"
 
+	development_banner_text = "DEVELOPMENT COPY!"
+
 [Permalinks]
 	blog = "/blog/:year/:month/:day/:filename/"
 
