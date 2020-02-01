@@ -4,9 +4,6 @@ aliases = [ "node/16" ]
 +++
 
 
-{{% unfinished-page "This needs to be included or linked somewhere" %}}
-
-
 <h2>Preface</h2>
 <p>The ReactOS&trade; Project is an international group of developers whose goal is to create a work-alike version of the Microsoft Windows operating system. In light of recent activity in the free software world relating to copyright and patent concerns, the administrators of the ReactOS Project feel that a general guideline would be helpful for developers and potential contributors. For questions regarding this guideline, please e-mail <a href="mailto:aleksey@reactos.org">Aleksey Bragin</a> (project coordinator) or <a href="mailto:ziliang.guo@reactos.org">Ziliang Guo</a> (document editor). Please note that none of this should be construed as legal advice, as any sort of warranty regarding the project&#39;s products, or anything else save a statement of policy on the part of the project. The &quot;Microsoft&quot; and &quot;Windows&quot; trademarks are property of Microsoft Corp.</p>
 <h2>I. INTRODUCTION</h2>
