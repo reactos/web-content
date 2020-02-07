@@ -1,4 +1,4 @@
-baseURL = "https://reactos.org"
+baseURL = "https://reactos.org/"
 title = "ReactOS Website"
 theme = "reactos"
 languageCode = "en-us"
