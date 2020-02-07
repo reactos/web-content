@@ -1,0 +1,108 @@
+---
+title:       "November 2018 meeting minutes"
+author:      "Harteex"
+date:        2019-02-24
+aliases:     [ "node/69607" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2018-11-29<br />
+	19:00 UTC<br />
+	#meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:01 by Colin Finck.</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: Web and Infrastructure Projects</li>
+    <li>Point 3: Jira tickets workflow</li>
+    <li>Point 4: ReactOS 0.5 Planning</li>
+    <li>Point 5: ReactOS Deutschland e.V. Update and ReactOS Hackfest(s) 2019</li>
+    <li>Point 6: All-in-one ISOs combining Live-CD and GUI Installer</li>
+</ul>
+<!--break-->
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Aleksey Bragin</b> mostly dropped by to say hi. But he also mentioned he was getting ready for some infrastructure work together with Colin.</p>
+
+<p><b>Can Tasan</b> said he was mostly busy nowadays, but he has been preparing Community Changelogs along with the help of others, especially Stanislav Motylkov. In the near future he plans to extensively test some apps, especially Word 2003.</p>
+
+<p><b>Colin Finck</b> traveled through Sweden in September and met up with Andreas (Harteex) and Jan (JaixBly). He took home two decommissioned ReactOS servers from Jan's place to archive them properly. Colin is hopeful he can find out why the search function of our Doxygen used to work better in the past.</p>
+
+<p>In October, he was on the Google Summer of Code Mentor Summit and stayed in California for two weeks.</p>
+
+<p>In the end of October, he started two projects he had been planning for a long time. The first project is the migration of our infrastructure from VMs running on rented bare-metal servers to rented VMs. The new VMs run on more powerful hardware, have up-to-date software, are more redundant/failsafe, and independent of a specific hypervisor. Previously, we always needed to shut down all VMs when upgrading the hypervisor, leading to huge downtimes. The entire new setup will even be cheaper in the end.</p>
+
+<p>His second project is scripting our entire infrastructure configuration with Ansible, which he believes to be a great server automation tool. This ensures that all steps are understandable, easily reproducible on a new machine, and simplifies getting new people into infrastructure work (like Victor Perevertkin). He has spent the last 4 weeks on this, and everything is automated now.</p>
+
+<p><b>Herm&egrave;s B&eacute;lusca-Ma&iuml;to</b> finally finished merging the work he did originally in his "setup_improvements" branch. The work consisted of decoupling the installation code in the text-mode USETUP program from the UI itself and putting it into a library to be shared with the implementation of the 1st stage GUI setup. During the process, he also had to fix some bugs in the ReactOS kernel, in particular removing hacks in the code that initializes the registry, and more recently with the help of Pierre, completing the support in Fastfat for dismounting volumes and definitively removing the infamous IopParseDevice hack.</p>
+<p>Some work remains though, both in the general area and in the 1st stage GUI installer.</p>
+
+<p>In general, work remains with fixing the assignation of partition numbers after partitions have been deleted or created, and moving the choice of installing the MBR/VBR code just after the partitioning and formatting choice, instead of waiting at the very end of the file copy. Then finally some simplifying and thinking about how to incorporate GPT support (for later).</p>
+
+<p>In the 1st-stage GUI installer, the things that remain are to interface the registry-initialization code, interface the partitioning/formatting/MBR+VBR code, and fixing a bug in setupapi code related to the extraction of files from .cab archives, including sending the fix upstream to Wine.</p>
+<p>Victor asked if 1st stage GUI setup could be part of the next release, but Herm&egrave;s responded he thought it would take longer.</p>
+
+<p><b>Mark Jansen</b> has done work in many different areas:
+<ul>
+<li>Win32k/Freetype: Workarounds for compiler specific issues related to localization, fix font replacing.</li>
+<li>Ldr/Sxs: Minor tweaks and added more Fls support.</li>
+<li>Sdk/Rtl: Base address and apiset updates, initial work to support version-specific dll forwarders.</li>
+<li>Kernel32: Fixed exception handling in threads (Alex did not agree, but he would come back on this).</li>
+</ul></p>
+<p>Apart from the above, Mark worked on various issues from all over the place, mostly from JIRA or observed bugs.</p>
+
+<p><b>Pierre Schweitzer</b> mostly worked on Cc/Mm, fixing misc bugs in the kernel and implementing missing features. To get some fresh air, he moved on to the network stack for now.</p>
+
+<p><b>Stanislav Motylkov</b> fully finished his work on SMBIOS support integration into ReactOS applications and components. He doesn't think there will be more major work on it, only minor updates. He has also helped fixing things here and there.</p>
+
+<p>Stanislav also reported that he from time to time tries to find and attract new programmers into the ReactOS project. Recently, he tried to attract ARM enthusiasts to help with ReactOS ARM port development. He got responses from a few people and one of them looked into it and reported back the status of the ARM port.</p>
+<p>According to him, the project compiled successfully with host tools for x86, but there are some problems. ARM HAL is literally missing and there is no support for HAL extensions, which are required for most ARM devices. The kernel is not ready, mainly there are problems with memory management, and UEFI is not fully implemented.</p>
+<p>Apart from the above, he's working on making pages on the wiki up to date, and especially helping Can Tasan with the Community Changelog.</p>
+
+<p><b>Victor Perevertkin</b> mentioned he finished his side project, which consumed almost all his time so far, so he doesn't have much to report. He did organize a �Hackfest with Stanislav and Alex Fails in Moscow, and he tried to address some .NET issues (one of them was resolved today - CORE-12243). Apart from the above, he did occasional work on reviewing JIRA tickets.</p>
+
+<p>The other meeting participants (<b>Aleksandar Andrejevic</b>, <b>Alexander Rechitskiy</b>, <b>Andreas Bjerkeholt</b>, <b>Daniel Reimer</b>, <b>David Quintana</b>, <b>Giannis Adamopoulos</b>, <b>Javier Fernandez</b>, <b>Sylvain Deverre</b>, <b>Sylvain Petreolle</b>, <b>Victor Martinez</b>) had nothing to report or joined late.</p>
+
+<h2>Point 2: Web and Infrastructure Projects</h2>
+
+<p>Victor Perevertkin started out by presenting the "Updated developer web interface" project. As the name might suggest, it's about improving and simplifying the developer web interface, such as BuildBot and Testman. Victor searched for existing solutions and realized TeamCity looks good and appears to have all the features we need. It also has a free license for Open Source projects.</p>
+<p>Victor also worked on adapting our master configuration to the latest BuildBot version. Unfortunately, there is a reason why we and many other projects haven't moved yet, BuildBot devs killed their only unique selling point compared to Jenkins, the clear waterfall view. We are not alone: WebKit devs have publicly outspoken to stay at 0.8.x and Chromium devs have developed LUCI, a clearly BuildBot 0.8.x-inspired continuous integration system. So we could also decide to stay at 0.8.14 now. Would certainly be the easiest and Victor Perevertkin has already figured out that e.g. multiple testers for a single builder is also possible with 0.8.x. Another alternative is also to move to Jenkins, which seems to be the industry-standard now.</p>
+<p>Victor will do some more research and send a report to ros-dev.</p>
+
+<p>Another web project would be the compatibility database, which used to be present on the ReactOS website, until the move from RosCMS to Drupal. The old source code can still be resurrected from web.git and Colin can provide the content of the database. After some discussions it was decided that Javier Fernandez would be available as a possible maintainer, Victor Martinez as a possible frontend designer, and Andreas Bjerkeholt would volunteer for the coordinator position in January.</p>
+
+<p>Finally, Colin gave an update regarding our other infra/web services. The new Hugo-based website is not forgotten, but he was mostly busy with the infrastructure for it first. As he already stated in the August meeting, we have a <a href="https://jira.reactos.org/browse/ONLINE-815">METABUG</a> for everything that needs to be done for a minimal website to go live and <a href="https://github.com/colinfinck/web-content">Pull Requests are welcome</a>. However, he has some uncommitted changes in his tree to fix the problems introduced by the last commits (related to ONLINE-830) and for ONLINE-826. He hopes to find time to clean them up and then commit.</p>
+
+<p>The new website will be multi-language, but probably not yet at day 1 when it goes live. With the infrastructure being failsafe, scripted, and up-to-date now, we can finally add new services and the first one will certainly be Mattermost. Colin had to do the infra work first to be able to provide near the same quality of service we currently enjoy with IRC. He can't give an exact timeframe yet but plans to have the instance up by next meeting in December. Afterwards, he also wants to set up a Nextcloud server for exchanging files with developers, testers, and by URL. In the past, people have been using svn.reactos.org to share files, a server which was never designed for this. The alternative was IServ, which isn't as user-friendly as Nextcloud though, doesn't provide synchronization clients, and has no plans to improve their file-sharing service. Nextcloud shall be the solution for questions like "Can you retest? I don't have this app version" or "where do we collect the Hackfest photos?". The infrastructure upgrade brought us a new server with 20TB of storage space and lots of bandwidth, so the Nextcloud instance comes at no extra cost. Download.reactos.org is already benefitting from it, and soon iso.reactos.org will as well.</p>
+
+<p>Regarding Community.ReactOS.org, Colin already said that nobody is maintaining this website and therefore he wants to close it. It has been unmaintained for 2 years now, it's a big security risk, and now even actively costing us money because it's the last one on the old servers. This doesn't change the situation of the Community Edition at all. Whenever there is an update on it, someone can blog on our new main website. The ReactOS Community Edition can be released when the objectives are fulfilled within regular development, or we can try to hire developers with the money we have. We have funds but no volunteers. People are invited all the time to find students or freelancers we can hire. Victor Martinez volunteered to coordinate the community website shutdown and ensure IndieGoGo backers a nice deal.</p>
+
+<h2>Point 3: Jira tickets workflow</h2>
+
+<p>Victor Perevertkin wrote that it looks like we don't follow our own convention regarding issue workflow in Jira. It's supposed to work in a way where every new ticket is created with the status Untriaged and then be moved to Open or Resolved by a developer. At the moment no one does this, so there's no way to easily distinguish "accepted" tickets from others. Victor suggests we should go back and follow this work flow, or create a new one if this isn't convenient.</p>
+
+<p>The conclusion of the resulting discussion ended with expanding the group of people who can accept a ticket to also include core testers. For this, a new Jira group will be created, and the members will also be able to do things such as linking issues and handling duplicates.</p>
+
+<p>Another thing to discuss was whether to add a "Later" option to the list of Jira report resolutions. Some developers were opposed to adding the resolution, fearing that it wouldn't be to much use and the risk of issues just being closed as postponed and forgotten. In the end it was decided to implement it as a close reason "Postponed", but limit its' usage to a few types of bugs such NT6+ apps, to address those points.</p>
+
+<h2>Point 4: ReactOS 0.5 Planning</h2>
+
+<p>A plan for a future 0.5 release needs to be set up with the goals for that release. Many different things were discussed, such as support for NT6+ apps, sound subsystem and DirectX. A list of suggested goals were finally <a href="https://reactos.org/wiki/0.5.0">written down on the wiki</a> along with the person suggesting it and who would be responsible to oversee the goal. This roadmap shouldn't be considered final and can change at any time.</p>
+
+<h2>Point 5: ReactOS Deutschland e.V. Update and ReactOS Hackfest(s) 2019</h2>
+
+<p>The yearly ReactOS Deutschland e.V. General Assembly is scheduled for December 13 and will include a reelection of the Board members (term: 3 years). Colin wrote that he recommends active developers to join ReactOS Deutschland e.V., the board members manage all the money, events and infrastructure, and would like to have more active ReactOS developers as members to represent the project properly.</p>
+
+<p>Regarding the Hackfest topic, Colin wrote that if we can get the room at IN-Berlin again, there will definitely be another ReactOS Hackfest in 2019. Since Hackfests are so productive, and don't require much planning with IN-Berlin available, Colin asked for opinions on having two hackfests per year. </p>
+
+<p>Alexander suggested having a Hackfest in Russia, but some concerns were raised regarding visas, and having ReactOS Deutschland e.V. funding an event there as it is hard to transfer money between EU and Russia.</p>
+
+<h2>Point 6: All-in-one ISOs combining Live-CD and GUI Installer</h2>
+
+<p>As the agenda topic says, Herm&egrave;s is working on combining the old bootcd and old livecd into a single bootcd, so he had some questions regarding our infrastructure, for example how to manage the disappearence of the livecd build target. Possible solutions on how to reduce the size of the iso and prevent file duplication was also discussed.</p>
+
+<p>Colin asked for a rough timeline for implementing the features, and Herm&egrave;s responded that he would love if we could show the GUI installer at FOSDEM as a best case, otherwise at CLT (if there are plans to go to CLT 2019).</p>
+
+<p>Meeting was closed at 22:40 by Colin Finck</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>
