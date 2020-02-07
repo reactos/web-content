@@ -1,0 +1,75 @@
+---
+title:       "December 2018 meeting minutes"
+author:      "Harteex"
+date:        2019-02-24
+aliases:     [ "node/69608" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2018-12-20<br />
+	19:00 UTC<br />
+	#meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:15 by Colin Finck.</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: NT6+ strategy</li>
+    <li>Point 3: Compilers upgrade</li>
+</ul>
+<!--break-->
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Amine Khaldi</b> reported that he worked on Wine syncs.</p>
+
+<p><b>Colin Finck</b> finished the backup of all our old servers/VMs and could finally terminate the contracts for 3 servers we had in use more or less unchanged for 5 years. Our infrastructure performs better now, is prepared for future tasks, and even got a little cheaper in the progress.</p>
+
+<p>Future tasks include the setup of the Mattermost VM, for which Colin already acquired a trial license of the Enterprise Edition and laid out a VM plan. The actual setup should be the work of a few hours when he finds time over the holidays.</p>
+
+<p>Colin also did more work on unifying ReactOS accounts, so we're down to a single account for all reactos.org services.</p>
+
+<p>Finally, the yearly ReactOS Deutschland e.V. meeting took place just a week ago. Pierre has been elected into the Board! (next to Colin, Matthias and Daniel).</p>
+
+<p><b>Joachim Henze</b> just uploaded the RC iso and will start the testing cycle. He reiterated that fixes for known regressions are always welcome.</p>
+
+<p><b>Mark Jansen</b> added some COM object stubs, started work on mspatcha and did some initial work on SFC. He also finally got a fix for CORE-14696 (cannot delete files/folders from context menu).</p>
+
+<p><b>Pierre Schweitzer</b> is still working in the kernel. Apart from that, he finally made his first GUI app, and got elected VP of the e.V.</p>
+
+<p><b>Victor Perevertkin</b> has set up a TeamCity instance on his local machine but hasn't done much with it yet. As he's in the middle of an exam period, he said he will get back to it next week.</p>
+
+<h2>Point 2: NT6+ strategy</h2>
+
+<p>Mark Jansen started out by asking for opinions on the preferred way of adding NT6+ code. He presented some different source layout options, for example that code goes into a _60 folder or something_60.c. After a discussion of the options, most preferred a nt60 subfolder, but in the end it's up to Mark to decide.</p>
+
+<p>Pierre asked to have a bit more context, what was going to be achieved with it, to which Mark and David Quintana responded NT 6.x APIs, to have DLLs exist, when an NT6 app runs and the Vista profile is activated. To support multiple targets we either have to be at the highest and hide stuff for older targets, or we have to create multiple versions of DLLs.</p>
+
+<p>David wrote the process that he thinks would be best:
+<ol>
+<li>Add compatibility DLLs</li>
+<li>Move the compatibility to the kernel, and make the user mode NT6 but still using NT5 drivers</li>
+<li>Switch the kernel itself</li>
+</ol></p>
+
+<p>Other developers agreed with the plan, and Mark noted that it's the goal, but we must organize the source in a uniform way as we can't do x on DLL 1 and y on DLL 2.</p>
+
+<p>NT6+ tickets in Jira were also discussed. For now, the solution will be to close these tickets with resolution postponed, which was discussed in the last meeting. Victor Perevertkin will also update the File Bugs wiki page with information on NT6+ issues.</p>
+
+<p>For user mode, ReactOS can start accepting pull requests when Mark commits the first "nt60" subfolder with code for some DLL. People can then look at it as an example.</p>
+
+<p>However, things are different for kernel mode. Pierre thought that if we decide to start NT6 in the kernel, we should switch target. Most agreed on keeping the kernel NT5 for now. There's no point in having some NT6 code in the kernel, or having dead code that isn't being built anyway. If anyone wants to do NT6+ kernel work at the moment, it's better if they work in a branch or fork. For any final decisions on kernel mode, more kernel developers need to be consulted, as only one (Pierre) was present at the meeting.</p>
+
+<h2>Point 3: Compilers upgrade</h2>
+
+<p>Pierre wanted to discuss two points regarding compiler upgrades.
+<ul>
+<li>Buildbot - giving up MSVC 2013 in favour of something newer such as 2015 or 2017</li>
+<li>Upgrading the GCC and binutils provided in RosBE</li>
+</ul></p>
+
+<p>At the moment VS 2010 compatibility is maintained, much to the reason that it is the last Visual Studio to work on Windows XP, which would mean that it's the last version that could easily work on ReactOS. However, it's not working right now anyway. When it comes to which newer version to target, some developers are still using VS 2015, so the decision is to drop VS 2010 and 2013.</p>
+
+<p>The second sub point is upgrading GCC. Colin asked for volunteers to get ReactOS to build with the latest GCC version, but many objected to using the latest version. There's a too large risk of GCC bugs when it comes to more recent versions. GCC version 6.4 was suggested. ReactOS does not compile with 6.4 yet, but a patch is available to solve this. The decision was made to work towards moving to GCC 6.4, however no one volunteered to work on it for the moment.</p>
+
+<p>Meeting was closed at 21:41 by Pierre Schweitzer</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>

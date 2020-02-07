@@ -1,0 +1,59 @@
+---
+title:       "August 2018 meeting minutes"
+author:      "Harteex"
+date:        2018-09-23
+aliases:     [ "node/69583" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2018-08-30<br />
+	19:00 UTC<br />
+	#meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:05 by Colin Finck.</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: Slack / Mattermost</li>
+</ul>
+<!--break-->
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Andreas Bjerkeholt</b> did some translation work. He also got started coding for zipfldr with help from Mark, and fixed button states. He plans to continue work on zipfldr in the future.</p>
+
+<p><b>Colin Finck</b> tackled one of the ideas from <a href="https://reactos.org/wiki/ReactOS_Hackfest_2018/Lists">the Hackfest idea list</a> together with Mark Jansen, namely the move of the website to a static site generator. They decided to use <a href="https://gohugo.io/">Hugo</a> after reading many reports of people moving from GitHub's Jekyll engine to Hugo. It's faster and supports multi-language sites, something Jekyll cannot offer. They progressed very well during the Hackfest, Just choosing a theme and editing it a bit, importing much of the current content via drupal2hugo, and adding the menu entries gave a really nice result. Colin has created a <a href="https://jira.reactos.org/browse/ONLINE-815">METABUG</a> that lists all outstanding tasks until the new website can replace the old one. Currently, only Colin and Mark have commit access to it, but <a href="https://github.com/colinfinck/web-content">pull requests are welcome</a>.</p>
+
+<p>Besides the website, Colin and Pierre Schweitzer finally fixed the infamous "IVirtualBox object is null" bug of the Test_VBox buildslave. It has been upgraded from VirtualBox 4.3.40 to 5.2.10 in the process. Now only <a href="https://jira.reactos.org/browse/CORE-14975">CORE-14975</a> is left until we can get successful VirtualBox test results again.</p>
+
+<p>Regarding GSoC, Colin thinks it was a great success even if we only mentored a single student as his work was tremendous, and he also joined us at the Hackfest. Colin wants to make him an official ReactOS developer sooner rather than later. For the next GSoC, Colin said that he's ok with establishing different requirements for different projects (e.g. not requiring patch submissions for web tasks), but what we primarily lacked this year were mentors brave enough to lead a single task on their own.</p>
+
+<p>Finally, he wanted to emphasize the location for the Hackfest. The room from <a href="https://www.in-berlin.de/">IN-Berlin</a> came with enough space for working, had cheap beverages, is close to a supermarket and restaurant, and even has an electronics lab. Colin thought that it was the best location we've ever had for a ReactOS Hackfest, and unless there are any objections or better plans, it would be a great place to return to next year.</p>
+
+<p><b>Herm&egrave;s B&eacute;lusca-Ma&iuml;to</b> had nothing to report but mentioned he considered the GSoC to be very successful. He thinks we should continue proposing projects of similar scope.</p>
+
+<p><b>Joachim Henze</b> worked on some German translations and did a lot of (regression)testing during the Hackfest. Currently he's preparing the upcoming release by testing and applying release hacks.</p>
+
+<p><b>Mark Jansen</b> did a number of things at the Hackfest. He worked with Colin on the new website, as also noted in Colin's status report. He handled a ton of PRs on Github (including some of his own), he investigated Sxs issues and fixed applications using gdiplus. As for the rest of the month, he worked on some usability improvements for zipfldr, improved exception handling while calling DllMain and fixed Sxs handling for modules other than the process. Mark also said that the GSoC is a success, despite the fact we only had one student this year. The code is already merged and Victor is interested in our project.</p>
+
+<p><b>Stanislav Motylkov</b> is still experimenting with SMBIOS dumps to implement showing hardware information in System Properties. He also found some time to upload an all-in-one USB patch into our testbot. Finally he helped out fixing a Chrome crash regression.</p>
+
+<p><b>Thomas Faber</b> reported that he made some progress on UHCI during the Hackfest, which is pretty much ready to be merged. He also figured out some small fixes to help with Btrfs, which he hopes to get into a PR some time soon.</p>
+
+<p><b>Victor Perevertkin</b> said that his GSoC has completed successfully. Btrfs booting works, but there are some issues (the tag btrfs-only has been created in Jira to track these). He also mentioned he was glad that all changes were merged so quick. At the Hackfest Victor worked on fixing Btrfs issues and helping Colin a bit with the new website. Right now he's working on setting up a new version of Buildbot.</p>
+
+<p>The other meeting participants (<b>Aleksandar Andrejevic</b>, <b>Alexander Rechitskiy</b>, <b>Amine Khaldi</b>, <b>David Quintana</b>, <b>Ged Murphy</b>, <b>James Tabor</b>, <b>Sylvain Petreolle</b>) had nothing to report or joined late.</p>
+
+<h2>Point 2: Slack / Mattermost</h2>
+
+<p>There have been some internal discussions lately regarding the introduction of a more modern communication platform than IRC. The first idea was to try out Matrix, as some people were already using it seamlessly to communicate on our Freenode IRC channels. Some tried it out during the Hackfest, but didn't like the user interface at all and encountered load and stability problems.</p>
+
+<p>Colin then suggested Mattermost. It has a user interface like Slack and is available for web, desktop and mobile. It's also open source and self-hosted, so we won't be locked in to a situation where the third party ceases the service or changes the terms and conditions.</p>
+
+<p>Some people mentioned Slack, to which Colin replied that the free version limits message searching, as one example. Aleksandar Andrejevic said that he sees nothing wrong with IRC. Colin noted that he didn't want to just scrap IRC right away, any possible move should be as smooth as possible. For example, a bridge to IRC could be set up.</p>
+
+<p>David suggested Discord as an option if we want to attract the public, but do Mattermost if we want it private self-hosted. Victor and Joachim also expressed concern that Mattermost is not known enough to attract people to it, but Colin responded that the IRC is not that exposed either, except for the IRC link on the website, which could be changed to point to  Mattermost.</p>
+
+<p>The first step would be to actually set up a Mattermost server and try it out. Until that is done, no real decision can be made.</p>
+
+<p>Meeting was closed at 20:25 by Colin Finck</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>

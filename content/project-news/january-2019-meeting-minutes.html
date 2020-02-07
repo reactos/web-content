@@ -1,0 +1,79 @@
+---
+title:       "January 2019 meeting minutes"
+author:      "Harteex"
+date:        2019-02-24
+aliases:     [ "node/69609" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2019-01-24<br />
+	19:00 UTC<br />
+	Mattermost meeting channel</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:00 by Colin Finck, which is our first on Mattermost!</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: Mattermost</li>
+    <li>Point 3: Google Summer of Code 2019</li>
+    <li>Point 4: TeamCity</li>
+</ul>
+<!--break-->
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Alexander Rechitskiy</b> did several bug reports and rechecked old bug reports. He conducted an experiment on crowdfunding work of Katayama Hirofumi MZ. Apart from that, he also did PR work.</p>
+
+<p><b>Andreas Bjerkeholt</b> is currently working on the backlog of Meeting Minutes. After that he will coordinate and work on a plan for the compatdb which was discussed during the november meeting.</p>
+
+<p><b>Can Tasan</b> has been updating Community Changelogs. He also did a lot of testing, especially Word, Excel and PowerPoint 2003, and reported numerous bugs. Lastly, he prepared a long post about development from 0.4.1 to 0.4.10, which is waiting for review.</p>
+
+<p><b>Colin Finck</b> spent the last few days setting up and tuning Mattermost, which he wants to hear opinions about in the next agenda point. Apart from that, he dealt with some ReactOS Deutschland e.V. management, in particular some paperwork after the Board election in December.</p>
+
+<p><b>Javier Fernandez</b> wrote that he started accepting JIRA reports so that devs could focus only on accepted ones. He asked about the guidelines regarding this. Colin responded that valid bugs shall be accepted and thereby be flagged as Open.</p>
+
+<p><b>Joachim Henze</b> reported that around 70% of the <a href="https://reactos.org/wiki/Tests_for_0.4.11">tests for 0.4.11</a> were completed. Quality looks good in relative comparison to 0.4.10, however, quality measured in absolute number of unfixed regressions is still too high. We should reduce their count with every consecutive release. Joachim thinks we should delay the 0.4.12 release until regression count is on par or less than 0.4.11.</p>
+
+<p><b>Mark Jansen</b> listed several things he worked on last month:
+<ul>
+<li>Some small freetype fixes</li>
+<li>PVS-fixes in ntdll</li>
+<li>Some ldr/shimeng maintenance</li>
+<li>Fixed a bug where DbgPrint would be silenced for a thread</li>
+<li>Added some printer semi-stubs on the road to fix a crashing winetest</li>
+<li>Fixed menu position code in the case where a menu was (partially) off-screen</li>
+<li>Fixed scrollbar creation code to be less strict on the 'Window extra data' field so that stuff like CivII can start again</li>
+</ul>
+Currently he is working on .local support in our loader, some more printing stuff and SXS support for forward compatibility.</p>
+
+<p><b>Stanislav Motylkov</b> committed some changes which fixed MIDI playback functionality in ReactOS. It's now possible to install TiMidity++ softsynth driver, choose it in the sound settings as default MIDI output, and you're all set. After that, it's as simple as double clicking any .mid file in explorer. He also fixed some minor things on the wiki, and plans to add TiMidity++ to RAPPS.</p>
+
+<p><b>Victor Perevertkin</b> finished Mark Jansen's e1000 network card driver, and he was working on TeamCity.</p>
+
+<h2>Point 2: Mattermost</h2>
+
+<p>In this agenda point, Colin wanted to hear opinions about the new Mattermost chat he set up, and whether we should continue using it beyond our trial (ending mid-February).</p>
+
+<p>Most were generally positive, but some issues were raised, such as having to click so much to read history. Mark thought we shouldn't switch to Mattermost until there's a decent permission system.</p>
+
+<p>David Quintana suggested that we could try Rocket.Chat and compare them. Mark mentioned that he had used it and there were several bugs, but noted that we could evaluate it anyway, since the setup he used was a hack-job at best.</p>
+
+<p>Stanislav Motylkov mentioned a number of issues, permissions and auto fetch on scroll which was mentioned earlier, and also things like immediately jumping to first unread message and searching text in selected channel by default.</p>
+
+<p>Colin finally gave his opinion that while Mattermost isn't perfect, it's a huge improvement over IRC, despite the mentioned drawbacks. The price point attached to the enterprise version for non-profits is $250 per 3 years, which is totally affordable for us. We need the enterprise edition at least for LDAP support, and the paid support is also a huge plus for a service we need every day.</p>
+
+<p>Mark offered to show Colin the admin UI of Rocket.Chat, but for now Colin is busy until mid-February.</p>
+
+<h2>Point 3: Google Summer of Code 2019</h2>
+
+<p>Colin brought up this point since we wanted to make more PR about GSoC this year, in hope of getting more students, but without a single mentor <a href="https://reactos.org/wiki/Google_Summer_of_Code_2019">signed up on the wiki</a>, there is no reason to even apply for GSoC.</p>
+
+<p>Availability and who could mentor was discussed briefly, but Colin will email developers not present during the meeting and ask them.</p>
+
+<h2>Point 4: TeamCity</h2>
+
+<p>Victor Perevertkin wanted to know if he should continue to adopt TeamCity. He sent out an email before the meeting with the status of his testing, including some limitations when it comes to tests. When discussing these limitations, the inability to compare two random revisions without them being directly next to each other was deemed a problem, as was not supporting counts in the test results list, one would have to click each test to see this information. Pierre asked what we would gain by switching to TeamCity, and Mark noted that integration in GitHub was the biggest complaint from Timo regarding the current system. Some developers suggested building a BuildBot plugin to integrate in GitHub would be better. As for TeamCity, maintainability could also be a problem if it requires changes to workaround the problems.</p>
+
+<p>It was decided that TeamCity wasn't an option for ReactOS, and Victor will continue working on his config for a BuildBot upgrade instead, as our current BuildBot version is at end-of-life.</p>
+
+<p>Meeting was closed at 21:03 by Colin Finck</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>
