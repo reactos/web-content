@@ -1,0 +1,40 @@
+---
+title:       "January 2020 meeting minutes"
+author:      "Harteex"
+date:        2020-02-07
+aliases:     [ "node/69670" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2020-01-30<br>
+	19:00 UTC<br>
+	Mattermost meeting channel</p>
+<p>Regular meetings are now resumed, and so are the meeting minutes. The meetings are currently planned to be held bi-monthly going forward.</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:01 by Colin Finck.</p>
+<ul><li>Point 1: Our GSoC 2020 Application</li>
+<li>Point 2: RosBE 2.2 and what's blocking it</li>
+<li>Point 3: ReactOS 0.4.13 and what's blocking it</li>
+<li>Point 4: FOSDEM: Planning for the upcoming weekend in Brussels</li>
+</ul><h2>Point 1: Our GSoC 2020 Application</h2>
+<p>The deadline for GSoC 2020 is the 5th of february. Colin asked if anyone would volunteer to set up the relevant wiki pages, which Mark Jansen did. Colin himself volunteered to handle the sign up and serve as organisation admin, with Amine Khaldi accepting the role of backup admin. Many others said they would contribute to the wiki pages.</p>
+<p>The rest of the discussion for the point revolved around removing and adding ideas to the ReactOS GSoC wiki page.</p>
+<h2>Point 2: RosBE 2.2 and what's blocking it</h2>
+<p>Some of the current issues with the upcoming RosBE 2.2 were identified:</p>
+<ul><li>Victor Perevertkin mentioned Windows XP support.</li>
+<li>Mark pointed out that the msbuild build fails, and created issue ROSBE-159 for it.</li>
+<li>Colin had problems lately running rosautotest.exe on Windows. Victor would check himself later.</li>
+<li>Daniel Reimer noted that binaries are getting significantly larger with GCC 8. This especially affects freeldr which gets too large for some devices to boot.</li>
+</ul><p>Sylvain Petreolle also mentioned that there are still unsolved bugs with GCC 4.7.2. RosBE 2.2 will have GCC 8.</p>
+<p>Regarding Windows XP support for RosBE 2.2, Colin was of the opinion to not restrict everything to XP-compatible versions, as more and more upstream tools stopped supporting it (e.g. CMake, MSYS). Mark said he would try to look into providing Windows XP support, but he and most of the others agreed to not have Windows XP support as a blocker for release.</p>
+<p>One issue with not having Windows XP support would be ReactOS' ability to self-host builds. However, at the moment that is too slow to be usable anyway.</p>
+<p><a href="https://jira.reactos.org/browse/CORE-16512">CORE-16512</a> was repurposed as a RosBE 2.2 metabug.</p>
+<h2>Point 3: ReactOS 0.4.13 and what's blocking it</h2>
+<p>Joachim Henze reported that we are on a good track, but he still needs some time to finish the tests. There are currently 16 regressions and Joachim wants to get them down to 15 or less before release. He also presented two regression he thought could be dealt with.</p>
+<p>Joachim set the release day to the end of february, but mentioned it could also be a bit earlier than that.</p>
+<h2>Point 4: FOSDEM: Planning for the upcoming weekend in Brussels</h2>
+<p>Colin wrote that FOSDEM this year will be different, with more ReactOS people and less FOSDEM, because ReactOS only have a stand on Sunday. Saturday (and possibly Friday for people arriving early) will be used for a mini-Hackfest.</p>
+<p>The rest of the FOSDEM discussion revolved around where to meet, what kind of demo computers to bring and to a lesser extent, what to do during the mini-Hackfest, where the EnumPrintersA PR and the new website were mentioned.</p>
+<p>Meeting was closed at 20:52 by Colin Finck<br>
+Meeting minutes prepared by Andreas Bjerkeholt</p>
