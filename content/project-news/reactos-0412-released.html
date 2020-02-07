@@ -1,0 +1,87 @@
+---
+title:       "ReactOS 0.4.12 released"
+author:      "Colin Finck"
+date:        2019-09-23
+aliases:     [ "node/69650" ]
+banner:      "img/project-news/reactos-0412-released-thumb.png"
+
+---
+
+<p>The ReactOS team is pleased to announce the release of version 0.4.12. As always a multitude of improvements have been made to all parts of the OS, though userland components saw special emphasis this time around.</p>
+
+<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_1_2.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_1_2.png" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>
+
+<h2>Kernel improvements</h2>
+<p>Filesystem drivers require a great deal of support to function correctly, and there is arguably no truer test of ReactOS&rsquo; FS infrastructure than being able to run Microsoft&rsquo;s own FS drivers. While the project is not quite there yet, driving towards this goal saw considerable improvements been made. Pierre Schweitzer and Thomas Faber paid particular attention to the common cache, a module with deep ties to the memory manager and which traditionally has been a very troublesome component. General stability saw marked improvement thanks to their contributions, along with that of Herm&egrave;s B&eacute;lusca-Ma&iuml;to in fixing up ReactOS&rsquo; own CDFS driver.</p>
+
+<p>More general progress can be found in Eric Kohl&rsquo;s progression towards proper device power management, an especially tricky feature that many take for granted these days on Windows laptops. If only people knew just how many steps were involved in putting a device to sleep and then waking it up again in a working state. Then again, anyone who has ever had to hard reboot a machine that won&rsquo;t wake from sleep can probably attest to the difficulty even the biggest OS vendors in the world still grapple with.</p>
+
+<p>Another feature that is certainly to be of greater interest to power users and IT specialists, Michael Fritscher has managed to fix support for PXE booting with ReactOS. In enterprise or industrial environments where central management of systems is a must, the more network functionality ReactOS provides, the more places it can find a use.</p>
+
+<h3>Fixed Kernel-Image-Protection</h3>
+<p>Security these days is a fundamental requirement of modern operating systems, and the ability for an OS to protect its own files is the foundations upon the rest of its security. To that end, most operating systems will have locks to prevent any random application from going and modifying images that are loaded and executed in the kernel space, such as the kernel itself (ntoskrnl), various feature subsystems (win32k), and of course general device drivers. ReactOS previously suffered from various bugs that prevented it from correctly doing this, but the write-protection functionality was rewritten during the run-up to 0.4.12, enabling its usage and also adding new features like execution protection just waiting for x64 to be fully enabled.</p>
+
+<h2>Window snapping</h2>
+<p>A general usability shortcut, the ability to snap windows to be aligned to sides or maximized and minimized by dragging it in specific directions is something of a staple. Its lack in ReactOS meant power-users and their muscle memory were hard put out, but with 0.4.12 this is no longer the case. Denis Malikov has implemented the necessary support to make window snapping work, and the project invites one and all to try it out. And needless to say, the project did not forget the keyboard shortcuts that accompany the feature.</p>
+
+<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_2.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/reactos_0412_2.png" alt="Image"  class="imgp_img" width="300" height="234" /></a></p>
+
+<h2>Font improvements</h2>
+<p>Font rendering is one of those background details that when things go right, one barely notices. When things go wrong however, the results can render entire suites of applications unusable. The work to make font rendering more robust and correct in ReactOS is, like many other features, a work in progress and joint effort between multiple developers, with longtime contributors James Tabor, Katayama Hirofumi MZ, and Mark Jansen playing especially active roles. Nonetheless, several significant pieces fell into place to allow 0.4.12 to enjoy some marked improvements over its predecessors.</p>
+
+<p>The single biggest fix that went into 0.4.12 would have to be a series of problems that badly garbled text rendering for buttons in a range of applications, from iTunes to various .NET applications as seen in the images below.</p>
+
+<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_3.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_3.png" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>
+
+<h2>Intel e1000 NIC driver</h2>
+<p>While ReactOS&rsquo; traditional usage in virtual machines generally shields it from rapid and oft massive changes in hardware configurations, even the systems emulated by virtual machines have undergone some evolution over the years. Case in point, VirtualBox and VMware have been shifting their default emulated network interface card to be based off of the Intel e1000 NIC in order to present their guests with a gigabit capable interface.</p>
+
+<p>Thanks to work done by Mark Jansen and Victor Perevertkin, ReactOS now possesses a driver that supports this NIC out of the box instead of requiring end-users to manually find and install a driver, a finicky process if one does not have a working network connection in the first place. Furthermore, the new driver should also be compatible with e1000 NICs in real hardware, though of course more real-world testing will be necessary to fully validate that assertion. Interested testers are of course encouraged to try and see just how much ReactOS can get out of the e1000.</p>
+
+<h2>New themes</h2>
+<p>ReactOS first gained theming support in the 0.3.x era, with the Lautus theme being the standard bundled to demonstrate the feature. With 0.4.12, the team is pleased to announce two new themes to add to its stable. The first is Lunar, created by Joann M&otilde;ndresku and Adam Slabon and designed to be reminiscent of the look and feel of XP while colored in the ReactOS style. The second is Mizu by Foxlet, which seeks to provide a flatter design that draws from the more modern design styles found in newer versions of Windows. A comparison of the two can be found below. Choice is always good, after all, and now users have more of them to find one that better suits their aesthetic tastes.</p>
+
+<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_4.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_4.png" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>
+
+<h2>User-mode DLLs</h2>
+<p>A range of other improvements to user-mode components within ReactOS were made for 0.4.12, with some being more obvious than others. The most visible of course would be, more applications work, which is arguably the principal reason many users express interest in the project. Two outstanding improvements also help demonstrate the sort of contrast between the subtle and the dramatic in terms of ReactOS&rsquo; progress.</p>
+
+<p>The common controls library (comctl) is used by basically all Windows applications to draw various generic user interface elements. Fix relating to it read extremely dryly and would be a list of things that most end users would not understand. Still, the sort of plumbing it supports is essential to the rest of the user experience, and every time a user is able to smoothly slide through an application is a testament to the effort put into the library by developers like Giannis Adamopoulos, Doug Lyons, Stanislav Motylkov, and Denis Malikov.</p>
+
+<p>Speaking of Stanislav, another piece of work from him that made it into 0.4.12 represents the sort of dramatic, big step forward in that it enables an entire class of usage of the OS. MIDI devices have a long and storied history in the indie music scene and even today people are composing works that make use of their seemingly simplistic range. Due to that very history, MIDI devices and the software that supports them can be from what feels like a bygone era. ReactOS has always been about enabling people to keep using their existing hardware and software however, and Stanislav&rsquo;s work now enables ReactOS to properly load the drivers for MIDI instruments and control them, thus opening up a whole new class of use for ReactOS.</p>
+
+<p>Oh and while he was at it, he also animated the rotation bar in the startup/shutdown dialog, just like in the NT5 family. It&rsquo;s the little things that count.</p>
+
+<h2>Misc improvements</h2>
+<p>As always, it would be physically impossible to do justice to all of the improvements and all the hard work done by the developers involved. From updates to the on-screen keyboard (Bisoc George), fixes to the calculator (Carlo Bramini), to quality of life improvements to the sound mixer dialog (Eric Kohl), one could go on and on and on. A summary can never do justice to everything that has been done, so we will have to content ourselves with the small window that it can provide.</p>
+
+<h2>Testing</h2>
+<p>As always, ReactOS&rsquo; progress would be impossible without the dedication put in by the various testers and bug reporters like Joachim Henze that dedicate time and effort to this project, in both initially filing issues and following up to verify that fixes actually work.</p>
+
+<h2>Third Party Syncs</h2>
+<p>The current third party sources that ReactOS syncs with have been brought to the following versions by their respective minders.
+<ul>
+	<li>Wine-Staging 4.0 by Amine Khaldi</li>
+	<li>btrfs v1.1 by Pierre Schweitzer</li>
+	<li>uniata v0.47 by Thomas Faber</li>
+	<li>ACPICA v20190405 by Thomas Faber</li>
+	<li>libpng v1.6.35 by Thomas Faber</li>
+	<li>mbedtls v2.7.10 by Thomas Faber</li>
+	<li>mpg123 v1.25.10 by Thomas Faber</li>
+	<li>libxml2 v2.9.9 by Thomas Faber</li>
+	<li>libxslt v1.1.33 by Thomas Faber</li>
+	<li>libtiff v4.0.10 by Thomas Faber</li>
+</ul></p>
+
+<h2>Statistics</h2>
+<p>JIRA issues fixed - 226<br>
+Number of commits - 1140<br>
+Oldest bug fixed for 0.4.12 - <a href="https://jira.reactos.org/browse/CORE-187">CORE-187</a> Local Dll override support in ReactOS (Mark Jansen)</p>
+
+<p><ul>
+  <li><a href="https://reactos.org/wiki/ChangeLog-0.4.12">The official Changelog for the 0.4.12 release</a></li>
+  <li><a href="https://reactos.org/wiki/Community_Changelog-0.4.12">The less technical Community Changelog for 0.4.12</a></li>
+  <li><a href="https://reactos.org/wiki/Tests_for_0.4.12">Application Tests for 0.4.12</a></li>
+</ul></p>
+
+<p><a href="https://github.com/reactos/reactos/tree/releases/0.4.12">releases/0.4.12</a> branch was forked from <a href="https://github.com/reactos/reactos">master</a> on 2019-04-08 after 0.4.12-dev-1082-ge0e5363</p>
