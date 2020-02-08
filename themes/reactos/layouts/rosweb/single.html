@@ -1,0 +1,58 @@
+
+{{ if (eq .Slug "head") }}
+
+<!-- Begin head template -->
+
+	<!-- Self hosted roboto -->
+	<link rel="stylesheet" href="{{ "css/font-roboto.css" | relURL}}" type='text/css'>
+
+	<!-- Bootstrap and Font Awesome css -->
+	<link rel="stylesheet" href="{{ "css/font-awesome.min.css" | relURL}}">
+	<link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL}}">
+
+	<link href="{{ "css/style.blue.css" | relURL}}" rel="stylesheet" id="theme-stylesheet">
+
+	<!-- Favicon and apple touch icons-->
+	<link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{{ "img/apple-touch-icon.png" | relURL }}" />
+
+	{{ range $.Page.Params.css }}
+	<link href="{{ . }}" rel="stylesheet">
+	{{ end }}
+
+	<link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+
+	<!-- Facebook OpenGraph tags -->
+	<meta property="og:title" content="{{ .Title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ .Permalink }}/" />
+	<meta property="og:image" content="{{ .Site.Params.logo }}" />
+
+
+<!-- End head template -->
+
+{{ else if (eq .Slug "header") }}
+
+<!-- Begin header template -->
+
+<header>
+    {{ partial "nav.html" . }}
+</header>
+
+<div class="container-fluid">
+
+<!-- End header template -->
+
+{{ else if (eq .Slug "footer") }}
+
+<!-- Begin footer template -->
+
+    
+    {{ partial "footer.html" . }}
+</div>
+
+{{ partial "scripts.html" . }}
+
+<!-- End footer template -->
+
+{{ end }}
