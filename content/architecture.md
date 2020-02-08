@@ -1,6 +1,9 @@
 +++
-title = "Developing!"
-aliases = [ "node/957" ]
+title = "ReactOS Architecture"
+aliases = [
+    "node/957",
+    "developing"
+]
 css = [
     "/css/blue-pyramid.css",
 ]
