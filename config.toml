@@ -22,6 +22,11 @@ paginate = 10
 		weight = 101
 	[[menu.main]]
 		parent = "About"
+		name = "Gallery"
+		url  = "/gallery"
+		weight = 102
+	[[menu.main]]
+		parent = "About"
 		name = "FAQ"
 		url  = "/faq"
 		weight = 103
@@ -104,14 +109,19 @@ paginate = 10
 		weight = 307
 	[[menu.main]]
 		parent = "Development"
-		name = "Contribute"
+		name = "Developing"
 		url  = "/developing"
 		weight = 308
 	[[menu.main]]
 		parent = "Development"
+		name = "Contributing"
+		url  = "/contributing"
+		weight = 309
+	[[menu.main]]
+		parent = "Development"
 		name = "Work for ReactOS"
 		url  = "/contributing#paid-jobs"
-		weight = 309
+		weight = 310
 
 [[menu.main]]
 	name = "Donate"
