@@ -74,54 +74,54 @@ paginate = 10
 	weight = 3
 	[[menu.main]]
 		parent = "Development"
-		name = "Building ReactOS"
-		url  = "https://reactos.org/wiki/Building_ReactOS"
+		name = "Architecture"
+		url  = "/architecture"
 		weight = 301
 	[[menu.main]]
 		parent = "Development"
-		name = "Jira"
-		url  = "https://jira.reactos.org"
+		name = "Building ReactOS"
+		url  = "https://reactos.org/wiki/Building_ReactOS"
 		weight = 302
-	[[menu.main]]
-		parent = "Development"
-		name = "Download ReactOS Builds"
-		url = "/getbuilds"
-		weight = 303
-	[[menu.main]]
-		parent = "Development"
-		name = "ReactOS on GitHub"
-		url = "https://github.com/reactos"
-		weight = 304
-	[[menu.main]]
-		parent = "Development"
-		name = "Report a Bug"
-		url  = "https://reactos.org/wiki/File_Bugs"
-		weight = 305
-	[[menu.main]]
-		parent = "Development"
-		name = "Testman"
-		url  = "/testman"
-		weight = 306
-	[[menu.main]]
-		parent = "Development"
-		name = "Wiki"
-		url  = "/wiki"
-		weight = 307
-	[[menu.main]]
-		parent = "Development"
-		name = "Developing"
-		url  = "/developing"
-		weight = 308
 	[[menu.main]]
 		parent = "Development"
 		name = "Contributing"
 		url  = "/contributing"
-		weight = 309
+		weight = 303
+	[[menu.main]]
+		parent = "Development"
+		name = "Download ReactOS Builds"
+		url = "/getbuilds"
+		weight = 304
+	[[menu.main]]
+		parent = "Development"
+		name = "Jira"
+		url  = "https://jira.reactos.org"
+		weight = 310
+	[[menu.main]]
+		parent = "Development"
+		name = "ReactOS on GitHub"
+		url = "https://github.com/reactos"
+		weight = 311
+	[[menu.main]]
+		parent = "Development"
+		name = "Report a Bug"
+		url  = "https://reactos.org/wiki/File_Bugs"
+		weight = 312
+	[[menu.main]]
+		parent = "Development"
+		name = "Testman"
+		url  = "/testman"
+		weight = 313
+	[[menu.main]]
+		parent = "Development"
+		name = "Wiki"
+		url  = "/wiki"
+		weight = 314
 	[[menu.main]]
 		parent = "Development"
 		name = "Work for ReactOS"
 		url  = "/contributing#paid-jobs"
-		weight = 310
+		weight = 315
 
 [[menu.main]]
 	name = "Donate"
