@@ -1,6 +1,30 @@
+The ReactOS Website Theme in "themes/reactos" is originally derived from the
+"Bootstrapious Universal - Business & E-commerce Template" available at
+https://bootstrapious.com/p/universal-business-e-commerce-template
+The theme is Copyright (c) Ondrej Svestka <hello@bootstrapious.com>,
+All Rights Reserved
+
+The ReactOS Website Theme is further derived from the "Universal Theme for
+Hugo" available at https://github.com/devcows/hugo-universal-theme
+This one is Copyright (c) 2016 DevCows and available under the MIT License
+(SPDX short identifier: MIT)
+
+On 2020-02-18, ReactOS Deutschland e.V. has purchased an "extended license"
+for the original "Bootstrapious Universal - Business & E-commerce Template".
+Ondrej Svestka states that an extended license allows to "relicense one of my
+free themes, e.g. to sell its derivative on ThemeForest without any
+attribution, include it into the SAAS app or generally change the license for
+his/her product".
+ReactOS Deutschland e.V. hereby makes all files in "themes/reactos" and
+subdirectories available under the following combined license:
+
+==============================================================================
 The MIT License (MIT)
 
+Copyright (c) 2020 Ondrej Svastka
 Copyright (c) 2016 DevCows
+Copyright (c) 2020 ReactOS Deutschland e.V.
+Copyright (c) 2020 ReactOS Website Theme Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +43,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+==============================================================================
