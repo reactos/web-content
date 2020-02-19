@@ -135,7 +135,6 @@ paginate = 10
 
 [params]
 	viewMorePostLink = "/news/"
-	author = "DevCows"
 	defaultKeywords = ["ReactOS", "react", "os", "open source", "free", "win32", "winapi"]
 	defaultDescription = "ReactOS is a free, opensource reimplementation of windows"
 
