@@ -11,15 +11,13 @@ is to create a work-alike version of the Microsoft Windows operating system. In
 light of recent activity in the free software world relating to copyright and
 patent concerns, the administrators of the ReactOS Project feel that a general
 guideline would be helpful for developers and potential contributors. For
-questions regarding this guideline, please e-mail [Aleksey Bragin][aleksey]
-(project coordinator) or [Ziliang Guo][ziliang] (document editor). Please note
+questions regarding this guideline, please e-mail [Colin Finck][colin]. Please note
 that none of this should be construed as legal advice, as any sort of warranty
 regarding the project&#39;s products, or anything else save a statement of
 policy on the part of the project. The &quot;Microsoft&quot; and
 &quot;Windows&quot; trademarks are property of Microsoft Corp.
 
-[aleksey]: mailto:aleksey@reactos.org
-[ziliang]: mailto:ziliang.guo@reactos.org
+[colin]: mailto:colin@reactos.org
 
 ## I. INTRODUCTION
 
