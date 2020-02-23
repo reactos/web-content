@@ -191,7 +191,7 @@ exposure to proprietary code such as in the Windows Research Kernel.
 
 [non-free]: http://www.gnu.org/prep/standards/standards.html#Reading-Non_002dFree-Code
 
-### III. PATENT ISSUES
+## III. PATENT ISSUES
 
 Software patents have a profound affect on the ReactOS Project. Currently,
 software patents are legal (i.e. software is statutory matter) in the United
