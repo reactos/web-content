@@ -4,7 +4,7 @@
 
 		<div class="col-md-4">
 			<ul class="links">
-				{{ if .File }}
+				{{ if and (.File) (ne .Slug "footer") }}
 					<li><a href="https://github.com/reactos/web-content/tree/master/content/{{ .File.Path }}">Improve this page</a></li>
 				{{ end }}
 			</ul>
