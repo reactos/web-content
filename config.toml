@@ -144,7 +144,7 @@ paginate = 10
 	logo = "/sites/default/files/ReactOS_0.png"
 	logo_small = "/sites/default/files/ReactOS_0.png"
 
-	development_banner_text = "DEVELOPMENT COPY!"
+	development_banner_text = "DEVELOPMENT COPY! Visit www.reactos.org for the production website."
 
 [Permalinks]
 	blog = "/blog/:year/:month/:day/:filename/"
