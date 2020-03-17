@@ -479,11 +479,6 @@ fieldset[disabled] .btn-template-main.active {
 	font-size: 30px;
 	font-weight: 700;
 }
-@media (max-width: 991px) {
-	#heading-breadcrumbs h1 {
-		text-align: center;
-	}
-}
 .bar {
 	position: relative;
 	background: #467fbf;
