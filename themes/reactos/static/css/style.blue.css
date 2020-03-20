@@ -1213,6 +1213,7 @@ address {
 #jirafeed {
 	list-style: none;
 	padding: 0;
+	overflow-wrap: break-word;
 }
 #jirafeed .time {
 	color: #999999;
