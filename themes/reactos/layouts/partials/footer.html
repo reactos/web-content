@@ -1,17 +1,15 @@
 <footer class="row" id="copyright">
 	<div class="col-md-offset-1 col-md-10">
-		<div class="col-md-4">&copy; 1996-{{ now.Year }} ReactOS Team &amp; Contributors</div>
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-left">&copy; 1996-{{ now.Year }} ReactOS Team &amp; Contributors</div>
 
-		<div class="col-md-4">
-			<ul class="links">
+			<div class="col-sm-3 col-md-4 col-center">
 				{{ if and (.File) (ne .Slug "footer") }}
-					<li><a href="https://github.com/reactos/web-content/tree/master/content/{{ .File.Path }}">Improve this page</a></li>
+					<a class="footer-link" href="https://github.com/reactos/web-content/tree/master/content/{{ .File.Path }}">Improve this page</a>
 				{{ end }}
-			</ul>
-		</div>
+			</div>
 
-		<div class="col-md-4 text-right">
-			<div class="pull-right">
+			<div class="col-sm-5 col-md-4 col-right">
 				<div class="social">
 					<a href="https://github.com/reactos" target="_blank"><i class="fa fa-github"></i></a>
 					<a class="youtube" href="https://youtube.com/c/ReactOSCommunity" target="_blank"><i class="fa fa-youtube"></i></a>
@@ -20,9 +18,9 @@
 					<a class="facebook" href="https://facebook.com/ReactOS-19143619259" target="_blank"><i class="fa fa-facebook"></i></a>
 				</div>
 
-				<ul class="links">
-					<li><a href="/legal">Legal</a></li>
-				</ul>
+				<div style="padding-left: 20px">
+					<a class="footer-link" href="/legal">Legal</a>
+				</div>
 			</div>
 		</div>
 	</div>
