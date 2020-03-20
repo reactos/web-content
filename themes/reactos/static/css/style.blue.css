@@ -265,11 +265,18 @@ div.section {
 }
 .navbar-affixed-top {
 	position: fixed;
+	z-index: 1000;
 	width: 100%;
 	top: 0;
-	z-index: 1000;
 	-webkit-box-shadow: 0 0 5px #cccccc;
 	box-shadow: 0 0 5px #cccccc;
+}
+.navbar-affixed-top:nth-child(2) {
+	visibility: hidden;
+	position: inherit;
+	z-index: 0;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
 }
 
 .input-group .btn {
