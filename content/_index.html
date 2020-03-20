@@ -9,7 +9,7 @@ scripts = [
 ]
 +++
 <section id="intro" class="row bar no-mb">
-	<div class="col-md-offset-1 col-md-5">
+	<div class="col-sm-offset-1 col-sm-5">
 		<h1>Welcome to ReactOS</h1>
 
 		<p class="lead">
@@ -17,31 +17,32 @@ scripts = [
 			That's the mission of ReactOS!
 		</p>
 
-		<div class="col-md-6 row">
-			<h4>Development</h4>
-			<ul>
-				<li><a href="/getbuilds">ReactOS Builds</a></li>
-				<li><a href="/wiki/File_Bugs">Report a Bug</a></li>
-				<li><a href="/testman">Testman</a></li>
-				<li><a href="/wiki">Wiki</a></li>
-			</ul>
-		</div>
-
-		<div class="col-md-6">
-			<h4>Get in touch</h4>
-			<ul>
-				<li><a href="https://chat.reactos.org">Chat</a></li>
-				<li><a href="/forum">Forum</a></li>
-				<li><a href="/mailing-lists">Mailing Lists</a></li>
-			</ul>
+		<div>
+			<div style="display: inline-block; vertical-align: top; margin-right: 10px">
+				<h4>Development</h4>
+				<ul>
+					<li><a href="/getbuilds">ReactOS Builds</a></li>
+					<li><a href="/wiki/File_Bugs">Report a Bug</a></li>
+					<li><a href="/testman">Testman</a></li>
+					<li><a href="/wiki">Wiki</a></li>
+				</ul>
+			</div>
+			<div style="display: inline-block; vertical-align: top">
+				<h4>Get in touch</h4>
+				<ul>
+					<li><a href="https://chat.reactos.org">Chat</a></li>
+					<li><a href="/forum">Forum</a></li>
+					<li><a href="/mailing-lists">Mailing Lists</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
-	<div class="col-md-5 text-center">
-		<div class="screenshot">
-			<a href="/gallery"><img src="/sites/default/files/Mizu-Desktop.png" alt="ReactOS in action"></a><br>
-			<a href="/gallery">view more screenshots</a>
-		</div>
+	<div class="col-sm-5 text-center">
+		<a href="/gallery" class="screenshot">
+			<img class="img-responsive" src="/sites/default/files/Mizu-Desktop.png" alt="ReactOS in action">
+		</a>
+		<a href="/gallery">view more screenshots</a>
 
 		<div class="buttons">
 			<a href="/download" class="btn btn-success"><i class="fa fa-download"></i> Download ReactOS {{< reactos-version >}}</a> or

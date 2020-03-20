@@ -583,12 +583,27 @@ fieldset[disabled] .btn-template-main.active {
 	padding: 20px 0;
 	line-height: 28px;
 }
+
+#copyright .col-center {
+	text-align: center;
+}
+
+#copyright .col-right {
+	text-align: right;
+}
+
+#copyright .col-right > div {
+	display: inline-block
+}
+
 #copyright p {
 	margin: 0;
 }
-@media (max-width: 991px) {
-	#copyright p {
-		float: none !important;
+/* aka col-sm-* */
+@media (max-width: 767px) {
+	#copyright .col-left,
+	#copyright .col-center,
+	#copyright .col-right {
 		text-align: center;
 		margin-bottom: 10px;
 	}
@@ -1193,9 +1208,11 @@ address {
 }
 #intro .screenshot img {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	margin-bottom: 10px;
-	height: 263px;
-	width: 350px;
+}
+#intro .screenshot {
+	display: block;
+	margin: 0 auto 10px;
+	max-width: 350px;
 }
 #intro .buttons {
 	margin-top: 15px;
@@ -1223,21 +1240,20 @@ address {
 	margin-right: 5px;
 }
 
-#copyright .social {
-	float: left;
-}
 #copyright ul.links {
 	float: left;
 	list-style: none;
 	margin: 0;
 }
-#copyright ul.links a {
+#copyright ul.links a,
+#copyright .footer-link {
 	color: #999999;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 
-#copyright ul.links a:hover {
+#copyright ul.links a:hover,
+#copyright .footer-link:hover {
 	color: #fff;
 	font-weight: bold;
 	text-transform: uppercase;
