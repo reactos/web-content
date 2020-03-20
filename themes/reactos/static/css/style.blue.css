@@ -264,23 +264,12 @@ div.section {
 	}
 }
 .navbar-affixed-top {
-	top: -32px;
-}
-.navbar-affixed-top.affix-top {
-	-webkit-transition: all 0.5s ease-out;
-	-moz-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
-}
-.navbar-affixed-top.affix {
 	position: fixed;
 	width: 100%;
 	top: 0;
 	z-index: 1000;
 	-webkit-box-shadow: 0 0 5px #cccccc;
 	box-shadow: 0 0 5px #cccccc;
-	-webkit-transition: all 0.5s ease-out;
-	-moz-transition: all 0.5s ease-out;
-	transition: all 0.5s ease-out;
 }
 
 .input-group .btn {
