@@ -1,7 +1,7 @@
 +++
 title = "The New ReactOS Website"
 author = "Colin Finck"
-date = 2020-03-15
+date = 2020-03-21
 +++
 
 Today, I am pleased to announce the launch of the new ReactOS website.  
