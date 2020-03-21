@@ -14,19 +14,20 @@ Tracking the progress and development of an Operating System is an exciting and 
 * [Joining](#joining)
 
 
-## Daily updates through facebook and twitter... {#updates}
+## Daily updates through Facebook and Twitter. {#updates}
 
-{{% unfinished-page "Facebook / twitter here? see https://www.reactos.org/node/955#socialanchor" %}}
+* [ReactOS on Facebook](https://facebook.com/ReactOS-19143619259)
+* [ReactOS on Twitter](https://twitter.com/reactos)
 
-## Be Part of the ReactOS Community ! {#communicating}
+## Be Part of the ReactOS Community! {#communicating}
 
 If just tracking and following is not enough for you...
 
-Meet the rest of the Community in the ReactOS Forum or join us in the #ReactOS IRC channel.
+Meet the rest of the Community in the [ReactOS Forum](/forum/) or join us in the [ReactOS Chat](https://chat.reactos.org/).
 
-Ask any questions, find new ways to contribute, chat with other members, join the ReactOS HackFests, read the minutes of the ReactOS Official Meetings, join the Community votes, and feel part of one of the most exciting open source projects out there!
+Ask any questions, find new ways to contribute, chat with other members, participate in the [ReactOS events](/wiki/Events), read the minutes of the ReactOS Official Meetings, join the Community votes, and feel part of one of the most exciting open source projects out there!
 
-## Direct to your Inbox.. {#mailinglist}
+## Direct to your Inbox. {#mailinglist}
 
 Some of the most interesting ReactOS debates take places through our [Mailing Lists](/community/mailing-lists). Just sit comfortably and wait for notifications to arrive directly through your email when a new debate happens.
 
@@ -39,7 +40,7 @@ Translators. Testers. Designers. Developers...
 
 Help us test new apps, translate the operating system, enhance and fix bugs, improving our icons, or creating new awesome scripts. 
 
-If you want to become part of the ReactOS Team, keep reading further into the website under the areas that excite and join us! 
+If you want to become part of the ReactOS Team, keep reading further into the website under the areas that excite and [join us](/contributing/)!
 
 ReactOS is an opensource and collaborative effort driven by its Community.
 Be part of it!
