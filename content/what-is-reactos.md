@@ -20,9 +20,9 @@ What to do next?
 ---
 
 
-* [Joining & Following ReactOS Progress](/joining)
-* [Interested in ReactOS development](/developing)
-* [Check out the gallery](/gallery)
+* [Joining & Following ReactOS Progress](/joining/)
+* [Interested in ReactOS development](/architecture/)
+* [Check out the gallery](/gallery/)
 
 ---
 
