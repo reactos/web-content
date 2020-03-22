@@ -1,6 +1,6 @@
 +++
 title = "Contribute to ReactOS"
-aliases = [ "jobs", "node/785" ]
+aliases = [ "jobs", "/node/785" ]
 +++
 
 The ReactOS Project always seeks new qualified contributors from all skill levels.

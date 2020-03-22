@@ -1,7 +1,7 @@
 +++
 title = "ReactOS Architecture"
 aliases = [
-    "node/957",
+    "/node/957",
     "developing"
 ]
 css = [

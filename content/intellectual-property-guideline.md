@@ -1,6 +1,6 @@
 +++
 title = "Intellectual Property Guideline"
-aliases = [ "node/16" ]
+aliases = [ "/node/16" ]
 +++
 
 

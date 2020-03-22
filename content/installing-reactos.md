@@ -1,6 +1,6 @@
 +++
 title = "Installing ReactOS"
-aliases = [ "node/3306" ]
+aliases = [ "/node/3306" ]
 +++
 
 

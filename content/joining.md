@@ -1,6 +1,6 @@
 +++
 title = "Joining"
-aliases = [ "node/955" ]
+aliases = [ "/node/955" ]
 +++
 
 Joining & Following ReactOS Progress!

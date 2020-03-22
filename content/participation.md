@@ -1,8 +1,8 @@
 +++
 title = "Participation"
 aliases = [
-    "node/2280",
-    "node/979",
+    "/node/2280",
+    "/node/979",
 ]
 +++
 

@@ -1,8 +1,8 @@
 +++
 title = "What is ReactOS?"
 aliases = [
-    "node/972",
-    "node/978",
+    "/node/972",
+    "/node/978",
 ]
 +++
 

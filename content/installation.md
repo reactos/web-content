@@ -1,6 +1,6 @@
 +++
 title = "Installation"
-aliases = [ "node/129" ]
+aliases = [ "/node/129" ]
 +++
 
 {{% unfinished-page "This needs to be included or linked somewhere" %}}

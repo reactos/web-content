@@ -2,7 +2,7 @@
 title:       "PSEH Data Corruption"
 author:      "Z98"
 date:        2014-08-27
-aliases:     [ "node/874" ]
+aliases:     [ "/node/874" ]
 ---
 
 <p>An extremely rare data corruption issue caused by the Portable Structured Exception Handling library was discovered recently, one that is rather interesting in all the factors to come into play to bring it about. PSEH was a library created by KJK::Hyperion and massively overhauled by Timo Kreuzer for its third iteration, intended to bring Structured Exception Handling to GCC. SEH is natively supported by Microsoft's compilers and underpins a lot of error handling on Windows and so was necessary for proper compatibility between ReactOS' components and Windows'. The bug in question was originally encountered when a test for <span>IoCreateFile </span>by Pierre Schweitzer returned invalid results. Jerome Gardou and Thomas Faber spent the better part of a day debugging and brainstorming on the cause, with input from a variety of other developers. To understand the cause of the corruption requires a basic understanding of how program state works. The following section provides a basic explanation that can be skipped if one already knows how function scope and stacks work.</p>
