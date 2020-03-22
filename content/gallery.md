@@ -16,7 +16,7 @@ scripts = [
 
 {{< gallery >}}
 {{< figure link="/sites/default/files/Mizu-AppManager.png" caption="Applications Manager" >}}
-{{< figure link="/sites/default/files/Mizu-Search.png" caption="Search" >}}
+{{< figure link="/sites/default/files/Mizu-Search.png" caption="File Search" >}}
 {{< figure link="/sites/default/files/Mizu-VLC.png" caption="VLC" >}}
 {{< figure link="/sites/default/files/Mizu-Neverball.png" caption="Neverball" >}}
 {{< figure link="/sites/default/files/Mizu-Teeworlds.png" caption="Teeworlds" >}}
