@@ -57,6 +57,10 @@ New design ideas are welcome too.
 The ReactOS community keeps in touch via [Mattermost](https://chat.reactos.org) and our [forums](/forum).
 The role is to keep people involved, keep discussions going and moderate.
 
+## Translator
+Localization is fundamental for an operating system to be used by many users around the globe where English is not their mother tongue.
+If there's a language that ReactOS is not currently translated in or you like to improve the current existing translation in the operating system [please take a look at the following article at how to begin translating ReactOS](/wiki/Translation_Introduction).
+
 ----
 
 ## Paid jobs
