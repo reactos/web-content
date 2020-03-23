@@ -37,8 +37,9 @@ More information regarding debugging is available [here](https://reactos.org/wik
 For this, you need to have basic knowledge in collecting information from a crash like backtraces and crash dumps. Knowledge of using a basic debugger is a plus.
 
 We have several Wiki pages for setting up a debugging environment and building using different compilers too:
-* [Setting up a Debugging environment](https://reactos.org/wiki/Debugging)
-* [How to create a JIRA Issue](https://reactos.org/wiki/User:Oldman/A_layman%27s_guide/How_to_create_a_JIRA_Issue)
+
+ * [Setting up a Debugging environment](https://reactos.org/wiki/Debugging)
+ * [How to create a JIRA Issue](https://reactos.org/wiki/User:Oldman/A_layman%27s_guide/How_to_create_a_JIRA_Issue)
 
 ## Jira Maintainer
 We use [Jira](https://jira.reactos.org/) to keep track of issues.
