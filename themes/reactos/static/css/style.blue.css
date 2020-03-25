@@ -1279,3 +1279,20 @@ dl.dl-inline {
   padding: 0;
   margin: 0
 }
+
+/* content images */
+#content img {
+	/* equivalent to bootstrap's img-responsive */
+	display:block;
+	max-width:100%;
+	height:auto
+}
+
+#content figure {
+	display: inline-block
+}
+
+#content figure figcaption {
+	font-size: 90%;
+	margin-top: 5px
+}

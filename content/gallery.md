@@ -1,18 +1,6 @@
 +++
 title = "Gallery"
-css = [
-    "/css/photoswipe.css",
-    "/css/default-skin/default-skin.css",
-    "/css/hugo-easy-gallery.css",
-]
-scripts = [
-    "/js/load-photoswipe.js",
-    "/js/photoswipe.min.js",
-    "/js/photoswipe-ui-default.min.js",
-]
 +++
-
-{{< load-photoswipe >}}
 
 {{< gallery >}}
 {{< figure link="/sites/default/files/Mizu-AppManager.png" caption="Applications Manager" >}}

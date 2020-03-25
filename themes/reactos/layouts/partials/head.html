@@ -26,6 +26,10 @@
 
 	{{ partial "shared-head.html" . }}
 
+	<link href="/css/photoswipe.css" rel="stylesheet">
+	<link href="/css/default-skin/default-skin.css" rel="stylesheet">
+	<link href="/css/hugo-easy-gallery.css" rel="stylesheet">
+
 	{{ range $.Page.Params.css }}
 	<link href="{{ . }}" rel="stylesheet">
 	{{ end }}
