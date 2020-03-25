@@ -21,7 +21,7 @@ banner:      "img/project-news/reactos-0411-released-thumb.png"
 <h2>Application Start/Stop</h2>
 <p>When an application is run, it often depends upon other libraries in the form of DLLs. The loader (LDR) is responsible for finding and loading the respective dependent DLLs, and correctly iterating over these dependencies is fundamental to getting anything to run. One manner of specifying these dependencies is with the use of something called manifests, which was not properly supported in ReactOS. Considering that many modern applications make use of manifests, this was a very glaring hole. Mark Jansen&rsquo;s work in the runup to 0.4.11 has however added sufficient support for manifests that the range of applications now able to start in ReactOS has significantly widened. Some examples of the newly enabled applications include Blender 2.57b, shown in the screenshot below, Bumptop, Evernote 5.8.3, Quicktime Player 7.7.9, and many others that users have the opportunity to discover for themselves.</p>
 
-<div class="imgp_title"></div><a href="/sites/default/files/imagepicker/1249/reactos_0411_1.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_1.png" alt="Image"  class="imgp_img" width="500" height="375" /></a><div class="imgp_desc">Blender 2.57b running within ReactOS</div><br>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_1.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_1.png" caption="Blender 2.57b running within ReactOS" >}}
 
 <p>Stopping an application correctly is often just as important from a system stability perspective, as it is when a program is stopped that its previously allocated resources are freed up. For a long time ReactOS had particular difficulty when it came to dealing with the shutdown sequence for .NET 2.0 applications, often times not waiting long enough for these applications to properly exit. Work by Giannis Adamopoulos has however resolved this particular problem, adding further to ReactOS&rsquo; usefulness as a platform to run Windows compatible applications.</p>
 
@@ -29,8 +29,7 @@ banner:      "img/project-news/reactos-0411-released-thumb.png"
 <h2>USETUP Improvements</h2>
 <p>While the community wishlist for quality of life improvements in ReactOS is quite lengthy, one especially longstanding one has been the ability to upgrade an existing installation of ReactOS. Achieving this has required substantial effort in the USETUP module, effort that Herm&egrave;s B&eacute;lusca-Ma&iuml;to put considerable time into. The importance of this is twofold. The obvious enhancement is the ability to perform the upgrade, but the more substantive point is what this functionality entails for the future. For ReactOS to be usable as an actual system OS, it needs the ability to update in-place without losing user data and configuration. While requiring the user to go through the system installation process is still far from the user friendliness of other modern operating systems, it is still a substantial step forward and lays the foundation for ReactOS&rsquo; maturation into an everyday driver of people&rsquo;s computers.</p>
 
-<div class="imgp_title"></div><a href="/sites/default/files/imagepicker/1249/reactos_0411_2.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_2.png" alt="Image"  class="imgp_img" width="500" height="278" /></a><div class="imgp_desc">Screenshot of the ReactOS text mode setup with upgrade option</div><br>
-
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_2.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_2.png" caption="Screenshot of the ReactOS text mode setup with upgrade option" >}}
 
 <h2>Win32</h2>
 <p>The Win32 subsystem responsible for graphical rendering in ReactOS is by itself a substantial beast. Improvements here often tend towards the most user visible of changes, since it is the engine through which the user will most interact with the operating system.</p>
@@ -39,7 +38,7 @@ banner:      "img/project-news/reactos-0411-released-thumb.png"
 
 <p>Basic robustness was the emphasis Thomas Faber focused on, running the menu code through a torture test that would see constant switching between different windows to make sure no resources or the like leaked across the different processes. One must recall that while in user mode applications are partitioned off, in kernel mode resources are effectively in a single space and the appropriate bookkeeping must be maintained to avoid crashes. Speaking of crashes, Mark Jansen also identified a problem with scrollbar initialization whose resolution has added yet another range of applications into ReactOS&rsquo; library of compatible programs. Case in point is the 32bit Civilization II Multiplayer Gold Edition version 1.3, as demonstrated in the screenshot below, and others like IceChat 7.63.</p>
 
-<div class="imgp_title"></div><a href="/sites/default/files/imagepicker/1249/reactos_0411_3.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_3.png" alt="Image"  class="imgp_img" width="500" height="316" /></a><div class="imgp_desc">Screenshot of Civilization II Multiplayer Gold Edition 1.3 running on ReactOS</div><br>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_3.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_3.png" caption="Screenshot of Civilization II Multiplayer Gold Edition 1.3 running on ReactOS" >}}
 
 <p>The visual correctness of menu elements is also important, as misaligned elements can produce graphically jarring displays. As such while subtle, Katayama Hirofumi&rsquo;s correction of the y-coordinate calculation for menu items adds a touch of detail that is the difference between a polished graphical experience and one that is just good enough.</p>
 
@@ -47,13 +46,13 @@ banner:      "img/project-news/reactos-0411-released-thumb.png"
 
 <p>Finally, one must recall that not the entire world uses the left-to-right display standard to English and other Latin based languages. Many, such as Hebrew and Arabic, use a right-to-left orientation. ReactOS&rsquo; support for this type of text rendering was first officially exposed in 0.4.10, but the effort remains a work in progress. That progress took a substantive leap with work done by Baruch Rutman to adapt the USP10 library and Bidirectional support code from Wine to ReactOS. More work of course remains to be done, but it is the nature of open source development to take an iterative approach, building improvements one upon another.</p>
 
-<div class="imgp_title"></div><a href="/sites/default/files/imagepicker/1249/reactos_0411_4.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_4.png" alt="Image"  class="imgp_img" width="500" height="375" /></a><div class="imgp_desc">Bidirectional text support in ReactOS</div><br>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_4.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_4.png" caption="Bidirectional text support in ReactOS" >}}
 
 
 <h2>Networking</h2>
 <p>While end user improvements are often the most visible, quality of life improvements for power users, administrators, and developers have a certain multiplicative effect as well. To that end, the enablement of various network debugging and diagnosis programs by Pierre&rsquo;s work in TCP and UDP connection enumeration is important in a more subtle way. While debugging network applications is a far from common use case for the average user, it is a crucial ability for people that work in IT or general software development. In this manner ReactOS is becoming useful as not just a platform for running applications, but also to debug them. And as history has shown, the ease of development and administration is a key feature in adoption by the wider tech industry.</p>
 
-<div class="imgp_title"></div><a href="/sites/default/files/imagepicker/1249/reactos_0411_5.jpg" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_5.jpg" alt="Image"  class="imgp_img" width="500" height="375" /></a><div class="imgp_desc">Observing the network connections via the netstat tool while running mIRC</div><br>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_5.jpg" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_5.jpg" caption="Observing the network connections via the netstat tool while running mIRC" >}}
 
 
 <h2>Stability and Testing</h2>

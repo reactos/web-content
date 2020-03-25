@@ -10,8 +10,7 @@ tags:        [ "release", "rapps", "filesystems", "usb" ]
 <p>We’re especially pleased to present this release as the very first one that’s been developed in our new Git/GitHub repository. Moving from Subversion to <a href="https://github.com/reactos/reactos">GitHub</a> has proven to be an invaluable way to reach new testers, users and improve the overall awareness of the ReactOS project.</p>
 <p>To highlight the impact we’ve had since we moved to GitHub two months ago, ReactOS now leads the <a href="https://github.com/topics/win32api">Win32Api</a> and <a href="https://github.com/topics/osdev">OsDev</a> categories in Github, overtaking many amazing and well established projects.</p>
 
-
-<p><img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/githubcomp.png" alt="Image"  class="imgp_img" width="90%" height="696" /></p>
+<img src="/sites/default/files/imagepicker/14095/githubcomp.png">
  
 <h2>User Experience</h2>
 
@@ -19,7 +18,7 @@ tags:        [ "release", "rapps", "filesystems", "usb" ]
 
 <p>Support for Shell extension for files has been included by Giannis in this new version, and several other shell extension improvements have been worked on by Eric Kohl. The quick launch shell extension, developed by Shriraj Sawant under Google Summer of Code 2017, can also be enabled manually within this release for an early peek into this feature.</p>
 
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/4_browsers_Themed_quicklaunch.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">At the bottom left you can see the new Quick Launch in action.</div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/4_browsers_Themed_quicklaunch.png" caption="At the bottom left you can see the new Quick Launch in action" >}}
 
 <p>James Tabor has put in a great deal of effort into getting the <b>ReactOS painting process as close to Windows as possible</b>. Furthermore, Katayama Hirofumi MZ has fixed the anti-aliasing text when a button was grayed out (and which was impossible to read before this fix).</p>
 
@@ -55,14 +54,15 @@ tags:        [ "release", "rapps", "filesystems", "usb" ]
 
 <p>Thanks to Eric, the User/group/share management modules (netapi.dll, netapi32.dll and samsrv) have been greatly developed in the 0.4.7 release, getting them even further in terms of compatibility. </p>
 
-<img style="margin:0 auto" src="/sites/default/files/imagepicker/14095/LibreOffice_on_047.png" alt="Image"  class="imgp_img" width="90%" height="864" /><div class="imgp_desc">LibreOffice 5 working in ReactOS 0.4.7 </div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/LibreOffice_on_047.png" caption="LibreOffice 5 working in ReactOS 0.4.7" >}}
 
 <h2>Kernel and Filesystems</h2>
 
 <p>ReactOS is now able to handle Ext2, Ext3, Ext4, BtrFS, ReiserFS, FFS and NFS partitions. We’re proud to say that <b>ReactOS natively supports more File Systems than all Windows versions combined!</b></p>
 
 <p>Continuing on filesystems, Pierre Schweitzer has implemented the fsutil tool, which arrived in Windows 2003, and is now available through ReactOS as open source. Furthermore, the ReactOS fsutil tool also supports FAT file systems whereas its Windows counterpart does not, so this is another instance of ReactOS improving something over what Microsoft originally offers.</p>
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/DKexm4OW0AAdBrF_0.jpg" alt="Image"  class="imgp_img" width="90%" height="600" /><br/>
+
+{{< figure link="/sites/default/files/imagepicker/14095/DKexm4OW0AAdBrF_0.jpg" >}}
 
 <p>Fsutil has been developed against Windows, and was used to test the information returned by our volumes, but also to test how the ReactOS storage stack works. This helped shed some light on how Windows manages dirty bits, opening of volumes and other internal filesystem actions, and has proven to be really useful to discover bugs in file systems and also in system libraries, which have been already fixed in 0.4.7.</p>
 
@@ -78,7 +78,7 @@ tags:        [ "release", "rapps", "filesystems", "usb" ]
 
 <p>ReactOS depends on 3rd party open source projects so in 0.4.7 we’ve updated them to their latest version. Libpng, mpg123, mbedtls, btrfs,along with the <b>many</b> modules that Wine shares with us, which are individually synched by Amine Khaldi, that ReactOS can use in the user mode. <b>We express our gratitude to every single open source project we use, and send regards to all teams behind them</b>. We also keep contributing back to them, in the spirit of open source, whenever we can. For instance, David contributed a 64bit related fix to the MKISOFS project, and several ReactOS developers contribute patches back to the Wine project and also Wine Staging, in addition to performing patch reviews in the appropriate mailing list. </p>
 
-<img src="/sites/default/files/imagepicker/14095/Building_ReactOS_in_ReactOS.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">ReactOS compiling itself! (Still more work to be done!) </div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/Building_ReactOS_in_ReactOS.png" caption="ReactOS compiling itself! (Still more work to be done!)" >}}
 <h2>Quality Assurance</h2>
 
 <p>ReactOS believes heavily in QA so many new tests have been integrated and implemented covering critical areas as Memory Manager (IO MDL, MmBuildMdlForNonPagedPool, etc..) or Common Cache. The ReactOS testing infrastructure <b>now supports testing File System mini-filters</b> which is an important step forward to ensure future development in the upcoming filter manager. This new version of ReactOS has gone through several Coverity scans to detect and fix critical bugs detected. In addition to automated tests, ReactOS enjoyed impressive testing coverage thanks to the manual tests for the Release Candidates by Joachim Henze.</p>

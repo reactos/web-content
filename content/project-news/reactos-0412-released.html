@@ -10,7 +10,7 @@ banner:      "img/project-news/reactos-0412-released-thumb.png"
 
 <p>The ReactOS team is pleased to announce the release of version 0.4.12. As always a multitude of improvements have been made to all parts of the OS, though userland components saw special emphasis this time around.</p>
 
-<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_1_2.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_1_2.png" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0412_1_2.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_1_2.png" >}}
 
 <h2>Kernel improvements</h2>
 <p>Filesystem drivers require a great deal of support to function correctly, and there is arguably no truer test of ReactOS&rsquo; FS infrastructure than being able to run Microsoft&rsquo;s own FS drivers. While the project is not quite there yet, driving towards this goal saw considerable improvements been made. Pierre Schweitzer and Thomas Faber paid particular attention to the common cache, a module with deep ties to the memory manager and which traditionally has been a very troublesome component. General stability saw marked improvement thanks to their contributions, along with that of Herm&egrave;s B&eacute;lusca-Ma&iuml;to in fixing up ReactOS&rsquo; own CDFS driver.</p>
@@ -25,14 +25,14 @@ banner:      "img/project-news/reactos-0412-released-thumb.png"
 <h2>Window snapping</h2>
 <p>A general usability shortcut, the ability to snap windows to be aligned to sides or maximized and minimized by dragging it in specific directions is something of a staple. Its lack in ReactOS meant power-users and their muscle memory were hard put out, but with 0.4.12 this is no longer the case. Denis Malikov has implemented the necessary support to make window snapping work, and the project invites one and all to try it out. And needless to say, the project did not forget the keyboard shortcuts that accompany the feature.</p>
 
-<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_2.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/reactos_0412_2.png" alt="Image"  class="imgp_img" width="300" height="234" /></a></p>
+<p><img src="/sites/default/files/imagepicker/1249/reactos_0412_2.png" /></p>
 
 <h2>Font improvements</h2>
 <p>Font rendering is one of those background details that when things go right, one barely notices. When things go wrong however, the results can render entire suites of applications unusable. The work to make font rendering more robust and correct in ReactOS is, like many other features, a work in progress and joint effort between multiple developers, with longtime contributors James Tabor, Katayama Hirofumi MZ, and Mark Jansen playing especially active roles. Nonetheless, several significant pieces fell into place to allow 0.4.12 to enjoy some marked improvements over its predecessors.</p>
 
 <p>The single biggest fix that went into 0.4.12 would have to be a series of problems that badly garbled text rendering for buttons in a range of applications, from iTunes to various .NET applications as seen in the images below.</p>
 
-<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_3.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_3.png" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0412_3.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_3.png" >}}
 
 <h2>Intel e1000 NIC driver</h2>
 <p>While ReactOS&rsquo; traditional usage in virtual machines generally shields it from rapid and oft massive changes in hardware configurations, even the systems emulated by virtual machines have undergone some evolution over the years. Case in point, VirtualBox and VMware have been shifting their default emulated network interface card to be based off of the Intel e1000 NIC in order to present their guests with a gigabit capable interface.</p>
@@ -42,7 +42,7 @@ banner:      "img/project-news/reactos-0412-released-thumb.png"
 <h2>New themes</h2>
 <p>ReactOS first gained theming support in the 0.3.x era, with the Lautus theme being the standard bundled to demonstrate the feature. With 0.4.12, the team is pleased to announce two new themes to add to its stable. The first is Lunar, created by Joann M&otilde;ndresku and Adam Slabon and designed to be reminiscent of the look and feel of XP while colored in the ReactOS style. The second is Mizu by Foxlet, which seeks to provide a flatter design that draws from the more modern design styles found in newer versions of Windows. A comparison of the two can be found below. Choice is always good, after all, and now users have more of them to find one that better suits their aesthetic tastes.</p>
 
-<p><a href="/sites/default/files/imagepicker/1249/reactos_0412_4.png" target="_blank"><img src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_4.png" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0412_4.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0412_4.png" >}}
 
 <h2>User-mode DLLs</h2>
 <p>A range of other improvements to user-mode components within ReactOS were made for 0.4.12, with some being more obvious than others. The most visible of course would be, more applications work, which is arguably the principal reason many users express interest in the project. Two outstanding improvements also help demonstrate the sort of contrast between the subtle and the dramatic in terms of ReactOS&rsquo; progress.</p>
