@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-	{{ partial "head.html" . }}
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>404 - PAGE_FAULT_IN_NONPAGED_AREA | ReactOS Project</title>
+	{{ hugo.Generator }}
+	<style>
+		body
+		{
+			background: #000099;
+			color: white;
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-size: 12pt
+		}
+		a, a:hover, a:active, a:focus
+		{
+			color: white
+		}
+	</style>
+</head>
+<body>
+	<p>A problem has been detected and RosCMS has been shut down to prevent damage to your computer.</p>
 
-	<body>
-		<header>
-			{{ partial "nav.html" . }}
-		</header>
+	<p>PAGE_FAULT_IN_NONPAGED_AREA</p>
 
-		<div class="container-fluid">	
-			<section id="content" class="row">
-				<div class="col-sm-6 col-sm-offset-3" id="error-page">
-					<div class="box">
-						<p class="text-center">
-							<a href="{{ .Site.BaseURL }}">
-								<img src="{{ .Site.Params.logo }}" alt="{{ .Title }} logo">
-							</a>
-						</p>
+	<p>If this is the first time you have seen this error screen,<br />
+	restart your browser. If this screen appears again, follow<br />
+	these steps:</p>
 
-						<h3>We are sorry - this page is not here anymore</h3>
-						<h4 class="text-muted">Error 404 - Page not found</h4>
+	<p>Make sure that the page you requested is spelled properly.<br />
+	If this is the case, press F5 for advanced reload options.</p>
 
-						<p class="buttons"><a href="{{ .Site.BaseURL }}" class="btn btn-template-main"><i class="fa fa-home"></i> Go to Homepage</a></p>
-					</div>
-				</div>
-			</section>
+	<p>If problems continue, drop an email to ros-dev@reactos.org</p>
 
-			{{ partial "footer.html" . }}
-		</div>
+	<p>Technical information:</p>
 
-		{{ partial "scripts.html" . }}
-	</body>
+	<p>*** STOP: 0x00000404 (0xcff1e274, 0x0000ba21, 0xbc28402a, 0x00000050)</p>
+
+
+	<p>
+		<br />***&nbsp;&nbsp;&nbsp;{{ .Permalink | absURL }} -
+		Address <a href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a>, DateStamp 4fbcfbe3
+	</p>
+</body>
 </html>
