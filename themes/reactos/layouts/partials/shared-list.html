@@ -17,7 +17,7 @@
 						{{ range $.paginator.Pages }}
 						<section class="post">
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-sm-3 hidden-xs">
 									<div class="image">
 										<a href="{{ .Permalink }}">
 											{{ if .Params.banner }}
@@ -28,7 +28,7 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-md-9">
+								<div class="col-sm-9">
 									<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
 									<div class="clearfix">
 										<p class="author-category">
