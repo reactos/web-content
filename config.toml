@@ -142,7 +142,6 @@ paginate = 10
 	date_format = "January 2, 2006"
 
 	logo = "/sites/default/files/ReactOS_0.png"
-	logo_small = "/sites/default/files/ReactOS_0.png"
 
 	development_banner_text = "DEVELOPMENT COPY! Visit www.reactos.org for the production website."
 
