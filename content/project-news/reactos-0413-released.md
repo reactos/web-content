@@ -20,7 +20,7 @@ ReactOS currently lags behind an advanced USB implementation as various bugs and
 Despite this, many people have worked hard and contributed code to improve USB functionality in ReactOS.
 
 Vadim Galyant and Victor Perevertkin have brought in a new USB stack which provides many fixes as well as improvements to various areas, improving USB support in general.
-Although there is a long journey ahead towards an advanced and perfectly functional USB stack within ReactOS, the new module is a further step towards usable and working USB.
+Although there is a long journey ahead towards an advanced and perfectly functional USB stack within ReactOS, the new module already supports HID and storage devices.
 
 # Explorer File Search Bring-Up
 The graphical shell (aka Explorer) is a vital component that allows the user to interact with the system.
