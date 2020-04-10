@@ -12,7 +12,7 @@ In this particular case, the 0.4.13 version shows the results of significant har
 
 {{< figure link="/img/project-news/reactos-0413-released/banner.png" src="/img/project-news/reactos-0413-released/banner.png" >}}
 
-# USB Improvements
+## USB Improvements
 USB (Universal Serial Bus) is an important standard adopted throughout the industry and used widely on many devices such as external storage, keyboards, mice, and various other devices.
 Notably, there are a great number of computers that do not come with a CD-ROM drive these days, with the only option being USB in order to boot or install an operating system.
 The USB stack itself is arguably a very complicated one, the code to support it is complex, and maintaining it is not an easy task.
@@ -22,7 +22,7 @@ Despite this, many people have worked hard and contributed code to improve USB f
 Vadim Galyant and Victor Perevertkin have brought in a new USB stack which provides many fixes as well as improvements to various areas, improving USB support in general.
 Although there is a long journey ahead towards an advanced and perfectly functional USB stack within ReactOS, the new module already supports HID and storage devices.
 
-# Explorer File Search Bring-Up
+## Explorer File Search Bring-Up
 The graphical shell (aka Explorer) is a vital component that allows the user to interact with the system.
 The shell itself, though, lacks a lot of stuff which deeply limits the overall ability for the user to interact with the system in an easy and flexible way.
 However, with work done during the Google Summer of Code 2019, the shell has seen a new feature implemented - file search.
@@ -31,7 +31,7 @@ The screenshot below demonstrates the search feature in action:
 
 {{< figure link="/img/project-news/reactos-0413-released/file-search.png" src="/img/project-news/reactos-0413-released/file-search.png" >}}
 
-# Xbox ReactOS Port Improvements
+## Xbox ReactOS Port Improvements
 Once upon a time, ReactOS had an Xbox architecture port specifically to boot ReactOS onto the first generation of Xbox console hardware.
 With ReactOS code making significant changes over time, the port was not maintained and had been largely ignored by developers who were focused on other issues.
 
@@ -43,14 +43,14 @@ The following screenshot shows ReactOS running in an Xbox emulator, XQEMU:
 
 {{< figure link="/img/project-news/reactos-0413-released/xqemu.jpg" src="/img/project-news/reactos-0413-released/xqemu.jpg" >}}
 
-# FreeLoader FAT Boot Speed-Up
+## FreeLoader FAT Boot Speed-Up
 In past releases, booting ReactOS on a system that was partitioned using the FAT filesystem could be a burden, as you had to wait some time for ReactOS to boot.
 FreeLoader (the ReactOS bootloader) has to do a lot of stuff in order to get ReactOS ready for boot, but unfortunately it was doing this in an unoptimized way.
 In this release, Victor Perevertkin did a great job optimizing the FAT driver of FreeLoader, significantly improving the boot speed when using this filesystem for USB-RAM boot.
 
 <a href="https://www.youtube.com/watch?v=XEsNzuXzcHQ" target="_blank"><img src="/img/project-news/reactos-0413-released/freeldr-boot-video.jpg" alt="ReactOS: boot with a speed of light video"></a>
 
-# Accessibility
+## Accessibility
 In the area of accessibility in ReactOS, new software was introduced - the Accessibility Utility Manager.
 Developed by ReactOS contributor Bișoc George, the Accessibility Utility Manager, as the name implies, manages the accessibility applications of ReactOS.
 The following screenshot shows the program in operation:
@@ -59,12 +59,12 @@ The following screenshot shows the program in operation:
 
 Similarly, the On-Screen Keyboard has seen some improvements to theming support and there have been some additional features and minor bug fixes in the Magnifier.
 
-# Font Management
+## Font Management
 Developer Katayama Hirofumi has continued his work to bring ReactOS’ font support closer to that of Windows.
 With the merging of two large pull requests, system font management is now done via the registry rather than in an ad-hoc way.
 This brings improved compatibility and stability to ReactOS.
 
-# Other Improvements
+## Other Improvements
 Besides the highlighted points of this release, we should not forget that the whole of ReactOS - components such as DLLs, applications, and other modules have been improved.
 
 In addition to the improvements to accessibility features mentioned above, Bișoc George also fixed some common dialog boxes where the “Apply” button enabled itself unconditionally even though the user had not taken any action.
@@ -72,7 +72,7 @@ Furthermore, he also fixed an issue regarding disk space where the Recycle Bin c
 
 The 64-bit ReactOS build is getting better and better such that now ReactOS is fully booting and working in an x64 environment thanks to Timo Kreuzer’s work continuing to progress further.
 
-# Third Party Syncs
+## Third Party Syncs
 ReactOS is an open source project that collaborates with various other open source projects all around the globe.
 The following list shows the 3rd party libraries that other projects share with ReactOS, and with the responsible committers that have synced the libraries with the ReactOS project.
 
@@ -82,7 +82,7 @@ The following list shows the 3rd party libraries that other projects share with 
 * mbedTLS v2.7.11 by Thomas Faber
 * libpng v1.6.37 by Thomas Faber
 
-# Statistics
+## Statistics
 JIRA Issues fixed of this release - 278  
 Number of commits as of this release - 1282  
 Oldest issue fixed as of this release - CORE-4995
