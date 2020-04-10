@@ -60,7 +60,7 @@ The following screenshot shows the program in operation:
 Similarly, the On-Screen Keyboard has seen some improvements to theming support and there have been some additional features and minor bug fixes in the Magnifier.
 
 # Font Management
-Contributor Katayama Hirofumi has continued his work to bring ReactOS’ font support closer to that of Windows.
+Developer Katayama Hirofumi has continued his work to bring ReactOS’ font support closer to that of Windows.
 With the merging of two large pull requests, system font management is now done via the registry rather than in an ad-hoc way.
 This brings improved compatibility and stability to ReactOS.
 
