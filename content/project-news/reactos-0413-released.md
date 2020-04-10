@@ -46,7 +46,7 @@ The following screenshot shows ReactOS running in an Xbox emulator, XQEMU:
 # FreeLoader FAT Boot Speed-Up
 In past releases, booting ReactOS on a system that was partitioned using the FAT filesystem could be a burden, as you had to wait some time for ReactOS to boot.
 FreeLoader (the ReactOS bootloader) has to do a lot of stuff in order to get ReactOS ready for boot, but unfortunately it was doing this in an unoptimized way.
-In this release, Victor Perevertkin did a great job optimizing the FAT driver of FreeLoader, significantly improving the boot speed when using this filesystem.
+In this release, Victor Perevertkin did a great job optimizing the FAT driver of FreeLoader, significantly improving the boot speed when using this filesystem for USB-RAM boot.
 
 <a href="https://www.youtube.com/watch?v=XEsNzuXzcHQ" target="_blank"><img src="/img/project-news/reactos-0413-released/freeldr-boot-video.jpg" alt="ReactOS: boot with a speed of light video"></a>
 
