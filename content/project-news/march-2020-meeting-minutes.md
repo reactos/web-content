@@ -12,6 +12,7 @@ Mattermost meeting channel
 
 ## Proceedings
 Meeting started at 19:05 by Colin Finck.
+
 * Point 1: Achievements and Future Outlook
 * Point 2: GSoC 2020 Status
 * Point 3: Drop one theme from the default package
