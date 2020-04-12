@@ -6,7 +6,7 @@ tags:        [ "meeting-minutes" ]
 banner:      "img/project-news/meeting-minutes.png"
 ---
 
-2020-01-30  
+2020-03-26
 19:00 UTC  
 Mattermost meeting channel
 
