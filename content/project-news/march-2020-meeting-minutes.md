@@ -32,7 +32,7 @@ Meeting started at 19:05 by Colin Finck.
 
 When it comes to the upcoming **ReactOS 0.4.13** release, there are no blockers from Joachim Henze's side. Currently the release is only blocked by the changelog and press release.
 
-Regarding **RosBE 2.2**, Victor asked if we had decided yet on selfhosting and windows 2003/XP support. Support for that is crucial to Joachim. Mark meant to look at it, but it had slipped his mind and he will create an issue to not forget about it again.
+Regarding **RosBE 2.2**, Victor asked if we had decided yet on selfhosting and Windows XP/2003 support. Support for that is crucial to Joachim. Mark meant to look at it, but it had slipped his mind and he will create an issue to not forget about it again.
 Solutions for the other two blockers mentioned in https://jira.reactos.org/browse/CORE-16512 must also be found, especially the exception handling issue. Victor said he'd look into the exception handling. He was not sure he had enough expertise for that particular issue, but would consult Timo Kreuzer if he needed any help.
 
 ## Point 2: GSoC 2020 Status
