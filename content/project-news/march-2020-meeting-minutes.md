@@ -40,7 +40,7 @@ Solutions for the other two blockers mentioned in https://jira.reactos.org/brows
 The status of ReactOS GSoC 2020 participation was discussed. It was also noted that the GSoC timeline has shifted, in response to current events. There's now extra time for reviewing student proposals and an extended community bonding period.
 
 ## Point 3: Drop one theme from the default package
-Victor Perevertkin submitted this agenda point because he believed that the recently added themes look unfinished in many aspects and also that 4 themes is too much for the default package. He also asked about an option to make custom themes be installed from Rapps, since that has been discussed before.
+Victor Perevertkin submitted this agenda point because he believed that the recently added themes look unfinished in many aspects and also that 4 themes is too much for the default package. He also asked about an option to make custom themes installable from Rapps, since that has been discussed before.
 
 Mark Jansen thought that until we have a solution that allows people to preview the theme, we should stick to the current way. Rapps does not allow previewing, and it makes building and hosting a bit harder.
 
