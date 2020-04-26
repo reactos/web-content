@@ -1,0 +1,84 @@
+---
+title:       "ReactOS 0.4.11 released"
+author:      "Colin Finck"
+date:        2019-03-04
+aliases:     [ "/node/69612" ]
+tags:        [ "release" ]
+banner:      "img/project-news/reactos-0411-released-thumb.png"
+
+---
+
+<p>The ReactOS team is pleased to announce the release of version 0.4.11. This version has seen substantial work done to the kernel, helping improve overall system stability.</p>
+
+<h2>Kernel Improvements</h2>
+<p>While the term kernel is used as a sort of catch-all term, in truth the range of functionality that it encapsulates is quite wide. One case in point is the kernel&rsquo;s responsibility for managing file I/O. A mistake here can cause subtle data corruption to more obvious hard crashes. Pierre Schweitzer&rsquo;s fixes to the cache controller&rsquo;s management of its data structures has removed at least one source of blue screens that occurred when attempting to backup a disk&rsquo;s partition using the ODIN backup software.</p>
+
+<p>Storage improvements were something of a theme in kernel improvements this time around, as work was also done on the filesystems ReactOS supports. While the fastfat driver is an inhouse filesystem driver, ReactOS has always relied on a third party driver for BTRFS support. This reliance however feeds back, as problems ReactOS discover in our usage of the driver can be sent back upstream to help improve it further. Such was the case with a major memory leak problem that Thomas Faber was able to track down.</p>
+
+<p>And speaking of storage, the very interfaces that allows operating systems to talk with storage devices has undergone considerable change since the good old days of IDE and parallel connectors. These days most computers make use of SATA connections and the corresponding AHCI interface, support for which ReactOS relies upon the UniATA driver for. When the 6th generation of Intel&rsquo;s Core processors (Skylake) was released, it was accompanied by a chipset platform whose AHCI SATA controllers proved incompatible with UniATA. This incompatibility has now been resolved by Alexander Telyatnikov, allowing users wishing to test ReactOS on more modern platforms to better make use of those platforms&rsquo; capabilities.</p>
+
+
+<h2>Application Start/Stop</h2>
+<p>When an application is run, it often depends upon other libraries in the form of DLLs. The loader (LDR) is responsible for finding and loading the respective dependent DLLs, and correctly iterating over these dependencies is fundamental to getting anything to run. One manner of specifying these dependencies is with the use of something called manifests, which was not properly supported in ReactOS. Considering that many modern applications make use of manifests, this was a very glaring hole. Mark Jansen&rsquo;s work in the runup to 0.4.11 has however added sufficient support for manifests that the range of applications now able to start in ReactOS has significantly widened. Some examples of the newly enabled applications include Blender 2.57b, shown in the screenshot below, Bumptop, Evernote 5.8.3, Quicktime Player 7.7.9, and many others that users have the opportunity to discover for themselves.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_1.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_1.png" caption="Blender 2.57b running within ReactOS" >}}
+
+<p>Stopping an application correctly is often just as important from a system stability perspective, as it is when a program is stopped that its previously allocated resources are freed up. For a long time ReactOS had particular difficulty when it came to dealing with the shutdown sequence for .NET 2.0 applications, often times not waiting long enough for these applications to properly exit. Work by Giannis Adamopoulos has however resolved this particular problem, adding further to ReactOS&rsquo; usefulness as a platform to run Windows compatible applications.</p>
+
+
+<h2>USETUP Improvements</h2>
+<p>While the community wishlist for quality of life improvements in ReactOS is quite lengthy, one especially longstanding one has been the ability to upgrade an existing installation of ReactOS. Achieving this has required substantial effort in the USETUP module, effort that Herm&egrave;s B&eacute;lusca-Ma&iuml;to put considerable time into. The importance of this is twofold. The obvious enhancement is the ability to perform the upgrade, but the more substantive point is what this functionality entails for the future. For ReactOS to be usable as an actual system OS, it needs the ability to update in-place without losing user data and configuration. While requiring the user to go through the system installation process is still far from the user friendliness of other modern operating systems, it is still a substantial step forward and lays the foundation for ReactOS&rsquo; maturation into an everyday driver of people&rsquo;s computers.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_2.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_2.png" caption="Screenshot of the ReactOS text mode setup with upgrade option" >}}
+
+<h2>Win32</h2>
+<p>The Win32 subsystem responsible for graphical rendering in ReactOS is by itself a substantial beast. Improvements here often tend towards the most user visible of changes, since it is the engine through which the user will most interact with the operating system.</p>
+
+<p>Those familiar with the NT family&rsquo;s basic design will recall that prior to the NT6 line that began with Windows Vista, there was a substantial block of functionality implemented inside the kernel space of the operating system. This block is commonly referred to as win32k, and because of its wide ranging kernel level privileges, problems within win32k can hard crash the entire system. Even something as seemingly basic as menus is reliant on functionality inside win32k, and fixing that related functionality was the focus of much effort by several developers.</p>
+
+<p>Basic robustness was the emphasis Thomas Faber focused on, running the menu code through a torture test that would see constant switching between different windows to make sure no resources or the like leaked across the different processes. One must recall that while in user mode applications are partitioned off, in kernel mode resources are effectively in a single space and the appropriate bookkeeping must be maintained to avoid crashes. Speaking of crashes, Mark Jansen also identified a problem with scrollbar initialization whose resolution has added yet another range of applications into ReactOS&rsquo; library of compatible programs. Case in point is the 32bit Civilization II Multiplayer Gold Edition version 1.3, as demonstrated in the screenshot below, and others like IceChat 7.63.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_3.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_3.png" caption="Screenshot of Civilization II Multiplayer Gold Edition 1.3 running on ReactOS" >}}
+
+<p>The visual correctness of menu elements is also important, as misaligned elements can produce graphically jarring displays. As such while subtle, Katayama Hirofumi&rsquo;s correction of the y-coordinate calculation for menu items adds a touch of detail that is the difference between a polished graphical experience and one that is just good enough.</p>
+
+<p>Menus can also extend to more than just the menu bar we often see at the top of applications. There are also pop-up menus like when one right-clicks on an item, as in the case of icons in the taskbar&rsquo;s system tray. Mark was again responsible for this fix, which resolved the issue of incorrectly selected options when one tried to use the systray. Users can be thankful that one more source of frustration has now been squashed.</p>
+
+<p>Finally, one must recall that not the entire world uses the left-to-right display standard to English and other Latin based languages. Many, such as Hebrew and Arabic, use a right-to-left orientation. ReactOS&rsquo; support for this type of text rendering was first officially exposed in 0.4.10, but the effort remains a work in progress. That progress took a substantive leap with work done by Baruch Rutman to adapt the USP10 library and Bidirectional support code from Wine to ReactOS. More work of course remains to be done, but it is the nature of open source development to take an iterative approach, building improvements one upon another.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_4.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_4.png" caption="Bidirectional text support in ReactOS" >}}
+
+
+<h2>Networking</h2>
+<p>While end user improvements are often the most visible, quality of life improvements for power users, administrators, and developers have a certain multiplicative effect as well. To that end, the enablement of various network debugging and diagnosis programs by Pierre&rsquo;s work in TCP and UDP connection enumeration is important in a more subtle way. While debugging network applications is a far from common use case for the average user, it is a crucial ability for people that work in IT or general software development. In this manner ReactOS is becoming useful as not just a platform for running applications, but also to debug them. And as history has shown, the ease of development and administration is a key feature in adoption by the wider tech industry.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0411_5.jpg" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0411_5.jpg" caption="Observing the network connections via the netstat tool while running mIRC" >}}
+
+
+<h2>Stability and Testing</h2>
+<p>As ReactOS continues to grow in stability and maturity, the breadth and depth of testing necessary also increases, if only because there are more candidate applications to test. To this end Joachim Henze has with his usual dedication and perseverance worked to ensure the right balance was struck for this release in terms of stability and new/improved features. While it is always tempting to bring forward changes and fixes in the latest and greatest, one must recall that every such change brings with it a certain degree of risk. The ability to weigh that risk with the likely benefits is what makes quality assurance personnel like Joachim invaluable to any fast moving project.</p>
+
+<p>In light of ReactOS&rsquo; expansive improvements, and to help prospective users better understand the state of the OS and its supported applications, Joachim has also restructured the <a href="https://reactos.org/wiki/Tests_for_0.4.11">test results page</a> to better encapsulate the relevant information. There one can now see not only the overall conclusion of the test, but also details such as track what drove a particular conclusion as well as any workarounds that they might themselves attempt. A marked step forward from the binary of works/fails, since a workaround suggests at least a starting point for a permanent solution to be found.</p>
+
+
+<h2>Third Party Syncs</h2>
+<p>The current third party sources that ReactOS syncs with have been brought to the following versions by their respective minders.
+<ul>
+	<li>ACPICA version 20181003, by Thomas Faber</li>
+	<li>PCI hardware ID database 2018-11-21, by Herm&egrave;s B&eacute;lusca-Ma&iuml;to</li>
+	<li>Wine Staging 3.17, by Amine Khaldi</li>
+</ul></p>
+
+
+<h2>Statistics</h2>
+<p>JIRA Issues fixed (this includes both bugs and improvements) - 135<br>
+Number of commits - 984<br>
+The oldest bug fixed for 0.4.11 - <a href="https://jira.reactos.org/browse/CORE-3579">CORE-3579</a></p>
+
+<p><ul>
+  <li><a href="https://reactos.org/wiki/ChangeLog-0.4.11">The official Changelog for the 0.4.11 release</a></li>
+  <li><a href="https://reactos.org/wiki/Community_Changelog-0.4.11">The less technical Community Changelog for 0.4.11</a></li>
+  <li><a href="https://reactos.org/wiki/Tests_for_0.4.11">Application Tests for 0.4.11</a></li>
+</ul></p>
+
+<p><a href="https://github.com/reactos/reactos/tree/releases/0.4.11">0.4.11-release</a> branch was forked from <a href="https://github.com/reactos/reactos">master</a> on 2018-12-09 after 0.4.11-dev-948-gde7c959</p>

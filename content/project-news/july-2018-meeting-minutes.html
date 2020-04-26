@@ -1,0 +1,84 @@
+---
+title:       "July 2018 meeting minutes"
+author:      "Harteex"
+date:        2018-08-16
+aliases:     [ "/node/69577" ]
+tags:        [ "meeting-minutes" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2018-08-02<br />
+	19:00 UTC<br />
+	#meeting</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:01 by Colin Finck.</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: Upcoming Hackfest</li>
+    <li>Point 3: Splitting off ReactOS components into Git submodules</li>
+    <li>Point 4: Celebrating 20 years of ReactOS</li>
+</ul>
+
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Alexander Rechitskiy</b> did some PR work for ReactOS and spread info about recent developments and the 0.4.9 release.</p>
+
+<p><b>Aleksandar Andrejevic</b> mentioned he is thinking about continuing his audio work.</p>
+
+<p><b>Can Tasan</b> has been absent due to studies, but as it's holidays, he started to do testing work. He also tries to update the Community Changelog when he has free time.</p>
+
+<p><b>Colin Finck</b> has been working on migrating our web services to RosLogin, the usual e.V. work, helping with the 0.4.9 release and a bit of Hackfest planning.</p>
+
+<p><b>Herm&egrave;s B&eacute;lusca-Ma&iuml;to</b> has been working on a number of things, such as enabling per-service account logging, fixing win32k to prevent painting hangs and making autochk a bit prettier. He also did some window station work, which is waiting for review, and he is currently handling the cmd "dir" command fix PR.</p>
+
+<p><b>Mark Jansen</b> finished the base address script and put it in the repo for everyone to use. He has also been working on LDR, protecting calls to dllmain with SEH, which he hopes to finish soon. Apart from that he fixed some small bugs and regressions.</p>
+
+<p><b>Stanislav Motylkov</b> implemented some SMBIOS stuff, which would help in fixing known bugs in applications that retrieve general system information. The reason why he started to investigate and implement these things was because he thought it would be nice to integrate these features into the System Properties tab (sysdm.cpl), to display the exact model of notebook / motherboard / virtual machine name/ etc. Colin expressed support for more information to sysdm.cpl, but noted that it would probably need a new layout then, for example Vista-like.</p>
+<p>Stanislav also currently has two pull request waiting to be merged, and two more bug fixes that are almost ready.</p>
+
+<p><b>Victor Perevertkin</b> made two PRs to WinBtrfs. He's currently trying to figure out why Git does not install on a btrfs partition, and he suspects MM or CC to be guilty. ReactOS boots reliably from btrfs now, and Victor believes his GSoC goal is completed.</p>
+
+<p>The other meeting participants (<b>Daniel Reimer</b>, <b>David Quintana</b>, <b>Ged Murphy</b>, <b>Oleksandr Shaposhnikov</b>, <b>Samuel Serapion</b>, <b>Sylvain Petreolle</b>) had nothing to report or joined late.</p>
+
+<h2>Point 2: Upcoming Hackfest</h2>
+
+<p>Colin asked if everyone was ready for the Hackfest. Since our GSoC student Victor will come to the event, Oleksandr Shaposhnikov noted that some GSoC related things could be done there, such as reviewing code and mentor feedback. Apart from that, the discussion was mostly about accommodation and hardware.</p>
+
+<h2>Point 3: Splitting off ReactOS components into Git submodules</h2>
+
+<p>Ged Murphy brought up the point to discuss the possibility of moving some of our drivers out of the main repo. Before the meeting, he <a href="https://reactos.org/pipermail/ros-dev/2018-August/018867.html">posted his thoughts to the mailing list</a>. He thought of the point  due to the btrfs driver which we use from Mark Harmstone. Mark's project receives quite a bit of interest on GitHub, and Ged thinks one of the reasons is that it's so easy to find and build. So Ged wonders if we could generate more interest if we did the same thing to some of our drivers, for example NTFS. At the moment they are mostly bit-rotting deep in our main repo.</p>
+
+<p>Colin <a href="https://reactos.org/pipermail/ros-dev/2018-August/018874.html">responded with his opinions in another mailing list email</a>, where he said that using Git submodules had already been discussed previously, which ended up in the decision to not use them. He also outlined his opinions on what to think about, if the decision is to split off components to separate repositories.</p>
+
+<p>The meeting discussion started off with the discussion on how to achieve this, either through submodules or subtrees, where some objected to using submodules. One problem with splitting off components would be how to do PR testing, and a process would have to be defined. David suggested it will be up to the external repo maintainer to keep things up to date.</p>
+
+<p>Herm&egrave;s asked about the usage of NDK in the code of the moved modules, to which Ged responded that most of them should build without the NDK, they're just standard Windows modules.</p>
+
+<p>The discussion continued on to the topic of what build files to be used for the components. Colin thought that we should begin by providing our CMake-based SDK as a separate component that can be used to build each submodule with GCC and MSVC. Ged however, would prefer to stay away from CMake for the components, as he fears that it will be a barrier of entry to Windows developers. Some disagreed that it would be a problem, and Colin noted that he wants to minimize maintainability problems. CMake is also natively supported by VS2017.</p>
+
+<p>The next question is what to move to other repositories. Ged mentioned a few examples such as usb, netcards and NTFS. Victor added that programs such as Paint and Notepad could be moved too. Ged noted that he didn't want to flood GitHub with all our components, he'd just like to see the ones we really need help with, or ones that provide a lot of value to the open source community.</p>
+
+<p>When it comes to where the new repositories would be hosted, Ged would prefer to have them under a new entity, such as "reactos_drivers", or even just "NT OSS Drivers" without a mention of ReactOS. Any decision about that will be up for discussion at a later time.</p>
+
+<p>Colin asked who wanted to volunteer, and what to start with. Ged agreed to volunteer and suggested to start with NTFS. While he realizes it's not really needed by people other than us, it's an easy one, that might generate some good publicity. Colin agreed that is could generate some nice PR, and make it more attractive to work on.</p>
+
+<p>Colin listed a set of tasks to be done:
+<ol>
+    <li>Splitting off NTFS into an own repository</li>
+    <li>Pushing a .vcxproj</li>
+    <li>Writing a README.md</li>
+    <li>Converting the CMakeLists.txt to a standalone file that can be imported by VS 2017 and replace the .vcxproj</li>
+    <li>Integrating all of it as a Git submodule/subtree into the reactos repo</li>
+    <li>Adding Continuous Integration with BuildBot Travis/Travis-CI/AppVeyor to the standalone repo</li>
+</ol>
+</p>
+
+<p>Ged will use a personal fork for now, until we get it right. He'll do task 1-3 and inform on the progress.</p>
+
+<h2>Point 4: Celebrating 20 years of ReactOS</h2>
+
+<p>Can Tasan wanted to make a point about our 20th year, but Colin pointed out that it's either the 20th or the 22nd year, depending on how you count. We have considered 1996 the birth date of ReactOS before, so this year is not a milestone birthday. It was decided to try to make 0.4.10 a big PR release instead, and as Can mentioned, it is the tenth release of our new release model.</p>
+
+<p>Meeting was closed at 21:06 by Colin Finck</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>

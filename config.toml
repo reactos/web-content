@@ -1,11 +1,9 @@
-baseurl = "https://colinfinck.github.io/"
+baseURL = "https://reactos.org/"
 title = "ReactOS Website"
 theme = "reactos"
 languageCode = "en-us"
 # Site language. Available translations in the theme's `/i18n` directory.
 defaultContentLanguage = "en"
-# Enable comments by entering your Disqus shortname
-disqusShortname = ""
 
 # Define the number of posts per page
 paginate = 10
@@ -15,246 +13,148 @@ paginate = 10
 # Main menu
 
 [[menu.main]]
-    name = "News"
-    url  = "/news/"
-    weight = 1
-    [[menu.main]]
-        parent = "News"
-        name = "All News"
-        url  = "/news/"
-        weight = 101
-    [[menu.main]]
-        parent = "News"
-        name = "Project News"
-        url  = "/project-news/"
-        weight = 102
-    [[menu.main]]
-        parent = "News"
-        name = "Blog Posts"
-        url  = "/blogs/"
-        weight = 103
-
+	name = "About"
+	weight = 1
+	[[menu.main]]
+		parent = "About"
+		name = "What is ReactOS?"
+		url  = "/what-is-reactos"
+		weight = 101
+	[[menu.main]]
+		parent = "About"
+		name = "Gallery"
+		url  = "/gallery"
+		weight = 102
+	[[menu.main]]
+		parent = "About"
+		name = "FAQ"
+		url  = "/faq"
+		weight = 103
 
 [[menu.main]]
-    identifier = "discover"
-    name = "Discover More!"
-    url  = "/blog/"
-    weight = 2
-    [[menu.main]]
-        parent = "discover"
-        name = "Following!"
-        url = "/joining/"
-        weight = 201
-        pre = "<span style='font-weight: bold;'>"
-        post = "</span>"
-    [[menu.main]]
-        parent = "discover"
-        name = "Live Activity"
-        url  = "https://jira.reactos.org/secure/Dashboard.jspa#Activity-Stream/10001"
-        weight = 202
-    [[menu.main]]
-        parent = "discover"
-        name = "Helping us"
-        url  = "/participation/"
-        weight = 203
-    [[menu.main]]
-        parent = "discover"
-        identifier = "follow_faq"
-        name = "FAQs"
-        url  = "/joining/faqs"
-        weight = 204
-
-    [[menu.main]]
-        parent = "discover"
-        name = "Testing!"
-        url = "/testing/"
-        weight = 205
-        pre = "<span style='font-weight: bold;'>"
-        post = "</span>"
-    [[menu.main]]
-        parent = "discover"
-        name = "Installing ReactOS"
-        url  = "installing-reactos"
-        weight = 206
-    [[menu.main]]
-        parent = "discover"
-        name = "Filling a Bug"
-        url  = "https://reactos.org/wiki/File_Bugs"
-        weight = 207
-    [[menu.main]]
-        parent = "discover"
-        identifier = "testing_faq"
-        name = "FAQs"
-        url  = "/testing/faqs/"
-        weight = 208
-
-    [[menu.main]]
-        parent = "discover"
-        name = "Developing!"
-        url = "/developing/"
-        weight = 209
-        pre = "<span style='font-weight: bold;'>"
-        post = "</span>"
-    [[menu.main]]
-        parent = "discover"
-        name = "Building ReactOS"
-        url  = "/building-reactos/"
-        weight = 210
-    [[menu.main]]
-        parent = "discover"
-        name = "Sending Patches"
-        url  = "https://reactos.org/wiki/Submitting_Patches"
-        weight = 211
-    [[menu.main]]
-        parent = "discover"
-        name = "Testman: Your Tool"
-        url  = "https://reactos.org/testman"
-        weight = 212
-    [[menu.main]]
-        parent = "discover"
-        identifier = "developing_faq"
-        name = "FAQs"
-        url  = "/developing/faqs/"
-        weight = 213
-
-
-
+	name = "News"
+	weight = 1
+	[[menu.main]]
+		parent = "News"
+		name = "All News"
+		url  = "/news/"
+		weight = 101
+	[[menu.main]]
+		parent = "News"
+		name = "Project News"
+		url  = "/project-news/"
+		weight = 102
+	[[menu.main]]
+		parent = "News"
+		name = "Blog Posts"
+		url  = "/blogs/"
+		weight = 103
 
 [[menu.main]]
-    name = "Jira"
-    url  = "https://jira.reactos.org"
-    weight = 3
+	name = "Community"
+	weight = 2
+	[[menu.main]]
+		parent = "Community"
+		name = "Chat"
+		url  = "https://chat.reactos.org"
+		weight = 201
+	[[menu.main]]
+		parent = "Community"
+		name = "Forum"
+		url  = "/forum"
+		weight = 202
+	[[menu.main]]
+		parent = "Community"
+		name = "Shop"
+		url  = "https://reactos.spreadshirt.net"
+		weight = 203
 
 [[menu.main]]
-    name = "Gallery"
-    url  = "/gallery/"
-    weight = 4
+	name = "Development"
+	weight = 3
+	[[menu.main]]
+		parent = "Development"
+		name = "Architecture"
+		url  = "/architecture"
+		weight = 301
+	[[menu.main]]
+		parent = "Development"
+		name = "Building ReactOS"
+		url  = "https://reactos.org/wiki/Building_ReactOS"
+		weight = 302
+	[[menu.main]]
+		parent = "Development"
+		name = "Contributing"
+		url  = "/contributing"
+		weight = 303
+	[[menu.main]]
+		parent = "Development"
+		name = "Download ReactOS Builds"
+		url = "/getbuilds"
+		weight = 304
+	[[menu.main]]
+		parent = "Development"
+		name = "Jira"
+		url  = "https://jira.reactos.org"
+		weight = 310
+	[[menu.main]]
+		parent = "Development"
+		name = "ReactOS on GitHub"
+		url = "https://github.com/reactos"
+		weight = 311
+	[[menu.main]]
+		parent = "Development"
+		name = "Report a Bug"
+		url  = "https://reactos.org/wiki/File_Bugs"
+		weight = 312
+	[[menu.main]]
+		parent = "Development"
+		name = "Testman"
+		url  = "/testman"
+		weight = 313
+	[[menu.main]]
+		parent = "Development"
+		name = "Wiki"
+		url  = "/wiki"
+		weight = 314
+	[[menu.main]]
+		parent = "Development"
+		name = "Work for ReactOS"
+		url  = "/contributing#paid-jobs"
+		weight = 315
 
 [[menu.main]]
-    name = "IRC"
-    url  = "/irc/"
-    weight = 5
+	name = "Donate"
+	url  = "/donate"
+	weight = 5
 
 [[menu.main]]
-    name = "Forum"
-    url  = "/forum/"
-    weight = 6
-
-[[menu.main]]
-    name = "Shop"
-    url  = "https://reactos.spreadshirt.net/"
-    weight = 7
-
-[[menu.main]]
-    name = "Download"
-    url  = "/download/"
-    weight = 8
-
-[[menu.main]]
-    name = "Donate"
-    url  = "/donate/"
-    weight = 8
-
-# Top bar social links menu
-
-[[menu.topbar]]
-    weight = 1
-    name = "GitHub"
-    url = "https://github.com/reactos/reactos"
-    pre = "<i class='fa fa-2x fa-github'></i>"
-
-[[menu.topbar]]
-    weight = 2
-    name = "Facebook"
-    url = "https://www.facebook.com/ReactOS-19143619259/"
-    pre = "<i class='fa fa-2x fa-facebook'></i>"
-
-[[menu.topbar]]
-    weight = 3
-    name = "Twitter"
-    url = "https://twitter.com/reactos"
-    pre = "<i class='fa fa-2x fa-twitter'></i>"
-
-[[menu.topbar]]
-    weight = 4
-    name = "Email"
-    url = "mailto:your@email.com"
-    pre = "<i class='fa fa-2x fa-envelope'></i>"
+	name = "Download"
+	url  = "/download"
+	weight = 6
 
 [params]
-    viewMorePostLink = "/news/"
-    author = "DevCows"
-    defaultKeywords = ["devows", "hugo", "go"]
-    defaultDescription = "Site template made by devcows using hugo"
+	viewMorePostLink = "/news/"
+	defaultKeywords = ["ReactOS", "react", "os", "open source", "free", "win32", "winapi"]
+	defaultDescription = "ReactOS is a free, opensource reimplementation of windows"
 
-    about_us = "ReactOS is a registered trademark of ReactOS Foundation in the USA and other countries. "
-    copyright = "ReactOS Project"
+	# Format dates with Go's time formatting
+	date_format = "January 2, 2006"
 
-    # Format dates with Go's time formatting
-    date_format = "January 2, 2006"
+	logo = "/sites/default/files/ReactOS_0.png"
+	logo_small = "/sites/default/files/ReactOS_0.png"
 
-    logo = "/sites/default/files/ReactOS_0.png"
-    logo_small = "/sites/default/files/ReactOS_0.png"
+	development_banner_text = "DEVELOPMENT COPY! Visit www.reactos.org for the production website."
 
 [Permalinks]
-    blog = "/blog/:year/:month/:day/:filename/"
-
-# Enable or disable top bar with social icons
-[params.topbar]
-    enable = false
-    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
-      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
-      <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-      </p>
-      """
+	blog = "/blog/:year/:month/:day/:filename/"
 
 # Enable and disable widgets for the right sidebar
 [params.widgets]
-    categories = true
-    tags = true
-    search = true
-
-[params.carousel]
-    enable = true
-    # All carousel items are defined in their own files. You can find example items
-    # at 'exampleSite/data/carousel'.
-    # For more informtion take a look at the README.
-
-[params.features]
-    enable = false
-    # All features are defined in their own files. You can find example items
-    # at 'exampleSite/data/features'.
-    # For more informtion take a look at the README.
-
-[params.testimonials]
-    enable = false
-    # All testimonials are defined in their own files. You can find example items
-    # at 'exampleSite/data/testimonials'.
-    # For more informtion take a look at the README.
-    title = "Testimonials"
-    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
-
-[params.see_more]
-    enable = true
-    icon = "fa fa-file-code-o"
-    title = "ReactOS is a Free Opensource operating system."
-    subtitle = "Imagine running your favorite Windows applications and drivers in an open-source environment you can trust. That's ReactOS. Not just an Open but also a Free operating system."
-    link_url = "#"
-    link_text = "Click here to learn more"
-
-[params.clients]
-    enable = false
-    # All clients are defined in their own files. You can find example items
-    # at 'exampleSite/data/clients'.
-    # For more informtion take a look at the README.
-    title = "Our Clients"
-    subtitle = ""
-
-[params.recent_posts]
-    enable = true
-    title = "Recent news"
-    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+	categories = true
+	tags = true
+	search = false
 
 [taxonomies]
-    author = "author"
-    tag = "tags"
+	author = "author"
+	tag = "tags"

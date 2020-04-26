@@ -1,8 +1,52 @@
----
-title: "ReactOS Project"
-scripts:
-  - "//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
-  - "//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"
-  - "/js/front.js"
-  - "/js/owl.carousel.min.js"
----
++++
+title = "Front Page"
+css = [
+	"/css/gh-fork-ribbon.css",
+]
+scripts = [
+	"/js/front.js",
+	"/js/home.js",
+]
++++
+<section id="intro" class="row bar no-mb">
+	<div class="col-sm-offset-1 col-sm-5">
+		<h1>Welcome to ReactOS</h1>
+
+		<p class="lead">
+			Imagine running your favorite Windows applications and drivers in an open-source environment you can trust.<br>
+			That's the mission of ReactOS!
+		</p>
+
+		<div>
+			<div style="display: inline-block; vertical-align: top; margin-right: 50px">
+				<h4>Development</h4>
+				<ul>
+					<li><a href="/getbuilds">ReactOS Builds</a></li>
+					<li><a href="/wiki/File_Bugs">Report a Bug</a></li>
+					<li><a href="/testman">Testman</a></li>
+					<li><a href="/wiki">Wiki</a></li>
+				</ul>
+			</div>
+			<div style="display: inline-block; vertical-align: top">
+				<h4>Get in touch</h4>
+				<ul>
+					<li><a href="https://chat.reactos.org">Chat</a></li>
+					<li><a href="/forum">Forum</a></li>
+					<li><a href="/mailing-lists">Mailing Lists</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-5 text-center">
+		<a href="/gallery" class="screenshot">
+			<img class="img-responsive" src="/sites/default/files/Mizu-Desktop.png" alt="ReactOS in action">
+		</a>
+		<a href="/gallery">view more screenshots</a>
+
+		<div class="buttons">
+			<a href="/download" class="btn btn-success"><i class="fa fa-download"></i> Download ReactOS {{< reactos-version >}}</a> or
+			<a href="/donate" class="btn btn-success">Donate</a>
+		</div>
+	</div>
+</section>

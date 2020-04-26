@@ -1,0 +1,88 @@
+---
+title:       "February 2019 meeting minutes"
+author:      "Harteex"
+date:        2019-03-10
+aliases:     [ "/node/69613" ]
+tags:        [ "meeting-minutes" ]
+banner:      "img/project-news/meeting-minutes.png"
+
+---
+
+<p>2019-02-28<br />
+	19:00 UTC<br />
+	Mattermost meeting channel</p>
+<h2>Proceedings</h2>
+<p>Meeting started at 19:01 by Colin Finck.</p>
+<ul>
+    <li>Point 1: Status Reports</li>
+    <li>Point 2: Final decision on Mattermost</li>
+    <li>Point 3: Google Summer of Code 2019</li>
+    <li>Point 4: 0.4.11</li>
+    <li>Point 5: Chemnitzer Linux-Tage 2019</li>
+</ul>
+<!--break-->
+<h2>Point 1: Status Reports</h2>
+
+<p><b>Alexander Rechitskiy</b> tried to get the source code of a network card driver from Intel, but got the response that they can't provide an open source license for it. He also spent some time on finding and reporting LDR-related bugs, and he did some PR work on promoting ReactOS at one local startup event in Stavropol.</p>
+
+<p><b>Colin Finck</b> had a month with mostly paperwork. Together with Amine, he submitted our GSoC application to Google and we got accepted again! He has also been negotiating with Mattermost Inc regarding a non-profit license for us.</p>
+<p>Finally, he went to the notary to prepare the papers for the reelection of the ReactOS Deutschland e.V. Board in December.</p>
+
+<p><b>Daniel Reimer</b> has been preparing for CLT.</p>
+
+<p><b>David Quintana</b> recently came across a laptop from the XP era that has a floppy drive and serial port and such, so he can now do real hardware tests on an Intel Celeron with an AMD GPU, in case someone wants something tested.</p>
+
+<p><b>Joachim Henze</b> is done with the testing. Ziliang was contacted by Colin to see if he could help with the release notes again. When Joachim gets an OK on the release notes, he will build the final iso.</p>
+
+<p><b>Mark Jansen</b> has been working on the following:
+<ul>
+<li>Finished support for .local files</li>
+<li>Added a simple shell extension to view certificates (cryptext)</li>
+<li>Fixed iphlpapi exported names, where the decoration was partially dropped</li>
+<li>Prepared some code to get the utility 'sdbinst' to work, which is the shim database installation util, for example used by GoG</li>
+</ul>
+He also did some small fixes like a bugfix for menu positioning when off-screen and some msi leak / unitialized variables.</p>
+
+<p><b>Michael Fritscher</b> has done some testing and preparations for CLT.</p>
+
+<p><b>Stanislav Motylkov</b> commited minor bug fixes and translations. He added improvements to the user experience by finishing the <a href="https://twitter.com/x86corez/status/1099435933911396352">logon and shutdown animation in the MSGINA dialog</a>, which was firstly implemented as a proof-of-concept by Bi?oc George. He also added some icons to the Sound Volume application for better look and feel.</p>
+<p>Apart from the above fixes, he spread the word about the ReactOS GSoC 2019.</p>
+
+<p><b>Thomas Faber</b> has been working on random fixes, as time permits. He did some fixes on HDAudBus, and hopes it shouldn't stop people from booting any longer.</p>
+
+<p><b>Timo Kreuzer</b> is slowly merging more stuff from his x64 branch and improving things here and there. He believes he will probably go on for some more weeks.</p>
+
+<p><b>Victor Perevertkin</b> tried to compile ReactOS with updated GCC and libs. The progress can be seen <a href="https://jira.reactos.org/browse/CORE-11794">here</a>. To summarize, it compiles with GCC 8.2 but it doesn't run stable. He also tested Vadim's USB drivers which are already checked into the repository, and the results are good. He has found one non-addressed regression so far. He hopes he can finish it before 0.4.12 and finally have them enabled.</p>
+
+<h2>Point 2: Final decision on Mattermost</h2>
+
+<p>Colin didn't have time to try out any alternatives, but regardless he really enjoys how Mattermost is working flawlessy for us from the administration perspective. As said in the status report above, he negotiated a non-profit license for us.</p>
+
+<p>Most agreed that Mattermost is a big step up from IRC. Some things are still problematic, such as things related to permissions and access control, but according to Colin, those kind of features are planned for 2019.</p>
+
+<p>No one was opposed to getting the non-profit license for $250/3 years, so Colin will try to sort that out. Some expressed that we should continue running the IRC bridge and Colin said that he had no plans to shut down the bridge any time soon. He only wishes that people regularly check chat.reactos.org for private messages.</p>
+
+<p>Stanislav asked if we could bridge more public channels, especially projects related to ReactOS. Colin responded that we could, but we need official permission from those channels.</p>
+
+<h2>Point 3: Google Summer of Code 2019</h2>
+
+<p>We've been accepted again this year and Colin just put up a <a href="https://reactos.org/project-news/reactos-participating-google-summer-code-2019">news item</a> on our website.</p>
+
+<p>Victor Perevertkin thought that we should keep the pull-request requirement only for non-web and non-devops projects. Mark asked why and said that the idea about the PR requirement is that it shows that people are able to follow our procedures and work with us. It doesn't have to be a gigantic patch. Victor in turn asked what patch can a web developer send us, and Mark agreed that we probably can't judge experience based on this single PR. However they should be able to make a PR.</p>
+
+<p>Colin wrote that he hopes all web-related contributions will focus on the web part and less on the Git part. After all, our devs also needed some Git starter guide when we migrated. He further added that we should see what proposals we get and keep this discussion in mind.</p>
+
+<h2>Point 4: 0.4.11</h2>
+
+<p>Colin asked Joachim if there were any other blockers or if we're just waiting for Ziliang to polish the press release. Joachim answered that we are waiting for Ziliang indeed. He could build the final iso anytime within a few hours, but he's still waiting until the release notes are officially finalized before he starts the process.</p>
+
+<h2>Point 5: Chemnitzer Linux-Tage 2019</h2>
+
+<p>Michael added some thoughts at the <a href="https://reactos.org/wiki/CLT2019">wiki</a> and outlined 3 points to discuss: Organization, which version of ReactOS we want to bring, and the program at the stand.</p>
+
+<p>As for organization, Daniel has already booked accommodation. When it comes to the version of ReactOS to bring, Colin suggested using the new 0.4.11 release, but Michael wanted some other changes too, namely the hdaudio fixes and PNP hackfix for the ATI driver, so we can demonstrate the ATI driver on the Dell D531. Also, Daniel said he would prefer USB changes in this year's ISO again, and maybe a hybrid ISO. Colin suggested handing out the 0.4.11 release while running the additions on the demo laptops, but said that it's up to Michael and Daniel. They should just make sure not to put proprietary things on the CDs they hand out.</p>
+
+<p>Michael will try to build an extended ISO and Daniel will produce the CDs.</p>
+
+<p>Meeting was closed at 20:26 by Colin Finck</p>
+<p>Meeting minutes prepared by Andreas Bjerkeholt</p>

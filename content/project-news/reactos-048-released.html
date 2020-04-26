@@ -2,8 +2,8 @@
 title:       "ReactOS 0.4.8 released!!"
 author:      "vicmarcal"
 date:        2018-04-14
-aliases:     [ "node/65764" ]
-tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "mm" ]
+aliases:     [ "/node/65764" ]
+tags:        [ "release", "nt6", "ntfs", "drwatson", "taskbar", "cc", "mm" ]
 ---
 
 <p>The ReactOS Project is pleased to announce the release of version 0.4.8 as we continue to work on releasing every three months.</p>
@@ -13,7 +13,8 @@ tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "
 <br/>
 <p>ReactOS keeps pushing to bring the best possible user experience. Therefore the ReactOS User Interface in 0.4.8 has received extra care.  </p>
 <p><b>Taskbar </b> settings and dialogs have been rewritten by Giannis so now the auto-hide, toggle lock and always on top options work. These settings were visible before but as you might have noticed they've never been working at all. Meanwhile, David fixed several bugs and glitches of the notification area. Thanks to him, Giannis and Hermès, now <b>balloon notifications</b> are properly supported, queued and shown while a range of tooltip problems have been solved. </p><p>Talking about the <b>notification tray</b>, due to Ged’s work, icons of killed and finished process are now automatically removed, even when apps crash. This is something that Windows doesn't even provide with Win10, and many Windows users may have noticed.</p>
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/balloon.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">At the bottom right you can see the Notifications working.</div><br/>
+
+{{< figure link="/sites/default/files/imagepicker/14095/balloon.png" caption="At the bottom right you can see the Notifications working" >}}
 
 <p>Selecting multiple desktop icons was impossible prior 0.4.8. Enjoy it now thanks to Giannis’ work. His amazing work doesn't stop there, bugs related to property dialogs have been squashed, like the one preventing drive and folders capacity from being shown. <b>Deletion and renaming</b> of folders and files should work reliably after Pierre fixed a major leak.</p>
 
@@ -21,7 +22,7 @@ tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "
 
 <p>From the visual point of view, several glitches related to the redrawing of static text elements, scrollbars, button captions, fonts and text background colors were fixed in this version. As a bonus, now ReactOS also detects more themes and is much faster when rendering big amounts of text.</p>
 
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/autohide.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">The new settings and autohide working!</div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/autohide.png" caption="The new settings and autohide working!" >}}
 
 <p>Regarding </b>internationalization</b>, now when changing the language in ReactOS, the font substitution settings are properly overwritten thanks to Katayama, and time is now correctly set due to Doug’s work.</p>
 <p>Combine all these features with the Kernel and Filesystem fixes that 0.4.8 is bringing and you'll understand why the ReactOS team is so excited regarding this new release.</p>
@@ -30,11 +31,11 @@ tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "
 <br/>
 <p>With software specifically leaving NT5 behind, ReactOS is <b>expanding</b> its target to <b>support NT6+ (Vista, Windows 8, Windows 10) software</b>. Colin, Giannis and Mark are creating the needed logic in NTDLL and LDR for this purpose. Giannis has finished the side-by-side support and the implicit activation context, Colin has changed Kernel32 to accept software made for NT6+, and Mark keeps working on the shim compatibility layer. Although in a <b>really greenish and experimental state</b>, the new additions in 0.4.8 should start helping several software pieces created for Vista and upwards to start working in ReactOS.  Microsoft coined the term backwards compatibility, ReactOS the forward compatibility one. </p>
 
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/quicktime.gif" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">Quicktime for Vista and 7 working in ReactOS!</div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/quicktime.gif" caption="Quicktime for Vista and 7 working in ReactOS!" >}}
 
 <p>A new tool, a <b>DrWatson32 alike</b>, has been created by Mark and added to 0.4.8, so now any application crashing will create a log file on the desktop. This crash dump details the list of modules and threads loaded, stack traces, hexdumps, and register state. Therefore, this new tool should help us understand what went wrong when the software crashed. Adding these reports, plus the debug logs, will provide ReactOS developers a good amount of information to understand what went wrong and how to create the needed fixes.</p>
 
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/drwatson.png" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">DrWatson-alike in action!</div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/drwatson.png" caption="DrWatson-alike in action!" >}}
 
 <p>In 0.4.7, several games were having trouble initializing properly when using <b>native graphics drivers</b>. Jérome has not just fixed this issue but also a palette regression in DirectX which was garbling colors when playing games.</p>
 
@@ -43,7 +44,7 @@ tags:        [ "release", "0.4.8", "nt6", "ntfs", "drwatson", "taskbar", "cc", "
 <br/>
 <p>Kernel stability in this version comes from the Memory Manager, File system and Cache Manager fixes. The latest Coverity scan, which tracks old and detects new issues, shows a great evolution since 0.4.7.</p><p> Several bugs have been squashed in the ReactOS CC and Freeloader, allowing it to <b>boot in 96MB</b> hardware (smaller RAM need than our 0.4.7 release). Talking about hardware, Pierre has fixed several bugs when writing the bootloader to disk and Serge has updated ACPI with extended features, that should bring some extra compatibility. </p>
 
-<img style="margin: 0 auto" src="/sites/default/files/imagepicker/14095/ram.jpg" alt="Image"  class="imgp_img" width="90%" height="768" /><div class="imgp_desc">ReactOS in 96MB.</div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/ram.jpg" caption="ReactOS in 96MB" >}}
 
 <p>In 0.4.7 the initial Cache Manager bugfixing was a great step forward in terms of stability. From 0.4.7 to 0.4.8, <b>Cache Manager</b> has gone under a massive review lead by Thomas and Pierre. This work revealed several bugs thanks to the tests specifically created to ensure this review doesn't introduce new regressions. Among others, a 17-year-old bug which was introducing corruption in the file system and which is now finally fixed.</p>
 

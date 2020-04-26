@@ -1,61 +1,45 @@
 <head>
-  <meta charset="utf-8">
-  
-  <!--
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  -->
+	<meta charset="utf-8">
 
-  <meta name="robots" content="noindex">
-  <meta name="googlebot" content="noindex">
+	{{ if isset .Site.Params "development_banner_text" }}
+	<meta name="robots" content="noindex">
+	<meta name="googlebot" content="noindex">
+	{{ end }}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Title }}</title>
-  <meta name="author" content="{{ .Site.Author.name }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ .Title }} | ReactOS Project</title>
+	<meta name="author" content="{{ .Site.Author.name }}" />
 
-  {{ if .Keywords }}
-  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
-  {{ else if .Site.Params.DefaultKeywords }}
-  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">	
-  {{ end }}
+	{{ if .Keywords }}
+	<meta name="keywords" content="{{ delimit .Keywords ", " }}">
+	{{ else if .Site.Params.DefaultKeywords }}
+	<meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">
+	{{ end }}
 
-  {{ if .Description }}
-  <meta name="description" content="{{ .Description }}">
-  {{ else if .Site.Params.DefaultDescription }}
-  <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
-  {{ end }}
+	{{ if .Description }}
+	<meta name="description" content="{{ .Description }}">
+	{{ else if .Site.Params.DefaultDescription }}
+	<meta name="description" content="{{ .Site.Params.DefaultDescription }}">
+	{{ end }}
 
-  {{ .Hugo.Generator }}
+	{{ hugo.Generator }}
 
-  <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+	{{ partial "shared-head.html" . }}
 
-  <!-- Bootstrap and Font Awesome css -->
-  <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | relURL}}">
-  <link rel="stylesheet" href="{{ "css/bootstrap.min.css" | relURL}}">
+	<link href="/css/photoswipe.css" rel="stylesheet">
+	<link href="/css/default-skin/default-skin.css" rel="stylesheet">
+	<link href="/css/hugo-easy-gallery.css" rel="stylesheet">
 
-  <!-- Css animations  -->
-  <link href="{{ "css/animate.css" | relURL}}" rel="stylesheet">
-
-  <link href="{{ "css/style.blue.css" | relURL}}" rel="stylesheet" id="theme-stylesheet">
-
-  <!-- Favicon and apple touch icons-->
-  <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="{{ "img/apple-touch-icon.png" | relURL }}" />
-  <!-- owl carousel css -->
-
-  <link href="{{ "css/owl.carousel.css" | relURL}}" rel="stylesheet">
-  <link href="{{ "css/owl.theme.css" | relURL}}" rel="stylesheet">
-
-{{ range $.Page.Params.css }}
+	{{ range $.Page.Params.css }}
 	<link href="{{ . }}" rel="stylesheet">
-{{ end }}
+	{{ end }}
 
-  <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+	<link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 
-  <!-- Facebook OpenGraph tags -->
-  <meta property="og:title" content="{{ .Title }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ .URL }}/" />
-  <meta property="og:image" content="{{ .Site.Params.logo }}" />
+	<!-- Facebook OpenGraph tags -->
+	<meta property="og:title" content="{{ .Title }}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{ .Permalink }}/" />
+	<meta property="og:image" content="{{ .Site.Params.logo }}" />
 
 </head>

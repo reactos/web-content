@@ -1,0 +1,20 @@
+.ros-button {
+	display: inline-block;
+	padding: 0.5em 1em;
+	font-size: 2em;
+	background: #507489;
+	color: #ffffff !important;
+	cursor: pointer;
+}
+.ros-button:hover {
+	background: #6f92a7;
+}
+.ros-button:active {
+	background: #436477;
+}
+.ros-button-sm {
+	padding: 0.25em 0.5em;
+}
+.text-ros {
+	color: #507489;
+}

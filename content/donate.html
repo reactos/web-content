@@ -1,9 +1,9 @@
----
-title:       "Donate"
-aliases:     [ "donating" ]
-scripts:
-  - "/js/donate.js"
----
++++
+title = "Donate"
+aliases = [ "donating" ]
+css = [ "/css/copy.css" ]
+scripts = [ "/js/donate.js" ]
++++
 
 <div class="row">
 	<div class="col-md-7">
@@ -11,134 +11,77 @@ scripts:
 
 		<p>ReactOS is not supported by any company or government. Donations are the only way to maintain the project's server infrastructure, and provide us with a way to farm out development tasks which our unpaid devs don't always have the time to complete.</p>
 
-		<p>We really rely on you to donate your time or money, and are <a href="/donors">grateful for all of your support</a>!</p>
+		<p>We really rely on you to donate your time or money, and are grateful for all of your support!</p>
 
 		<p>PayPal and Wire Transfers are tax deductible.<br>
-		Please contact <a href="mailto:deutschland@reactos.org">deutschland@reactos.org</a> if you need a receipt or want to be listed anonymously.</p>    
+		Please contact <a href="mailto:deutschland@reactos.org">deutschland@reactos.org</a> if you need a receipt.</p>    
 	</div>
-</div><br>
+</div>
 
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-5">
 		<h2>PayPal</h2>
-		<p> PayPal is one of the most popular ways to donate some bucks to ReactOS. Please help us to hire new devs and enhance our servers just by dropping a couple of coffees each month.</p>
 
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="input-group-btn" id="amount_buttons" data-toggle="buttons" style="display: inline">
-					<label class="btn btn-default">
-						<input type="radio" name="amount_options" value="5" autocomplete="off"> 5 €
-					</label>
-					<label class="btn btn-default active">
-						<input type="radio" name="amount_options" value="10" autocomplete="off" checked> 10 €
-					</label>
-					<label class="btn btn-default">
-						<input type="radio" name="amount_options" value="15" autocomplete="off"> 15 €
-					</label>
-				</div>
-			</div>
-
-			<div class="col-sm-6">
-				<input type="text" id="other_amount" class="form-control" style="display: inline-block; width: 5em; height: 32px;"> €
-			</div>
-		</div><br>
-
-		<div style="text-align-last: justify">
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: inline;">
-				<input name="cmd" value="_donations" type="hidden">
-				<input name="item_name" value="ReactOS Donation" type="hidden">
-				<input name="currency_code" value="EUR" type="hidden">
-				<input name="business" value="deutschland@reactos.org" type="hidden">
-				<input name="lc" value="US" type="hidden">
-				<input name="amount" class="hidden_amounts" value="10" type="hidden">
-				<input name="return" value="https://reactos.org/thank-you" type="hidden">
-				<button class="btn btn-default">Donate once</button>
-			</form>
-
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: inline;">
-				<input name="cmd" value="_xclick-subscriptions" type="hidden">
-				<input name="item_name" value="ReactOS Monthly Donation" type="hidden">
-				<input name="currency_code" value="EUR" type="hidden">
-				<input name="business" value="deutschland@reactos.org" type="hidden">
-				<input name="lc" value="US" type="hidden">
-				<input name="src" value="1" type="hidden">
-				<input name="srt" value="52" type="hidden">
-				<input name="a3" class="hidden_amounts" value="10" type="hidden">
-				<input name="p3" value="1" type="hidden">
-				<input name="t3" value="M" type="hidden">
-				<input name="no_note" value="1" type="hidden">
-				<input name="no_shipping" value="1" type="hidden">
-				<input name="return" value="https://reactos.org/thank-you" type="hidden">
-				<button class="btn btn-primary" type="submit">Donate monthly</button>
-			</form>
-		</div>
+		{{< paypal >}}
 	</div>
 
-	<div class="col-md-4">
+	<div class="col-md-offset-1 col-md-5">
 		<h2>Wire Transfer</h2>
 		
 		<p>Bank to bank. No intermediaries. Directly to us.</p>
 
-		<p>Account owner: ReactOS Deutschland e.V. <br>
-		Bank name: Kreissparkasse Wiedenbrueck<br>
-		IBAN:  DE95 4785 3520 0025 0013 06<br>
-		BIC/SWIFT code:  WELADED1WDB</p>
+		<dl class="dl-inline">
+			<dt>Account owner:</dt>
+			<dd>ReactOS Deutschland e.V.</dd>
+			<dt>Bank name:</dt>
+			<dd>Kreissparkasse Wiedenbrueck</dd>
+			<dt>IBAN:</dt>
+			<dd><span class="copy">DE95 4785 3520 0025 0013 06</span></dd>
+			<dt>BIC/SWIFT code:</dt>
+			<dd><span class="copy">WELADED1WDB</span></dd>
+		</dl>
 	</div>
-
-	<div class="col-md-4">
-		<h2>Liberapay</h2>
-
-		<p>Liberapay is a novel payment service run transparently by a <a href="https://github.com/liberapay/liberapay.org">non-profit organization</a>, its <a href="https://github.com/liberapay/liberapay.com">source code</a> is public.</p>
-
-		<p class="text-center">
-			<a href="https://liberapay.com/reactos/donate"><img class="img-flattr" alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-		</p>
-	</div>
-</div><br><br>
+</div>
 
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-5">
 		<h2>Bitcoin</h2>
 
 		<p>The Freedom to choose. If you prefer donating with non-government controlled currencies, here is our Bitcoin address:</p>
 
-		<p class="text-center" style="margin: 15px 0; font-size: large;">1PWiRE16PJsEuax2Yr7EuK93q3ueDB58AE</p>
+		<p class="text-center" style="margin: 15px 0; font-size: large;"><span class="copy">1PWiRE16PJsEuax2Yr7EuK93q3ueDB58AE</span></p>
 
 		<small>You can buy/sell bitcoins for USD and other currencies on open markets like <a href="http://www.bitstamp.net">Bitstamp</a>.</small>
 	</div>
 
-	<div class="col-md-4">
+	<div class="col-md-offset-1 col-md-5">
 		<h2>WebMoney</h2>
 
 		<p>There are countries where PayPal is not available so feel free to donate through WebMoney too. Each tiny bit counts.</p>
 
 		<p class="text-center" style="font-size: large;">
-			E932968710500<br>
-			R048451281949<br>
-			U113469953156<br>
-			Z738685152183
+			<span class="copy">E932968710500</span><br>
+			<span class="copy">R048451281949</span><br>
+			<span class="copy">U113469953156</span><br>
+			<span class="copy">Z738685152183</span>
 		</p>
 	</div>
+</div>
 
-	<div class="col-md-4">
+<div class="row">
+	<div class="col-md-5">
 		<h2>Yandex Money</h2>
 
 		<p>Yandex is a well-known service in the Russian Federation and nearby countries. Included by popular demand!</p>
 
-		<iframe src="https://money.yandex.ru/embed/donate.xml?uid=410011294285871&amp;default-sum=500&amp;targets=%d0%9f%d0%be%d0%b4%d0%b4%d0%b5%d1%80%d0%b6%d0%ba%d0%b0+reactos&amp;project-name=reactos&amp;project-site=http%3a%2f%2fwww.reactos.org&amp;button-text=01&amp;hint=" allowtransparency="true" scrolling="no" width="450" height="106" frameborder="0"></iframe>
+		<p class="text-center"><a href="https://money.yandex.ru/to/410011294285871/500?comment=Support+ReactOS" class="btn btn-primary">Donate via Yandex Money</a></p>
 	</div>
-</div><br><br>
 
-<div class="row">
-	<div class="col-md-3"></div>
-
-	<div class="col-md-6">
+	<div class="col-md-offset-1 col-md-5">
 		<h2>Bountysource</h2>
 
 		<p>Bountysource puts funds directly in the hands of developers by rewarding them for committing fixes or creating new features. Set a bounty on the issues that matter to you most or fund a specific app. You can also set up a recurring subscription.</p>
 
 		<p class="text-center"><a href="https://www.bountysource.com/teams/reactos" class="btn btn-primary">Bountysource</a></p>
 	</div>
-
-	<div class="col-md-3"></div>
 </div>

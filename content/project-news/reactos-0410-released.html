@@ -1,0 +1,66 @@
+---
+title:       "ReactOS 0.4.10 released"
+author:      "Colin Finck"
+date:        2018-11-06
+aliases:     [ "/node/69591" ]
+tags:        [ "release" ]
+banner:      "img/project-news/reactos-0410-released-thumb.png"
+
+---
+
+<p>The ReactOS project is pleased to announce the release of version 0.4.10, the latest of our quarterly cadence of releases. The project has seen an increasing emphasis on consistency and stability over the past few months, an emphasis the rapid release schedule helps reinforce to provide a better end-user experience. Even as new pieces of functionality are added, all this would be for naught if a user could not access them reliably.</p>
+
+<h2>Booting from BTRFS</h2>
+<p>The headline feature for 0.4.10 would have to be ReactOS&rsquo; ability to now boot from a BTRFS formatted drive. The work enabling this was part of this year&rsquo;s Google Summer of Code with student developer Victor Perevertkin. While the actual filesystem driver itself is from the <a href="https://github.com/maharmstone/btrfs">WinBtrfs</a> project by Mark Harmstone, much of Victor&rsquo;s work was in filling out the bits and pieces of ReactOS that the driver expected to interact with. The filesystem stack in ReactOS is arguably one of the less mature components by simple dint of there being so few open source NT filesystem drivers to test against. Those that the project uses internally have all gone through enough iterations that gaps in ReactOS are worked around. WinBtrfs on the other hand came with no such baggage to its history and instead made full use of the documented NT filesystem driver API.</p>
+
+<p>Parallel to this effort was more basic work needed to expose the option to use BTRFS in the ReactOS installer and bootloader. It is all well and good for ReactOS to have a working driver, but the user ultimately needs to have a way to put it into use. The combined effort proved fruitful indeed, and users are invited to try out BTRFS support in 0.4.10. The newness of the feature will mean there will be the inevitable bug here and there, but it can only be with the community&rsquo;s assistance in reporting them that the project can further improve.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0410_1.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0410_1.png" >}}
+
+<h2>Frontend Improvements</h2>
+<p>When someone uses ReactOS, the interface through which they do so is the shell. And underpinning the shell&rsquo;s functionality is the shell32 library, whose improvements are often directly exposed to the end user. For the past few months Katayama Hirofumi, a longtime contributor to the project, has fleshed out several new features while making improvements to other existing ones.</p>
+
+<p>For those of us whom do any significant amount of work on the command prompt, a wide range of tricks and shortcuts exist to make our lives easier. One such trick is being able to drag and drop a file or directory from the file explorer onto the command line in order to get its full path. And to complement this trick, Katayama-san has also made improvements to those of us that are steeped in the graphical shell more than the command prompt. In the past ReactOS offered only extremely limited means of interacting with things in the shell. Folders in explorer were rendered only a certain way, you could not change whether to use a single versus double click to enter them, and interacting with multiple windowed applications was clunky and more limited than one might expect. All this and more have been improved, and the following screenshot sums up that improvement far more succinctly than mere words can.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0410_2.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0410_2.png" >}}
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0410_3.gif" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0410_3.gif" >}}
+
+<p>The overall look and feel of ReactOS has also improved, or rather that of applications that run upon it. One special class of applications would be installers, of which the MSI family performs graphical rendering based on font heights. Users are likely to recall in the past a certain something just looking off when running MSI installers, just something slightly askew in how these installers appeared.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0410_4.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0410_4.png" >}}
+
+<p>As seemingly small as these features may sound, many of them are expected by a user and their absence does not go unnoticed. Indeed the greatest success ReactOS could achieve is to have a user not even have to think when they navigate the system, everything working the way they expect. Katayama-san’s work takes us further down that path, the culmination of a multitude of small steps along the way.</p>
+
+<p>Finally, the project would be remiss to not mention the contributions of other developers to the shell&rsquo;s continuing improvement. While Herm&egrave;s B&eacute;lusca-Ma&iuml;to&rsquo;s important backend work remains somewhat inscrutable to end users, fixes by Denis Malikov and Jared Smudde to deal with file copying and shortcut creation will likely be more easily appreciated as another sign that ReactOS works, as expected.</p>
+
+<h2>Stability</h2>
+<p>Stability is generally a hard thing to quantify, since it is often very subjective. Probably one thing that we can all agree on is that anything that prevents ReactOS, or applications running on it from crashing is a plus in the stability column. To that end while improvements to the memory management stack by Timo Kreuzer and Pierre Schweitzer might sound opaque and vague, they are nonetheless instrumental to ReactOS&rsquo; stability.</p>
+
+<p>Simultaneously, each time a major widely used application achieves full functionality on ReactOS, also constitutes a victory. A contribution by Stanislav Motylkov to the C Runtime library used in ReactOS now allows Git, the version control software used by this very project, to finally work correctly. A nice follow-up to the self-hosting achievement from last time around, we think many would agree.</p>
+
+<p>And of course no one is a fan of BSoDs, even if they evoke a slight sense of nostalgia. Fortunately for ReactOS&rsquo; sake, Mark Jansen was able to nail the cause of one such crash relating to the FreeType font library. Better that blue screens are consigned to our memories than be a perennial part of our daily computing experience.</p>
+
+<p>The surest metric of stability is however arguably how much of ReactOS and the desired collection of applications one wants to run actually work. For this, there as yet remains no substitute for human testing. To that end Joachim Henze has invested a tremendous amount of time, performing what amounts to continuous regression testing even before the formal process of preparing the release began. The fruit of his labors sits before you today, and while you may not see the countless number of fixes, reversions, and tweaks that were selectively filtered to produce version 0.4.10, rest assured that together they combine to provide a worthy testament to the effort that is the ReactOS Project. We hope you enjoy.</p>
+
+<h2>Other Improvements</h2>
+<p>Stanislav Motylkov did some work on correctly retrieving BIOS information. Now the blank entries in dxdiag are filled with actual values. The community helped him to gather over 1000 unique BIOS dumps to help him test the implementation.</p>
+
+{{< figure link="/sites/default/files/imagepicker/1249/reactos_0410_5.png" src="/sites/default/files/imagepicker/1249/thumbs/reactos_0410_5.png" >}}
+
+<h2>Third Party Attributions</h2>
+<p>As always, it would be remiss for the project to not provide acknowledgement of the third party bits we make use of. For this release, Amine Khaldi has synchronized the user-mode DLLs to WINE-Staging version 3.9. Furthermore as mentioned above, ReactOS&rsquo; support for BTRFS owes a debt of gratitude to the WinBTRFS project, of which Pierre has synchronized to the latest version, 1.0.2.</p>
+
+<h2>Statistics</h2>
+<p>JIRA Issues fixed (this includes both bugs and improvements) - 148<br>
+Number of commits - 660<br>
+The oldest bug fixed for 0.4.10 - <a href="https://jira.reactos.org/browse/CORE-1246">CORE-1246</a></p>
+
+<p><ul>
+  <li><a href="https://reactos.org/wiki/ChangeLog-0.4.10">The official Changelog for the 0.4.10 release</a></li>
+  <li><a href="https://reactos.org/wiki/Community_Changelog-0.4.10">The less technical Community Changelog for 0.4.10</a></li>
+  <li><a href="https://reactos.org/wiki/Tests_for_0.4.10">Application Tests for 0.4.10</a></li>
+</ul></p>
+
+<p><a href="https://github.com/reactos/reactos/tree/releases/0.4.10">0.4.10-release</a> branch was forked from <a href="https://github.com/reactos/reactos">master</a> on 2018-08-23 after 0.4.10-dev-630-gb8e98c4</p>
+
+<p><a href="https://youtu.be/4JxfyPoCl8I" target="_blank"><img src="/sites/default/files/imagepicker/1249/reactos_0410_video.jpg" alt="Image"  class="imgp_img" width="500" height="281" /></a></p>

@@ -2,7 +2,7 @@
 title:       "PITA bugs part 5"
 author:      "Z98"
 date:        2014-10-16
-aliases:     [ "node/895" ]
+aliases:     [ "/node/895" ]
 ---
 
 <p>I mentioned in my last rant about annoying bugs that I do firmware development for the LHC triggers. In addition to that however, as one of the people with experience doing low level embedded programming on the team, I can get tapped to work on a variety of other systems. Recently I was asked to update an old AVR microcontroller codebase that was written for a proprietary toolchain to use AVR-GCC. None of us were expecting this to be terribly difficult since it was believed all the update would entail was changing out macros and decorators for things like interrupts and where in memory to place data. After a few iterations I finally got a version that compiled and so I went and updated one of the boards. The program promptly went into an infinite loop rebooting itself.</p>

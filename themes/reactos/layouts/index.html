@@ -1,39 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 
-  <body>
-    {{ partial "banner.html" . }}
+<body>
+	<a class="github-fork-ribbon fixed" href="https://github.com/reactos/reactos" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
-    <div id="all">
+	<header>
+		{{ partial "nav.html" . }}
+	</header>
 
-        <header>
+	<div class="container-fluid">
+		{{ .Content }}
+		{{ partial "recent_posts.html" . }}
+		{{ partial "footer.html" . }}
+	</div>
 
-          {{ partial "top.html" . }}
-
-          {{ partial "nav.html" . }}
-
-        </header>
-
-        {{ partial "carousel.html" . }}
-
-        {{ partial "features.html" . }}
-
-        {{ partial "testimonials.html" . }}
-
-        {{ partial "see_more.html" . }}
-
-        {{ partial "recent_posts.html" . }}
-
-        {{ partial "clients.html" . }}
-
-        {{ partial "footer.html" . }}
-
-    </div>
-    <!-- /#all -->
-
-    {{ partial "scripts.html" . }}
-
-  </body>
+	{{ partial "scripts.html" . }}
+</body>
 </html>

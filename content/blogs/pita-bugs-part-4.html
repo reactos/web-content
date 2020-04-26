@@ -2,7 +2,7 @@
 title:       "PITA bugs part 4"
 author:      "Z98"
 date:        2014-06-26
-aliases:     [ "node/859" ]
+aliases:     [ "/node/859" ]
 ---
 
 <p>Most of the developers already know this, but my current job is as an engineer working on firmware and software for the trigger system of the Large Hadron Collider (yes, the thing that discovered the Higgs boson). Triggers are basically filters that take in the raw data coming out of the LHC and whittle down the noise to figure out what data is worth keeping and what can be discarded. This is something of a necessity as one of the physics professors that I spoke to mentioned the LHC generates something like a terabyte of data a second when doing collisions. The work can get fairly complicated due to our use of FPGAs to process and transfer data from the detectors. Anyone who has ever worked with FPGAs generally know that the toolchains supporting them are, flaky and not the most user friendly. Quite frankly, debugging operating systems is considerably easier than doing the same with FPGA designs since if something is busted on the FPGA and you can't find the issue in simulation, your only choice is generally to break out an oscilliscope and pray that the issue can be found by examining whatever exposed test pins your hardware has. This of course assumes that the FPGA vendor's tools are not the cause of the bugs, something that has happened to me on a fairly regular occassion.</p>

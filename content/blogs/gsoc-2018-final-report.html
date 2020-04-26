@@ -1,8 +1,9 @@
 ---
 title:       "GSoC 2018 - Final report"
 author:      "extravert34"
-date:        2018-08-14
-aliases:     [ node/69576 ]
+date:        2018-08-17
+aliases:     [ /node/69576 ]
+tags:        [ gsoc ]
 banner:      "img/blogs/gsoc2018-final-report-thumb.png"
 
 ---
@@ -10,7 +11,7 @@ banner:      "img/blogs/gsoc2018-final-report-thumb.png"
 <h2>Introduction</h2>
 <p><a href="https://github.com/maharmstone/btrfs">WinBtrfs</a> is a feature-complete IFSD (Installable File System Driver) for NT operating systems, written by Mark Harmstone. This driver is checked into the ReactOS source code for some time already. My main goal for this GSoC project was to implement all missing features (and fix bugs, of course) in ReactOS that prevents booting from BTRFS file system.</p>
 <h3>Links</h3>
-<p>All work is merged into <a href="https://github.com/Extravert-ir/reactos/tree/gsoc2018_all/">gsoc2018_all</a> branch in my ReactOS fork on GitHub. A pull-request can be found <a href="https://github.com/reactos/reactos/pull/743">here</a> and unified diff is <a href="https://patch-diff.githubusercontent.com/raw/reactos/reactos/pull/743.patch">here</a>.  You can check it out like an ordinary ReactOS repo and build it as. See official <a href="https://www.reactos.org/wiki/Building_ReactOS">Building Instructions</a> for full information.</p>
+<p>All work is merged into <a href="https://github.com/Extravert-ir/reactos/tree/gsoc2018_all/">gsoc2018_all</a> branch in my ReactOS fork on GitHub. A pull-request can be found <a href="https://github.com/reactos/reactos/pull/743">here</a> and unified diff is <a href="https://gist.github.com/Extravert-ir/593ac9fe7d467a316cb1fadfb3da9a53">here</a>.  You can check it out like an ordinary ReactOS repo and build it as. See official <a href="https://www.reactos.org/wiki/Building_ReactOS">Building Instructions</a> for full information.</p>
 <h2>What has been done</h2>
 <h3>FreeLoader BTRFS support</h3>
 <p>Basic read-only support has been implemented in the “FreeLoader” bootloader. The implementation is able to do path traversing, can handle hard and symbolic links and reads files splitted to several extents.

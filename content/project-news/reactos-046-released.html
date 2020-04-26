@@ -2,7 +2,8 @@
 title:       "ReactOS 0.4.6 released"
 author:      "vicmarcal"
 date:        2017-09-01
-aliases:     [ "node/50313" ]
+aliases:     [ "/node/50313" ]
+tags:        [ "release" ]
 ---
 
 <p>The ReactOS Project is pleased to release version 0.4.6 as a continuation of its three month cadence. </p>
@@ -16,7 +17,8 @@ aliases:     [ "node/50313" ]
  
 <p>0.4.5 introduced msstyle themes in ReactOS, allowing you to switch to something different, more modern or nostalgic if you don't like the Classical skin. In 0.4.6, and thanks again to your donations, Giannis has fixed lots of bugs in Shell32, Comctrl32 and Browseui, so now msstyle themes are fully working. <b>In 0.4.6 efforts were made to improve the user experience</b>. "Lock Taskbar", "Hide inactive icons", and "Group similar taskbar buttons" settings are properly remembered now each time you reboot ReactOS. Explorer’s taskbar is finally resizable. Tiled, centered and stretched wallpapers are correctly placed now. Explorer’s addressbar is much improved, and now works nicely with symlinks. The clipboard has gone through a massive fixup, making it more usable and reliable</p>
 
-<img src="/sites/default/files/imagepicker/14095/theming.jpg" alt="ReactOS can be themed using Msstyles"  class="imgp_img" width="724" height="282" /><div class="imgp_desc">ReactOS can be themed using Msstyles</div><br/>
+{{< figure link="/sites/default/files/imagepicker/14095/theming.jpg" caption="ReactOS can be themed using Msstyles" >}}
+
 <p>0.4.6 is much more stable now as a result of several <b>memory manager, ntoskrnl and filesystem fixes</b>. To name a few, mapping a view of the physical memory sections works now, several MM and NTOS leakages were plumbed, and NTOS:IO critical bugs were fixed. Several buffer overflows and overruns, logic issues and dead code detected by Coverity and other tools have been fixed, leading to less corruptions and leaks.</p>
 
 <p>In order to track ReactOS compatibility with Windows behavior, <b>1,088,893</b> unit test cases have been added since 0.4.5. This new release has been tested through 14,238,159 unit test cases, failing just 18,419  (a 0,129% ratio failure).  Still, ReactOS is marked as Alpha for the moment. </p>

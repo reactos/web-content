@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+	{{ partial "head.html" . }}
 
-  {{ partial "head.html" . }}
+	<body>
+		<header>
+			{{ partial "nav.html" . }}
+		</header>
 
-  <body>
-    {{ partial "banner.html" . }}
+		{{ partial "load-photoswipe.html" . }}
 
-    <div id="all">
+		<div class="container-fluid">
+			{{ partial "breadcrumbs.html" . }}
 
-        <header>
+			<section id="content" class="row">
+				<div class="col-md-10 col-md-offset-1">
+					{{ if isset .Params "id" }}
+						{{ partial .Params.id . }}
+					{{ else }}
+						{{ .Content }}
+					{{ end }}
+				</div>
+			</section>
 
-          {{ partial "nav.html" . }}
+			{{ partial "footer.html" . }}
+		</div>
 
-        </header>
-
-        {{ partial "breadcrumbs.html" . }}
-
-        <div id="content">
-            {{ if isset .Params "id" }}
-
-              {{ partial .Params.id . }}
-
-            {{ else }}
-
-            <div class="container">
-
-                <div class="row">
-
-                    <div class="col-md-12">
-
-                        <div>
-                          {{ .Content }}
-                        </div>
-
-                    </div>
-
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container -->
-
-            {{ end }}
-        </div>
-        <!-- /#content -->
-
-        {{ partial "footer.html" . }}
-
-    </div>
-    <!-- /#all -->
-
-    {{ partial "scripts.html" . }}
-
-  </body>
+		{{ partial "scripts.html" . }}
+	</body>
 </html>

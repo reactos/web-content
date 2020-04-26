@@ -1,74 +1,27 @@
-<footer id="footer">
-    <div class="container">
+<footer class="row" id="copyright">
+	<div class="col-md-offset-1 col-md-10">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-left">&copy; 1996-{{ now.Year }} ReactOS Team &amp; Contributors</div>
 
-        {{ if isset .Site.Params "about_us" }}
-        <div class="col-md-4 col-sm-6">
-            <h4>{{ i18n "aboutUs" }}</h4>
+			<div class="col-sm-3 col-md-4 col-center">
+				{{ if and (.File) (ne .Slug "footer") }}
+					<a class="footer-link" href="https://github.com/reactos/web-content/tree/master/content/{{ .File.Path }}">Improve this page</a>
+				{{ end }}
+			</div>
 
-            {{ .Site.Params.about_us | markdownify }}
+			<div class="col-sm-5 col-md-4 col-right">
+				<div class="social">
+					<a href="https://github.com/reactos" target="_blank"><i class="fa fa-github"></i></a>
+					<a class="youtube" href="https://youtube.com/c/ReactOSCommunity" target="_blank"><i class="fa fa-youtube"></i></a>
+					<a class="twitter" href="https://twitter.com/reactos" target="_blank"><i class="fa fa-twitter"></i></a>
+					<a class="vk" href="https://vk.com/reactos_ru" target="_blank"><i class="fa fa-vk"></i></a>
+					<a class="facebook" href="https://facebook.com/ReactOS-19143619259" target="_blank"><i class="fa fa-facebook"></i></a>
+				</div>
 
-            <hr class="hidden-md hidden-lg hidden-sm">
-
-        </div>
-        <!-- /.col-md-4 -->
-        {{ end }}
-
-        <div class="col-md-4 col-sm-6">
-
-            {{ if isset .Site.Params "recent_posts" }} {{ if .Site.Params.recent_posts.enable }}
-            <h4>{{ i18n "recentPosts" }}</h4>
-
-            <div class="blog-entries">
-                {{ range first 3 (where .Site.Pages "Type" "in" (slice "project-news" "blogs")) }}
-                <div class="item same-height-row clearfix">
-                    <div class="image same-height-always">
-                        <a href="{{ .Permalink }}">
-                          {{ if isset .Params "banner" }}
-                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="{{ .Title }}">
-                          {{ else }}
-                            <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="{{ .Title }}">
-                          {{ end }}
-                        </a>
-                    </div>
-                    <div class="name same-height-always">
-                        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
-                    </div>
-                </div>
-                {{ end }}
-            </div>
-
-            <hr class="hidden-md hidden-lg">
-            {{ end }} {{ end }}
-
-        </div>
-        <!-- /.col-md-4 -->
-
-    </div>
-    <!-- /.container -->
+				<div style="padding-left: 20px">
+					<a class="footer-link" href="/legal">Legal</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>
-
-<!-- /#footer -->
-
-<!-- *** FOOTER END *** -->
-
-<!-- *** COPYRIGHT ***
-_________________________________________________________ -->
-
-<div id="copyright">
-    <div class="container">
-        <div class="col-md-12">
-            {{ if isset .Site.Params "copyright" }}
-            <p class="pull-left">{{ .Site.Params.copyright | safeHTML }}</p>
-            {{ end }}
-            <p class="pull-right">
-              {{ i18n "templateBy" }} <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
-              <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
-
-              {{ i18n "portedBy" }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>
-            </p>
-        </div>
-    </div>
-</div>
-<!-- /#copyright -->
-
-<!-- *** COPYRIGHT END *** -->

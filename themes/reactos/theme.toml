@@ -4,7 +4,7 @@ licenselink = "https://github.com/devcows/hugo-universal-theme/blob/master/LICEN
 description = "A port of the Universal theme"
 homepage = "//github.com/devcows/hugo-universal-theme"
 tags = ["blog", "company", "portfolio", "projects", "minimal", "responsive"]
-features = ["blog", "themes", "disqus", "minimal", "responsive"]
+features = ["blog", "themes", "minimal", "responsive"]
 min_version = 0.15
 
 [author]

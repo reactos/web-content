@@ -2,7 +2,7 @@
 title:       "Memory Manager Development"
 author:      "Z98"
 date:        2014-09-09
-aliases:     [ "node/880" ]
+aliases:     [ "/node/880" ]
 ---
 
 <p>The legacy memory manager in ReactOS has many idiosyncrasies and architectural quirks, issues that have dogged the project for many years now. The ARM team began a rewrite, colorfully named Another Rewrite of the Memory Management Module (ARM3), that partially supplanted the old memory manager but a big chunk of responsibility still lie with it, namely in the form of MEMORY_AREA. Simply put, MEMORY_AREA was the means by which memory address ranges were tracked, tracking which is necessary for things like handling paging. Presently there are still chunks of memory whose address range is stored in MEMORY_AREA and not in ARM3's data structures. This is because at present ARM3 is not able to bring in data from physical storage, so anything that requires physical backing such as reading from the pagefile or memory mapping files would either not work or eventually cause a failure. Adding support for interacting with physical storage to ARM3 has been preoccupying Jérôme Gardou for some time now and once achieved will be a major milestone in modernizing ReactOS' core components. Note that the following assumes you have a basic understanding of how virtual memory works. There are enough references for those that I am not going to bother writing one of my own. If you need a refresher, wikipedia has a decent enough writeup.<br />

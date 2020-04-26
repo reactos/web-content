@@ -1,0 +1,53 @@
+<p> PayPal is one of the most popular ways to donate some bucks to ReactOS. Please help us to hire new devs and enhance our servers just by dropping a couple of coffees each month.</p>
+
+<div class="row">
+	<div class="col-sm-12" style="text-align-last: justify">
+		<div style="display: inline-block">
+			<div class="btn-toolbar" id="amount_buttons" style="display: inline-block;" role="toolbar" aria-label="...">
+			 	<button class="btn btn-default" data-amount="5">5 €</button>
+			 	<button class="btn btn-default active" data-amount="10">10 €</button>
+			 	<button class="btn btn-default" data-amount="15">15 €</button>
+			</div>
+			<div class="input-group" style="display: inline-block">
+				<input type="text" id="other_amount" class="form-control" style="width: 4em; display: inline"> 
+				<span class="input-group-addon" id="basic-addon2" style="line-height: inherit">€</span>
+			</div>
+		</div>
+
+		<div style="display: inline-block">
+			<div class="btn-group" data-toggle="buttons" style="vertical-align: baseline">
+				<button class="btn btn-default" id="donate_once_btn">Donate once</button>
+				<button class="btn btn-primary" id="donate_monthly_btn">Donate monthly</button>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div style="text-align-last: justify">
+	<form id="donate_once" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+		<input name="cmd" value="_donations" type="hidden">
+		<input name="item_name" value="ReactOS Donation" type="hidden">
+		<input name="currency_code" value="EUR" type="hidden">
+		<input name="business" value="deutschland@reactos.org" type="hidden">
+		<input name="lc" value="US" type="hidden">
+		<input name="amount" class="hidden_amounts" value="10" type="hidden">
+		<input name="return" value="https://reactos.org/thank-you" type="hidden">
+	</form>
+
+	<form id="donate_monthly" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+		<input name="cmd" value="_xclick-subscriptions" type="hidden">
+		<input name="item_name" value="ReactOS Monthly Donation" type="hidden">
+		<input name="currency_code" value="EUR" type="hidden">
+		<input name="business" value="deutschland@reactos.org" type="hidden">
+		<input name="lc" value="US" type="hidden">
+		<input name="src" value="1" type="hidden">
+		<input name="srt" value="52" type="hidden">
+		<input name="a3" class="hidden_amounts" value="10" type="hidden">
+		<input name="p3" value="1" type="hidden">
+		<input name="t3" value="M" type="hidden">
+		<input name="no_note" value="1" type="hidden">
+		<input name="no_shipping" value="1" type="hidden">
+		<input name="return" value="https://reactos.org/thank-you" type="hidden">
+	</form>
+</div>

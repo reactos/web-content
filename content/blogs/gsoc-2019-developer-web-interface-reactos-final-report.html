@@ -1,0 +1,62 @@
+---
+title:       "GSoC 2019 - Developer Web Interface for ReactOS (Final Report)"
+author:      "ayush_sinha"
+date:        2019-08-20
+aliases:     [ "/node/69643" ]
+tags:        [ gsoc ]
+banner:      "img/blogs/gsoc-2019-developer-web-interface-reactos-final-report-thumb.png"
+
+---
+
+<h2>Introduction</h2>
+<p>Developer Web Interface for ReactOS is a web tool to support the development of ReactOS.
+The main goal of this project is to develop a platform for ReactOS developers to easily track Commits, Builds and Test details.
+The web Interface makes API calls to various endpoints of GitHub, BuildBot and Testman API and interrelates them and renders a simplified view of Commit, Build and Test details at one place, so developers don&#39;t have to visit different sites to view different details, our web Interface collects all details and displays at one place.</p>
+
+<h2>Links</h2>
+<ul>
+    <li>The working repository can be found <a href="https://github.com/reactos/developer-web-interface/tree/GSoC_2019">here.</a></li>
+    <li>The project is deployed <a href="https://developer-interface-ros.herokuapp.com/">here</a> temporarily.</li>
+</ul>
+
+<h2>What has been done</h2>
+<ul>
+    <li>API calls to various Endpoints of GitHub API.</li>
+    <li>Filtering commits by branch.</li>
+    <li>Filtering PRs by State (closed, open, all)</li>
+    <li>API calls to BuildBot API.</li>
+    <li>API calls to Testman (reactos/web/testman/ajax-search.php)</li>
+    <li>Filtering Testman and buildbot data with respect to commits and PRs.</li>
+    <li>Rendering all data to the Client side.</li>
+    <li>Added Server side Pagination.</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>The commits can be filtered by branch and PRs can be filtered by their States(closed, open and all ).
+    At first, the screen loads and show 10 panels containing the latest commits and upon clicking the panel you get all details about the commit, build and tests.
+</p>
+
+{{< gallery >}}
+{{< figure link="/sites/default/files/imagepicker/56126/Capture11.png" caption="Commits Tab" >}}
+{{< figure link="/sites/default/files/imagepicker/56126/c4.png" caption="Expanding Each commit" >}}
+{{< figure link="/sites/default/files/imagepicker/56126/c3.png" caption="One can easily switch from commits Tab to PRs tab to get the desired information" >}}
+{{< /gallery >}}
+
+<h2>Features Yet to Implemented</h2>
+<ul>
+    <li>A Search feature to list any commit or PR</li>
+    <li>Filtering by Date, author ,etc</li>
+    <li>And UI improvements for sure</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>The web interface now shows all data related to commits, builds and tests and is ready to use.
+    It will save time developers so that they can focus on development rather than spending their time searching for commit details and finding build results around the buildbot interface.
+</p>
+
+<h2>Plans after GSoC</h2>
+<p>ReactOS had been a very supportive organisation throughout the GSoC period.
+    I would like to thank my mentors @colin Finck @extravert34 and @vicmarcal for guiding me.
+    From now onwards I&#39;ll be a regular ReactOS contributor.
+</p>
