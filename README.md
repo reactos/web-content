@@ -21,7 +21,7 @@ Website Subsystems written in PHP (such as GetBuilds, RosLogin, Testman, etc.) a
    *NOTE* - When working on the style it might be needed to use `hugo server --disableFastRender` instead. 
 
 ## Contributing
-1. Choose one of the tasks from: [METABUG - New ReactOS Website Tasks before it can go live](https://jira.reactos.org/browse/ONLINE-815)
+1. Choose an ONLINE task from ReactOS JIRA related to Hugo website:(https://jira.reactos.org/projects/ONLINE/issues/ONLINE-388?filter=allopenissues)
 2. Comment on Jira that you want to work on this feature (to prevent duplication of work).
 3. Create a pull request here.
 
