@@ -143,6 +143,7 @@ paginate = 10
 
 	logo = "/sites/default/files/ReactOS_0.png"
 	logo_small = "/sites/default/files/ReactOS_0.png"
+	og_image = "/sites/default/files/Mizu-Desktop.png"
 
 	development_banner_text = "DEVELOPMENT COPY! Visit www.reactos.org for the production website."
 
