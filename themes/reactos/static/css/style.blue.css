@@ -25,6 +25,14 @@
 	display: block !important;
 }
 
+html, body {
+	height: 100%;
+}
+
+div#main-content {
+	flex: 1 0 auto;
+}
+
 /* general styles */
 a,
 button {
@@ -578,6 +586,7 @@ fieldset[disabled] .btn-template-main.active {
 }
 
 #copyright {
+	flex-shrink: 0;
 	background: #333;
 	color: #ccc;
 	padding: 20px 0;
@@ -1006,6 +1015,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 /* scaffolding */
 body {
+	display: flex;
+	flex-direction: column;
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.42857143;

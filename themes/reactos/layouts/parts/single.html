@@ -15,18 +15,16 @@
     {{ partial "nav.html" . }}
 </header>
 
-<div class="container-fluid">
+<div class="container-fluid" id="main-content">
 
 <!-- End header template -->
+</div>
 
 {{ else if (eq .Slug "footer") }}
 
 <!-- Begin footer template -->
-
     
-    {{ partial "footer.html" . }}
-</div>
-
+{{ partial "footer.html" . }}
 {{ partial "scripts.html" . }}
 
 <!-- End footer template -->
