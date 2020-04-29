@@ -9,7 +9,7 @@
 
 		{{ partial "load-photoswipe.html" . }}
 
-		<div class="container-fluid">
+		<div class="container-fluid" id="main-content">
 			{{ partial "breadcrumbs.html" . }}
 
 			<section id="content" class="row">
@@ -21,10 +21,9 @@
 					{{ end }}
 				</div>
 			</section>
-
-			{{ partial "footer.html" . }}
 		</div>
 
+		{{ partial "footer.html" . }}
 		{{ partial "scripts.html" . }}
 	</body>
 </html>
