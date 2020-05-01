@@ -12,7 +12,7 @@ The ReactOS Build Environment (RosBE), our curated set of compilers and build to
 
 After more than 7 years of using the same and now ancient GCC 4.7.2, ReactOS is finally going to be built with the help of a modern compiler (GCC 8.4.0).
 Among other things, the new version better detects programming mistakes like improperly sized buffers, and comes with improved error messages to pinpoint such mistakes to the corresponding position in code.
-It also adds support for the latest C and C++ standards, marking a first step towards the introduction of future C++ concepts into ReactOS development.
+It also adds support for the latest C and C++ standards, marking a first step towards the introduction of modern C++ concepts into ReactOS.
 
 For the first time, all editions of the ReactOS Build Environment also come with selected versions of _Bison_ and _Flex_.
 Both tools are widely used for implementing parsers and lexers.  
@@ -38,4 +38,4 @@ And if you have never built ReactOS before, it's now the right time to get into 
 
 If you have been using Visual Studio to build ReactOS so far, don't be afraid:
 It continues to be supported as a first-class citizen next to GCC, and in fact many ReactOS developers are preferring it over GCC.
-However, the minimum required Visual Studio version to build ReactOS is also [going to be raised soon](https://github.com/reactos/reactos/pull/2658).
+However, the minimum required Visual Studio version to build ReactOS is also [going to be raised soon](https://github.com/reactos/reactos/pull/2658) to allow for modern C++.
