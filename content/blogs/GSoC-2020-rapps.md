@@ -5,7 +5,8 @@ date:        2020-05-30
 tags:        [ gsoc ]
 ---
 
-Hello, I am He Yang (@kernel.bin) from China. This year, I signed up for GSoC, and I'm very glad to be given the chance to work with ReactOS team.
+Hello, I am He Yang (@kernel.bin) from China.
+This year, I signed up for GSoC, and I'm very glad to be given the chance to work with the ReactOS team.
 
 my mentors for the project are Mark Jansen and Ioannis Adamopoulos, It's a great honor to have two mentors to guide me.
 
