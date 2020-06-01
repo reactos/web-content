@@ -28,7 +28,8 @@ I didn't realize that I would work on this project in the future so soon.
 Several months ago, I first heard about GSoC (Interestingly, again from the same friend).
 When I try to find a project corresponding with my skill, ReactOS came into my view.
 
-It's great for me because having a chance to write a part of an OS is exciting and there aren't many projects that require Win32 skills. And then I'm here!
+It's great for me because having a chance to write a part of an OS is exciting and there aren't many projects that require Win32 skills.
+And then I'm here!
 
 ## Details about the project
 
