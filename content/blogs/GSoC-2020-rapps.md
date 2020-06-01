@@ -20,7 +20,10 @@ RAPPS is used by almost everyone using ReactOS, thus making it essential to get 
 
 Less than a year ago, I first heard about ReactOS from a friend of mine when I was traveling with him.
 
-We try to install ReactOS on a VM to see what exactly is it. Unfortunately, it crashed when installing and a blue screen was shown. But anyway that's my first meet with ReactOS. I didn't realize that I would work on this project in the future so soon.
+We tried to install ReactOS on a VM to see what it is exactly.
+Unfortunately, it crashed when installing and a blue screen was shown.
+But anyway that's my first encounter with ReactOS.
+I didn't realize that I would work on this project in the future so soon.
 
 Several months ago, I first heard about GSoC (Interestingly, still from the same friend). When I try to find a project correspond with my skill, ReactOS came into my view.
 
