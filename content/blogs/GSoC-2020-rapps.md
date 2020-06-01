@@ -18,7 +18,7 @@ RAPPS is used by almost everyone using ReactOS, thus making it essential to get 
 
 *This part is not related to the work I'm going to do, just some story between me and ReactOS*
 
-Less than a year ago, I first heard about ReactOS from a friend of mine when I traveling with him.
+Less than a year ago, I first heard about ReactOS from a friend of mine when I was traveling with him.
 
 We try to install ReactOS on a VM to see what exactly is it. Unfortunately, it crashed when installing and a blue screen was shown. But anyway that's my first meet with ReactOS. I didn't realize that I would work on this project in the future so soon.
 
