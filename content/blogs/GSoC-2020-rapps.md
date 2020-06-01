@@ -11,7 +11,8 @@ This year, I signed up for GSoC, and I'm very glad to be given the chance to wor
 My mentors for the project are Mark Jansen and Ioannis Adamopoulos.
 It's a great honor to have two mentors to guide me.
 
-My project is "Application manager RAPPS". RAPPS is used by almost everyone using ReactOS, thus making it essential to get RAPPS easy-to-use, powerful and bug-free.
+My project is "Application manager RAPPS".
+RAPPS is used by almost everyone using ReactOS, thus making it essential to get RAPPS easy-to-use, powerful and bug-free.
 
 ## How I meet ReactOS and GSoC
 
