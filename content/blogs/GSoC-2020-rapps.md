@@ -33,7 +33,8 @@ And then I'm here!
 
 ## Details about the project
 
-RAPPS is a lightweight GUI utility that downloads and installs various popular apps and redistributable packages in Windows and ReactOS. Aiming at making manage software easier, especially on ReactOS.
+RAPPS is a lightweight GUI utility that downloads and installs various popular apps and redistributable packages in Windows and ReactOS.
+The goal is to make managing software easier, especially on ReactOS.
 
 Currently, RAPPS has dozens of bugs to be fixed, and some function are broken or not implemented.
 Besides, I consider the UI of RAPPS is a little bit old-fashioned (this may differ from man to man).
