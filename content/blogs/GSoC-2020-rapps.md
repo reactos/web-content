@@ -14,7 +14,7 @@ It's a great honor to have two mentors to guide me.
 My project is "Application manager RAPPS".
 RAPPS is used by almost everyone using ReactOS, thus making it essential to get RAPPS easy-to-use, powerful and bug-free.
 
-## How I meet ReactOS and GSoC
+## How I discovered ReactOS and GSoC
 
 *This part is not related to the work I'm going to do, just some story between me and ReactOS*
 
