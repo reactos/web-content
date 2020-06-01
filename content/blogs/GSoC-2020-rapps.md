@@ -25,7 +25,8 @@ Unfortunately, it crashed when installing and a blue screen was shown.
 But anyway that's my first encounter with ReactOS.
 I didn't realize that I would work on this project in the future so soon.
 
-Several months ago, I first heard about GSoC (Interestingly, still from the same friend). When I try to find a project correspond with my skill, ReactOS came into my view.
+Several months ago, I first heard about GSoC (Interestingly, again from the same friend).
+When I try to find a project corresponding with my skill, ReactOS came into my view.
 
 It's great for me because having a chance to write a part of an OS is exciting and there aren't many projects that require Win32 skills. And then I'm here!
 
