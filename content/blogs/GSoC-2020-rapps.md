@@ -42,7 +42,7 @@ What I'm going to do recently is support software snapshot view and better suppo
 
 ### Coming future plan
 
-I will also improve command-line support, and improve current download (allow download more at the same time, etc.)
+I will also improve command-line support, and improve concurrent download (allow download more at the same time, etc.)
 
 If I still have time left(which I guess I won't), I could add more features, and If you got any good idea, feel free to discuss with me!
 
