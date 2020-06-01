@@ -34,7 +34,8 @@ Currently, RAPPS has dozens of bugs to be fixed, and some function are broken or
 Besides, I consider the UI of RAPPS is a little bit old-fashioned (this may differ from man to man).
 My aim is to fix bugs as much as I can and improve RAPPS's functionality and UI.
 
-During the community bonding period, I spend some time to get me familiar with the code, I've already done some simple work now (for example, move database source URL to settings dialog, see PR 2792)
+During the community bonding period, I spent some time to get familiar with the code.
+I've already done some simple work (for example, move database source URL to settings dialog, see PR 2792)
 
 ### Current progress
 
