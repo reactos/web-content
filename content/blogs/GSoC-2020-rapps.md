@@ -30,7 +30,9 @@ It's great for me because having a chance to write a part of an OS is exciting a
 
 RAPPS is a lightweight GUI utility that downloads and installs various popular apps and redistributable packages in Windows and ReactOS. Aiming at making manage software easier, especially on ReactOS.
 
-Currently, RAPPS gots dozens of bugs to be fixed, and some function is broken or not implemented. besides, I consider the UI of RAPPS is a little bit old-fashioned (this may differ from man to man). My aim is to fix bugs as much as I can and improve RAPPS's functionality and UI.
+Currently, RAPPS has dozens of bugs to be fixed, and some function are broken or not implemented.
+Besides, I consider the UI of RAPPS is a little bit old-fashioned (this may differ from man to man).
+My aim is to fix bugs as much as I can and improve RAPPS's functionality and UI.
 
 During the community bonding period, I spend some time to get me familiar with the code, I've already done some simple work now (for example, move database source URL to settings dialog, see PR 2792)
 
