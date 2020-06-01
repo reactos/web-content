@@ -38,7 +38,8 @@ During the community bonding period, I spend some time to get me familiar with t
 
 ### Current progress
 
-What I'm going to do recently is support software snapshot view and better support for icon display. After this is done, I will refactor that list view and support display software as icon/list/detail. 
+What I'm going to do soon is support software snapshot view and better support for icon display.
+After this is done, I will refactor that list view and support display software as icon/list/detail. 
 
 ### Coming future plan
 
