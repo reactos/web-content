@@ -1,7 +1,7 @@
 ---
 title:       "Rapps Enhancement - GSoC 2020"
 author:      "kernel.bin"
-date:        2020-05-30
+date:        2020-06-04
 tags:        [ "gsoc", "gsoc-2020" ]
 ---
 
