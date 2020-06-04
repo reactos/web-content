@@ -64,6 +64,6 @@ There were many errors when I was compiling bochspwn-reloaded. Fortunately, I le
     - Change the value of `BX_SUPPORT_REPEAT_SPEEDUPS` to `0` in `config.h`
 7. Select the build solution in Visual Studio.
 
-This is how I compiled bochspwn-reloaded. Always remember change value of `BX_SUPPORT_REPEAT_SPEEDUPS` after run any `.conf.*` files to make bochspwn-reloaded work correctly.
+This is how I compiled bochspwn-reloaded. Always remember to change the value of `BX_SUPPORT_REPEAT_SPEEDUPS` after running any `.conf.*` files to make bochspwn-reloaded work correctly.
 
 I also checked source code of `memcpy` and `memmove` of ReactOS and luckily, ReactOS only uses `movsb` and `movsd` instructions to copy memory so I don't need to do any patches to make sure that taint tracking propagation works accurate. I added [a small code](https://github.com/reactos/bochspwn-reloaded/blob/master/instrumentation/windows-x86/instrument.cc#L416) to fix buffers overlap issue.
