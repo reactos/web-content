@@ -45,7 +45,7 @@ There were many errors when I was compiling bochspwn-reloaded. Fortunately, I le
 
 2. Use [vcpkg](https://github.com/microsoft/vcpkg) to install protobuf. vcpkg also integrates with Visual Studio.
 
-3. Download the latest of Bochs (currently 2.6.11), unpack it, and copy `windows-x86` instrumentation directory and third-party subdirectory into `bochs-2.6.11/instrument`.
+3. Download the latest version of Bochs (currently 2.6.11), unpack it, and copy `windows-x86` instrumentation directory and third-party subdirectory into `bochs-2.6.11/instrument`.
 
 4. Manual apply [patch.diff](https://gist.github.com/khanhnt2/823d0884066e1f4edcbaa37f1a4440bf) :D
 
