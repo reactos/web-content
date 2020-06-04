@@ -1,7 +1,7 @@
 ---
 title:       "Detect kernel information disclosure by Bochspwn-reloaded - GSoC 2020 - First week"
 author:      "khanhnt"
-date:        2020-06-03
+date:        2020-06-04
 tags:        [ "gsoc", "gsoc-2020" ]
 ---
 
