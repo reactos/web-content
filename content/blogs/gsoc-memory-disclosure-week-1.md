@@ -41,7 +41,7 @@ I think this is the most important work of my GSoC: compile bochspwn-reloaded an
 
 There were many errors when I was compiling bochspwn-reloaded. Fortunately, I learned a lot of stuff from ReactOS community to resolve errors that related to linking, macro definition,... when I have started working on ReactOS by doing contributions. So I can handle those errors. Thanks for ReactOS community :D
 
-1. Install cygwin64 (don't install `gcc` and `x86_64-w64-mingw32` compiler). We only need cygwin64 to run configuration file of Bochs which is written in bash.
+1. Install cygwin64 (don't install `gcc` and `x86_64-w64-mingw32` compiler). We only need cygwin64 to run the configuration file of Bochs which is written in bash.
 
 2. Use [vcpkg](https://github.com/microsoft/vcpkg) to install protobuf. vcpkg also integrates with Visual Studio.
 
