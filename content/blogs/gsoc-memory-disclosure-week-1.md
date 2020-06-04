@@ -9,7 +9,7 @@ tags:        [ gsoc ]
 
 Hello, I am Nguyen Trung Khanh (@khanhnt) from Vietnam and I am one of the GSoC students of ReactOS.
 
-My project is running ReactOS on [bochspwn-reloaded](https://github.com/googleprojectzero/bochspwn-reloaded) to list and fix all the bugs which were found by the tool. Additional, I have a week to implement detection of uninitialized memory use.
+My project is running ReactOS on [bochspwn-reloaded](https://github.com/googleprojectzero/bochspwn-reloaded) to list and fix all the bugs which were found by the tool. Additionally, I have a week to implement detection of uninitialized memory use.
 
 ## The first week
 
