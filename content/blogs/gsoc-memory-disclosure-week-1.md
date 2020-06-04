@@ -13,7 +13,7 @@ My project is running ReactOS on [bochspwn-reloaded](https://github.com/googlepr
 
 ## The first week
 
-Before GSoC, I did compile bochspwn-reloaded and run ReactOS on it so my work in the first week is pretty easy. I added some lines of code into bochspwn-reloaded to change its stack trace format, now it looks like windbg stack trace. This feature was added from commit [e7a912897](https://github.com/reactos/bochspwn-reloaded/commit/e7a912897aeffaa70e0bf1fd2bf590a4f65594dc).
+Before GSoC, I did compile bochspwn-reloaded and run ReactOS on it so my work in the first week is pretty easy. I added some lines of code into bochspwn-reloaded to change its stack trace format, now it looks like WinDBG stack trace. This feature was added from commit [e7a912897](https://github.com/reactos/bochspwn-reloaded/commit/e7a912897aeffaa70e0bf1fd2bf590a4f65594dc).
 
 There are 2 kinds of functions when they were compiled: inline and non-inline. Inline function is the function that has `inline` declaration keyword or template function and its assembly code will be inlined at the call of caller function. For non-inline function, caller will use `call` assembly instruction to jump to address of non-inline function.
 
