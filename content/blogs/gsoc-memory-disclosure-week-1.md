@@ -33,7 +33,7 @@ Stack trace:
  #7  0x80403da3 ((00003da3) ntoskrnl.exe!KiFastCallEntry+8c)
  ```
 
- #0 and #7 don't have source code information because they were written in assembly.
+ #0 and #7 don't have source code information because they are written in assembly.
 
 ## Before GSoC
 
