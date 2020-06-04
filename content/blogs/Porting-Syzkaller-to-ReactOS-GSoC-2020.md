@@ -2,7 +2,7 @@
 title:       "Porting Syzkaller to ReactOS - GSoC 2020"
 author:      "Freakston"
 date:        2020-05-27
-tags:        [ gsoc ]
+tags:        [ "gsoc", "gsoc-2020" ]
 ---
 
 Hey, I am Suraj K Suresh (@Freakston), one of the GSoC students of ReactOS.
