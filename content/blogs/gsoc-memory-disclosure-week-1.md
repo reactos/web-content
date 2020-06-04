@@ -47,7 +47,7 @@ There were many errors when I was compiling bochspwn-reloaded. Fortunately, I le
 
 3. Download the latest version of Bochs (currently 2.6.11), unpack it, and copy `windows-x86` instrumentation directory and third-party subdirectory into `bochs-2.6.11/instrument`.
 
-4. Manual apply [patch.diff](https://gist.github.com/khanhnt2/823d0884066e1f4edcbaa37f1a4440bf) :D
+4. Apply the [patch.diff](https://gist.github.com/khanhnt2/823d0884066e1f4edcbaa37f1a4440bf) patch manually :D
 
 5. Open CMD, run `vcvarsall.bat x64` of Visual Studio 2019 then run `Cygwin.bat` of cygwin64. Finally, run `.conf.win32-vcpp` to configure Bochs.
 
