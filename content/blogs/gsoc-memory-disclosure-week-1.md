@@ -62,7 +62,7 @@ There were many errors when I was compiling bochspwn-reloaded. Fortunately, I le
     - Add `avx.lib` and `dbghelp.lib` into `Linker -> Input -> Additional Dependencies` of bochs project.
 
     - Change the value of `BX_SUPPORT_REPEAT_SPEEDUPS` to `0` in `config.h`
-7. Select build solution in Visual Studio.
+7. Select the build solution in Visual Studio.
 
 This is how I compiled bochspwn-reloaded. Always remember change value of `BX_SUPPORT_REPEAT_SPEEDUPS` after run any `.conf.*` files to make bochspwn-reloaded work correctly.
 
