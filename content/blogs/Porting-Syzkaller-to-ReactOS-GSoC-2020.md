@@ -1,7 +1,7 @@
 ---
 title:       "Porting Syzkaller to ReactOS - GSoC 2020"
 author:      "Freakston"
-date:        2020-05-27
+date:        2020-06-04
 tags:        [ "gsoc", "gsoc-2020" ]
 ---
 
