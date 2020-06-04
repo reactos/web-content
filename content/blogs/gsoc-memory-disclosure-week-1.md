@@ -39,7 +39,7 @@ Stack trace:
 
 I think this is the most important work of my GSoC: compile bochspwn-reloaded and run ReactOS on it. I use Visual Studio 2019 instead of mingw64 to compile bochspwn-reloaded so there are some differences from its build guide.
 
-There were many errors when I was compiling bochspwn-reloaded. Fortunately, I was learned a lot of stuff from ReactOS community to resolve errors that realated to linking, macro defination,... when I have started working on ReactOS by doing contributions. So I can handle those errors. Thanks for ReactOS community :D
+There were many errors when I was compiling bochspwn-reloaded. Fortunately, I learned a lot of stuff from ReactOS community to resolve errors that related to linking, macro definition,... when I have started working on ReactOS by doing contributions. So I can handle those errors. Thanks for ReactOS community :D
 
 1. Install cygwin64 (don't install `gcc` and `x86_64-w64-mingw32` compiler). We only need cygwin64 to run configuration file of Bochs which is written in bash.
 
