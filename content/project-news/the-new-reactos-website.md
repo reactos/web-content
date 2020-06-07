@@ -18,7 +18,7 @@ We added a direct link *Improve this page* to the bottom of every page.
 
 To better understand our philosophy, let's also explain what the new ReactOS website is not.  
 It is not another clickbait site that is constantly distracting you from the actual content and tracking your every move.
-In this age of ever-eroding privacy, the new ReactOS website wants to be a counterexample on how to build a website that protects your data instead of sharing it with third parties.
+In this age of ever-eroding privacy, the new ReactOS website wants to be an example on how to build a website that protects your data instead of sharing it with third parties.
 As such, the main website works without any cookies or third-party resources, and we have taken [technical measures](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) to ensure that.
 After our cleanup, there is only a single external service left, which is used for spam prevention during account registration and wiki edits.  
 All in all, ReactOS shall be an operating system you can trust, and this also applies to our website.
