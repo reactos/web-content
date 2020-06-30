@@ -15,21 +15,21 @@ The detailed instruction on setting it up can be found [here](https://github.com
 
 ## Work-done
 
-1. Boot ReactOS with UBSan enabled(@extravert34).
+* Boot ReactOS with UBSan enabled(@extravert34).
 
 The branch which has UBSan enabled can be found in extravert34's fork of ReactOS.
 
-2. Syz-stress and Syz-executor working.
+* Syz-stress and Syz-executor working.
 
 Syz-Stress is the program responsible for generating mutated programs and syz-executor does the execution part.
 In the upcoming builds I will be working on adding Shared memory support for syz-executor.
 
-3. Initial set of kernel32 function definitions.
+* Initial set of kernel32 function definitions.
 
 Currently the main focus is Ntdll and Kernel32.
 From the next build onwards I will be adding function descriptions, mostly form Ntdll.
 
-4. Fuzz ReactOS (with around 107 definitions).
+* Fuzz ReactOS (with around 107 definitions).
 
 The results of the fuzzing were ~4 crashes (2 BSOD's and 1 freezup).
 I was not able to capture the reproducer as logging was not enabled.
@@ -38,15 +38,15 @@ A few changes were made on the ReactOS part as well, such as exporting a few NT6
 
 ## Work-left
 
-1. Setup SSH access on ReactOS.
+* Setup SSH access on ReactOS.
 
 The SSH access is needed for Syz-manager to communicate with the spawned VM's.
 
-2. Rebase the heed to current master of Google/Syzkaller.
+* Rebase the heed to current master of Google/Syzkaller.
 
 This wil enable us to add more features to the syz-executor such as support for KCOV, Shared memory. 
 
-3. Syz-manager : Automated VM spawn and fuzz.
+* Syz-manager : Automated VM spawn and fuzz.
 
 A Screenshot of Syz-stress fuzzing ReactOS.
 
