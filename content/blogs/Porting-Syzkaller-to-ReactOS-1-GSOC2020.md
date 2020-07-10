@@ -15,9 +15,9 @@ The detailed instruction on setting it up can be found [here](https://github.com
 
 ## Work-done
 
-* Boot ReactOS with UBSan enabled(@extravert34).
+* Boot ReactOS with UBSan enabled.
 
-The branch which has UBSan enabled can be found in extravert34's fork of ReactOS.
+The branch which has UBSan enabled can be found in [extravert34's fork of ReactOS](https://github.com/Extravert-ir/reactos/tree/ubsan2).
 
 * Syz-stress and Syz-executor working.
 
