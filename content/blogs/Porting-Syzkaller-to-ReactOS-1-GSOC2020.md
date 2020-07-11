@@ -42,9 +42,9 @@ A few changes were made on the ReactOS part as well, such as exporting a few NT6
 
 The SSH access is needed for Syz-manager to communicate with the spawned VM's.
 
-* Rebase the heed to current master of Google/Syzkaller.
+* Rebase the head to current master of Google/Syzkaller.
 
-This wil enable us to add more features to the syz-executor such as support for KCOV, Shared memory. 
+This will enable us to add more features to the syz-executor such as support for KCOV, Shared memory. 
 
 * Syz-manager : Automated VM spawn and fuzz.
 
