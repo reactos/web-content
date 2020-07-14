@@ -13,7 +13,7 @@ During his contract with ReactOS Deutschland e.V., Victor will primarily work on
 He plans to finally [turn scsiport into a Plug & Play aware driver](https://jira.reactos.org/browse/CORE-17132) and [fix kernel Plug & Play bugs](https://jira.reactos.org/browse/CORE-10456) in the process, thereby improving USB storage support and compatibility to Windows storage drivers.  
 If time permits, stretch goals include continuing his previous work on integrating Google's Kernel Address Sanitizers into ReactOS and [fixing booting with our APIC-enabled HAL](https://jira.reactos.org/browse/CORE-14147).
 
-This contract clearly marks a **major** milestone for the project, as your continued donations are finally enabling us to hire a developer full-time at near-market rates.  
+This contract clearly marks a **major** milestone for the project, as your [continued donations](/donate) are finally enabling us to hire a developer full-time at near-market rates.  
 And we don't want to stop at this point:
 If you have a proven track record of working on ReactOS and want to work on it full-time for a limited amount of time, don't hesitate to submit your proposal to ReactOS Deutschland e.V.
 
