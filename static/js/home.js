@@ -47,7 +47,7 @@ function updateActivity() {
 			var text = $(elem).find("title").first().text();
 			var time = timeToNow(Date.parse($(elem).find("published").first().text()));
 
-			var item = '<li>' + text + '<div class="time"><i class="fa fa-calendar-o"></i> ' + time + '</div></li>';
+			var item = '<li>' + text + '<div class="time"><i class="far fa-calendar"></i> ' + time + '</div></li>';
 			$("#jirafeed").append(item);
 		});
 	});

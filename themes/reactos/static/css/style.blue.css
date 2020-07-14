@@ -110,12 +110,17 @@ div.section {
 	display: inline-block;
 	border-radius: 12px;
 	line-height: 20px;
-	font-size: 12px;
+	font-size: 25px;
 	text-align: center;
 	vertical-align: bottom;
+	margin-right: 3px;
+	width: 35px;
 }
 #copyright .social a:hover {
 	color: #fff;
+}
+#copyright .social a:hover.discord {
+	background-color: #7f9ef4;
 }
 #copyright .social a:hover.facebook {
 	background-color: #4460ae;
