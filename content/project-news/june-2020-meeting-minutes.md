@@ -12,6 +12,7 @@ Mattermost meeting channel
 
 ## Proceedings
 Meeting started at 19:01 by Colin Finck.
+
 * Point 1: Achievements and Future Outlook
 * Point 2: GSoC 2020 Status
 * Point 3: Channel moderation
@@ -59,6 +60,7 @@ What's left is to bring the press document to Zachary for English grammar correc
 ## Point 5: Unifying our contribution guidelines and handling Pull Requests
 For the last agenda point, Victor had already created a document outlining his thoughts.
 He gave a quick recap in the meeting channel about the two basic goals he wanted to achieve:
+
 * Reduce the decision time: reject PR or not, and reduce overall review time of course
 * Do not pollute commit log with nitpicks which are not important at our development phase
 
