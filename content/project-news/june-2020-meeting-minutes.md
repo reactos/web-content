@@ -61,7 +61,7 @@ What's left is to bring the press document to Zachary for English grammar correc
 For the last agenda point, Victor had already created a document outlining his thoughts.
 He gave a quick recap in the meeting channel about the two basic goals he wanted to achieve:
 
-* Reduce the decision time: reject PR or not, and reduce overall review time of course
+* Reduce the decision time: reject PR or not, and reduce overall review time
 * Do not pollute commit log with nitpicks which are not important at our development phase
 
 Colin agreed that we simply lack manpower to handle every trivial Pull Request, and Mark wrote that having clear contribution guidelines would help in shooting down those PRs.
