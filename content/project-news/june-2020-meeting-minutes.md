@@ -1,7 +1,7 @@
 ---
 title:       "June 2020 meeting minutes"
 author:      "Harteex"
-date:        2020-07-16
+date:        2020-07-30
 tags:        [ "meeting-minutes" ]
 banner:      "img/project-news/meeting-minutes.png"
 ---
