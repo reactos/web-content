@@ -9,7 +9,7 @@ banner:      "/img/blogs/gsoc2020-rapps-stage1&2.png"
 Hi, I'm He Yang (@kernel.bin), one of the GSoC-2020 students of ReactOS.
 Two months have passed since GSoC started, and during these two months, I've made some progress on ReactOS Application Manager (RAPPS), the project I'm working on.
 
-In this blog, I will list out what I've accomplished in these two months, and what I'm planning to do recently.
+In this blog, I will list out what I've accomplished in these two months, and what I'm planning to do in the next month.
 
 ## The work I've done in Stage 1&2
 
