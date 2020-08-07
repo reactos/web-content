@@ -42,7 +42,7 @@ During stage 2, I mainly focus on improving listview and related code. This turn
 
 ## Short-term Plan
 
-listed below are the work I'm planning to do recently.
+Listed below is the work I'm planning to do next.
 
 - refactor download dialog box and code about downloading. Support concurrent download, reuse the code (```AsyncInet.cpp```) if possible.
 
