@@ -15,7 +15,7 @@ In this blog, I will list out what I've accomplished in these two months, and wh
 
 ### Stage 1
 
-During stage 1, I mainly focus on screenshot and icon support and some improvements.
+During stage 1, I mainly focused on screenshot and icon support and various small improvements.
 
 #### work done:
 - Add support for screenshots. One can specify URLs to screenshot images in rapps-db .txt file. It will be displayed at the left side of the rich-edit, automatically sized. when downloading / download failed, a placeholder will be displayed. (Currently, only the first image will be displayed).
