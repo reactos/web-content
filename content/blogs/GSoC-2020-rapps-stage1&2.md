@@ -20,7 +20,7 @@ During stage 1, I mainly focused on screenshot and icon support and various smal
 #### work done:
 - Add support for screenshots. One can specify URLs to screenshot images in rapps-db .txt file. It will be displayed at the left side of the rich-edit, automatically sized. when downloading / download failed, a placeholder will be displayed. (Currently, only the first image will be displayed).
 
-- Improve icon support. now icon can be specified in rapps-db .txt file too. (the original design have problems if some special char exists in software's name)
+- Improve icon support. Now icon can be specified in rapps-db .txt file too. (the original design had problems if some special char exists in the software name)
 
 - Some other invisible improvements (Introducing AsyncInet, path-handling improvement, and so on) and some refactoring.
 
