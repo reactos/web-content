@@ -1,7 +1,7 @@
 ---
 title:       "Rapps Enhancement stage 1 & 2 - GSoC 2020"
 author:      "kernel.bin"
-date:        2020-08-05
+date:        2020-08-08
 tags:        [ "gsoc", "gsoc-2020", "rapps" ]
 banner:      "/img/blogs/gsoc2020-rapps-stage1&2.png"
 ---
