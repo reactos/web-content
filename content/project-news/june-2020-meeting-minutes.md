@@ -55,7 +55,7 @@ Joachim was not available to report about the release itself, so Bișoc George w
 
 He reported that it's almost ready.
 Foxlet provided all the press media kit screenshots with his design.
-What's left is to bring the press document to Zachary for English grammar corrections and such.
+What's left is to bring the press document to Ziliang for English grammar corrections and such.
 
 ## Point 5: Unifying our contribution guidelines and handling Pull Requests
 For the last agenda point, Victor had already created a document outlining his thoughts.
