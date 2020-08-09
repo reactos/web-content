@@ -43,12 +43,15 @@ The corpus can be saved using the DB feature of Syz-stress.
 We have the fuzzer up and running locally. 
 The grammar needs to be added over time and currently, we have around ~110 WinAPI [calls](https://github.com/reactos/syzkaller/blob/6090e0749cb489b181fc821cf2af651fbe2fb9f5/executor/syscalls_windows.h#L8).
 
-We are currently working on :
-1. upstreaming the build of Syzkaller built for ReactOS that is based on an old commit.
-2. Fixing current master to fuzz Windows.(**Completed**, branch windows)
-3. Windows x86 support. 
-Windows branch can fuzz x64bit of Windows.
-(Tested on Windows 10)
+We are currently working on:
+
+1. Upstreaming the build of Syzkaller built for ReactOS that is based on an old commit.
+
+2. Fixing current master to fuzz Windows. (**Completed**, branch windows)
+
+3. Windows x86 support.
+
+Windows branch can fuzz x64 Windows (tested on Windows 10).
 
 # Todo
 
