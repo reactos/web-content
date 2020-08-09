@@ -28,8 +28,8 @@ In case you want to build it on your own then you can clone my [fork](https://gi
 
 3. **Syzkaller**: Syzkaller can be cloned from [ReactOS/Syzkaller](https://github.com/reactos/syzkaller).
 
-    **Note:** Checkout branch **[Reactos](https://github.com/reactos/syzkaller/tree/reactos)**. 
-    **[Windows](https://github.com/reactos/syzkaller/tree/windows)** branch is a WIP branch that runs on Windows 7 and above.
+    - **Note:** Checkout branch **[reactos](https://github.com/reactos/syzkaller/tree/reactos)**. 
+    - **[windows](https://github.com/reactos/syzkaller/tree/windows)** branch is a WIP branch that runs on Windows 7 and higher.
 
 4. **Golang**: We will be using [Golang 1.10](https://golang.org/dl/) which was the last release to support Windows XP and Windows Server 2003.
 
