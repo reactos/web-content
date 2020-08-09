@@ -1,7 +1,7 @@
 ---
 title:       "Syzkaller - Fuzzing ReactOS in 2020"
 author:      "Freakston"
-date:        2020-08-04
+date:        2020-08-09
 tags:        [ "gsoc", "gsoc-2020" ]
 ---
 
