@@ -3,7 +3,7 @@ title:       "Rapps Enhancement final report - GSoC 2020"
 author:      "kernel.bin"
 date:        2020-08-29
 tags:        [ "gsoc", "gsoc-2020", "rapps" ]
-banner:      "/img/blogs/gsoc2020-rapps-stage1&2.png"
+banner:      "/img/blogs/gsoc2020-rapps-final-report.png"
 ---
 
 Hi, I'm He Yang (@kernel.bin), one of the GSoC-2020 students of ReactOS.
@@ -12,6 +12,9 @@ How time flies, three month have passed and now GSoC is coming to an end. During
 During GSoC, I've learned a lot about coding skills and knowledge about Win32 too. It's a precious and unforgettable experience for me, I'm very grateful to my mentor for his patient teaching, and also everyone in ReactOS community who gave me help and advice.
 
 ## The work I've done in past three month
+
+This is the link to the final Pull Request containing the work done by me, you can find the code here.
+[Pull Request 3108](https://github.com/reactos/reactos/pull/3108)
 
 ### Stage 1
 
@@ -58,7 +61,7 @@ During stage 3, I mainly focused on improving command-line option for rapps, tur
 - Store settings in registery in a more human-friendly form instead of binary form.
 
 **screenshots**
-![RAPPS screenshot](/img/blogs/gsoc2020-rapps-stage1&2.png)
+![RAPPS screenshot](/img/blogs/gsoc2020-rapps-final-report.png)
 
 ## work left
 because of my limited time and ability, there's still some work left undone. Some are left by me, some are bugs/imperfection I discovered and don't have time to fix. I will list all of them here.
