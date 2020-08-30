@@ -7,7 +7,7 @@ banner:      "/img/blogs/gsoc2020-rapps-final-report.png"
 ---
 
 Hi, I'm He Yang (@kernel.bin), one of the GSoC-2020 students of ReactOS.
-How time flies, three month have passed and now GSoC is coming to an end. During last three month, I've been working on rapps, and I've made some small progress on it, improving rapps by increase it's functionality, stability, and make the code more well-organized.
+How time flies, three months have passed and now GSoC is coming to an end. During last three months, I've been working on rapps, and I've made some small progress on it, improving rapps by increasing it's functionality, stability, and make the code more well-organized.
 
 During GSoC, I've acquired a lot of coding skills and knowledge about Win32 too. It's a precious and unforgettable experience for me, I'm very grateful to my mentor for his patient teaching, and also everyone in ReactOS community who gave me help and advice.
 
@@ -71,7 +71,7 @@ because of my limited time and ability, there's still some work left undone. Som
 
 - Clicking links in richedit using left button with ```Ctrl``` pressed, should just open the browser instead of popup a menu.
 
-- Code about downloading apps need a refactor. it should reuse code in ```AsyncInet.cpp```.
+- Code about downloading apps need a refactor. It should reuse code in ```AsyncInet.cpp```.
 
 - Currently, downloaded apps will be stored all in a same folder using filename extracted from URL. (code can be found in ```loaddlg.cpp```) there are some problems with this design. 
 
@@ -79,10 +79,10 @@ because of my limited time and ability, there's still some work left undone. Som
     - Different apps should be stored in their respective folders, otherwise if filename in URL is the same, it could lead to a disaster.
     - URL can be quite long, and it may contain illegal character in it. we should make sure it's shorter than ```MAX_PATH``` and no illegal character in it.
 
-- The current code which reads INI file is really slow. That's the reason why rapps always take a long time to start. It should be improved.
+- The current code which reads INI file is really slow. That's the reason why rapps always takes a long time to start. It should be improved.
 
 - When removing installed apps from registery, if there are sub-keys, it will fail. Delete them recursively? (it will fail when we don't have access to it too, and I think in this case we should tell user about this failure)
 
-- Some icon can not be loaded and displayed correctly. More investigate required.
+- Some icons can not be loaded and displayed correctly. More investigate required.
 
-- When uninstall a program, if it requires an administrator privilege, it will fail (code can be found in ```misc.cpp```,  function ```StartProcess```)
+- When uninstalling a program, if it requires an administrator privilege, it will fail (code can be found in ```misc.cpp```,  function ```StartProcess```)
