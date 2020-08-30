@@ -75,7 +75,7 @@ Because of my limited time and ability, there is still some work left undone. So
 
 - Currently, downloaded apps will all be stored in the same folder using a filename extracted from the URL. (The code for this can be found in ```loaddlg.cpp```) there are some problems with this design:
 
-    - URL may not have a filename. for example, see twsynth.txt （probably in this case we should retrieve filename form HTTP header?)
+    - The URL may not have a filename. for example, see twsynth.txt (in this case we should probably retrieve the filename from the HTTP header?)
     - Different apps should be stored in their respective folders, otherwise if the filename in the URL is the same, it could lead to a disaster.
     - The URL can be quite long, and it may contain illegal characters. We should make sure it's shorter than ```MAX_PATH``` and has no illegal characters in it.
 
