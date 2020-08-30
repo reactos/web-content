@@ -9,7 +9,7 @@ banner:      "/img/blogs/gsoc2020-rapps-final-report.png"
 Hi, I'm He Yang (@kernel.bin), one of the GSoC-2020 students of ReactOS.
 How time flies, three months have passed and now GSoC is coming to an end. During the last three months, I've been working on rapps, and I've made some small progress on it: improving rapps by increasing it's functionality, stability, and make the code more well-organized.
 
-During GSoC, I've acquired a lot of coding skills and knowledge about Win32 too. It's a precious and unforgettable experience for me, I'm very grateful to my mentor for his patient teaching, and also everyone in ReactOS community who gave me help and advice.
+During GSoC, I've acquired a lot of coding skills and knowledge about Win32. It's a precious and unforgettable experience for me, and I'm very grateful to my mentor for his patient teaching, as well as everyone in the ReactOS community who gave me help and advice.
 
 ## The work I've done in past three month
 
