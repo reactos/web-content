@@ -29,7 +29,7 @@ During stage 1, I mainly focused on screenshot and icon support as well as vario
 
 ### Stage 2
 
-During stage 2, I mainly focused on improving listview and related code. This turned out to be a pretty big refactor, and it improved the UI a bit.
+During stage 2 I mainly focused on improving the listview and related code. This turned out to be a pretty big refactor, and it improved the UI a bit.
 
 #### work done:
 - Move ToolBar and SearchBar to AppView, and remove "settings" and "exit" button.
