@@ -44,7 +44,7 @@ During stage 2 I mainly focused on improving the listview and related code. This
 
 ### Stage 3
 
-During stage 3, I mainly focused on improving command-line option for rapps, turning rapps into a command line app in order to output to console. Some work improving settings storage are also done.
+During stage 3 I mainly focused on improving the command-line options for rapps, turning rapps into a command line app in order to output to console. Some work improving settings storage was also done.
 
 #### work done:
 
