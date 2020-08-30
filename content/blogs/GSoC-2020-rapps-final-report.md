@@ -64,7 +64,7 @@ During stage 3 I mainly focused on improving the command-line options for rapps,
 ![RAPPS screenshot](/img/blogs/gsoc2020-rapps-final-report.png)
 
 ## work left
-because of my limited time and ability, there's still some work left undone. Some are left by me, some are bugs/imperfection I discovered and don't have time to fix. I will list all of them here.
+Because of my limited time and ability, there is still some work left undone. Some is left by me, some are bugs/imperfections that I discovered and didn't have time to fix. I will list all of them here.
 
 
 - Currently, only first screenshot will be displayed. It should be displayed somewhere.
