@@ -73,7 +73,7 @@ Because of my limited time and ability, there is still some work left undone. So
 
 - Code handling the downloading of apps need a refactor. It should reuse code in ```AsyncInet.cpp```.
 
-- Currently, downloaded apps will be stored all in a same folder using filename extracted from URL. (code can be found in ```loaddlg.cpp```) there are some problems with this design. 
+- Currently, downloaded apps will all be stored in the same folder using a filename extracted from the URL. (The code for this can be found in ```loaddlg.cpp```) there are some problems with this design:
 
     - URL may not have a filename. for example, see twsynth.txt （probably in this case we should retrieve filename form HTTP header?)
     - Different apps should be stored in their respective folders, otherwise if the filename in the URL is the same, it could lead to a disaster.
