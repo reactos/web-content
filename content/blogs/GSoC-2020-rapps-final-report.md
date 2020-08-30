@@ -56,7 +56,7 @@ During stage 3 I mainly focused on improving the command-line options for rapps,
 
 - Add /find and /info command (for search and displaying software information)
 
-- some minor improvements. (Allow using ```-``` as option prefix, and so on)
+- Some minor improvements. (Allow using ```-``` as option prefix, and so on)
 
 - Store settings in registery in a more human-friendly form instead of binary form.
 
