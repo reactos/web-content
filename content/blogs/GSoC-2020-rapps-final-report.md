@@ -67,7 +67,7 @@ During stage 3 I mainly focused on improving the command-line options for rapps,
 Because of my limited time and ability, there is still some work left undone. Some is left by me, some are bugs/imperfections that I discovered and didn't have time to fix. I will list all of them here.
 
 
-- Currently, only first screenshot will be displayed. It should be displayed somewhere.
+- Currently, only first screenshot will be displayed. When there are more, they should be displayed somewhere.
 
 - Clicking links in richedit using left button with ```Ctrl``` pressed, should just open the browser instead of popup a menu.
 
