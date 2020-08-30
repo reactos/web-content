@@ -77,7 +77,7 @@ because of my limited time and ability, there's still some work left undone. Som
 
     - URL may not have a filename. for example, see twsynth.txt （probably in this case we should retrieve filename form HTTP header?)
     - Different apps should be stored in their respective folders, otherwise if the filename in the URL is the same, it could lead to a disaster.
-    - URL can be quite long, and it may contain illegal character in it. we should make sure it's shorter than ```MAX_PATH``` and no illegal character in it.
+    - The URL can be quite long, and it may contain illegal characters. We should make sure it's shorter than ```MAX_PATH``` and has no illegal characters in it.
 
 - The current code which reads INI files is really slow. That's the reason why rapps always takes a long time to start. It should be improved.
 
