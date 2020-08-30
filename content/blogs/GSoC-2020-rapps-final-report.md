@@ -38,7 +38,7 @@ During stage 2 I mainly focused on improving the listview and related code. This
 
 - Some small bugfix and improvements. 
 
-- Some other invisible improvements and some refactoring.
+- Some other invisible improvements and refactoring.
 
 ##### More detailed information about work I've done during stage 1 & 2 can be found here: [GSoC 202 RAPPS Stage 1 & 2](/blogs/gsoc-2020-rapps-stage12/)
 
