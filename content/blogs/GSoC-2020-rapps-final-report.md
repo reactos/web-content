@@ -71,7 +71,7 @@ Because of my limited time and ability, there is still some work left undone. So
 
 - Clicking links in richedit using left button with ```Ctrl``` pressed, should just open the browser instead of popup a menu.
 
-- Code about downloading apps need a refactor. It should reuse code in ```AsyncInet.cpp```.
+- Code handling the downloading of apps need a refactor. It should reuse code in ```AsyncInet.cpp```.
 
 - Currently, downloaded apps will be stored all in a same folder using filename extracted from URL. (code can be found in ```loaddlg.cpp```) there are some problems with this design. 
 
