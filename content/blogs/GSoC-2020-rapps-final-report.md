@@ -50,7 +50,7 @@ During stage 3 I mainly focused on improving the command-line options for rapps,
 
 - Using package name in command line instead of software name.
 
-- Turning rapps a command-line program. It will detach the console when it's asked to run in GUI mode （e.g. when no parameters being passed to it).
+- Turning rapps a command-line program. It will detach the console when it is asked to run in GUI mode (e.g. when no parameters are being passed to it).
 
 - Add ```/?``` command to show basic usage of rapps commandline.
 
