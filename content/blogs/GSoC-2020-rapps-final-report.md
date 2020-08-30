@@ -76,7 +76,7 @@ because of my limited time and ability, there's still some work left undone. Som
 - Currently, downloaded apps will be stored all in a same folder using filename extracted from URL. (code can be found in ```loaddlg.cpp```) there are some problems with this design. 
 
     - URL may not have a filename. for example, see twsynth.txt （probably in this case we should retrieve filename form HTTP header?)
-    - Different apps should be stored in their respective folders, otherwise if filename in URL is the same, it could lead to a disaster.
+    - Different apps should be stored in their respective folders, otherwise if the filename in the URL is the same, it could lead to a disaster.
     - URL can be quite long, and it may contain illegal character in it. we should make sure it's shorter than ```MAX_PATH``` and no illegal character in it.
 
 - The current code which reads INI files is really slow. That's the reason why rapps always takes a long time to start. It should be improved.
