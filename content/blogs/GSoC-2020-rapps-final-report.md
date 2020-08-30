@@ -83,6 +83,6 @@ because of my limited time and ability, there's still some work left undone. Som
 
 - When removing installed apps from registery, if there are sub-keys, it will fail. Delete them recursively? (it will fail when we don't have access to it too, and I think in this case we should tell user about this failure)
 
-- Some icons can not be loaded and displayed correctly. More investigate required.
+- Some icons can not be loaded and displayed correctly. More investigation required.
 
 - When uninstalling a program, if it requires administrator privilege, it will fail (the code can be found in ```misc.cpp```,  the function ```StartProcess```)
