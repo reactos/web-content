@@ -85,4 +85,4 @@ because of my limited time and ability, there's still some work left undone. Som
 
 - Some icons can not be loaded and displayed correctly. More investigate required.
 
-- When uninstalling a program, if it requires an administrator privilege, it will fail (code can be found in ```misc.cpp```,  function ```StartProcess```)
+- When uninstalling a program, if it requires administrator privilege, it will fail (the code can be found in ```misc.cpp```,  the function ```StartProcess```)
