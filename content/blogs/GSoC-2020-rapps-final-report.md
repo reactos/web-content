@@ -40,7 +40,7 @@ During stage 2 I mainly focused on improving the listview and related code. This
 
 - Some other invisible improvements and refactoring.
 
-##### More detailed information about work I've done during stage 1 & 2 can be found here: [GSoC 202 RAPPS Stage 1 & 2](/blogs/gsoc-2020-rapps-stage12/)
+##### More detailed information about work I've done during stage 1 & 2 can be found here: [GSoC 2020 RAPPS Stage 1 & 2](/blogs/gsoc-2020-rapps-stage12/)
 
 ### Stage 3
 
@@ -58,7 +58,7 @@ During stage 3 I mainly focused on improving the command-line options for rapps,
 
 - Some minor improvements. (Allow using ```-``` as option prefix, and so on)
 
-- Store settings in registery in a more human-friendly form instead of binary form.
+- Store settings in registry in a more human-friendly form instead of binary form.
 
 **screenshots**
 ![RAPPS screenshot](/img/blogs/gsoc2020-rapps-final-report.png)
@@ -81,7 +81,7 @@ Because of my limited time and ability, there is still some work left undone. So
 
 - The current code which reads INI files is really slow. That's the reason why rapps always takes a long time to start. It should be improved.
 
-- When removing installed apps from registery, if there are sub-keys, it will fail. Delete them recursively? (it will fail when we don't have access to it too, and I think in this case we should tell user about this failure)
+- When removing installed apps from registry, if there are sub-keys, it will fail. Delete them recursively? (it will fail when we don't have access to it too, and I think in this case we should tell user about this failure)
 
 - Some icons can not be loaded and displayed correctly. More investigation required.
 
