@@ -17,6 +17,7 @@ Going into the nitty-gritty technical details, Jérôme first wants to make `Cc`
 Instead of creating a cache entry for each file section (as ReactOS does right now), let's do it the other way round:
 Create an `Mm` section for each cached file and page it in when the filesystem driver requests it.
 This has several benefits:
+
 * We use less address space in `Cc`, as each file section will not create a cache entry anymore.
 * The ReactOS kernel's architecture gets closer to the Windows original, thereby improving compatibility and maintainability.
 * Simplified development in both `Mm` and `Cc`, as that step makes the kernel more modular.
