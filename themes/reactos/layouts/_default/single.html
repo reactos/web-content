@@ -15,7 +15,7 @@
 			<section id="content" class="row">
 				<div class="col-md-10 col-md-offset-1">
 					<div class="col-md-9 row" id="blog-post">
-						<p class="text-muted mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
+						<p class="text-muted mb-small text-right">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="{{ .Site.BaseURL }}author/{{ .Params.author | urlize | lower }}">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }}</p>
 
 						<div id="post-content">
 							{{ .Content }}
