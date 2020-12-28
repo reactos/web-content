@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS in 2020"
 author:      "Extravert34"
-date:        2021-12-31
+date:        2020-12-28
 ---
 
 Despite all the turbulence, we've got quite a rich year for ReactOS.
