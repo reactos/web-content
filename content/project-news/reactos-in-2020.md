@@ -14,14 +14,14 @@ The post highlights some of the changes which may be interesting to the communit
 
 Shell hasn't seen much attention recently, due to most of the work being concentrated in the kernel, but there are still some useful fixes and feature implementations.
 
-* Katayama Hirofumi MZ made a great job implementing the file system change notification feature (aka `SHChangeNotify`) in the shell. This is required for all applications monitoring the filesystem changes
-* Visual and usability improvements: "Size on disk" label in File Properties dialog, key accelerators in Open/Save dialog and many more
+* Katayama Hirofumi MZ made a great job implementing the file system change notification feature (aka `SHChangeNotify`) in the shell. This is required for all applications monitoring the filesystem changes.
+* Visual and usability improvements: "Size on disk" label in File Properties dialog, key accelerators in Open/Save dialog and many more.
 
 ## RAPPS (a GSoC project)
 
 This is one of our three GSoC projects of the year. He Yang (kernel.bin) continues on the work made by GSoC students in previous years, by improving our RAPPS application manager. This includes UI & usability enhancements, showing app screenshots and command line scripting support.
 
-![RAPPS screenshot](/img/blogs/gsoc2020-rapps-final-report.png)
+{{< figure link="/img/blogs/gsoc2020-rapps-final-report.png" src="/img/blogs/gsoc2020-rapps-final-report.png" caption="Updated ReactOS Application Manager" >}}
 
 ## Compiler and tooling upgrade
 
@@ -56,8 +56,10 @@ The current effort is aimed at better compatibility with Windows at running file
 And there are quite some achievements here: ReactOS is finally able to work with the `ntfs.sys` driver from Windows and can handle an open-source Microsoft [fastfat.sys](https://github.com/microsoft/Windows-driver-samples/tree/master/filesys/fastfat) driver for FAT filesystem.
 The work is not finished yet, but is going to be merged in 2021 for sure.
 
+{{< figure link="/img/project-news/reactos-in-2020/ms-ntfs-in-reactos.jpg" src="/img/project-news/reactos-in-2020/ms-ntfs-in-reactos.jpg" caption="NTFS driver from Windows in ReactOS. Screenshot by Oleg Dubinsky" >}}
+
 **Plug and Play subsystem improvements** A major refactoring is going on here, to make the driver compatibility more complete and improve the overall system stability.
-This already made it possible for the long-awaited ability to boot from USB media in an off-the-tree branch
+This already made it possible for the long-awaited ability to boot from USB media in an off-the-tree branch.
 
 All those changes wouldn't be possible without the donations from the community.
 A very big thanks to all of the donors!
@@ -67,21 +69,23 @@ A very big thanks to all of the donors!
 The ReactOS Command Interpreter (CMD) was recently revisited, with a series of fixes aiming at improving its command and batch files parsing rules with those from Windows' CMD.
 This effort was triggered by the recent bug report [CORE-17030](https://jira.reactos.org/browse/CORE-17030) concering the incompatibility of our CMD to parse REM commands (comments that are ignored for the purposes of batch file execution),
 and by the fact that the overall command parsing of our CMD was not completely compatible with Windows' one,
-as per evidence with the many failures encountered during testing, with the `cmd:batch` Wine unit test (see left side of the picture below).
+as per evidence with the many failures encountered during testing, with the `cmd:batch` Wine unit test.
 
-HBM decided to make ReactOS' CMD parsing rules more compatible with Windows' one, including some obscure corner cases,
+{{< figure link="/img/project-news/reactos-in-2020/cmd-tests-changes.png" src="/img/project-news/reactos-in-2020/cmd-tests-changes.png" caption="Old test results can be seen on the left" >}}
+
+Hermès Bélusca-Maïto decided to make ReactOS' CMD parsing rules more compatible with Windows' one, including some obscure corner cases,
 and to take also the opportunity to bring additional fixes to some of its commands with the aim to fix more tests.
 
 Now, more `cmd:batch` tests are passing with overall less failures. He also added new tests for the CMD parser in our own `cmd:reactos` unit test. Most of these pass OK, except for some for which some extra work is still needed.
 
-HBM has also found that some aspecss of the implementation of ReactOS' existing CMD `copy` command, as well as the execution of piped external commands, do fail in certain cases. More work will be required in these areas in the future.
+Hermès has also found that some aspecss of the implementation of ReactOS' existing CMD `copy` command, as well as the execution of piped external commands, do fail in certain cases. More work will be required in these areas in the future.
 
 ## Ports
 
 Good old i386 still remains as our main platform, but the work on porting ReactOS to other architectures slowly goes on.
 
-* AMD64: most of the code was merged to master, so now nightly builds can finally boot to the 1st stage setup screen on some hardware (Timo Kreuzer). The graphical interface still needs fixes.
-* XBOX: the Original XBOX port of ReactOS is revived, and able to boot to desktop. The work is mostly done by Stanislav Motylkov
+* AMD64: most of the code was merged to master, so now nightly builds can finally boot to the 1st stage setup screen on some hardware. The graphical interface still needs fixes. The porting is being done by Timo Kreuzer.
+* XBOX: the Original XBOX port of ReactOS is revived, and able to boot to desktop. The work is mostly done by Stanislav Motylkov.
 * PC98: Dmitry Borisov (disean) started a NEC PC-98 port of ReactOS, which is a i386 flavor but with some incompatibilities.
 
 ## Future work
