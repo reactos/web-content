@@ -5,7 +5,8 @@ date:        2020-12-28
 ---
 
 Despite all the turbulence, we've got quite a rich year for ReactOS.
-Many bugs and instabilities were resolved, many more have been introduced. This year we hired two kernel developers full-time, this happens for the first time on the project history.
+Many bugs and instabilities were resolved, many more have been introduced.
+This year we hired two kernel developers full-time, which happens for the first time in project history.
 
 The post highlights some of the changes which may be interesting to the community.
 
