@@ -21,7 +21,7 @@ The Shell doesn't receive much attention as of recent, due to the fact that most
 
 This is one of our three GSoC projects of the year. He Yang continues the work from previous GSoC years, by improving our RAPPS application manager. This includes UI & usability enhancements, showing app screenshots, command line scripting support.
 
-*picture*
+![RAPPS screenshot](/img/blogs/gsoc2020-rapps-final-report.png)
 
 ## Compiler and tooling upgrade
 
@@ -63,7 +63,17 @@ Big thanks to all of the donors!
 
 ## CMD parser improvements and polishing
 
-_changes by hbelusca_
+The ReactOS Command Interpreter (CMD) was recently revisited, with a series of fixes aiming at improving its command and batch files parsing rules with those from Windows' CMD.
+This effort was triggered by the recent bug report [CORE-17030](https://jira.reactos.org/browse/CORE-17030) concering the incompatibility of our CMD to parse REM commands (comments that are ignored for the purposes of batch file execution),
+and by the fact that the overall command parsing of our CMD was not completely compatible with Windows' one,
+as per evidence with the many failures encountered during testing, with the `cmd:batch` Wine unit test (see left side of the picture below).
+
+HBM decided to make ReactOS' CMD parsing rules more compatible with Windows' one, including some obscure corner cases,
+and to take also the opportunity to bring additional fixes to some of its commands with the aim to fix more tests.
+
+Now, more `cmd:batch` tests are passing with overall less failures. He also added new tests for the CMD parser in our own `cmd:reactos` unit test. Most of these pass OK, except for some for which some extra work is still needed.
+
+HBM has also found that some aspecss of the implementation of ReactOS' existing CMD `copy` command, as well as the execution of piped external commands, do fail in certain cases. More work will be required in these areas in the future.
 
 ## Ports
 
