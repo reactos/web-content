@@ -13,7 +13,7 @@ The post highlights some of the changes which may be interesting to the communit
 
 ## Shell changes
 
-Shell hasn't seen much attention recently, due to most of the work being concentrated in the kernel, but there are still some useful fixes and feature implementations.
+Shell hasn't seen much attention recently, due to most of the work being concentrated in the kernel, but there are still some useful fixes and feature implementations:
 
 * Katayama Hirofumi MZ made a great job implementing the file system change notification feature (aka `SHChangeNotify`) in the shell. This is required for all applications monitoring the filesystem changes.
 * Visual and usability improvements: "Size on disk" label in File Properties dialog, key accelerators in Open/Save dialog and many more.
@@ -33,7 +33,7 @@ We now have GCC 8.4 and CMake 3.17 as our defaults in the new [RosBE 2.2](https:
 The transition didn't happen without a few road bumps though, a lot of effort was put by Colin Finck to make modern CMake work on Windows Server 2003 (and thus on ReactOS, because we maintain compatibility with it).
 All the patches are freely available in our [GitHub](https://github.com/reactos/CMake/tree/cmake-3.17.2-reactos).
 
-The Clang build is now resurrected on the CI, with plans to support this compiler along with GCC and MSVC. ReactOS buils with Clang now, but still cannot boot though.
+The Clang build is now resurrected on the CI, with plans to support this compiler along with GCC and MSVC. ReactOS builds with Clang now, but still cannot boot though.
 
 A controversial decision was made to drop support of older MSVC compilers, and raise the C language standard to C99 for better cross-compiler compatibility. The deprecation brought up a big discussion over mailing lists and GitHub.
 Still, this opens a window for future C++ standard library upgrades (maybe in 2021, who knows) and the support of modern C++ in our codebase.
@@ -42,7 +42,7 @@ Still, this opens a window for future C++ standard library upgrades (maybe in 20
 
 As there are two developers working full-time in this field, there are quite some long-awaited changes:
 
-**Merge of the PnP storage stack** The new storage stack, derived from [open-source Microsoft drivers](https://github.com/microsoft/Windows-driver-samples/tree/master/storage/class) came to replace the old NT4-compatible ReactOS storage stack.
+**Merge of the PnP storage stack.** The new storage stack, derived from [open-source Microsoft drivers](https://github.com/microsoft/Windows-driver-samples/tree/master/storage/class) came to replace the old NT4-compatible ReactOS storage stack.
 For a long time many workarounds were applied to make the NT4 storage stack work in the NT5.2 environment.
 This era ends now, with a major step forward in compatibility with modern Windows, along with new features:
 
@@ -51,9 +51,9 @@ This era ends now, with a major step forward in compatibility with modern Window
 * USB drive mount and dismount on-the-go.
 * Special SSD commands, Blu-ray disks, > 2TiB drives and many more.
 
-**Kernel-mode Driver Framework support** As a part of the storage stack switch, the [KMDF](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/) was ported to ReactOS allowing more drivers to potentially be used in the OS. The port is not complete yet, but already allows to use some drivers.
+**Kernel-mode Driver Framework support.** As a part of the storage stack switch, the [KMDF](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/) was ported to ReactOS allowing more drivers to potentially be used in the OS. The port is not complete yet, but already allows to use some drivers.
 
-**Memory manager/Common cache subsystems improvements** This is done by Jérôme Gardou, in parallel with the PnP and storage work by Victor Perevertkin.
+**Memory manager/Common cache subsystems improvements.** This is done by Jérôme Gardou, in parallel with the PnP and storage work by Victor Perevertkin.
 These two subsystems (CC and MM) break records by both the amount of time spent and by the amount of people who worked on them.
 The current effort is aimed at better compatibility with Windows at running filesystem drivers.
 And there are quite some achievements here: ReactOS is finally able to work with the `ntfs.sys` driver from Windows and can handle an open-source Microsoft [fastfat.sys](https://github.com/microsoft/Windows-driver-samples/tree/master/filesys/fastfat) driver for FAT filesystem.
@@ -63,7 +63,7 @@ The work is not finished yet, but is going to be merged in 2021 for sure.
 {{< figure link="/img/project-news/reactos-in-2020/ms-ntfs-in-reactos.jpg" src="/img/project-news/reactos-in-2020/ms-ntfs-in-reactos.jpg" caption="NTFS driver from Windows in ReactOS. Screenshot by Oleg Dubinsky" >}}
 {{< /gallery >}}
 
-**Plug and Play subsystem improvements** A major refactoring is going on here, to make the driver compatibility more complete and improve the overall system stability.
+**Plug and Play subsystem improvements.** A major refactoring is going on here, to make the driver compatibility more complete and improve the overall system stability.
 This already made it possible for the long-awaited ability to boot from USB media in an off-the-tree branch.
 
 All those changes wouldn't be possible without the donations from the community.
@@ -83,15 +83,15 @@ and to take also the opportunity to bring additional fixes to some of its comman
 
 Now, more `cmd:batch` tests are passing with overall less failures. He also added new tests for the CMD parser in our own `cmd:reactos` unit test. Most of these pass OK, except for some for which some extra work is still needed.
 
-Hermès has also found that some aspecss of the implementation of ReactOS' existing CMD `copy` command, as well as the execution of piped external commands, do fail in certain cases. More work will be required in these areas in the future.
+Hermès has also found that some aspects of the implementation of ReactOS' existing CMD `copy` command, as well as the execution of piped external commands, do fail in certain cases. More work will be required in these areas in the future.
 
 ## Ports
 
-Good old i386 still remains as our main platform, but the work on porting ReactOS to other architectures slowly goes on.
+Good old i386 still remains as our main platform, but the work on porting ReactOS to other architectures slowly goes on:
 
 * AMD64: most of the code was merged to master, so now nightly builds can finally boot to the 1st stage setup screen on some hardware. The graphical interface still needs fixes. The porting is being done by Timo Kreuzer.
 * XBOX: the Original XBOX port of ReactOS is revived, and able to boot to desktop. The work is mostly done by Stanislav Motylkov.
-* PC98: Dmitry Borisov (disean) started a NEC PC-98 port of ReactOS, which is a i386 flavor but with some incompatibilities.
+* PC98: Dmitry Borisov (disean) started a [NEC PC-98](https://en.wikipedia.org/wiki/PC-9800_series) port of ReactOS, which is a i386 flavor but with some incompatibilities.
 
 {{< gallery >}}
 {{< figure link="/img/project-news/reactos-in-2020/reactos-xbox.jpg" caption="ReactOS running on a real Xbox Original" >}}
