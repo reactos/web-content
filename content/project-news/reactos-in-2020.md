@@ -2,7 +2,7 @@
 title:       "ReactOS in 2020"
 author:      "Extravert34"
 date:        2021-01-02
-banner:      "/static/img/project-news/reactos-in-2020/thumb.png"
+banner:      "/img/project-news/reactos-in-2020/thumb.png"
 ---
 
 Despite all the turbulence, it has been quite a productive year for ReactOS.
@@ -90,8 +90,8 @@ Good old i386 still remains as our main platform, but the work on porting ReactO
 * PC98: Dmitry Borisov (disean) started a NEC PC-98 port of ReactOS, which is a i386 flavor but with some incompatibilities.
 
 {{< gallery >}}
-{{< figure link="/static/img/project-news/reactos-in-2020/reactos-xbox.jpg" caption="ReactOS running on a real Xbox Original" >}}
-{{< figure link="/static/img/project-news/reactos-in-2020/reactos-pc98.png" caption="ReactOS running inside a PC-98 emulator" >}}
+{{< figure link="/img/project-news/reactos-in-2020/reactos-xbox.jpg" caption="ReactOS running on a real Xbox Original" >}}
+{{< figure link="/img/project-news/reactos-in-2020/reactos-pc98.png" caption="ReactOS running inside a PC-98 emulator" >}}
 {{< /gallery >}}
 
 ## Future work
