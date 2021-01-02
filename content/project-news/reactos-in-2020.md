@@ -30,12 +30,12 @@ This is one of our three GSoC projects of the year. He Yang (kernel.bin) continu
 
 The aging RosBE 2.1 toolset has served us well since 2013, but it's time to move on and incorporate all the useful features implemented in modern compilers and build tools.
 We now have GCC 8.4 and CMake 3.17 as our defaults in the new [RosBE 2.2](https://reactos.org/wiki/Build_Environment), while maintaining compatibility with the latest CMake.
-The transition didn't happen without a few road bumps though, a lot of effort was put by Colin Finck to make modern CMake work on Windows Server 2003 (and thus on ReactOS, because we maintain compatibility with it).
+The transition didn't happen without a few road bumps though, a lot of effort was put in by Colin Finck to make modern CMake work on Windows Server 2003 (and thus on ReactOS, because we maintain compatibility with it).
 All the patches are freely available in our [GitHub](https://github.com/reactos/CMake/tree/cmake-3.17.2-reactos).
 
 The Clang build is now resurrected on the CI, with plans to support this compiler along with GCC and MSVC. ReactOS builds with Clang now, but still cannot boot though.
 
-A controversial decision was made to drop support of older MSVC compilers, and raise the C language standard to C99 for better cross-compiler compatibility. The deprecation brought up a big discussion over mailing lists and GitHub.
+A controversial decision was made to drop support of older MSVC compilers, and raise the C language standard to C99 for better cross-compiler compatibility. The planned deprecation brought up a big discussion over on the mailing list and GitHub.
 Still, this opens a window for future C++ standard library upgrades (maybe in 2021, who knows) and the support of modern C++ in our codebase.
 
 ## Kernel and drivers
