@@ -20,10 +20,10 @@ Shell hasn't seen much attention recently, due to most of the work being concent
 
 ## RAPPS (a GSoC project)
 
-This is one of our three GSoC projects of the year. He Yang (kernel.bin) continues on the work made by GSoC students in previous years, by improving our RAPPS application manager. This includes UI & usability enhancements, showing app screenshots and command line scripting support.
+This is one of our three GSoC projects of the year. He Yang (kernel.bin) continues on the work made by GSoC students in previous years, by improving our RAPPS applications manager. This includes UI & usability enhancements, showing app screenshots and command line scripting support.
 
 {{< gallery >}}
-{{< figure link="/img/blogs/gsoc2020-rapps-final-report.png" src="/img/blogs/gsoc2020-rapps-final-report.png" caption="Updated ReactOS Application Manager" >}}
+{{< figure link="/img/blogs/gsoc2020-rapps-final-report.png" src="/img/blogs/gsoc2020-rapps-final-report.png" caption="Updated ReactOS Applications Manager" >}}
 {{< /gallery >}}
 
 ## Compiler and tooling upgrade
