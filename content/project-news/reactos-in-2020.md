@@ -98,6 +98,23 @@ Good old i386 still remains as our main platform, but the work on porting ReactO
 {{< figure link="/img/project-news/reactos-in-2020/reactos-pc98.png" caption="ReactOS running inside a PC-98 emulator" >}}
 {{< /gallery >}}
 
+## Polishing old Releases
+ 
+Due to the mentioned turbulences and the current 0.4.14RC being delayed longer than actually planned, Joachim Henze used the time to further improve the quality of older ReactOS releases, focusing mainly on further reducing the regression count.<br>
+
+The changelog of his work can be seen here for each release branch:<br>
+0.4.14-RC-58-g3461c59 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.14) (unreleased yet, still in Release-Candidate-phase)<br>
+0.4.13-release-1-g2ac9d98 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.13) (still almost unaltered, improvement-phase starts after 0.4.14 will have been released)<br>
+0.4.12-release-24-g4572c75 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.12)<br>
+0.4.11-release-40-gf32c82e [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.11)<br>
+0.4.10-release-49-gde68701 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.10)<br>
+0.4.9-release-56-g9be0765 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.9)<br>
+0.4.8-release-63-g1e9d797 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.8)<br>
+0.4.7-release-75-g5f0c98f [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.7)<br>
+
+In sum 318commits to date! So there is still a lot improvement for you to explore!
+You can download the isos at https://sourceforge.net/projects/reactos/files/ReactOS/
+
 ## Future work
 
 Several areas are being worked on currently, and will be continued in 2021. This includes:
