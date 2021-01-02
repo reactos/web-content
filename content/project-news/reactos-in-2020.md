@@ -22,7 +22,9 @@ Shell hasn't seen much attention recently, due to most of the work being concent
 
 This is one of our three GSoC projects of the year. He Yang (kernel.bin) continues on the work made by GSoC students in previous years, by improving our RAPPS application manager. This includes UI & usability enhancements, showing app screenshots and command line scripting support.
 
+{{< gallery >}}
 {{< figure link="/img/blogs/gsoc2020-rapps-final-report.png" src="/img/blogs/gsoc2020-rapps-final-report.png" caption="Updated ReactOS Application Manager" >}}
+{{< /gallery >}}
 
 ## Compiler and tooling upgrade
 
@@ -57,7 +59,9 @@ The current effort is aimed at better compatibility with Windows at running file
 And there are quite some achievements here: ReactOS is finally able to work with the `ntfs.sys` driver from Windows and can handle an open-source Microsoft [fastfat.sys](https://github.com/microsoft/Windows-driver-samples/tree/master/filesys/fastfat) driver for FAT filesystem.
 The work is not finished yet, but is going to be merged in 2021 for sure.
 
+{{< gallery >}}
 {{< figure link="/img/project-news/reactos-in-2020/ms-ntfs-in-reactos.jpg" src="/img/project-news/reactos-in-2020/ms-ntfs-in-reactos.jpg" caption="NTFS driver from Windows in ReactOS. Screenshot by Oleg Dubinsky" >}}
+{{< /gallery >}}
 
 **Plug and Play subsystem improvements** A major refactoring is going on here, to make the driver compatibility more complete and improve the overall system stability.
 This already made it possible for the long-awaited ability to boot from USB media in an off-the-tree branch.
