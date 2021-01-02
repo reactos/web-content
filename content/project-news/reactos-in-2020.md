@@ -113,7 +113,7 @@ The changelog of his work can be seen here for each release branch:<br>
 0.4.7-release-75-g5f0c98f [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.7)<br>
 
 In sum 318commits to date! So there is still a lot improvement for you to explore!
-You can download the isos at https://sourceforge.net/projects/reactos/files/ReactOS/
+You can download the ISOs at https://sourceforge.net/projects/reactos/files/ReactOS/
 
 ## Future work
 
