@@ -30,12 +30,12 @@ This is one of our three GSoC projects of the year. He Yang (kernel.bin) continu
 
 The aging RosBE 2.1 toolset has served us well since 2013, but it's time to move on and incorporate all the useful features implemented in modern compilers and build tools.
 We now have GCC 8.4 and CMake 3.17 as our defaults in the new [RosBE 2.2](https://reactos.org/wiki/Build_Environment), while maintaining compatibility with the latest CMake.
-The transition didn't happen without a few road bumps though, a lot of effort was put by Colin Finck to make modern CMake work on Windows Server 2003 (and thus on ReactOS, because we maintain compatibility with it).
+The transition didn't happen without a few road bumps though, a lot of effort was put in by Colin Finck to make modern CMake work on Windows Server 2003 (and thus on ReactOS, because we maintain compatibility with it).
 All the patches are freely available in our [GitHub](https://github.com/reactos/CMake/tree/cmake-3.17.2-reactos).
 
 The Clang build is now resurrected on the CI, with plans to support this compiler along with GCC and MSVC. ReactOS builds with Clang now, but still cannot boot though.
 
-A controversial decision was made to drop support of older MSVC compilers, and raise the C language standard to C99 for better cross-compiler compatibility. The deprecation brought up a big discussion over mailing lists and GitHub.
+A controversial decision was made to drop support of older MSVC compilers, and raise the C language standard to C99 for better cross-compiler compatibility. The planned deprecation brought up a big discussion over on the mailing list and GitHub.
 Still, this opens a window for future C++ standard library upgrades (maybe in 2021, who knows) and the support of modern C++ in our codebase.
 
 ## Kernel and drivers
@@ -97,6 +97,24 @@ Good old i386 still remains as our main platform, but the work on porting ReactO
 {{< figure link="/img/project-news/reactos-in-2020/reactos-xbox.jpg" caption="ReactOS running on a real Original Xbox" >}}
 {{< figure link="/img/project-news/reactos-in-2020/reactos-pc98.png" caption="ReactOS running inside a PC-98 emulator" >}}
 {{< /gallery >}}
+
+## Polishing old Releases
+ 
+Due to the mentioned turbulences and the current 0.4.14-RC being delayed longer than actually planned, Joachim Henze used the time to further improve the quality of older ReactOS releases, focusing mainly on further reducing the regression count.
+
+The changelog of his work can be seen here for each release branch:
+
+- 0.4.14-RC-58-g3461c59 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.14) (unreleased yet, still in Release-Candidate-phase)
+- 0.4.13-release-1-g2ac9d98 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.13) (still almost unaltered, improvement-phase starts after 0.4.14 will have been released)
+- 0.4.12-release-24-g4572c75 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.12)
+- 0.4.11-release-40-gf32c82e [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.11)
+- 0.4.10-release-49-gde68701 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.10)
+- 0.4.9-release-56-g9be0765 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.9)
+- 0.4.8-release-63-g1e9d797 [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.8)
+- 0.4.7-release-75-g5f0c98f [Changelog](https://git.reactos.org/?p=reactos.git;a=shortlog;h=refs/heads/releases/0.4.7)
+
+In sum 318 commits to date! So there is still a lot improvement for you to explore!
+You can download the ISOs at https://sourceforge.net/projects/reactos/files/ReactOS/
 
 ## Future work
 
