@@ -20,10 +20,10 @@ Shell hasn't seen much attention recently, due to most of the work being concent
 
 ## RAPPS (a GSoC project)
 
-This is one of our three GSoC projects of the year. He Yang (kernel.bin) continues on the work made by GSoC students in previous years, by improving our RAPPS application manager. This includes UI & usability enhancements, showing app screenshots and command line scripting support.
+This is one of our three GSoC projects of the year. He Yang (kernel.bin) continues on the work made by GSoC students in previous years, by improving our RAPPS applications manager. This includes UI & usability enhancements, showing app screenshots and command line scripting support.
 
 {{< gallery >}}
-{{< figure link="/img/blogs/gsoc2020-rapps-final-report.png" src="/img/blogs/gsoc2020-rapps-final-report.png" caption="Updated ReactOS Application Manager" >}}
+{{< figure link="/img/blogs/gsoc2020-rapps-final-report.png" src="/img/blogs/gsoc2020-rapps-final-report.png" caption="Updated ReactOS Applications Manager" >}}
 {{< /gallery >}}
 
 ## Compiler and tooling upgrade
@@ -94,7 +94,7 @@ Good old i386 still remains as our main platform, but the work on porting ReactO
 * PC98: Dmitry Borisov (disean) started a [NEC PC-98](https://en.wikipedia.org/wiki/PC-9800_series) port of ReactOS, which is a i386 flavor but with some incompatibilities.
 
 {{< gallery >}}
-{{< figure link="/img/project-news/reactos-in-2020/reactos-xbox.jpg" caption="ReactOS running on a real Xbox Original" >}}
+{{< figure link="/img/project-news/reactos-in-2020/reactos-xbox.jpg" caption="ReactOS running on a real Original Xbox" >}}
 {{< figure link="/img/project-news/reactos-in-2020/reactos-pc98.png" caption="ReactOS running inside a PC-98 emulator" >}}
 {{< /gallery >}}
 
