@@ -6,7 +6,7 @@ tags:        [ newsletter ]
 ---
 
 Hello ReactOS followers!
-This is an attempt to restore the tradition of recurring newsletters covering our recent development efforts.
+This is an attempt to re-instate the Newsletter, which informed you about recent developments.
 The previous [Newsletter 99](/blogs/newsletter-99) was in 2013!
 
 This month we were mostly focused on the kernel work, merging pull requests and fixing regressions.
