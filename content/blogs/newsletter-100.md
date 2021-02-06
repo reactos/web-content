@@ -17,6 +17,7 @@ Being in development for almost half a year, this work by Jérôme Gardou finall
 This change refactors many aspects of Section Objects feature in NT-compatible kernel, making it more compatible with Windows.
 
 Here are notable changes from the user perspective:
+
 * A long-standing bug preventing to start executables from remote locations is fixed ([CORE-10038](https://jira.reactos.org/browse/CORE-10038)).
 * Open source Microsoft FAT filesystem driver is enabled by default now.
 * Better compatibility with FS drivers in general, `ntfs.sys` and `exfat.sys` drivers from Windows are now close to working state in ReactOS.
@@ -32,6 +33,7 @@ Hervé Poussineau fixed most of the places preventing the compilation with GCC, 
 Tests show that our homegrown NTFS driver is capable to boot ReactOS (with experimental features enabled),
 and `ntfs.sys` driver from Windows is also close to working state. So it's the right time for working on a bootloader for this filesystem.
 The Freeloader already supports working with NTFS, only the VBR bootsector part is missing.
+
 Sylvain Deverre started to work on the support in a [pull request](https://github.com/reactos/reactos/pull/3416).
 We need more people to test different configurations with this VBR, testers and contributors are welcome!
 
