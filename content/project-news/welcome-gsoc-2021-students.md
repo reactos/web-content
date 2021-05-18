@@ -13,11 +13,11 @@ Implementing that feature will benefit software depending on it.
 Examples include installers that need to perform certain cleanup and completion tasks after the first reboot.  
 He Yang will be mentored by George Bișoc and Hermès Bélusca.
 
-**The\_DarkFire\_** has already impressed us with his [ReactOS live coding sessions](https://www.twitch.tv/the_darkfire_) prior to GSoC and proposed to complete his work on Symmetric Multiprocessing (SMP).
+**Justin Miller** has already impressed us with his [ReactOS live coding sessions](https://www.twitch.tv/the_darkfire_) prior to GSoC and proposed to complete his work on Symmetric Multiprocessing (SMP).
 An SMP-aware Hardware Abstraction Layer (HAL) enables ReactOS to use more than a single processor core, greatly enhancing its usability on modern hardware.
 Once completed, we also expect this work to trigger a lot of concurrency bugs still hidden in ReactOS.
 Hence, finding and fixing these bugs will also improve the overall experience even for single-core machines.  
-The\_DarkFire\_ will be mentored by Victor Perevertkin and Jérôme Gardou.
+Justin Miller will be mentored by Victor Perevertkin and Jérôme Gardou.
 
 These two proposals, their detailed milestones, and the accompanying prior work really stood out from the crowd, which is why we have chosen them this year.
 While the ReactOS Project used to accept many more students in the past, it was emphasized on one of the GSoC Mentor Summits to "not accept OK proposals".
