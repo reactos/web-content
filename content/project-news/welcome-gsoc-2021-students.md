@@ -2,6 +2,8 @@
 title:       "Welcome GSoC 2021 Students!"
 author:      "Colin Finck"
 date:        2021-05-18
+tags:        [ "gsoc", "gsoc-2021" ]
+banner:      "img/project-news/google-summer-code-thumb.png"
 ---
 
 Another year, another round of Google Summer of Code!
