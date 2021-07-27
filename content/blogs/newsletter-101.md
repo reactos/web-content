@@ -29,8 +29,8 @@ were successfully [fixed](https://github.com/reactos/reactos/pull/3672).
 
 ## IsaPnP
 Dmitry Borisov (disean) [made](https://github.com/reactos/reactos/pull/3467) a massive improvement to our ISA bus driver (isapnp.sys),
-which opens the possibility to use older PnP ISA hardware like sound cards and networking adapters. Those are now detected
-properly and can be used in the system when an appropriate driver is installed.
+which opens the possibility to use older PnP ISA hardware like sound cards and networking adapters.
+Those are now detected properly and can be used in the system when an appropriate driver is installed.
 
 {{< figure link="/img/blogs/newsletter-101/isapnp.png" src="/img/blogs/newsletter-101/isapnp.png" >}}
 
