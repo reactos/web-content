@@ -56,8 +56,7 @@ So far only a wallpaper is displayed on a secondary ones, so the work is in prog
 
 ## Other highlights
 
-- Jérôme Gardou continues his paid contract on improving memory manager (MM) stability. MM bugs for amd64 architecture have been fixed
-  so had many other issues not tied to the platform.
+- Jérôme Gardou continues his paid contract on improving memory manager (MM) stability. MM bugs for amd64 architecture have been fixed, and many other issues not tied to the platform.
 - Various fixes have been done around user and kernel mode PnP subsystem for better driver compatibility. (Victor Perevertkin and Eric Kohl)
 - George Bișoc steadily improves our Security (SE) kernel subsystem for better applications compatibility.
 
