@@ -1,7 +1,7 @@
 ---
 title:       "Newsletter 101 - July 2021 news"
 author:      "Extravert34"
-date:        2021-07-30
+date:        2021-07-26
 tags:        [ newsletter ]
 ---
 
