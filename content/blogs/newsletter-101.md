@@ -49,8 +49,8 @@ The Input Method Manager library (imm32.dll) backs the support for all language-
 Katayama Hirofumi MZ (katahiromz) has started a rewrite of the imm32.dll to improve the Japanese language support. The work can be seen on [GitHub](https://github.com/reactos/reactos/commits/master/dll/win32/imm32/)
 
 ## Multiple monitors support
-Hervé Poussineau (hpoussin) started improving the videoprt.sys driver so it supports displaying an image on multiple monitors. So far only a walpaper
-is displayed on a secondary ones, so the work is in progress.
+Hervé Poussineau (hpoussin) started improving the videoprt.sys driver so it supports displaying an image on multiple monitors.
+So far only a wallpaper is displayed on a secondary ones, so the work is in progress.
 
 {{< figure link="/img/blogs/newsletter-101/multiple-monitors.jpg" src="/img/blogs/newsletter-101/multiple-monitors.jpg" >}}
 
