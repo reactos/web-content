@@ -10,8 +10,7 @@ And we definitely have some things to highlight!
 
 ## amd64 build is getting more stable
 Timo Kreuzer (tkreuzer) worked hard on various parts of the kernel and HAL, fixing issues here and there.
-Structured Exception Handling (SEH) support for the amd64 architecture was finished, various bugs
-around the kernel are fixed.
+Structured Exception Handling (SEH) support for the amd64 architecture was finished, various bugs around the kernel are fixed.
 A major issue with interrupt handling in HAL was also fixed in May, which finally allowed a semi-stable boot
 in virtual environment.
 
