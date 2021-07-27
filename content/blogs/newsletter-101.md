@@ -14,9 +14,9 @@ Structured Exception Handling (SEH) support for the amd64 architecture was finis
 A major issue with interrupt handling in HAL was also fixed in May, which finally allowed a semi-stable boot in a virtual environment.
 
 ## i686 APIC HAL now works
-ReactOS historically uses a legacy HAL on i686 architecture, which works with good old Intel 8259 PIC's interfaces
-for interrupt handling. This works in a single CPU environment, but for multiprocessor support, a more modern APIC
-interrupt handling is required. Timo Kreuzer also made a great job here reviving an old code for APIC support.
+ReactOS historically uses a legacy HAL on i686 architecture, which works with good old Intel 8259 PIC's interfaces for interrupt handling.
+This works in a single CPU environment, but for multiprocessor support, a more modern APIC interrupt handling is required.
+Timo Kreuzer also did a great job here reviving old code for APIC support.
 APIC HAL can be installed now by choosing the corresponding menu entry in the installer.
 
 ## SMP GSoC project
