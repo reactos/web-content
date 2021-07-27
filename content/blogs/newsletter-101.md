@@ -35,8 +35,8 @@ properly and can be used in the system when an appropriate driver is installed.
 {{< figure link="/img/blogs/newsletter-101/isapnp.png" src="/img/blogs/newsletter-101/isapnp.png" >}}
 
 ## Sanitizers & Clang build
-Jérôme Gardou finally fixed building ReactOS with the Clang compiler and such a build was added to our GitHub CI. The build is not able to
-boot yet but the project can already benefit from additional static analysis capabilities of LLVM infrastructure.
+Jérôme Gardou finally fixed building ReactOS with the Clang compiler and such a build was added to our GitHub CI.
+The build is not able to boot yet but the project can already benefit from additional static analysis capabilities of LLVM infrastructure.
 
 Victor Perevertkin (extravert34) revived his Google Sanitizers [branch](https://github.com/reactos/reactos/pull/2527) which is going to benefit
 from the Clang support even more and greatly improve the developer experience.
