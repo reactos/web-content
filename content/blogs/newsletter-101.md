@@ -21,8 +21,10 @@ APIC HAL can be installed now by choosing the corresponding menu entry in the in
 
 ## SMP GSoC project
 While preparing for the project, Jérôme Gardou (zefklop) and Thomas Faber (thfabba) were testing the kernel build in SMP mode,
-but running on a VM with only one CPU assigned. Default single-CPU build of ReactOS removes some code which is not neccessary for an
-execution on such machines. Such SMP build revealed issues in kernel locking primitives and bugs in some drivers, which
+but running on a VM with only one CPU assigned.
+Default single-CPU build of ReactOS removes some code which is not neccessary for an
+execution on such machines.
+Such SMP build revealed issues in kernel locking primitives and bugs in some drivers, which
 were successfully [fixed](https://github.com/reactos/reactos/pull/3672).
 
 // Justin, put some info about your project here
