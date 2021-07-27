@@ -6,7 +6,7 @@ tags:        [ newsletter ]
 ---
 
 Hello ReactOS followers! This report covers changes in the project during February-July 2021.
-And definitely have some things to highlight!
+And we definitely have some things to highlight!
 
 ## amd64 build is getting more stable
 Timo Kreuzer (tkreuzer) worked hard on various parts of the kernel and HAL fixing issues here and there.
