@@ -91,10 +91,9 @@ So far only a wallpaper is displayed on the secondary monitors, but expect more 
 - Various fixes have been done around user and kernel mode PnP subsystem for better driver compatibility. (Victor Perevertkin and Eric Kohl)
 - George Bișoc steadily improves our Security (`Se`) kernel subsystem for better application compatibility.
 
+
+Follow our Twitter (@reactos)[https://twitter.com/reactos] for receiving project news as soon as possible.
+
 ## Expanding Matrix presence
 
 We are expanding our presence in the Matrix universe and created a dedicated Space for the project. Join the discussion in our Matrix Space [#reactos:reactos.org](https://matrix.to/#/#reactos:reactos.org?via=reactos.org).
-
-
-
- 
