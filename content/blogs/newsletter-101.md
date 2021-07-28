@@ -92,7 +92,7 @@ So far only a wallpaper is displayed on the secondary monitors, but expect more 
 - George Bișoc steadily improves our Security (`Se`) kernel subsystem for better application compatibility.
 
 
-Follow our Twitter (@reactos)[https://twitter.com/reactos] for receiving project news as soon as possible.
+Follow our Twitter [@reactos](https://twitter.com/reactos) for receiving project news as soon as possible.
 
 ## Expanding Matrix presence
 
