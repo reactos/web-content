@@ -22,16 +22,16 @@ APIC HAL can be installed now by choosing the corresponding menu entry in the in
 ## SMP GSoC project
 While preparing for the project, Jérôme Gardou (zefklop) and Thomas Faber (thfabba) were testing the kernel build in SMP mode,
 but running on a VM with only one CPU assigned.
-Default single-CPU build of ReactOS removes some code which is not neccessary for an
+Our default single-CPU build of ReactOS lacks some code which is not necessary for an
 execution on such machines.
 Such SMP build revealed issues in kernel locking primitives and bugs in some drivers, which
 were successfully [fixed](https://github.com/reactos/reactos/pull/3672).
 
 // Justin, put some info about your project here
 
-## IsaPnP
+## ISA PnP
 Dmitry Borisov (disean) [made](https://github.com/reactos/reactos/pull/3467) a massive improvement to our ISA bus driver (isapnp.sys),
-which opens the possibility to use older PnP ISA hardware like sound cards and networking adapters.
+which opens the possibility to use older PnP ISA hardware like disk controllers, sound cards, and networking adapters.
 Those are now detected properly and can be used in the system when an appropriate driver is installed.
 
 {{< figure link="/img/blogs/newsletter-101/isapnp.png" src="/img/blogs/newsletter-101/isapnp.png" >}}
@@ -46,19 +46,19 @@ from the Clang support even more and greatly improve the developer experience.
 ## Input Method Manager library
 ReactOS supports many languages already but some of them require an extra effort for a proper support.
 The Input Method Manager library (imm32.dll) backs the support for all language-specific input methods.
-Katayama Hirofumi MZ (katahiromz) has started a rewrite of the imm32.dll to improve the Japanese language support. The work can be seen on [GitHub](https://github.com/reactos/reactos/commits/master/dll/win32/imm32/)
+Katayama Hirofumi MZ (katahiromz) has started a rewrite of the imm32.dll to improve the Japanese language support. The work can be seen on [GitHub](https://github.com/reactos/reactos/commits/master/dll/win32/imm32/).
 
 ## Multiple monitors support
-Hervé Poussineau (hpoussin) started improving the videoprt.sys driver so it supports displaying an image on multiple monitors.
-So far only a wallpaper is displayed on a secondary ones, so the work is in progress.
+Hervé Poussineau (hpoussin) started improving the videoprt.sys driver to let it support displaying an image on multiple monitors.
+So far only a wallpaper is displayed on the secondary monitors, but expect more in the future.
 
 {{< figure link="/img/blogs/newsletter-101/multiple-monitors.jpg" src="/img/blogs/newsletter-101/multiple-monitors.jpg" >}}
 
 ## Other highlights
 
-- Jérôme Gardou continues his paid contract on improving memory manager (MM) stability. MM bugs for amd64 architecture have been fixed, and many other issues not tied to the platform.
+- Jérôme Gardou continues his paid contract on improving the memory manager (MM) stability. MM bugs for amd64 architecture have been fixed, and many other issues not tied to the platform.
 - Various fixes have been done around user and kernel mode PnP subsystem for better driver compatibility. (Victor Perevertkin and Eric Kohl)
-- George Bișoc steadily improves our Security (SE) kernel subsystem for better applications compatibility.
+- George Bișoc steadily improves our Security (SE) kernel subsystem for better application compatibility.
 
 ## Expanding Matrix presence
 
