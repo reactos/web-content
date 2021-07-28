@@ -35,7 +35,7 @@ Timo Kreuzer also did a great job here reviving old code for APIC support.
 APIC HAL can be installed now by choosing the corresponding menu entry in the installer.
 
 {{< gallery >}}
-{{< figure link="/img/blogs/newsletter-101/installer-hals.png" src="/img/blogs/newsletter-101/installer-hals" caption="Updated list of available HALs" >}}
+{{< figure link="/img/blogs/newsletter-101/installer-hals.png" src="/img/blogs/newsletter-101/installer-hals.png" caption="Updated list of available HALs" >}}
 {{< /gallery >}}
 
 ## SMP GSoC project
