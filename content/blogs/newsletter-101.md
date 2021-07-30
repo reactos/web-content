@@ -82,7 +82,7 @@ Hervé Poussineau (hpoussin) started improving the `videoprt.sys` driver to let 
 So far only a wallpaper is displayed on the secondary monitors, but expect more in the future.
 
 {{< gallery >}}
-{{< figure link="/img/blogs/newsletter-101/multiple-monitors.jpg" src="/img/blogs/newsletter-101/multiple-monitors.jpg" caption="Control panel applet shows multiple monitors" >}}
+{{< figure link="/img/blogs/newsletter-101/multiple-monitors.png" src="/img/blogs/newsletter-101/multiple-monitors.png" caption="Control panel applet shows multiple monitors" >}}
 {{< /gallery >}}
 
 ## Other highlights
