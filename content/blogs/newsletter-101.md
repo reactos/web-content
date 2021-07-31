@@ -1,7 +1,7 @@
 ---
 title:       "Newsletter 101 - July 2021 news"
 author:      "Extravert34"
-date:        2021-07-28
+date:        2021-08-01
 tags:        [ newsletter ]
 ---
 
@@ -88,7 +88,7 @@ So far only a wallpaper is displayed on the secondary monitors, but expect more 
 ## Other highlights
 
 - Jérôme Gardou continues his paid contract on improving the Memory Manager (`Mm`) stability. `Mm` bugs for amd64 architecture have been fixed, and many other issues not tied to the platform.
-- Various fixes have been done around user and kernel mode PnP subsystem for better driver compatibility. (Victor Perevertkin and Eric Kohl)
+- Various fixes have been done around user and kernel mode PnP subsystem for better driver compatibility (Victor Perevertkin and Eric Kohl).
 - George Bișoc steadily improves our Security (`Se`) kernel subsystem for better application compatibility.
 
 
