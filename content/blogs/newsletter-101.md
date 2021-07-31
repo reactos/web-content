@@ -15,12 +15,12 @@ A major issue with interrupt handling in HAL was also fixed in May, which finall
 
 Only MSVC compiler can produce working 64bit builds at the moment, but this is going to change soon with the upcoming RosBE 2.3
 release.
-For the first time, we are going to have an official GCC for building for amd64.
+For the first time, we are going to have an official GCC for building the amd64 version.
 The build environment is currently in beta and we already found a few last issues, but as soon as they are fixed, it will be the new official release.
 
 In particular, we waited for the final [Binutils 2.37 release](https://sourceware.org/pipermail/binutils/2021-July/117384.html) to include that version in the final RosBE 2.3.
 It comes with an important [addition](https://sourceware.org/git/?p=binutils-gdb.git;a=commitdiff;h=d039200a7ee8ac170afbdc3b987af553c07fb6a3) by Jérôme Gardou (zefklop). Apart from that, we still need to change the way GMP is built with GCC to fix GCC plugin support.
-When both is done, RosBE 2.3 will most likely go live simultaneously for Windows, Linux, and macOS.
+When both are done, RosBE 2.3 will most likely go live simultaneously for Windows, Linux, and macOS.
 
 {{< gallery >}}
 {{< figure link="/img/blogs/newsletter-101/amd64-boot.png" src="/img/blogs/newsletter-101/amd64-boot.png" caption="ReactOS for amd64 running in VirtualBox" >}}
@@ -53,12 +53,12 @@ With the SMP code being generic ReactOS will also get support for other SMP enab
 ## `iernonce` GSoC project
 He Yang (kernel.bin), the 2nd year GSoC student started working on `iernonce` under the guidance of his mentor George Bișoc (GeoB99) and Hermès Bélusca (hbelusca).
 ReactOS already supports `RunOnce` registry entry which allows command execution upon machine startup/user login.
-`iernonce` will add a possibility to use `RunOnceEx` entry to execute multiple commands in an order, with a dialog displaying progress upon machine startup/user login.
+`iernonce` will add a possibility to use `RunOnceEx` entry to execute multiple commands in order, with a dialog displaying progress upon machine startup/user login.
 
 ## ISA PnP
 Dmitry Borisov (disean) [made](https://github.com/reactos/reactos/pull/3467) a massive improvement to our ISA bus driver (`isapnp.sys`),
-which opens the possibility to use older Plug and Play ISA hardware like disk controllers, sound cards, or networking adapters.
-Those are now detected properly and can be used in the system when an appropriate driver is installed.
+which opens the possibility to use older Plug and Play ISA hardware, like disk controllers, sound cards, or networking adapters.
+They are now detected properly and can be used in the system when an appropriate driver is installed.
 
 {{< gallery >}}
 {{< figure link="/img/blogs/newsletter-101/isapnp.png" src="/img/blogs/newsletter-101/isapnp.png" caption="isapnp.sys driver exposes new devices" >}}
