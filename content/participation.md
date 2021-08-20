@@ -1,10 +1,10 @@
-+++
-title = "Participation"
-aliases = [
-    "/node/2280",
-    "/node/979",
-]
-+++
+---
+title: "Participation"
+aliases:
+  - "/node/2280"
+  - "/node/979"
+date: 2019-08-19
+---
 
 {{% unfinished-page "This needs to be linked somewhere, and the content needs to be updated" %}}
 

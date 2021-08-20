@@ -1,6 +1,7 @@
-+++
-title = "Gallery"
-+++
+---
+title: "Gallery"
+date: 2020-03-25
+---
 
 {{< gallery >}}
 {{< figure link="/sites/default/files/Mizu-AppManager.png" caption="Applications Manager" >}}

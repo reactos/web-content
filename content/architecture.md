@@ -1,13 +1,12 @@
-+++
-title = "ReactOS Architecture"
-aliases = [
-    "/node/957",
-    "developing"
-]
-css = [
-    "/css/blue-pyramid.css",
-]
-+++
+---
+title: "ReactOS Architecture"
+aliases:
+  - "/node/957"
+  - "developing"
+css:
+  - "/css/blue-pyramid.css"
+date: 2020-02-08
+---
 
 Interested in ReactOS development?
 ---

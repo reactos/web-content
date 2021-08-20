@@ -1,7 +1,8 @@
-+++
-title = "Installing ReactOS"
-aliases = [ "/node/3306" ]
-+++
+---
+title: "Installing ReactOS"
+aliases: [ "/node/3306" ]
+date: 2019-08-19
+---
 
 
 {{% unfinished-page "This needs to be included or linked somewhere" %}}

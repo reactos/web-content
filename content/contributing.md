@@ -1,7 +1,8 @@
-+++
-title = "Contribute to ReactOS"
-aliases = [ "jobs", "/node/785" ]
-+++
+---
+title: "Contribute to ReactOS"
+aliases: [ "jobs", "/node/785" ]
+date: 2020-03-22
+---
 
 The ReactOS Project always seeks new qualified contributors from all skill levels.
 No matter if you are a developer, tester, editor or designer, your contribution is highly appreciated.

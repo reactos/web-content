@@ -1,10 +1,10 @@
-+++
-title = "What is ReactOS?"
-aliases = [
-    "/node/972",
-    "/node/978",
-]
-+++
+---
+title: "What is ReactOS?"
+aliases:
+  - "/node/972"
+  - "/node/978"
+date: 2020-03-21
+---
 
 ReactOS is an operating system.<br />
 Our own main features are:
