@@ -1,7 +1,8 @@
-+++
-title = "Intellectual Property Guideline"
-aliases = [ "/node/16" ]
-+++
+---
+title: "Intellectual Property Guideline"
+aliases: [ "/node/16" ]
+date: 2020-02-23
+---
 
 
 ## Preface

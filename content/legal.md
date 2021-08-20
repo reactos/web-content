@@ -1,6 +1,7 @@
-+++
-title = "Legal Disclosure"
-+++
+---
+title: "Legal Disclosure"
+date: 2020-03-17
+---
 
 Responsible for the content of these pages is:
 

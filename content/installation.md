@@ -1,7 +1,8 @@
-+++
-title = "Installation"
-aliases = [ "/node/129" ]
-+++
+---
+title: "Installation"
+aliases: [ "/node/129" ]
+date: 2019-08-19
+---
 
 {{% unfinished-page "This needs to be included or linked somewhere" %}}
 

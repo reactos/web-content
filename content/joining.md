@@ -1,7 +1,8 @@
-+++
-title = "Joining"
-aliases = [ "/node/955" ]
-+++
+---
+title: "Joining"
+aliases: [ "/node/955" ]
+date: 2020-02-01
+---
 
 Joining & Following ReactOS Progress!
 ---

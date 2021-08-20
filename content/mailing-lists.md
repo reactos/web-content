@@ -1,7 +1,8 @@
-+++
-title = "Mailing Lists"
-aliases = [ "/community/mailing-lists", "/node/13" ]
-+++
+---
+title: "Mailing Lists"
+aliases: [ "/community/mailing-lists", "/node/13" ]
+date: 2020-02-01
+---
 
 The ReactOS Project maintains several mailing lists to coordinate development and send out announcements.
 
