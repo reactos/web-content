@@ -2,7 +2,7 @@
 title:       "Rapps Enhancement - GSoC 2020"
 author:      "kernel.bin"
 date:        2020-06-04
-tags:        [ "gsoc", "gsoc-2020" ]
+tags:        [ "gsoc", "gsoc-2020", "rapps" ]
 ---
 
 Hello, I am He Yang (@kernel.bin) from China.
