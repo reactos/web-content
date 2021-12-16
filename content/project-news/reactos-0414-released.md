@@ -29,10 +29,11 @@ The implementations of "Send To" and "Open File Location" are shown in the scree
 
 ## NEC PC-9800 boot support
 NEC PC-9800 (or PC-98 in short) is a series of 16-bit and 32-bit Japanese computers developed and manufactured by NEC.
-As those type of hardware use x86 architecture as its main core, this could bring up an advantage for ReactOS as in porting the system on various architectures and at the same time finding and catching bugs in the kernel mode modules of ReactOS.
+As that type of hardware is based on x86 processors, it is a relatively easy porting target.
+Nevertheless, every port to another architecture opens up possibilities for finding and fixing bugs in the kernel modules of ReactOS.
 
-Dmitry Borisov, a new ReactOS contributor, partook in the scene of helping getting the PC-98 port complete.
-While there are stuff left to be done in the development of PC-98 boot support, Dmitry Borisov made great strides to make ReactOS booting on PC-98.
+Dmitry Borisov, a new ReactOS contributor, helped to get the PC-98 port in shape.
+While there is stuff left to be done in the development of PC-98 boot support, Dmitry Borisov made great strides to get ReactOS booting on that platform.
 The following screenshot below demonstrates ReactOS booting on Neko Project 21/W emulator.
 
 {{< figure link="/img/project-news/reactos-0414-released/nec98.png" src="/img/project-news/reactos-0414-released/nec98.png" >}}
@@ -40,7 +41,7 @@ The following screenshot below demonstrates ReactOS booting on Neko Project 21/W
 ## ICMP improvements
 Internet Control Message Protocol (or ICMP by short) is a protocol used by network device drivers to send network information such as errors or log status.
 The implementation was rather scarce and incomplete with pieces of code unimplemented or unfinished.
-The IP Helper module majorly uses this protocol and as a matter of that, it brought a lot of issues and bugs. 
+The IP Helper module primarily uses this protocol and as a matter of that, it brought a lot of issues and bugs. 
 
 Thanks to Victor Perevertkin and with the help of Tim Crawford, the ICMP protocol implementation has seen lots of improvements, that is, ranging from the implementation of
 IOCTL_ICMP_ECHO_REQUEST I/O control code as well as rewriting Icmp** function routines. Thanks to that the network device drivers can handle ICMP requests in a correct manner. In the screenshot below here is tracert command utility that outputs complete information thanks to the work done to ICMP.
