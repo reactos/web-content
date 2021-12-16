@@ -51,7 +51,9 @@ This is proven in the screenshot below, which shows the tracert command-line uti
 {{< figure link="/img/project-news/reactos-0414-released/icmp.png" src="/img/project-news/reactos-0414-released/icmp.png" >}}
 
 ## Kernel improvements
-The NT kernel of ReactOS is the heart that is primarly responsible for the well functioning of the system and communication with the bare metal. The stability of the system drastically relies on the robustness of the kernel, that is, a kernel with less bugs.
+The NT kernel of ReactOS is the heart that is responsible for the well functioning of the system and communication with the bare metal.
+The stability of the system drastically relies on the robustness of the kernel.
+Every bug counts here.
 The developers squash the bugs in the kernel to offer overall stability and better experience with each release and here we noted several improvements brought to the kernel. Various bugs to the Memory Manager module have been fixed thanks to Thomas Faber and
 speaking of the aforementioned module, Vadim Galyant began the work for support of PAE (Physical Address Extension) and did some work for the Memory Manager sections rewrite.
 
