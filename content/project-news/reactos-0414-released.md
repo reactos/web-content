@@ -63,7 +63,7 @@ Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code
 Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
 and both Timo Kreuzer and Thomas Faber fixed some buffer overflows vulnerabilities. To finish with, Eric Kohl improved the device action worker code in I/O subsystem.
 
-Let's not forget the PnP (Plug n' Play) manager of the kernel which is also an important part not only in regard of stability the usability of the system to a plethora of hardware.
+Let's not forget the PnP (Plug n' Play) manager of the kernel which is also an important part not only in regard to stability, but also the usability of the system with a plethora of hardware.
 Vadim Galyant added the initial headers implementation of the Resources Arbiter library which can be used by the bus
 drivers like ACPI, PCI or legacy PIC HAL. In addition to that Vadim implemented debug code both in PnP and I/O managers whereas Eric Kohl improved the PnP manager to map device capabilities to capability flags. Thomas Faber fixed a critical bug that could
 cause memory corruption in the kernel space and fixed a bad IRP (I/O request packet) handling that caused a BSoD on an Xbox console with USB enabled. 
