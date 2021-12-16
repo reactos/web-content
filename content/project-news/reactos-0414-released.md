@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS 0.4.14 released"
 author:      "ReactOS Team"
-date:        XXXX-XX-XX
+date:        2021-12-16
 tags:        [ "release" ]
 banner:      "img/project-news/reactos-0414-released/thumb.png"
 ---
@@ -107,4 +107,4 @@ Oldest issue fixed as of this release: [CORE-3071](https://jira.reactos.org/brow
 * [The less technical Community Changelog for 0.4.14](/wiki/Community_Changelog-0.4.14)
 * [Application Tests for 0.4.14](/wiki/Tests_for_0.4.14)
 
-[releases/0.4.14](???) branch was forked from [master](https://github.com/reactos/reactos) on 2020-04-24 after 0.4.14-dev-1562-g4d2d2db
+[releases/0.4.14](https://github.com/reactos/reactos/tree/releases/0.4.14) branch was forked from [master](https://github.com/reactos/reactos) on 2020-04-24 after 0.4.14-dev-1562-g4d2d2db
