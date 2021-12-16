@@ -71,8 +71,9 @@ The Kernel Debugger (KD) and related modules have also received updates from dev
 rewrote the TSS handling code and squashed various bugs with it. Namely the issue with KDBG backtrace when a TSS switch happened during execution. Furthermore, Jérôme Gardou alongside with Hervé Poussineau brought some fixes and improvements to the KDBG module.
 
 ## NetKVM VirtIO bringup
-NetKVM VirtIO is a NDIS 5 compatible driver developed by Red Hat Inc. which allows fast VirtIO networking in virtual machine software such as QEMU and other KVM hardware accelerated virtual machines.
-Nguyen Trung Khanh, a ReactOS contributor, took over the Benjamin Aerni's work at importing the driver into the source tree of ReactOS and for this matter this heavily benefits the networking stack.
+NetKVM VirtIO is an NDIS 5 compatible driver developed by Red Hat Inc., which allows fast VirtIO networking in virtual machine software such as QEMU and other KVM hardware accelerated virtual machines.
+Nguyen Trung Khanh, a ReactOS contributor, took over Benjamin Aerni's work of importing the driver into the source tree of ReactOS.
+This provides ReactOS with support for another network interface out of the box.
 
 ## Miscellaneous changes & improvements
 Other areas of ReactOS infrastructure have received lots improvements, ranging from device drivers to software applications of ReactOS by various developers and contributors. Notably FreeLoader, the ReactOS' bootloader, received incremental fixes and further support improvements. As such Hermès Bélusca-Maïto added support for booting Linux 64-bit systems in 64-bit FreeLoader and fixed an issue where
