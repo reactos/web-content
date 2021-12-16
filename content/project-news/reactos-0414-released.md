@@ -54,8 +54,10 @@ This is proven in the screenshot below, which shows the tracert command-line uti
 The NT kernel of ReactOS is the heart that is responsible for the well functioning of the system and communication with the bare metal.
 The stability of the system drastically relies on the robustness of the kernel.
 Every bug counts here.
-The developers squash the bugs in the kernel to offer overall stability and better experience with each release and here we noted several improvements brought to the kernel. Various bugs to the Memory Manager module have been fixed thanks to Thomas Faber and
-speaking of the aforementioned module, Vadim Galyant began the work for support of PAE (Physical Address Extension) and did some work for the Memory Manager sections rewrite.
+
+With every release, the developers squash bugs in the kernel to offer a better overall stability and experience.
+ReactOS 0.4.14 comes with several improvements to the Memory Manager thanks to Thomas Faber.
+Speaking of the aforementioned module, Vadim Galyant did some initial work on PAE (Physical Address Extension) and contributed towards the Memory Manager sections rewrite.
 
 Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code from WINE. This allows 64-bit development to proceed as various bugs and random hangs on 64-bit systems have been resolved.
 Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
