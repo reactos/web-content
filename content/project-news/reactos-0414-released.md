@@ -23,7 +23,7 @@ Katayama Hirofumi MZ is the pioneer of the "Send-To" implementation, a feature o
 In addition, "Open File Location" and "Open Command prompt here" were also implemented thanks to him.
 Apart from the aforementioned features, let's not forget the bug fixes that affected the operability of the Shell.
 Katayama Hirofumi MZ fixed the scroll selection and Mark Jansen improved some COM (Component Object Model) interfaces, so that certain drag and drop regressions could be fixed.
-The following implementations of "Send-To" and "Open File Location" features are shown in the following screenshots below.
+The implementations of "Send To" and "Open File Location" are shown in the screenshots below:
 
 {{< figure link="/img/project-news/reactos-0414-released/shell.png" src="/img/project-news/reactos-0414-released/shell.png" >}}
 
