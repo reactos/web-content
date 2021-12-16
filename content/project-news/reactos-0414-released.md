@@ -6,6 +6,8 @@ tags:        [ "release" ]
 banner:      "img/project-news/reactos-0414-released/thumb.png"
 ---
 
+> ### **Disclaimer:** It took us more than a year for this release and during that time we presented you a lot of awesome news regarding our current development progress in our blog and on the social media as well. Consider this an intermediate / bugfix release, which does not include latest features we advertised earlier.
+
 The ReactOS Team is pleased to announce the release of version 0.4.14.
 As with every other release, we're regularly noting improvements and updates to keep you in touch with what is being done to ReactOS.
 In this release, improvements range from FreeLoader fixes, Shell features, kernel fixes, NetKVM VirtIO bringup, further work to the Xbox port and support for NEC PC-9800.
