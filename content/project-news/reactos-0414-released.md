@@ -16,9 +16,9 @@ Consider this a maintenance release, and stay tuned for what's coming next!
 
 {{< figure link="/img/project-news/reactos-0414-released/banner.png" src="/img/project-news/reactos-0414-released/banner.png" >}}
 
-## "Send-To" feature and Shell improvements
-The main highlight of this release is the incremental amount of improvements done to the Shell component of ReactOS, a highly vital model responsible for the interaction with the system and the user.
-Katayama Hirofumi MZ is the pioneer of the "Send-To" implementation, a feature of the Shell which the user can send files or directories to a certain location. 
+## "Send To" feature and Shell improvements
+One of the main highlights of this release is the amount of improvements done to the Shell component, which makes up a vital part of the ReactOS user experience.
+Katayama Hirofumi MZ is the pioneer of the "Send To" implementation, a feature of the Shell that can be used to send files or directories to a certain location.
 
 In addition, "Open File Location" and "Open Command prompt here" were also implemented thanks to him.
 Apart from the aforementioned features, let's not forget the bug fixes that affected the operability of the Shell.
