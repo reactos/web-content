@@ -10,6 +10,10 @@ The ReactOS Team is pleased to announce the release of version 0.4.14.
 As with every other release, we're regularly noting improvements and updates to keep you in touch with what is being done to ReactOS.
 In this release, improvements range from FreeLoader fixes, Shell features, kernel fixes, NetKVM VirtIO bringup, further work to the Xbox port and support for NEC PC-9800.
 
+Note that it took us over a year to get this release in shape and fix regressions.
+As such, ReactOS 0.4.14 does not contain the very latest developments we advertised in 2021 on our blog and on social media.
+Consider this a maintenance release, and stay tuned for what's coming next!
+
 {{< figure link="/img/project-news/reactos-0414-released/banner.png" src="/img/project-news/reactos-0414-released/banner.png" >}}
 
 ## "Send-To" feature and Shell improvements
@@ -20,10 +24,6 @@ In addition, "Open File Location" and "Open Command prompt here" were also imple
 Apart from the aforementioned features, let's not forget the bug fixes that affected the operability of the Shell.
 Katayama Hirofumi MZ fixed the scroll selection and Mark Jansen improved some COM (Component Object Model) interfaces, so that certain drag and drop regressions could be fixed.
 The following implementations of "Send-To" and "Open File Location" features are shown in the following screenshots below.
-
-Note that it took us over a year to get this release in shape and fix regressions.
-As such, ReactOS 0.4.14 does not contain the very latest developments we advertised in 2021 on our blog and on social media.
-Consider this a maintenance release, and stay tuned for what's coming next!
 
 {{< figure link="/img/project-news/reactos-0414-released/shell.png" src="/img/project-news/reactos-0414-released/shell.png" >}}
 
