@@ -43,8 +43,10 @@ Internet Control Message Protocol (or ICMP by short) is a protocol used by netwo
 The implementation was rather scarce and incomplete with pieces of code unimplemented or unfinished.
 The IP Helper module primarily uses this protocol and as a matter of that, it brought a lot of issues and bugs. 
 
-Thanks to Victor Perevertkin and with the help of Tim Crawford, the ICMP protocol implementation has seen lots of improvements, that is, ranging from the implementation of
-IOCTL_ICMP_ECHO_REQUEST I/O control code as well as rewriting Icmp** function routines. Thanks to that the network device drivers can handle ICMP requests in a correct manner. In the screenshot below here is tracert command utility that outputs complete information thanks to the work done to ICMP.
+Thanks to Victor Perevertkin, and with the help of Tim Crawford, the ICMP protocol implementation has seen lots of improvements.
+These range from the implementation of the IOCTL_ICMP_ECHO_REQUEST I/O control code to a full  rewrite of the Icmp** routines.
+As a result, the network device drivers can now handle ICMP requests in a correct manner.
+This is proven in the screenshot below, which shows the tracert command-line utility now outputting complete information.
 
 {{< figure link="/img/project-news/reactos-0414-released/icmp.png" src="/img/project-news/reactos-0414-released/icmp.png" >}}
 
