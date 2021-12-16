@@ -48,8 +48,8 @@ The NT kernel of ReactOS is the heart that is primarly responsible for the well 
 The developers squash the bugs in the kernel to offer overall stability and better experience with each release and here we noted several improvements brought to the kernel. Various bugs to the Memory Manager module have been fixed thanks to Thomas Faber and
 speaking of the aforementioned module, Vadim Galyant began the work for support of PAE (Physical Address Extension) and did some work for the Memory Manager sections rewrite.
 
-Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code from WINE. This allows for 64-bit development to go further as various bugs and random hangs in 64-bit system have been resolved. The I/O manager module of the kernel has seen
-major improvements with the implementation of letter assigning to disks rewritten by Pierre Schweitzer and Ft volumes are properly checked where Unix drives were not assigned a drive letter. Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
+Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code from WINE. This allows for 64-bit development to go further as various bugs and random hangs in 64-bit system have been resolved.
+Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
 and both Timo Kreuzer and Thomas Faber fixes some buffer overflows vulnerabilities. To finish with, Eric Kohl improved the device action worker code in I/O.
 
 Let's not forget the PnP (Plug n' Play) manager of the kernel which is also and important part not only in regard of stability the usability of the system to a plethora of hardware. Vadim Galyant added the initial headers implementation of the Resources Arbiter library which can be used by the bus
@@ -95,9 +95,9 @@ As such, ReactOS shares modules and code from other third-party open source proj
 * Updated root certificates by Thomas Faber
 
 ## Statistics
-JIRA Issues fixed of this release - 224     
-Number of commits as of this release - 1566     
-Oldest issue fixed as of this release - CORE-3071
+JIRA Issues fixed of this release: 371
+Number of commits as of this release: >1690
+Oldest issue fixed as of this release: [CORE-3071](https://jira.reactos.org/browse/CORE-3071)
 
 * [The official Changelog for the 0.4.14 release](/wiki/ChangeLog-0.4.14)
 * [The less technical Community Changelog for 0.4.14](/wiki/Community_Changelog-0.4.14)
