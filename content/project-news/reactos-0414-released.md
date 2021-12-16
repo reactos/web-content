@@ -95,8 +95,8 @@ As such, ReactOS shares modules and code from other third-party open source proj
 * Updated root certificates by Thomas Faber
 
 ## Statistics
-JIRA Issues fixed of this release: 371
-Number of commits as of this release: >1690
+JIRA Issues fixed of this release: 371  
+Number of commits as of this release: >1690  
 Oldest issue fixed as of this release: [CORE-3071](https://jira.reactos.org/browse/CORE-3071)
 
 * [The official Changelog for the 0.4.14 release](/wiki/ChangeLog-0.4.14)
