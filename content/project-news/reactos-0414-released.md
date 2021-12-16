@@ -86,7 +86,7 @@ input events back to ANSI and a bug in HAL where the system lead into an asserti
 
 ## Third Party Syncs
 ReactOS is a FOSS (Free or Open Source) operating system that abides by the general rule of being a free operating system, as in free beer, and open source where people can study the OS and contribute with code.
-As such, ReactOS shares modules and code from other third-party open source projects are being regularly updated by the ReactOS developers. The following recent syncs as of this release are follows.
+As such, ReactOS shares modules and code from other third-party open source projects are regularly updated by the ReactOS developers. The following syncs are part of this release:
 
 * Wine Staging 4.18 user mode DLLs by Amine Khaldi
 * mpg123 1.25.13 by Thomas Faber
