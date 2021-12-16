@@ -51,7 +51,7 @@ This is proven in the screenshot below, which shows the tracert command-line uti
 {{< figure link="/img/project-news/reactos-0414-released/icmp.png" src="/img/project-news/reactos-0414-released/icmp.png" >}}
 
 ## Kernel improvements
-The NT kernel of ReactOS is the heart that is responsible for the well functioning of the system and communication with the bare metal.
+The NT kernel of ReactOS is the heart that is responsible for the correct functioning of the system and communication with the bare metal.
 The stability of the system drastically relies on the robustness of the kernel.
 Every bug counts here.
 
@@ -63,7 +63,8 @@ Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code
 Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
 and both Timo Kreuzer and Thomas Faber fixes some buffer overflows vulnerabilities. To finish with, Eric Kohl improved the device action worker code in I/O.
 
-Let's not forget the PnP (Plug n' Play) manager of the kernel which is also and important part not only in regard of stability the usability of the system to a plethora of hardware. Vadim Galyant added the initial headers implementation of the Resources Arbiter library which can be used by the bus
+Let's not forget the PnP (Plug n' Play) manager of the kernel which is also an important part not only in regard of stability the usability of the system to a plethora of hardware.
+Vadim Galyant added the initial headers implementation of the Resources Arbiter library which can be used by the bus
 drivers like ACPI, PCI or legacy PIC HAL. In addition to that Vadim implemented debug code both in PnP and I/O managers whereas Eric Kohl improved the PnP manager to map device capabilities to capability flags. Thomas Faber fixed a critical bug that could
 cause memory corruption in the kernel space and fixed a bad IRP (I/O request packet) handling that caused a BSoD (Blue Screen of Death) on first generation Xbox console machine with USB enabled. 
 
