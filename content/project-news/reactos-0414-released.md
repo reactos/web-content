@@ -57,7 +57,7 @@ Every bug counts here.
 The developers squash the bugs in the kernel to offer overall stability and better experience with each release and here we noted several improvements brought to the kernel. Various bugs to the Memory Manager module have been fixed thanks to Thomas Faber and
 speaking of the aforementioned module, Vadim Galyant began the work for support of PAE (Physical Address Extension) and did some work for the Memory Manager sections rewrite.
 
-Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code from WINE. This allows for 64-bit development to go further as various bugs and random hangs in 64-bit system have been resolved.
+Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code from WINE. This allows 64-bit development to proceed as various bugs and random hangs on 64-bit systems have been resolved.
 Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
 and both Timo Kreuzer and Thomas Faber fixes some buffer overflows vulnerabilities. To finish with, Eric Kohl improved the device action worker code in I/O.
 
