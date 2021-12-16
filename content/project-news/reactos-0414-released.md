@@ -7,11 +7,11 @@ banner:      "img/project-news/reactos-0414-released/thumb.png"
 ---
 
 The ReactOS Team is pleased to announce the release of version 0.4.14.
-As with every other release, we're regularly noting improvements and updates to keep you in touch with what is being done to ReactOS.
+As with every other release, we're regularly noting improvements and updates to keep you in touch with what is being done in ReactOS.
 In this release, improvements range from FreeLoader fixes, Shell features, kernel fixes, NetKVM VirtIO bringup, further work on the Xbox port and support for NEC PC-9800.
 
 Note that it took us over a year to get this release in shape and fix regressions.
-As such, ReactOS 0.4.14 does not contain the very latest developments we advertised in 2021 on our blog and on social media.
+As such, ReactOS 0.4.14 does not contain the very latest developments we advertised in 2021 on our blog and on social media. They can be found instead in our nightly builds.
 Consider this a maintenance release, and stay tuned for what's coming next!
 
 {{< figure link="/img/project-news/reactos-0414-released/banner.png" src="/img/project-news/reactos-0414-released/banner.png" >}}
@@ -22,24 +22,24 @@ Katayama Hirofumi MZ is the pioneer of the "Send To" implementation, a feature o
 
 In addition, "Open File Location" and "Open Command prompt here" were also implemented thanks to him.
 Apart from the aforementioned features, let's not forget the bug fixes that affected the operability of the Shell.
-Katayama Hirofumi MZ fixed the scroll selection and Mark Jansen improved some COM (Component Object Model) interfaces, so that certain drag and drop regressions could be fixed.
+Katayama Hirofumi MZ fixed the scroll selection and Mark Jansen improved some COM (Component Object Model) interfaces, so that certain drag-and-drop regressions could be fixed.
 The implementations of "Send To" and "Open File Location" are shown in the screenshots below:
 
 {{< figure link="/img/project-news/reactos-0414-released/shell.png" src="/img/project-news/reactos-0414-released/shell.png" >}}
 
 ## NEC PC-9800 boot support
-NEC PC-9800 (or PC-98 in short) is a series of 16-bit and 32-bit Japanese computers developed and manufactured by NEC.
+[NEC PC-9800](https://en.wikipedia.org/wiki/PC-9800_series) (or PC-98 in short) is a series of 16-bit and 32-bit Japanese computers developed and manufactured by NEC.
 As that type of hardware is based on x86 processors, it is a relatively easy porting target.
-Nevertheless, every port to another architecture opens up possibilities for finding and fixing bugs in the kernel modules of ReactOS.
+Nevertheless, every port to another architecture opens up possibilities for finding and fixing bugs in the core modules of ReactOS.
 
 Dmitry Borisov, a new ReactOS contributor, helped to get the PC-98 port in shape.
-While there is stuff left to be done in the development of PC-98 boot support, Dmitry Borisov made great strides to get ReactOS booting on that platform.
-The following screenshot below demonstrates ReactOS booting on Neko Project 21/W emulator.
+While there is work left to be done in the development of PC-98 boot support, Dmitry Borisov made great strides to get ReactOS booting on that platform.
+The following screenshot below demonstrates ReactOS booting on the Neko Project 21/W emulator.
 
 {{< figure link="/img/project-news/reactos-0414-released/nec98.png" src="/img/project-news/reactos-0414-released/nec98.png" >}}
 
 ## ICMP improvements
-Internet Control Message Protocol (or ICMP by short) is a protocol used by network device drivers to send network information such as errors or log status.
+[Internet Control Message Protocol](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) (or ICMP by short) is a protocol used by network device drivers to send network information such as errors or log status.
 The implementation was rather scarce and incomplete with pieces of code unimplemented or unfinished.
 The IP Helper module primarily uses this protocol and as a matter of that, it brought a lot of issues and bugs. 
 
@@ -51,7 +51,7 @@ This is proven in the screenshot below, which shows the tracert command-line uti
 {{< figure link="/img/project-news/reactos-0414-released/icmp.png" src="/img/project-news/reactos-0414-released/icmp.png" >}}
 
 ## Kernel improvements
-The NT kernel of ReactOS is the heart that is responsible for the correct functioning of the system and communication with the bare metal.
+The NT kernel of ReactOS is the heart that is responsible for the correct functioning of the operating system and interfacing with the bare metal.
 The stability of the system drastically relies on the robustness of the kernel.
 Every bug counts here.
 
@@ -68,8 +68,8 @@ Vadim Galyant added the initial headers implementation of the Resources Arbiter 
 drivers like ACPI, PCI or legacy PIC HAL. In addition to that Vadim implemented debug code both in PnP and I/O managers whereas Eric Kohl improved the PnP manager to map device capabilities to capability flags. Thomas Faber fixed a critical bug that could
 cause memory corruption in the kernel space and fixed a bad IRP (I/O request packet) handling that caused a BSoD (Blue Screen of Death) on first generation Xbox console machine with USB enabled. 
 
-The Kernel Debugger (KD) and related modules have also received updates from developers and contributors alike. Dmitry Borisov added ComPort library for NEC PC-98 which is fundemantal in the further development and support of NEC series. Hermès Bélusca-Maïto has finished the support for debug filters, improved `cregs` and `tss` (present only in GCC debug builds) command,
-rewrote the TSS handling code and squashed various bugs with it. Namely the issue with KDBG backtrace when a TSS switch happened during execution. Furthermore, Jérôme Gardou alongside with Hervé Poussineau brought some fixes and improvements to the KDBG module.
+The Kernel Debugger (KD) and related modules have also received updates from developers and contributors alike. Dmitry Borisov added ComPort library for NEC PC-98 which is fundemantal in the further development and support of NEC series. Hermès Bélusca-Maïto has finished the support for debug filters, improved the `cregs` and `tss` commands included in the interactive kernel debugger (KDBG, present only in GCC debug builds),
+rewrote the TSS handling code and squashed various bugs with it. Namely the issue with the KDBG backtrace when a TSS switch happened during execution. Furthermore, Jérôme Gardou alongside with Hervé Poussineau brought some fixes and improvements to the KDBG module.
 
 ## NetKVM VirtIO bringup
 NetKVM VirtIO is an NDIS 5 compatible driver developed by Red Hat Inc., which allows fast VirtIO networking in virtual machine software such as QEMU and other KVM hardware accelerated virtual machines.
@@ -90,11 +90,11 @@ Here is a comparison between 0.4.13 (with the obsolete fonts used and loaded in 
 {{< figure link="/img/project-news/reactos-0414-released/misc.png" src="/img/project-news/reactos-0414-released/misc.png" >}}
 
 The 64-bit ReactOS port is extensively being worked on by Timo Kreuzer with continuous work on interrupt handling and other hardware issues like USB and networking issues in x64 build.
-Stanislav Motylkov still continues on working on Xbox boot support ranging from fixes patches and other updates brought by him. In addition to that Hermès Bélusca-Maïto fixed some old bugs notably a corruption in the CONSRV memory when converting
+Stanislav Motylkov still continues on working on Xbox boot support ranging from fixes patches and other updates brought by him. In addition to that Hermès Bélusca-Maïto fixed some old bugs, notably a corruption in the console emulation (CONSRV) layer's memory when converting
 input events back to ANSI and a bug in HAL where the system lead into an assertion failure sporadically.
 
 ## Third Party Syncs
-ReactOS is a FOSS (Free or Open Source) operating system that abides by the general rule of being a free operating system, as in free beer, and open source where people can study the OS and contribute with code.
+ReactOS is a FOSS (Free or Open Source) operating system that abides by the general rule of being a free operating system, as in "free beer", and open source where people can study the OS and contribute with code.
 As such, ReactOS shares modules and code from other third-party open source projects are regularly updated by the ReactOS developers. The following syncs are part of this release:
 
 * Wine Staging 4.18 user mode DLLs by Amine Khaldi
