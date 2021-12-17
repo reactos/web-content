@@ -78,6 +78,7 @@ This provides ReactOS with support for another network interface out of the box.
 ## Miscellaneous changes & improvements
 Other areas of ReactOS infrastructure have received lots improvements by various contributors, ranging from device drivers to software applications. Notably FreeLoader, the ReactOS' bootloader, received incremental fixes and improvements. As such Hermès Bélusca-Maïto added support for booting Linux 64-bit systems in 64-bit FreeLoader and fixed an issue where
 FreeLoader couldn't read from an EXT2 volume hence preventing booting. Dmitry Borisov fixed a serious triple fault bug when ReactOS was booted up in Screen debugging mode. In addition to that, Dmitry Borisov also provided other fixes as well as added ARC-emulation support necessary for NEC PC-98 series.
+Stanislav Motylkov still continues his work on Xbox boot support ranging from fixes patches and other updates brought by him. This is mainly the platform bring up, refactoring and abstraction of existing low-level code.
 Hermès Bélusca-Maïto also fixed several old bugs, notably a corruption in the console emulation (CONSRV) layer's memory when converting input events back to ANSI and a bug in HAL where the system lead into an assertion failure sporadically.
 
 George Bișoc updated the On-Screen Keyboard and Accessbility Utility Manager and at the same time provided minor fixes and improvements to different parts of ReactOS.
