@@ -39,13 +39,12 @@ The following screenshot below demonstrates ReactOS booting on the Neko Project 
 {{< figure link="/img/project-news/reactos-0414-released/nec98.png" src="/img/project-news/reactos-0414-released/nec98.png" >}}
 
 ## ICMP improvements
-[Internet Control Message Protocol](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) (or ICMP by short) is a protocol used by network device drivers to send network information such as errors or log status.
-The implementation was rather scarce and incomplete with pieces of code unimplemented or unfinished.
-The IP Helper module primarily uses this protocol and as a matter of that, it brought a lot of issues and bugs. 
+[Internet Control Message Protocol](https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol) (or ICMP by short) is a protocol used by network devices to send and receive information such as errors or log status.
+The implementation, primarily residing in our IP Helper API module (iphlpapi.dll), was rather scarce and incomplete with pieces of code unimplemented or unfinished.
 
 Thanks to Victor Perevertkin, and with the help of Tim Crawford, the ICMP protocol implementation has seen lots of improvements.
 These range from the implementation of the IOCTL_ICMP_ECHO_REQUEST I/O control code to a full  rewrite of the Icmp** routines.
-As a result, the network device drivers can now handle ICMP requests in a correct manner.
+As a result, the network device drivers can now pass ICMP request and response packets to the applications in a correct manner.
 This is proven in the screenshot below, which shows the tracert command-line utility now outputting complete information.
 
 {{< figure link="/img/project-news/reactos-0414-released/icmp.png" src="/img/project-news/reactos-0414-released/icmp.png" >}}
@@ -66,7 +65,7 @@ and both Timo Kreuzer and Thomas Faber fixed some buffer overflows vulnerabiliti
 Let's not forget the PnP (Plug n' Play) manager of the kernel which is also an important part not only in regard to stability, but also the usability of the system with a plethora of hardware.
 Vadim Galyant added the initial headers implementation of the Resources Arbiter library which can be used by the bus
 drivers like ACPI, PCI or legacy PIC HAL. In addition to that Vadim implemented debug code both in PnP and I/O managers whereas Eric Kohl improved the PnP manager to map device capabilities to capability flags. Thomas Faber fixed a critical bug that could
-cause memory corruption in the kernel space and fixed a bad IRP (I/O request packet) handling that caused a BSoD on an Xbox console with USB enabled. 
+cause memory corruption in the kernel space and fixed a bad IRP (I/O request packet) handling that caused a [Blue Screen](https://en.wikipedia.org/wiki/Blue_screen_of_death) on an Original Xbox console with USB enabled. 
 
 The Kernel Debugger (KD) and related modules have also received updates from developers and contributors alike. Dmitry Borisov added ComPort library for NEC PC-98 which is fundamental in the further development and support of NEC series. Hermès Bélusca-Maïto has finished the support for debug filters, improved the `cregs` and `tss` commands included in the interactive kernel debugger (KDBG, present only in GCC debug builds),
 rewrote the TSS handling code and squashed various bugs with it. Namely the issue with the KDBG backtrace when a TSS switch happened during execution. Furthermore, Jérôme Gardou alongside with Hervé Poussineau brought some fixes and improvements to the KDBG module.
