@@ -59,16 +59,19 @@ ReactOS 0.4.14 comes with several improvements to the Memory Manager thanks to T
 Speaking of the aforementioned module, Vadim Galyant did some initial work on PAE (Physical Address Extension) and contributed towards the Memory Manager sections rewrite.
 
 Timo Kreuzer added CRT (C Run-Time) exception handling by importing related code from WINE. This allows 64-bit development to proceed as various bugs and random hangs on 64-bit systems have been resolved.
-Victor Perevertkin fixed a bug in storage class PnP driver (classpnp.sys) 
-and both Timo Kreuzer and Thomas Faber fixed some buffer overflows vulnerabilities. To finish with, Eric Kohl improved the device action worker code in I/O subsystem.
+Victor Perevertkin fixed a bug in the storage class PnP driver (classpnp.sys) and both Timo Kreuzer and Thomas Faber fixed some buffer overflow vulnerabilities.
+Finally, Eric Kohl improved the device action worker code in the I/O subsystem.
 
-Let's not forget the PnP (Plug n' Play) manager of the kernel which is also an important part not only in regard to stability, but also the usability of the system with a plethora of hardware.
-Vadim Galyant added the initial headers implementation of the Resources Arbiter library which can be used by the bus
-drivers like ACPI, PCI or legacy PIC HAL. In addition to that Vadim implemented debug code both in PnP and I/O managers whereas Eric Kohl improved the PnP manager to map device capabilities to capability flags. Thomas Faber fixed a critical bug that could
-cause memory corruption in the kernel space and fixed a bad IRP (I/O request packet) handling that caused a [Blue Screen](https://en.wikipedia.org/wiki/Blue_screen_of_death) on an Original Xbox console with USB enabled. 
+Let's not forget about the PnP (Plug n' Play) manager of the kernel, which is another important part not only in regard to stability, but also regarding the usability of the system with a plethora of hardware.
+Vadim Galyant added an initial implementation of the Resource Arbiter library, which is going to be used by bus drivers like PCI to manage resource conflicts.
+In addition to that, Vadim implemented debug code both in PnP and I/O managers, whereas Eric Kohl improved the PnP manager to map device capabilities to capability flags.
+Thomas Faber fixed a critical bug that could cause memory corruption in the kernel space.
+Furthermore, he fixed a faulty IRP (I/O Request Packet) handling that caused a [Blue Screen](https://en.wikipedia.org/wiki/Blue_screen_of_death) on an Original Xbox console with USB enabled.
 
-The Kernel Debugger (KD) and related modules have also received updates from developers and contributors alike. Dmitry Borisov added ComPort library for NEC PC-98 which is fundamental in the further development and support of NEC series. Hermès Bélusca-Maïto has finished the support for debug filters, improved the `cregs` and `tss` commands included in the interactive kernel debugger (KDBG, present only in GCC debug builds),
-rewrote the TSS handling code and squashed various bugs with it. Namely the issue with the KDBG backtrace when a TSS switch happened during execution. Furthermore, Jérôme Gardou alongside with Hervé Poussineau brought some fixes and improvements to the KDBG module.
+The Kernel Debugger (KD) and related modules have also received updates from developers and contributors alike.
+Dmitry Borisov added a ComPort library for NEC PC-98, which is fundamental in the further development and support of NEC series.
+Hermès Bélusca-Maïto has finished the support for debug filters, improved the `cregs` and `tss` commands included in the interactive kernel debugger (KDBG, present only in GCC debug builds), rewrote the TSS handling code and squashed various bugs with it.
+Furthermore, Jérôme Gardou alongside with Hervé Poussineau brought some fixes and improvements to the KDBG module.
 
 ## NetKVM VirtIO bringup
 NetKVM VirtIO is an NDIS 5 compatible driver developed by Red Hat Inc., which allows fast VirtIO networking in virtual machine software such as QEMU and other KVM hardware accelerated virtual machines.
@@ -76,25 +79,33 @@ Nguyen Trung Khanh, a ReactOS contributor, took over Benjamin Aerni's work of im
 This provides ReactOS with support for another network interface out of the box.
 
 ## Miscellaneous changes & improvements
-Other areas of ReactOS infrastructure have received lots improvements by various contributors, ranging from device drivers to software applications. Notably FreeLoader, the ReactOS' bootloader, received incremental fixes and improvements. As such Hermès Bélusca-Maïto added support for booting Linux 64-bit systems in 64-bit FreeLoader and fixed an issue where
-FreeLoader couldn't read from an EXT2 volume hence preventing booting. Dmitry Borisov fixed a serious triple fault bug when ReactOS was booted up in Screen debugging mode. In addition to that, Dmitry Borisov also provided other fixes as well as added ARC-emulation support necessary for NEC PC-98 series.
-Stanislav Motylkov still continues his work on Xbox boot support ranging from fixes patches and other updates brought by him. This is mainly the platform bring up, refactoring and abstraction of existing low-level code.
-Hermès Bélusca-Maïto also fixed several old bugs, notably a corruption in the console emulation (CONSRV) layer's memory when converting input events back to ANSI and a bug in HAL where the system lead into an assertion failure sporadically.
+Other areas of the ReactOS operating system have received lots of improvements by various contributors, ranging from device drivers to software applications.
+Notably FreeLoader, the ReactOS bootloader, received incremental fixes and improvements.
+
+Hermès Bélusca-Maïto added support for booting Linux 64-bit systems in 64-bit FreeLoader and fixed an issue where FreeLoader couldn't read from an EXT2 volume, hence preventing booting.
+Dmitry Borisov fixed a serious triple fault bug when ReactOS was booted up in Screen debugging mode.
+In addition to that, Dmitry Borisov also provided other fixes as well as added ARC-emulation support necessary for NEC PC-98 series.
+Stanislav Motylkov still continues his work on Xbox boot support, contributing various fixes and patches.
+This is mainly the platform bring-up, refactoring, and abstraction of existing low-level code.
+Hermès Bélusca-Maïto also fixed several old bugs, notably a corruption in the console emulation (CONSRV) layer's memory when converting input events back to ANSI, and a bug in HAL that sporadically caused an assertion failure.
 
 George Bișoc updated the On-Screen Keyboard and Accessbility Utility Manager and at the same time provided minor fixes and improvements to different parts of ReactOS.
 
-Hervé Poussineau worked hard on ISA PnP driver which detects ISA devices although such driver is currently deactivated.
-Mark Jansen fixed a bug in comctl32 (Common Controls) module where Visual Basic 6 installer was rendered incorrectly. Eric Kohl worked on "Safely Remove Hardware" dialog manager where the peripherals are now enumerated for safely removal.
+Hervé Poussineau worked hard on the ISA PnP driver which detects ISA devices, however that driver is not yet activated.
+Mark Jansen fixed a bug in the comctl32 (Common Controls) module, which lead to an incorrectly rendered Visual Basic 6 installer.
+Eric Kohl worked on the "Safely Remove Hardware" dialog, which now enumerates the peripherals for safely removal.
 
-What is particularly different between 0.4.13 and this release is the sleek performance increase due to obsolete fonts being removed by Katayama Hirofumi MZ. This both reduced the binary size of this release and the RAM consumption.
-Here is a comparison between 0.4.13 (with the obsolete fonts used and loaded in memory) and 0.4.14.
+What is particularly different between 0.4.13 and this release is the sleek performance increase due to obsolete fonts being removed by Katayama Hirofumi MZ.
+This both reduced the binary size of this release and the RAM consumption.
+Here is a comparison between 0.4.13 (with the obsolete fonts loaded in memory) and 0.4.14.
 
 {{< figure link="/img/project-news/reactos-0414-released/misc.png" src="/img/project-news/reactos-0414-released/misc.png" >}}
 
 
 ## Third Party Syncs
-ReactOS is a FOSS (Free or Open Source) operating system that abides by the general rule of being a free operating system, as in "free beer", and open source where people can study the OS and contribute with code.
-As such, ReactOS shares modules and code from other third-party open source projects which are regularly updated by the ReactOS developers. The following syncs are part of this release:
+ReactOS is a FOSS (Free Open Source Software) operating system that is both free as in "free beer" and open source, meaning that people can study the OS and contribute code.
+As such, ReactOS shares modules and code from other third-party open source projects, which are regularly updated by the ReactOS developers.
+The following syncs are part of this release:
 
 * Wine Staging 4.18 user mode DLLs by Amine Khaldi
 * mpg123 1.25.13 by Thomas Faber
