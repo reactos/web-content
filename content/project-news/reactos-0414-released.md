@@ -89,7 +89,7 @@ Stanislav Motylkov still continues his work on Xbox boot support, contributing v
 This is mainly the platform bring-up, refactoring, and abstraction of existing low-level code.
 Hermès Bélusca-Maïto also fixed several old bugs, notably a corruption in the console emulation (CONSRV) layer's memory when converting input events back to ANSI, and a bug in HAL that sporadically caused an assertion failure.
 
-George Bișoc updated the On-Screen Keyboard and Accessbility Utility Manager and at the same time provided minor fixes and improvements to different parts of ReactOS.
+George Bișoc updated the On-Screen Keyboard and Accessibility Utility Manager and at the same time provided minor fixes and improvements to different parts of ReactOS.
 
 Hervé Poussineau worked hard on the ISA PnP driver which detects ISA devices, however that driver is not yet activated.
 Mark Jansen fixed a bug in the comctl32 (Common Controls) module, which lead to an incorrectly rendered Visual Basic 6 installer.
