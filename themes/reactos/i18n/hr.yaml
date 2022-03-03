@@ -1,14 +1,14 @@
 id:  home
-translation:  "Početnastranica"
+translation:  "Početna stranica"
 
 id:  templateBy
-translation:  "Predložakod"
+translation:  "Predložak od"
 
 id:  portedBy
-translation:  "PreniouHugo"
+translation:  "Prenio u Hugo"
 
 id:  contactGoTo
-translation:  "Stranicazakontakte"
+translation:  "Stranica za kontakte"
 
 id:  contactAddrTitle
 translation:  "Adresa"
@@ -17,25 +17,25 @@ id:  contactTitle
 translation:  "Kontakt"
 
 id:  contactForm
-translation:  "Formularzakontakt"
+translation:  "Formular za kontakte"
 
 id:  contactName
-translation:  "Vašeime"
+translation:  "Vaše ime"
 
 id:  contactMail
-translation:  "Vaše-mail"
+translation:  "Vaša elektronička pošta"
 
 id:  contactMessage
-translation:  "Vašaporuka"
+translation:  "Vaša poruka"
 
 id:  contactSend
-translation:  "Pošaljiporuku"
+translation:  "Pošalji poruku"
 
 id:  navHome
-translation:  "Idinapočetnustranicu"
+translation:  "Idi na početnu stranicu"
 
 id : navToggle
-translation:  "Uključitenavigaciju"
+translation:  "Uključite navigaciju"
 
 id:  categoriesTitle
 translation:  "Kategorije"
@@ -47,19 +47,19 @@ id:  tagsTitle
 translation:  "Tagovi"
 
 id:  continueReading
-translation:  "Nastavičitati"
+translation:  "Nastavi čitati"
 
 id:  readMore
-translation:  "Pročitajviše"
+translation:  "Pročitaj više"
 
 id: authorBy
 translation: "od"
 
 id: recentPosts
-translation: "Nedavnipostovi"
+translation: "Nedavni postovi"
 
 id: aboutUs
-translation: "Onama"
+translation: "O nama"
 
 id: newer
 translation: "Novije"
