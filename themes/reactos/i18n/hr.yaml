@@ -1,0 +1,71 @@
+id:  home
+translation:  "Početnastranica"
+
+id:  templateBy
+translation:  "Predložakod"
+
+id:  portedBy
+translation:  "PreniouHugo"
+
+id:  contactGoTo
+translation:  "Stranicazakontakte"
+
+id:  contactAddrTitle
+translation:  "Adresa"
+
+id:  contactTitle
+translation:  "Kontakt"
+
+id:  contactForm
+translation:  "Formularzakontakt"
+
+id:  contactName
+translation:  "Vašeime"
+
+id:  contactMail
+translation:  "Vaše-mail"
+
+id:  contactMessage
+translation:  "Vašaporuka"
+
+id:  contactSend
+translation:  "Pošaljiporuku"
+
+id:  navHome
+translation:  "Idinapočetnustranicu"
+
+id : navToggle
+translation:  "Uključitenavigaciju"
+
+id:  categoriesTitle
+translation:  "Kategorije"
+
+id:  searchTitle
+translation:  "Pretraži"
+
+id:  tagsTitle
+translation:  "Tagovi"
+
+id:  continueReading
+translation:  "Nastavičitati"
+
+id:  readMore
+translation:  "Pročitajviše"
+
+id: authorBy
+translation: "od"
+
+id: recentPosts
+translation: "Nedavnipostovi"
+
+id: aboutUs
+translation: "Onama"
+
+id: newer
+translation: "Novije"
+
+id: older
+translation: "Starije"
+
+id: publishedOn
+translation: "na"
