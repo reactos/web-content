@@ -56,7 +56,7 @@ Working in this area requires a much deeper knowledge of not only the Win32 API 
 
 The shell is generally split into two areas. The main portion of the shell comprises of a number of dlls which make up the majority of what user's interact with (shell32.dll, browseui.dll, etc). These dlls contain code for things such as the file browser, dialogs, menus, and the start menu and they rely heavily on the Win32 API to provide these services. Most GUI applications make use of the shell in some way, even if it’s just to provide a user with a dialog box for opening files.
 
-Explorer is the portion most people associate with the the shell, and is a process that provides the user with a desktop to manage their applications. It implements things like the taskbar and tray notification area and it too relies heavily on the shell dlls to get its tasks done.
+Explorer is the portion most people associate with the shell, and is a process that provides the user with a desktop to manage their applications. It implements things like the taskbar and tray notification area and it too relies heavily on the shell dlls to get its tasks done.
 
 The majority of the shell is written in C++ and uses COM extensively. The ReactOS shell is a fully working implementation of a Windows shell with the same look and feel. ReactOS will happily host the Windows explorer, likewise the ReactOS version of explorer will happily run in Windows. This makes it a great learning tool to further your knowledge into Windows shell development. If you’re an experienced COM developer, or even if you’re just hoping to learn more about COM and the shell, then this is the place for you to embark on your ReactOS development.
 
