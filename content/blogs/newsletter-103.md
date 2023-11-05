@@ -46,7 +46,7 @@ All of this effort is further coordinated with the help of Timo Kreuzer.
 
 ## UEFI Boot
 Thanks to the work of Timo Kreuzer (tkreuzer) our AMD64 builds are now capable of booting on an increasing number of hardware.
-Thanks to Timo's and Jusin's work, we are working towards supporting modern devices with UEFI class 3 firmware.
+Thanks to Timo's and Justin's work, we are working towards supporting modern devices with UEFI class 3 firmware.
 Work has been underway since the beginning of the year to transition FreeLoader, our default bootloader for ReactOS, to support UEFI on x86 and AMD64, as well as ARM32 and ARM64.
 Hermès has been developing a system for passing the UEFI framebuffer information in a fashion that allows Windows XP to run on UEFI systems, while Justin Miller (The_DarkFire_) has been developing the UEFI freeloader build.
 
