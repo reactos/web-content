@@ -36,10 +36,11 @@ Kernel debugging with WinDbg works by having a debugger stub on the target which
 
 Based on work from previous developers (Hervé Poussineau and Timo Kreuzer), Hermès is updating KDBG with new features and bug fixes to make it easier for developers and testers alike to reliably debug ReactOS.
 Improvements for KDBG include:
-* Isolating terminal and input-related functionalities from the rest of KDBG ([#5188](https://github.com/reactos/reactos/pull/5188));
-* Fixing an input buffer reading bug in `KdbpReadCommand()` and `KdReceivePacket()` routines ([#4914](https://github.com/reactos/reactos/pull/4914));
-* Reworking the boot-phase initialization of KD and KDBG ([#4892](https://github.com/reactos/reactos/pull/4892));
-* Moving the code handling of Dmesg buffer from screen provider to KDBG provider ([#5143](https://github.com/reactos/reactos/pull/5143));
+
+- Isolating terminal and input-related functionalities from the rest of KDBG ([#5188](https://github.com/reactos/reactos/pull/5188));
+- Fixing an input buffer reading bug in `KdbpReadCommand()` and `KdReceivePacket()` routines ([#4914](https://github.com/reactos/reactos/pull/4914));
+- Reworking the boot-phase initialization of KD and KDBG ([#4892](https://github.com/reactos/reactos/pull/4892));
+- Moving the code handling of Dmesg buffer from screen provider to KDBG provider ([#5143](https://github.com/reactos/reactos/pull/5143));
 
 The goal of this work is to have a terminal version of KDCOM and separate KDBG into a dedicated KDCOM-like extension DLL, such as `kdrosdbg.dll` (see [#4600](https://github.com/reactos/reactos/pull/4600)).
 All of this effort is further coordinated with the help of Timo Kreuzer.
