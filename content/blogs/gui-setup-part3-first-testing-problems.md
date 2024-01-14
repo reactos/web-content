@@ -1,7 +1,7 @@
 ---
 title:      "1st-stage GUI setup, Part 3 - December 2023: First tests"
 author:     "hbelusca"
-date:       2024-01-31
+date:       2024-02-01
 tags:       [ newsletter, gui-setup ]
 ---
 
