@@ -159,3 +159,4 @@ paginate = 10
 [taxonomies]
 	author = "author"
 	tag = "tags"
+
