@@ -1,0 +1,17 @@
+<!--
+Support for embedding self-hosted videos.
+Put this file in /layouts/shortcodes/video.html
+
+@copyright  Copyright 2024 Hermès Bélusca-Maïto <hermes.belusca-maito@reactos.org>
+@license    GPL-2.0-or-later (https://spdx.org/licenses/GPL-2.0-or-later)
+
+Based on snippets from:
+https://iamsorush.com/posts/add-video-to-hugo-post/
+https://roneo.org/en/hugo-create-a-shortcode-for-local-videos/
+https://github.com/martignoni/hugo-video
+-->
+{{- $width := "100%" -}}
+<video class="video-shortcode" width="{{ or (.Get "width") $width }}" {{ with .Get "height" }}height="{{.}}"{{ end }} preload="{{ .Get "preload" }}" {{ if ne (.Get "controls") "false" }}controls {{ end }} {{ if eq (.Get "autoplay") "true" }}autoplay {{ end }} {{ if eq (.Get "loop") "true" }}loop {{ end }}{{ if eq (.Get "muted") "true" }}muted {{ end }}playsinline>
+    <source src="{{ .Get "src" }}" type="{{ .Get "type" }}">
+    There should have been a video here but your browser does not seem to support it.
+</video>
