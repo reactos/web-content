@@ -8,6 +8,7 @@ tags:       [ newsletter, gui-setup ]
 Greetings!
 
 Welcome to the second blog of the series "1st-stage GUI setup":
+
 1. [September 2023: partly Wine-syncing setupapi](/blogs/gui-setup-part1-setupapi)
 2. October-November 2023: Making partitioning UI work
 3. [December 2023: First tests](/blogs/gui-setup-part3-first-testing-problems)
@@ -23,6 +24,7 @@ During the first week of October, I finished addressing some issues that arose w
 
 I then started the main part of this project: working on the GUI setup proper.
 The crucial work for it resides in three functions:
+
 - Disk partitioning and bootloader installation;
 - File copying;
 - Saving settings in the registry.
@@ -79,10 +81,12 @@ The partition page allows the user to choose the partition where to install Reac
 This new installation workflow necessitated adapting the existing partitioning code, shared with the text-mode USETUP, to determine where and how to store additional per-partition arbitrary data state (for example, filesystem choice and formatting parameters).
 
 Most importantly, three main changes were required in the code, summarized below.
+
 - Rewriting the formatter/chkdsk machine-state code, that is originally used in USETUP, to make it more generic and act as a queue whose stashed actions can then be committed all at once, so as to employ it in the GUI setup as well.
 - Splitting the bootloader installation choice, from its actual installation code: see GitHub [PR #5786](https://github.com/reactos/reactos/pull/5786).
 This was needed, because the old behaviour was to present the user with the bootloader installation choice only at the very end of ReactOS installation, and not before starting it, and the old code was not reusable elsewhere.
 - Better unify the helper functions used to create partitions: see GitHub [PR #5837](https://github.com/reactos/reactos/pull/5837).
+
 The existing code distinguished between "primary", "logical" and "extended" partitions.
 This makes sense for MBR-based disks but does not anywhere else (such as GPT disks).
 These partition creation helpers now automatically deduce their actual type -- the only exception being for "extended" partitions for MBR disks only.
@@ -97,6 +101,7 @@ These partition creation helpers now automatically deduce their actual type -- t
 
 Partition handling code is now present in the GUI setup.
 However, it requires a few improvements:
+
 - Being able to select empty disk space between existing partitions and install ReactOS onto it.
 - Reformat an _existing_ partition from the UI.
 This is not yet possible because the formatting options currently exist only in the Create-And-Format-Partition dialog;

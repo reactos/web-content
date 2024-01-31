@@ -1,5 +1,5 @@
 ---
-title:      "1st-stage GUI setup - September 2023: partly Wine-syncing setupapi"
+title:      "1st-stage GUI setup, Part 1 - September 2023: Partly Wine-syncing setupapi"
 author:     "hbelusca"
 date:       2023-12-04
 tags:       [ newsletter, gui-setup ]
@@ -8,10 +8,17 @@ tags:       [ newsletter, gui-setup ]
 Greetings to all ReactOS followers!
 As many of you certainly are aware by now, [I have been officially hired](/project-news/hermes-belusca-hired-full-time) by ReactOS Deutschland e.V. to develop the graphical version of the 1st-stage ReactOS installer ("1st-stage GUI setup").
 
-During this first month (September 2023), my goal was to partly sync the code of the `setupapi.dll` module with Wine's.
+This is the first blog of the series "1st-stage GUI setup":
+
+1. September 2023: Partly Wine-syncing setupapi
+2. [October-November 2023: Making partitioning UI work](/blogs/gui-setup-part2-partitioning)
+3. [December 2023: First tests](/blogs/gui-setup-part3-first-testing-problems)
+
+During this [first month of September 2023](https://docs.google.com/spreadsheets/d/1Kx80SmSkj1IdomVC9gcbA_MJ7XFiz_YlYYVxoxv-Jgs/view#gid=538572214), my goal was to partly sync the code of the `setupapi.dll` module with Wine's.
 Indeed, this module was [forked](https://git.reactos.org/?p=reactos.git;a=blob;f=media/doc/WINESYNC.txt;h=f6614ac83a968cd5d7ddde6483dc85b94d264fc4;hb=HEAD#l182) way back in 2005, with later partial synchronizations of its code for some of its functions.
 
 For those of you who do not know what [setupapi](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/setupapi) is, it is a module that:
+
 - exposes [generic setup functions](https://learn.microsoft.com/en-us/windows/win32/setupapi/setup-api-portal) for reading and processing INF files, moving/copying files from an installation source media to a target, supporting also extraction from compressed .CAB cabinet files;
 - and exposes device installation functions as well.
 
