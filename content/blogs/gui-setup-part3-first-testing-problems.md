@@ -9,7 +9,7 @@ Greetings!
 
 Welcome to the third blog of the series "1st-stage GUI setup":
 
-1. [September 2023: partly Wine-syncing setupapi](/blogs/gui-setup-part1-setupapi)
+1. [September 2023: Partly Wine-syncing setupapi](/blogs/gui-setup-part1-setupapi)
 2. [October-November 2023: Making partitioning UI work](/blogs/gui-setup-part2-partitioning)
 3. December 2023: First tests
 
