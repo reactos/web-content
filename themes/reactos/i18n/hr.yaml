@@ -1,0 +1,71 @@
+- id:  home
+  translation:  "Početna stranica"
+
+- id:  templateBy
+  translation:  "Predložak od"
+
+- id:  portedBy
+  translation:  "Prenio u Hugo"
+
+- id:  contactGoTo
+  translation:  "Stranica za kontakte"
+
+- id:  contactAddrTitle
+  translation:  "Adresa"
+
+- id:  contactTitle
+  translation:  "Kontakt"
+
+- id:  contactForm
+  translation:  "Formular za kontakte"
+
+- id:  contactName
+  translation:  "Vaše ime"
+
+- id:  contactMail
+  translation:  "Vaša elektronička pošta"
+
+- id:  contactMessage
+  translation:  "Vaša poruka"
+
+- id:  contactSend
+  translation:  "Pošalji poruku"
+
+- id:  navHome
+  translation:  "Idi na početnu stranicu"
+
+- id : navToggle
+  translation:  "Uključite navigaciju"
+
+- id:  categoriesTitle
+  translation:  "Kategorije"
+
+- id:  searchTitle
+  translation:  "Pretraži"
+
+- id:  tagsTitle
+  translation:  "Tagovi"
+
+- id:  continueReading
+  translation:  "Nastavi čitati"
+
+- id:  readMore
+  translation:  "Pročitaj više"
+
+- id: authorBy
+  translation: "od"
+
+- id: recentPosts
+  translation: "Nedavni postovi"
+
+- id: aboutUs
+  translation: "O nama"
+
+- id: newer
+  translation: "Novije"
+
+- id: older
+  translation: "Starije"
+
+- id: publishedOn
+  translation: "na"
