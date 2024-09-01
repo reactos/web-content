@@ -414,7 +414,7 @@ fieldset[disabled] .btn-template-main.active {
 	font-weight: 700;
 }
 .panel.sidebar-menu ul.nav.category-menu li a {
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
 .panel.sidebar-menu ul.nav ul {
 	list-style: none;
@@ -629,7 +629,7 @@ fieldset[disabled] .btn-template-main.active {
 /* Original Boostrap template overwrite */
 /* breadcrumbs */
 .breadcrumb {
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-family: "Poppins", Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 	background-color: none;
 }
@@ -1021,7 +1021,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 body {
 	display: flex;
 	flex-direction: column;
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-family: "Poppins", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.42857143;
 	color: #555555;
@@ -1082,7 +1082,7 @@ hr {
 	border-top: solid 1px #eeeeee;
 	padding-top: 20px;
 	text-transform: uppercase;
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-family: "Poppins", Helvetica, Arial, sans-serif;
 }
 .pager li {
 	display: inline;
@@ -1121,7 +1121,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-family: "Poppins", Helvetica, Arial, sans-serif;
 	font-weight: 900;
 	line-height: 1.1;
 	color: #333333;
