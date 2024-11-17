@@ -40,5 +40,4 @@ date: 2020-03-25
 {{< figure link="/sites/default/files/thunderbird.png" caption="Mozilla Thunderbird" >}}
 {{< figure link="/sites/default/files/filezilla.png" caption="FileZilla" >}}
 {{< figure link="/sites/default/files/hfs.png" caption="HFS HTTP File Server" >}}
-{{< figure link="/sites/default/files/linter.png" caption="DBMS Linter Bastion" >}}
 {{< /gallery >}}
