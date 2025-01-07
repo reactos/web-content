@@ -1,7 +1,7 @@
 <footer id="copyright">
 	<div class="col-md-offset-1 col-md-10">
 		<div class="row">
-			<div class="col-sm-4 col-md-4 col-left">&copy; 1996-{{ now.Year }} ReactOS Team &amp; Contributors</div>
+			<div class="col-sm-4 col-md-4 col-left">&copy; 1996-<script>document.write(new Date().getFullYear())</script> ReactOS Team &amp; Contributors</div>
 
 			<div class="col-sm-3 col-md-4 col-center">
 				{{ if and (.File) (ne .Slug "footer") }}
