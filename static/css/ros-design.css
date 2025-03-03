@@ -12,6 +12,15 @@
 .ros-button:active {
 	background: #436477;
 }
+.ros-button-secondary {
+	background: #6e6e6e;
+}
+.ros-button-secondary:hover {
+	background: #8c8c8c;
+}
+.ros-button-secondary:active {
+	background: #5c5c5c;
+}
 .ros-button-sm {
 	padding: 0.25em 0.5em;
 }
