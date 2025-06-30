@@ -1,24 +1,24 @@
 ---
-title:       "Carl Bialorucki hired to fix test suite"
+title:       "Carl Bialorucki hired to improve ReactOS test suite"
 author:      "Carl Bialorucki"
 date:        2025-06-27
 tags:        [ "newsletter", "tests", "test-suite" ]
 ---
 Hi, my name is Carl J. Bialorucki.
 I started making a name for myself in the ReactOS community by contributing several shell improvements.
-In May of 2024 I was added to the core development team and in March of 2025 I lead the release of ReactOS 0.4.15 after the previous release manager was unable to continue working on the project.
+In May of 2024 I was added to the core development team and in March of 2025 I led the release of ReactOS 0.4.15 after the previous release manager was unable to continue working on the project.
 
 I’m pleased to announce that I was hired for a full-time contract position with ReactOS Deutschland e.V. in May of 2025.
 The contract is scheduled to run until August of 2025.<!--more-->
 
 ## Current State of Our Test Infrastructure
 Our test infrastructure is currently unreliable.
-Our tests often fail, crash, hang or even bugcheck—the technical term for a ‘Blue Screen of Death’ or ‘BSoD’—on Windows.
+Our tests often fail, crash, hang or even bugcheck&mdash;the technical term for a ‘Blue Screen of Death’ or ‘BSoD’&mdash;on Windows.
 Tests that fail on Windows clearly don’t measure how accurately we replicate Windows’ behavior.
 
 ReactOS also includes several tests from the Wine project.
 Unfortunately, these tests are from older versions of Wine and several didn’t pass on Windows either.
-Wine has since improved their tests; but we failed to keep up with their changes.
+Wine has since improved their tests, but we failed to keep up with their changes.
 
 ## What I’m Working on and What’s Changing
 I’m currently working to eliminate test failures, crashes, hangs, and bugchecks from our test suite when running on Windows.
