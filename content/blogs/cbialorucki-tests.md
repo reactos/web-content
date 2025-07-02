@@ -8,8 +8,8 @@ Hi, my name is Carl J. Bialorucki.
 I started making a name for myself in the ReactOS community by contributing several shell improvements.
 In May of 2024 I was added to the core development team and in March of 2025 I led the release of ReactOS 0.4.15 after the previous release manager was unable to continue working on the project.
 
-I’m pleased to announce that I was hired for a full-time contract position with ReactOS Deutschland e.V. in May of 2025.
-The contract is scheduled to run until August of 2025.<!--more-->
+I’m pleased to announce that I was hired for a full-time contract position with ReactOS Deutschland e.V. in May of 2025.<!--more-->
+The contract is scheduled to run until August of 2025.
 
 ## Current State of Our Test Infrastructure
 Our test infrastructure is currently unreliable.
