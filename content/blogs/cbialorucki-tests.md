@@ -1,7 +1,7 @@
 ---
 title:       "Carl Bialorucki hired to improve ReactOS test suite"
 author:      "Carl Bialorucki"
-date:        2025-06-27
+date:        2025-07-04
 tags:        [ "newsletter", "tests", "test-suite" ]
 ---
 Hi, my name is Carl J. Bialorucki.
