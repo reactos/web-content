@@ -106,7 +106,7 @@ Commits: 8,600+
 
 Oldest Jira issue resolved: [CORE-1091](https://jira.reactos.org/browse/CORE-1091) from 19 December 2005
 
-- [Official Changelog](https://reactos.org/wiki/Changelog-0.4.15)
+- [Official Changelog](https://reactos.org/wiki/ChangeLog-0.4.15)
 - [Community Changelog](https://reactos.org/wiki/Community_Changelog-0.4.15)
 - [Application Tests](https://reactos.org/wiki/Tests_for_0.4.15)
 
