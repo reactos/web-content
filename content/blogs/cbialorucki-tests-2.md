@@ -1,7 +1,7 @@
 ---
 title:       "Progress update: fixing the ReactOS test suite"
 author:      "Carl Bialorucki"
-date:        2025-07-04
+date:        2025-11-04
 tags:        [ "newsletter", "tests", "test-suite" ]
 ---
 For many years, the ReactOS test suite was neglected.
