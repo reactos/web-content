@@ -1,8 +1,9 @@
 ---
 title:       "Progress update: fixing the ReactOS test suite"
 author:      "Carl Bialorucki"
-date:        2025-11-04
+date:        2025-10-30
 tags:        [ "newsletter", "tests", "test-suite" ]
+# Note: blog post release planned for 2025-11-04
 ---
 For many years, the ReactOS test suite was neglected.
 It was a random collection of our own tests and old Wine tests that were only checked against Windows Server 2003 and sometimes a random newer version of Windows up to the discretion of the contributor.
@@ -53,7 +54,7 @@ Now that we migrated to git, searching is broken on Testman.
 Test results shown in Testman are also sometimes incorrect, especially when a test spawns child processes.
 I plan to fix these issues with Testman during my contract.
 
-Eventually I would like to see our test bots become part of our CI/CD pipeline.
+Eventually I would like to see our test bots play a larger role in our CI/CD pipeline.
 Currently we use GitHub Actions to ensure each pull request can be compiled using all the targets we currently support.
 No plans are formalized at this time on integrating test bots in our CI/CD pipeline.
 
