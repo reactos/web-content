@@ -3,6 +3,7 @@ title:       "Progress update: fixing the ReactOS test suite"
 author:      "Carl Bialorucki"
 date:        2025-10-30
 tags:        [ "newsletter", "tests", "test-suite" ]
+banner:      "img/blogs/cbialorucki_tests/tests-2-banner.png"
 # Note: blog post release planned for 2025-11-04
 ---
 For many years, the ReactOS test suite was neglected.
