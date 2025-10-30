@@ -11,7 +11,7 @@ The Wine tests we imported were heavily modified and the changes made weren’t 
 
 I’m here to clean up this mess.
 
-I’ve been deeply involved with the ReactOS project since 2023 and in May of 2024 I became an official project developer.
+I have been deeply involved with the ReactOS project since 2023 and in May of 2024 I became an official project developer.
 In May of 2025, I was contracted to clean up the test suite and in August the contract was extended through the month of December.
 Let’s take a look at what I’ve been doing for ReactOS with this contract.
 
@@ -28,7 +28,7 @@ With these merged fixes, we can now run our full test suite on Windows Vista wit
 After working on our own tests, I turned my attention towards where most of our test failures were coming from: the tests that we share or ‘sync’ with the Wine project.
 As a project, we’ve been working to improve the quality of our Wine syncs.
 We decided to focus on syncing as many Wine projects as possible to Wine 10.0 and to cleanly document our changes to the Wine code using C preprocessor guards.
-Wine 10.0 is not the latest version of Wine, but using a common version across the board can help simplify future Wine syncs.
+Wine 10.0 is not the latest version of Wine, but using a fixed version across the board can help simplify future Wine syncs.
 
 One difficulty with using code from the Wine project is that Wine’s headers are not compatible with Microsoft’s headers used in the public Windows SDK.
 For years, our headers were trying to accommodate both, and because of that our headers weren’t compatible with either Microsoft’s headers or Wine’s headers.
@@ -40,7 +40,7 @@ This header separation helps reduce the number of changes to Wine and other code
 In addition, this header separation opens up the possibility of distributing an MIT-licensed SDK separate from ReactOS in the future.
 
 Despite the new header initiative, many Wine tests still need several patches to pass and not crash on Windows Server 2003, Windows Vista, Windows 7, Windows 8.1 and even early versions of Windows 10.
-Wine also doesn’t write their tests with MSVC compiler in mind, so I sometimes have to write more patches for MSVC builds.
+Wine also doesn’t write their tests with the MSVC compiler in mind, so I sometimes have to write more patches for MSVC builds.
 After the Wine tests pass on Windows without failures, I then see if the test crashes on ReactOS.
 Additional test failures on ReactOS are a good thing, they show where we can fix bugs; but when a test crashes, we can’t use it to tell if ReactOS is getting better or getting worse.
 After ensuring synced tests don’t crash on ReactOS, I open a pull request that is then reviewed by other core developers and eventually it gets merged.
@@ -59,7 +59,7 @@ Currently we use GitHub Actions to ensure each pull request can be compiled usin
 No plans are formalized at this time on integrating test bots in our CI/CD pipeline.
 
 If you’d like to see more ReactOS progress, [donate at reactos.org/donate](https://reactos.org/donate) or [contribute at github.com/reactos/reactos](https://github.com/reactos/reactos).
-Every dollar and every pull request helps us move towards a free and open-source future with a Windows-compatible operating system for everyone.
+Every dollar and every pull request helps us move towards a free and open-source future with a Windows-compatible operating system for everyone!
 
 Gratefully,
 
