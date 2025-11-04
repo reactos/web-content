@@ -51,7 +51,7 @@ ReactOS Deutschland e.V. pays for my contract and to host our infrastructure, wh
 To view the results of test bot runs, we developed a tool called Testman that is integrated into our website.
 Testman was also neglected and now has several issues.
 For example, the tool was developed back when we used SVN for version control and the search interface was designed for that.
-Now that we migrated to git, searching is broken on Testman.
+Now that we migrated to Git, searching is broken on Testman.
 Test results shown in Testman are also sometimes incorrect, especially when a test spawns child processes.
 I plan to fix these issues with Testman during my contract.
 
