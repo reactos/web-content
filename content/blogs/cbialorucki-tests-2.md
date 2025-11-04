@@ -1,7 +1,7 @@
 ---
 title:       "Progress update: fixing the ReactOS test suite"
 author:      "Carl Bialorucki"
-date:        2025-10-30
+date:        2025-11-04
 tags:        [ "newsletter", "tests", "test-suite" ]
 banner:      "img/blogs/cbialorucki_tests/tests-2-banner.png"
 # Note: blog post release planned for 2025-11-04
@@ -57,7 +57,9 @@ I plan to fix these issues with Testman during my contract.
 
 Eventually I would like to see our test bots play a larger role in our CI/CD pipeline.
 Currently we use GitHub Actions to ensure each pull request can be compiled using all the targets we currently support.
-No plans are formalized at this time on integrating test bots in our CI/CD pipeline.
+However, project developers have to manually initiate test bot runs for pull requests and paste the results into the description for each pull request.
+If this process was automated, test results would be easier to trace, contributors would have a clearer picture of the impact of their pull request, and reviews would be faster to complete.
+No plans are formalized at this time to further utilize our test bots in our CI/CD pipeline.
 
 If you’d like to see more ReactOS progress, [donate at reactos.org/donate](https://reactos.org/donate) or [contribute at github.com/reactos/reactos](https://github.com/reactos/reactos).
 Every dollar and every pull request helps us move towards a free and open-source future with a Windows-compatible operating system for everyone!
