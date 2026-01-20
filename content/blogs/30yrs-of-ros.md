@@ -70,7 +70,7 @@ ReactOS 0.4.0 continued to receive incremental updates every few months up until
 We’ve come a long way, but we still have a long way to go.
 The future of ReactOS will be written by the people who believe in the mission and are willing to help carry it forward.
 
-If you believe in running “your favorite Windows apps and drivers in an open-source environment you can trust”, you can help make it a reality by [making a financial contribution](https://reactos.org/donate), [opening a pull request on GitHub](https://github.com/reactos/reactos), or [testing and filing bug reports](https://jira.reactos.org).
+If you believe in running “your favorite Windows apps and drivers in an open-source environment you can trust”, you can help make that a reality by [making a financial contribution](https://reactos.org/donate), [opening a pull request on GitHub](https://github.com/reactos/reactos), or [testing and filing bug reports](https://jira.reactos.org).
 Even small contributions can help a lot!
 
 ## Statistics
