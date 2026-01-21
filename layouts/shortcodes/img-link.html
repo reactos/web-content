@@ -1,0 +1,7 @@
+{{- $href := .Get "href" -}}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+
+<a href="{{ $href }}" target="_blank">
+  <img src="{{ $src }}" alt="{{ $alt }}">
+</a>

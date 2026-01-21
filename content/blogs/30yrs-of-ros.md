@@ -24,7 +24,7 @@ ReactOS 0.1.0 was the first bootable version of ReactOS.
 It had a command line interface and no desktop.
 Watch a demo of it below, provided courtesy of archeYR.
 
-{{< figure link="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png">}}
+{{< img-link href="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR">}}
 
 ## 2004-2006: ReactOS 0.2.x
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" src="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" caption="ReactOS 0.2.x boot screen">}}
