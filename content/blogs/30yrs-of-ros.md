@@ -6,7 +6,7 @@ tags:        [ "newsletter", "anniversary" ]
 # banner:      "img/blogs/cbialorucki_tests/tests-2-banner.png"
 # Note: blog post release planned for 2026-01-22
 ---
-Today marks 30 years since [the first commit to the ReactOS source tree]( https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
+Today marks 30 years since [the first commit to the ReactOS source tree](https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
 It’s been such a long journey that many of our contributors today, including myself, were not alive during this event.
 Yet our mission to deliver “your favorite Windows apps and drivers in an open-source environment you can trust” continues to bring people together.
 Let’s take a brief look throughout our history together.
