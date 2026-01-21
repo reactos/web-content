@@ -74,10 +74,8 @@ If you believe in running “your favorite Windows apps and drivers in an open-s
 Even small contributions can help a lot!
 
 ## Statistics
-*Note: Statistics were generated at commit f60b1c9*
+*Note: Statistics were calculated at commit f60b1c9*
 - Commits: 88,198
-- Contributors: 301
-- Total Files: 31,025
-- Total Lines of Code: 14,929,578
-- Total Lines Added in Commits: 35,494,734
-- Total Lines Removed in Commits: 58,726,278
+- Total unique contributors: 301
+- Total files: 31,025
+- Total lines of code: 14,929,578
