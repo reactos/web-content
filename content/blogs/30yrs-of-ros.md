@@ -50,7 +50,8 @@ Despite the challenges during this time, ReactOS 0.3.x continued to build upon R
 ReactOS 0.3.0 was released on August 28th, 2006.
 It introduced networking support and a package manager called “Download!”.
 This package manager would become the basis for RAPPS, the package manager built into modern versions of ReactOS.
-On July 5th, 2009, ReactOS 0.3.10 imported the UniATA driver.
+In July 2008, the x86_64 port of ReactOS was started.
+One year later, ReactOS 0.3.10 imported the UniATA driver.
 While we run into limitations with the UniATA driver today, UniATA enabled ReactOS to support SATA storage devices and to support partitions greater than 8GB in size.
 On February 8th, 2012, ReactOS 0.3.14 supported being built using the MSVC compiler and added visual style support.
 
@@ -60,13 +61,15 @@ On February 8th, 2012, ReactOS 0.3.14 supported being built using the MSVC compi
 ReactOS 0.4.0 was released on February 16th, 2016.
 It introduced a new graphical shell that utilized more Windows features and was more similar architecturally to Windows Explorer.
 ReactOS 0.4.0 also introduced support for kernel debugging using WinDbg when compiled with MSVC.
-Being able to use WinDbg for kernel debugging has helped considerably.
+Being able to use standard Windows tools for kernel debugging has helped us progress considerably.
 ReactOS 0.4.0 continued to receive incremental updates every few months up until versions 0.4.14 and 0.4.15 which had years of development updates each.
+Today, the x86_64 port of ReactOS is similarly functional to its x86 counterpart, but with no WoW64 subsystem to run x86 apps its usability is limited.
 
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.4.15-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.4.15-desktop.png" caption="ReactOS 0.4.15 desktop, shown with Luna visual style and large taskbar icons applied">}}
 
 ## The Future of ReactOS
-We’ve come a long way, but we still have a long way to go.
+We're continuing to move ReactOS forward. Behind the scenes there are several out-of-tree projects in development. Some of these exciting projects include a new build environment for developers (RosBE), a new NTFS driver, a new ATA driver, multi-processor (SMP) support, support for class 3 UEFI systems, kernel and usermode address space layout randomization (ASLR), and support for modern GPU drivers built on WDDM.
+
 The future of ReactOS will be written by the people who believe in the mission and are willing to help carry it forward.
 
 If you believe in running “your favorite Windows apps and drivers in an open-source environment you can trust”, you can help make that a reality by [making a financial contribution](https://reactos.org/donate), [opening a pull request on GitHub](https://github.com/reactos/reactos), or [testing and filing bug reports](https://jira.reactos.org).
