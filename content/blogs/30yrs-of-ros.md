@@ -5,7 +5,7 @@ date:        2026-01-01
 tags:        [ "newsletter", "anniversary" ]
 # Note: blog post release planned for 2026-01-22
 ---
-Today marks 30 years since [the first commit to the ReactOS source tree](https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
+Happy Birthday ReactOS! Today marks 30 years since [the first commit to the ReactOS source tree](https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
 It’s been such a long journey that many of our contributors today, including myself, were not alive during this event.
 Yet our mission to deliver “your favorite Windows apps and drivers in an open-source environment you can trust” continues to bring people together.
 Let’s take a brief look throughout our history together.
@@ -24,7 +24,7 @@ ReactOS 0.1.0 was the first bootable version of ReactOS.
 It had a command line interface and no desktop.
 Watch a demo of it below, provided courtesy of archeYR.
 
-<a href="https://youtu.be/rgRMemZcVoM" target="_blank"><img src="/img/blogs/30-yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR"></a>
+<a href="https://youtu.be/rgRMemZcVoM" target="_blank"><img src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR"></a>
 
 ## 2004-2006: ReactOS 0.2.x
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" src="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" caption="ReactOS 0.2.x boot screen">}}
