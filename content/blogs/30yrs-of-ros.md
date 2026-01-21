@@ -19,7 +19,7 @@ Progress on ReactOS was very slow at first.
 Contributors had to first build a very basic NT-like kernel before they could develop drivers for it, then continue developing the kernel; not too dissimilar to the process of bootstrapping a new programming language.
 Once a few basic drivers were written, other contributors were able to learn from these examples and develop other drivers.
 
-ReactOS 0.1.0 was released on 1 February 2003 and received minor updates up until November of 2003.
+ReactOS 0.1.0 was released on February 1st, 2003 and received minor updates up until November 2003.
 ReactOS 0.1.0 was the first bootable version of ReactOS.
 It had a command line interface and no desktop.
 Watch a demo of it below, provided courtesy of archeYR.
@@ -47,17 +47,17 @@ Following challenges with the audit, Steven Edwards stepped down as project coor
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" caption="ReactOS 0.3.x desktop">}}
 
 Despite the challenges during this time, ReactOS 0.3.x continued to build upon ReactOS’s legacy.
-ReactOS 0.3.0 was released on 28 August 2006.
+ReactOS 0.3.0 was released on August 28th, 2006.
 It introduced networking support and a package manager called “Download!”.
 This package manager would become the basis for RAPPS, the package manager built into modern versions of ReactOS.
-On 5 July 2009, ReactOS 0.3.10 imported the UniATA driver.
+On July 5th, 2009, ReactOS 0.3.10 imported the UniATA driver.
 While we run into limitations with the UniATA driver today, UniATA enabled ReactOS to support SATA storage devices and to support partitions greater than 8GB in size.
-On 8 February 2012, ReactOS 0.3.14 supported being built using the MSVC compiler and added visual style support.
+On February 8th, 2012, ReactOS 0.3.14 supported being built using the MSVC compiler and added visual style support.
 
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" caption="Download!, the package manager for ReactOS 0.3.x">}}
 
 ## 2016-Today: ReactOS 0.4.x
-ReactOS 0.4.0 was released on 16 February 2016.
+ReactOS 0.4.0 was released on February 16th, 2016.
 It introduced a new graphical shell that utilized more Windows features and was more similar architecturally to Windows Explorer.
 ReactOS 0.4.0 also introduced support for kernel debugging using WinDbg when compiled with MSVC.
 Being able to use WinDbg for kernel debugging has helped considerably.
