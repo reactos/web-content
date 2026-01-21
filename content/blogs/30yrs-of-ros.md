@@ -3,7 +3,6 @@ title:       "30 years of ReactOS"
 author:      "Carl Bialorucki"
 date:        2026-01-01
 tags:        [ "newsletter", "anniversary" ]
-# banner:      "img/blogs/cbialorucki_tests/tests-2-banner.png"
 # Note: blog post release planned for 2026-01-22
 ---
 Today marks 30 years since [the first commit to the ReactOS source tree](https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
@@ -25,7 +24,7 @@ ReactOS 0.1.0 was the first bootable version of ReactOS.
 It had a command line interface and no desktop.
 Watch a demo of it below, provided courtesy of archeYR.
 
-See ReactOS 0.1.0 by archeYR: https://youtu.be/rgRMemZcVoM
+<a href="https://youtu.be/rgRMemZcVoM" target="_blank"><img src="/img/blogs/30-yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR"></a>
 
 ## 2004-2006: ReactOS 0.2.x
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" src="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" caption="ReactOS 0.2.x boot screen">}}
