@@ -12,6 +12,7 @@ Let’s take a brief look throughout our history together.
 
 ## 1996-2003: The Painful Road to ReactOS 0.1.0
 ReactOS started from the ashes of the FreeWin95 project, which aimed to provide a free and open-source clone of Windows 95.
+FreeWin95 suffered from analysis paralysis, attempting to plan the whole system before writing any code.
 Tired of the lack of progress on the project, Jason Filby took the reins as project coordinator and led a new effort targeting Windows NT.
 The project was renamed to “ReactOS” as it was a reaction to Microsoft’s monopolistic position in home computer operating systems.
 
@@ -19,14 +20,46 @@ Progress on ReactOS was very slow at first.
 Contributors had to first build a very basic NT-like kernel before they could develop drivers for it, then continue developing the kernel; not too dissimilar to the process of bootstrapping a new programming language.
 Once a few basic drivers were written, other contributors were able to learn from these examples and develop other drivers.
 
-While writing this article, I asked Eric Kohl about his experiences contributing to ReactOS during these early days and what the review process was like back then. He wrote:
+While writing this article, I reached out to Eric Kohl. He developed the original storage driver stack for ReactOS (atapi, scsiport, class2, disk, cdrom, cdfs) and has been with the project since 1998. I asked him about his experiences with ReactOS during this time, about contributing to ReactOS during those early days, and what the review process was like back then. He wrote:
 
 {{< blockquote >}}
+I think I found ReactOS while searching for example code for my contributions to the WINE project.
+I subscribed to the mailing list and followed the discussions for a few days.
+The developers were discussing the future of shell.exe, a little command line interpreter that could only change drives and directories and execute programs.
+A few day \[later\] I had started to convert the FreeDOS command.com into a Win32 console application, because I wanted to extend it to make it 4DOS compatible.
+4DOS was a very powerful command line interpreter.
+On December 4th 1998 I introduced myself and suggested to use my converted FreeDOS command.com as the future ReactOS cmd.exe.
+I had a little conversation with Jason Filby and Rex Joliff, the CVS repository maintainer.
+I sent my cmd.exe code to Rex and he applied it to the Repository.
+After applying a few more cmd-related patches over the next weeks, Rex asked me whether I would like to have write-access to the repository.
+I accepted the offer...
+
+...
+
+The first version I downloaded and used was 0.0.8.
+It was not much more than a DOS-based bootloader, some drivers and a basic kernel that ran a few test routines after initialization.
+
+...
+
+Version 0.0.8 didn't use PE files, but flat (position independent) binaries.
+There was no PE loader,  no smss, no csrss, no winlogon, no process heaps, no process environments, no threads, etc.
+Each and every little feature was a milestone.
+
+...
+
 Initially there was not review process at all. You write some code, test
 it and fix it until it works. Then you commit it. If something failed on
 another machine, you got a reply on the mailing list and discussed a
 solution. You fixed the issue and committed a fix. That's how it worked.
+
+...
+
+There was always an open and friendly atmosphere.
+It was and still is always nice to talk to other developers.
+No fights, no wars, like in some other projects.
 {{< /blockquote >}}
+
+*Editors note: spelling errors were corrected*
 
 ReactOS 0.1.0 was released on February 1st, 2003 and received minor updates up until November 2003.
 ReactOS 0.1.0 was the first bootable version of ReactOS.
