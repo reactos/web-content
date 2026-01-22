@@ -1,7 +1,7 @@
 ---
 title:       "30 years of ReactOS"
 author:      "Carl Bialorucki"
-date:        2026-01-01
+date:        2026-01-22
 tags:        [ "newsletter", "anniversary" ]
 banner:      "img/blogs/30yrs-of-ros/banner.png"
 # Note: blog post release planned for 2026-01-22
