@@ -20,7 +20,7 @@ Progress on ReactOS was very slow at first.
 Contributors had to first build a very basic NT-like kernel before they could develop drivers for it, then continue developing the kernel; not too dissimilar to the process of bootstrapping a new programming language.
 Once a few basic drivers were written, other contributors were able to learn from these examples and develop other drivers.
 
-While writing this article, I reached out to Eric Kohl. He developed the original storage driver stack for ReactOS (atapi, scsiport, class2, disk, cdrom, cdfs) and has been with the project since 1998. I asked him about his experiences with ReactOS during this time, about contributing to ReactOS during those early days, and what the review process was like back then. He wrote:
+While writing this article, I reached out to Eric Kohl. He developed the original storage driver stack for ReactOS (atapi, scsiport, class2, disk, cdrom, cdfs) and has been with the project since 1998. I asked him about his experiences with ReactOS during this time, how he found the project, and what contributing to ReactOS was like during those early days. He wrote:
 
 {{< blockquote >}}
 I think I found ReactOS while searching for example code for my contributions to the WINE project.
