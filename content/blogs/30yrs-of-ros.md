@@ -61,7 +61,7 @@ It was and still is always nice to talk to other developers.
 No fights, no wars, like in some other projects.
 {{< /blockquote >}}
 
-*Editors note: minor errors were corrected*
+*Editors note: minor errors were corrected.*
 
 ReactOS 0.1.0 was released on February 1st, 2003 and received minor updates up until November 2003.
 ReactOS 0.1.0 was the first version of ReactOS that could boot from a CD.
