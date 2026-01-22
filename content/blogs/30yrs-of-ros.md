@@ -24,7 +24,7 @@ ReactOS 0.1.0 was the first bootable version of ReactOS.
 It had a command line interface and no desktop.
 Watch a demo of it below, provided courtesy of archeYR.
 
-{{< img-link href="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR">}}
+{{< img-link href="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR"  width="200">}}
 
 ## 2004-2006: ReactOS 0.2.x
 During this period ReactOS saw rapid development.
@@ -57,8 +57,8 @@ While we run into limitations with the UniATA driver today, UniATA enabled React
 On February 8th, 2012, ReactOS 0.3.14 supported being built using the MSVC compiler and added visual style support.
 
 {{< gallery >}}
-{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" caption="ReactOS 0.3.x desktop" width="800">}}
-{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" caption="Download!, the package manager for ReactOS 0.3.x" width="600">}}
+{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" caption="ReactOS 0.3.x desktop">}}
+{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" caption="Download!, the package manager for ReactOS 0.3.x">}}
 {{< /gallery >}}
 
 ## 2016-Today: ReactOS 0.4.x
