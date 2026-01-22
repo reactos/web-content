@@ -26,7 +26,7 @@ While writing this article, I reached out to Eric Kohl. He developed the origina
 I think I found ReactOS while searching for example code for my contributions to the WINE project.
 I subscribed to the mailing list and followed the discussions for a few days.
 The developers were discussing the future of shell.exe, a little command line interpreter that could only change drives and directories and execute programs.
-A few day \[later\] I had started to convert the FreeDOS command.com into a Win32 console application, because I wanted to extend it to make it 4DOS compatible.
+A few days \[later\] I had started to convert the FreeDOS command.com into a Win32 console application, because I wanted to extend it to make it 4DOS compatible.
 4DOS was a very powerful command line interpreter.
 On December 4th 1998 I introduced myself and suggested to use my converted FreeDOS command.com as the future ReactOS cmd.exe.
 I had a little conversation with Jason Filby and Rex Joliff, the CVS repository maintainer.
