@@ -62,7 +62,8 @@ No fights, no wars, like in some other projects.
 *Editors note: spelling errors were corrected*
 
 ReactOS 0.1.0 was released on February 1st, 2003 and received minor updates up until November 2003.
-ReactOS 0.1.0 had a command line interface and no desktop.
+ReactOS 0.1.0 was the first version of ReactOS that could boot from a CD.
+It had a command line interface and no desktop.
 Watch a demo of it below, provided courtesy of archeYR.
 
 {{< img-link href="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR">}}
