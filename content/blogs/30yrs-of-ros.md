@@ -27,14 +27,16 @@ Watch a demo of it below, provided courtesy of archeYR.
 {{< img-link href="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR">}}
 
 ## 2004-2006: ReactOS 0.2.x
-{{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" src="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" caption="ReactOS 0.2.x boot screen">}}
-
 During this period ReactOS saw rapid development.
 New drivers were being built all the time, a basic desktop was built, and ReactOS became increasingly stable and usable.
 Public interest grew as ReactOS matured.
 In October 2005, Jason Filby stepped down as project coordinator, and Steven Edwards was voted to be the next project coordinator.
 
+{{< gallery >}}
+{{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" src="/img/blogs/30yrs-of-ros/ros-0.2.x-boot.png" caption="ReactOS 0.2.x boot screen">}}
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.x-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.2.x-desktop.png" caption="ReactOS 0.2.x desktop and file explorer">}}
+{{< figure link="/img/blogs/30yrs-of-ros/ros-0.2.0-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.2.0-desktop.png" caption="ReactOS 0.2.0 with VMware video driver for NT 4">}}
+{{< /gallery >}}
 
 It wasn’t all sunshine and rainbows though.
 In January 2006, concerns grew about contributors having access to leaked Windows source code and possibly using this leaked source code in their contributions.
@@ -65,7 +67,10 @@ Being able to use standard Windows tools for kernel debugging has helped us prog
 ReactOS 0.4.0 continued to receive incremental updates every few months up until versions 0.4.14 and 0.4.15 which had years of development updates each.
 Today, the x86_64 port of ReactOS is similarly functional to its x86 counterpart, but with no WoW64 subsystem to run x86 apps its usability is limited.
 
+{{< gallery >}}
+{{< figure link="/img/blogs/30yrs-of-ros/explorer-diagram.png" src="/img/blogs/30yrs-of-ros/explorer-diagram.png" caption="A humorous diagram made in 2015 to explain the complexity of Windows Explorer">}}
 {{< figure link="/img/blogs/30yrs-of-ros/ros-0.4.15-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.4.15-desktop.png" caption="ReactOS 0.4.15 desktop, shown with Luna visual style and large taskbar icons applied">}}
+{{< /gallery >}}
 
 ## The Future of ReactOS
 We're continuing to move ReactOS forward. Behind the scenes there are several out-of-tree projects in development. Some of these exciting projects include a new build environment for developers (RosBE), a new NTFS driver, a new ATA driver, multi-processor (SMP) support, support for class 3 UEFI systems, kernel and usermode address space layout randomization (ASLR), and support for modern GPU drivers built on WDDM.
