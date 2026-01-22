@@ -19,6 +19,15 @@ Progress on ReactOS was very slow at first.
 Contributors had to first build a very basic NT-like kernel before they could develop drivers for it, then continue developing the kernel; not too dissimilar to the process of bootstrapping a new programming language.
 Once a few basic drivers were written, other contributors were able to learn from these examples and develop other drivers.
 
+While writing this article, I asked Eric Kohl about his experiences contributing to ReactOS during these early days and what the review process was like back then. He wrote:
+
+<blockquote>
+Initially there was not review process at all. You write some code, test
+it and fix it until it works. Then you commit it. If something failed on
+another machine, you got a reply on the mailing list and discussed a
+solution. You fixed the issue and committed a fix. That's how it worked.
+</blockquote>
+
 ReactOS 0.1.0 was released on February 1st, 2003 and received minor updates up until November 2003.
 ReactOS 0.1.0 was the first bootable version of ReactOS.
 It had a command line interface and no desktop.
