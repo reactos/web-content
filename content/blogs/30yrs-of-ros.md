@@ -8,7 +8,7 @@ tags:        [ "newsletter", "anniversary" ]
 Happy Birthday ReactOS! Today marks 30 years since [the first commit to the ReactOS source tree](https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
 It’s been such a long journey that many of our contributors today, including myself, were not alive during this event.
 Yet our mission to deliver “your favorite Windows apps and drivers in an open-source environment you can trust” continues to bring people together.
-Let’s take a brief look throughout our history together.
+Let's take a brief look at some of the high and low points throughout our history.
 
 ## 1996-2003: The Painful Road to ReactOS 0.1.0
 ReactOS started from the ashes of the FreeWin95 project, which aimed to provide a free and open-source clone of Windows 95.
@@ -30,14 +30,14 @@ A few day \[later\] I had started to convert the FreeDOS command.com into a Win3
 4DOS was a very powerful command line interpreter.
 On December 4th 1998 I introduced myself and suggested to use my converted FreeDOS command.com as the future ReactOS cmd.exe.
 I had a little conversation with Jason Filby and Rex Joliff, the CVS repository maintainer.
-I sent my cmd.exe code to Rex and he applied it to the Repository.
+I sent my cmd.exe code to Rex and he applied it to the repository.
 After applying a few more cmd-related patches over the next weeks, Rex asked me whether I would like to have write-access to the repository.
 I accepted the offer...
 
 ...
 
 The first version I downloaded and used was 0.0.8.
-It was not much more than a DOS-based bootloader, some drivers and a basic kernel that ran a few test routines after initialization.
+It was not much more than a DOS-based bootloader, some drivers, and a basic kernel that ran a few test routines after initialization.
 
 ...
 
@@ -47,10 +47,12 @@ Each and every little feature was a milestone.
 
 ...
 
-Initially there was not review process at all. You write some code, test
-it and fix it until it works. Then you commit it. If something failed on
-another machine, you got a reply on the mailing list and discussed a
-solution. You fixed the issue and committed a fix. That's how it worked.
+Initially there was not a review process at all.
+You write some code, test it and fix it until it works.
+Then you commit it.
+If something failed on another machine, you got a reply on the mailing list and discussed a solution.
+You fixed the issue and committed a fix.
+That's how it worked.
 
 ...
 
@@ -59,7 +61,7 @@ It was and still is always nice to talk to other developers.
 No fights, no wars, like in some other projects.
 {{< /blockquote >}}
 
-*Editors note: spelling errors were corrected*
+*Editors note: minor errors were corrected*
 
 ReactOS 0.1.0 was released on February 1st, 2003 and received minor updates up until November 2003.
 ReactOS 0.1.0 was the first version of ReactOS that could boot from a CD.
