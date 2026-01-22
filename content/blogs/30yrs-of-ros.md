@@ -9,6 +9,7 @@ Happy Birthday ReactOS! Today marks 30 years since [the first commit to the Reac
 It’s been such a long journey that many of our contributors today, including myself, were not alive during this event.
 Yet our mission to deliver “your favorite Windows apps and drivers in an open-source environment you can trust” continues to bring people together.
 Let's take a brief look at some of the high and low points throughout our history.
+<!--break-->
 
 ## 1996-2003: The Painful Road to ReactOS 0.1.0
 ReactOS started from the ashes of the FreeWin95 project, which aimed to provide a free and open-source clone of Windows 95.
