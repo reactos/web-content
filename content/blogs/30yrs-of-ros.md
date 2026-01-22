@@ -13,7 +13,7 @@ Let’s take a brief look throughout our history together.
 ## 1996-2003: The Painful Road to ReactOS 0.1.0
 ReactOS started from the ashes of the FreeWin95 project, which aimed to provide a free and open-source clone of Windows 95.
 Tired of the lack of progress on the project, Jason Filby took the reins as project coordinator and led a new effort targeting Windows NT.
-The project was renamed to “ReactOS” as it was a reaction against Microsoft’s monopolistic position in home computer operating systems.
+The project was renamed to “ReactOS” as it was a reaction to Microsoft’s monopolistic position in home computer operating systems.
 
 Progress on ReactOS was very slow at first.
 Contributors had to first build a very basic NT-like kernel before they could develop drivers for it, then continue developing the kernel; not too dissimilar to the process of bootstrapping a new programming language.
