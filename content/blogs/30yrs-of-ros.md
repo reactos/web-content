@@ -46,7 +46,6 @@ In response, Steven Edwards strengthened the project’s intellectual property p
 The ongoing audit and contribution freeze from the end of the ReactOS 0.2.x era slowed development and momentum considerably for ReactOS 0.3.x.
 Following challenges with the audit, Steven Edwards stepped down as project coordinator and Aleksey Bragin assumed the role by August 2006.
 
-{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" caption="ReactOS 0.3.x desktop">}}
 
 Despite the challenges during this time, ReactOS 0.3.x continued to build upon ReactOS’s legacy.
 ReactOS 0.3.0 was released on August 28th, 2006.
@@ -57,7 +56,10 @@ One year later, ReactOS 0.3.10 imported the [UniATA driver](http://alter.org.ua/
 While we run into limitations with the UniATA driver today, UniATA enabled ReactOS to support SATA storage devices and to support partitions greater than 8GB in size.
 On February 8th, 2012, ReactOS 0.3.14 supported being built using the MSVC compiler and added visual style support.
 
-{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" caption="Download!, the package manager for ReactOS 0.3.x">}}
+{{< gallery >}}
+{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-desktop.png" caption="ReactOS 0.3.x desktop" width="800">}}
+{{< figure link="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" src="/img/blogs/30yrs-of-ros/ros-0.3.x-download.png" caption="Download!, the package manager for ReactOS 0.3.x" width="600">}}
+{{< /gallery >}}
 
 ## 2016-Today: ReactOS 0.4.x
 ReactOS 0.4.0 was released on February 16th, 2016.
