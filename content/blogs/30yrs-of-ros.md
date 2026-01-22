@@ -3,6 +3,7 @@ title:       "30 years of ReactOS"
 author:      "Carl Bialorucki"
 date:        2026-01-01
 tags:        [ "newsletter", "anniversary" ]
+banner:      "img/blogs/30yrs-of-ros/banner.png"
 # Note: blog post release planned for 2026-01-22
 ---
 Happy Birthday ReactOS! Today marks 30 years since [the first commit to the ReactOS source tree](https://github.com/reactos/reactos/commit/0f94427db073a20c24f9d85c8531fbe16490af43).
@@ -29,7 +30,7 @@ I subscribed to the mailing list and followed the discussions for a few days.
 The developers were discussing the future of shell.exe, a little command line interpreter that could only change drives and directories and execute programs.
 A few days \[later\] I had started to convert the FreeDOS command.com into a Win32 console application, because I wanted to extend it to make it 4DOS compatible.
 4DOS was a very powerful command line interpreter.
-On December 4th 1998 I introduced myself and suggested to use my converted FreeDOS command.com as the future ReactOS cmd.exe.
+On December 4th, 1998 I introduced myself and suggested to use my converted FreeDOS command.com as the future ReactOS cmd.exe.
 I had a little conversation with Jason Filby and Rex Joliff, the CVS repository maintainer.
 I sent my cmd.exe code to Rex and he applied it to the repository.
 After applying a few more cmd-related patches over the next weeks, Rex asked me whether I would like to have write-access to the repository.
@@ -71,7 +72,7 @@ Watch a demo of it below, provided courtesy of archeYR.
 
 {{< img-link href="https://youtu.be/rgRMemZcVoM" src="/img/blogs/30yrs-of-ros/ros-0.1.0-thumbnail.png" alt="See ReactOS 0.1.0 by archeYR">}}
 
-## 2004-2006: ReactOS 0.2.x
+## 2003-2006: ReactOS 0.2.x
 During this period ReactOS saw rapid development.
 New drivers were being built all the time, a basic desktop was built, and ReactOS became increasingly stable and usable.
 Public interest grew as ReactOS matured.
