@@ -12,7 +12,7 @@ Let’s take a brief look throughout our history together.
 
 ## 1996-2003: The Painful Road to ReactOS 0.1.0
 ReactOS started from the ashes of the FreeWin95 project, which aimed to provide a free and open-source clone of Windows 95.
-Tired of the lack of progress on the project, Jason Filby took the reigns as project coordinator and led a new effort targeting Windows NT.
+Tired of the lack of progress on the project, Jason Filby took the reins as project coordinator and led a new effort targeting Windows NT.
 The project was renamed to “ReactOS” as it was a reaction against Microsoft’s monopolistic position in home computer operating systems.
 
 Progress on ReactOS was very slow at first.
@@ -51,7 +51,7 @@ ReactOS 0.3.0 was released on August 28th, 2006.
 It introduced networking support and a package manager called “Download!”.
 This package manager would become the basis for RAPPS, the package manager built into modern versions of ReactOS.
 In July 2008, the x86_64 port of ReactOS was started.
-One year later, ReactOS 0.3.10 imported the UniATA driver.
+One year later, ReactOS 0.3.10 imported the [UniATA driver](http://alter.org.ua/soft/win/uni_ata/), written by Alexandr Telyatnikov (Alter).
 While we run into limitations with the UniATA driver today, UniATA enabled ReactOS to support SATA storage devices and to support partitions greater than 8GB in size.
 On February 8th, 2012, ReactOS 0.3.14 supported being built using the MSVC compiler and added visual style support.
 
