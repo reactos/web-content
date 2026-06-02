@@ -27,7 +27,7 @@ I took the opportunity not knowing what I signed myself up for.
 Lots of late nights trying to figure out how I would get the swag, banners, and hardware needed to run the booth.
 I wasn't much of a hardware collector so I had to quickly become one.
 
-I bought, then immediately returned a 3D printer after changing my mind on what free swag to hand out (Fun fact: this is the second time I had done this).
+I bought, then immediately returned a 3D printer after changing my mind on what free swag to hand out.
 I got a 6' x 2' ReactOS banner made at a local print shop. Unhappy with commercial sticker options, I opted to learn how to make professional looking stickers at home.
 I printed them on a high end wide format inkjet (which I hope to use to make big boxes in the future!), laminated them, and used a consumer vinyl cutter to cut the stickers out.
 I got several bags of candy at a local wholesale club.
@@ -54,7 +54,7 @@ Or so I thought.
 With the Xbox reliably booting into Cromwell, I burned a ReactOS CD for an Xbox build and it wouldn't get to Freeldr.
 After some investigation, it appeared that my disk drive was burning CDs too fast for the Xbox to read them properly.
 By the time I came to this realization, I needed to leave to set up the convention.
-A this point I had not slept since the previous day and I still needed to run the booth.
+At this point I had not slept since the previous day and I still needed to run the booth.
 I felt defeated.
 
 ## The Community Saved the Booth
