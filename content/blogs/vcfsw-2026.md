@@ -45,7 +45,8 @@ I then tried to find a generic BIOS image for that board that may have had a mor
 
 After failing to get ReactOS running on the eMachines, I turned my attention to the original Xbox.
 I built ReactOS and confirmed that it ran in an emulator.
-The original Xbox port of ReactOS requires Cromwell BIOS to be loaded. I opted to install a hardware modchip which necessitated soldering a wire to a small via (d0) on the back of the board.
+The original Xbox port of ReactOS requires Cromwell BIOS to be loaded.
+I opted to install a hardware modchip which necessitated soldering a wire to a small via (d0) on the back of the board.
 After installing my modchip it acted very strangely, only working in about 1 in every 15 boots or so.
 I resoldered it multiple times hoping to fix the issue, it never got better.
 In desperation, I flashed Cromwell to the modchip anyways hoping I could get it to boot at least sometimes.
