@@ -1,7 +1,7 @@
 ---
 title:       "ReactOS Joins VCF Southwest for the First Time"
 author:      "Carl Bialorucki"
-date:        2026-06-01
+date:        2026-06-03
 tags:        [ "newsletter", "vcf", "vcfsw" ]
 banner:      "img/blogs/vcfsw-2026/banner.png"
 ---
