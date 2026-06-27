@@ -280,7 +280,7 @@ icon: "fa fa-lightbulb-o"
 description: "Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring."
 ```
 
-The `icon` field is the CSS class of an icon. In this example we have used icons powered by [FontAwesome](http://fontawesome.io/icons/).
+The `icon` field is the CSS class of an icon. In this example we have used icons powered by [Font Awesome](https://fontawesome.com/icons).
 
 Once you have completed your features, enable them in the `config.toml` file.
 
