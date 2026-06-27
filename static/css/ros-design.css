@@ -1,20 +1,27 @@
-.ros-button {
-	display: inline-block;
-	padding: 0.5em 1em;
-	font-size: 2em;
-	background: #507489;
-	color: #ffffff !important;
-	cursor: pointer;
+#bootcd .btn-primary {
+    background-color: #507489 !important;
+    border-color: #507489 !important;
+	font-size: 35px !important;
+	padding: 10px 20px !important;
 }
-.ros-button:hover {
-	background: #6f92a7;
+
+#bootcd .btn-primary:hover {
+    background-color: #6f92a7 !important;
+    border-color: #6f92a7 !important;
 }
-.ros-button:active {
-	background: #436477;
+
+#nightly .btn-primary {
+    background-color: #507489 !important;
+    border-color: #507489 !important;
+	font-size: 30px !important;
+	padding: 5px 15px !important;
 }
-.ros-button-sm {
-	padding: 0.25em 0.5em;
+
+#nightly .btn-primary:hover {
+    background-color: #6f92a7 !important;
+    border-color: #6f92a7 !important;
 }
+
 .text-ros {
 	color: #507489;
 }
