@@ -117,23 +117,22 @@ div.section {
 }
 
 #copyright .social a:hover.github {
-	color: #ffffff;
+	color: #f0f6fc;
 }
-
 #copyright .social a:hover.discord {
-	color: #7f9ef4;
+	color: #5865f2;
 }
 #copyright .social a:hover.facebook {
-	color: #4460ae;
+	color: #0064e0;
 }
 #copyright .social a:hover.twitter {
-	color: #3cf;
+	color: ##e6e9ea;
 }
 #copyright .social a:hover.youtube {
-	color: #ff0000;
+	color: ##ff0033;
 }
 #copyright .social a:hover.vk {
-	color: #4a76a8;
+	color: #3579fa;
 }
 #top .login {
 	float: right;
