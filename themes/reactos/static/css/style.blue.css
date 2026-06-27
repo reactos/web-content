@@ -1239,30 +1239,6 @@ address {
 	margin: 5px;
 }
 
-#bootcd .btn-primary {
-    background-color: #507489 !important;
-    border-color: #507489 !important;
-	font-size: 35px !important;
-	padding: 10px 20px !important;
-}
-
-#bootcd .btn-primary:hover {
-    background-color: #6f92a7 !important;
-    border-color: #6f92a7 !important;
-}
-
-#nightly .btn-primary {
-    background-color: #507489 !important;
-    border-color: #507489 !important;
-	font-size: 30px !important;
-	padding: 5px 15px !important;
-}
-
-#nightly .btn-primary:hover {
-    background-color: #6f92a7 !important;
-    border-color: #6f92a7 !important;
-}
-
 #jirafeed {
 	list-style: none;
 	padding: 0;
