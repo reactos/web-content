@@ -112,7 +112,7 @@ div.section {
 	border-radius: 12px;
 	line-height: 20px;
 	text-align: center;
-	vertical-align: bottom;
+	vertical-align: middle;
 	margin-right: 3px;
 	width: 35px;
 	transition: transform 0.1s ease;
