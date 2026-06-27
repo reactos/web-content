@@ -107,7 +107,6 @@ div.section {
 }
 #copyright .social a {
 	outline: none !important;
-	size: 18px;
 	color: #999999;
 	display: inline-block;
 	border-radius: 12px;
@@ -116,8 +115,11 @@ div.section {
 	vertical-align: bottom;
 	margin-right: 3px;
 	width: 35px;
+	transition: transform 0.1s ease;
 }
-
+#copyright .social a:active {
+    transform: scale(0.90);
+}
 #copyright .social a:hover.github {
 	color: #f0f6fc;
 }
