@@ -106,6 +106,7 @@ div.section {
 	font-size: 28px;
 }
 #copyright .social a {
+	outline: none !important;
 	color: #999999;
 	display: inline-block;
 	border-radius: 12px;
