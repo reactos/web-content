@@ -115,23 +115,25 @@ div.section {
 	margin-right: 3px;
 	width: 35px;
 }
-#copyright .social a:hover {
-	color: #fff;
+
+#copyright .social a:hover.github {
+	color: #ffffff;
 }
+
 #copyright .social a:hover.discord {
-	background-color: #7f9ef4;
+	color: #7f9ef4;
 }
 #copyright .social a:hover.facebook {
-	background-color: #4460ae;
+	color: #4460ae;
 }
 #copyright .social a:hover.twitter {
-	background-color: #3cf;
+	color: #3cf;
 }
 #copyright .social a:hover.youtube {
-	background-color: #ff0000;
+	color: #ff0000;
 }
 #copyright .social a:hover.vk {
-	background-color: rgb(74, 118, 168);
+	color: #4a76a8;
 }
 #top .login {
 	float: right;
