@@ -1,8 +1,8 @@
 #bootcd .btn-primary {
     background-color: #507489 !important;
     border-color: #507489 !important;
-	font-size: 35px !important;
-	padding: 10px 20px !important;
+    font-size: 35px !important;
+    padding: 10px 20px !important;
 }
 
 #bootcd .btn-primary:hover {
@@ -13,8 +13,8 @@
 #nightly .btn-primary {
     background-color: #507489 !important;
     border-color: #507489 !important;
-	font-size: 30px !important;
-	padding: 5px 15px !important;
+    font-size: 30px !important;
+    padding: 5px 15px !important;
 }
 
 #nightly .btn-primary:hover {
@@ -23,5 +23,5 @@
 }
 
 .text-ros {
-	color: #507489;
+    color: #507489;
 }
