@@ -36,6 +36,9 @@ Oleg added support for more audio formats, looped playback of wave files, higher
 In addition, Victor Perevertkin imported the open source AC'97 driver from the Windows Driver Kit (WDK).
 This enables sound out of the box in VirtualBox when the virtual machine is configured to use the ICH AC'97 Audio Controller and various motherboards from 2004 and earlier.
 
+## Networking
+Dmitry Borisov's contribution has improved support for additional legacy networking hardware with the introduction of a new DC21X4 network adapter driver. This expands ReactOS compatibility with older DECchip 21x4-based adapters and improves networking support in legacy virtualization environments using emulated DEC 21140 hardware available in Microsoft Virtual PC 2007 and Hyper-V Generation 1.
+
 ## Memory Manager and Cache Controller
 Section Objects have been refactored by Jérôme Gardou (zefklop) for better compatibility with Windows.
 This fixes a long-standing bug preventing executables from starting in remote locations, such as network shares or virtual machine shared folders.
