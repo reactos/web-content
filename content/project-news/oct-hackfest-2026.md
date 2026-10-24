@@ -40,7 +40,7 @@ With ReactOS as a project being what it is, we take a careful look at every PR w
 These PRs make it impossible for us as a project to continue doing this.
 To improve the situation a new policy has been drafted and currently is being evaluated across the team to directly tighten the rules and filter out these hard to review PRs.
 Of course this isn’t the only discussion we’ve had.
-We’re looking forward to a more reasonable and standard Pull Request review process approach;
+We’re looking forward to a more reasonable and standard Pull Request review process approach.
 Other than adding tests, asking authors to dramatically rewrite PRs or add new features is something we as a team need to do better about. 
 
 # The Future
