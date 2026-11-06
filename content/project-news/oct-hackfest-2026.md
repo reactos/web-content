@@ -59,7 +59,8 @@ At the end of the hackfest we took all the in-progress winesyncs and added some 
 While enabling the NT6+ features is a slow rollout for us into the nightlies, we're getting a wonderful foundation to run all sorts of new software. Below are some highlights we’ve gotten with this up and coming work that we believe it’s time to share.
 
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" src="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" caption="The Steam client running on NT6+ ReactOS" >}}
-There's also been to get the up and coming USB3/USB4 stack merged which allow ReactOS to be installed on more modern chipsets.
+{{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" src="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" caption="Among Us loading on NT6+ ReactOS on real hardware" >}}
+There's also been progress in getting the up and coming USB3/USB4 stack merged, which allows ReactOS to be installed on more modern chipsets.
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-xhci.png" src="/img/project-news/oct-hackfest-2026/octhackfest-xhci.png" caption="USB xHCI host controller detected in Device Manager" >}}
 
 All in all, the hackfest was a blast for everyone involved, quite a bit of work was done to make ReactOS closer to being functional.
