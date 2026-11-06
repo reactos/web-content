@@ -1,29 +1,29 @@
 ---
-title:       "ReactOS CLT and October 2026 Hackfests"
+title:       "ReactOS Hackfests in 2026"
 author:      "ReactOS Team"
 date:        2026-10-21
 tags:        [ "hackfest" ]
 ---
 
-For years the ReactOS project has held events where we met up to develop the operating system.
-When multiple of the core team members, and contributors alike hold these multiday events or hackfests, we are able to progress not just the foundational code of the operating system but the guidelines and rules we use to apply to the GitHub process.
-This year there were two events, both of which held one of these hackfests.
-The first at Chemnitzer Linux-Tage (CLT, 2026).
-Oct 9th-19th of this year we had another hackfest in Orlando, Florida.
+The ReactOS project has held hackfests where we met up to develop the operating system.
+When core team members and contributors hold these multiday hackfests, we are able to progress not just the foundational code of the operating system, but also our project guidelines and rules.
+This year there were two hackfests.
+
+The first was during and after Chemnitzer Linux-Tage (CLT), from March 28th to April 4th.
+The second was in Orlando, Florida, from October 9th to October 19th.
 This hackfest was the source of much discussion that needed to occur to continue the smooth operation of the project.
 
-In the over 110 commits merged during the time of the Florida hackfest there are numerous improvements to the OS, available in the nightlies today.
-- Multiple new NT6+ syscalls have been added behind the scenes such as `NtGetNextProcess`, `NtGetNextThread` which will play a key role in multiple pieces of software, including those designed to protect some games. 
-- The Kernel Shim Engine has been introduced, allowing ReactOS to workaround some buggy drivers and implement quirks that go beyond what Windows offers.
-  The VMware SVGA having a pool tag mismatch as a consequence is now handled;
-  Dramatically improving the experience of using 3D acceleration in VMware without having a bugcheck.
-- Fixes to reference counting to better support VMware SVGA and other video drivers.
-- Support for formatting drives as NTFS from ReactOS itself, allowing to use NTFS as a filesystem for the OS installation.
-- Basic support for reading and writing NTFS while albeit a bit slow and likely has issues, though it’s the first time in ReactOS’s history we’ve been able to fully install on it.
-- Kernel API level testing for Vista+ targets and improvements in our test infrastructure stability when running these tests.
-- Floppy disk support.
-- More fixes to the storport driver which will allow more drivers to run for the chipsets of devices, and NVMe support being introduced.
-- Many more winesyncs done which has allowed us to introduce certificate pinning, increasing our RAPPS security.
+In the over 110 commits merged during the time of the Florida hackfest, there were numerous improvements to the OS, available in the nightlies today.
+- **New Syscalls** New NT6+ syscalls were added, including `NtGetNextProcess` and `NtGetNextThread`. These syscalls are used for some programs and to protect some games
+- **New Kernel Shim Engine** The new kernel shim engine allows ReactOS to workaround some buggy drivers and implement quirks that go beyond what Windows offers.
+For example, the VMware SVGA driver has a pool tag mismatch that can now be worked around.
+3D accelerated programs in VMware can now be exited without a bugcheck.
+- **Reference Count Fixes** Better support for VMware SVGA and other video drivers.
+- **NTFS** Support for formatting and writing to NTFS partitions from ReactOS itself, including using NTFS for installing ReactOS.
+- **Kernel Tests** Kernel tests for Vista+ targets and improvements to our test infrastructure stability when running these tests.
+- **Floppy Disks** Reading, writing, and formatting floppy disks is now supported.
+- **Storport** Fixes to the storport driver means supporting more storage chipset drivers and upcoming NVMe support.
+- **Wine** Additional wine syncs have allowed us to introduce certificate pinning to RAPPS, move to a NT6+ user folder structure, and reduce divergences.
 - Thanks to the continued winesyncs we’ve begun to remove some divergences from WINE.
   One of the side effects of this is ReactOS now uses the Vista+ style Users/ folder instead of Documents and Settings;
   This being another step of the newer Vista+ features enablement in the nightlies across the board.
@@ -31,38 +31,46 @@ In the over 110 commits merged during the time of the Florida hackfest there are
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-vmware.png" src="/img/project-news/oct-hackfest-2026/octhackfest-vmware.png" caption="VMware SVGA II driver running glxgears with 3D acceleration" >}}
 	
 # Discussions
-Since the transition to GitHub the ReactOS project has been working to continually improve its Pull Request reviewing process.
-With the project being run by volunteers this has always been a point of contention.
+Since the transition to GitHub, the ReactOS project has been working to continually improve its pull request reviewing process.
+With the project being run by volunteers, this has always been a point of contention.
 PRs have often sat dormant for an extended amount of time, causing frustration to their authors and even among our developers.
 Of course, with the advent of AI this problem has been amplified.
-Multiple Pull Requests have hit our repo which were entirely AI generated, going as far as the PR description and commit messages, even including the responses to review critiques.
-With ReactOS as a project being what it is, we take a careful look at every PR we merge into our main source tree;
-These PRs make it impossible for us as a project to continue doing this.
-To improve the situation a new policy has been drafted and currently is being evaluated across the team to directly tighten the rules and filter out these hard to review PRs.
+Multiple entirely AI generated pull requests have hit our repo, with even PR descriptions, commit messages, and replies being written without human intervention.
+We human reviewers take a careful look at every PR we merge into our main source tree.
+These PRs make it impossible for us to continue doing this.
+To improve the situation a new policy has been adopted to tighten the rules and filter out these hard to review PRs.
 Of course this isn’t the only discussion we’ve had.
-We’re looking forward to a more reasonable and standard Pull Request review process approach.
-Other than adding tests, asking authors to dramatically rewrite PRs or add new features is something we as a team need to do better about. 
+We’re looking forward to a more reasonable and standard pull request review process.
+Other than adding tests, asking authors to dramatically rewrite PRs or add new features is something we as a team need to be better about. 
 
 # The Future
 During this hackfest we also managed to further large tasks we’ve been working towards.
-Previously we’ve discussed SMP work;
-The ability to use multiple CPUs during the hackfest we started a laptop with a combined version of the upcoming hardware resource assignment work and SMP work and ran a laptop for days at a time, reaching a runtime of over 2 days while actively doing tasks in the background and using 2 cores. 
+Previously we’ve discussed work on symmetric multiprocessing (SMP), which allows the OS to use multiple CPUs and/or CPU cores.
+During the hackfest, we started a laptop with a combined version of the upcoming hardware resource assignment and SMP work.
+We ran the laptop for days at a time, reaching a runtime of over 2 days while actively doing tasks in the background using 2 cores.
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-smp.png" src="/img/project-news/oct-hackfest-2026/octhackfest-smp.png" caption="ReactOS x64 with the SMP kernel on a Dell Latitude Z600, over 2 days of uptime" >}}
-This shows great promise not just for our 64-bit version which is rapidly getting more stable on hardware, but our ability to run the operating system with the SMP kernel while showing signs of slowly approaching the stability needed to be daily used.
+This shows great promise for our 64-bit builds and our SMP kernel, which are rapidly becoming more stable on real hardware.
 In the coming months we’ll be trying to do the remaining tasks needed to enable SMP in the nightlies. 
-With the merge of the Kernel Shim Engine, we’re able to build out handling for backwards compatibility cases that Windows itself never achieved.
+With the new kernel shim engine, we’re able to handle backwards compatibility cases Windows itself never achieved.
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-nvidia-gpu.png" src="/img/project-news/oct-hackfest-2026/octhackfest-nvidia-gpu.png" caption="NVIDIA XP driver running on a GeForce GTX TITAN X while ReactOS reports NT 6.0" >}}
 One of the first examples of this is a shim that will allow NVIDIA XP GPU drivers to work on ReactOS even when the OS is reporting NT6+.
-This produces the path needed for us to have a greater level of backwards compatibility with older hardware and drivers that Windows doesn’t even have today.
-As we look to the future and begin our transition to NT 6.0 and above we’re hoping to keep alive the very colorful retro computing community that has been adopting ReactOS in their adventures, this is our first step to doing this.
-At the end of the hackfest we took all the in-progress winesyncs and added some extra patches on top of them to try and test the current state of NT6+ ReactOS and see what interesting things we can do.
-While enabling the NT6+ features is a slow rollout for us into the nightlies, we're getting a wonderful foundation to run all sorts of new software. Below are some highlights we’ve gotten with this up and coming work that we believe it’s time to share.
+With this shim we achieve a greater level of backwards compatibility with older hardware and drivers that Windows doesn’t even have today.
+As we look to the future and begin our transition to NT6+, we haven't forgotten about the retro computing community that has been adopting ReactOS in their adventures.
+We want to make ReactOS a viable operating system for old and new hardware alike.
+At the end of the hackfest, we took all the in-progress winesyncs and added some extra patches on top of them to test the current state of NT6+ ReactOS and see what interesting things we can accomplish.
+While enabling the NT6+ features is a slow rollout for us into the nightlies, we're building a wonderful foundation to run all sorts of new software.
+Below are some highlights from this up and coming work that we believe is time to share.
 
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" src="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" caption="The Steam client running on NT6+ ReactOS" >}}
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" src="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" caption="Among Us loading on NT6+ ReactOS on real hardware" >}}
-There's also been progress in getting the up and coming USB3/USB4 stack merged, which allows ReactOS to be installed on more modern chipsets.
+There's also been progress in getting a new USB3/USB4 stack merged, which allows ReactOS to be installed on machines with modern USB chipsets. As of finishing this blog post, this is now merged in it's basic form with more to come.
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-xhci.jpg" src="/img/project-news/oct-hackfest-2026/octhackfest-xhci.jpg" caption="USB xHCI host controller detected in Device Manager" >}}
 
-All in all, the hackfest was a blast for everyone involved, quite a bit of work was done to make ReactOS closer to being functional.
+All in all, this hackfest was a blast for everyone involved. 
+Quite a bit of work was done to make ReactOS more functional.
 With your continued support, we hope to assemble once again to make another burst of progress.
 Thank you for sticking with ReactOS!
+
+*If you would like to make a donation to ReactOS, visit [reactos.org/donate](https://reactos.org/donate/)*
+
+{{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-alltogether.jpg" src="/img/project-news/oct-hackfest-2026/octhackfest-alltogether.jpg" caption="The October 2026 hackfest participants, all together" >}}
