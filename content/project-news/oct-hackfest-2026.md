@@ -61,7 +61,7 @@ While enabling the NT6+ features is a slow rollout for us into the nightlies, we
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" src="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" caption="The Steam client running on NT6+ ReactOS" >}}
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" src="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" caption="Among Us loading on NT6+ ReactOS on real hardware" >}}
 There's also been progress in getting the up and coming USB3/USB4 stack merged, which allows ReactOS to be installed on more modern chipsets.
-{{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-xhci.png" src="/img/project-news/oct-hackfest-2026/octhackfest-xhci.png" caption="USB xHCI host controller detected in Device Manager" >}}
+{{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-xhci.jpg" src="/img/project-news/oct-hackfest-2026/octhackfest-xhci.jpg" caption="USB xHCI host controller detected in Device Manager" >}}
 
 All in all, the hackfest was a blast for everyone involved, quite a bit of work was done to make ReactOS closer to being functional.
 With your continued support, we hope to assemble once again to make another burst of progress.
