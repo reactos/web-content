@@ -14,7 +14,8 @@ The second was in Orlando, Florida, from October 9th to October 19th.
 This hackfest was the source of much discussion that needed to occur to continue the smooth operation of the project.
 
 In the over 110 commits merged during the time of the Florida hackfest, there were numerous improvements to the OS, available in the nightlies today.
-- **New Syscalls** New NT6+ syscalls were added, including `NtGetNextProcess` and `NtGetNextThread`. These syscalls are used for some programs and to protect some games
+- **New Syscalls** New NT6+ syscalls were added, including `NtGetNextProcess` and `NtGetNextThread`.
+  These syscalls are used for some programs and to protect some games.
 - **New Kernel Shim Engine** The new kernel shim engine allows ReactOS to workaround some buggy drivers and implement quirks that go beyond what Windows offers.
 For example, the VMware SVGA driver has a pool tag mismatch that can now be worked around.
 3D accelerated programs in VMware can now be exited without a bugcheck.
@@ -63,7 +64,8 @@ Below are some highlights from this up and coming work that we believe is time t
 
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" src="/img/project-news/oct-hackfest-2026/octhackfest-steam.png" caption="The Steam client running on NT6+ ReactOS" >}}
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" src="/img/project-news/oct-hackfest-2026/octhackfest-among.PNG" caption="Among Us loading on NT6+ ReactOS on real hardware" >}}
-There's also been progress in getting a new USB3/USB4 stack merged, which allows ReactOS to be installed on machines with modern USB chipsets. As of finishing this blog post, this is now merged in it's basic form with more to come.
+There's also been progress in getting a new USB3/USB4 stack merged, which allows ReactOS to be installed on machines with modern USB chipsets.
+As of finishing this blog post, this is now merged in it's basic form with more to come.
 {{< figure link="/img/project-news/oct-hackfest-2026/octhackfest-xhci.jpg" src="/img/project-news/oct-hackfest-2026/octhackfest-xhci.jpg" caption="USB xHCI host controller detected in Device Manager" >}}
 
 All in all, this hackfest was a blast for everyone involved. 
