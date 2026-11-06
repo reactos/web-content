@@ -14,17 +14,17 @@ The second was in Orlando, Florida, from October 9th to October 19th.
 This hackfest was the source of much discussion that needed to occur to continue the smooth operation of the project.
 
 In the over 110 commits merged during the time of the Florida hackfest, there were numerous improvements to the OS, available in the nightlies today.
-- **New Syscalls** New NT6+ syscalls were added, including `NtGetNextProcess` and `NtGetNextThread`.
+- **New Syscalls:** New NT6+ syscalls were added, including `NtGetNextProcess` and `NtGetNextThread`.
   These syscalls are used for some programs and to protect some games.
-- **New Kernel Shim Engine** The new kernel shim engine allows ReactOS to workaround some buggy drivers and implement quirks that go beyond what Windows offers.
+- **New Kernel Shim Engine:** The new kernel shim engine allows ReactOS to workaround some buggy drivers and implement quirks that go beyond what Windows offers.
 For example, the VMware SVGA driver has a pool tag mismatch that can now be worked around.
 3D accelerated programs in VMware can now be exited without a bugcheck.
-- **Reference Count Fixes** Better support for VMware SVGA and other video drivers.
-- **NTFS** Support for formatting and writing to NTFS partitions from ReactOS itself, including using NTFS for installing ReactOS.
-- **Kernel Tests** Kernel tests for Vista+ targets and improvements to our test infrastructure stability when running these tests.
-- **Floppy Disks** Reading, writing, and formatting floppy disks is now supported.
-- **Storport** Fixes to the storport driver means supporting more storage chipset drivers and upcoming NVMe support.
-- **Wine** Additional wine syncs have allowed us to introduce certificate pinning to RAPPS, move to a NT6+ user folder structure, and reduce divergences.
+- **Reference Count Fixes:** Better support for VMware SVGA and other video drivers.
+- **NTFS:** Support for formatting and writing to NTFS partitions from ReactOS itself, including using NTFS for installing ReactOS.
+- **Kernel Tests:** Kernel tests for Vista+ targets and improvements to our test infrastructure stability when running these tests.
+- **Floppy Disks:** Reading, writing, and formatting floppy disks is now supported.
+- **Storport:** Fixes to the storport driver means supporting more storage chipset drivers and upcoming NVMe support.
+- **Wine:** Additional wine syncs have allowed us to introduce certificate pinning to RAPPS, move to a NT6+ user folder structure, and reduce divergences.
 - Thanks to the continued winesyncs we’ve begun to remove some divergences from WINE.
   One of the side effects of this is ReactOS now uses the Vista+ style Users/ folder instead of Documents and Settings;
   This being another step of the newer Vista+ features enablement in the nightlies across the board.
